@@ -1,0 +1,78 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_28530-ICSD
+_database_code_ICSD 28530
+_audit_creation_date 1980-01-01
+_chemical_name_systematic 'Samarium oxide bromide'
+_chemical_formula_structural 'Sm O Br'
+_chemical_formula_sum 'Br1 O1 Sm1'
+_exptl_crystal_density_diffrn 6.62
+_publ_section_title
+
+;
+Darstellung und Kristallstruktur der Samarium-, Europium- und
+Ytterbium-oxidbromide Ln O Br und Ln3 O4 Br
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE)' 1965
+338 250 265 ZAACAB
+loop_
+_publ_author_name
+'Baernighausen, H.'
+'Brauer, G.'
+'Schultz, N.'
+_cell_length_a 3.952(1)
+_cell_length_b 3.952(1)
+_cell_length_c 7.914(2)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 123.6
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 4/n m m S'
+_symmetry_Int_Tables_number 129
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-y+1/2, -x+1/2, z'
+2 'y+1/2, x+1/2, z'
+3 '-y, -x, -z'
+4 'y, x, -z'
+5 'y+1/2, -x+1/2, z'
+6 '-y+1/2, x+1/2, z'
+7 'y, -x, -z'
+8 '-y, x, -z'
+9 'x+1/2, -y+1/2, -z'
+10 '-x+1/2, y+1/2, -z'
+11 'x, -y, z'
+12 '-x, y, z'
+13 '-x+1/2, -y+1/2, -z'
+14 'x+1/2, y+1/2, -z'
+15 '-x, -y, z'
+16 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+O2- -2
+Br1- -1
+Sm3+ 3
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+O1 O2- 2 a 0 0 0 . 1. 0
+#End of TTdata_28530-ICSD

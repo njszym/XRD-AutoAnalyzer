@@ -1,0 +1,98 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_99416-ICSD
+_database_code_ICSD 99416
+_audit_creation_date 2005-04-01
+_chemical_name_systematic
+'Manganese oxide dideuteriohydrate hydrate (1/2/0.034/0.066) - alpha'
+_chemical_formula_structural 'Mn O2 ((D0.34 H0.66)2 O)0.1'
+_chemical_formula_sum 'H0.132 D0.068 Mn1 O2.1'
+_chemical_name_structure_type KRu4O8
+_exptl_crystal_density_diffrn 4.32
+_publ_section_title
+
+;
+Crystal structure of an open-tunnel oxide alpha-(Mn O2) analyzed by Rietveld
+refinements and MEM-based pattern fitting
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 2004 177 1258 1267 JSSCBI
+loop_
+_publ_author_name
+'Kijima, N.'
+'Ikeda, T.'
+'Oikawa, K.'
+'Izumi, F.'
+'Yoshimura, Y.'
+_cell_length_a 9.777(2)
+_cell_length_b 9.777(2)
+_cell_length_c 2.8548(5)
+_cell_angle_alpha 90
+_cell_angle_beta 90
+_cell_angle_gamma 90
+_cell_volume 272.89
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'I 4/m'
+_symmetry_Int_Tables_number 87
+_refine_ls_R_factor_all 0.0077
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-y, x, -z'
+2 'y, -x, -z'
+3 'x, y, -z'
+4 '-x, -y, -z'
+5 'y, -x, z'
+6 '-y, x, z'
+7 '-x, -y, z'
+8 'x, y, z'
+9 '-y+1/2, x+1/2, -z+1/2'
+10 'y+1/2, -x+1/2, -z+1/2'
+11 'x+1/2, y+1/2, -z+1/2'
+12 '-x+1/2, -y+1/2, -z+1/2'
+13 'y+1/2, -x+1/2, z+1/2'
+14 '-y+1/2, x+1/2, z+1/2'
+15 '-x+1/2, -y+1/2, z+1/2'
+16 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn4+ 4
+O2- -2
+D1+ 1
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn4+ 8 h 0.3467(3) 0.1678(3) 0 0.0073 1. 0
+O1 O2- 8 h 0.1552(3) 0.2029(2) 0 0.00744 1. 0
+O2 O2- 8 h 0.5420(2) 0.1630(3) 0 0.0077 1. 0
+O3 O2- 4 e 0 0 0.59(2) 0.11(2) 0.2 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Mn1 Mn4+ .0117(12) .0087(13) .0014(6) .0012(13) 0. 0.
+O1 O2- .0068(11) .0116(9) .0048(6) .0061(8) 0. 0.
+O2 O2- .0070(9) .0102(11) .0058(5) .0057(8) 0. 0.
+#End of TTdata_99416-ICSD

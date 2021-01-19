@@ -1,0 +1,84 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_182966-ICSD
+_database_code_ICSD 182966
+_audit_creation_date 2012-08-01
+_chemical_name_systematic 'Dilithium hexatitanate(IV)'
+_chemical_formula_structural 'Li2 (Ti6 O13)'
+_chemical_formula_sum 'Li2 O13 Ti6'
+_chemical_name_structure_type Na2Ti6O13
+_exptl_crystal_density_diffrn 3.27
+_publ_section_title
+
+;
+Ion-exchange synthesis, crystal structure and electrochemical properties of
+Li2 Ti6 O13
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Chemistry of Materials' 2011 23 2344 2352 CMATEX
+loop_
+_publ_author_name
+'Kataoka, K.'
+'Awaka, J.'
+'Kijima, N.'
+'Hayakawa, H.'
+'Ohshima, K.I.'
+'Akimoto, J.'
+_cell_length_a 15.3065(4)
+_cell_length_b 3.74739(8)
+_cell_length_c 9.1404(2)
+_cell_angle_alpha 90
+_cell_angle_beta 99.379(2)
+_cell_angle_gamma 90
+_cell_volume 517.28
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'C 1 2/m 1'
+_symmetry_Int_Tables_number 12
+_refine_ls_R_factor_all 0.0444
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z'
+2 '-x, -y, -z'
+3 'x, -y, z'
+4 'x, y, z'
+5 '-x+1/2, y+1/2, -z'
+6 '-x+1/2, -y+1/2, -z'
+7 'x+1/2, -y+1/2, z'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li1+ 1
+Ti4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Li1 Li1+ 4 i 0.450(1) 0.5 0.246(2) 0.026(4) 1 0
+Ti1 Ti4+ 4 i 0.1150(2) 0 0.096(1) 0.006(2) 1 0
+Ti2 Ti4+ 4 i 0.1677(5) 0 0.435(1) 0.006(2) 1 0
+Ti3 Ti4+ 4 i 0.2309(3) 0 0.7720(9) 0.006(2) 1 0
+O1 O2- 2 a 0 0 0 0.005(1) 1 0
+O2 O2- 4 i 0.2380(3) 0 0.2423(6) 0.005(1) 1 0
+O3 O2- 4 i 0.0727(3) 0 0.2899(6) 0.005(1) 1 0
+O4 O2- 4 i 0.2963(3) 0 0.5734(6) 0.005(1) 1 0
+O5 O2- 4 i 0.1297(3) 0 0.6110(7) 0.005(1) 1 0
+O6 O2- 4 i 0.3549(3) 0 0.8885(6) 0.005(1) 1 0
+O7 O2- 4 i 0.1611(3) 0 0.9077(4) 0.005(1) 1 0
+#End of TTdata_182966-ICSD

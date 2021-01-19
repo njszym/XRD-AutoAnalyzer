@@ -1,0 +1,116 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_188312-ICSD
+_database_code_ICSD 188312
+_audit_creation_date 2014-02-01
+_chemical_name_systematic 'Titanium manganese (9.122/43.878)'
+_chemical_formula_structural 'Ti8 (Ti0.187 Mn0.813)6 Mn39'
+_chemical_formula_sum 'Mn43.878 Ti9.122'
+_exptl_crystal_density_diffrn 6.95
+_cell_measurement_temperature 293.
+_publ_section_title
+'Ti8 (Tix Mn1-x)6 Mn39 ('TiMn~4'): a metallic spin fluctuation system'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Physics: Condensed Matter' 2013 25 106002-1 106002-11 JCOMEL
+loop_
+_publ_author_name
+'Khan, Atta U.'
+'Rogl, G.'
+'Kriegisch, M.'
+'Michor, H.'
+'Mueller, H.'
+'Bauer, E.'
+'Grytsiv, A.'
+'Giester, G.'
+'Rogl, P.'
+_cell_length_a 11.0070(2)
+_cell_length_b 11.0070(2)
+_cell_length_c 19.4411(4)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 2039.81
+_cell_formula_units_Z 3
+_symmetry_space_group_name_H-M 'R -3 H'
+_symmetry_Int_Tables_number 148
+_refine_ls_R_factor_all 0.0293
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x-y, x, -z'
+2 'y, -x+y, -z'
+3 '-x, -y, -z'
+4 '-x+y, -x, z'
+5 '-y, x-y, z'
+6 'x, y, z'
+7 'x-y+2/3, x+1/3, -z+1/3'
+8 'y+2/3, -x+y+1/3, -z+1/3'
+9 '-x+2/3, -y+1/3, -z+1/3'
+10 '-x+y+2/3, -x+1/3, z+1/3'
+11 '-y+2/3, x-y+1/3, z+1/3'
+12 'x+2/3, y+1/3, z+1/3'
+13 'x-y+1/3, x+2/3, -z+2/3'
+14 'y+1/3, -x+y+2/3, -z+2/3'
+15 '-x+1/3, -y+2/3, -z+2/3'
+16 '-x+y+1/3, -x+2/3, z+2/3'
+17 '-y+1/3, x-y+2/3, z+2/3'
+18 'x+1/3, y+2/3, z+2/3'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti0+ 0
+Mn0+ 0
+Ti0+ 0
+Mn0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti0+ 6 c 0 0 0.42522(4) . 1. 0
+Ti2 Ti0+ 18 f 0.10472(5) 0.39701(5) 0.28951(2) . 1. 0
+Mn1 Mn0+ 18 f 0.24362(4) 0.42006(4) 0.16526(2) . 1. 0
+Mn2 Mn0+ 18 f 0.19262(4) 0.22167(4) 0.23438(2) . 1. 0
+Mn3 Mn0+ 6 c 0 0 0.19459(4) . 1. 0
+Mn4 Mn0+ 18 f 0.13914(4) 0.01949(4) 0.30480(2) . 1. 0
+Mn5 Mn0+ 18 f 0.10567(4) 0.38687(4) 0.06461(2) . 1. 0
+Mn6 Mn0+ 18 f 0.26519(4) 0.11339(4) 0.03567(2) . 1. 0
+Mn7 Mn0+ 18 f 0.12788(4) 0.17501(4) 0.10203(2) . 1. 0
+Mn8 Mn0+ 3 a 0 0 0 . 1. 0
+Ti3 Ti0+ 18 f 0.25766(4) 0.03674(4) 0.18145(2) . 0.187(4) 0
+Mn9 Mn0+ 18 f 0.25766(4) 0.03674(4) 0.18145(2) . 0.813(4) 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Ti1 Ti0+ 0.0086(2) 0.0086(2) 0.0070(3) 0.0043(1) 0. 0.
+Ti2 Ti0+ 0.0096(2) 0.0073(2) 0.0068(2) 0.0042(2) -0.0001(1) 0.0001(1)
+Mn1 Mn0+ 0.0086(2) 0.0086(2) 0.0080(2) 0.0043(1) -0.0003(1) 0.0001(1)
+Mn2 Mn0+ 0.0087(2) 0.0084(2) 0.0084(2) 0.0040(1) 0.0001(1) 0.0004(1)
+Mn3 Mn0+ 0.0089(2) 0.0089(2) 0.0087(3) 0.0045(1) 0. 0.
+Mn4 Mn0+ 0.0084(2) 0.0083(2) 0.0080(2) 0.0040(1) -0.0002(1) 0.0001(1)
+Mn5 Mn0+ 0.0082(2) 0.0092(2) 0.0078(2) 0.0042(1) -0.0001(1) 0.0001(1)
+Mn6 Mn0+ 0.0093(2) 0.0109(2) 0.0099(2) 0.0051(1) 0.0008(1) 0.0009(1)
+Mn7 Mn0+ 0.0116(2) 0.0113(2) 0.0090(2) 0.0061(2) 0.0009(1) -0.0001(1)
+Mn8 Mn0+ 0.0094(3) 0.0094(3) 0.0104(4) 0.0047(1) 0. 0.
+Ti3 Ti0+ 0.0092(2) 0.0100(2) 0.0103(2) 0.0047(1) 0.0010(1) 0.0002(1)
+Mn9 Mn0+ 0.0092(2) 0.0100(2) 0.0103(2) 0.0047(1) 0.0010(1) 0.0002(1)
+#End of TTdata_188312-ICSD

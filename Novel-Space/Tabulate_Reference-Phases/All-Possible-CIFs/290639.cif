@@ -1,0 +1,82 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_290639-ICSD
+_database_code_ICSD 290639
+_audit_creation_date 2014-02-01
+_chemical_name_systematic 'Dimanganese(III) oxide'
+_chemical_formula_structural 'Mn2 O3'
+_chemical_formula_sum 'Mn2 O3'
+_chemical_name_structure_type Mn2O3-alpha
+_chemical_name_mineral Bixbyite
+_exptl_crystal_density_diffrn 5.04
+_publ_section_title
+
+;
+Magnetic structure of bixbyite alpha-Mn2 O3. A combined DFT + U and neutron
+diffraction study
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Physical Review B: Condensed Matter and Materials Physics' 2013 87
+184413-1 184413-11 PRBMDO
+loop_
+_publ_author_name
+'Cockayne, Eric'
+'Levin, Igor'
+'Wu, Hui'
+'Llobet, Anna'
+_cell_length_a 9.4024
+_cell_length_b 9.4435
+_cell_length_c 9.3668
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 831.69
+_cell_formula_units_Z 16
+_symmetry_space_group_name_H-M 'P b c a'
+_symmetry_Int_Tables_number 61
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, y, -z+1/2'
+2 'x, -y+1/2, z+1/2'
+3 '-x+1/2, y+1/2, z'
+4 '-x, -y, -z'
+5 '-x+1/2, -y, z+1/2'
+6 '-x, y+1/2, -z+1/2'
+7 'x+1/2, -y+1/2, -z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn3+ 3
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn3+ 4 a 0 0 0 . 1. 0
+Mn2 Mn3+ 4 b 0.5 0.5 0.5 . 1. 0
+Mn3 Mn3+ 8 c 0.2602 0.2848 -0.0102 . 1. 0
+Mn4 Mn3+ 8 c 0.2857 -0.0034 0.245 . 1. 0
+Mn5 Mn3+ 8 c 0.0136 0.2457 0.2818 . 1. 0
+O1 O2- 8 c 0.4256 0.1233 0.3502 . 1. 0
+O2 O2- 8 c 0.1409 0.3506 0.405 . 1. 0
+O3 O2- 8 c 0.3568 0.4187 0.1196 . 1. 0
+O4 O2- 8 c 0.0845 0.3738 0.1395 . 1. 0
+O5 O2- 8 c 0.3815 0.1478 0.0798 . 1. 0
+O6 O2- 8 c 0.1567 0.0873 0.3608 . 1. 0
+#End of TTdata_290639-ICSD

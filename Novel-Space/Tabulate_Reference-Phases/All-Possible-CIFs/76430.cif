@@ -1,0 +1,82 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_76430-ICSD
+_database_code_ICSD 76430
+_audit_creation_date 2000-12-16
+_chemical_name_systematic 'Manganese(IV) oxide - epsilon'
+_chemical_formula_structural 'Mn O2'
+_chemical_formula_sum 'Mn1 O2'
+_chemical_name_structure_type hcp(filled)-Nb2N
+_chemical_name_mineral Akhtenskite
+_exptl_crystal_density_diffrn 4.87
+_publ_section_title 'The structure of the modifications of manganese oxide'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Izvestiya Akademii Nauk SSSR, Seriya Fizicheskaya' 1951 15 179 186
+IANFAY
+loop_
+_publ_author_name
+'Kondrashev, Yu.D.'
+'Zaslavskii, A.I.'
+_cell_length_a 2.786(1)
+_cell_length_b 2.786
+_cell_length_c 4.412(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 29.66
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'P 63/m m c'
+_symmetry_Int_Tables_number 194
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, x-y, -z+1/2'
+2 '-x+y, y, -z+1/2'
+3 '-y, -x, -z+1/2'
+4 '-x+y, -x, -z+1/2'
+5 '-y, x-y, -z+1/2'
+6 'x, y, -z+1/2'
+7 '-x, -x+y, z+1/2'
+8 'x-y, -y, z+1/2'
+9 'y, x, z+1/2'
+10 'x-y, x, z+1/2'
+11 'y, -x+y, z+1/2'
+12 '-x, -y, z+1/2'
+13 '-x, -x+y, -z'
+14 'x-y, -y, -z'
+15 'y, x, -z'
+16 'x-y, x, -z'
+17 'y, -x+y, -z'
+18 '-x, -y, -z'
+19 'x, x-y, z'
+20 '-x+y, y, z'
+21 '-y, -x, z'
+22 '-x+y, -x, z'
+23 '-y, x-y, z'
+24 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn4+ 2 a 0 0 0 . 0.5 0
+O1 O2- 2 c 0.3333 0.6667 0.25 . 1. 0
+#End of TTdata_76430-ICSD

@@ -1,0 +1,67 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_31122-ICSD
+_database_code_ICSD 31122
+_audit_creation_date 1986-09-24
+_audit_update_record 2006-04-01
+_chemical_name_systematic 'Titanium oxide'
+_chemical_formula_structural 'Ti O2'
+_chemical_formula_sum 'O2 Ti1'
+_chemical_name_structure_type Brookite-TiO2
+_chemical_name_mineral Brookite
+_exptl_crystal_density_diffrn 4.12
+_publ_section_title
+'Praezisionsbestimmung der Kristallstruktur des Brookites, Ti O2'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Zeitschrift fuer Kristallographie' 1959 111 401 420 ZEKRDZ
+loop_
+_publ_author_name
+'Weyl, R.'
+_cell_length_a 9.184
+_cell_length_b 5.447
+_cell_length_c 5.145
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 257.38
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'P b c a'
+_symmetry_Int_Tables_number 61
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, y, -z+1/2'
+2 'x, -y+1/2, z+1/2'
+3 '-x+1/2, y+1/2, z'
+4 '-x, -y, -z'
+5 '-x+1/2, -y, z+1/2'
+6 '-x, y+1/2, -z+1/2'
+7 'x+1/2, -y+1/2, -z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti4+ 8 c 0.128 0.098 0.863 . 1. 0
+O1 O2- 8 c 0.008 0.147 0.182 . 1. 0
+O2 O2- 8 c 0.229 0.11 0.53 . 1. 0
+#End of TTdata_31122-ICSD

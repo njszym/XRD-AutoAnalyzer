@@ -1,0 +1,67 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_27789-ICSD
+_database_code_ICSD 27789
+_audit_creation_date 1980-01-01
+_audit_update_record 2006-04-01
+_chemical_name_systematic 'Manganese(III) oxide hydroxide'
+_chemical_formula_structural 'Mn O (O H)'
+_chemical_formula_sum 'H1 Mn1 O2'
+_chemical_name_structure_type InOOH
+_chemical_name_mineral Manganite
+_exptl_crystal_density_diffrn 4.38
+_publ_section_title 'Structure cristalline de la manganite.'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Comptes Rendus Hebdomadaires des Seances de l'Academie des Sciences'
+1935 200 69 71 COREAF
+loop_
+_publ_author_name
+'Garrido, J.'
+_cell_length_a 4.43
+_cell_length_b 5.24
+_cell_length_c 2.875
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 66.74
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P n n m'
+_symmetry_Int_Tables_number 58
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y+1/2, z+1/2'
+2 '-x+1/2, y+1/2, z+1/2'
+3 'x, y, -z'
+4 '-x, -y, -z'
+5 '-x+1/2, y+1/2, -z+1/2'
+6 'x+1/2, -y+1/2, -z+1/2'
+7 '-x, -y, z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+O2- -2
+Mn3+ 3
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+O1 O2- 4 g 0.25 0.324 0 . 1. 0
+Mn1 Mn3+ 2 a 0 0 0 . 1. 0
+#End of TTdata_27789-ICSD

@@ -1,0 +1,98 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_48130-ICSD
+_database_code_ICSD 48130
+_audit_creation_date 1984-11-30
+_audit_update_record 2000-12-16
+_chemical_name_systematic 'Dititanium(III) dititanium oxide'
+_chemical_formula_structural 'Ti4 O7'
+_chemical_formula_sum 'O7 Ti4'
+_chemical_name_structure_type V4O7
+_exptl_crystal_density_diffrn 4.32
+_cell_measurement_temperature 115.
+_publ_section_title
+
+;
+Structural chemistry of magneli phases tin O(2n-1) (4< n< 9 ) IV.
+Superstructure in Ti4 O7 at 140 K
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1984 53 13 21 JSSCBI
+loop_
+_publ_author_name
+'le Page, Y.'
+'Marezio, M.'
+_cell_length_a 5.626(1)
+_cell_length_b 7.202(1)
+_cell_length_c 20.2599(40)
+_cell_angle_alpha 67.90(1)
+_cell_angle_beta 57.69(1)
+_cell_angle_gamma 109.68(1)
+_cell_volume 467.2
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'I -1'
+_symmetry_Int_Tables_number 2
+_refine_ls_R_factor_all 0.021
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+3 '-x+1/2, -y+1/2, -z+1/2'
+4 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti4+ 4
+Ti3+ 3
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti4+ 4 i 0.01623(8) 0.04010(6) 0.065650(23) . 1. 0
+Ti2 Ti4+ 4 i 0.09261(9) 0.04084(6) 0.204340(23) . 1. 0
+Ti3 Ti3+ 4 i 0.03165(8) 0.52671(6) 0.068270(22) . 1. 0
+Ti4 Ti3+ 4 i 0.08833(8) 0.55111(6) 0.193790(23) . 1. 0
+O1 O2- 4 i 0.8895(4) 0.6604(3) 0.14219(10) . 1. 0
+O2 O2- 4 i 0.0583(4) 0.3288(3) 0.01655(10) . 1. 0
+O3 O2- 4 i 0.0221(4) 0.2993(3) 0.16871(10) . 1. 0
+O4 O2- 4 i 0.6336(4) 0.8480(3) 0.07434(10) . 1. 0
+O5 O2- 4 i 0.6171(4) 0.8346(3) 0.22258(10) . 1. 0
+O6 O2- 4 i 0.3938(4) 0.1728(3) 0.06198(10) . 1. 0
+O7 O2- 4 i 0.4435(4) 0.1748(3) 0.19785(10) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Ti1 Ti4+ 0.00359(11) 0.00334(11) 0.00312(10) 0.00253(10) -.00266(10) -.00223(9)
+Ti2 Ti4+ 0.00318(11) 0.00336(10) 0.00314(10) 0.00241(10) -.00252(9) -.00219(9)
+Ti3 Ti3+ 0.00321(11) 0.00320(11) 0.00272(10) 0.00233(10) -.00219(10) -.00192(9)
+Ti4 Ti3+ 0.00272(11) 0.00309(10) 0.0030(1) 0.00206(10) -.00214(9) -.00198(9)
+O1 O2- 0.0044(5) 0.0044(5) 0.0039(4) 0.0031(4) -.0031(4) -.0027(4)
+O2 O2- 0.0062(5) 0.0049(5) 0.0054(5) 0.0043(4) -.0048(4) -.0038(4)
+O3 O2- 0.0043(5) 0.0039(5) 0.0045(4) 0.0030(4) -.0034(4) -.0028(4)
+O4 O2- 0.0035(5) 0.0047(5) 0.0041(4) 0.0025(4) -.0030(4) -.0030(4)
+O5 O2- 0.0041(5) 0.0039(5) 0.0038(4) 0.0027(4) -.0029(4) -.0026(4)
+O6 O2- 0.0036(5) 0.0048(5) 0.0040(4) 0.0027(4) -.0029(4) -.0029(4)
+O7 O2- 0.0043(5) 0.0047(5) 0.0045(4) 0.0030(4) -.0035(4) -.0029(4)
+#End of TTdata_48130-ICSD

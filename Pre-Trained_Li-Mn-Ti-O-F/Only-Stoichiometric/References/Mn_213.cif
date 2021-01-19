@@ -1,0 +1,88 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_163414-ICSD
+_database_code_ICSD 163414
+_audit_creation_date 2009-08-01
+_audit_update_record 2015-08-01
+_chemical_name_systematic 'Manganese - beta'
+_chemical_formula_structural Mn
+_chemical_formula_sum Mn1
+_chemical_name_structure_type Mn(cP20)
+_chemical_name_mineral Manganese-beta
+_exptl_crystal_density_diffrn 7.39
+_cell_measurement_temperature 12.
+_publ_section_title
+'Structure and magnetism of the beta-Mn-Co solid solution phase'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Alloys and Compounds' 2009 476 9 13 JALCEU
+loop_
+_publ_author_name
+'Karlsen, O.B.'
+'Kjekshus, A.'
+'Fjellvag, H.'
+'Ravindran, P.'
+'Vidya, R.'
+'Hauback, B.C.'
+_cell_length_a 6.2747(6)
+_cell_length_b 6.2747(6)
+_cell_length_c 6.2747(6)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 247.05
+_cell_formula_units_Z 20
+_symmetry_space_group_name_H-M 'P 41 3 2'
+_symmetry_Int_Tables_number 213
+_refine_ls_R_factor_all 0.07
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-z+1/4, y+3/4, x+1/4'
+2 'z+1/4, -y+1/4, x+3/4'
+3 'z+3/4, y+1/4, -x+1/4'
+4 '-z+3/4, -y+3/4, -x+3/4'
+5 'y+3/4, x+1/4, -z+1/4'
+6 '-y+1/4, x+3/4, z+1/4'
+7 'y+1/4, -x+1/4, z+3/4'
+8 '-y+3/4, -x+3/4, -z+3/4'
+9 'x+1/4, -z+1/4, y+3/4'
+10 'x+3/4, z+1/4, -y+1/4'
+11 '-x+1/4, z+3/4, y+1/4'
+12 '-x+3/4, -z+3/4, -y+3/4'
+13 'z+1/2, -x+1/2, -y'
+14 '-z+1/2, -x, y+1/2'
+15 '-z, x+1/2, -y+1/2'
+16 'z, x, y'
+17 '-y, z+1/2, -x+1/2'
+18 'y+1/2, -z+1/2, -x'
+19 '-y+1/2, -z, x+1/2'
+20 'y, z, x'
+21 '-x+1/2, -y, z+1/2'
+22 '-x, y+1/2, -z+1/2'
+23 'x+1/2, -y+1/2, -z'
+24 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn0+ 8 c 0.0650(3) 0.0650(3) 0.0650(3) . 1. 0
+Mn2 Mn0+ 12 d 0.125 0.1989(3) 0.4489(3) . 1. 0
+#End of TTdata_163414-ICSD

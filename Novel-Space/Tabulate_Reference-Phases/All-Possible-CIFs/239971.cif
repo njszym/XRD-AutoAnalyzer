@@ -1,0 +1,83 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_239971-ICSD
+_database_code_ICSD 239971
+_audit_creation_date 2017-08-01
+_chemical_name_systematic 'Dilithium manganate(IV)'
+_chemical_formula_structural 'Li2 Mn O3'
+_chemical_formula_sum 'Li2 Mn1 O3'
+_chemical_name_structure_type Li2MnO3
+_exptl_crystal_density_diffrn 3.85
+_publ_section_title
+
+;
+The origin of capacity fade in the Li2 Mn O3. Li M O2 (M = Li, Ni, Co, Mn)
+microsphere positive electrode: an operando neutron diffraction and
+transmission X-ray microscopy study
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of the American Chemical Society' 2016 138 8824 8833 JACSAT
+loop_
+_publ_author_name
+'Chen, Chih-Jung'
+'Pang, Wei Kong'
+'Mori, Tatsuhiro'
+'Peterson, Vanessa K.'
+'Sharma, Neeraj'
+'Lee, Po-Han'
+'Wu, She-huang'
+'Wang, Chun-Chieh'
+'Song, Yen-Fang'
+'Liu, Ru-Shi'
+_cell_length_a 4.952(2)
+_cell_length_b 8.562(1)
+_cell_length_c 5.037(2)
+_cell_angle_alpha 90
+_cell_angle_beta 109.42(2)
+_cell_angle_gamma 90
+_cell_volume 201.41
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'C 1 2/m 1'
+_symmetry_Int_Tables_number 12
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z'
+2 '-x, -y, -z'
+3 'x, -y, z'
+4 'x, y, z'
+5 '-x+1/2, y+1/2, -z'
+6 '-x+1/2, -y+1/2, -z'
+7 'x+1/2, -y+1/2, z'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li1+ 1
+Mn4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Li1 Li1+ 2 b 0 0.5 0 0.01 1. 0
+Li2 Li1+ 2 c 0 0 0.5 0.01 1. 0
+Li3 Li1+ 4 h 0 0.683(2) 0.5 0.01 1. 0
+Mn1 Mn4+ 4 g 0 0.184(1) 0 0.05(1) 1. 0
+O1 O2- 4 i 0.174(3) 0 0.232(2) 0.08(1) 1. 0
+O2 O2- 8 j 0.261(1) 0.341(1) 0.225(1) 0.02(1) 1. 0
+#End of TTdata_239971-ICSD

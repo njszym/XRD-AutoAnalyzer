@@ -1,0 +1,114 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_236255-ICSD
+_database_code_ICSD 236255
+_audit_creation_date 2013-08-01
+_chemical_name_systematic 'Dimanganese trioxide - zeta phase, HP HT'
+_chemical_formula_structural 'Mn2 O3'
+_chemical_formula_sum 'Mn2 O3'
+_exptl_crystal_density_diffrn 5.33
+_publ_section_title 'Perovskite-like Mn2 O3: a path to new manganites'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Angewandte Chemie, International Edition' 2013 52 1494 1498 ACIEF5
+loop_
+_publ_author_name
+'Ovsyannikov, Sergey V.'
+'Abakumov, Artem M.'
+'Tsirlin, Alexander A.'
+'Schnelle, Walter'
+'Egoavil, Ricardo'
+'Verbeeck, Jo'
+'Van Tendeloo, Gustaaf'
+'Glazyrin, Konstantin V.'
+'Hanfland, Michael'
+'Dubrovinsky, Leonid'
+_cell_length_a 14.6482(2)
+_cell_length_b 14.6482(2)
+_cell_length_c 14.6705(2)
+_cell_angle_alpha 89.2108(8)
+_cell_angle_beta 89.2031(9)
+_cell_angle_gamma 89.196(1)
+_cell_volume 3146.94
+_cell_formula_units_Z 64
+_symmetry_space_group_name_H-M 'F -1'
+_symmetry_Int_Tables_number 2
+_refine_ls_R_factor_all 0.049
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+3 '-x, -y+1/2, -z+1/2'
+4 'x, y+1/2, z+1/2'
+5 '-x+1/2, -y, -z+1/2'
+6 'x+1/2, y, z+1/2'
+7 '-x+1/2, -y+1/2, -z'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn3+ 3
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn3+ 8 i -0.2499(3) -0.0027(4) 0.5002(4) 0.0056(5) 1. 0
+Mn2 Mn3+ 8 i 0.5002(4) -0.2499(3) -0.0027(4) 0.0056(5) 1. 0
+Mn3 Mn3+ 8 i -0.0027(4) 0.5002(4) -0.2499(3) 0.0056(5) 1. 0
+Mn4 Mn3+ 4 b 0.25 0.75 0.5 0.0056(5) 1. 0
+Mn5 Mn3+ 4 d 0.5 0.25 0.75 0.0056(5) 1. 0
+Mn6 Mn3+ 4 c 0.75 0.5 0.25 0.0056(5) 1. 0
+Mn7 Mn3+ 4 e 0.75 0.25 0 0.0056(5) 1. 0
+Mn8 Mn3+ 4 g 0 0.75 0.25 0.0056(5) 1. 0
+Mn9 Mn3+ 4 f 0.25 0 0.75 0.0056(5) 1. 0
+Mn10 Mn3+ 8 i 0.7618(6) 0.7669(4) 0.7565(6) 0.0056(5) 1. 0
+Mn11 Mn3+ 4 h 0.5 0.5 0.5 0.0056(5) 1. 0
+Mn12 Mn3+ 4 a 0 0 0 0.0056(5) 1. 0
+Mn13 Mn3+ 8 i -0.3734(3) 0.3643(2) 0.1297(3) 0.0056(5) 1. 0
+Mn14 Mn3+ 8 i 0.1297(3) -0.3734(3) 0.3643(2) 0.0056(5) 1. 0
+Mn15 Mn3+ 8 i 0.3643(2) 0.1297(3) -0.3734(3) 0.0056(5) 1. 0
+Mn16 Mn3+ 8 i -0.1331(2) 0.1266(3) 0.6263(4) 0.0056(5) 1. 0
+Mn17 Mn3+ 8 i 0.6263(4) -0.1331(2) 0.1266(3) 0.0056(5) 1. 0
+Mn18 Mn3+ 8 i 0.1266(3) 0.6263(4) -0.1331(2) 0.0056(5) 1. 0
+Mn19 Mn3+ 8 i 0.3893(7) 0.3918(6) 0.3818(7) 0.0056(5) 1. 0
+Mn20 Mn3+ 8 i 0.8875(7) 0.8892(5) 0.8805(7) 0.0056(5) 1. 0
+O1 O2- 8 i -0.3304(9) 0.0080(8) 0.3901(8) 0.0056(5) 1. 0
+O2 O2- 8 i 0.3901(8) -0.3304(9) 0.0080(8) 0.0056(5) 1. 0
+O3 O2- 8 i 0.0080(8) 0.3901(8) -0.3304(9) 0.0056(5) 1. 0
+O4 O2- 8 i 0.1005(8) 0.2536(8) 0.3352(7) 0.0056(5) 1. 0
+O5 O2- 8 i 0.3352(7) 0.1005(8) 0.2536(8) 0.0056(5) 1. 0
+O6 O2- 8 i 0.2536(8) 0.3352(7) 0.1005(8) 0.0056(5) 1. 0
+O7 O2- 8 i -0.1809(9) -0.0101(8) 0.6039(8) 0.0056(5) 1. 0
+O8 O2- 8 i 0.6039(8) -0.1809(9) -0.0101(8) 0.0056(5) 1. 0
+O9 O2- 8 i -0.0101(8) 0.6039(8) -0.1809(9) 0.0056(5) 1. 0
+O10 O2- 8 i -0.1100(8) 0.2579(8) 0.6842(8) 0.0056(5) 1. 0
+O11 O2- 8 i 0.6842(8) -0.1100(8) 0.2579(8) 0.0056(5) 1. 0
+O12 O2- 8 i 0.2579(8) 0.6842(8) -0.1100(8) 0.0056(5) 1. 0
+O13 O2- 8 i -0.4291(9) 0.2313(9) 0.143(1) 0.0056(5) 1. 0
+O14 O2- 8 i 0.143(1) -0.4291(9) 0.2313(9) 0.0056(5) 1. 0
+O15 O2- 8 i 0.2313(9) 0.143(1) -0.4291(9) 0.0056(5) 1. 0
+O16 O2- 8 i 0.144(2) -0.014(2) 0.595(3) 0.0056(5) 1. 0
+O17 O2- 8 i 0.571(2) 0.142(3) -0.003(3) 0.0056(5) 1. 0
+O18 O2- 8 i -0.015(2) 0.562(2) 0.138(3) 0.0056(5) 1. 0
+O19 O2- 8 i -0.084(2) 0.263(2) 0.355(2) 0.0056(5) 1. 0
+O20 O2- 8 i 0.350(2) -0.074(2) 0.261(2) 0.0056(5) 1. 0
+O21 O2- 8 i 0.253(2) 0.327(2) -0.099(2) 0.0056(5) 1. 0
+O22 O2- 8 i -0.154(2) 0.510(2) 0.403(2) 0.0056(5) 1. 0
+O23 O2- 8 i 0.434(2) -0.143(3) 0.503(3) 0.0056(5) 1. 0
+O24 O2- 8 i 0.513(3) 0.438(2) -0.141(3) 0.0056(5) 1. 0
+#End of TTdata_236255-ICSD

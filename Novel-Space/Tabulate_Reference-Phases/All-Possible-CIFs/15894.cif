@@ -1,0 +1,71 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_15894-ICSD
+_database_code_ICSD 15894
+_audit_creation_date 1986-09-24
+_audit_update_record 2016-02-01
+_chemical_name_systematic 'Dititanium(III) titanium oxide'
+_chemical_formula_structural 'Ti3 O5'
+_chemical_formula_sum 'O5 Ti3'
+_chemical_name_structure_type Ti3O5
+_exptl_crystal_density_diffrn 4.24
+_publ_section_title 'Note on the crystal structure of trititanium pentoxide'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Acta Chemica Scandinavica ' 1957 11 1606 1607 ACSAA4
+loop_
+_publ_author_name
+'Asbrink, S.'
+'Magneli, A.'
+_cell_length_a 9.757
+_cell_length_b 3.802
+_cell_length_c 9.452
+_cell_angle_alpha 90.
+_cell_angle_beta 93.11
+_cell_angle_gamma 90.
+_cell_volume 350.12
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'C 1 2/m 1'
+_symmetry_Int_Tables_number 12
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z'
+2 '-x, -y, -z'
+3 'x, -y, z'
+4 'x, y, z'
+5 '-x+1/2, y+1/2, -z'
+6 '-x+1/2, -y+1/2, -z'
+7 'x+1/2, -y+1/2, z'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti3+ 3.33
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti3+ 4 i 0.129 0.5 0.043 . 1. 0
+Ti2 Ti3+ 4 i 0.28 0 0.268 . 1. 0
+Ti3 Ti3+ 4 i 0.053 0.5 0.366 . 1. 0
+O1 O2- 4 i 0.187 0 0.063 . 1. 0
+O2 O2- 4 i 0.236 0.5 0.239 . 1. 0
+O3 O2- 4 i 0.095 0 0.337 . 1. 0
+O4 O2- 4 i 0.454 0 0.161 . 1. 0
+O5 O2- 4 i 0.371 0 0.442 . 1. 0
+#End of TTdata_15894-ICSD

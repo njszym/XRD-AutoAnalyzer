@@ -1,0 +1,95 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_24342-ICSD
+_database_code_ICSD 24342
+_audit_creation_date 1980-01-01
+_audit_update_record 2006-04-01
+_chemical_name_systematic 'Manganese(III) oxide - alpha'
+_chemical_formula_structural 'Mn2 O3'
+_chemical_formula_sum 'Mn2 O3'
+_chemical_name_structure_type Mn2O3-alpha
+_exptl_crystal_density_diffrn 5.02
+_publ_section_title
+'Alpha-manganese(III) oxide - a C-type sesquioxide of orthorhombic symmetry'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Acta Chemica Scandinavica ' 1967 21 2871 2884 ACSAA4
+loop_
+_publ_author_name
+'Norrestam, R.'
+_cell_length_a 9.4118(8)
+_cell_length_b 9.4177(7)
+_cell_length_c 9.4233(7)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 835.26
+_cell_formula_units_Z 16
+_symmetry_space_group_name_H-M 'P b c a'
+_symmetry_Int_Tables_number 61
+_refine_ls_R_factor_all 0.03
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, y, -z+1/2'
+2 'x, -y+1/2, z+1/2'
+3 '-x+1/2, y+1/2, z'
+4 '-x, -y, -z'
+5 '-x+1/2, -y, z+1/2'
+6 '-x, y+1/2, -z+1/2'
+7 'x+1/2, -y+1/2, -z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn3+ 3
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn3+ 4 a 0 0 0 . 1. 0
+Mn2 Mn3+ 4 b 0.5 0.5 0.5 . 1. 0
+Mn3 Mn3+ 8 c 0.28469(7) 0.99377(12) 0.25240(25) . 1. 0
+Mn4 Mn3+ 8 c 0.00448(13) 0.24602(15) 0.28494(7) . 1. 0
+Mn5 Mn3+ 8 c 0.25285(15) 0.28531(6) 0.00134(16) . 1. 0
+O1 O2- 8 c 0.13378(59) 0.15082(48) 0.91546(71) . 1. 0
+O2 O2- 8 c 0.14472(60) 0.91494(49) 0.12817(58) . 1. 0
+O3 O2- 8 c 0.91968(65) 0.12400(45) 0.14574(81) . 1. 0
+O4 O2- 8 c 0.62466(63) 0.64529(53) 0.41718(66) . 1. 0
+O5 O2- 8 c 0.64856(66) 0.42004(44) 0.62737(70) . 1. 0
+O6 O2- 8 c 0.41156(63) 0.63450(47) 0.64916(90) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Mn1 Mn3+ 0.00168(32) 0.00104(26) 0.00036(24) 0.00011(10) 0.0003(10) -.00014(7)
+Mn2 Mn3+ 0.00030(24) 0.00089(25) 0.00163(31) -.00009(9) -.00001(10) 0.00015(7)
+Mn3 Mn3+ 0.00100(3) 0.00191(5) 0.00141(4) 0.00010(7) -.00001(10) -.00060(5)
+Mn4 Mn3+ 0.00210(5) 0.00149(4) 0.00093(3) -.00073(4) -.00021(10) -.00004(7)
+Mn5 Mn3+ 0.00135(4) 0.00107(3) 0.00198(4) -.00003(11) -.00062(4) -.00022(8)
+O1 O2- 0.00183(37) 0.00155(31) 0.00262(57) 0.00005(30) -.00115(37) 0.00074(34)
+O2 O2- 0.00128(41) 0.00276(36) 0.00117(52) 0.00016(34) -.00008(44) -.00093(33)
+O3 O2- 0.00258(40) 0.00160(29) 0.00077(38) -.00011(29) -.00035(35) -.00019(28)
+O4 O2- 0.00177(35) 0.00163(28) 0.00185(50) -.00023(27) -.00025(36) -.00089(34)
+O5 O2- 0.00159(43) 0.00124(30) 0.00345(76) -.00061(32) 0.00007(52) -.00055(35)
+O6 O2- 0.00202(37) 0.00208(32) 0.00214(53) -.00120(33) -.00035(34) 0.00032(33)
+#End of TTdata_24342-ICSD

@@ -1,0 +1,76 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_63642-ICSD
+_database_code_ICSD 63642
+_audit_creation_date 1988-12-19
+_audit_update_record 2012-08-01
+_chemical_name_systematic 'Distrontium dimanganese pentaoxide'
+_chemical_formula_structural 'Sr2 Mn2 O5'
+_chemical_formula_sum 'Mn2 O5 Sr2'
+_chemical_name_structure_type Ca2Mn2O5
+_exptl_crystal_density_diffrn 5.35
+_publ_section_title
+
+;
+Sr2Mn2O5, an oxygen-defect perovskite with Mn(III) in square pyramidal
+coordination
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Materials Research Bulletin' 1985 20 479 484 MRBUAC
+loop_
+_publ_author_name
+'Caignaert, V.'
+'Nguyen, N.'
+'Hervieu, M.'
+'Raveau, B.'
+_cell_length_a 5.523(1)
+_cell_length_b 10.761(5)
+_cell_length_c 3.811(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 226.5
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P b a m'
+_symmetry_Int_Tables_number 55
+_refine_ls_R_factor_all 0.031
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y+1/2, z'
+2 '-x+1/2, y+1/2, z'
+3 'x, y, -z'
+4 '-x, -y, -z'
+5 '-x+1/2, y+1/2, -z'
+6 'x+1/2, -y+1/2, -z'
+7 '-x, -y, z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn3+ 3
+O2- -2
+Sr2+ 2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn3+ 4 g 0.2583(2) 0.1236(1) 0 0.1 1. 0
+O1 O2- 4 h 0.2790(1) 0.0912(4) 0.5 0.73 1. 0
+O2 O2- 4 g 0.5530(6) 0.2259(5) 0 0.1 1. 0
+O3 O2- 2 a 0 0 0 0.1 1. 0
+#End of TTdata_63642-ICSD

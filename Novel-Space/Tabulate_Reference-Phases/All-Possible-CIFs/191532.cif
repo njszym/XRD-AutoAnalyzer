@@ -1,0 +1,79 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_191532-ICSD
+_database_code_ICSD 191532
+_audit_creation_date 2014-08-01
+_chemical_name_systematic 'Lithium manganese oxide (1.75/1.06/3)'
+_chemical_formula_structural 'Li1.75 Mn1.06 O3'
+_chemical_formula_sum 'Li1.75 Mn1.06 O3'
+_exptl_crystal_density_diffrn 3.9
+_publ_section_title
+
+;
+Electrochemical performances of 0.9 Li2 Mn O3 - 0.1 Li (Mn0.375 Ni0.375
+Co0.25) O2 cathodes: Role of the cycling induced layered to spinel phase
+transformation
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Solid State Ionics' 2014 256 19 28 SSIOD3
+loop_
+_publ_author_name
+'Ghanty, C.'
+'Basu, R.N.'
+'Majumder, S.B.'
+_cell_length_a 4.924
+_cell_length_b 8.526
+_cell_length_c 5.091
+_cell_angle_alpha 90.
+_cell_angle_beta 109.22
+_cell_angle_gamma 90.
+_cell_volume 201.82
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'C 1 2/m 1'
+_symmetry_Int_Tables_number 12
+_refine_ls_R_factor_all 0.24
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z'
+2 '-x, -y, -z'
+3 'x, -y, z'
+4 'x, y, z'
+5 '-x+1/2, y+1/2, -z'
+6 '-x+1/2, -y+1/2, -z'
+7 'x+1/2, -y+1/2, z'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn4+ 4
+Li1+ 1
+Mn4+ 4
+Li1+ 1
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn4+ 4 g 0 0.17 0 0.659 0.857 0
+Li1 Li1+ 2 b 0 0.5 0 0.537 0.504 0
+Mn2 Mn4+ 2 b 0 0.5 0 0.412 0.41 0
+Li2 Li1+ 2 c 0 0 0.5 0.34 1. 0
+Li3 Li1+ 4 h 0 0.671 0.5 0.463 1. 0
+O1 O2- 4 i 0.186 0 0.238 0.667 1. 0
+O2 O2- 8 j 0.256 0.314 0.225 0.141 1. 0
+#End of TTdata_191532-ICSD

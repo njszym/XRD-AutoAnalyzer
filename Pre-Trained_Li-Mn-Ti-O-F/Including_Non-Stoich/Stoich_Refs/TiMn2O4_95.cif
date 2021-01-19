@@ -1,0 +1,75 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_22313-ICSD
+_database_code_ICSD 22313
+_audit_creation_date 1980-01-01
+_audit_update_record 2010-02-01
+_chemical_name_systematic 'Dimanganese titanate'
+_chemical_formula_structural 'Mn2 (Ti O4)'
+_chemical_formula_sum 'Mn2 O4 Ti1'
+_chemical_name_structure_type TiMn2O4
+_exptl_crystal_density_diffrn 4.52
+_publ_section_title
+
+;
+Etude par diffraction neutronique de la forme ordonnee de l' orthotitanate de
+manganese - structure cristalline et structure magnetique
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Solid State Communications' 1968 6 269 275 SSCOA4
+loop_
+_publ_author_name
+'Bertaut, E.F.'
+'Vincent, H.'
+_cell_length_a 6.170(3)
+_cell_length_b 6.170(3)
+_cell_length_c 8.564(3)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 326.02
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P 43 2 2'
+_symmetry_Int_Tables_number 95
+_refine_ls_R_factor_all 0.08
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-y, -x, -z+3/4'
+2 'y, x, -z+1/4'
+3 'x, -y, -z+1/2'
+4 '-x, y, -z'
+5 'y, -x, z+1/4'
+6 '-y, x, z+3/4'
+7 '-x, -y, z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+O2- -2
+Ti4+ 4
+Mn2+ 2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+O1 O2- 8 d 0.272(3) 0.011(2) 0.009(3) 0.6 1. 0
+O2 O2- 8 d 0.292(3) 0.521(2) 0.015(3) 0.3 1. 0
+Ti1 Ti4+ 4 b 0.5 0.247(8) 0 0 1. 0
+Mn1 Mn2+ 4 a 0 0.242(8) 0 0.8 1. 0
+Mn2 Mn2+ 4 c 0.241(5) 0.241(5) 0.625 0.2 1. 0
+#End of TTdata_22313-ICSD

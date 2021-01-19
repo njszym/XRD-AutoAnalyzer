@@ -1,0 +1,138 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_281589-ICSD
+_database_code_ICSD 281589
+_audit_creation_date 2004-10-01
+_chemical_name_systematic 'Lithium manganese(III) manganese(IV) oxide - LT'
+_chemical_formula_structural 'Li Mn2 O4'
+_chemical_formula_sum 'Li1 Mn2 O4'
+_chemical_name_structure_type LiMn2O4
+_exptl_crystal_density_diffrn 4.28
+_cell_measurement_temperature 297.
+_publ_section_title 'Li Mn2 O4: a spinel-related low-temperature modification'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Acta Crystallographica, Section E: Structure Reports Online' 2004 60
+i18 i21 ACSEBH
+loop_
+_publ_author_name
+'Tateishi, K.'
+'Suda, K.'
+'du Boulay, D.'
+'Ishizawa, N.'
+'Oishi, S.'
+_cell_length_a 24.7550(9)
+_cell_length_b 24.8832(9)
+_cell_length_c 8.2003(3)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 5051.25
+_cell_formula_units_Z 72
+_symmetry_space_group_name_H-M 'F d d d Z'
+_symmetry_Int_Tables_number 70
+_refine_ls_R_factor_all 0.038
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+3/4, y+3/4, -z'
+2 'x+3/4, -y, z+3/4'
+3 '-x, y+3/4, z+3/4'
+4 '-x, -y, -z'
+5 '-x+1/4, -y+1/4, z'
+6 '-x+1/4, y, -z+1/4'
+7 'x, -y+1/4, -z+1/4'
+8 'x, y, z'
+9 'x+3/4, y+1/4, -z+1/2'
+10 'x+3/4, -y+1/2, z+1/4'
+11 '-x, y+1/4, z+1/4'
+12 '-x, -y+1/2, -z+1/2'
+13 '-x+1/4, -y+3/4, z+1/2'
+14 '-x+1/4, y+1/2, -z+3/4'
+15 'x, -y+3/4, -z+3/4'
+16 'x, y+1/2, z+1/2'
+17 'x+1/4, y+3/4, -z+1/2'
+18 'x+1/4, -y, z+1/4'
+19 '-x+1/2, y+3/4, z+1/4'
+20 '-x+1/2, -y, -z+1/2'
+21 '-x+3/4, -y+1/4, z+1/2'
+22 '-x+3/4, y, -z+3/4'
+23 'x+1/2, -y+1/4, -z+3/4'
+24 'x+1/2, y, z+1/2'
+25 'x+1/4, y+1/4, -z'
+26 'x+1/4, -y+1/2, z+3/4'
+27 '-x+1/2, y+1/4, z+3/4'
+28 '-x+1/2, -y+1/2, -z'
+29 '-x+3/4, -y+3/4, z'
+30 '-x+3/4, y+1/2, -z+1/4'
+31 'x+1/2, -y+3/4, -z+1/4'
+32 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn0+ 0
+Li0+ 0
+O0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn0+ 16 d 0.25 0.25 0.5 0.0092(4) 1. 0
+Mn2 Mn0+ 32 h 0.08098(3) 0.08515(3) 0.50078(8) 0.0097(3) 1. 0
+Mn3 Mn0+ 32 h 0.08407(4) 0.33028(4) 0.24970(7) 0.0093(2) 1. 0
+Mn4 Mn0+ 32 h 0.25330(3) 0.16797(3) 0.24552(8) 0.0087(3) 1. 0
+Mn5 Mn0+ 32 h 0.16670(3) 0.24425(3) 0.24413(7) 0.0083(3) 1. 0
+Li1 Li0+ 8 a 0.125 0.125 0.125 0.012(6) 1. 0
+Li2 Li0+ 16 f 0.375 0.2125(4) 0.375 0.011(5) 1. 0
+Li3 Li0+ 16 e 0.2057(4) 0.375 0.375 0.011(5) 1. 0
+Li4 Li0+ 32 h 0.2904(3) 0.2941(4) 0.1238(7) 0.011(3) 1. 0
+O1 O0+ 32 h 0.17421(13) 0.16794(14) 0.2618(4) 0.0106(12) 1. 0
+O2 O0+ 32 h 0.07879(13) 0.00779(13) 0.4798(4) 0.0112(12) 1. 0
+O3 O0+ 32 h 0.07873(15) 0.33193(14) 0.4818(4) 0.0119(12) 1. 0
+O4 O0+ 32 h 0.25251(16) 0.17247(12) 0.4771(4) 0.0134(13) 1. 0
+O5 O0+ 32 h 0.00630(12) 0.00677(12) 0.2387(4) 0.0109(13) 1. 0
+O6 O0+ 32 h 0.25616(14) 0.09018(12) 0.2385(4) 0.0104(13) 1. 0
+O7 O0+ 32 h 0.16281(14) 0.32326(12) 0.2352(3) 0.0109(13) 1. 0
+O8 O0+ 32 h 0.09041(11) 0.24386(12) 0.2346(4) 0.0109(13) 1. 0
+O9 O0+ 32 h 0.08407(19) 0.16142(13) 0.5160(4) 0.0176(15) 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Mn1 Mn0+ 0.0079(4) 0.0104(3) 0.0094(5) -.0008(3) -.0010(3) -.0007(3)
+Mn2 Mn0+ 0.0095(3) 0.0117(3) 0.0080(3) -.0009(2) -.0010(2) -.0004(2)
+Mn3 Mn0+ 0.0068(2) 0.0133(2) 0.0080(3) 0.0008(2) 0.0004(2) -.0007(2)
+Mn4 Mn0+ 0.0069(3) 0.0112(2) 0.0081(3) 0.0001(2) 0.0004(2) 0.0002(3)
+Mn5 Mn0+ 0.0061(3) 0.0104(2) 0.0083(3) 0.0005(2) -.0002(3) 0.0008(2)
+Li1 Li0+ 0.012(7) 0.020(7) 0.005(6) 0 0 0
+Li2 Li0+ 0.008(4) 0.016(5) 0.008(4) 0 -.002(4) 0
+Li3 Li0+ 0.011(5) 0.016(5) 0.006(4) 0 0 -.001(3)
+Li4 Li0+ 0.009(3) 0.014(3) 0.011(3) 0.000(2) -.002(3) 0.002(3)
+O1 O0+ 0.0080(13) 0.0123(11) 0.0114(12) -.001(1) 0.0015(10) -.0016(11)
+O2 O0+ 0.0109(13) 0.0134(12) 0.0093(12) 0.0013(10) 0.0005(13) 0.0007(11)
+O3 O0+ 0.0076(13) 0.0165(12) 0.0114(11) -.0004(11) 0.0018(12) 0.0007(12)
+O4 O0+ 0.0150(14) 0.0139(13) 0.0114(13) 0.0031(12) -.0010(12) 0.0008(12)
+O5 O0+ 0.0077(12) 0.0138(12) 0.0112(16) -.0005(10) -.0001(11) -.0024(11)
+O6 O0+ 0.0075(13) 0.0121(12) 0.0115(14) -.0005(9) -.0012(11) 0.0000(11)
+O7 O0+ 0.0075(13) 0.0139(13) 0.0113(13) 0.0005(11) 0.0007(11) -.0017(10)
+O8 O0+ 0.0061(12) 0.0155(13) 0.0110(13) -.0018(9) -.0004(11) 0.0009(11)
+O9 O0+ 0.0284(18) 0.0113(12) 0.0131(13) 0.0019(13) -.0028(15) -.0014(11)
+#End of TTdata_281589-ICSD

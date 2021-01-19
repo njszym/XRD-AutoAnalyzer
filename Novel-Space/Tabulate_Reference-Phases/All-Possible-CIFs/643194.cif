@@ -1,0 +1,117 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure, and the U.S. Secretary of
+#Commerce on behalf of the United States.  All rights reserved.
+data_643194-ICSD
+_database_code_ICSD 643194
+_audit_creation_date 2013-08-01
+_chemical_name_systematic 'Manganese oxide (2/3)'
+_chemical_formula_structural 'Mn2 O3'
+_chemical_formula_sum 'Mn2 O3'
+_chemical_name_structure_type Bixbyite-Mn2O3
+_chemical_name_mineral Bixbyite
+_exptl_crystal_density_diffrn 5.03
+_publ_section_title
+
+;
+Untersuchungen ueber die Kristallstruktur von Sesquioxyden und Verbindungen A
+B O3
+;
+_publ_section_comment 'Cell and Type only determined'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Papers - Norwegian Academy of Sciences and Letters, [Section] 1:
+Mathematics-Natural Sciences Section
+; 1928 1928 6 166 SUNVAQ
+loop_
+_publ_author_name
+'Zachariasen, W.H.'
+_cell_length_a 9.41(1)
+_cell_length_b 9.41(1)
+_cell_length_c 9.41(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 833.24
+_cell_formula_units_Z 16
+_symmetry_space_group_name_H-M 'I a -3'
+_symmetry_Int_Tables_number 206
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-z, x, y+1/2'
+2 'z, x+1/2, -y'
+3 'z+1/2, -x, y'
+4 '-z, -x, -y'
+5 'y+1/2, -z, x'
+6 '-y, z, x+1/2'
+7 'y, z+1/2, -x'
+8 '-y, -z, -x'
+9 'x, y+1/2, -z'
+10 'x+1/2, -y, z'
+11 '-x, y, z+1/2'
+12 '-x, -y, -z'
+13 'z, -x, -y+1/2'
+14 '-z, -x+1/2, y'
+15 '-z+1/2, x, -y'
+16 'z, x, y'
+17 '-y+1/2, z, -x'
+18 'y, -z, -x+1/2'
+19 '-y, -z+1/2, x'
+20 'y, z, x'
+21 '-x, -y+1/2, z'
+22 '-x+1/2, y, -z'
+23 'x, -y, -z+1/2'
+24 'x, y, z'
+25 '-z+1/2, x+1/2, y'
+26 'z+1/2, x, -y+1/2'
+27 'z, -x+1/2, y+1/2'
+28 '-z+1/2, -x+1/2, -y+1/2'
+29 'y, -z+1/2, x+1/2'
+30 '-y+1/2, z+1/2, x'
+31 'y+1/2, z, -x+1/2'
+32 '-y+1/2, -z+1/2, -x+1/2'
+33 'x+1/2, y, -z+1/2'
+34 'x, -y+1/2, z+1/2'
+35 '-x+1/2, y+1/2, z'
+36 '-x+1/2, -y+1/2, -z+1/2'
+37 'z+1/2, -x+1/2, -y'
+38 '-z+1/2, -x, y+1/2'
+39 '-z, x+1/2, -y+1/2'
+40 'z+1/2, x+1/2, y+1/2'
+41 '-y, z+1/2, -x+1/2'
+42 'y+1/2, -z+1/2, -x'
+43 '-y+1/2, -z, x+1/2'
+44 'y+1/2, z+1/2, x+1/2'
+45 '-x+1/2, -y, z+1/2'
+46 '-x, y+1/2, -z+1/2'
+47 'x+1/2, -y+1/2, -z'
+48 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn3+ 3
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn3+ 8 a 0 0 0 . 1. 0
+Mn2 Mn3+ 24 d 0.285 0 0.25 . 1. 0
+O1 O2- 48 e 0.129 0.147 -.083 . 1. 0
+#End of TTdata_643194-ICSD

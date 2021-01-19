@@ -1,0 +1,128 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure, and the U.S. Secretary of
+#Commerce on behalf of the United States.  All rights reserved.
+data_671956-ICSD
+_database_code_ICSD 671956
+_audit_creation_date 2017-08-01
+_chemical_name_systematic 'Titanium Oxide'
+_chemical_formula_structural 'Ti O2'
+_chemical_formula_sum 'O2 Ti1'
+_exptl_crystal_density_diffrn 3.71
+_publ_section_title
+
+;
+Three-phase junction for modulating electron-hole migration in anatase-rutile
+photocatalysts
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Chemical Science' 2015 6 3483 3494 CSHCCN
+loop_
+_publ_author_name
+'Zhao, Wei-Na'
+'Zhu, Sheng-Cai'
+'Li, Ye-Fei'
+'Liu, Zhi-Pan'
+_cell_length_a 5.2288
+_cell_length_b 5.5971
+_cell_length_c 26.9288
+_cell_angle_alpha 91.817
+_cell_angle_beta 90.106
+_cell_angle_gamma 90.524
+_cell_volume 787.67
+_cell_formula_units_Z 22
+_symmetry_space_group_name_H-M 'P 1'
+_symmetry_Int_Tables_number 1
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+O0+ 0
+Ti0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+O1 O0+ 1 a 0.4744 0.5401 0.0504 1. 1. 0
+O2 O0+ 1 a 0.4704 0.0601 0.8704 1. 1. 0
+O3 O0+ 1 a 0.9755 0.3028 0.9607 1. 1. 0
+O4 O0+ 1 a 0.972 0.7686 0.1418 1. 1. 0
+O5 O0+ 1 a 0.4531 0.9683 0.228 1. 1. 0
+O6 O0+ 1 a 0.2514 0.0409 0.0509 1. 1. 0
+O7 O0+ 1 a 0.7518 0.2712 0.1423 1. 1. 0
+O8 O0+ 1 a 0.239 0.5616 0.8715 1. 1. 0
+O9 O0+ 1 a 0.7457 0.805 0.9614 1. 1. 0
+O10 O0+ 1 a 0.2832 0.4704 0.2272 1. 1. 0
+O11 O0+ 1 a 0.753 0.1924 0.0368 1. 1. 0
+O12 O0+ 1 a 0.2506 0.4249 0.1254 1. 1. 0
+O13 O0+ 1 a 0.79 0.6669 0.222 1. 1. 0
+O14 O0+ 1 a 0.2576 0.8539 0.3036 1. 1. 0
+O15 O0+ 1 a 0.2463 0.9489 0.9464 1. 1. 0
+O16 O0+ 1 a 0.9743 0.69 0.0362 1. 1. 0
+O17 O0+ 1 a 0.4747 0.9236 0.1257 1. 1. 0
+O18 O0+ 1 a 0.9461 0.1649 0.22 1. 1. 0
+O19 O0+ 1 a 0.4769 0.4472 0.9456 1. 1. 0
+O20 O0+ 1 a 0.4554 0.3579 0.3048 1. 1. 0
+O21 O0+ 1 a 0.9826 0.1889 0.327 1. 1. 0
+O22 O0+ 1 a 0.2768 0.6293 0.3924 1. 1. 0
+O23 O0+ 1 a 0.3932 0.1291 0.3924 1. 1. 0
+O24 O0+ 1 a 0.7259 0.6969 0.3317 1. 1. 0
+O25 O0+ 1 a 0.9704 0.8197 0.7824 1. 1. 0
+O26 O0+ 1 a 0.7222 0.3212 0.7831 1. 1. 0
+O27 O0+ 1 a 0.7387 0.7047 0.8568 1. 1. 0
+O28 O0+ 1 a 0.9722 0.2028 0.8557 1. 1. 0
+O29 O0+ 1 a 0.4157 0.5589 0.6855 1. 1. 0
+O30 O0+ 1 a 0.9169 0.3701 0.6038 1. 1. 0
+O31 O0+ 1 a 0.2511 0.0625 0.687 1. 1. 0
+O32 O0+ 1 a 0.744 0.8721 0.6045 1. 1. 0
+O33 O0+ 1 a 0.7504 0.2472 0.6818 1. 1. 0
+O34 O0+ 1 a 0.226 0.4591 0.7652 1. 1. 0
+O35 O0+ 1 a 0.9209 0.7455 0.6812 1. 1. 0
+O36 O0+ 1 a 0.4664 0.9557 0.7638 1. 1. 0
+O37 O0+ 1 a 0.9013 0.9029 0.4268 1. 1. 0
+O38 O0+ 1 a 0.2921 0.3421 0.4822 1. 1. 0
+O39 O0+ 1 a 0.3761 0.8467 0.482 1. 1. 0
+O40 O0+ 1 a 0.7724 0.4043 0.4274 1. 1. 0
+O41 O0+ 1 a 0.2455 0.0734 0.5785 1. 1. 0
+O42 O0+ 1 a 0.4179 0.5723 0.5777 1. 1. 0
+O43 O0+ 1 a 0.7202 0.1162 0.5195 1. 1. 0
+O44 O0+ 1 a 0.949 0.6159 0.5188 1. 1. 0
+Ti1 Ti0+ 1 a 0. 0. 0. 1. 1. 0
+Ti2 Ti0+ 1 a 0.5042 0.2339 0.0899 1. 1. 0
+Ti3 Ti0+ 1 a 0.013 0.4656 0.1807 1. 1. 0
+Ti4 Ti0+ 1 a 0.5218 0.6651 0.2702 1. 1. 0
+Ti5 Ti0+ 1 a 0.4946 0.7558 0.9101 1. 1. 0
+Ti6 Ti0+ 1 a 0.7257 0.4965 0.9994 1. 1. 0
+Ti7 Ti0+ 1 a 0.223 0.7304 0.0894 1. 1. 0
+Ti8 Ti0+ 1 a 0.7175 0.9613 0.1803 1. 1. 0
+Ti9 Ti0+ 1 a 0.2248 0.2534 0.9091 1. 1. 0
+Ti10 Ti0+ 1 a 0.207 0.159 0.2692 1. 1. 0
+Ti11 Ti0+ 1 a 0.1062 0.9582 0.3661 1. 1. 0
+Ti12 Ti0+ 1 a 0.5651 0.4692 0.3694 1. 1. 0
+Ti13 Ti0+ 1 a 0.9863 0.5115 0.8207 1. 1. 0
+Ti14 Ti0+ 1 a 0.7167 0.0108 0.8185 1. 1. 0
+Ti15 Ti0+ 1 a 0.9759 0.0771 0.6405 1. 1. 0
+Ti16 Ti0+ 1 a 0.4796 0.2669 0.7299 1. 1. 0
+Ti17 Ti0+ 1 a 0.6893 0.5756 0.6394 1. 1. 0
+Ti18 Ti0+ 1 a 0.1994 0.7664 0.728 1. 1. 0
+Ti19 Ti0+ 1 a 0.0699 0.6416 0.4549 1. 1. 0
+Ti20 Ti0+ 1 a 0.5789 0.1407 0.4565 1. 1. 0
+Ti21 Ti0+ 1 a 0.1609 0.3881 0.5477 1. 1. 0
+Ti22 Ti0+ 1 a 0.5003 0.8917 0.5483 1. 1. 0
+#End of TTdata_671956-ICSD

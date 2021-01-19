@@ -1,0 +1,80 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_262928-ICSD
+_database_code_ICSD 262928
+_audit_creation_date 2012-08-01
+_chemical_name_systematic 'Manganese oxide (1/1)'
+_chemical_formula_structural 'Mn O'
+_chemical_formula_sum 'Mn1 O1'
+_chemical_name_structure_type Wurtzite-ZnS(2H)
+_exptl_crystal_density_diffrn 4.44
+_publ_section_title
+
+;
+New crystal structure: synthesis and characterization of hexagonal wurtzite Mn
+O
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of the American Chemical Society' 2012 134 8392 8395 JACSAT
+loop_
+_publ_author_name
+'Nam Ki Min'
+'Kim Yong-Il'
+'Jo Younghun'
+'Lee Seung Mi'
+'Kim Bog G.'
+'Choi Ran'
+'Choi Sang-Il'
+'Song Hyunjoon'
+'Park Joon T.'
+_cell_length_a 3.3717
+_cell_length_b 3.3717
+_cell_length_c 5.3855(7)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 53.02
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 63 m c'
+_symmetry_Int_Tables_number 186
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -x+y, z+1/2'
+2 'x-y, -y, z+1/2'
+3 'y, x, z+1/2'
+4 'x-y, x, z+1/2'
+5 'y, -x+y, z+1/2'
+6 '-x, -y, z+1/2'
+7 'x, x-y, z'
+8 '-x+y, y, z'
+9 '-y, -x, z'
+10 '-x+y, -x, z'
+11 '-y, x-y, z'
+12 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn2+ 2
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn2+ 2 b 0.33333 0.66667 0.01096 0.04952 1. 0
+O1 O2- 2 b 0.33333 0.66667 0.37547 0.03911 1. 0
+#End of TTdata_262928-ICSD

@@ -1,0 +1,95 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_10148-ICSD
+_database_code_ICSD 10148
+_audit_creation_date 1980-01-01
+_audit_update_record 2004-04-01
+_chemical_name_systematic 'Dititanium(III) dititanium oxide'
+_chemical_formula_structural 'Ti4 O7'
+_chemical_formula_sum 'O7 Ti4'
+_chemical_name_structure_type V4O7
+_exptl_crystal_density_diffrn 4.34
+_publ_section_title
+
+;
+Structural aspects of the metal-insulator transition in (Ti0.9975 V0.0025)4 O7
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1979 29 47 62 JSSCBI
+loop_
+_publ_author_name
+'Hodeau, J.L.'
+'Marezio, M.'
+_cell_length_a 5.5942(6)
+_cell_length_b 7.1216(8)
+_cell_length_c 12.460(1)
+_cell_angle_alpha 95.05(1)
+_cell_angle_beta 95.19(1)
+_cell_angle_gamma 108.76(1)
+_cell_volume 464.48
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'A -1'
+_symmetry_Int_Tables_number 2
+_refine_ls_R_factor_all 0.025
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+3 '-x, -y+1/2, -z+1/2'
+4 'x, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti3+ 3.5
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti3+ 4 i 0.21608(4) 0.15277(3) 0.06277(2) . 1. 0
+Ti2 Ti3+ 4 i 0.21852(4) 0.65265(4) 0.06621(2) . 1. 0
+Ti3 Ti3+ 4 i 0.68355(4) 0.44001(3) 0.20118(2) . 1. 0
+Ti4 Ti3+ 4 i 0.68834(4) 0.94242(3) 0.20132(2) . 1. 0
+O1 O2- 4 i 0.1077(2) 0.8629(2) 0.0152(1) . 1. 0
+O2 O2- 4 i 0.5868(2) 0.7926(2) 0.0581(1) . 1. 0
+O3 O2- 4 i 0.8560(2) 0.4963(2) 0.0814(1) . 1. 0
+O4 O2- 4 i 0.3285(2) 0.4385(1) 0.1387(1) . 1. 0
+O5 O2- 4 i 0.5261(2) 0.1449(1) 0.1639(1) . 1. 0
+O6 O2- 4 i 0.0379(2) 0.0708(2) 0.1984(1) . 1. 0
+O7 O2- 4 i 0.2950(2) 0.7902(1) 0.2237(1) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Ti1 Ti3+ 0.00371(5) 0.00214(3) 0.00064(1) 0.00099(3) 0.00005(2) 0.00011(1)
+Ti2 Ti3+ 0.00354(5) 0.00211(3) 0.00062(1) 0.00089(3) 0.00011(2) 0.00014(1)
+Ti3 Ti3+ 0.00375(5) 0.00197(3) 0.00068(1) 0.00097(3) 0.00038(2) 0.00018(1)
+Ti4 Ti3+ 0.00386(5) 0.00216(3) 0.00074(1) 0.00120(3) 0.00042(2) 0.00029(1)
+O1 O2- 0.0049(2) 0.0024(1) 0.00103(3) 0.0015(1) -.00011(6) 0.00031(5)
+O2 O2- 0.0043(2) 0.0031(1) 0.00086(3) 0.0006(1) 0.00058(6) 0.00014(5)
+O3 O2- 0.0049(2) 0.0034(1) 0.00076(3) 0.0009(1) 0.00056(6) 0.00018(5)
+O4 O2- 0.0044(2) 0.0022(1) 0.00083(3) 0.0014(1) -.00003(6) 0.00011(5)
+O5 O2- 0.0038(2) 0.0023(1) 0.00071(3) 0.0012(1) 0.00013(6) 0.00018(5)
+O6 O2- 0.0031(2) 0.0034(1) 0.00072(3) 0.0008(1) 0.00024(6) 0.00048(5)
+O7 O2- 0.0044(2) 0.0022(1) 0.00069(3) 0.0010(1) 0.00008(6) 0.00014(5)
+#End of TTdata_10148-ICSD

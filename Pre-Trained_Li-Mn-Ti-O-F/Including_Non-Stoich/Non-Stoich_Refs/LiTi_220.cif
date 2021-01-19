@@ -1,0 +1,63 @@
+# generated using pymatgen
+data_LiTi
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.73440000
+_cell_length_b   5.42360000
+_cell_length_c   5.73440000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiTi
+_chemical_formula_sum   'Li8 Ti8'
+_cell_volume   178.34610105
+_cell_formula_units_Z   8
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li0+  0.0
+  Ti0+  0.0
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li0+  Li0  1  0.213333  0.713333  0.786667  0.5
+  Ti0+  Ti1  1  0.213333  0.713333  0.786667  0.5
+  Li0+  Li2  1  0.786667  0.213333  0.713333  0.5
+  Ti0+  Ti3  1  0.786667  0.213333  0.713333  0.5
+  Li0+  Li4  1  0.713333  0.786667  0.213333  0.5
+  Ti0+  Ti5  1  0.713333  0.786667  0.213333  0.5
+  Li0+  Li6  1  0.286667  0.286667  0.286667  0.5
+  Ti0+  Ti7  1  0.286667  0.286667  0.286667  0.5
+  Li0+  Li8  1  0.536667  0.463333  0.963333  0.5
+  Ti0+  Ti9  1  0.536667  0.463333  0.963333  0.5
+  Li0+  Li10  1  0.463333  0.963333  0.536667  0.5
+  Ti0+  Ti11  1  0.463333  0.963333  0.536667  0.5
+  Li0+  Li12  1  0.963333  0.536667  0.463333  0.5
+  Ti0+  Ti13  1  0.963333  0.536667  0.463333  0.5
+  Li0+  Li14  1  0.036667  0.036667  0.036667  0.5
+  Ti0+  Ti15  1  0.036667  0.036667  0.036667  0.5
+  Li0+  Li16  1  0.713333  0.213333  0.286667  0.5
+  Ti0+  Ti17  1  0.713333  0.213333  0.286667  0.5
+  Li0+  Li18  1  0.286667  0.713333  0.213333  0.5
+  Ti0+  Ti19  1  0.286667  0.713333  0.213333  0.5
+  Li0+  Li20  1  0.213333  0.286667  0.713333  0.5
+  Ti0+  Ti21  1  0.213333  0.286667  0.713333  0.5
+  Li0+  Li22  1  0.786667  0.786667  0.786667  0.5
+  Ti0+  Ti23  1  0.786667  0.786667  0.786667  0.5
+  Li0+  Li24  1  0.036667  0.963333  0.463333  0.5
+  Ti0+  Ti25  1  0.036667  0.963333  0.463333  0.5
+  Li0+  Li26  1  0.963333  0.463333  0.036667  0.5
+  Ti0+  Ti27  1  0.963333  0.463333  0.036667  0.5
+  Li0+  Li28  1  0.463333  0.036667  0.963333  0.5
+  Ti0+  Ti29  1  0.463333  0.036667  0.963333  0.5
+  Li0+  Li30  1  0.536667  0.536667  0.536667  0.5
+  Ti0+  Ti31  1  0.536667  0.536667  0.536667  0.5

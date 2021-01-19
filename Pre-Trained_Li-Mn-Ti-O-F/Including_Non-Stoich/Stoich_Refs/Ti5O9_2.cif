@@ -1,0 +1,106 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_31401-ICSD
+_database_code_ICSD 31401
+_audit_creation_date 1980-01-01
+_audit_update_record 1985-05-31
+_chemical_name_systematic 'Titanium oxide (10/18)'
+_chemical_formula_structural 'Ti10 O18'
+_chemical_formula_sum 'O18 Ti10'
+_chemical_name_structure_type Ti5O9
+_exptl_crystal_density_diffrn 4.32
+_cell_measurement_temperature 115.
+_publ_section_title
+
+;
+Phase transitions in Ti5 O9 single crystals: Electrical conductivity, magnetic
+susceptibility, specific heat, electron paramagnetic resonance, and structural
+aspects
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Physical Review  B: Solid State' 1977 16 2811 2821 PLRBAQ
+loop_
+_publ_author_name
+'Marezio, M.'
+'Duc Tran Qui'
+'Lakkis, S.'
+'Schlenker, C.'
+_cell_length_a 5.565
+_cell_length_b 7.12
+_cell_length_c 8.875
+_cell_angle_alpha 97.57
+_cell_angle_beta 112.402
+_cell_angle_gamma 108.605
+_cell_volume 294.97
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'P -1'
+_symmetry_Int_Tables_number 2
+_refine_ls_R_factor_all 0.025
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti3+ 3.6
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti3+ 1 c 0 0.5 0 . 1. 0
+Ti2 Ti3+ 1 a 0 0 0 . 1. 0
+Ti3 Ti3+ 2 i 0.55517(6) 0.84526(5) 0.20716(4) . 1. 0
+Ti4 Ti3+ 2 i 0.54976(6) 0.34349(5) 0.20500(4) . 1. 0
+Ti5 Ti3+ 2 i 0.13774(6) 0.17409(5) 0.42116(4) . 1. 0
+Ti6 Ti3+ 2 i 0.14700(6) 0.67447(5) 0.42233(4) . 1. 0
+O1 O2- 2 i 0.6451(2) 0.8517(2) 0.0210(1) . 1. 0
+O2 O2- 2 i 0.1613(2) 0.8016(2) 0.0796(1) . 1. 0
+O3 O2- 2 i 0.3940(2) 0.5369(2) 0.1345(1) . 1. 0
+O4 O2- 2 i 0.9217(2) 0.4882(2) 0.2023(1) . 1. 0
+O5 O2- 2 i 0.2161(2) 0.1918(2) 0.2377(1) . 1. 0
+O6 O2- 2 i 0.7281(2) 0.1540(2) 0.3238(1) . 1. 0
+O7 O2- 2 i 0.9538(2) 0.8660(2) 0.3686(1) . 1. 0
+O8 O2- 2 i 0.4905(2) 0.8047(1) 0.4186(1) . 1. 0
+O9 O2- 2 i 0.7678(2) 0.5283(2) 0.4575(1) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Ti1 Ti3+ 0.00911(12) 0.00356(7) 0.00184(4) 0.00417(8) 0.00191(6) 0.00121(4)
+Ti2 Ti3+ 0.00477(10) 0.00176(6) 0.00113(4) 0.00139(4) 0.00082(5) 0.00046(4)
+Ti3 Ti3+ 0.00672(8) 0.00190(4) 0.00148(3) 0.00193(5) 0.00172(4) 0.00070(3)
+Ti4 Ti3+ 0.00430(7) 0.00208(4) 0.00129(3) 0.00146(4) 0.00083(4) 0.00061(3)
+Ti5 Ti3+ 0.00602(8) 0.00179(4) 0.00150(3) 0.00162(4) 0.00142(4) 0.00066(3)
+Ti6 Ti3+ 0.00492(7) 0.00183(4) 0.00149(3) 0.00119(4) 0.00040(3) 0.00052(3)
+O1 O2- 0.0060(3) 0.0027(2) 0.0022(1) 0.0016(2) 0.0015(1) 0.0010(1)
+O2 O2- 0.0050(3) 0.0019(1) 0.0019(1) 0.0012(1) 0.0010(1) 0.0005(1)
+O3 O2- 0.0049(2) 0.0021(1) 0.0017(1) 0.0015(1) 0.0009(1) 0.0008(1)
+O4 O2- 0.0058(3) 0.0022(1) 0.0013(1) 0.0012(2) 0.0008(1) 0.0004(1)
+O5 O2- 0.0059(3) 0.0028(1) 0.0016(1) 0.0017(2) 0.0014(1) 0.0008(1)
+O6 O2- 0.0051(2) 0.0024(1) 0.0014(1) 0.0012(2) 0.0010(1) 0.0005(1)
+O7 O2- 0.0048(2) 0.0025(1) 0.0014(1) 0.0011(2) 0.0010(1) 0.0006(1)
+O8 O2- 0.0048(2) 0.0025(1) 0.0014(1) 0.0012(2) 0.0010(1) 0.0006(1)
+O9 O2- 0.0055(3) 0.0023(1) 0.0015(1) 0.0015(2) 0.0007(1) 0.0006(1)
+#End of TTdata_31401-ICSD

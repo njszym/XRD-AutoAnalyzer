@@ -1,0 +1,68 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_26754-ICSD
+_database_code_ICSD 26754
+_audit_creation_date 1986-09-26
+_audit_update_record 2012-02-01
+_chemical_name_systematic 'Manganese(III) hydroxide oxide'
+_chemical_formula_structural 'Mn (O H) O'
+_chemical_formula_sum 'H1 Mn1 O2'
+_chemical_name_structure_type MnOOH
+_chemical_name_mineral Manganite
+_exptl_crystal_density_diffrn 4.41
+_publ_section_title
+'The symmetry and crystal structure of manganite, Mn (O H) O'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Zeitschrift fuer Kristallographie' 1936 95 163 174 ZEKRDZ
+loop_
+_publ_author_name
+'Buerger, M.J.'
+_cell_length_a 8.86
+_cell_length_b 5.24
+_cell_length_c 5.7
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 264.63
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'B 1 21/d 1'
+_symmetry_Int_Tables_number 14
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+3/4, -y+1/2, z+3/4'
+2 '-x+1/4, y+1/2, -z+1/4'
+3 '-x, -y, -z'
+4 'x, y, z'
+5 'x+1/4, -y+1/2, z+1/4'
+6 '-x+3/4, y+1/2, -z+3/4'
+7 '-x+1/2, -y, -z+1/2'
+8 'x+1/2, y, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn3+ 3
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn3+ 8 e 0 0 0.258 . 1. 0
+O1 O2- 8 e 0.119 0.122 0 . 1. 0
+O2 O2- 8 e 0.119 0.122 0.5 . 1. 0
+#End of TTdata_26754-ICSD

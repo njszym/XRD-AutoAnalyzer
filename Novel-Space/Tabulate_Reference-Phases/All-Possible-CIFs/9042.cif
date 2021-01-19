@@ -1,0 +1,89 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_9042-ICSD
+_database_code_ICSD 9042
+_audit_creation_date 1986-09-24
+_audit_update_record 2015-02-01
+_chemical_name_systematic 'Titanium oxide (9/17)'
+_chemical_formula_structural 'Ti9 O17'
+_chemical_formula_sum 'O17 Ti9'
+_chemical_name_structure_type Ti9O17
+_exptl_crystal_density_diffrn 4.3
+_publ_section_title
+
+;
+Crystal structure studies on the homologous series Tin O2n-1 Vn O2n-1 Tin-2
+Cr2 O2n-1
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Arkiv foer Kemi' 1963 21 413 426 ARKEAD
+loop_
+_publ_author_name
+'Andersson, S.'
+'Jahnberg, L.'
+_cell_length_a 5.57
+_cell_length_b 7.1
+_cell_length_c 22.15
+_cell_angle_alpha 97.1
+_cell_angle_beta 131.
+_cell_angle_gamma 109.8
+_cell_volume 543.26
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P -1'
+_symmetry_Int_Tables_number 2
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti0+ 0
+O0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti0+ 2 i 0.765 0.412 0.118 . 1. 0
+Ti2 Ti0+ 2 i 0.765 0.912 0.118 . 1. 0
+Ti3 Ti0+ 2 i 0.529 0.324 0.235 . 1. 0
+Ti4 Ti0+ 2 i 0.529 0.824 0.235 . 1. 0
+Ti5 Ti0+ 2 i 0.294 0.235 0.353 . 1. 0
+Ti6 Ti0+ 2 i 0.294 0.735 0.353 . 1. 0
+Ti7 Ti0+ 2 i 0.059 0.147 0.471 . 1. 0
+Ti8 Ti0+ 2 i 0.059 0.647 0.471 . 1. 0
+Ti9 Ti0+ 1 a 0 0 0 . 1. 0
+Ti10 Ti0+ 1 c 0 0.5 0 . 1. 0
+O1 O0+ 2 i 0.675 0.84 0.01 . 1. 0
+O2 O0+ 2 i 0.234 0.82 0.036 . 1. 0
+O3 O0+ 2 i 0.531 0.592 0.082 . 1. 0
+O4 O0+ 2 i 0.09 0.572 0.108 . 1. 0
+O5 O0+ 2 i 0.439 0.252 0.127 . 1. 0
+O6 O0+ 2 i 0.999 0.232 0.154 . 1. 0
+O7 O0+ 2 i 0.295 0.004 0.199 . 1. 0
+O8 O0+ 2 i 0.855 0.984 0.226 . 1. 0
+O9 O0+ 2 i 0.763 0.644 0.271 . 1. 0
+O10 O0+ 2 i 0.204 0.663 0.245 . 1. 0
+O11 O0+ 2 i 0.06 0.415 0.317 . 1. 0
+O12 O0+ 2 i 0.619 0.396 0.343 . 1. 0
+O13 O0+ 2 i 0.969 0.075 0.363 . 1. 0
+O14 O0+ 2 i 0.528 0.055 0.389 . 1. 0
+O15 O0+ 2 i 0.825 0.827 0.435 . 1. 0
+O16 O0+ 2 i 0.384 0.807 0.461 . 1. 0
+O17 O0+ 2 i 0.707 0.533 0.493 . 1. 0
+#End of TTdata_9042-ICSD

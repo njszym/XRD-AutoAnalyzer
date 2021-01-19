@@ -1,0 +1,76 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_426951-ICSD
+_database_code_ICSD 426951
+_audit_creation_date 2014-02-01
+_chemical_name_systematic Lithium
+_chemical_formula_structural Li
+_chemical_formula_sum Li1
+_chemical_name_structure_type Sm
+_exptl_crystal_density_diffrn 0.57
+_cell_measurement_temperature 0.
+_publ_section_title
+
+;
+Error estimates for solid-state density-functional theory predictions: an
+overview by means of the ground-state elemental crystals
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Critical Reviews in Solid State and Materials Sciences' 2014 39 1 24
+CCRSDA
+loop_
+_publ_author_name
+'Kurt Lejaeghere'
+'Veronique Van Speybroeck'
+'Guido Van Oost'
+'Stefaan Cottenier'
+_cell_length_a 7.64004
+_cell_length_b 7.64004
+_cell_length_c 7.64004
+_cell_angle_alpha 23.22001
+_cell_angle_beta 23.22001
+_cell_angle_gamma 23.22001
+_cell_volume 60.85
+_cell_formula_units_Z 3
+_symmetry_space_group_name_H-M 'R -3 m R'
+_symmetry_Int_Tables_number 166
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-z, -y, -x'
+2 '-z, -x, -y'
+3 '-x, -z, -y'
+4 '-y, -z, -x'
+5 '-y, -x, -z'
+6 '-x, -y, -z'
+7 'z, y, x'
+8 'z, x, y'
+9 'x, z, y'
+10 'y, z, x'
+11 'y, x, z'
+12 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Li1 Li0+ 1 a 0. 0. 0. 1. 1. 0
+Li2 Li0+ 2 c 0.222222 0.222222 0.222222 1. 1. 0
+#End of TTdata_426951-ICSD

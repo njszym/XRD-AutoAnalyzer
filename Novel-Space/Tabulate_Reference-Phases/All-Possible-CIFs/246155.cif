@@ -1,0 +1,110 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_246155-ICSD
+_database_code_ICSD 246155
+_audit_creation_date 2009-02-01
+_chemical_name_systematic 'Lithium mangano(II,III)titanate'
+_chemical_formula_structural 'Li Mn Ti O4'
+_chemical_formula_sum 'Li1 Mn1 O4 Ti1'
+_chemical_name_structure_type Spinel-LiFe5O8
+_exptl_crystal_density_diffrn 3.99
+_cell_measurement_temperature 293.
+_publ_section_title
+
+;
+Structural, thermal and magnetic properties of Li Mn Ti O4 spinel in different
+atmospheres
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Solid State Sciences' 2008 10 1612 1619 SSSCFJ
+loop_
+_publ_author_name
+'Arillo, M.A.'
+'Lopez, M.L.'
+'Pico, C.'
+'Veiga, M.L.'
+_cell_length_a 8.3297(7)
+_cell_length_b 8.3297(7)
+_cell_length_c 8.3297(7)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 577.95
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'P 43 3 2'
+_symmetry_Int_Tables_number 212
+_refine_ls_R_factor_all 0.0615
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'z+1/4, y+3/4, -x+3/4'
+2 '-z+3/4, y+1/4, x+3/4'
+3 'y+1/4, x+3/4, -z+3/4'
+4 '-y+3/4, x+1/4, z+3/4'
+5 'x+1/4, z+3/4, -y+3/4'
+6 '-x+3/4, z+1/4, y+3/4'
+7 'z+3/4, -y+3/4, x+1/4'
+8 '-z+1/4, -y+1/4, -x+1/4'
+9 'y+3/4, -x+3/4, z+1/4'
+10 '-y+1/4, -x+1/4, -z+1/4'
+11 'x+3/4, -z+3/4, y+1/4'
+12 '-x+1/4, -z+1/4, -y+1/4'
+13 '-y+1/2, -z, x+1/2'
+14 '-y, z+1/2, -x+1/2'
+15 'y+1/2, -z+1/2, -x'
+16 'y, z, x'
+17 'z+1/2, -x+1/2, -y'
+18 '-z+1/2, -x, y+1/2'
+19 '-z, x+1/2, -y+1/2'
+20 'z, x, y'
+21 '-x+1/2, -y, z+1/2'
+22 '-x, y+1/2, -z+1/2'
+23 'x+1/2, -y+1/2, -z'
+24 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li1+ 1
+Ti4+ 4
+Mn2+ 2
+Li1+ 1
+Ti4+ 4
+Mn3+ 3
+Mn4+ 4
+Li1+ 1
+Ti4+ 4
+Mn3+ 3
+Mn4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Li1 Li1+ 8 c -0.0035(6) -0.0035(6) -0.0035(6) . 0.63 0
+Ti1 Ti4+ 8 c -0.0035(6) -0.0035(6) -0.0035(6) . 0.27 0
+Mn1 Mn2+ 8 c -0.0035(6) -0.0035(6) -0.0035(6) . 0.1 0
+Li2 Li1+ 4 b 0.625 0.625 0.625 . 0.14 0
+Ti2 Ti4+ 4 b 0.625 0.625 0.625 . 0 0
+Mn2 Mn3+ 4 b 0.625 0.625 0.625 . 0.86 0
+Mn3 Mn4+ 4 b 0.625 0.625 0.625 . 0 0
+Li3 Li1+ 12 d 0.125 0.3727(3) 0.8771(4) . 0.2 0
+Ti3 Ti4+ 12 d 0.125 0.3727(3) 0.8771(4) . 0.4866 0
+Mn4 Mn3+ 12 d 0.125 0.3727(3) 0.8771(4) . 0.2466 0
+Mn5 Mn4+ 12 d 0.125 0.3727(3) 0.8771(4) . 0.0666 0
+O1 O2- 8 c 0.3879(2) 0.3879(2) 0.3879(2) . 1. 0
+O2 O2- 24 e 0.1313(1) 0.1050(8) 0.4021(6) . 1. 0
+#End of TTdata_246155-ICSD

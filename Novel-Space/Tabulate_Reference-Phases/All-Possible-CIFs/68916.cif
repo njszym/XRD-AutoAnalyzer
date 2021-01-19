@@ -1,0 +1,78 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_68916-ICSD
+_database_code_ICSD 68916
+_audit_creation_date 1992-01-20
+_audit_update_record 2015-02-01
+_chemical_name_systematic
+'Sodium manganese(IV) manganese(III) oxide hydrate (0.6/1.4/0.6/4/1.5)'
+_chemical_formula_structural 'Na.58 Mn1.42 Mn.58 O4 (H2 O)2.3'
+_chemical_formula_sum 'H4.6 Mn2 Na0.58 O6.3'
+_chemical_name_mineral 'Birnessite (Na-rich)'
+_exptl_crystal_density_diffrn 3.6
+_publ_section_title
+
+;
+Crystal structure determinations of synthetic sodium, magnesium and potassium
+birnessite using TEM and the Rietveld method
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'American Mineralogist' 1990 75 477 489 AMMIAY
+loop_
+_publ_author_name
+'Post, J.E.'
+'Veblen, D.R.'
+_cell_length_a 5.174(1)
+_cell_length_b 2.850(1)
+_cell_length_c 7.336(3)
+_cell_angle_alpha 90.
+_cell_angle_beta 103.18(2)
+_cell_angle_gamma 90.
+_cell_volume 105.33
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'C 1 2/m 1'
+_symmetry_Int_Tables_number 12
+_refine_ls_R_factor_all 0.085
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z'
+2 '-x, -y, -z'
+3 'x, -y, z'
+4 'x, y, z'
+5 '-x+1/2, y+1/2, -z'
+6 '-x+1/2, -y+1/2, -z'
+7 'x+1/2, -y+1/2, z'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn4+ 4
+Mn3+ 3
+O2- -2
+H1+ 1
+Na1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn4+ 2 a 0 0 0 0.5 0.71 0
+Mn2 Mn3+ 2 a 0 0 0 0.5 0.29 0
+O1 O2- 4 i 0.376(1) 0 0.133(1) 1. 1. 0
+O2 O2- 4 i 0.595(3) 0 0.500(3) 1.5 0.5 0
+O3 O2- 2 c 0 0 0.5 1.5 0.15 0
+#End of TTdata_68916-ICSD

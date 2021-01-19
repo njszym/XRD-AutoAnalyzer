@@ -1,0 +1,93 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_198910-ICSD
+_database_code_ICSD 198910
+_audit_creation_date 2019-02-01
+_chemical_name_systematic 'Manganese titanium  hydride (1.8/1.2/2.35)'
+_chemical_formula_structural 'Ti (Mn0.9 Ti0.1)2 H2.35'
+_chemical_formula_sum 'H2.35 Mn1.8 Ti1.2'
+_chemical_name_structure_type Mn2ZrHx-frame
+_exptl_crystal_density_diffrn 5.12
+_publ_section_title
+
+;
+Hydrides of ZrMn2-based alloys substoichiometric in zirconium for engineering
+applications
+;
+_publ_section_comment 'Cell and Type only determined'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of the Less-Common Metals' 1985 106 199 210 JCOMAH
+loop_
+_publ_author_name
+'Sinha, V.K.'
+'Wallace, W.E.'
+_cell_length_a 5.265
+_cell_length_b 5.265
+_cell_length_c 8.585
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 206.1
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P 63/m m c'
+_symmetry_Int_Tables_number 194
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, x-y, -z+1/2'
+2 '-x+y, y, -z+1/2'
+3 '-y, -x, -z+1/2'
+4 '-x+y, -x, -z+1/2'
+5 '-y, x-y, -z+1/2'
+6 'x, y, -z+1/2'
+7 '-x, -x+y, z+1/2'
+8 'x-y, -y, z+1/2'
+9 'y, x, z+1/2'
+10 'x-y, x, z+1/2'
+11 'y, -x+y, z+1/2'
+12 '-x, -y, z+1/2'
+13 '-x, -x+y, -z'
+14 'x-y, -y, -z'
+15 'y, x, -z'
+16 'x-y, x, -z'
+17 'y, -x+y, -z'
+18 '-x, -y, -z'
+19 'x, x-y, z'
+20 '-x+y, y, z'
+21 '-y, -x, z'
+22 '-x+y, -x, z'
+23 '-y, x-y, z'
+24 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti0+ 0
+Mn0+ 0
+Ti0+ 0
+Mn0+ 0
+Ti0+ 0
+H0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti0+ 4 f 0.3333 0.6667 0.063 . 1. 0
+Mn1 Mn0+ 2 a 0 0 0 . 0.9 0
+Ti2 Ti0+ 2 a 0 0 0 . 0.1 0
+Mn2 Mn0+ 6 h 0.83 0.66 0.25 . 0.9 0
+Ti3 Ti0+ 6 h 0.83 0.66 0.25 . 0.1 0
+#End of TTdata_198910-ICSD

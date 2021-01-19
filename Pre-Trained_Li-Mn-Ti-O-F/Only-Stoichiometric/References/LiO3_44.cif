@@ -1,0 +1,66 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_180565-ICSD
+_database_code_ICSD 180565
+_audit_creation_date 2011-08-01
+_chemical_name_systematic 'Lithium ozonide - hypothetical'
+_chemical_formula_structural 'Li O3'
+_chemical_formula_sum 'Li1 O3'
+_chemical_name_structure_type AgNO2
+_exptl_crystal_density_diffrn 2.33
+_publ_section_title
+'Structure, mechanical stability and chemical bond in alkali metal oxides'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Structural Chemistry' 2010 51 1005 1013 JSTCAM
+loop_
+_publ_author_name
+'Zhuravlev, Yu.N.'
+'Obolonskaya, O.S.'
+_cell_length_a 3.053
+_cell_length_b 4.931
+_cell_length_c 5.197
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 78.24
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'I m m 2'
+_symmetry_Int_Tables_number 44
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z'
+2 '-x, y, z'
+3 '-x, -y, z'
+4 'x, y, z'
+5 'x+1/2, -y+1/2, z+1/2'
+6 '-x+1/2, y+1/2, z+1/2'
+7 '-x+1/2, -y+1/2, z+1/2'
+8 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li1+ 1
+O0+ -0.333
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Li1 Li1+ 2 a 0 0 0.5139 . 1. 0
+O1 O0+ 2 a 0 0 0.0221 . 1. 0
+O2 O0+ 4 d 0 0.2303 0.8721 . 1. 0
+#End of TTdata_180565-ICSD

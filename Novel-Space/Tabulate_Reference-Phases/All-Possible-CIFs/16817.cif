@@ -1,0 +1,69 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_16817-ICSD
+_database_code_ICSD 16817
+_audit_creation_date 1986-09-23
+_audit_update_record 2012-02-01
+_chemical_name_systematic 'Dihydrogen oxide - Ice III'
+_chemical_formula_structural 'H2 O'
+_chemical_formula_sum 'H2 O1'
+_chemical_name_structure_type H2O(III,IX)
+_chemical_name_mineral 'Ice III'
+_exptl_crystal_density_diffrn 1.14
+_cell_measurement_temperature 123.
+_publ_section_title
+'Crystal structures of the high-pressure froms of ice: Ice III'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Nature (London, United Kingdom)' 1960 187 140 141 NATUAS
+loop_
+_publ_author_name
+'Kamb, W.B.'
+'Datta, S.K.'
+_cell_length_a 6.8
+_cell_length_b 6.8
+_cell_length_c 6.8
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 314.43
+_cell_formula_units_Z 12
+_symmetry_space_group_name_H-M 'P 41 21 2'
+_symmetry_Int_Tables_number 92
+_refine_ls_R_factor_all 0.26
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y+1/2, -z+3/4'
+2 '-x+1/2, y+1/2, -z+1/4'
+3 '-y, -x, -z+1/2'
+4 'y, x, -z'
+5 'y+1/2, -x+1/2, z+3/4'
+6 '-y+1/2, x+1/2, z+1/4'
+7 '-x, -y, z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+O1 O2- 8 b 0.095 0.3 0.29 . 1. 0
+O2 O2- 4 a 0.392 0.392 0 . 1. 0
+#End of TTdata_16817-ICSD

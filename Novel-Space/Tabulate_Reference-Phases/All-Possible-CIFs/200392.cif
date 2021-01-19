@@ -1,0 +1,93 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_200392-ICSD
+_database_code_ICSD 200392
+_audit_creation_date 1980-01-01
+_audit_update_record 2006-04-01
+_chemical_name_systematic 'Titanium oxide'
+_chemical_formula_structural 'Ti O2'
+_chemical_formula_sum 'O2 Ti1'
+_chemical_name_structure_type Anatase-TiO2
+_chemical_name_mineral Anatase
+_exptl_crystal_density_diffrn 3.91
+_publ_section_title
+'An electron-diffraction investigation of titanium dioxide in thin films'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary Kristallografiya 1977 22 1253 1258 KRISAJ
+loop_
+_publ_author_name
+'Khitrova, V.I.'
+'Bundule, M.F.'
+'Pinsker, Z.G.'
+_cell_length_a 3.78
+_cell_length_b 3.78
+_cell_length_c 9.51
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 135.88
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'I 41/a m d S'
+_symmetry_Int_Tables_number 141
+_refine_ls_R_factor_all 0.18
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'y, -x+1/2, z+1/4'
+2 '-y, x+1/2, z+1/4'
+3 'y, -x, -z'
+4 '-y, x, -z'
+5 '-y, -x+1/2, z+1/4'
+6 'y, x+1/2, z+1/4'
+7 '-y, -x, -z'
+8 'y, x, -z'
+9 'x, -y+1/2, -z+1/4'
+10 '-x, y+1/2, -z+1/4'
+11 'x, -y, z'
+12 '-x, y, z'
+13 '-x, -y+1/2, -z+1/4'
+14 'x, y+1/2, -z+1/4'
+15 '-x, -y, z'
+16 'x, y, z'
+17 'y+1/2, -x, z+3/4'
+18 '-y+1/2, x, z+3/4'
+19 'y+1/2, -x+1/2, -z+1/2'
+20 '-y+1/2, x+1/2, -z+1/2'
+21 '-y+1/2, -x, z+3/4'
+22 'y+1/2, x, z+3/4'
+23 '-y+1/2, -x+1/2, -z+1/2'
+24 'y+1/2, x+1/2, -z+1/2'
+25 'x+1/2, -y, -z+3/4'
+26 '-x+1/2, y, -z+3/4'
+27 'x+1/2, -y+1/2, z+1/2'
+28 '-x+1/2, y+1/2, z+1/2'
+29 '-x+1/2, -y, -z+3/4'
+30 'x+1/2, y, -z+3/4'
+31 '-x+1/2, -y+1/2, z+1/2'
+32 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti4+ 4 a 0 0 0 0.5 1. 0
+O1 O2- 8 e 0 0 0.1775(15) 0.7 1. 0
+#End of TTdata_200392-ICSD
