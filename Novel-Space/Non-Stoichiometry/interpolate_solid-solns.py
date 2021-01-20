@@ -21,7 +21,7 @@ matching_pairs = []
 for cmpd_A in os.listdir('References/'):
     struct_A = mg.Structure.from_file('References/%s' % cmpd_A)
     formula_A = struct_A.composition.reduced_formula
-    for cmpd_B in os.listdir('.'):
+    for cmpd_B in os.listdir('References/'):
         struct_B = mg.Structure.from_file('References/%s' % cmpd_B)
         formula_B = struct_B.composition.reduced_formula
         if formula_A != formula_B:
@@ -31,7 +31,7 @@ for cmpd_A in os.listdir('References/'):
                 comp_B = Composition(formula_B)
                 probable_oxis_A = comp_A.oxi_state_guesses()
                 probable_oxis_B = comp_B.oxi_state_guesses()
-                if len(probable_oxi_A) == 0: ## This occurs for metals, in which case we'll just use atomic radii
+                if len(probable_oxis_A) == 0: ## This occurs for metals, in which case we'll just use atomic radii
                     oxi_dict_A = {}
                     for elem in [str(f) for f in comp_A.elements]:
                         oxi_dict_A[elem] = 0.0
@@ -71,11 +71,9 @@ for cmpd_A in os.listdir('References/'):
                             possible_rB.append(pt.Element(elem_B).ionic_radii[int(np.floor(site_B_oxi))])
                             possible_rB.append(pt.Element(elem_B).ionic_radii[int(np.ceil(site_B_oxi))])
                         possible_diffs = []
-                        for rA_list in possible_rA:
-                            for rA in rA_list:
-                                for rB_list in possible_rB:
-                                    for rB in rB_list:
-                                        possible_diffs.append(abs(rA - rB)/max([rA, rB]))
+                        for rA in possible_rA:
+                            for rB in possible_rB:
+                                possible_diffs.append(abs(rA - rB)/max([rA, rB]))
                         if min(possible_diffs) > 0.15:
                             solubility = False
                 if solubility == True:
