@@ -1,5 +1,5 @@
-from pattern_augmentation import *
-from multiphase_tools import *
+from autoXRD.pattern_augmentation import *
+from autoXRD.multiphase_tools import *
 import pymatgen as mg
 import os
 import random
@@ -39,7 +39,7 @@ def calc_XRD_patterns(struct):
     all_I = [[val] for val in scaled_vals] ## Shape necessary for keras
     return all_I
 
-def generate_spectra(reference_folder)
+def generate_spectra(reference_folder):
 
     calculator = xrd.XRDCalculator()
 

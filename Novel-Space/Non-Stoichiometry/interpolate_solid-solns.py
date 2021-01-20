@@ -64,7 +64,7 @@ for cmpd_A in os.listdir('References/'):
                             possible_rA.append(pt.Element(elem_A).ionic_radii[int(np.floor(site_A_oxi))])
                             possible_rA.append(pt.Element(elem_A).ionic_radii[int(np.ceil(site_A_oxi))])
                         if site_B_oxi.is_integer():
-                            if site_A_oxi == 0:
+                            if site_B_oxi == 0:
                                 possible_rB = [pt.Element(elem_B).atomic_radius]
                             else:
                                 possible_rB = [pt.Element(elem_B).ionic_radii[site_B_oxi]]

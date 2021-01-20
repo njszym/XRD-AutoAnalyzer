@@ -5,15 +5,14 @@ from pymatgen.analysis import structure_matcher as sm
 
 
 def get_stoichiometric_info(cif_directory):
-    stoich_structs, temps, dates = []
+    stoich_structs, temps, dates = [], [], []
     for cmpd in os.listdir(cif_directory):
         struct = mg.Structure.from_file('%s/%s' % (cif_directory, cmpd))
-        for site in struct:
-            if sruct.is_ordered:
-                stoich_structs.append(struct)
-                t, d = parse_measurement_conditions(cif_directory, cmpd)
-                temps.append(t)
-                dates.append(d)
+        if struct.is_ordered:
+            stoich_structs.append(struct)
+            t, d = parse_measurement_conditions(cif_directory, cmpd)
+            temps.append(t)
+            dates.append(d)
     return stoich_structs, temps, dates
 
 def parse_measurement_conditions(cif_directory, filename):
@@ -29,7 +28,7 @@ def parse_measurement_conditions(cif_directory, filename):
 def get_unique_struct_info(stoich_refs, temps, dates):
     matcher = sm.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False)
     unique_frameworks = []
-    for struct_1 in ref_structs: ## First tabulate all unique structural frameworks
+    for struct_1 in stoich_refs: ## First tabulate all unique structural frameworks
         unique = True
         for struct_2 in unique_frameworks:
             if matcher.fit(struct_1, struct_2):
@@ -39,7 +38,7 @@ def get_unique_struct_info(stoich_refs, temps, dates):
     grouped_structs, grouped_temps, grouped_dates = [], [], []
     for framework in unique_frameworks:
         struct_class, temp_class, date_class = [], [], []
-        for (struct, t, d) in zip(ref_structs, temps, dates):
+        for (struct, t, d) in zip(stoich_refs, temps, dates):
             if matcher.fit(framework, struct):
                 struct_class.append(struct)
                 temp_class.append(t)
