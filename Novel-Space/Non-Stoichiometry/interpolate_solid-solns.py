@@ -35,11 +35,13 @@ for cmpd_A in os.listdir('References/'):
                     oxi_dict_A = {}
                     for elem in [str(f) for f in comp_A.elements]:
                         oxi_dict_A[elem] = 0.0
-                    oxi_dict_B = {}
-                    for elem in [str(f) for f in comp_A.elements]:
-                        oxi_dict_B[elem] = 0.0
                 else: ## Take most probable list of oxidation states
                     oxi_dict_A = probable_oxis_A[0]
+                if len(probable_oxis_B) == 0:
+                    oxi_dict_B = {}
+                    for elem in [str(f) for f in comp_B.elements]:
+                        oxi_dict_B[elem] = 0.0
+                else:
                     oxi_dict_B = probable_oxis_B[0]
                 try:
                     struct_B = matcher.get_s2_like_s1(struct_A, struct_B)
