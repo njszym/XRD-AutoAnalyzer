@@ -81,7 +81,7 @@ def tabulate_soluble_pairs(reference_directory):
     pair_list = [list(pair) for pair in unique_pairs]
     return pair_list
 
-def generate_solid_solns(pair)
+def generate_solid_solns(pair):
     struct_A = mg.Structure.from_file('References/%s' % pair[0])
     struct_B = mg.Structure.from_file('References/%s' % pair[1])
     try:
@@ -89,7 +89,7 @@ def generate_solid_solns(pair)
     except ValueError:
         struct_A = matcher.get_s2_like_s1(struct_B, struct_A)
     if (struct_A is None) or (struct_B is None): ## If a good match could not be made, ignore this pair
-        return None
+        return None, None
     else:
         index = 0
         A_species = []
