@@ -4,14 +4,29 @@ An autonomous deep learning model trained to perform phase identification from X
 
 ## Training the model on a new composition space
 
-To perform phase identification in a new composition space, carry out the following procedure in the Novel_Space directory:
+To perform phase identification in a new composition space, place all relevant CIFs into a reference folder contained by the Novel_Space directory. Then perform:
 
-1) In the Tabulate_Reference_Phases directory, place all possible CIF files of interest in the All-Possible_CIFs subfolder. Then run filter_references.py, which will create a References folder containing all unique reference phases.
+```
+python construct_model.py $CIF_FOLDER
+```
 
-2) If non-stoichiometry is to be considered, copy the References folder into the Non-Stoichiometry directory and run interpolate_solid-solns.py. This will create a Solid_Solns folder containing all hypothetical solid solutions that are interpolated from the stoichiometric reference phases. These may then be combined with all phases in the References folder.
+Where $CIF_FOLDER denotes the path to the reference folder containing all of the CIF files. This script will:
 
-3) Copy the References folder into the Generate_Training_Spectra directory and run get_patterns.py to simulate all diffraction spectra that will be used during training. This data will be written as XRD.npy.
+1) Filter all unique stoichiometric phases from the list of CIFs.
 
-4) Copy XRD.npy into the Train_CNN directory and run train.py to train the CNN. The resulting model will be generated as Model.h5.
+2) Generate hypothetical solid solutions from these phases.
 
-5) The model is now ready to be used. Place Model.h5 and the References directory into the Run_CNN folder. Any spectra of interest should be written in xy format and placed in the Spectra folder. Then the phase identification algorithm can be run using run_CNN.py, which will anayze any and all spectra contained in the Spectra folder. Predicted phases are given along with their associated confidence.
+3) Simulate augmented XRD spectra from the phases produced by (1) and (2).
+
+4) Train a CNN on the simulated spectra.
+
+If this procedure is completed successfully, a Model.h5 file will be available in the Novel_Space directory. Using this model, new spectra can be classified by:
+
+```
+python run_CNN.py $REFERENCE_FOLDER $SPECTRA_FOLDER
+```
+
+Where $REFERENCE_FOLDER is the path to the folder containing all unique reference phases and $SPECTRA_FOLDER is the path to the folder containing all spectra that are to be tested.
+
+The script will give all suspected phases for each spetrum along with their associated probabilities.
+
