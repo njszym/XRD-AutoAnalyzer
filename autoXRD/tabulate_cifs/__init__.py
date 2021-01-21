@@ -1,3 +1,4 @@
+import numpy as np
 import shutil
 import os
 import pymatgen as mg
@@ -62,6 +63,6 @@ def get_recent_RT_entry(grouped_structs, grouped_temps, grouped_dates):
                 candidate_dates.append(entry[2])
         zipped_info = list(zip(candidate_structs, candidate_dates))
         sorted_info = sorted(zipped_info, key=lambda x: x[1]) ## Sort by date
-        final_struct = sorted_info[-1] ## Take the entry that was measured most recently
+        final_struct = sorted_info[-1][0] ## Take the entry that was measured most recently
         filtered_cmpds.append(final_struct)
-    return filter_cmpds
+    return filtered_cmpds
