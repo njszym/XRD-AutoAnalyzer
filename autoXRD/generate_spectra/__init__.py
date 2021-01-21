@@ -6,12 +6,15 @@ from pymatgen.analysis.diffraction import xrd
 import numpy as np
 
 
-def calc_XRD_patterns(struct):
+def calc_XRD_patterns(struct, stick_pattern=False):
 
     ## Tabulate diffraction data and space groups
     pattern = calculator.get_pattern(struct)
     angles = pattern.x
     peaks = pattern.y
+    if stick_pattern:
+        peaks = 100*np.array(peaks)/max(peaks)
+        return angles, peaks
     x = np.linspace(10, 80, 4501)
     y = []
     for val in x:
