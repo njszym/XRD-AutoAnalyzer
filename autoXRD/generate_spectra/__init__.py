@@ -6,6 +6,8 @@ from pymatgen.analysis.diffraction import xrd
 import numpy as np
 
 
+calculator = xrd.XRDCalculator()
+
 def calc_XRD_patterns(struct, stick_pattern=False):
 
     ## Tabulate diffraction data and space groups
@@ -42,8 +44,6 @@ def calc_XRD_patterns(struct, stick_pattern=False):
     return all_I
 
 def get_augmented_patterns(reference_folder):
-
-    calculator = xrd.XRDCalculator()
 
     structures = []
     os.chdir(reference_folder)
