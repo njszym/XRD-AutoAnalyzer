@@ -3,14 +3,14 @@ import tensorflow as tf
 from random import shuffle
 
 
-def train_and_save(reserve_testing=False):
-    y_vals = np.load('XRD.npy')
-    phases = [val for val in range(len(y_vals))]
+def train_model(xrd, reserve_testing=False):
+
+    phases = [val for val in range(len(xrd))]
     data = zip(y_vals, phases)
 
     binaries = []
     for pattern in data:
-        for q in range(len(y_vals[0])):
+        for q in range(len(xrd[0])):
             w = 1.0
             I = w*np.array(pattern[0][q])
             P = [pattern[1]]

@@ -38,7 +38,7 @@ def calc_XRD_patterns(struct):
     all_I = [[val] for val in scaled_vals] ## Shape necessary for keras
     return all_I
 
-def generate_spectra(reference_folder):
+def get_augmented_patterns(reference_folder):
 
     calculator = xrd.XRDCalculator()
 
