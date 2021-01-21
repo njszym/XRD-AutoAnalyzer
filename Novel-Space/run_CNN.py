@@ -28,7 +28,7 @@ for (spectrum, phase_set, confidence) in zip(spectrum_names, predicted_phases, c
         i = 0
         for phase in phase_set.split(' + '):
             struct = mg.Structure.from_file('%s/%s.cif' % (reference_dir, phase))
-            angles, intensities = generate_spectra.calc_XRD_patterns(struct, stick_pattern=True)
+            angles, intensities = generate_spectra.calc_XRD(struct, stick_pattern=True)
             for (x, y) in zip(angles, intensities):
                 plt.vlines(x, 0, y, color=color_list[i])
             plt.plot([0], [0], color=color_list[i], label='Predicted: %s' % phase)

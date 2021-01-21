@@ -4,11 +4,14 @@ import os
 import random
 from pymatgen.analysis.diffraction import xrd
 import numpy as np
+import multiprocessing
+from multiprocessing import Pool, Manager
 
 
 calculator = xrd.XRDCalculator()
+num_cpu = multiprocessing.cpu_count()
 
-def calc_XRD_patterns(struct, stick_pattern=False):
+def calc_XRD(struct, stick_pattern=False):
 
     ## Tabulate diffraction data and space groups
     pattern = calculator.get_pattern(struct)
@@ -43,24 +46,36 @@ def calc_XRD_patterns(struct, stick_pattern=False):
     all_I = [[val] for val in scaled_vals] ## Shape necessary for keras
     return all_I
 
-def get_augmented_patterns(reference_folder):
+def augment(phase):
 
-    structures = []
-    os.chdir(reference_folder)
-    for phase in sorted(os.listdir('.')):
-        structures.append(mg.Structure.from_file(phase))
-    os.chdir('../')
+    struct, filename = phase[0], phase[1]
+    patterns = []
+    varied_structs = sample_strains(struct, 50)
+    for each_struct in varied_structs:
+        patterns.append(calc_XRD(each_struct))
+    for size in np.linspace(1, 100, 50):
+        patterns.append(shrink_domain(struct, size))
+    for texture_magnitude in np.linspace(0.05, 0.6, 50):
+        patterns.append(apply_texture(struct, texture_magnitude))
+    grouped_xrd.append(patterns)
+    grouped_filenames.append(filename)
 
-    y_vals = []
-    for struct in structures:
-        grouped_patterns = []
-       	varied_structs = sample_strains(struct, 50)
-        for each_struct in varied_structs:
-            grouped_patterns.append(calc_XRD_patterns(each_struct))
-        for size in np.linspace(1, 100, 50):
-            grouped_patterns.append(shrink_domain(struct, size))
-        for texture_magnitude in np.linspace(0.05, 0.6, 50):
-            grouped_patterns.append(apply_texture(struct, texture_magnitude))
-        y_vals.append(grouped_patterns)
 
-    return np.array(y_vals)
+def get_spectra(reference_folder):
+
+    phases = []
+    for filename in sorted(os.listdir(reference_folder)): ## Sort this so we can keep a consistent comparison later on
+        phases.append([mg.Structure.from_file('%s/%s' % (reference_folder, filename)), filename]) ## Keep track of filename associated with each structure
+
+    with Manager() as manager:
+
+        pool = Pool(num_cpu)
+        grouped_xrd = manager.list()
+        grouped_filenames = manager.list()
+
+        pool.map(augment, phases)
+        zipped_info = list(zip(grouped_xrd, grouped_filenames))
+        sorted_info = sorted(zipped_info, key=lambda x: x[1])
+        sorted_xrd = [group[0] for group in sorted_info]
+
+        return np.array(sorted_xrd)

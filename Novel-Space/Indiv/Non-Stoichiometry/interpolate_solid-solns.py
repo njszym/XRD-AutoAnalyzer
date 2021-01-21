@@ -1,4 +1,3 @@
-import shutil
 import warnings
 from pymatgen.core import periodic_table as pt
 import numpy as np
@@ -7,13 +6,6 @@ import pymatgen as mg
 from pymatgen import Composition
 from pymatgen.analysis import structure_matcher as sm
 
-
-if 'Solid_Solns' in os.listdir('.'):
-    check = input('Solid_Solns directory already exists. Do you wish to overwrite? (y/n)\n')
-    if check == 'y':
-        shutil.rmtree('Solid_Solns')
-    else:
-        exit()
 
 matcher = sm.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False, comparator=mg.analysis.structure_matcher.FrameworkComparator())
 nn_analyzer = mg.analysis.local_env.CrystalNN()
@@ -26,6 +18,7 @@ for cmpd_A in os.listdir('References/'):
         formula_B = struct_B.composition.reduced_formula
         if formula_A != formula_B:
             if matcher.fit(struct_A, struct_B):
+                print(formula_A, formula_B)
                 solubility = True
                 comp_A = Composition(formula_A)
                 comp_B = Composition(formula_B)
@@ -75,7 +68,7 @@ for cmpd_A in os.listdir('References/'):
                         possible_diffs = []
                         for rA in possible_rA:
                             for rB in possible_rB:
-                                possible_diffs.append(abs(rA - rB)/max([rA, rB]))
+                                possible_diffs.append(abs(float(rA) - float(rB))/max([float(rA), float(rB)]))
                         if min(possible_diffs) > 0.15:
                             solubility = False
                 if solubility == True:
@@ -95,62 +88,65 @@ for pair in unique_pairs:
         struct_B = matcher.get_s2_like_s1(struct_A, struct_B)
     except ValueError:
         struct_A = matcher.get_s2_like_s1(struct_B, struct_A)
-    index = 0
-    A_species = []
-    for site in struct_A: ## Create dummy structure but save original species and occupancies (needed for interpolation)
-        site_dict = site.as_dict()
-        A_species.append(site_dict['species'][0]['element'])
-        site_dict['species'] = []
-        site_dict['species'].append({'element': 'Li', 'oxidation_state': 0.0, 'occu': 1.0})
-        struct_A[index] = mg.PeriodicSite.from_dict(site_dict)
-        index += 1
-    index = 0
-    B_species = []
-    for site in struct_B: ## Create dummy structure but save original species and occupancies (needed for interpolation)
-        site_dict = site.as_dict()
-        B_species.append(site_dict['species'][0]['element'])
-        site_dict['species'] = []
-        site_dict['species'].append({'element': 'Li', 'oxidation_state': 0.0, 'occu': 1.0})
-        struct_B[index] = mg.PeriodicSite.from_dict(site_dict)
-        index += 1
-    interp_structs = struct_A.interpolate(struct_B, nimages=3, interpolate_lattices=True)
-    index = 0
-    for (A, B) in zip(A_species, B_species):
-        if A == B:
-            site_dict = interp_structs[1][index].as_dict()
+    if (struct_A is None) or (struct_B is None): ## If a good match could not be made, ignore this pair
+        continue
+    else:
+        index = 0
+        A_species = []
+        for site in struct_A: ## Create dummy structure but save original species and occupancies (needed for interpolation)
+            site_dict = site.as_dict()
+            A_species.append(site_dict['species'][0]['element'])
             site_dict['species'] = []
-            site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
-            interp_structs[1][index] = mg.PeriodicSite.from_dict(site_dict)
-            site_dict = interp_structs[2][index].as_dict()
+            site_dict['species'].append({'element': 'Li', 'oxidation_state': 0.0, 'occu': 1.0})
+            struct_A[index] = mg.PeriodicSite.from_dict(site_dict)
+            index += 1
+        index = 0
+        B_species = []
+        for site in struct_B: ## Create dummy structure but save original species and occupancies (needed for interpolation)
+            site_dict = site.as_dict()
+            B_species.append(site_dict['species'][0]['element'])
             site_dict['species'] = []
-            site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
-            interp_structs[2][index] = mg.PeriodicSite.from_dict(site_dict)
-            site_dict = interp_structs[3][index].as_dict()
-            site_dict['species'] = []
-            site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
-            interp_structs[3][index] = mg.PeriodicSite.from_dict(site_dict)
-        else:
-            site_dict = interp_structs[1][index].as_dict()
-            site_dict['species'] = []
-            site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 0.75})
-            site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.25})
-            interp_structs[1][index] = mg.PeriodicSite.from_dict(site_dict)
-            site_dict = interp_structs[2][index].as_dict()
-            site_dict['species'] = []
-            site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 0.5})
-            site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.5})
-            interp_structs[2][index] = mg.PeriodicSite.from_dict(site_dict)
-            site_dict = interp_structs[3][index].as_dict()
-            site_dict['species'] = []
-            site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 0.25})
-            site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.75})
-            interp_structs[3][index] = mg.PeriodicSite.from_dict(site_dict)
-        index += 1
-    os.chdir('Solid_Solns/')
-    fname = '%s_%s.cif' % (interp_structs[1].composition.reduced_formula, interp_structs[1].get_space_group_info()[1])
-    interp_structs[1].to(filename=fname, fmt='cif')
-    fname = '%s_%s.cif' % (interp_structs[2].composition.reduced_formula, interp_structs[2].get_space_group_info()[1])
-    interp_structs[2].to(filename=fname, fmt='cif')
-    fname = '%s_%s.cif' % (interp_structs[3].composition.reduced_formula, interp_structs[3].get_space_group_info()[1])
-    interp_structs[3].to(filename=fname, fmt='cif')
-    os.chdir('../')
+            site_dict['species'].append({'element': 'Li', 'oxidation_state': 0.0, 'occu': 1.0})
+            struct_B[index] = mg.PeriodicSite.from_dict(site_dict)
+            index += 1
+        interp_structs = struct_A.interpolate(struct_B, nimages=3, interpolate_lattices=True)
+        index = 0
+        for (A, B) in zip(A_species, B_species):
+            if A == B:
+                site_dict = interp_structs[1][index].as_dict()
+                site_dict['species'] = []
+                site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
+                interp_structs[1][index] = mg.PeriodicSite.from_dict(site_dict)
+                site_dict = interp_structs[2][index].as_dict()
+                site_dict['species'] = []
+                site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
+                interp_structs[2][index] = mg.PeriodicSite.from_dict(site_dict)
+                site_dict = interp_structs[3][index].as_dict()
+                site_dict['species'] = []
+                site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
+                interp_structs[3][index] = mg.PeriodicSite.from_dict(site_dict)
+            else:
+                site_dict = interp_structs[1][index].as_dict()
+                site_dict['species'] = []
+                site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 0.75})
+                site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.25})
+                interp_structs[1][index] = mg.PeriodicSite.from_dict(site_dict)
+                site_dict = interp_structs[2][index].as_dict()
+                site_dict['species'] = []
+                site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 0.5})
+                site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.5})
+                interp_structs[2][index] = mg.PeriodicSite.from_dict(site_dict)
+                site_dict = interp_structs[3][index].as_dict()
+                site_dict['species'] = []
+                site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 0.25})
+                site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.75})
+                interp_structs[3][index] = mg.PeriodicSite.from_dict(site_dict)
+            index += 1
+        os.chdir('Solid_Solns/')
+        fname = '%s_%s.cif' % (interp_structs[1].composition.reduced_formula, interp_structs[1].get_space_group_info()[1])
+        interp_structs[1].to(filename=fname, fmt='cif')
+        fname = '%s_%s.cif' % (interp_structs[2].composition.reduced_formula, interp_structs[2].get_space_group_info()[1])
+        interp_structs[2].to(filename=fname, fmt='cif')
+        fname = '%s_%s.cif' % (interp_structs[3].composition.reduced_formula, interp_structs[3].get_space_group_info()[1])
+        interp_structs[3].to(filename=fname, fmt='cif')
+        os.chdir('../')
