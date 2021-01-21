@@ -14,8 +14,10 @@ if 'XRD.npy' in os.listdir('.'):
         check = False
 
 if check == True:
-
-    stoich_refs, temps, dates = tabulate_cifs.get_stoichiometric_info(sys.argv[-1])
+    if len(sys.argv) != 1:
+        stoich_refs, temps, dates = tabulate_cifs.get_stoichiometric_info(sys.argv[-1])
+    else:
+        stoich_refs, temps, dates = tabulate_cifs.get_stoichiometric_info('All_CIFs')
     grouped_structs, grouped_temps, grouped_dates = tabulate_cifs.get_unique_struct_info(stoich_refs, temps, dates)
     final_cmpds = tabulate_cifs.get_recent_RT_entry(grouped_structs, grouped_temps, grouped_dates)
 
@@ -27,7 +29,7 @@ if check == True:
         filepath = 'References/%s_%s.cif' % (f, sg)
         struct.to(filename=filepath, fmt='cif')
 
-    assert len(os.listdir('References')) > 0:, 'Something went wrong. No references phases were found.'
+    assert len(os.listdir('References')) > 0:, 'Something went wrong. No reference phases were found.'
 
     xrd = generate_spectra.get_augmented_patterns('References')
     np.save('XRD', xrd)
