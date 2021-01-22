@@ -2,6 +2,8 @@
 
 A package designed to automate the process of phase identification from XRD spectra using a probabilistic deep learning trained with physics-informed data augmentation.
 
+The corresponding manuscript will be made available soon. Reproducing the published results can be accomplished through figshare (to be linked).
+
 ## Installation
 
 First clone the repository:
@@ -10,7 +12,7 @@ First clone the repository:
 git clone https://github.com/njszym/Auto-XRD.git
 ```
 
-Then, to install all required modeules, navigate to the cloned directory and execute:
+Then, to install all required modules, navigate to the cloned directory and execute:
 
 ```
 python setup.py install --user
