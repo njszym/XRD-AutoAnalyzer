@@ -2,7 +2,7 @@
 
 A package designed to automate the process of phase identification from XRD spectra using a probabilistic deep learning trained with physics-informed data augmentation.
 
-The corresponding manuscript will be made available soon. Reproducing the published results can be accomplished through figshare (to be linked).
+The corresponding manuscript will be made available soon. Reproducing the published results can be accomplished using the data provided in [figshare](https://figshare.com/s/69030545b8020de35633).
 
 ## Installation
 
