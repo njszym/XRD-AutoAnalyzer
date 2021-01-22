@@ -1,3 +1,4 @@
+import numpy as np
 import os
 import sys
 import pymatgen as mg
@@ -34,9 +35,9 @@ if check == True:
     assert len(os.listdir('References')) > 0, 'Something went wrong. No reference phases were found.'
 
     ## Generate hypothetical solid solutions
-    soluble_phases = tabulate_soluble_pairs('References')
+    soluble_phases = solid_solns.tabulate_soluble_pairs('References')
     for pair in soluble_phases:
-        solid_solutions = generate_solid_solns(pair)
+        solid_solutions = solid_solns.generate_solid_solns(pair)
         if solid_solutions != None:
             for struct in solid_solutions:
                 filepath = 'References/%s_%s.cif' % (struct.composition.reduced_formula, struct.get_space_group_info()[1])
@@ -44,7 +45,7 @@ if check == True:
                     struct.to(filename=filepath, fmt='cif')
 
     ## Simulate augmented XRD spectra from all reference phases
-    xrd = generate_spectra.get_augmented_patterns('References')
+    xrd = generate_spectra.get_spectra('References')
     np.save('XRD', xrd)
 
     ## Train and save the CNN using the simulated XRD spectra

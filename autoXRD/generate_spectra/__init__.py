@@ -57,9 +57,7 @@ def augment(phase):
         patterns.append(shrink_domain(struct, size))
     for texture_magnitude in np.linspace(0.05, 0.6, 50):
         patterns.append(apply_texture(struct, texture_magnitude))
-    grouped_xrd.append(patterns)
-    grouped_filenames.append(filename)
-
+    return (patterns, filename)
 
 def get_spectra(reference_folder):
 
@@ -70,12 +68,10 @@ def get_spectra(reference_folder):
     with Manager() as manager:
 
         pool = Pool(num_cpu)
-        grouped_xrd = manager.list()
-        grouped_filenames = manager.list()
+        grouped_xrd = pool.map(augment, phases)
+        sorted_xrd = sorted(grouped_xrd, key=lambda x: x[1]) ## Sort by reference filename
+        sorted_spectra = [group[0] for group in sorted_xrd]
 
-        pool.map(augment, phases)
-        zipped_info = list(zip(grouped_xrd, grouped_filenames))
-        sorted_info = sorted(zipped_info, key=lambda x: x[1])
-        sorted_xrd = [group[0] for group in sorted_info]
+        return np.array(sorted_spectra)
 
-        return np.array(sorted_xrd)
+

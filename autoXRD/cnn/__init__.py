@@ -6,7 +6,7 @@ from random import shuffle
 def train_model(xrd, reserve_testing=False):
 
     phases = [val for val in range(len(xrd))]
-    data = zip(y_vals, phases)
+    data = zip(xrd, phases)
 
     binaries = []
     for pattern in data:
