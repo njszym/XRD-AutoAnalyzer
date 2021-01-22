@@ -8,19 +8,21 @@ from pymatgen.analysis.diffraction import xrd
 
 def sample_strains(struct, num_strains):
 
+    ## Get space group (strain must preserve symmetry)
     sg = struct.get_space_group_info()[1]
 
-    varied_structs = []
-
+    ## Strain up to 4% in each component
     space_1 = np.linspace(0.96, 1.04, 1000)
     space_0 = np.linspace(-0.04, 0.04, 1000)
 
+    ## Get conventional structure
     sga = mg.symmetry.analyzer.SpacegroupAnalyzer(struct)
     struct = sga.get_conventional_standard_structure()
     struct_dict = struct.as_dict()
     lat = struct.lattice
     mat = lat.matrix
 
+    varied_structs = []
     if sg in list(range(195, 231)): ## Cubic
         for index in range(num_strains):
             temp_struct = mg.Structure.from_dict(struct_dict)
@@ -90,7 +92,6 @@ def sample_strains(struct, num_strains):
             varied_structs.append(temp_struct)
 
     ## Separate low- vs. high-symmetry tetragonal/hexagonal groups
-
     low_sym = list(range(75, 83)) + list(range(143, 149)) + list(range(168, 175))
     high_sym = list(set(list(range(75, 195))) - set(low_sym))
 
@@ -132,23 +133,29 @@ def sample_strains(struct, num_strains):
 
 
 def map_interval(x, magnitude):
+
+    ## Mapping from [0, 1] to [magnitude, 1]
     sc_num = 1.0 - magnitude
     return sc_num + ( ( (1.0 - sc_num) / (1.0 - 0.0) ) * (x - 0.0) )
 
 def apply_texture(struct, magnitude):
 
+    ## Get pattern and peak indicies
     calculator = xrd.XRDCalculator()
     pattern = calculator.get_pattern(struct, two_theta_range=(0,80))
     angles = pattern.x
     peaks = pattern.y
     hkls = [info[0]['hkl'] for info in pattern.hkls]
 
+    ## Hexagonal systems treated uniquely since they use four Miller indices by convention
     scaled_peaks = []
     if struct.lattice.is_hexagonal() == True:
         check = 0.0
         while check == 0.0:
             preferred_direction = [random.choice([0, 1]), random.choice([0, 1]), random.choice([0, 1]), random.choice([0, 1])]
             check = np.dot(np.array(preferred_direction), np.array(preferred_direction)) ## Make sure we don't have 0-vector
+
+    ## Otherwise, usual 3 indices are employed
     else:
         check = 0.0
         while check == 0.0:
@@ -163,6 +170,7 @@ def apply_texture(struct, magnitude):
         print(texture_factor)
         scaled_peaks.append(peak*texture_factor)
 
+    ## Generate spectrum with newly scaled peak intensities
     x = np.linspace(10, 80, 4501)
     y = []
     for val in x:
@@ -182,10 +190,10 @@ def apply_texture(struct, magnitude):
         noise = random.choice(np.linspace(-0.75, 0.75, 1000))
         all_I.append(sum(values) + noise)
 
-    yvals = all_I
-    shifted_vals = np.array(yvals) - min(yvals)
+    shifted_vals = np.array(all_I) - min(all_I)
     scaled_vals = 100*np.array(shifted_vals)/max(shifted_vals)
 
+    ## Re-shape for keras
     all_I = [[val] for val in scaled_vals]
     return all_I
 
@@ -226,8 +234,7 @@ def shrink_domain(struct, size):
         noise = random.choice(np.linspace(-0.75, 0.75, 1000))
         all_I.append(sum(values) + noise)
 
-    yvals = all_I
-    shifted_vals = np.array(yvals) - min(yvals)
+    shifted_vals = np.array(all_I) - min(all_I)
     scaled_vals = 100*np.array(shifted_vals)/max(shifted_vals)
 
     all_I = [[val] for val in scaled_vals]

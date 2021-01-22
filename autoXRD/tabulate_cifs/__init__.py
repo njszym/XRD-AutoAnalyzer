@@ -6,6 +6,7 @@ from pymatgen.analysis import structure_matcher as sm
 
 
 def get_stoichiometric_info(cif_directory):
+
     stoich_structs, temps, dates = [], [], []
     for cmpd in os.listdir(cif_directory):
         struct = mg.Structure.from_file('%s/%s' % (cif_directory, cmpd))
@@ -17,6 +18,7 @@ def get_stoichiometric_info(cif_directory):
     return stoich_structs, temps, dates
 
 def parse_measurement_conditions(cif_directory, filename):
+
     temp, date = 0.0, None
     with open('%s/%s' % (cif_directory, filename)) as entry:
         for line in entry.readlines():
@@ -27,6 +29,7 @@ def parse_measurement_conditions(cif_directory, filename):
     return temp, date
 
 def get_unique_struct_info(stoich_refs, temps, dates):
+
     matcher = sm.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False)
     unique_frameworks = []
     for struct_1 in stoich_refs: ## First tabulate all unique structural frameworks
@@ -50,6 +53,7 @@ def get_unique_struct_info(stoich_refs, temps, dates):
     return grouped_structs, grouped_temps, grouped_dates
 
 def get_recent_RT_entry(grouped_structs, grouped_temps, grouped_dates):
+
     filtered_cmpds = []
     for (struct_class, temp_class, date_class) in zip(grouped_structs, grouped_temps, grouped_dates):
         normalized_temps = abs(np.array(temp_class) - 293.0) ## Difference from RT

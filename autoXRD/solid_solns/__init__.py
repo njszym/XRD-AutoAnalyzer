@@ -118,6 +118,7 @@ def generate_solid_solns(pair):
         interp_structs = struct_A.interpolate(struct_B, nimages=3, interpolate_lattices=True)
         index = 0
         for (A, B) in zip(A_species, B_species):
+            ## Interpolation along 25%, 50%, 75% of the end-members
             if A == B:
                 site_dict = interp_structs[1][index].as_dict()
                 site_dict['species'] = []
@@ -148,4 +149,4 @@ def generate_solid_solns(pair):
                 site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': 0.75})
                 interp_structs[3][index] = mg.PeriodicSite.from_dict(site_dict)
             index += 1
-        return interp_structs[1:] ## return solid solutions interpolated along 25%, 50%, 75% compositions
+        return interp_structs[1:] ## ignore first structure (it's just an end-member)
