@@ -56,4 +56,18 @@ python run_CNN.py $REFERENCE_FOLDER $SPECTRA_FOLDER
 
 Where ```$REFERENCE_FOLDER``` is the path to the folder containing all unique reference phases and ```$SPECTRA_FOLDER``` is the path to the folder containing all spectra that are to be tested. By default, these are set to ```References/``` and ```Spectra/``` respectively.
 
+Output will appear as:
 
+```
+Filename: (name of the spectrum)
+Predicted phases: (phase_1 + phase_2 + ...)
+Confidence: (probability associated with the phases above)
+```
+
+Phase labels are denoted as ```formula_spacegroup```.
+
+To plot the line profiles of the predicted phases in the measured spectrum for comparison, the ```--plot``` option may be used:
+
+```
+python run_CNN.py --plot $REFERENCE_FOLDER $SPECTRA_FOLDER
+```
