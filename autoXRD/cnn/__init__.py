@@ -49,6 +49,8 @@ def train_model(xrd, reserve_testing=False):
         np.save('Test_Phases', phase_test)
     else:
         y_vals, phases = zip(*comb_data)
+        phases = np.array(phases)
+        int = np.array(y_vals)
 
     # Define network structure
     model = tf.keras.Sequential([

@@ -80,10 +80,9 @@ def are_soluble(pair_info):
 def tabulate_soluble_pairs(reference_directory):
     all_filenames = os.listdir(reference_directory)
     all_pairs = list(comb(all_filenames, 2))
-    pair_info = [pair + [reference_directory] for pair in all_pairs]
+    pair_info = [list(pair) + [reference_directory] for pair in all_pairs]
     with Manager() as manager:
         pool = Pool(num_cpu)
-        grouped_xrd = pool.map(augment, phases)
         matching_pairs = pool.map(are_soluble, pair_info)
         matching_pairs = [pair for pair in matching_pairs if pair != None]
         return matching_pairs
