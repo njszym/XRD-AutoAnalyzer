@@ -2,6 +2,10 @@
 
 An autonomous deep learning model trained to perform phase identification from XRD spectra. 
 
+## An example: running the model trained on the Li-Mn-Ti-O-F chemical space
+
+A ready-made model can be found in the Pre-Trained_Example directory. Experimentally measured test spectra are also supplied. The model can be run to classify these spectra by executing the run_CNN.py script.
+
 ## Training the model on a new composition space
 
 To perform phase identification in a new composition space, place all relevant CIFs into a reference folder contained by the Novel_Space directory. Then perform:
