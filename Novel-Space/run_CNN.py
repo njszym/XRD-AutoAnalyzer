@@ -7,8 +7,12 @@ import pymatgen as mg
 import matplotlib.pyplot as plt
 
 
-reference_dir = sys.argv[-2]
-spectrum_dir = sys.argv[-1]
+if len(sys.argv) > 1:
+    reference_dir = sys.argv[-2]
+    spectrum_dir = sys.argv[-1]
+else:
+    reference_dir = 'References'
+    spectrum_dir = 'Spectra'
 
 spectrum_names, predicted_phases, confidences = phase_ID.analyze(spectrum_dir, reference_dir)
 
