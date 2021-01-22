@@ -155,7 +155,6 @@ def apply_texture(struct, magnitude):
             preferred_direction = [random.choice([0, 1]), random.choice([0, 1]), random.choice([0, 1])]
             check = np.dot(np.array(preferred_direction), np.array(preferred_direction)) ## Make sure we don't have 0-vector
     for (hkl, peak) in zip(hkls, peaks):
-        print(hkl, preferred_direction)
         norm_1 = math.sqrt(np.dot(np.array(hkl), np.array(hkl)))
         norm_2 = math.sqrt(np.dot(np.array(preferred_direction), np.array(preferred_direction)))
         total_norm = norm_1 * norm_2
