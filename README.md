@@ -4,9 +4,21 @@ A package designed to automate the process of phase identification from XRD spec
 
 ## Installation
 
+First clone the repository:
+
+```
+git clone https://github.com/njszym/Auto-XRD.git
+```
+
+Then, to install all required modeules, navigate to the cloned directory and execute:
+
+```
+python setup.py install --user
+```
+
 ## Usage example
 
-A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example.``` directory. To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, run the following:
+A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example/``` directory. To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, run the following:
 
 ```
 python run_CNN.py
@@ -16,7 +28,7 @@ The characterization of each spectrum will take around 1-2 minutes on a single p
 
 ## Training the model for new compositions
 
-To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into a reference folder contained in the ```Novel_Space/``` directory (by default, the ```All_CIFs``` sub-folder will be used). Then execute:
+To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into a reference folder contained in the ```Novel_Space/``` directory (by default, the ```All_CIFs/``` sub-folder will be used). Then execute:
 
 ```
 python construct_model.py $CIF_FOLDER
@@ -40,6 +52,6 @@ When the procedure is completed, a Model.h5 file will be made available. Using t
 python run_CNN.py $REFERENCE_FOLDER $SPECTRA_FOLDER
 ```
 
-Where ```$REFERENCE_FOLDER``` is the path to the folder containing all unique reference phases and ```$SPECTRA_FOLDER``` is the path to the folder containing all spectra that are to be tested. By default, these are set to ```References/``` and ```Spectra``` respectively.
+Where ```$REFERENCE_FOLDER``` is the path to the folder containing all unique reference phases and ```$SPECTRA_FOLDER``` is the path to the folder containing all spectra that are to be tested. By default, these are set to ```References/``` and ```Spectra/``` respectively.
 
 
