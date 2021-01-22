@@ -18,64 +18,66 @@ import os
 
 
 def explore_mixtures(spectrum, kdp, reference_phases):
+    """
+    For now, this code can handle up to three-phase mixtures. Will extend to arbitary mixtures soon.
+    """
     total_confidence, all_predictions = [], []
     tabulate_conf, predicted_cmpd_set = [], []
-    measured_spectrum = prepare_pattern(spectrum) ## Clean up measured spectrum
+    measured_spectrum = prepare_pattern(spectrum) ## Clean up measured spectrum (baseline correction & smoothing)
     prediction_1, num_phases_1, certanties_1 = kdp.predict(measured_spectrum) ## Return predicted vector, number of probable phases (confidence > 10%), and associated confidence values
-    for i1 in range(num_phases_1): ## Consider all probable phases as a possible first phase
+    for i1 in range(num_phases_1): ## Consider all probable phases
         tabulate_conf.append(certanties_1[i1])
         phase_index = np.array(prediction_1).argsort()[-(i1+1)] ## Get index of 1st, 2nd, etc. most probable phase depending on i1
         predicted_cmpd = reference_phases[phase_index] ## Get predicted compound associated with probable phase defined above
         predicted_cmpd_set.append(predicted_cmpd)
         stripped_y_1, norm_1 = get_reduced_pattern(predicted_cmpd, measured_spectrum) ## Strips away predicted phase from original spectrum
-        if stripped_y_1 == 'All phases identified':
+        if stripped_y_1 == 'All phases identified': ## If intensities fall below 10% original maximum, assume all phases have been identified. May tune this cutoff to be more sensitive.
             total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
             all_predictions.append(predicted_cmpd_set)
             tabulate_conf, predicted_cmpd_set = [], []
-        else:
+        else: ## If intensities remain, investigate second phase
             prediction_2, num_phases_2, certanties_2 = kdp.predict([[val] for val in stripped_y_1])
             for i2 in range(num_phases_2):
                 phase_index = np.array(prediction_2).argsort()[-(i2+1)]
                 predicted_cmpd = reference_phases[phase_index]
                 if predicted_cmpd in predicted_cmpd_set: ## If we've already predicted this compound, go to next most probable
-                    all_predictions.append(predicted_cmpd_set) ## Only include first identified phase
-                    total_confidence.append(sum(tabulate_conf)/len(tabulate_conf)) ## Confidence associated with first phase
+                    all_predictions.append(predicted_cmpd_set)
+                    total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
                     if i2 == (num_phases_2 - 1):
-                        tabulate_conf, predicted_cmpd_set = [], [] ## If we're out of phases, then restart (move on to next branch)
+                        tabulate_conf, predicted_cmpd_set = [], [] ## If we're out of phases, then move on to next possible mixture
                     continue
-                else: ## If 2nd phase is new (different from 1st phase)
+                else: ## If 2nd phase is new
                     tabulate_conf.append(certanties_2[i2])
                     predicted_cmpd_set.append(predicted_cmpd)
-                stripped_y_2, norm_2 = get_reduced_pattern(predicted_cmpd, stripped_y_1, norm_1) ## Strips away predicted phase from original spectrum
-                if stripped_y_2 == 'All phases identified':
+                stripped_y_2, norm_2 = get_reduced_pattern(predicted_cmpd, stripped_y_1, norm_1)
+                if stripped_y_2 == 'All phases identified': ## If intensities fall below 10% original maximum, assume all phases have been identified. May tune this cutoff to be more sensitive.
                     total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
                     all_predictions.append(predicted_cmpd_set)
                     if i2 == (num_phases_2 - 1):
-                        tabulate_conf, predicted_cmpd_set = [], []
+                        tabulate_conf, predicted_cmpd_set = [], [] ## If we're out of phases, then move on to next possible mixture
                     else:
                         tabulate_conf, predicted_cmpd_set = tabulate_conf[:-1], predicted_cmpd_set[:-1]
-                else:
+                else:  ## If intensities remain, investigate third phase
                     prediction_3, num_phases_3, certanties_3 = kdp.predict([[val] for val in stripped_y_2])
                     for i3 in range(num_phases_3):
                         phase_index = np.array(prediction_3).argsort()[-(i3+1)]
                         predicted_cmpd = reference_phases[phase_index]
                         if predicted_cmpd in predicted_cmpd_set: ## If we've already predicted this compound, go to next most probable
-                            all_predictions.append(predicted_cmpd_set) ## Only include 1st and 2nd phases
-                            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf)) ## Confidence associated with 1st and 2nd phases
-                            ## Removed re-setting of tabulated stuff...I think this is the right move, but need to double-check
+                            all_predictions.append(predicted_cmpd_set)
+                            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
                             continue
-                        else: ## If 3rd phase is new (different from 1st and 2st phases)
+                        else: ## If 3rd phase is new
                             tabulate_conf.append(certanties_3[i3])
                             predicted_cmpd_set.append(predicted_cmpd)
-                            all_predictions.append(predicted_cmpd_set) ## First, second phase, and third phase
-                            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf)) ## Average confidence associated with all phases
-                            tabulate_conf = tabulate_conf[:-1] ## Remove third phase before moving onto next
-                            predicted_cmpd_set = predicted_cmpd_set[:-1] ## Remove third phase confidence before moving onto next
+                            all_predictions.append(predicted_cmpd_set)
+                            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
+                            tabulate_conf = tabulate_conf[:-1]
+                            predicted_cmpd_set = predicted_cmpd_set[:-1]
 
     return all_predictions, total_confidence
 
 
-def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0):
+def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=10):
     pred_y = generate_pattern(predicted_cmpd)
     dtw_info = dtw(pred_y, orig_y, window_type="slantedband", window_args={'window_size': 20}) ## corresponds to about 1.5 degree shift
     warp_indices = warp(dtw_info)
@@ -85,7 +87,7 @@ def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0):
     stripped_y = strip_spectrum(warped_spectrum, orig_y)
     stripped_y = smooth_spectrum(stripped_y)
     stripped_y = np.array(stripped_y) - min(stripped_y)
-    if max(stripped_y) >= (10*last_normalization):
+    if max(stripped_y) >= (cutoff*last_normalization):
         new_normalization = 100/max(stripped_y)
         stripped_y = new_normalization*stripped_y
         return stripped_y, new_normalization
@@ -95,26 +97,25 @@ def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0):
 
 def prepare_pattern(spectrum_name, smooth=True):
 
+    ## Load data
     data = np.loadtxt(spectrum_name)
     x = data[:, 0]
     y = data[:, 1]
 
+    ## Fit to 4,501 values as to be compatible with CNN
     f = ip.CubicSpline(x, y)
     xs = np.linspace(10, 80, 4501)
     ys = f(xs)
 
+    ## Smooth out noise
+    ys = smooth_spectrum(ys)
 
-    n = 20  # the larger n is, the smoother curve will be
-    b = [1.0 / n] * n
-    a = 1
-    yy = lfilter(b, a, ys)
-    ys = yy
-    ys[0:21] = [ys[21]]*21
-
+    ## Map to integers in range 0 to 255 so cv2 can handle
     ys = [val - min(ys) for val in ys]
     ys = [255*(val/max(ys)) for val in ys]
     ys = [int(val) for val in ys]
 
+    ## Perform baseline correction with cv2
     pixels = []
     for q in range(10):
         pixels.append(ys)
@@ -124,6 +125,7 @@ def prepare_pattern(spectrum_name, smooth=True):
     yb = np.array(background[0])
     ys = np.array(ys) - yb
 
+    ## Normalize from 0 to 100
     ys = np.array(ys) - min(ys)
     ys = list(100*np.array(ys)/max(ys))
 
@@ -195,8 +197,9 @@ class KerasDropoutPrediction(object):
         return prediction, len(certanties), certanties
 
 
-def smooth_spectrum(warped_spectrum):
-    n = 20  # the larger n is, the smoother curve will be
+def smooth_spectrum(warped_spectrum, n=20):
+    ## Note: the larger n is, the smoother curve will be
+    ## n=20 provides a reasonable choice for most spectra
     b = [1.0 / n] * n
     a = 1
     yy = lfilter(b, a, warped_spectrum)
