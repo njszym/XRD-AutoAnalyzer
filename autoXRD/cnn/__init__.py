@@ -5,52 +5,30 @@ from random import shuffle
 
 def train_model(xrd, reserve_testing=False):
 
-    phases = [val for val in range(len(xrd))]
-    data = zip(xrd, phases)
+    ## Label each XRD spectrum with an associated one-hot vector (phase index)
+    intensities, one_hot_vectors = [], []
+    phase_indices = [val for val in range(len(xrd))]
+    for (augmented_spectra, index) in zip(xrd, phase_indices):
+        for pattern in augmented_spectra:
+            intensities.append(pattern)
+            assigned_vec = [[0]]*len(xrd)
+            assigned_vec[index] = [1.0]
+            one_hot_vectors.append(assigned_vec)
+    intensities = np.array(intensities)
+    one_hot_vectors = np.array(one_hot_vectors)
 
-    binaries = []
-    for pattern in data:
-        for q in range(len(xrd[0])):
-            w = 1.0
-            I = w*np.array(pattern[0][q])
-            P = [pattern[1]]
-            F = [w]
-            binaries.append((I, P, F))
-
-    classified_binaries = []
-    for (I, P, F) in binaries: ## Encode one-hot vectors
-        phase_zeroes = [[0.0]]*len(phases)
-        for (phase_ind, phase_frac) in zip(P, F):
-            if phase_frac == 1.0:
-                phase_zeroes[phase_ind] = [1.0]
-        mixture_comp = np.array(phase_zeroes).flatten()
-        classified_binaries.append((I, mixture_comp))
-
-    I = [pair[0] for pair in classified_binaries]
-    mixture_class = [pair[1] for pair in classified_binaries]
-
-    y_vals = np.array(I)
-    phases = np.array(mixture_class)
-    num_cat = len(phases[0]) ## no. of phases
-    comb_data = list(zip(y_vals, phases))
-    shuffle(comb_data)
+    ## Split into training/testing data if specified
     if reserve_testing:
+        comb_data = list(zip(intensities, one_hot_vectors))
+        shuffle(comb_data)
         total_samples = len(comb_data)
         train_test_split = int(0.8*total_samples)
-        training_data = comb_data[:train_test_split] ## 80% of simulated patterns used for training
-        y_vals, phases = zip(*training_data)
-        phases = np.array(phases)
-        int = np.array(y_vals)
-        test_data =	comb_data[train_test_split:] ## 20% reserved for testing
-        y_test, phase_test = zip(*test_data)
-        y_test = np.array(y_test)
-        phase_test = np.array(phase_test)
-        np.save('Test_Spectra', y_test)
-        np.save('Test_Phases', phase_test)
-    else:
-        y_vals, phases = zip(*comb_data)
-        phases = np.array(phases)
-        int = np.array(y_vals)
+        training_data = comb_data[:train_test_split]
+        intensities, one_hot_vectors = zip(*training_data)
+        test_data =	comb_data[train_test_split:]
+        test_intensities, test_vecs = zip(*test_data)
+        np.save('Test_Spectra', test_intensities)
+        np.save('Test_Phases', test_vecs)
 
     # Define network structure
     model = tf.keras.Sequential([
@@ -72,16 +50,16 @@ def train_model(xrd, reserve_testing=False):
     tf.keras.layers.Dropout(0.7),
     tf.keras.layers.Dense(1200),
     tf.keras.layers.Dropout(0.7),
-    tf.keras.layers.Dense(num_cat)])
+    tf.keras.layers.Dense(len(xrd))])
 
     # Compile model
     model.compile(loss=tf.nn.sigmoid_cross_entropy_with_logits, optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.BinaryAccuracy()])
 
-    # Fit -- batch_size and nb_epoch subject to change
-    model.fit(int, phases, batch_size=32, nb_epoch=2,
+    # Fit model to training data
+    model.fit(intensities, one_hot_vectors, batch_size=32, nb_epoch=2,
     validation_split=0.2, shuffle=True)
 
-    # Evaluate
+    # Evaluate trained accuracy
     _, acc = model.evaluate(int, phases)
     print('Trained Accuracy: ' + str(acc*100) + '%')
 
