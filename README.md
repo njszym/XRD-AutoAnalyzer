@@ -8,7 +8,7 @@ A ready-made model can be found in the Pre-Trained_Example directory. Experiment
 
 ## Training the model on a new composition space
 
-To perform phase identification in a new composition space, place all relevant CIFs into a reference folder contained by the Novel_Space directory. Then perform:
+To perform phase identification in a new composition space, place all relevant CIFs into a reference folder contained by the Novel_Space directory (All_CIFs is used by default). Then perform:
 
 ```
 python construct_model.py $CIF_FOLDER
