@@ -1,7 +1,7 @@
 import os
 import sys
 import pymatgen as mg
-from autoXRD import *
+from autoXRD import cnn, generate_spectra, pattern_augmentation, solid_solns, tabulate_cifs
 
 
 check = True
@@ -31,7 +31,7 @@ if check == True:
         sg = struct.get_space_group_info()[1]
         filepath = 'References/%s_%s.cif' % (f, sg)
         struct.to(filename=filepath, fmt='cif')
-    assert len(os.listdir('References')) > 0:, 'Something went wrong. No reference phases were found.'
+    assert len(os.listdir('References')) > 0, 'Something went wrong. No reference phases were found.'
 
     ## Generate hypothetical solid solutions
     soluble_phases = tabulate_soluble_pairs('References')

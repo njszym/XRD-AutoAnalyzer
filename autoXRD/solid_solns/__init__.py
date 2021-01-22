@@ -75,12 +75,7 @@ def tabulate_soluble_pairs(reference_directory):
                             solubility = False
                 if solubility == True:
                     matching_pairs.append([cmpd_A, cmpd_B])
-    unique_pairs = []
-    for pair in matching_pairs:
-        if set(pair) not in unique_pairs:
-            unique_pairs.append(set(pair))
-    pair_list = [list(pair) for pair in unique_pairs]
-    return pair_list
+    return matching_pairs
 
 def generate_solid_solns(pair):
     struct_A = mg.Structure.from_file('References/%s' % pair[0])
