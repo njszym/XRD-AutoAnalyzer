@@ -20,7 +20,7 @@ python setup.py install --user
 
 ## Usage example
 
-A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example/``` directory. To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, run the following:
+Test patterns and reference phases spanning the Li-Mn-Ti-O-F chemical space are available in the ```Example/``` directory. A pre-trained model can be downloaded from [figshare](https://figshare.com/s/69030545b8020de35633). To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, download the ```Model.h5``` file, place it in the ```Example/``` directory, and run the following:
 
 ```
 python run_CNN.py
