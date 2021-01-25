@@ -23,7 +23,7 @@ def analyze(spectrum_dir, reference_dir):
     for fname in os.listdir(spectrum_dir):
         total_confidence, all_predictions = [], []
         tabulate_conf, predicted_cmpd_set = [], []
-        mixtures, confidence = explore_mixtures('%s/%s' % (spectrum_dir, fname), kdp, reference_phases)
+        mixtures, confidence = classify_mixture('%s/%s' % (spectrum_dir, fname), kdp, reference_phases)
         if len(confidence) > 0:
             max_conf_ind = np.argmax(confidence)
             max_conf = 100*confidence[max_conf_ind]

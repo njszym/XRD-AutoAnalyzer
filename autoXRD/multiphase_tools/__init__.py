@@ -17,7 +17,7 @@ import numpy as np
 import os
 
 
-def explore_mixtures(spectrum, kdp, reference_phases):
+def classify_mixture(spectrum, kdp, reference_phases):
     """
     Perform multi-phase classification for a given XRD spectrum
 
