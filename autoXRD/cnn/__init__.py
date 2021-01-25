@@ -4,6 +4,21 @@ from random import shuffle
 
 
 def train_model(xrd, reserve_testing=False):
+    """
+    From a given set of X-ray diffraction spectra, train a convolutional
+    neural network to perform phase identification.
+
+    Args:
+        xrd: a numpy array containing grouped xrd spectra.
+            Each group is associated with a given reference phase.
+            The shape of the array should be NxMx4501x1 where:
+            N = number of reference phases,
+            M = number of augmented spectra per reference phase
+        reserve_testing: if True, train using only 80% of the given data.
+            Otherwise, train on all spectra contained in xrd.
+    Returns:
+        None, saves the trained model as Model.h5 in the current directory.
+    """
 
     ## Label each XRD spectrum with an associated one-hot vector (phase index)
     intensities, one_hot_vectors = [], []

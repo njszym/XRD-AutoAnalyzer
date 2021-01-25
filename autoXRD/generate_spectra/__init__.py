@@ -12,6 +12,17 @@ calculator = xrd.XRDCalculator()
 num_cpu = multiprocessing.cpu_count()
 
 def calc_XRD(struct, stick_pattern=False):
+    """
+    Calculates the XRD spectrum of a given structure.
+
+    Args:
+        struct: pymatgen Structure object
+        stick_pattern: if True, return the diffraction angles
+        and peaks as discrete lists. Otherwise, a continuous
+        spectrum will be calculated with 4,501 values..
+    Returns:
+        Returns a continuous or discrete XRD spectrum.
+    """
 
     ## Calculate line profile
     pattern = calculator.get_pattern(struct)
