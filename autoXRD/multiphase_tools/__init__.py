@@ -88,7 +88,7 @@ def explore_mixtures(spectrum, kdp, reference_phases):
     return all_predictions, total_confidence
 
 
-def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=10):
+def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=5):
     """
     Subtract a phase that has already been identified from a given XRD spectrum.
     If all phases have already been identified, halt the iteration.
