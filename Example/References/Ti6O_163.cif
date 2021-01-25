@@ -1,0 +1,65 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_17009-ICSD
+_database_code_ICSD 17009
+_audit_creation_date 1980-01-01
+_audit_update_record 1985-04-26
+_chemical_name_systematic 'Titanium oxide (6/1)'
+_chemical_formula_structural 'Ti6 O'
+_chemical_formula_sum 'O1 Ti6'
+_exptl_crystal_density_diffrn 4.65
+_publ_section_title
+'Interstitial Superlattice of = Ti6 O = and its Transformation'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of the Physical Society of Japan' 1966 21 2096 2096 JUPSAU
+loop_
+_publ_author_name
+'Yamaguchi, S.'
+'Koiwa, M.'
+'Hirabayashi, M.'
+_cell_length_a 5.14
+_cell_length_b 5.14
+_cell_length_c 9.48
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 216.9
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 3 1 c'
+_symmetry_Int_Tables_number 159
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -x+y, z+1/2'
+2 'x-y, -y, z+1/2'
+3 'y, x, z+1/2'
+4 '-x+y, -x, z'
+5 '-y, x-y, z'
+6 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ti0+ 0
+O0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ti1 Ti0+ 6 c 0.3333 0 0.125 . 1. 0
+Ti2 Ti0+ 6 c 0.6667 0 0.375 . 1. 0
+O1 O0+ 2 b 0.3333 0.6667 0 . 1. 0
+#End of TTdata_17009-ICSD

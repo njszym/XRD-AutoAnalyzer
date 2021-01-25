@@ -1,0 +1,92 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_256029-ICSD
+_database_code_ICSD 256029
+_audit_creation_date 2019-02-01
+_chemical_name_systematic 'Dilithium hexafluoridotitanate(IV)'
+_chemical_formula_structural 'Li2 Ti F6'
+_chemical_formula_sum 'F6 Li2 Ti1'
+_chemical_name_structure_type ZnSb2O6
+_exptl_crystal_density_diffrn 3.05
+_cell_measurement_temperature 200.
+_publ_section_title
+'Increasing structural dimensionality of alkali metal fluoridotitanates(IV)'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Inorganic Chemistry' 2018 57 1976 1987 INOCAJ
+loop_
+_publ_author_name
+'Shlyapnikov, Igor M.'
+'Goreshnik, Evgeny A.'
+'Mazej, Zoran'
+_cell_length_a 4.6332(5)
+_cell_length_b 4.6332(5)
+_cell_length_c 8.9303(12)
+_cell_angle_alpha 90
+_cell_angle_beta 90
+_cell_angle_gamma 90
+_cell_volume 191.7
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 42/m n m'
+_symmetry_Int_Tables_number 136
+_refine_ls_R_factor_all 0.026
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-y+1/2, x+1/2, -z+1/2'
+2 'y+1/2, -x+1/2, -z+1/2'
+3 'y, x, -z'
+4 '-y, -x, -z'
+5 'y+1/2, -x+1/2, z+1/2'
+6 '-y+1/2, x+1/2, z+1/2'
+7 '-y, -x, z'
+8 'y, x, z'
+9 'x+1/2, -y+1/2, -z+1/2'
+10 '-x+1/2, y+1/2, -z+1/2'
+11 'x, y, -z'
+12 '-x, -y, -z'
+13 '-x+1/2, y+1/2, z+1/2'
+14 'x+1/2, -y+1/2, z+1/2'
+15 '-x, -y, z'
+16 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li1+ 1
+F1- -1
+Ti4+ 4
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Li1 Li1+ 4 e 0.5 0.5 0.3393(7) 0.0123(15) 1 0
+F1 F1- 8 j 0.1934(3) 0.1934(3) 0.34691(14) 0.0096(5) 1 0
+F2 F1- 4 f 0.7143(3) 0.2857(3) 0.5 0.0099(5) 1 0
+Ti1 Ti4+ 2 b 0 0 0.5 0.0054(4) 1 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Li1 Li1+ 0.014(2) 0.014(2) 0.009(3) -0.003(2) 0 0
+F1 F1- 0.0114(6) 0.0114(6) 0.0060(7) -0.0021(5) 0.0012(3) 0.0012(3)
+F2 F1- 0.0108(7) 0.0108(7) 0.0082(9) 0.0022(7) 0 0
+Ti1 Ti4+ 0.0063(5) 0.0063(5) 0.0036(5) 0.0003(2) 0 0
+#End of TTdata_256029-ICSD
