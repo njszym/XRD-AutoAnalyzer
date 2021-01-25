@@ -28,64 +28,54 @@ def explore_mixtures(spectrum, kdp, reference_phases):
         kdp: a KerasDropoutPrediction model object
         reference_phases: a list of reference phase strings
     Returns:
-        all_predictions: a list of all enumerated mixtures
-        total_confidence: a list of probabilities associated with the above mixtures
+        prediction_list: a list of all enumerated mixtures
+        confidence_list: a list of probabilities associated with the above mixtures
     """
 
-    total_confidence, all_predictions = [], []
-    tabulate_conf, predicted_cmpd_set = [], []
-    measured_spectrum = prepare_pattern(spectrum)
-    prediction_1, num_phases_1, certanties_1 = kdp.predict(measured_spectrum) ## Return predicted vector, number of probable phases (confidence > 10%), and associated confidence values
-    for i1 in range(num_phases_1): ## Consider all probable phases
-        tabulate_conf.append(certanties_1[i1])
-        phase_index = np.array(prediction_1).argsort()[-(i1+1)] ## Get index of 1st, 2nd, etc. most probable phase depending on i1
-        predicted_cmpd = reference_phases[phase_index] ## Get predicted compound associated with probable phase defined above
-        predicted_cmpd_set.append(predicted_cmpd)
-        stripped_y_1, norm_1 = get_reduced_pattern(predicted_cmpd, measured_spectrum) ## Strips away predicted phase from original spectrum
-        if stripped_y_1 == 'All phases identified': ## If intensities fall below 10% original maximum, assume all phases have been identified. May tune this cutoff to be more sensitive.
-            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
-            all_predictions.append(predicted_cmpd_set)
-            tabulate_conf, predicted_cmpd_set = [], []
-        else: ## If intensities remain, investigate second phase
-            prediction_2, num_phases_2, certanties_2 = kdp.predict([[val] for val in stripped_y_1])
-            for i2 in range(num_phases_2):
-                phase_index = np.array(prediction_2).argsort()[-(i2+1)]
-                predicted_cmpd = reference_phases[phase_index]
-                if predicted_cmpd in predicted_cmpd_set: ## If we've already predicted this compound, go to next most probable
-                    all_predictions.append(predicted_cmpd_set)
-                    total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
-                    if i2 == (num_phases_2 - 1):
-                        tabulate_conf, predicted_cmpd_set = [], [] ## If we're out of phases, then move on to next possible mixture
-                    continue
-                else: ## If 2nd phase is new
-                    tabulate_conf.append(certanties_2[i2])
-                    predicted_cmpd_set.append(predicted_cmpd)
-                stripped_y_2, norm_2 = get_reduced_pattern(predicted_cmpd, stripped_y_1, norm_1)
-                if stripped_y_2 == 'All phases identified': ## If intensities fall below 10% original maximum, assume all phases have been identified. May tune this cutoff to be more sensitive.
-                    total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
-                    all_predictions.append(predicted_cmpd_set)
-                    if i2 == (num_phases_2 - 1):
-                        tabulate_conf, predicted_cmpd_set = [], [] ## If we're out of phases, then move on to next possible mixture
-                    else:
-                        tabulate_conf, predicted_cmpd_set = tabulate_conf[:-1], predicted_cmpd_set[:-1]
-                else:  ## If intensities remain, investigate third phase
-                    prediction_3, num_phases_3, certanties_3 = kdp.predict([[val] for val in stripped_y_2])
-                    for i3 in range(num_phases_3):
-                        phase_index = np.array(prediction_3).argsort()[-(i3+1)]
-                        predicted_cmpd = reference_phases[phase_index]
-                        if predicted_cmpd in predicted_cmpd_set: ## If we've already predicted this compound, go to next most probable
-                            all_predictions.append(predicted_cmpd_set)
-                            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
-                            continue
-                        else: ## If 3rd phase is new
-                            tabulate_conf.append(certanties_3[i3])
-                            predicted_cmpd_set.append(predicted_cmpd)
-                            all_predictions.append(predicted_cmpd_set)
-                            total_confidence.append(sum(tabulate_conf)/len(tabulate_conf))
-                            tabulate_conf = tabulate_conf[:-1]
-                            predicted_cmpd_set = predicted_cmpd_set[:-1]
+    spectrum = prepare_pattern(spectrum)
+    prediction_list, confidence_list = enumerate_routes(spectrum, kdp, reference_phases)
+    return prediction_list, confidence_list
 
-    return all_predictions, total_confidence
+
+def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], max_phases=3):
+    global updated_pred, updated_conf
+    prediction, num_phases, certanties = kdp.predict(spectrum)
+    for i in range(num_phases):
+        if 'updated_pred' in globals():
+            if updated_pred != None:
+                indiv_pred, indiv_conf = updated_pred, updated_conf
+                updated_pred, updated_conf = None, None
+        prediction, num_phases, certanties = kdp.predict(spectrum)
+        phase_index = np.array(prediction).argsort()[-(i+1)]
+        predicted_cmpd = reference_phases[phase_index]
+        if predicted_cmpd in indiv_pred:
+            if i == (num_phases - 1):
+                confidence_list.append(sum(indiv_conf)/len(indiv_conf))
+                prediction_list.append(indiv_pred)
+                updated_conf, updated_pred = indiv_conf[:-1], indiv_pred[:-1]
+            continue
+        indiv_pred.append(predicted_cmpd)
+        indiv_conf.append(certanties[i])
+        reduced_spectrum, norm = get_reduced_pattern(predicted_cmpd, spectrum)
+        if isinstance(spectrum, str):
+            confidence_list.append(sum(indiv_conf)/len(indiv_conf))
+            prediction_list.append(indiv_pred)
+            if i == (num_phases - 1):
+                updated_conf, updated_pred = indiv_conf[:-2], indiv_pred[:-2]
+            else:
+                indiv_conf, indiv_pred = indiv_conf[:-1], indiv_pred[:-1]
+            continue
+        else:
+            if len(indiv_pred) == max_phases:
+                confidence_list.append(sum(indiv_conf)/len(indiv_conf))
+                prediction_list.append(indiv_pred)
+                if i == (num_phases - 1):
+                    updated_conf, updated_pred = indiv_conf[:-2], indiv_pred[:-2]
+                else:
+                    indiv_conf, indiv_pred = indiv_conf[:-1], indiv_pred[:-1]
+                continue
+            prediction_list, confidence_list = enumerate_routes(reduced_spectrum, kdp, reference_phases, indiv_conf, indiv_pred, confidence_list, prediction_list)
+    return prediction_list, confidence_list
 
 
 def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=5):
