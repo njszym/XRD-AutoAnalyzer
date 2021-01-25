@@ -26,7 +26,7 @@ A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```E
 python run_CNN.py
 ```
 
-The characterization of each spectrum will take around 1-2 minutes on a single processor. As classifications are made, the predicted phases will be printed along with their associated confidence.
+The characterization of each spectrum should take around 2-3 minutes on a single processor. As classifications are made, the predicted phases will be printed along with their associated confidence.
 
 ## Training the model for new compositions
 

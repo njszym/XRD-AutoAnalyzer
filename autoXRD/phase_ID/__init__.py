@@ -27,14 +27,8 @@ def analyze(spectrum_dir, reference_dir):
         if len(confidence) > 0:
             max_conf_ind = np.argmax(confidence)
             max_conf = 100*confidence[max_conf_ind]
-            predicted_cmpds = mixtures[max_conf_ind]
-            ## For now, up to three-phase mixtures are supported. Will extend soon.
-            if len(predicted_cmpds) == 1:
-                predicted_set = '%s' % predicted_cmpds[0][:-4]
-            if len(predicted_cmpds) == 2:
-                predicted_set = '%s + %s' % (predicted_cmpds[0][:-4], predicted_cmpds[1][:-4])
-            if len(predicted_cmpds) == 3:
-                predicted_set = '%s + %s + %s' % (predicted_cmpds[0][:-4], predicted_cmpds[1][:-4], predicted_cmpds[2][:-4])
+            predicted_cmpds = [fname[:-4] for fname in mixtures[max_conf_ind]]
+            predicted_set = ' + '.join(predicted_cmpds)
         else:
             max_conf = 0.0
             predicted_set = 'None'

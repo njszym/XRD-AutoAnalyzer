@@ -19,9 +19,7 @@ import os
 
 def explore_mixtures(spectrum, kdp, reference_phases):
     """
-    A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
-    For each mixture, the associated phases and probabilities are tabulated.
-    Currently, mixtures with as many as three phases can be handled. Will extend to arbitary mixtures soon.
+    Perform multi-phase classification for a given XRD spectrum
 
     Args:
         spectrum: a numpy array containing the measured spectrum that is to be classified
@@ -38,25 +36,56 @@ def explore_mixtures(spectrum, kdp, reference_phases):
 
 
 def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], max_phases=3):
-    global updated_pred, updated_conf
+    """
+    A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
+    For each mixture, the associated phases and probabilities are tabulated.
+
+    Args:
+        spectrum: a numpy array containing the measured spectrum that is to be classified
+        kdp: a KerasDropoutPrediction model object
+        reference_phases: a list of reference phase strings
+        indiv_conf: list of probabilities associated with an individual mixture (one per branch)
+        indiv_pred: list of predicted phases in an individual mixture (one per branch)
+        confidence_list: a list of averaged probabilities associated with all suspected mixtures
+        predictions_list: a list of the phases predicted in all suspected mixtures
+        max_phases: the maximum number of phases considered for a single mixture.
+            By default, this is set to handle  up tothree-phase patterns. The function is readily
+            extended to handle arbitrary many phases. Caution, however, that the computational time
+            required will scale exponentially with the number of phases.
+    Returns:
+        prediction_list: a list of all enumerated mixtures
+        confidence_list: a list of probabilities associated with the above mixtures
+    """
+
+    global updated_pred, updated_conf ## Global variables are updated recursively
     prediction, num_phases, certanties = kdp.predict(spectrum)
+
+    ## Explore all phases with a non-trival probability
     for i in range(num_phases):
+
+        ## If individual predictions have been updated recursively, use them for this iteration
         if 'updated_pred' in globals():
             if updated_pred != None:
                 indiv_pred, indiv_conf = updated_pred, updated_conf
                 updated_pred, updated_conf = None, None
+
         prediction, num_phases, certanties = kdp.predict(spectrum)
         phase_index = np.array(prediction).argsort()[-(i+1)]
         predicted_cmpd = reference_phases[phase_index]
+
+        ## If the predicted phase has already been identified for the mixture, ignore and move on
         if predicted_cmpd in indiv_pred:
             if i == (num_phases - 1):
                 confidence_list.append(sum(indiv_conf)/len(indiv_conf))
                 prediction_list.append(indiv_pred)
                 updated_conf, updated_pred = indiv_conf[:-1], indiv_pred[:-1]
             continue
+
         indiv_pred.append(predicted_cmpd)
         indiv_conf.append(certanties[i])
         reduced_spectrum, norm = get_reduced_pattern(predicted_cmpd, spectrum)
+
+        ## If all phases have been identified, tabulate mixture and move on to next
         if isinstance(spectrum, str):
             confidence_list.append(sum(indiv_conf)/len(indiv_conf))
             prediction_list.append(indiv_pred)
@@ -65,7 +94,9 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
             else:
                 indiv_conf, indiv_pred = indiv_conf[:-1], indiv_pred[:-1]
             continue
+
         else:
+            ## If the maximum number of phases has been reached, tabulate mixture and move on to next
             if len(indiv_pred) == max_phases:
                 confidence_list.append(sum(indiv_conf)/len(indiv_conf))
                 prediction_list.append(indiv_pred)
@@ -74,7 +105,10 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
                 else:
                     indiv_conf, indiv_pred = indiv_conf[:-1], indiv_pred[:-1]
                 continue
+
+            ## Otherwise if more phases are to be explored, recursively enter enumerate_routes with the newly reduced spectrum
             prediction_list, confidence_list = enumerate_routes(reduced_spectrum, kdp, reference_phases, indiv_conf, indiv_pred, confidence_list, prediction_list)
+
     return prediction_list, confidence_list
 
 
