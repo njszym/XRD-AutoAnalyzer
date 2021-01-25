@@ -7,6 +7,15 @@ from pymatgen.analysis.diffraction import xrd
 
 
 def sample_strains(struct, num_strains):
+    """
+    Produce stochastically strained structures that preserve symmetry.
+
+    Args:
+        struct: pymatgen structure object that is to be strained
+        num_strains: how many strained structures to produce
+    Returns:
+        varied_structs: a list of strained structures
+    """
 
     ## Get space group (strain must preserve symmetry)
     sg = struct.get_space_group_info()[1]
@@ -133,12 +142,31 @@ def sample_strains(struct, num_strains):
 
 
 def map_interval(x, magnitude):
+    """
+    Map [0, 1] to [magnitude, 1]
 
-    ## Mapping from [0, 1] to [magnitude, 1]
+    Args:
+        x: value between 0 and 1 that is to be mapped onto new interval
+        magnitude: lower bounds on mapping interval
+    Returns:
+        Newly mapped value
+    """
+
     sc_num = 1.0 - magnitude
     return sc_num + ( ( (1.0 - sc_num) / (1.0 - 0.0) ) * (x - 0.0) )
 
 def apply_texture(struct, magnitude):
+    """
+    Simulate diffraction patterns with peak intensities scaled as to
+    emulate texture in the corresponding sample.
+
+    Args:
+        struct: pymatgen structure object
+        magnitude: strength of texture (e.g., 0.6 means peaks will be
+            scaled by as much as 60% their initial intensities
+    Returns:
+        A list of XRD spectra with texture applied stochastically
+    """
 
     ## Get pattern and peak indicies
     calculator = xrd.XRDCalculator()
@@ -200,6 +228,16 @@ def apply_texture(struct, magnitude):
 
 
 def shrink_domain(struct, size):
+    """
+    Simulate diffraction patterns with peaks broadened according to
+    a given domain size using the Scherrer equation.
+
+    Args:
+        struct: pymatgen structure object
+        size: domain size to be sample
+    Returns:
+        XRD spectrum with peaks broadened
+    """
 
     calculator = xrd.XRDCalculator()
     pattern = calculator.get_pattern(struct, two_theta_range=(0,80))

@@ -2,6 +2,18 @@ from autoXRD.multiphase_tools import *
 
 
 def analyze(spectrum_dir, reference_dir):
+    """
+    Perform phase identification foor a given set of XRD spectra
+
+    Args:
+        spectrum_dir: path to directory containing spectra to be classified.
+            Note these files should be in xy format.
+        reference_dir: path to directory containing CIFs of reference phases
+    Returns:
+        spectrum_names: filenames of spectra being classified
+        predicted_phases: a list of the predicted phases in the mixture
+        confidences: the associated confidence with the prediction above
+    """
 
     reference_phases = sorted(os.listdir(reference_dir))
     model = tf.keras.models.load_model('Model.h5', custom_objects={'sigmoid_cross_entropy_with_logits_v2': tf.nn.sigmoid_cross_entropy_with_logits})

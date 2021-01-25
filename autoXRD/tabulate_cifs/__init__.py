@@ -6,6 +6,19 @@ from pymatgen.analysis import structure_matcher as sm
 
 
 def get_stoichiometric_info(cif_directory):
+    """
+    Filter structures to include only those which do not have
+    fraction occupancies and are ordered. For those phases, tabulate
+    the measurement conditions of the associated CIFs.
+
+    Args:
+        cif_directory: path to directory containing CIF files that are
+            to be considered.
+    Returns:
+        stoich_structs: a list of ordered pymatgen structure objects
+        temps: temperatures that each were measured at
+        dates: dates the measurements were reported
+    """
 
     stoich_structs, temps, dates = [], [], []
     for cmpd in os.listdir(cif_directory):
@@ -18,6 +31,16 @@ def get_stoichiometric_info(cif_directory):
     return stoich_structs, temps, dates
 
 def parse_measurement_conditions(cif_directory, filename):
+    """
+    Parse the temperature and date from a CIF file
+
+    Args:
+        cif_directory: path to directory containing CIFs
+        filename: filename of CIF to be parsed
+    Returns:
+        temp: temperature at which measurement was conducted
+        date: date which measurement was reported
+    """
 
     temp, date = 0.0, None
     with open('%s/%s' % (cif_directory, filename)) as entry:
@@ -29,6 +52,19 @@ def parse_measurement_conditions(cif_directory, filename):
     return temp, date
 
 def get_unique_struct_info(stoich_refs, temps, dates):
+    """
+    Group structures by unique structural prototypes
+
+    Args:
+        stoich_refs: pymatgen structure objects to be filtered
+        temps: temperatures that each were measured at
+        dates: dates the measurements were reported
+    Returns:
+        grouped_structs: a list of pymatgen structure objects that are grouped such
+            that all structure in a given subclass have the same structural framework
+        grouped_temps and grouped_dates: similarly grouped temperatures and dates
+            associated with the corresponding measurements
+    """
 
     matcher = sm.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False)
     unique_frameworks = []
@@ -53,6 +89,17 @@ def get_unique_struct_info(stoich_refs, temps, dates):
     return grouped_structs, grouped_temps, grouped_dates
 
 def get_recent_RT_entry(grouped_structs, grouped_temps, grouped_dates):
+    """
+    Filter CIF files and choose that which was measured at RT and most recently
+
+    Args:
+        grouped_structs: a list of pymatgen structure objects that are grouped such
+            that all structure in a given subclass have the same structural framework
+        grouped_temps and grouped_dates: similarly grouped temperatures and dates
+            associated with the corresponding measurements
+    Returns:
+        filtered_cmpds: for each group, a single compound is returned (pymatgen structure object)
+    """
 
     filtered_cmpds = []
     for (struct_class, temp_class, date_class) in zip(grouped_structs, grouped_temps, grouped_dates):

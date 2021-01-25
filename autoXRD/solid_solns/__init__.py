@@ -14,6 +14,19 @@ matcher = sm.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell
 num_cpu = multiprocessing.cpu_count()
 
 def are_soluble(pair_info):
+    """
+    Predict whether a pair of compounds are soluble with one another.
+
+    Args:
+        pair_info: a list or tuple containing:
+            1) First compound in the pair
+            2) Second compound in the pair
+            3) Path to directory containing CIFs of reference phases
+    Returns:
+        The pair of compounds, if they are soluble.
+        Otherwise, Nonetype is returned.
+    """
+
     cmpd_A, cmpd_B, reference_directory = pair_info[0], pair_info[1], pair_info[2]
     struct_A = mg.Structure.from_file('%s/%s' % (reference_directory, cmpd_A))
     formula_A = struct_A.composition.reduced_formula
@@ -78,6 +91,16 @@ def are_soluble(pair_info):
 
 
 def tabulate_soluble_pairs(reference_directory):
+    """
+    For a given set of reference, tabulate all pairs of compounds that
+    are predicted to be soluble with one another.
+
+    Args:
+        reference_directory: path to directory containing CIFs of reference phases
+    Returns:
+        matching_pairs: list of tuples containing pairs of soluble compounds
+    """
+
     all_filenames = os.listdir(reference_directory)
     all_pairs = list(comb(all_filenames, 2))
     pair_info = [list(pair) + [reference_directory] for pair in all_pairs]
@@ -88,6 +111,16 @@ def tabulate_soluble_pairs(reference_directory):
         return matching_pairs
 
 def generate_solid_solns(pair):
+    """
+    For a given pair of compounds that are soluble with one another, interpolate
+    a list of solid solutions.
+
+    Args:
+        pair: a list or tuple of two compounds (filenames)
+    Returns:
+        A list of interpolated solids solutions (pymatgen structure objects)
+    """
+
     struct_A = mg.Structure.from_file('References/%s' % pair[0])
     struct_B = mg.Structure.from_file('References/%s' % pair[1])
     try:

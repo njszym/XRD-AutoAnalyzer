@@ -63,6 +63,16 @@ def calc_XRD(struct, stick_pattern=False):
     return all_I
 
 def augment(phase):
+    """
+    For a given phase, produce a list of augmented XRD spectra
+
+    Args:
+        phase: a tuple or list containing the pymatgen structure object
+        and filename of that structure respectively.
+    Returns:
+        patterns: augmented XRD spectra
+        filename: filename of the reference phase
+    """
 
     struct, filename = phase[0], phase[1]
     patterns = []
@@ -76,6 +86,14 @@ def augment(phase):
     return (patterns, filename)
 
 def get_spectra(reference_folder):
+    """
+    Get all spectra from a reference phase in a parallel manner
+
+    Args:
+        reference_folder: path to CIFs used as references
+    Returns:
+        Augmented spectra grouped by their reference phase
+    """
 
     ## Tabulate reference phases
     phases = []
