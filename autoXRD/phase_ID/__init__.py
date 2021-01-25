@@ -24,7 +24,7 @@ def analyze(spectrum_dir, reference_dir):
         total_confidence, all_predictions = [], []
         tabulate_conf, predicted_cmpd_set = [], []
         mixtures, confidence = explore_mixtures('%s/%s' % (spectrum_dir, fname), kdp, reference_phases)
-        if len(confidence) < 0:
+        if len(confidence) > 0:
             max_conf_ind = np.argmax(confidence)
             max_conf = 100*confidence[max_conf_ind]
             predicted_cmpds = mixtures[max_conf_ind]
@@ -37,7 +37,7 @@ def analyze(spectrum_dir, reference_dir):
                 predicted_set = '%s + %s + %s' % (predicted_cmpds[0][:-4], predicted_cmpds[1][:-4], predicted_cmpds[2][:-4])
         else:
             max_conf = 0.0
-            predicted_cmpds = 'None'
+            predicted_set = 'None'
         spectrum_names.append(fname)
         predicted_phases.append(predicted_set)
         confidences.append(max_conf)
