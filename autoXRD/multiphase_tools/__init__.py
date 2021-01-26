@@ -348,6 +348,58 @@ def scale_spectrum(warped_spectrum, orig_y):
     scaled_spectrum = best_scale*np.array(warped_spectrum) ## Scale
     return scaled_spectrum
 
+
+def scale_line_profile(orig_y, peaks, angles):
+    """
+    Similar to the scale_spectrum() fn, except now the goal is take
+    find the scaling factor that minimizes the differences between a line
+    profile and the peaks in a measured XRD spectrum. This is used during
+    plotting for visualization of identified phases.
+
+    Args:
+        orig_y: original (measured) spectrum containing all peaks
+        peaks: a list of peak intensities (stick profile)
+        angles: a list of diffraction angles (stick profile)
+    Returns:
+        best_scale: a float ranging from 0.05 to 1.0 that has been optimized
+            to ensure maximal overlap between the line profile and the peaks
+            in the measured spectrum.
+    """
+
+    peak_inds = (4501./70.)*(np.array(angles) - 10.)
+    peak_inds = [int(i) for i in peak_inds]
+    y = []
+    qi = 0
+    for x in range(4501):
+        if x in peak_inds:
+            y.append(peaks[qi])
+            qi += 1
+        else:
+            y.append(0.0)
+
+    orig_peaks = find_peaks(orig_y, height=5)[0] ## list of peak indices
+    pred_peaks = find_peaks(y, height=5)[0] ## list of peak indices
+    matched_orig_peaks = []
+    matched_pred_peaks = []
+    for a in orig_peaks:
+        for b in pred_peaks:
+            if np.isclose(a, b, atol=100): ## within 50 indices of one another
+                matched_orig_peaks.append(a)
+                matched_pred_peaks.append(b)
+    num_match = []
+    for scale_spectrum in np.linspace(1, 0.05, 101):
+        check = scale_spectrum*np.array(y)
+        good_peaks = 0
+        for (a, b) in zip(matched_orig_peaks, matched_pred_peaks):
+            A_magnitude = orig_y[a]
+            B_magnitude = check[b]
+            if abs((A_magnitude - B_magnitude)/A_magnitude) < 0.1: ## If peaks are within 5% of one another
+                good_peaks += 1
+        num_match.append(good_peaks)
+    best_scale = np.linspace(1.0, 0.05, 101)[np.argmax(num_match)] ## Will give highest scaling constant which yields best match
+    return best_scale
+
+
 def strip_spectrum(warped_spectrum, orig_y):
     """
     Subtract one spectrum from another. Note that when subtraction produces
@@ -370,6 +422,7 @@ def strip_spectrum(warped_spectrum, orig_y):
             fixed_y.append(val)
     stripped_y = fixed_y
     return stripped_y
+
 
 def plot_spectra(warped_spectrum, stripped_y, orig_y):
     x = np.linspace(10, 80, 4501)

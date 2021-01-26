@@ -69,5 +69,5 @@ Phase labels are denoted as ```formula_spacegroup```.
 To plot the line profiles of the predicted phases in the measured spectrum for comparison, the ```--plot``` option may be used:
 
 ```
-python run_CNN.py --plot $REFERENCE_FOLDER $SPECTRA_FOLDER
+python run_CNN.py -plot $REFERENCE_FOLDER $SPECTRA_FOLDER
 ```
