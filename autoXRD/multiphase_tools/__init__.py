@@ -83,8 +83,17 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
                 updated_conf, updated_pred = indiv_conf[:-1], indiv_pred[:-1]
             continue
 
+        ## Otherwise if phase is new, add to the suspected mixture
         indiv_pred.append(predicted_cmpd)
-        indiv_conf.append(certanties[i])
+
+        ## Tabulate the probability associated with the predicted phase
+        if i < len(certanties):
+            indiv_conf.append(certanties[i])
+        ## Temporary workaround to a bug where i exceeds certanties length
+        else:
+            indiv_conf.append(certanties[-1])
+
+        ## Subtract identified phase from the spectrum
         reduced_spectrum, norm = get_reduced_pattern(predicted_cmpd, spectrum)
 
         ## If all phases have been identified, tabulate mixture and move on to next
