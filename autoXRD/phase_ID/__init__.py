@@ -1,9 +1,39 @@
 from autoXRD.multiphase_tools import *
+import multiprocessing
+from multiprocessing import Pool, Manager
+
+
+num_cpu = multiprocessing.cpu_count()
+
+def identify(fname):
+    """
+    Identify all phases in a given XRD spectrum
+
+    Args:
+        fname: filename string of the spectrum to be classified
+    Returns:
+        fname: filename, same as in Args
+        predicted_set: string of compounds predicted by phase ID algo
+        max_conf: confidence associated with the prediction
+    """
+
+    total_confidence, all_predictions = [], []
+    tabulate_conf, predicted_cmpd_set = [], []
+    mixtures, confidence = classify_mixture('%s/%s' % (spec_dir, fname), reference_phases)
+    if len(confidence) > 0:
+        max_conf_ind = np.argmax(confidence)
+        max_conf = 100*confidence[max_conf_ind]
+        predicted_cmpds = [fname[:-4] for fname in mixtures[max_conf_ind]]
+        predicted_set = ' + '.join(predicted_cmpds)
+    else:
+        max_conf = 0.0
+        predicted_set = 'None'
+    return [fname, predicted_set, max_conf]
 
 
 def analyze(spectrum_dir, reference_dir):
     """
-    Perform phase identification foor a given set of XRD spectra
+    Enumerate all spectra in a given directory for phase identification
 
     Args:
         spectrum_dir: path to directory containing spectra to be classified.
@@ -15,25 +45,17 @@ def analyze(spectrum_dir, reference_dir):
         confidences: the associated confidence with the prediction above
     """
 
+    global reference_phases, spec_dir
+    spec_dir = spectrum_dir
     reference_phases = sorted(os.listdir(reference_dir))
-    model = tf.keras.models.load_model('Model.h5', custom_objects={'sigmoid_cross_entropy_with_logits_v2': tf.nn.sigmoid_cross_entropy_with_logits})
-    kdp = KerasDropoutPrediction(model)
 
-    spectrum_names, predicted_phases, confidences = [], [], []
-    for fname in os.listdir(spectrum_dir):
-        total_confidence, all_predictions = [], []
-        tabulate_conf, predicted_cmpd_set = [], []
-        mixtures, confidence = classify_mixture('%s/%s' % (spectrum_dir, fname), kdp, reference_phases)
-        if len(confidence) > 0:
-            max_conf_ind = np.argmax(confidence)
-            max_conf = 100*confidence[max_conf_ind]
-            predicted_cmpds = [fname[:-4] for fname in mixtures[max_conf_ind]]
-            predicted_set = ' + '.join(predicted_cmpds)
-        else:
-            max_conf = 0.0
-            predicted_set = 'None'
-        spectrum_names.append(fname)
-        predicted_phases.append(predicted_set)
-        confidences.append(max_conf)
+    with Manager() as manager:
 
-    return spectrum_names, predicted_phases, confidences
+        spectrum_filenames = os.listdir(spectrum_dir)
+        pool = Pool(num_cpu)
+        all_info = pool.map(identify, spectrum_filenames)
+        spectrum_names = [info[0] for info in all_info]
+        predicted_phases = [info[1] for info in all_info]
+        confidences = [info[2] for info in all_info]
+
+        return spectrum_names, predicted_phases, confidences

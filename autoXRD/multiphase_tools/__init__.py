@@ -17,7 +17,7 @@ import numpy as np
 import os
 
 
-def classify_mixture(spectrum, kdp, reference_phases):
+def classify_mixture(spectrum, reference_phases):
     """
     Perform multi-phase classification for a given XRD spectrum
 
@@ -30,6 +30,8 @@ def classify_mixture(spectrum, kdp, reference_phases):
         confidence_list: a list of probabilities associated with the above mixtures
     """
 
+    model = tf.keras.models.load_model('Model.h5', custom_objects={'sigmoid_cross_entropy_with_logits_v2': tf.nn.sigmoid_cross_entropy_with_logits})
+    kdp = KerasDropoutPrediction(model)
     spectrum = prepare_pattern(spectrum)
     prediction_list, confidence_list = enumerate_routes(spectrum, kdp, reference_phases)
     return prediction_list, confidence_list
