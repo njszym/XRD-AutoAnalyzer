@@ -88,7 +88,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
         reduced_spectrum, norm = get_reduced_pattern(predicted_cmpd, spectrum)
 
         ## If all phases have been identified, tabulate mixture and move on to next
-        if isinstance(spectrum, str):
+        if norm == None:
             confidence_list.append(sum(indiv_conf)/len(indiv_conf))
             prediction_list.append(indiv_pred)
             if i == (num_phases - 1):
@@ -132,7 +132,8 @@ def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=5
         stripped_y: new spectrum obtained by subtrating the peaks of the identified phase
         new_normalization: scaling factor used to ensure the maximum intensity is equal to 100
         Or
-        If intensities fall below the cutoff, return Nonetype
+        If intensities fall below the cutoff, preserve orig_y and return Nonetype
+            the for new_normalization constant.
     """
 
     pred_y = generate_pattern(predicted_cmpd)
@@ -149,7 +150,7 @@ def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=5
         stripped_y = new_normalization*stripped_y
         return stripped_y, new_normalization
     else:
-        return 'All phases identified', None
+        return orig_y, None
 
 
 def prepare_pattern(spectrum_name, smooth=True):
