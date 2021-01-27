@@ -40,7 +40,7 @@ Where ```$CIF_FOLDER``` denotes the path to the reference folder containing all 
 
 1) Filter all unique stoichiometric phases from the provided CIFs.
 
-2) Generate hypothetical solid solutions between these materials.
+2) Generate hypothetical solid solutions between these materials (if ```--include_ns``` is added as an arugment).
 
 3) Simulate augmented XRD spectra from the phases produced by (1) and (2).
 
