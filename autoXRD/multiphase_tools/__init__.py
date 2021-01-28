@@ -37,7 +37,7 @@ def classify_mixture(spectrum, reference_phases):
     return prediction_list, confidence_list
 
 
-def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], max_phases=3):
+def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], max_phases=3, is_first=True):
     """
     A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
     For each mixture, the associated phases and probabilities are tabulated.
@@ -59,7 +59,14 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
         confidence_list: a list of probabilities associated with the above mixtures
     """
 
-    global updated_pred, updated_conf ## Global variables are updated recursively
+    ## Make prediction and confidence lists global so they can be updated recursively
+    ## If this is the top-level of a new mixture (is_first), reset all variables
+    if is_first:
+        global updated_pred, updated_conf
+        updated_pred, updated_conf = None, None
+        prediction_list, confidence_list = [], []
+        indiv_pred, indiv_conf = [], []
+
     prediction, num_phases, certanties = kdp.predict(spectrum)
 
     ## Explore all phases with a non-trival probability
@@ -118,7 +125,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
                 continue
 
             ## Otherwise if more phases are to be explored, recursively enter enumerate_routes with the newly reduced spectrum
-            prediction_list, confidence_list = enumerate_routes(reduced_spectrum, kdp, reference_phases, indiv_conf, indiv_pred, confidence_list, prediction_list)
+            prediction_list, confidence_list = enumerate_routes(reduced_spectrum, kdp, reference_phases, indiv_conf, indiv_pred, confidence_list, prediction_list, is_first=True)
 
     return prediction_list, confidence_list
 
