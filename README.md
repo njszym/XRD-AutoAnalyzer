@@ -48,7 +48,11 @@ Where ```$CIF_FOLDER``` denotes the path to the reference folder containing all 
 
 We caution that this process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: training our model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required 20 hours of computational runtime on 16 cores. Necessary computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
 
-When the procedure is completed, a Model.h5 file will be made available. Using this model, new spectra can be classified by executing:
+When the procedure is completed, a Model.h5 file will be made available. 
+
+## Characterizing multi-phase spectra
+
+In the directory containing the trained model (Model.h5), spectra can be classified by executing:
 
 ```
 python run_CNN.py $REFERENCE_FOLDER $SPECTRA_FOLDER
