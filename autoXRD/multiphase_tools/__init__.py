@@ -78,7 +78,6 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
                 indiv_pred, indiv_conf = updated_pred, updated_conf
                 updated_pred, updated_conf = None, None
 
-        prediction, num_phases, certanties = kdp.predict(spectrum)
         phase_index = np.array(prediction).argsort()[-(i+1)]
         predicted_cmpd = reference_phases[phase_index]
 
@@ -94,11 +93,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
         indiv_pred.append(predicted_cmpd)
 
         ## Tabulate the probability associated with the predicted phase
-        if i < len(certanties):
-            indiv_conf.append(certanties[i])
-        ## Temporary workaround to a bug where i exceeds certanties length
-        else:
-            indiv_conf.append(certanties[-1])
+        indiv_conf.append(certanties[i])
 
         ## Subtract identified phase from the spectrum
         reduced_spectrum, norm = get_reduced_pattern(predicted_cmpd, spectrum)
