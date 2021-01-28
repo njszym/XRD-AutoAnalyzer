@@ -125,7 +125,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
                 continue
 
             ## Otherwise if more phases are to be explored, recursively enter enumerate_routes with the newly reduced spectrum
-            prediction_list, confidence_list = enumerate_routes(reduced_spectrum, kdp, reference_phases, indiv_conf, indiv_pred, confidence_list, prediction_list, is_first=True)
+            prediction_list, confidence_list = enumerate_routes(reduced_spectrum, kdp, reference_phases, indiv_conf, indiv_pred, confidence_list, prediction_list, is_first=False)
 
     return prediction_list, confidence_list
 
