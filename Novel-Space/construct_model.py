@@ -49,5 +49,5 @@ if check == True:
     xrd = generate_spectra.get_spectra('References')
     np.save('XRD', xrd)
 
-    ## Train and save the CNN using the simulated XRD spectra
-    cnn.train_model(xrd)
+    ## Train, test, and save the CNN
+    cnn.main(xrd, testing_fraction=0.2)

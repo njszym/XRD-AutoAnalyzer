@@ -3,47 +3,115 @@ import tensorflow as tf
 from random import shuffle
 
 
-def train_model(xrd, reserve_testing=False):
+class DataSetUp(object):
     """
-    From a given set of X-ray diffraction spectra, train a convolutional
-    neural network to perform phase identification.
+    Class used to train a convolutional neural network on a given
+    set of X-ray diffraction spectra to perform phase identification.
+    """
 
+    def __init__(self, xrd, testing_fraction=0):
+        """
+        Args:
+            xrd: a numpy array containing xrd spectra categorized by
+                their associated reference phase.
+                The shape of the array should be NxMx4501x1 where:
+                N = the number of reference phases,
+                M = the number of augmented spectra per reference phase,
+                4501 = intensities as a function of 2-theta
+                (spanning from 10 to 80 degrees by default)
+            testing_fraction: fraction of data (xrd patterns) to reserve for testing.
+                By default, all spectra will be used for training.
+        """
+        self.xrd = xrd
+        self.testing_fraction = testing_fraction
+        self.num_phases = len(xrd)
+
+    @property
+    def phase_indices(self):
+        """
+        List of indices to keep track of xrd spectra such that
+            each index is associated with a reference phase.
+        """
+        xrd = self.xrd
+        num_phases = self.num_phases
+        return [v for v in range(num_phases)]
+
+    @property
+    def x(self):
+        """
+        Feature matrix (array of intensities used for training)
+        """
+        intensities = []
+        xrd = self.xrd
+        phase_indices = self.phase_indices
+        for (augmented_spectra, index) in zip(xrd, phase_indices):
+            for pattern in augmented_spectra:
+                intensities.append(pattern)
+        return np.array(intensities)
+
+    @property
+    def y(self):
+        """
+        Target property to predict (one-hot encoded vectors associated
+        with the reference phases)
+        """
+        xrd = self.xrd
+        phase_indices = self.phase_indices
+        one_hot_vectors = []
+        for (augmented_spectra, index) in zip(xrd, phase_indices):
+            for pattern in augmented_spectra:
+                assigned_vec = [[0]]*len(xrd)
+                assigned_vec[index] = [1.0]
+                one_hot_vectors.append(assigned_vec)
+        return np.array(one_hot_vectors)
+
+    def split_training_testing(self):
+        """
+        Training and testing data will be split according
+        to self.testing_fraction
+
+        Returns:
+            x_train, x_test: features matrices (xrd spectra) to be
+                used for training and testing
+            y_train, t_test: target properties (one-hot encoded phase indices)
+                to be used for training and testing
+        """
+        x = self.x
+        y = self.y
+        testing_fraction = self.testing_fraction
+        combined_xy = list(zip(x, y))
+        shuffle(combined_xy)
+
+        if testing_fraction == 0:
+            train_x, train_y = zip(*combined_xy)
+            test_x, test_y = None, None
+            return np.array(train_x), np.array(train_y), test_x, test_y
+
+        else:
+            total_samples = len(combined_xy)
+            n_testing = int(testing_fraction*total_samples)
+
+            train_xy = combined_xy[n_testing:]
+            train_x, train_y = zip(*train_xy)
+
+            test_xy = combined_xy[:n_testing]
+            test_x, test_y = zip(*test_xy)
+
+            return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
+
+
+def train_model(x_train, y_train, n_phases, n_dense=[3100, 1200], dropout_rate=0.7):
+    """
     Args:
-        xrd: a numpy array containing grouped xrd spectra.
-            Each group is associated with a given reference phase.
-            The shape of the array should be NxMx4501x1 where:
-            N = number of reference phases,
-            M = number of augmented spectra per reference phase
-        reserve_testing: if True, train using only 80% of the given data.
-            Otherwise, train on all spectra contained in xrd.
+        x_train: numpy array of simulated xrd spectra
+        y_train: one-hot encoded vectors associated with reference phase indices
+        n_phases: number of reference phases considered
+        fmodel: filename to save trained model to
+        n_dense: number of nodes comprising the two hidden layers in the neural network
+        dropout_rate: fraction of connections excluded between the hidden layers during training
     Returns:
-        None, saves the trained model as Model.h5 in the current directory.
+        model: trained and compiled tensorflow.keras.Model object
     """
-
-    ## Label each XRD spectrum with an associated one-hot vector (phase index)
-    intensities, one_hot_vectors = [], []
-    phase_indices = [val for val in range(len(xrd))]
-    for (augmented_spectra, index) in zip(xrd, phase_indices):
-        for pattern in augmented_spectra:
-            intensities.append(pattern)
-            assigned_vec = [[0]]*len(xrd)
-            assigned_vec[index] = [1.0]
-            one_hot_vectors.append(assigned_vec)
-    intensities = np.array(intensities)
-    one_hot_vectors = np.array(one_hot_vectors)
-
-    ## Split into training/testing data if specified
-    if reserve_testing:
-        comb_data = list(zip(intensities, one_hot_vectors))
-        shuffle(comb_data)
-        total_samples = len(comb_data)
-        train_test_split = int(0.8*total_samples)
-        training_data = comb_data[:train_test_split]
-        intensities, one_hot_vectors = zip(*training_data)
-        test_data =	comb_data[train_test_split:]
-        test_intensities, test_vecs = zip(*test_data)
-        np.save('Test_Spectra', test_intensities)
-        np.save('Test_Phases', test_vecs)
 
     # Define network structure
     model = tf.keras.Sequential([
@@ -60,23 +128,46 @@ def train_model(xrd, reserve_testing=False):
     tf.keras.layers.Conv1D(filters=64, kernel_size=10, strides=1, padding='same', activation = tf.nn.relu),
     tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dropout(0.7),
-    tf.keras.layers.Dense(3100),
-    tf.keras.layers.Dropout(0.7),
-    tf.keras.layers.Dense(1200),
-    tf.keras.layers.Dropout(0.7),
-    tf.keras.layers.Dense(len(xrd))])
+    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.Dense(n_dense[0]),
+    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.Dense(n_dense[1]),
+    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.Dense(n_phases)])
 
     # Compile model
     model.compile(loss=tf.nn.sigmoid_cross_entropy_with_logits, optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.BinaryAccuracy()])
 
     # Fit model to training data
-    model.fit(intensities, one_hot_vectors, batch_size=32, nb_epoch=2,
+    model.fit(x_train, y_train, batch_size=32, epochs=2,
     validation_split=0.2, shuffle=True)
 
-    # Evaluate trained accuracy
-    _, acc = model.evaluate(int, phases)
-    print('Trained Accuracy: ' + str(acc*100) + '%')
+    return model
 
-    model.save('Model.h5')
+def test_model(model, test_x, test_y):
+    """
+    Args:
+        model: trained tensorflow.keras.Model object
+        x_test: feature matrix containing xrd spectra
+        y_test: one-hot encoded vectors associated with
+            the reference phases
+    """
+    _, acc = model.evaluate(test_x, test_y)
+    print('Test Accuracy: ' + str(acc*100) + '%')
 
+def main(xrd, testing_fraction, fmodel='Model.h5'):
+
+    # Organize data
+    obj = DataSetUp(xrd, testing_fraction)
+    num_phases = obj.num_phases
+    train_x, train_y, test_x, test_y = obj.split_training_testing()
+
+    # Train model
+    model = train_model(train_x, train_y, num_phases)
+
+    # Save model
+    model.save(fmodel)
+
+    # Test model is any data is reserved for testing
+    if testing_fraction != 0:
+        test_model(model, test_x, test_y)
