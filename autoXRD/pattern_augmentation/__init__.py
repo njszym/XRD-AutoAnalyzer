@@ -195,7 +195,6 @@ def apply_texture(struct, magnitude):
         total_norm = norm_1 * norm_2
         texture_factor = np.dot(np.array(hkl), np.array(preferred_direction)) / total_norm
         texture_factor = map_interval(texture_factor, magnitude)
-        print(texture_factor)
         scaled_peaks.append(peak*texture_factor)
 
     ## Generate spectrum with newly scaled peak intensities
