@@ -20,7 +20,7 @@ for (spectrum, phase_set, confidence) in zip(spectrum_names, predicted_phases, c
 
     print('Filename: %s' % spectrum)
     print('Predicted phases: %s' % phase_set)
-    print('Confidence: %s' % confidence)
+    print('Confidences: %s' % confidence)
 
     if '-plot' in sys.argv:
         y = multiphase_tools.prepare_pattern('%s/%s' % (spectrum_dir, spectrum))

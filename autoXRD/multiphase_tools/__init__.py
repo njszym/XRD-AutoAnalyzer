@@ -84,7 +84,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
         ## If the predicted phase has already been identified for the mixture, ignore and move on
         if predicted_cmpd in indiv_pred:
             if i == (num_phases - 1):
-                confidence_list.append(sum(indiv_conf)/len(indiv_conf))
+                confidence_list.append(indiv_conf)
                 prediction_list.append(indiv_pred)
                 updated_conf, updated_pred = indiv_conf[:-1], indiv_pred[:-1]
             continue
@@ -100,7 +100,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
 
         ## If all phases have been identified, tabulate mixture and move on to next
         if norm == None:
-            confidence_list.append(sum(indiv_conf)/len(indiv_conf))
+            confidence_list.append(indiv_conf)
             prediction_list.append(indiv_pred)
             if i == (num_phases - 1):
                 updated_conf, updated_pred = indiv_conf[:-2], indiv_pred[:-2]
@@ -111,7 +111,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
         else:
             ## If the maximum number of phases has been reached, tabulate mixture and move on to next
             if len(indiv_pred) == max_phases:
-                confidence_list.append(sum(indiv_conf)/len(indiv_conf))
+                confidence_list.append(indiv_conf)
                 prediction_list.append(indiv_pred)
                 if i == (num_phases - 1):
                     updated_conf, updated_pred = indiv_conf[:-2], indiv_pred[:-2]

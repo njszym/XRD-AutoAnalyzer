@@ -19,16 +19,17 @@ def identify(fname):
 
     total_confidence, all_predictions = [], []
     tabulate_conf, predicted_cmpd_set = [], []
-    mixtures, confidence = classify_mixture('%s/%s' % (spec_dir, fname), reference_phases)
-    if len(confidence) > 0:
-        max_conf_ind = np.argmax(confidence)
-        max_conf = 100*confidence[max_conf_ind]
+    mixtures, confidences = classify_mixture('%s/%s' % (spec_dir, fname), reference_phases)
+    if len(confidences) > 0:
+        avg_conf = [np.mean(conf) for conf in confidences]
+        max_conf_ind = np.argmax(avg_conf)
+        final_confidences = ['%s%%' % (100*val) for val in confidences[max_conf_ind]]
         predicted_cmpds = [fname[:-4] for fname in mixtures[max_conf_ind]]
         predicted_set = ' + '.join(predicted_cmpds)
     else:
         max_conf = 0.0
         predicted_set = 'None'
-    return [fname, predicted_set, max_conf]
+    return [fname, predicted_set, final_confidences]
 
 
 def analyze(spectrum_dir, reference_dir):
