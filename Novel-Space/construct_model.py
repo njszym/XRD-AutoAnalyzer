@@ -16,23 +16,8 @@ if 'XRD.npy' in os.listdir('.'):
 
 if check == True:
 
-    ## Filter unique reference phases from CIF list
-    if len(sys.argv) != 1:
-        stoich_refs, temps, dates = tabulate_cifs.get_stoichiometric_info(sys.argv[-1])
-    else:
-        stoich_refs, temps, dates = tabulate_cifs.get_stoichiometric_info('All_CIFs')
-    grouped_structs, grouped_temps, grouped_dates = tabulate_cifs.get_unique_struct_info(stoich_refs, temps, dates)
-    final_cmpds = tabulate_cifs.get_recent_RT_entry(grouped_structs, grouped_temps, grouped_dates)
-
-    ## Write structure files to reference folder
-    os.mkdir('References')
-    for struct in final_cmpds:
-        formula = struct.composition.reduced_formula
-        f = struct.composition.reduced_formula
-        sg = struct.get_space_group_info()[1]
-        filepath = 'References/%s_%s.cif' % (f, sg)
-        struct.to(filename=filepath, fmt='cif')
-    assert len(os.listdir('References')) > 0, 'Something went wrong. No reference phases were found.'
+    # Filter CIF files to create unique reference phases
+    tabulate_cifs.main('All_CIFs', 'References')
 
     ## Generate hypothetical solid solutions
     if '--include_ns' in sys.argv:

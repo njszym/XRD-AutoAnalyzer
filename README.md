@@ -33,10 +33,10 @@ The characterization of each spectrum should take around 2-3 minutes on a single
 To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into a reference folder contained in the ```Novel_Space/``` directory (by default, the ```All_CIFs/``` sub-folder will be used). Then execute:
 
 ```
-python construct_model.py --include_ns $CIF_FOLDER
+python construct_model.py --include_ns
 ```
 
-Where ```$CIF_FOLDER``` denotes the path to the reference folder containing all of the CIF files. This script will:
+This script will:
 
 1) Filter all unique stoichiometric phases from the provided CIFs.
 
