@@ -1,8 +1,8 @@
+from autoXRD import cnn, spectrum_generation, solid_solns, tabulate_cifs
 import numpy as np
 import os
 import sys
 import pymatgen as mg
-from autoXRD import cnn, generate_spectra, pattern_augmentation, solid_solns, tabulate_cifs
 
 
 check = True
@@ -46,8 +46,9 @@ if check == True:
                         struct.to(filename=filepath, fmt='cif')
 
     ## Simulate augmented XRD spectra from all reference phases
-    xrd = generate_spectra.get_spectra('References')
-    np.save('XRD', xrd)
+    xrd_obj = spectrum_generation.SpectraGenerator('References')
+    xrd_specs = xrd_obj.augmented_spectra
+    np.save('XRD', xrd_specs)
 
     ## Train, test, and save the CNN
-    cnn.main(xrd, testing_fraction=0.2)
+    cnn.main(xrd_specs, testing_fraction=0.2)
