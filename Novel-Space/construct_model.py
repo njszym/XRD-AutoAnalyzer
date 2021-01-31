@@ -19,21 +19,14 @@ if check == True:
     # Filter CIF files to create unique reference phases
     tabulate_cifs.main('All_CIFs', 'References')
 
-    ## Generate hypothetical solid solutions
+    # Generate hypothetical solid solutions
     if '--include_ns' in sys.argv:
-        soluble_phases = solid_solns.tabulate_soluble_pairs('References')
-        for pair in soluble_phases:
-            solid_solutions = solid_solns.generate_solid_solns(pair)
-            if solid_solutions != None:
-                for struct in solid_solutions:
-                    filepath = 'References/%s_%s.cif' % (struct.composition.reduced_formula, struct.get_space_group_info()[1])
-                    if filepath.split('/')[1] not in os.listdir('References'): ## Give preference to known references
-                        struct.to(filename=filepath, fmt='cif')
+        solid_solns.main('References')
 
-    ## Simulate augmented XRD spectra from all reference phases
+    # Simulate and save augmented XRD spectra
     xrd_obj = spectrum_generation.SpectraGenerator('References')
     xrd_specs = xrd_obj.augmented_spectra
     np.save('XRD', xrd_specs)
 
-    ## Train, test, and save the CNN
+    # Train, test, and save the CNN
     cnn.main(xrd_specs, testing_fraction=0.2)
