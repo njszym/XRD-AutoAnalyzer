@@ -1,4 +1,4 @@
-from autoXRD.spectrum_generation import ideal_pattern, peak_shifts, intensity_changes, peak_broadening
+from autoXRD.spectrum_generation import peak_shifts, intensity_changes, peak_broadening
 import pymatgen as mg
 import numpy as np
 import os

@@ -26,7 +26,7 @@ A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```E
 python run_CNN.py
 ```
 
-The characterization of each spectrum should take around 2-3 minutes on a single processor. As classifications are made, the predicted phases will be printed along with their associated confidence.
+The characterization of each spectrum should take around 1-2 minutes on a single processor. Once all classifications are made, the predicted phases will be printed along with their associated confidence.
 
 ## Training the model for new compositions
 
@@ -46,19 +46,17 @@ This script will:
 
 4) Train a CNN on the simulated spectra.
 
-We caution that this process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: training our model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required 20 hours of computational runtime on 16 cores. Necessary computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
+We caution that this process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: training our model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 12 hours of computational runtime on 16 cores. Necessary computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
 
 When the procedure is completed, a Model.h5 file will be made available. 
 
 ## Characterizing multi-phase spectra
 
-In the directory containing the trained model (Model.h5), spectra can be classified by executing:
+In the directory containing the trained model (Model.h5) and ```References``` folder, place all spectra to be classified in the ```Spectra``` folder. Then, spectra can be classified by executing:
 
 ```
-python run_CNN.py $REFERENCE_FOLDER $SPECTRA_FOLDER
+python run_CNN.py
 ```
-
-Where ```$REFERENCE_FOLDER``` is the path to the folder containing all unique reference phases and ```$SPECTRA_FOLDER``` is the path to the folder containing all spectra that are to be tested. By default, these are set to ```References/``` and ```Spectra/``` respectively.
 
 Output will appear as:
 
@@ -73,7 +71,7 @@ Phase labels are denoted as ```formula_spacegroup```.
 To plot the line profiles of the predicted phases in the measured spectrum for comparison, the ```--plot``` option may be used:
 
 ```
-python run_CNN.py -plot $REFERENCE_FOLDER $SPECTRA_FOLDER
+python run_CNN.py --plot
 ```
 
 Note that the iterative process of phase identification and profile subtraction will proceed until all measured intensities fall below some cutoff value. By default, the cutoff is set to 10% of the maximum diffraction peak intensity. Alternatively, if you are only working with single-phase (or N-phase) patterns, the number of maximum phases considered can be manually set to 1 (or N).
