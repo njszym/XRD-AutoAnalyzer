@@ -125,7 +125,7 @@ def enumerate_routes(spectrum, kdp, reference_phases, indiv_conf=[], indiv_pred=
     return prediction_list, confidence_list
 
 
-def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=5):
+def get_reduced_pattern(predicted_cmpd, orig_y, last_normalization=1.0, cutoff=10):
     """
     Subtract a phase that has already been identified from a given XRD spectrum.
     If all phases have already been identified, halt the iteration.
