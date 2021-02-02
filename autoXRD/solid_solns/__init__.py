@@ -144,9 +144,9 @@ class SolidSolnsGen(object):
         struc_B = mg.Structure.from_file('%s/%s' % (self.ref_dir, pair[1]))
 
         try:
-            struct_B = self.matcher.get_s2_like_s1(struc_A, struc_B)
+            struc_B = self.matcher.get_s2_like_s1(struc_A, struc_B)
         except ValueError:
-            struct_A = self.matcher.get_s2_like_s1(struc_B, struc_A)
+            struc_A = self.matcher.get_s2_like_s1(struc_B, struc_A)
 
         # If a good match cannot be made, ignore this pair
         if (struc_A is None) or (struc_B is None):
