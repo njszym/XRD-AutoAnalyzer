@@ -20,4 +20,4 @@ for (spectrum_fname, phase_set, confidence) in zip(spectrum_names, predicted_pha
         predicted_phases = ['%s.cif' % phase for phase in predicted_phases]
 
         # Plot measured spectrum with line profiles of predicted phases
-        visualizer.main('Spectra', spectrum_fname, phase_set)
+        visualizer.main('Spectra', spectrum_fname, predicted_phases)
