@@ -1,4 +1,4 @@
-# AutoAnalyzer for XRD
+# An automatic analysis tool for XRD
 
 A package designed to automate the process of phase identification from XRD spectra using a probabilistic deep learning trained with physics-informed data augmentation.
 
