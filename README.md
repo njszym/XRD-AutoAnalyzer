@@ -82,4 +82,4 @@ python run_CNN.py --plot
 
 Which will yield a plot of the form:
 
-![sample](https://github.com/njszym/XRD-AutoAnalyzer/blob/main/Example/sample-image.jpg?raw=true)
+![sample](./Example/sample-image.png)
