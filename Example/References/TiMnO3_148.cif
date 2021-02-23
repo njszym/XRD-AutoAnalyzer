@@ -1,84 +1,62 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_184649-ICSD
-_database_code_ICSD 184649
-_audit_creation_date 2012-08-01
-_chemical_name_systematic 'Manganese titanate'
-_chemical_formula_structural 'Mn (Ti O3)'
-_chemical_formula_sum 'Mn1 O3 Ti1'
-_chemical_name_structure_type Ilmenite-FeTiO3
-_exptl_crystal_density_diffrn 4.59
-_cell_measurement_temperature 0.
-_cell_measurement_pressure 0.
-_publ_section_title
-
-;
-First-principles investigation on high-pressure structural evolution of Mn Ti
-O3
-;
+# generated using pymatgen
+data_TiMnO3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.08894000
+_cell_length_b   5.08894000
+_cell_length_c   14.09280000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiMnO3
+_chemical_formula_sum   'Ti6 Mn6 O18'
+_cell_volume   316.06949404
+_cell_formula_units_Z   6
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Solid State Communications' 2012 152 984 988 SSCOA4
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Zhu Feng'
-'Wu Xiang'
-'Qin Shan'
-_cell_length_a 5.1386
-_cell_length_b 5.1386
-_cell_length_c 14.3126
-_cell_angle_alpha 90.
-_cell_angle_beta 90.
-_cell_angle_gamma 120.
-_cell_volume 327.29
-_cell_formula_units_Z 6
-_symmetry_space_group_name_H-M 'R -3 H'
-_symmetry_Int_Tables_number 148
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Ti4+  4.0
+  Mn2+  2.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x-y, x, -z'
-2 'y, -x+y, -z'
-3 '-x, -y, -z'
-4 '-x+y, -x, z'
-5 '-y, x-y, z'
-6 'x, y, z'
-7 'x-y+2/3, x+1/3, -z+1/3'
-8 'y+2/3, -x+y+1/3, -z+1/3'
-9 '-x+2/3, -y+1/3, -z+1/3'
-10 '-x+y+2/3, -x+1/3, z+1/3'
-11 '-y+2/3, x-y+1/3, z+1/3'
-12 'x+2/3, y+1/3, z+1/3'
-13 'x-y+1/3, x+2/3, -z+2/3'
-14 'y+1/3, -x+y+2/3, -z+2/3'
-15 '-x+1/3, -y+2/3, -z+2/3'
-16 '-x+y+1/3, -x+2/3, z+2/3'
-17 '-y+1/3, x-y+2/3, z+2/3'
-18 'x+1/3, y+2/3, z+2/3'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Mn2+ 2
-Ti4+ 4
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Mn1 Mn2+ 6 c 0 0 0.3598 . 1. 0
-Ti1 Ti4+ 6 c 0 0 0.1477 . 1. 0
-O1 O2- 18 f 0.3174 0.0236 0.2448 . 1. 0
-#End of TTdata_184649-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti4+  Ti0  1  0.00000000  0.00000000  0.85330000  1.0
+  Ti4+  Ti1  1  0.00000000  0.00000000  0.14670000  1.0
+  Ti4+  Ti2  1  0.66666667  0.33333333  0.18663333  1.0
+  Ti4+  Ti3  1  0.66666667  0.33333333  0.48003333  1.0
+  Ti4+  Ti4  1  0.33333333  0.66666667  0.51996667  1.0
+  Ti4+  Ti5  1  0.33333333  0.66666667  0.81336667  1.0
+  Mn2+  Mn6  1  0.00000000  0.00000000  0.64160000  1.0
+  Mn2+  Mn7  1  0.00000000  0.00000000  0.35840000  1.0
+  Mn2+  Mn8  1  0.66666667  0.33333333  0.97493333  1.0
+  Mn2+  Mn9  1  0.66666667  0.33333333  0.69173333  1.0
+  Mn2+  Mn10  1  0.33333333  0.66666667  0.30826667  1.0
+  Mn2+  Mn11  1  0.33333333  0.66666667  0.02506667  1.0
+  O2-  O12  1  0.29230000  0.31990000  0.76070000  1.0
+  O2-  O13  1  0.02760000  0.70770000  0.76070000  1.0
+  O2-  O14  1  0.68010000  0.97240000  0.76070000  1.0
+  O2-  O15  1  0.70770000  0.68010000  0.23930000  1.0
+  O2-  O16  1  0.97240000  0.29230000  0.23930000  1.0
+  O2-  O17  1  0.31990000  0.02760000  0.23930000  1.0
+  O2-  O18  1  0.95896667  0.65323333  0.09403333  1.0
+  O2-  O19  1  0.69426667  0.04103333  0.09403333  1.0
+  O2-  O20  1  0.34676667  0.30573333  0.09403333  1.0
+  O2-  O21  1  0.37436667  0.01343333  0.57263333  1.0
+  O2-  O22  1  0.63906667  0.62563333  0.57263333  1.0
+  O2-  O23  1  0.98656667  0.36093333  0.57263333  1.0
+  O2-  O24  1  0.62563333  0.98656667  0.42736667  1.0
+  O2-  O25  1  0.36093333  0.37436667  0.42736667  1.0
+  O2-  O26  1  0.01343333  0.63906667  0.42736667  1.0
+  O2-  O27  1  0.04103333  0.34676667  0.90596667  1.0
+  O2-  O28  1  0.30573333  0.95896667  0.90596667  1.0
+  O2-  O29  1  0.65323333  0.69426667  0.90596667  1.0

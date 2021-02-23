@@ -1,70 +1,49 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_99593-ICSD
-_database_code_ICSD 99593
-_audit_creation_date 2005-04-01
-_chemical_name_systematic
-'Indium chromium titanium oxide (1/0.33/0.67/3.3) - subsystem 2'
-_chemical_formula_structural 'In (Cr0.333 Ti0.667) O3.333'
-_chemical_formula_sum 'Cr0.333 In1 O3.333 Ti0.667'
-_exptl_crystal_density_diffrn 8.07
-_publ_section_title
-'Modulated structure of the composite crystal In Cr1-x Tix O3+x/2'
+# generated using pymatgen
+data_MnO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.78900000
+_cell_length_b   2.83400000
+_cell_length_c   9.55100000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   93.72000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   MnO2
+_chemical_formula_sum   'Mn6 O12'
+_cell_volume   264.40581932
+_cell_formula_units_Z   6
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Journal of Solid State Chemistry' 2004 177 2644 2648 JSSCBI
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Michiue, Y.'
-'Onoda, M.'
-'Brown, F.'
-'Kimizuka, N.'
-_cell_length_a 5.9269(2)
-_cell_length_b 2.4984(9)
-_cell_length_c 6.3583(2)
-_cell_angle_alpha 90
-_cell_angle_beta 108.0964(3)
-_cell_angle_gamma 90
-_cell_volume 89.5
-_cell_formula_units_Z 2
-_symmetry_space_group_name_H-M 'C 1 2/m 1'
-_symmetry_Int_Tables_number 12
-_refine_ls_R_factor_all 0.108
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Mn4+  4.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-x, y, -z'
-2 '-x, -y, -z'
-3 'x, -y, z'
-4 'x, y, z'
-5 '-x+1/2, y+1/2, -z'
-6 '-x+1/2, -y+1/2, -z'
-7 'x+1/2, -y+1/2, z'
-8 'x+1/2, y+1/2, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-O2- -2
-In3+ 3
-Cr3+ 3
-Ti4+ 4
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-O2 O2- 4 f 0.25 0.25 0.5 1. 1. 0
-#End of TTdata_99593-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn4+  Mn0  1  0.50000000  0.50000000  0.00000000  1.0
+  Mn4+  Mn1  1  0.23600000  0.00000000  0.99800000  1.0
+  Mn4+  Mn2  1  0.76400000  0.00000000  0.00200000  1.0
+  Mn4+  Mn3  1  0.00000000  0.00000000  0.50000000  1.0
+  Mn4+  Mn4  1  0.01000000  0.50000000  0.24100000  1.0
+  Mn4+  Mn5  1  0.99000000  0.50000000  0.75900000  1.0
+  O2-  O6  1  0.82000000  0.50000000  0.88400000  1.0
+  O2-  O7  1  0.18000000  0.50000000  0.11600000  1.0
+  O2-  O8  1  0.59700000  0.00000000  0.93100000  1.0
+  O2-  O9  1  0.40300000  0.00000000  0.06900000  1.0
+  O2-  O10  1  0.33700000  0.50000000  0.89000000  1.0
+  O2-  O11  1  0.66300000  0.50000000  0.11000000  1.0
+  O2-  O12  1  0.09200000  0.00000000  0.85000000  1.0
+  O2-  O13  1  0.90800000  0.00000000  0.15000000  1.0
+  O2-  O14  1  0.09700000  0.50000000  0.58800000  1.0
+  O2-  O15  1  0.90300000  0.50000000  0.41200000  1.0
+  O2-  O16  1  0.11100000  0.00000000  0.33400000  1.0
+  O2-  O17  1  0.88900000  0.00000000  0.66600000  1.0

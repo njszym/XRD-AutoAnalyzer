@@ -1,92 +1,55 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_2558-ICSD
-_database_code_ICSD 2558
-_audit_creation_date 1980-01-01
-_audit_update_record 2015-02-01
-_chemical_name_systematic 'Lithium hexafluorotitanate dihydrate'
-_chemical_formula_structural 'Li2 Ti F6 (H2 O)2'
-_chemical_formula_sum 'H4 F6 Li2 O2 Ti1'
-_chemical_name_structure_type Li2TiF6(H2O)2
-_exptl_crystal_density_diffrn 2.4
-_publ_section_title
-'Lithium hexafluorotitanate dihydrate and lithium hexafluorostannate dihydrate'
+# generated using pymatgen
+data_Li2Ti(OF3)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.29400000
+_cell_length_b   5.93400000
+_cell_length_c   4.80320000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.13000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Ti(OF3)2
+_chemical_formula_sum   'Li4 Ti2 O4 F12'
+_cell_volume   293.40077629
+_cell_formula_units_Z   2
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary
-
-;
-Acta Crystallographica, Section B: Structural Crystallography and Crystal
-Chemistry
-; 1973 29 1352 1354 ACBCAR
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Marseglia, E.A.'
-'Brown, I.D.'
-_cell_length_a 10.294(1)
-_cell_length_b 5.934(2)
-_cell_length_c 4.8032(5)
-_cell_angle_alpha 90.
-_cell_angle_beta 90.13(8)
-_cell_angle_gamma 90.
-_cell_volume 293.4
-_cell_formula_units_Z 2
-_symmetry_space_group_name_H-M 'C 1 2/m 1'
-_symmetry_Int_Tables_number 12
-_refine_ls_R_factor_all 0.1
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Ti4+  4.0
+  O2-  -2.0
+  F-  -1.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-x, y, -z'
-2 '-x, -y, -z'
-3 'x, -y, z'
-4 'x, y, z'
-5 '-x+1/2, y+1/2, -z'
-6 '-x+1/2, -y+1/2, -z'
-7 'x+1/2, -y+1/2, z'
-8 'x+1/2, y+1/2, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Ti4+ 4
-F1- -1
-O2- -2
-Li1+ 1
-H1+ 1
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Ti1 Ti4+ 2 a 0 0 0 . 1. 0
-F1 F1- 8 j 0.0852(3) 0.2203(6) 0.2232(7) . 1. 0
-F2 F1- 4 i -.1576(4) 0 0.2313(10) . 1. 0
-O1 O2- 4 i 0.3434(6) 0 0.2861(12) . 1. 0
-Li1 Li1+ 4 f 0.25 0.25 0.5 . 1. 0
-loop_
-_atom_site_aniso_label
-_atom_site_aniso_type_symbol
-_atom_site_aniso_U_11
-_atom_site_aniso_U_22
-_atom_site_aniso_U_33
-_atom_site_aniso_U_12
-_atom_site_aniso_U_13
-_atom_site_aniso_U_23
-Ti1 Ti4+ 0.019(1) 0.017(1) 0.020(1) 0 0.002(1) 0
-F1 F1- 0.033(2) 0.030(2) 0.032(1) -.002(1) 0.001(1) -.001(1)
-F2 F1- 0.028(2) 0.027(2) 0.032(2) 0 0.008(2) 0
-O1 O2- 0.022(3) 0.021(3) 0.029(3) 0 0.006(2) 0
-Li1 Li1+ 0.071(12) 0.047(10) 0.048(9) 0.018(10) -.009(9) -.028(8)
-#End of TTdata_2558-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.75000000  0.25000000  0.50000000  1.0
+  Li+  Li1  1  0.75000000  0.75000000  0.50000000  1.0
+  Li+  Li2  1  0.25000000  0.75000000  0.50000000  1.0
+  Li+  Li3  1  0.25000000  0.25000000  0.50000000  1.0
+  Ti4+  Ti4  1  0.00000000  0.00000000  0.00000000  1.0
+  Ti4+  Ti5  1  0.50000000  0.50000000  0.00000000  1.0
+  O2-  O6  1  0.65660000  0.00000000  0.71390000  1.0
+  O2-  O7  1  0.34340000  0.00000000  0.28610000  1.0
+  O2-  O8  1  0.15660000  0.50000000  0.71390000  1.0
+  O2-  O9  1  0.84340000  0.50000000  0.28610000  1.0
+  F-  F10  1  0.91480000  0.22030000  0.77680000  1.0
+  F-  F11  1  0.91480000  0.77970000  0.77680000  1.0
+  F-  F12  1  0.08520000  0.77970000  0.22320000  1.0
+  F-  F13  1  0.08520000  0.22030000  0.22320000  1.0
+  F-  F14  1  0.41480000  0.72030000  0.77680000  1.0
+  F-  F15  1  0.41480000  0.27970000  0.77680000  1.0
+  F-  F16  1  0.58520000  0.27970000  0.22320000  1.0
+  F-  F17  1  0.58520000  0.72030000  0.22320000  1.0
+  F-  F18  1  0.15760000  0.00000000  0.76870000  1.0
+  F-  F19  1  0.84240000  0.00000000  0.23130000  1.0
+  F-  F20  1  0.65760000  0.50000000  0.76870000  1.0
+  F-  F21  1  0.34240000  0.50000000  0.23130000  1.0

@@ -1,88 +1,88 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_32676-ICSD
-_database_code_ICSD 32676
-_audit_creation_date 1982-12-31
-_chemical_name_systematic 'Oxonium pentafluorotitanate'
-_chemical_formula_structural 'H3 O Ti F5'
-_chemical_formula_sum 'H3 F5 O1 Ti1'
-_exptl_crystal_density_diffrn 2.46
-_publ_section_title 'The structure of H3 O Ti F5'
+# generated using pymatgen
+data_TiOF5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   14.52800000
+_cell_length_b   4.83900000
+_cell_length_c   13.79800000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   115.59000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiOF5
+_chemical_formula_sum   'Ti8 O8 F40'
+_cell_volume   874.86249191
+_cell_formula_units_Z   8
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Journal of Fluorine Chemistry' 1982 20 349 356 JFLCAR
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Cohen, S.'
-'Selig, H.'
-'Gut, R.'
-_cell_length_a 14.528(5)
-_cell_length_b 4.839(1)
-_cell_length_c 13.798(5)
-_cell_angle_alpha 90.
-_cell_angle_beta 115.59(5)
-_cell_angle_gamma 90.
-_cell_volume 874.86
-_cell_formula_units_Z 8
-_symmetry_space_group_name_H-M 'C 1 2/c 1'
-_symmetry_Int_Tables_number 15
-_refine_ls_R_factor_all 0.056
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Ti4+  4.0
+  O2-  -2.0
+  F-  -1.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x, -y, z+1/2'
-2 '-x, -y, -z'
-3 '-x, y, -z+1/2'
-4 'x, y, z'
-5 'x+1/2, -y+1/2, z+1/2'
-6 '-x+1/2, -y+1/2, -z'
-7 '-x+1/2, y+1/2, -z+1/2'
-8 'x+1/2, y+1/2, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Ti4+ 4
-F1- -1
-O2- -2
-H1+ 1
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Ti1 Ti4+ 8 f 0.6398(1) 0.5121(2) 0.6785(1) . 1. 0
-F1 F1- 8 f 0.7595(2) 0.7492(7) 0.7140(3) . 1. 0
-F2 F1- 8 f 0.6265(3) 0.6742(8) 0.7918(3) . 1. 0
-F3 F1- 8 f 0.6717(3) 0.3351(8) 0.5794(3) . 1. 0
-F4 F1- 8 f 0.5399(3) 0.2698(8) 0.6625(3) . 1. 0
-F5 F1- 8 f 0.5615(3) 0.7526(9) 0.5821(3) . 1. 0
-O1 O2- 8 f 0.8694(3) 0.5161(9) 0.5696(3) . 1. 0
-loop_
-_atom_site_aniso_label
-_atom_site_aniso_type_symbol
-_atom_site_aniso_U_11
-_atom_site_aniso_U_22
-_atom_site_aniso_U_33
-_atom_site_aniso_U_12
-_atom_site_aniso_U_13
-_atom_site_aniso_U_23
-Ti1 Ti4+ 0.0116(4) 0.0141(4) 0.0185(4) 0.0000(3) 0.0005(3) -.0019(3)
-F1 F1- 0.022(2) 0.022(2) 0.027(2) -.009(1) 0.005(1) -.005(1)
-F2 F1- 0.025(2) 0.035(2) 0.039(2) -.003(2) 0.013(2) -.012(2)
-F3 F1- 0.025(2) 0.033(2) 0.029(2) -.003(2) 0.005(1) -.009(2)
-F4 F1- 0.024(2) 0.035(2) 0.047(2) -.015(2) 0.011(2) -.011(2)
-F5 F1- 0.029(2) 0.031(2) 0.036(2) 0.012(2) -.003(2) 0.008(2)
-O1 O2- 0.022(2) 0.029(2) 0.031(2) -.005(2) 0.010(2) -.002(2)
-#End of TTdata_32676-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti4+  Ti0  1  0.63980000  0.48790000  0.17850000  1.0
+  Ti4+  Ti1  1  0.36020000  0.48790000  0.32150000  1.0
+  Ti4+  Ti2  1  0.36020000  0.51210000  0.82150000  1.0
+  Ti4+  Ti3  1  0.63980000  0.51210000  0.67850000  1.0
+  Ti4+  Ti4  1  0.13980000  0.98790000  0.17850000  1.0
+  Ti4+  Ti5  1  0.86020000  0.98790000  0.32150000  1.0
+  Ti4+  Ti6  1  0.86020000  0.01210000  0.82150000  1.0
+  Ti4+  Ti7  1  0.13980000  0.01210000  0.67850000  1.0
+  O2-  O8  1  0.86940000  0.48390000  0.06960000  1.0
+  O2-  O9  1  0.13060000  0.48390000  0.43040000  1.0
+  O2-  O10  1  0.13060000  0.51610000  0.93040000  1.0
+  O2-  O11  1  0.86940000  0.51610000  0.56960000  1.0
+  O2-  O12  1  0.36940000  0.98390000  0.06960000  1.0
+  O2-  O13  1  0.63060000  0.98390000  0.43040000  1.0
+  O2-  O14  1  0.63060000  0.01610000  0.93040000  1.0
+  O2-  O15  1  0.36940000  0.01610000  0.56960000  1.0
+  F-  F16  1  0.75950000  0.25080000  0.21400000  1.0
+  F-  F17  1  0.24050000  0.25080000  0.28600000  1.0
+  F-  F18  1  0.24050000  0.74920000  0.78600000  1.0
+  F-  F19  1  0.75950000  0.74920000  0.71400000  1.0
+  F-  F20  1  0.25950000  0.75080000  0.21400000  1.0
+  F-  F21  1  0.74050000  0.75080000  0.28600000  1.0
+  F-  F22  1  0.74050000  0.24920000  0.78600000  1.0
+  F-  F23  1  0.25950000  0.24920000  0.71400000  1.0
+  F-  F24  1  0.62650000  0.32580000  0.29180000  1.0
+  F-  F25  1  0.37350000  0.32580000  0.20820000  1.0
+  F-  F26  1  0.37350000  0.67420000  0.70820000  1.0
+  F-  F27  1  0.62650000  0.67420000  0.79180000  1.0
+  F-  F28  1  0.12650000  0.82580000  0.29180000  1.0
+  F-  F29  1  0.87350000  0.82580000  0.20820000  1.0
+  F-  F30  1  0.87350000  0.17420000  0.70820000  1.0
+  F-  F31  1  0.12650000  0.17420000  0.79180000  1.0
+  F-  F32  1  0.67170000  0.66490000  0.07940000  1.0
+  F-  F33  1  0.32830000  0.66490000  0.42060000  1.0
+  F-  F34  1  0.32830000  0.33510000  0.92060000  1.0
+  F-  F35  1  0.67170000  0.33510000  0.57940000  1.0
+  F-  F36  1  0.17170000  0.16490000  0.07940000  1.0
+  F-  F37  1  0.82830000  0.16490000  0.42060000  1.0
+  F-  F38  1  0.82830000  0.83510000  0.92060000  1.0
+  F-  F39  1  0.17170000  0.83510000  0.57940000  1.0
+  F-  F40  1  0.53990000  0.73020000  0.16250000  1.0
+  F-  F41  1  0.46010000  0.73020000  0.33750000  1.0
+  F-  F42  1  0.46010000  0.26980000  0.83750000  1.0
+  F-  F43  1  0.53990000  0.26980000  0.66250000  1.0
+  F-  F44  1  0.03990000  0.23020000  0.16250000  1.0
+  F-  F45  1  0.96010000  0.23020000  0.33750000  1.0
+  F-  F46  1  0.96010000  0.76980000  0.83750000  1.0
+  F-  F47  1  0.03990000  0.76980000  0.66250000  1.0
+  F-  F48  1  0.56150000  0.24740000  0.08210000  1.0
+  F-  F49  1  0.43850000  0.24740000  0.41790000  1.0
+  F-  F50  1  0.43850000  0.75260000  0.91790000  1.0
+  F-  F51  1  0.56150000  0.75260000  0.58210000  1.0
+  F-  F52  1  0.06150000  0.74740000  0.08210000  1.0
+  F-  F53  1  0.93850000  0.74740000  0.41790000  1.0
+  F-  F54  1  0.93850000  0.25260000  0.91790000  1.0
+  F-  F55  1  0.06150000  0.25260000  0.58210000  1.0

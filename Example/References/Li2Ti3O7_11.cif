@@ -1,79 +1,56 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_193803-ICSD
-_database_code_ICSD 193803
-_audit_creation_date 2015-08-01
-_chemical_name_systematic 'Dilithium trititanate'
-_chemical_formula_structural 'Li2 (Ti3 O7)'
-_chemical_formula_sum 'Li2 O7 Ti3'
-_exptl_crystal_density_diffrn 3.43
-_publ_section_title
-
-;
-Rationalization of intercalation potential and redox mechanism for A2 Ti3 O7
-(A = Li, Na)
-;
+# generated using pymatgen
+data_Li2Ti3O7
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.54420000
+_cell_length_b   3.75200000
+_cell_length_c   9.31500000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   97.61380000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Ti3O7
+_chemical_formula_sum   'Li4 Ti6 O14'
+_cell_volume   261.34428933
+_cell_formula_units_Z   2
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Chemistry of Materials' 2013 25 4946 4956 CMATEX
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Rousse, Gwenaelle'
-'Arroyo-de Dompablo, M. Elena'
-'Senguttuvan, Premkumar'
-'Ponrouch, Alexandre'
-'Tarascon, Jean-Marie'
-'Palacin, M. Rosa'
-_cell_length_a 7.5442(7)
-_cell_length_b 3.7520(9)
-_cell_length_c 9.315(1)
-_cell_angle_alpha 90.
-_cell_angle_beta 97.6138(2)
-_cell_angle_gamma 90.
-_cell_volume 261.34
-_cell_formula_units_Z 2
-_symmetry_space_group_name_H-M 'P 1 21/m 1'
-_symmetry_Int_Tables_number 11
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Ti4+  4.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x, -y+1/2, z'
-2 '-x, -y, -z'
-3 '-x, y+1/2, -z'
-4 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Ti4+ 4
-O2- -2
-Li1+ 1
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Ti1 Ti4+ 2 e 0.163(7) 0.25 0.968(2) 0.2(8) 1. 0
-Ti2 Ti4+ 2 e 0.266(3) 0.25 0.659(3) 0.4(5) 1. 0
-Ti3 Ti4+ 2 e 0.048(4) 0.25 0.279(9) 0.3(6) 1. 0
-O1 O2- 2 e 0.255(7) 0.25 0.165(4) 0.05(2) 1. 0
-O2 O2- 2 e 0.180(8) 0.25 0.449(9) 0.05(2) 1. 0
-O3 O2- 2 e 0.493(4) 0.25 0.628(1) 0.05(2) 1. 0
-O4 O2- 2 e 0.355(0) 0.25 0.875(6) 0.05(2) 1. 0
-O5 O2- 2 e 0.010(2) 0.25 0.756(1) 0.05(2) 1. 0
-O6 O2- 2 e 0.799(3) 0.25 0.333(2) 0.05(2) 1. 0
-O7 O2- 2 e 0.905(9) 0.25 0.048(1) 0.05(2) 1. 0
-Li1 Li1+ 2 e 0.600(5) 0.25 0.829(5) 1.8(2) 1. 0
-Li2 Li1+ 2 e 0.416(8) 0.25 0.392(2) 1.6(2) 1. 0
-#End of TTdata_193803-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.60000000  0.25000000  0.82900000  1.0
+  Li+  Li1  1  0.40000000  0.75000000  0.17100000  1.0
+  Li+  Li2  1  0.41600000  0.25000000  0.39200000  1.0
+  Li+  Li3  1  0.58400000  0.75000000  0.60800000  1.0
+  Ti4+  Ti4  1  0.16300000  0.25000000  0.96800000  1.0
+  Ti4+  Ti5  1  0.83700000  0.75000000  0.03200000  1.0
+  Ti4+  Ti6  1  0.26600000  0.25000000  0.65900000  1.0
+  Ti4+  Ti7  1  0.73400000  0.75000000  0.34100000  1.0
+  Ti4+  Ti8  1  0.04800000  0.25000000  0.27900000  1.0
+  Ti4+  Ti9  1  0.95200000  0.75000000  0.72100000  1.0
+  O2-  O10  1  0.25500000  0.25000000  0.16500000  1.0
+  O2-  O11  1  0.74500000  0.75000000  0.83500000  1.0
+  O2-  O12  1  0.18000000  0.25000000  0.44900000  1.0
+  O2-  O13  1  0.82000000  0.75000000  0.55100000  1.0
+  O2-  O14  1  0.49300000  0.25000000  0.62800000  1.0
+  O2-  O15  1  0.50700000  0.75000000  0.37200000  1.0
+  O2-  O16  1  0.35500000  0.25000000  0.87500000  1.0
+  O2-  O17  1  0.64500000  0.75000000  0.12500000  1.0
+  O2-  O18  1  0.01000000  0.25000000  0.75600000  1.0
+  O2-  O19  1  0.99000000  0.75000000  0.24400000  1.0
+  O2-  O20  1  0.79900000  0.25000000  0.33300000  1.0
+  O2-  O21  1  0.20100000  0.75000000  0.66700000  1.0
+  O2-  O22  1  0.90500000  0.25000000  0.04800000  1.0
+  O2-  O23  1  0.09500000  0.75000000  0.95200000  1.0

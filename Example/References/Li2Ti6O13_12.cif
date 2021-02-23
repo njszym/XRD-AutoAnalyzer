@@ -1,84 +1,74 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_182966-ICSD
-_database_code_ICSD 182966
-_audit_creation_date 2012-08-01
-_chemical_name_systematic 'Dilithium hexatitanate(IV)'
-_chemical_formula_structural 'Li2 (Ti6 O13)'
-_chemical_formula_sum 'Li2 O13 Ti6'
-_chemical_name_structure_type Na2Ti6O13
-_exptl_crystal_density_diffrn 3.27
-_publ_section_title
-
-;
-Ion-exchange synthesis, crystal structure and electrochemical properties of
-Li2 Ti6 O13
-;
+# generated using pymatgen
+data_Li2Ti6O13
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   15.35040000
+_cell_length_b   3.75260000
+_cell_length_c   9.14610000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   99.46500000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2Ti6O13
+_chemical_formula_sum   'Li4 Ti12 O26'
+_cell_volume   519.67870557
+_cell_formula_units_Z   2
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Chemistry of Materials' 2011 23 2344 2352 CMATEX
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Kataoka, K.'
-'Awaka, J.'
-'Kijima, N.'
-'Hayakawa, H.'
-'Ohshima, K.I.'
-'Akimoto, J.'
-_cell_length_a 15.3065(4)
-_cell_length_b 3.74739(8)
-_cell_length_c 9.1404(2)
-_cell_angle_alpha 90
-_cell_angle_beta 99.379(2)
-_cell_angle_gamma 90
-_cell_volume 517.28
-_cell_formula_units_Z 2
-_symmetry_space_group_name_H-M 'C 1 2/m 1'
-_symmetry_Int_Tables_number 12
-_refine_ls_R_factor_all 0.0444
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Ti4+  4.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-x, y, -z'
-2 '-x, -y, -z'
-3 'x, -y, z'
-4 'x, y, z'
-5 '-x+1/2, y+1/2, -z'
-6 '-x+1/2, -y+1/2, -z'
-7 'x+1/2, -y+1/2, z'
-8 'x+1/2, y+1/2, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Li1+ 1
-Ti4+ 4
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Li1 Li1+ 4 i 0.450(1) 0.5 0.246(2) 0.026(4) 1 0
-Ti1 Ti4+ 4 i 0.1150(2) 0 0.096(1) 0.006(2) 1 0
-Ti2 Ti4+ 4 i 0.1677(5) 0 0.435(1) 0.006(2) 1 0
-Ti3 Ti4+ 4 i 0.2309(3) 0 0.7720(9) 0.006(2) 1 0
-O1 O2- 2 a 0 0 0 0.005(1) 1 0
-O2 O2- 4 i 0.2380(3) 0 0.2423(6) 0.005(1) 1 0
-O3 O2- 4 i 0.0727(3) 0 0.2899(6) 0.005(1) 1 0
-O4 O2- 4 i 0.2963(3) 0 0.5734(6) 0.005(1) 1 0
-O5 O2- 4 i 0.1297(3) 0 0.6110(7) 0.005(1) 1 0
-O6 O2- 4 i 0.3549(3) 0 0.8885(6) 0.005(1) 1 0
-O7 O2- 4 i 0.1611(3) 0 0.9077(4) 0.005(1) 1 0
-#End of TTdata_182966-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.93808000  0.00000000  0.23730000  1.0
+  Li+  Li1  1  0.06192000  0.00000000  0.76270000  1.0
+  Li+  Li2  1  0.43808000  0.50000000  0.23730000  1.0
+  Li+  Li3  1  0.56192000  0.50000000  0.76270000  1.0
+  Ti4+  Ti4  1  0.88810000  0.00000000  0.89925000  1.0
+  Ti4+  Ti5  1  0.11190000  0.00000000  0.10075000  1.0
+  Ti4+  Ti6  1  0.38810000  0.50000000  0.89925000  1.0
+  Ti4+  Ti7  1  0.61190000  0.50000000  0.10075000  1.0
+  Ti4+  Ti8  1  0.83492000  0.00000000  0.57067000  1.0
+  Ti4+  Ti9  1  0.16508000  0.00000000  0.42933000  1.0
+  Ti4+  Ti10  1  0.33492000  0.50000000  0.57067000  1.0
+  Ti4+  Ti11  1  0.66508000  0.50000000  0.42933000  1.0
+  Ti4+  Ti12  1  0.76996000  0.00000000  0.22855000  1.0
+  Ti4+  Ti13  1  0.23004000  0.00000000  0.77145000  1.0
+  Ti4+  Ti14  1  0.26996000  0.50000000  0.22855000  1.0
+  Ti4+  Ti15  1  0.73004000  0.50000000  0.77145000  1.0
+  O2-  O16  1  0.00000000  0.00000000  0.00000000  1.0
+  O2-  O17  1  0.50000000  0.50000000  0.00000000  1.0
+  O2-  O18  1  0.75965000  0.00000000  0.75782000  1.0
+  O2-  O19  1  0.24035000  0.00000000  0.24218000  1.0
+  O2-  O20  1  0.25965000  0.50000000  0.75782000  1.0
+  O2-  O21  1  0.74035000  0.50000000  0.24218000  1.0
+  O2-  O22  1  0.92844000  0.00000000  0.71032000  1.0
+  O2-  O23  1  0.07156000  0.00000000  0.28968000  1.0
+  O2-  O24  1  0.42844000  0.50000000  0.71032000  1.0
+  O2-  O25  1  0.57156000  0.50000000  0.28968000  1.0
+  O2-  O26  1  0.70641000  0.00000000  0.42899000  1.0
+  O2-  O27  1  0.29359000  0.00000000  0.57101000  1.0
+  O2-  O28  1  0.20641000  0.50000000  0.42899000  1.0
+  O2-  O29  1  0.79359000  0.50000000  0.57101000  1.0
+  O2-  O30  1  0.86544000  0.00000000  0.38882000  1.0
+  O2-  O31  1  0.13456000  0.00000000  0.61118000  1.0
+  O2-  O32  1  0.36544000  0.50000000  0.38882000  1.0
+  O2-  O33  1  0.63456000  0.50000000  0.61118000  1.0
+  O2-  O34  1  0.64559000  0.00000000  0.11384000  1.0
+  O2-  O35  1  0.35441000  0.00000000  0.88616000  1.0
+  O2-  O36  1  0.14559000  0.50000000  0.11384000  1.0
+  O2-  O37  1  0.85441000  0.50000000  0.88616000  1.0
+  O2-  O38  1  0.84066000  0.00000000  0.08973000  1.0
+  O2-  O39  1  0.15934000  0.00000000  0.91027000  1.0
+  O2-  O40  1  0.34066000  0.50000000  0.08973000  1.0
+  O2-  O41  1  0.65934000  0.50000000  0.91027000  1.0

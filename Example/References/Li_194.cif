@@ -1,89 +1,32 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure, and the U.S. Secretary of
-#Commerce on behalf of the United States.  All rights reserved.
-data_671115-ICSD
-_database_code_ICSD 671115
-_audit_creation_date 2017-02-01
-_chemical_name_systematic Lithium
-_chemical_formula_structural Li
-_chemical_formula_sum Li1
-_chemical_name_structure_type hcp-Mg
-_exptl_crystal_density_diffrn 0.57
-_publ_section_title
-
-;
-Temperature and pressure effects on the elasticity behavior, electronic and
-vibrational properties of Al, Li, LiAl and Li2Al: A density functional theory
-study
-;
+# generated using pymatgen
+data_Li
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.48000000
+_cell_length_b   5.48000000
+_cell_length_c   5.17000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li
+_chemical_formula_sum   Li2
+_cell_volume   134.45665161
+_cell_formula_units_Z   2
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Computational Materials Science' 2015 106 50 58 CMMSEM
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Chen, D.'
-'Cang, Y.P.'
-'Luo, Y.S.'
-'Yang, H.M.'
-'Zhao, J.Y.'
-'Wang, M.T.'
-_cell_length_a 3.085
-_cell_length_b 3.085
-_cell_length_c 4.939
-_cell_angle_alpha 90
-_cell_angle_beta 90
-_cell_angle_gamma 120
-_cell_volume 40.7
-_cell_formula_units_Z 2
-_symmetry_space_group_name_H-M 'P 63/m m c'
-_symmetry_Int_Tables_number 194
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x, x-y, -z+1/2'
-2 '-x+y, y, -z+1/2'
-3 '-y, -x, -z+1/2'
-4 '-x+y, -x, -z+1/2'
-5 '-y, x-y, -z+1/2'
-6 'x, y, -z+1/2'
-7 '-x, -x+y, z+1/2'
-8 'x-y, -y, z+1/2'
-9 'y, x, z+1/2'
-10 'x-y, x, z+1/2'
-11 'y, -x+y, z+1/2'
-12 '-x, -y, z+1/2'
-13 '-x, -x+y, -z'
-14 'x-y, -y, -z'
-15 'y, x, -z'
-16 'x-y, x, -z'
-17 'y, -x+y, -z'
-18 '-x, -y, -z'
-19 'x, x-y, z'
-20 '-x+y, y, z'
-21 '-y, -x, z'
-22 '-x+y, -x, z'
-23 '-y, x-y, z'
-24 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Li0+ 0
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Li1 Li0+ 2 c 0.333333 0.666667 0.25 1. 1. 0
-#End of TTdata_671115-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.66666667  0.33333333  0.42700000  1.0
+  Li+  Li1  1  0.33333333  0.66666667  0.92700000  1.0

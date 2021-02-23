@@ -1,89 +1,60 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_182579-ICSD
-_database_code_ICSD 182579
-_audit_creation_date 2012-02-01
-_audit_update_record 2013-08-01
-_chemical_name_systematic 'Lithium titanium oxide (0.5/1/2) - configuration 1'
-_chemical_formula_structural 'Li0.5 Ti O2'
-_chemical_formula_sum 'Li0.5 O2 Ti1'
-_chemical_name_structure_type Li.5TiO2(P1)
-_exptl_crystal_density_diffrn 3.49
-_publ_section_title
-
-;
-Role of lithium ordering in the Lix Ti O2 anatase to titanate phase transition
-;
+# generated using pymatgen
+data_LiTi2O4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.30080000
+_cell_length_b   3.96648000
+_cell_length_c   9.63826000
+_cell_angle_alpha   90.00002000
+_cell_angle_beta   89.99999000
+_cell_angle_gamma   90.00069000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiTi2O4
+_chemical_formula_sum   'Li4 Ti8 O16'
+_cell_volume   317.33929781
+_cell_formula_units_Z   4
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Journal of Physical Chemistry Letters' 2011 2 1657 1661 JPCLCD
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Morgan, B.J.'
-'Watson, G.W.'
-_cell_length_a 8.3008
-_cell_length_b 3.96648
-_cell_length_c 9.63826
-_cell_angle_alpha 90.00002
-_cell_angle_beta 89.99999
-_cell_angle_gamma 90.00069
-_cell_volume 317.34
-_cell_formula_units_Z 8
-_symmetry_space_group_name_H-M 'P 1'
-_symmetry_Int_Tables_number 1
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Ti3.5+  3.5
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Li1+ 1
-Ti3+ 3.5
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Li1 Li1+ 1 a 0.99786 0.00001 0.0144 1. 1. 0
-Li2 Li1+ 1 a 0.25214 0.5 0.51441 1. 1. 0
-Li3 Li1+ 1 a 0.49795 0.50002 0.23509 1. 1. 0
-Li4 Li1+ 1 a 0.75205 -0.00001 0.73509 1. 1. 0
-Ti1 Ti3+ 1 a 0.99421 0.99996 0.49989 1. 1. 0
-Ti2 Ti3+ 1 a 0.25579 0.50006 0.99988 1. 1. 0
-Ti3 Ti3+ 1 a 0.49413 0.49997 0.75021 1. 1. 0
-Ti4 Ti3+ 1 a 0.75587 0.00002 0.25021 1. 1. 0
-Ti5 Ti3+ 1 a 0.51173 0. 0.49197 1. 1. 0
-Ti6 Ti3+ 1 a 0.73827 0.5 0.99197 1. 1. 0
-Ti7 Ti3+ 1 a 0.01172 0.49998 0.75806 1. 1. 0
-Ti8 Ti3+ 1 a 0.23828 0.00002 0.25806 1. 1. 0
-O1 O2- 1 a 0.00742 0.00003 0.28151 1. 1. 0
-O2 O2- 1 a 0.49457 0.00002 0.28486 1. 1. 0
-O3 O2- 1 a 0.24258 0.49995 0.78151 1. 1. 0
-O4 O2- 1 a 0.75543 0.49998 0.78486 1. 1. 0
-O5 O2- 1 a 0.01852 0.49998 0.54645 1. 1. 0
-O6 O2- 1 a 0.48459 0.49999 0.52013 1. 1. 0
-O7 O2- 1 a 0.23148 0.00003 0.04645 1. 1. 0
-O8 O2- 1 a 0.76541 -0.00001 0.02013 1. 1. 0
-O9 O2- 1 a 0.25553 0.00001 0.46515 1. 1. 0
-O10 O2- 1 a 0.74264 -0. 0.46867 1. 1. 0
-O11 O2- 1 a 0.99447 0.49999 0.96515 1. 1. 0
-O12 O2- 1 a 0.50736 0.50001 0.96867 1. 1. 0
-O13 O2- 1 a 0.26543 0.50002 0.23 1. 1. 0
-O14 O2- 1 a 0.73161 0.50002 0.20357 1. 1. 0
-O15 O2- 1 a 0.98457 0.99998 0.73 1. 1. 0
-O16 O2- 1 a 0.51839 -0.00001 0.70357 1. 1. 0
-#End of TTdata_182579-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.99786000  0.00001000  0.01440000  1.0
+  Li+  Li1  1  0.25214000  0.50000000  0.51441000  1.0
+  Li+  Li2  1  0.49795000  0.50002000  0.23509000  1.0
+  Li+  Li3  1  0.75205000  0.99999000  0.73509000  1.0
+  Ti3.5+  Ti4  1  0.99421000  0.99996000  0.49989000  1.0
+  Ti3.5+  Ti5  1  0.25579000  0.50006000  0.99988000  1.0
+  Ti3.5+  Ti6  1  0.49413000  0.49997000  0.75021000  1.0
+  Ti3.5+  Ti7  1  0.75587000  0.00002000  0.25021000  1.0
+  Ti3.5+  Ti8  1  0.51173000  0.00000000  0.49197000  1.0
+  Ti3.5+  Ti9  1  0.73827000  0.50000000  0.99197000  1.0
+  Ti3.5+  Ti10  1  0.01172000  0.49998000  0.75806000  1.0
+  Ti3.5+  Ti11  1  0.23828000  0.00002000  0.25806000  1.0
+  O2-  O12  1  0.00742000  0.00003000  0.28151000  1.0
+  O2-  O13  1  0.49457000  0.00002000  0.28486000  1.0
+  O2-  O14  1  0.24258000  0.49995000  0.78151000  1.0
+  O2-  O15  1  0.75543000  0.49998000  0.78486000  1.0
+  O2-  O16  1  0.01852000  0.49998000  0.54645000  1.0
+  O2-  O17  1  0.48459000  0.49999000  0.52013000  1.0
+  O2-  O18  1  0.23148000  0.00003000  0.04645000  1.0
+  O2-  O19  1  0.76541000  0.99999000  0.02013000  1.0
+  O2-  O20  1  0.25553000  0.00001000  0.46515000  1.0
+  O2-  O21  1  0.74264000  0.00000000  0.46867000  1.0
+  O2-  O22  1  0.99447000  0.49999000  0.96515000  1.0
+  O2-  O23  1  0.50736000  0.50001000  0.96867000  1.0
+  O2-  O24  1  0.26543000  0.50002000  0.23000000  1.0
+  O2-  O25  1  0.73161000  0.50002000  0.20357000  1.0
+  O2-  O26  1  0.98457000  0.99998000  0.73000000  1.0
+  O2-  O27  1  0.51839000  0.99999000  0.70357000  1.0

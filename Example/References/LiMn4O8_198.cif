@@ -1,90 +1,85 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_252035-ICSD
-_database_code_ICSD 252035
-_audit_creation_date 2016-02-01
-_chemical_name_systematic 'Hemilithium dimanganate(III/IV)'
-_chemical_formula_structural 'Li0.5 Mn2 O4'
-_chemical_formula_sum 'Li0.5 Mn2 O4'
-_exptl_crystal_density_diffrn 4.35
-_cell_measurement_temperature 293.
-_publ_section_title
-
-;
-Spinel materials for Li-ion batteries: new insights obtained by operando
-neutron and synchrotron X-ray diffraction
-;
+# generated using pymatgen
+data_LiMn4O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.15288900
+_cell_length_b   8.15288900
+_cell_length_c   8.15288900
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   LiMn4O8
+_chemical_formula_sum   'Li4 Mn16 O32'
+_cell_volume   541.91926290
+_cell_formula_units_Z   4
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary
-
-;
-Acta Crystallographica, Section B: Structural Science, Crystal Engineering and
-Materials
-; 2015 71 688 701 ACSBDA
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Bianchini, Matteo'
-'Fauth, Francois'
-'Suard, Emmanuelle'
-'Leriche, Jean-Bernard'
-'Masquelier, Christian'
-'Croguennec, Laurence'
-_cell_length_a 8.152889(13)
-_cell_length_b 8.152889(13)
-_cell_length_c 8.152889(13)
-_cell_angle_alpha 90.
-_cell_angle_beta 90.
-_cell_angle_gamma 90.
-_cell_volume 541.92
-_cell_formula_units_Z 8
-_symmetry_space_group_name_H-M 'P 21 3'
-_symmetry_Int_Tables_number 198
-_refine_ls_R_factor_all 0.047
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Mn3+  3.0
+  Mn4+  4.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-z+1/2, -x, y+1/2'
-2 '-y+1/2, -z, x+1/2'
-3 '-x+1/2, -y, z+1/2'
-4 '-z, x+1/2, -y+1/2'
-5 '-y, z+1/2, -x+1/2'
-6 '-x, y+1/2, -z+1/2'
-7 'z+1/2, -x+1/2, -y'
-8 'y+1/2, -z+1/2, -x'
-9 'x+1/2, -y+1/2, -z'
-10 'z, x, y'
-11 'y, z, x'
-12 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Li1+ 1
-Mn3+ 3
-Mn4+ 4
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Li1 Li1+ 4 a 0.011 0.011 0.011 0.01267 1. 0
-Mn1 Mn3+ 4 a 0.626(2) 0.626(2) 0.626(2) 0.03257 1. 0
-Mn2 Mn4+ 12 b 0.1284(20) 0.3798(13) -0.1274(14) 0.03257 1. 0
-O1 O2- 4 a 0.387(7) 0.387(7) 0.387(7) 0.02956 1. 0
-O2 O2- 12 b 0.142(9) -0.135(6) 0.136(6) 0.02956 1. 0
-O3 O2- 4 a 0.869(6) 0.869(6) 0.869(6) 0.02956 1. 0
-O4 O2- 12 b 0.104(6) 0.119(5) 0.396(6) 0.02956 1. 0
-#End of TTdata_252035-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.48900000  0.98900000  0.51100000  1.0
+  Li+  Li1  1  0.98900000  0.51100000  0.48900000  1.0
+  Li+  Li2  1  0.51100000  0.48900000  0.98900000  1.0
+  Li+  Li3  1  0.01100000  0.01100000  0.01100000  1.0
+  Mn3+  Mn4  1  0.87400000  0.37400000  0.12600000  1.0
+  Mn3+  Mn5  1  0.37400000  0.12600000  0.87400000  1.0
+  Mn3+  Mn6  1  0.12600000  0.87400000  0.37400000  1.0
+  Mn3+  Mn7  1  0.62600000  0.62600000  0.62600000  1.0
+  Mn4+  Mn8  1  0.62740000  0.87160000  0.87980000  1.0
+  Mn4+  Mn9  1  0.12020000  0.12740000  0.62840000  1.0
+  Mn4+  Mn10  1  0.37160000  0.62020000  0.37260000  1.0
+  Mn4+  Mn11  1  0.12740000  0.62840000  0.12020000  1.0
+  Mn4+  Mn12  1  0.62020000  0.37260000  0.37160000  1.0
+  Mn4+  Mn13  1  0.87160000  0.87980000  0.62740000  1.0
+  Mn4+  Mn14  1  0.37260000  0.37160000  0.62020000  1.0
+  Mn4+  Mn15  1  0.87980000  0.62740000  0.87160000  1.0
+  Mn4+  Mn16  1  0.62840000  0.12020000  0.12740000  1.0
+  Mn4+  Mn17  1  0.87260000  0.12840000  0.37980000  1.0
+  Mn4+  Mn18  1  0.37980000  0.87260000  0.12840000  1.0
+  Mn4+  Mn19  1  0.12840000  0.37980000  0.87260000  1.0
+  O2-  O20  1  0.11300000  0.61300000  0.88700000  1.0
+  O2-  O21  1  0.61300000  0.88700000  0.11300000  1.0
+  O2-  O22  1  0.88700000  0.11300000  0.61300000  1.0
+  O2-  O23  1  0.38700000  0.38700000  0.38700000  1.0
+  O2-  O24  1  0.36400000  0.85800000  0.36500000  1.0
+  O2-  O25  1  0.63500000  0.86400000  0.64200000  1.0
+  O2-  O26  1  0.35800000  0.13500000  0.63600000  1.0
+  O2-  O27  1  0.86400000  0.64200000  0.63500000  1.0
+  O2-  O28  1  0.13500000  0.63600000  0.35800000  1.0
+  O2-  O29  1  0.85800000  0.36500000  0.36400000  1.0
+  O2-  O30  1  0.63600000  0.35800000  0.13500000  1.0
+  O2-  O31  1  0.36500000  0.36400000  0.85800000  1.0
+  O2-  O32  1  0.64200000  0.63500000  0.86400000  1.0
+  O2-  O33  1  0.13600000  0.14200000  0.86500000  1.0
+  O2-  O34  1  0.86500000  0.13600000  0.14200000  1.0
+  O2-  O35  1  0.14200000  0.86500000  0.13600000  1.0
+  O2-  O36  1  0.63100000  0.13100000  0.36900000  1.0
+  O2-  O37  1  0.13100000  0.36900000  0.63100000  1.0
+  O2-  O38  1  0.36900000  0.63100000  0.13100000  1.0
+  O2-  O39  1  0.86900000  0.86900000  0.86900000  1.0
+  O2-  O40  1  0.10400000  0.89600000  0.61900000  1.0
+  O2-  O41  1  0.38100000  0.60400000  0.60400000  1.0
+  O2-  O42  1  0.39600000  0.88100000  0.89600000  1.0
+  O2-  O43  1  0.60400000  0.60400000  0.38100000  1.0
+  O2-  O44  1  0.88100000  0.89600000  0.39600000  1.0
+  O2-  O45  1  0.89600000  0.61900000  0.10400000  1.0
+  O2-  O46  1  0.89600000  0.39600000  0.88100000  1.0
+  O2-  O47  1  0.61900000  0.10400000  0.89600000  1.0
+  O2-  O48  1  0.60400000  0.38100000  0.60400000  1.0
+  O2-  O49  1  0.39600000  0.10400000  0.11900000  1.0
+  O2-  O50  1  0.11900000  0.39600000  0.10400000  1.0
+  O2-  O51  1  0.10400000  0.11900000  0.39600000  1.0

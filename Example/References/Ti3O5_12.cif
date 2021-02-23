@@ -1,80 +1,64 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure, and the U.S. Secretary of
-#Commerce on behalf of the United States.  All rights reserved.
-data_647543-ICSD
-_database_code_ICSD 647543
-_audit_creation_date 2013-08-01
-_chemical_name_systematic 'Titanium oxide (5/3) - beta'
-_chemical_formula_structural 'Ti3 O5'
-_chemical_formula_sum 'O5 Ti3'
-_chemical_name_structure_type Ti3O5
-_exptl_crystal_density_diffrn 4.24
-_publ_section_title
-
-;
-A high-pressure study of Ti3 O5 by X-ray diffraction and synchrotron
-radiation. 1. Pressures up to 38.6 G Pa
-;
-_publ_section_comment 'Cell and Type only determined'
+# generated using pymatgen
+data_Ti3O5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   9.76000000
+_cell_length_b   3.80000000
+_cell_length_c   9.46000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   91.50000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti3O5
+_chemical_formula_sum   'Ti12 O20'
+_cell_volume   350.73225162
+_cell_formula_units_Z   4
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Journal of Applied Crystallography' 1989 22 119 122 JACGAR
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Asbrink, S.'
-'Gerward, L.'
-'Olsen, J.S.'
-_cell_length_a 9.76
-_cell_length_b 3.8
-_cell_length_c 9.46
-_cell_angle_alpha 90.
-_cell_angle_beta 91.5
-_cell_angle_gamma 90.
-_cell_volume 350.73
-_cell_formula_units_Z 4
-_symmetry_space_group_name_H-M 'C 1 2/m 1'
-_symmetry_Int_Tables_number 12
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Ti3+  3.0
+  Ti4+  4.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-x, y, -z'
-2 '-x, -y, -z'
-3 'x, -y, z'
-4 'x, y, z'
-5 '-x+1/2, y+1/2, -z'
-6 '-x+1/2, -y+1/2, -z'
-7 'x+1/2, -y+1/2, z'
-8 'x+1/2, y+1/2, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Ti3+ 3
-Ti4+ 4
-Ti3+ 3
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Ti1 Ti3+ 4 i 0.128 0 0.044 . 1. 0
-Ti2 Ti4+ 4 i 0.779 0 0.267 . 1. 0
-Ti3 Ti3+ 4 i 0.054 0 0.366 . 1. 0
-O1 O2- 4 i 0.676 0 0.06 . 1. 0
-O2 O2- 4 i 0.241 0 0.245 . 1. 0
-O3 O2- 4 i 0.588 0 0.345 . 1. 0
-O4 O2- 4 i 0.953 0 0.158 . 1. 0
-O5 O2- 4 i 0.866 0 0.441 . 1. 0
-#End of TTdata_647543-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti3+  Ti0  1  0.87200000  0.00000000  0.95600000  1.0
+  Ti3+  Ti1  1  0.12800000  0.00000000  0.04400000  1.0
+  Ti3+  Ti2  1  0.37200000  0.50000000  0.95600000  1.0
+  Ti3+  Ti3  1  0.62800000  0.50000000  0.04400000  1.0
+  Ti3+  Ti4  1  0.94600000  0.00000000  0.63400000  1.0
+  Ti3+  Ti5  1  0.05400000  0.00000000  0.36600000  1.0
+  Ti3+  Ti6  1  0.44600000  0.50000000  0.63400000  1.0
+  Ti3+  Ti7  1  0.55400000  0.50000000  0.36600000  1.0
+  Ti4+  Ti8  1  0.22100000  0.00000000  0.73300000  1.0
+  Ti4+  Ti9  1  0.77900000  0.00000000  0.26700000  1.0
+  Ti4+  Ti10  1  0.72100000  0.50000000  0.73300000  1.0
+  Ti4+  Ti11  1  0.27900000  0.50000000  0.26700000  1.0
+  O2-  O12  1  0.32400000  0.00000000  0.94000000  1.0
+  O2-  O13  1  0.67600000  0.00000000  0.06000000  1.0
+  O2-  O14  1  0.82400000  0.50000000  0.94000000  1.0
+  O2-  O15  1  0.17600000  0.50000000  0.06000000  1.0
+  O2-  O16  1  0.75900000  0.00000000  0.75500000  1.0
+  O2-  O17  1  0.24100000  0.00000000  0.24500000  1.0
+  O2-  O18  1  0.25900000  0.50000000  0.75500000  1.0
+  O2-  O19  1  0.74100000  0.50000000  0.24500000  1.0
+  O2-  O20  1  0.41200000  0.00000000  0.65500000  1.0
+  O2-  O21  1  0.58800000  0.00000000  0.34500000  1.0
+  O2-  O22  1  0.91200000  0.50000000  0.65500000  1.0
+  O2-  O23  1  0.08800000  0.50000000  0.34500000  1.0
+  O2-  O24  1  0.04700000  0.00000000  0.84200000  1.0
+  O2-  O25  1  0.95300000  0.00000000  0.15800000  1.0
+  O2-  O26  1  0.54700000  0.50000000  0.84200000  1.0
+  O2-  O27  1  0.45300000  0.50000000  0.15800000  1.0
+  O2-  O28  1  0.13400000  0.00000000  0.55900000  1.0
+  O2-  O29  1  0.86600000  0.00000000  0.44100000  1.0
+  O2-  O30  1  0.63400000  0.50000000  0.55900000  1.0
+  O2-  O31  1  0.36600000  0.50000000  0.44100000  1.0

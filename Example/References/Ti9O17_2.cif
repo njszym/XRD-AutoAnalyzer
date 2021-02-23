@@ -1,89 +1,83 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_9042-ICSD
-_database_code_ICSD 9042
-_audit_creation_date 1986-09-24
-_audit_update_record 2015-02-01
-_chemical_name_systematic 'Titanium oxide (9/17)'
-_chemical_formula_structural 'Ti9 O17'
-_chemical_formula_sum 'O17 Ti9'
-_chemical_name_structure_type Ti9O17
-_exptl_crystal_density_diffrn 4.3
-_publ_section_title
-
-;
-Crystal structure studies on the homologous series Tin O2n-1 Vn O2n-1 Tin-2
-Cr2 O2n-1
-;
+# generated using pymatgen
+data_Ti9O17
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.57000000
+_cell_length_b   7.10000000
+_cell_length_c   22.15000000
+_cell_angle_alpha   97.10000000
+_cell_angle_beta   131.00000000
+_cell_angle_gamma   109.80000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ti9O17
+_chemical_formula_sum   'Ti18 O34'
+_cell_volume   543.26099644
+_cell_formula_units_Z   2
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Arkiv foer Kemi' 1963 21 413 426 ARKEAD
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Andersson, S.'
-'Jahnberg, L.'
-_cell_length_a 5.57
-_cell_length_b 7.1
-_cell_length_c 22.15
-_cell_angle_alpha 97.1
-_cell_angle_beta 131.
-_cell_angle_gamma 109.8
-_cell_volume 543.26
-_cell_formula_units_Z 2
-_symmetry_space_group_name_H-M 'P -1'
-_symmetry_Int_Tables_number 2
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Ti0+  0.0
+  O0+  0.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-x, -y, -z'
-2 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Ti0+ 0
-O0+ 0
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Ti1 Ti0+ 2 i 0.765 0.412 0.118 . 1. 0
-Ti2 Ti0+ 2 i 0.765 0.912 0.118 . 1. 0
-Ti3 Ti0+ 2 i 0.529 0.324 0.235 . 1. 0
-Ti4 Ti0+ 2 i 0.529 0.824 0.235 . 1. 0
-Ti5 Ti0+ 2 i 0.294 0.235 0.353 . 1. 0
-Ti6 Ti0+ 2 i 0.294 0.735 0.353 . 1. 0
-Ti7 Ti0+ 2 i 0.059 0.147 0.471 . 1. 0
-Ti8 Ti0+ 2 i 0.059 0.647 0.471 . 1. 0
-Ti9 Ti0+ 1 a 0 0 0 . 1. 0
-Ti10 Ti0+ 1 c 0 0.5 0 . 1. 0
-O1 O0+ 2 i 0.675 0.84 0.01 . 1. 0
-O2 O0+ 2 i 0.234 0.82 0.036 . 1. 0
-O3 O0+ 2 i 0.531 0.592 0.082 . 1. 0
-O4 O0+ 2 i 0.09 0.572 0.108 . 1. 0
-O5 O0+ 2 i 0.439 0.252 0.127 . 1. 0
-O6 O0+ 2 i 0.999 0.232 0.154 . 1. 0
-O7 O0+ 2 i 0.295 0.004 0.199 . 1. 0
-O8 O0+ 2 i 0.855 0.984 0.226 . 1. 0
-O9 O0+ 2 i 0.763 0.644 0.271 . 1. 0
-O10 O0+ 2 i 0.204 0.663 0.245 . 1. 0
-O11 O0+ 2 i 0.06 0.415 0.317 . 1. 0
-O12 O0+ 2 i 0.619 0.396 0.343 . 1. 0
-O13 O0+ 2 i 0.969 0.075 0.363 . 1. 0
-O14 O0+ 2 i 0.528 0.055 0.389 . 1. 0
-O15 O0+ 2 i 0.825 0.827 0.435 . 1. 0
-O16 O0+ 2 i 0.384 0.807 0.461 . 1. 0
-O17 O0+ 2 i 0.707 0.533 0.493 . 1. 0
-#End of TTdata_9042-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti0+  Ti0  1  0.23500000  0.58800000  0.88200000  1.0
+  Ti0+  Ti1  1  0.76500000  0.41200000  0.11800000  1.0
+  Ti0+  Ti2  1  0.23500000  0.08800000  0.88200000  1.0
+  Ti0+  Ti3  1  0.76500000  0.91200000  0.11800000  1.0
+  Ti0+  Ti4  1  0.47100000  0.67600000  0.76500000  1.0
+  Ti0+  Ti5  1  0.52900000  0.32400000  0.23500000  1.0
+  Ti0+  Ti6  1  0.47100000  0.17600000  0.76500000  1.0
+  Ti0+  Ti7  1  0.52900000  0.82400000  0.23500000  1.0
+  Ti0+  Ti8  1  0.70600000  0.76500000  0.64700000  1.0
+  Ti0+  Ti9  1  0.29400000  0.23500000  0.35300000  1.0
+  Ti0+  Ti10  1  0.70600000  0.26500000  0.64700000  1.0
+  Ti0+  Ti11  1  0.29400000  0.73500000  0.35300000  1.0
+  Ti0+  Ti12  1  0.94100000  0.85300000  0.52900000  1.0
+  Ti0+  Ti13  1  0.05900000  0.14700000  0.47100000  1.0
+  Ti0+  Ti14  1  0.94100000  0.35300000  0.52900000  1.0
+  Ti0+  Ti15  1  0.05900000  0.64700000  0.47100000  1.0
+  Ti0+  Ti16  1  0.00000000  0.00000000  0.00000000  1.0
+  Ti0+  Ti17  1  0.00000000  0.50000000  0.00000000  1.0
+  O0+  O18  1  0.32500000  0.16000000  0.99000000  1.0
+  O0+  O19  1  0.67500000  0.84000000  0.01000000  1.0
+  O0+  O20  1  0.76600000  0.18000000  0.96400000  1.0
+  O0+  O21  1  0.23400000  0.82000000  0.03600000  1.0
+  O0+  O22  1  0.46900000  0.40800000  0.91800000  1.0
+  O0+  O23  1  0.53100000  0.59200000  0.08200000  1.0
+  O0+  O24  1  0.91000000  0.42800000  0.89200000  1.0
+  O0+  O25  1  0.09000000  0.57200000  0.10800000  1.0
+  O0+  O26  1  0.56100000  0.74800000  0.87300000  1.0
+  O0+  O27  1  0.43900000  0.25200000  0.12700000  1.0
+  O0+  O28  1  0.00100000  0.76800000  0.84600000  1.0
+  O0+  O29  1  0.99900000  0.23200000  0.15400000  1.0
+  O0+  O30  1  0.70500000  0.99600000  0.80100000  1.0
+  O0+  O31  1  0.29500000  0.00400000  0.19900000  1.0
+  O0+  O32  1  0.14500000  0.01600000  0.77400000  1.0
+  O0+  O33  1  0.85500000  0.98400000  0.22600000  1.0
+  O0+  O34  1  0.23700000  0.35600000  0.72900000  1.0
+  O0+  O35  1  0.76300000  0.64400000  0.27100000  1.0
+  O0+  O36  1  0.79600000  0.33700000  0.75500000  1.0
+  O0+  O37  1  0.20400000  0.66300000  0.24500000  1.0
+  O0+  O38  1  0.94000000  0.58500000  0.68300000  1.0
+  O0+  O39  1  0.06000000  0.41500000  0.31700000  1.0
+  O0+  O40  1  0.38100000  0.60400000  0.65700000  1.0
+  O0+  O41  1  0.61900000  0.39600000  0.34300000  1.0
+  O0+  O42  1  0.03100000  0.92500000  0.63700000  1.0
+  O0+  O43  1  0.96900000  0.07500000  0.36300000  1.0
+  O0+  O44  1  0.47200000  0.94500000  0.61100000  1.0
+  O0+  O45  1  0.52800000  0.05500000  0.38900000  1.0
+  O0+  O46  1  0.17500000  0.17300000  0.56500000  1.0
+  O0+  O47  1  0.82500000  0.82700000  0.43500000  1.0
+  O0+  O48  1  0.61600000  0.19300000  0.53900000  1.0
+  O0+  O49  1  0.38400000  0.80700000  0.46100000  1.0
+  O0+  O50  1  0.29300000  0.46700000  0.50700000  1.0
+  O0+  O51  1  0.70700000  0.53300000  0.49300000  1.0

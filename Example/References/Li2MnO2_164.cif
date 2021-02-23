@@ -1,73 +1,37 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_37327-ICSD
-_database_code_ICSD 37327
-_audit_creation_date 1983-12-31
-_chemical_name_systematic 'Dilithium manganese oxide'
-_chemical_formula_structural 'Li2 Mn O2'
-_chemical_formula_sum 'Li2 Mn1 O2'
-_chemical_name_structure_type La2O3
-_exptl_crystal_density_diffrn 3.57
-_publ_section_title 'The Crystal structure of Li2 Mn O2'
+# generated using pymatgen
+data_Li2MnO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.19500000
+_cell_length_b   3.19500000
+_cell_length_c   5.30300000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li2MnO2
+_chemical_formula_sum   'Li2 Mn1 O2'
+_cell_volume   46.88068878
+_cell_formula_units_Z   1
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Revue de Chimie Minerale' 1983 20 636 642 RVCMA8
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'David, W.I.F.'
-'Goodenough, J.B.'
-'Thackeray, M.M.'
-'Thomas, M.G.S.R.'
-_cell_length_a 3.195(5)
-_cell_length_b 3.195
-_cell_length_c 5.303(4)
-_cell_angle_alpha 90.
-_cell_angle_beta 90.
-_cell_angle_gamma 120.
-_cell_volume 46.88
-_cell_formula_units_Z 1
-_symmetry_space_group_name_H-M 'P -3 m 1'
-_symmetry_Int_Tables_number 164
-_refine_ls_R_factor_all 0.101
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Mn2+  2.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x-y, -y, -z'
-2 '-x, -x+y, -z'
-3 'y, x, -z'
-4 'x-y, x, -z'
-5 'y, -x+y, -z'
-6 '-x, -y, -z'
-7 '-x+y, y, z'
-8 'x, x-y, z'
-9 '-y, -x, z'
-10 '-x+y, -x, z'
-11 '-y, x-y, z'
-12 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Li1+ 1
-Mn2+ 2
-O2- -2
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Li1 Li1+ 2 d 0.6667 0.3333 0.391(40) 1.5 1. 0
-Mn1 Mn2+ 1 a 0 0 0 0.5 1. 0
-O1 O2- 2 d 0.3333 0.6667 0.249(10) 4.8 1. 0
-#End of TTdata_37327-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.33333333  0.66666667  0.60900000  1.0
+  Li+  Li1  1  0.66666667  0.33333333  0.39100000  1.0
+  Mn2+  Mn2  1  0.00000000  0.00000000  0.00000000  1.0
+  O2-  O3  1  0.66666667  0.33333333  0.75100000  1.0
+  O2-  O4  1  0.33333333  0.66666667  0.24900000  1.0

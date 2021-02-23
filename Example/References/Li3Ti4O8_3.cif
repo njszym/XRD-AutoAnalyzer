@@ -1,68 +1,47 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_151917-ICSD
-_database_code_ICSD 151917
-_audit_creation_date 2006-10-01
-_chemical_name_systematic 'Lithium titanium oxide (0.75/1/2)'
-_chemical_formula_structural 'Li0.75 Ti O2'
-_chemical_formula_sum 'Li0.75 O2 Ti1'
-_exptl_crystal_density_diffrn 4.02
-_publ_section_title 'First principles predictions for intercalation behaviour'
+# generated using pymatgen
+data_Li3Ti4O8
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.96000000
+_cell_length_b   4.91000000
+_cell_length_c   5.77000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   89.30000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li3Ti4O8
+_chemical_formula_sum   'Li3 Ti4 O8'
+_cell_volume   140.50978492
+_cell_formula_units_Z   1
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Solid State Ionics' 2004 175 829 834 SSIOD3
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Koudriachova, M.V.'
-'Harrison, N.M.'
-'de Leeuw, S.W.'
-_cell_length_a 4.96
-_cell_length_b 4.91
-_cell_length_c 5.77
-_cell_angle_alpha 90.
-_cell_angle_beta 90.
-_cell_angle_gamma 89.3
-_cell_volume 140.51
-_cell_formula_units_Z 4
-_symmetry_space_group_name_H-M 'P 1 1 2'
-_symmetry_Int_Tables_number 3
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Li+  1.0
+  Ti3.25+  3.25
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 '-x, -y, z'
-2 'x, y, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-Ti3+ 3.25
-O2- -2
-Li1+ 1
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-Ti1 Ti3+ 1 a 0 0 0.006 . 1. 0
-Ti2 Ti3+ 1 a 0 0 0.515 . 1. 0
-Ti3 Ti3+ 1 d 0.5 0.5 0.284 . 1. 0
-Ti4 Ti3+ 1 d 0.5 0.5 0.76 . 1. 0
-O1 O2- 2 e 0.724 0.686 0.019 . 1. 0
-O2 O2- 2 e 0.74 0.676 0.517 . 1. 0
-O3 O2- 2 e 0.776 0.187 0.258 . 1. 0
-O4 O2- 2 e 0.782 0.193 0.769 . 1. 0
-Li1 Li1+ 1 b 0.5 0 0.076 . 1. 0
-Li2 Li1+ 1 c 0 0.5 0.234 . 1. 0
-Li3 Li1+ 1 c 0 0.5 0.738 . 1. 0
-#End of TTdata_151917-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li+  Li0  1  0.50000000  0.00000000  0.07600000  1.0
+  Li+  Li1  1  0.00000000  0.50000000  0.23400000  1.0
+  Li+  Li2  1  0.00000000  0.50000000  0.73800000  1.0
+  Ti3.25+  Ti3  1  0.00000000  0.00000000  0.00600000  1.0
+  Ti3.25+  Ti4  1  0.00000000  0.00000000  0.51500000  1.0
+  Ti3.25+  Ti5  1  0.50000000  0.50000000  0.28400000  1.0
+  Ti3.25+  Ti6  1  0.50000000  0.50000000  0.76000000  1.0
+  O2-  O7  1  0.27600000  0.31400000  0.01900000  1.0
+  O2-  O8  1  0.72400000  0.68600000  0.01900000  1.0
+  O2-  O9  1  0.26000000  0.32400000  0.51700000  1.0
+  O2-  O10  1  0.74000000  0.67600000  0.51700000  1.0
+  O2-  O11  1  0.22400000  0.81300000  0.25800000  1.0
+  O2-  O12  1  0.77600000  0.18700000  0.25800000  1.0
+  O2-  O13  1  0.21800000  0.80700000  0.76900000  1.0
+  O2-  O14  1  0.78200000  0.19300000  0.76900000  1.0

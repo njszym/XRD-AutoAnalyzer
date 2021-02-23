@@ -1,67 +1,40 @@
-
-#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_24073-ICSD
-_database_code_ICSD 24073
-_audit_creation_date 1986-09-26
-_audit_update_record 2004-10-01
-_chemical_name_systematic 'Hydrogenperoxide dihydrate'
-_chemical_formula_structural 'H2 O2 (H2 O)2'
-_chemical_formula_sum 'H6 O4'
-_exptl_crystal_density_diffrn 1.36
-_cell_measurement_temperature 83.
-_publ_section_title 'The crystal structure of hydrogen peroxide dihydrate'
+# generated using pymatgen
+data_TiO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.29100000
+_cell_length_b   5.29100000
+_cell_length_c   6.13300000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiO2
+_chemical_formula_sum   'Ti3 O6'
+_cell_volume   148.68909545
+_cell_formula_units_Z   3
 loop_
-_citation_id
-_citation_journal_full
-_citation_year
-_citation_journal_volume
-_citation_page_first
-_citation_page_last
-_citation_journal_id_ASTM
-primary 'Acta Chemica Scandinavica ' 1960 14 1325 1332 ACSAA4
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
 loop_
-_publ_author_name
-'Olovsson, I.'
-'Templeton, D.H.'
-_cell_length_a 9.400(2)
-_cell_length_b 9.479(2)
-_cell_length_c 4.51(1)
-_cell_angle_alpha 90.
-_cell_angle_beta 121.33(3)
-_cell_angle_gamma 90.
-_cell_volume 343.26
-_cell_formula_units_Z 4
-_symmetry_space_group_name_H-M 'C 1 2/c 1'
-_symmetry_Int_Tables_number 15
-_refine_ls_R_factor_all 0.091
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Ti4+  4.0
+  O2-  -2.0
 loop_
-_symmetry_equiv_pos_site_id
-_symmetry_equiv_pos_as_xyz
-1 'x, -y, z+1/2'
-2 '-x, -y, -z'
-3 '-x, y, -z+1/2'
-4 'x, y, z'
-5 'x+1/2, -y+1/2, z+1/2'
-6 '-x+1/2, -y+1/2, -z'
-7 '-x+1/2, y+1/2, -z+1/2'
-8 'x+1/2, y+1/2, z'
-loop_
-_atom_type_symbol
-_atom_type_oxidation_number
-O1- -1
-O2- -2
-H1+ 1
-loop_
-_atom_site_label
-_atom_site_type_symbol
-_atom_site_symmetry_multiplicity
-_atom_site_Wyckoff_symbol
-_atom_site_fract_x
-_atom_site_fract_y
-_atom_site_fract_z
-_atom_site_B_iso_or_equiv
-_atom_site_occupancy
-_atom_site_attached_hydrogens
-O1 O1- 8 f -.0075(3) 0.1809(3) 0.0785(9) 2.38 1. 0
-O2 O2- 8 f 0.2980(3) 0.0822(3) 0.2850(8) 2.08 1. 0
-#End of TTdata_24073-ICSD
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ti4+  Ti0  1  0.45300000  0.00000000  0.33333333  1.0
+  Ti4+  Ti1  1  0.54700000  0.54700000  0.00000000  1.0
+  Ti4+  Ti2  1  0.00000000  0.45300000  0.66666667  1.0
+  O2-  O3  1  0.10500000  0.69700000  0.45166667  1.0
+  O2-  O4  1  0.59200000  0.89500000  0.11833333  1.0
+  O2-  O5  1  0.30300000  0.40800000  0.78500000  1.0
+  O2-  O6  1  0.89500000  0.59200000  0.88166667  1.0
+  O2-  O7  1  0.69700000  0.10500000  0.54833333  1.0
+  O2-  O8  1  0.40800000  0.30300000  0.21500000  1.0
