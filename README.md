@@ -68,10 +68,14 @@ Confidence: (probabilities associated with the phases above)
 
 Phase labels are denoted as ```formula_spacegroup```.
 
-To plot the line profiles of the predicted phases in the measured spectrum for comparison, the ```--plot``` option may be used:
+By default, the phase identification algorithm will run until either (i) a maximum of three unique compounds have been identified, or (ii) all peaks with intensities greater than or equal to 10% of the spectrum's maximum intensity have been identified. Alternatively, these parameters (denoted ```N``` and ```I```) can be set as follows:
+
+```
+python run_CNN.py --max_phases=N --cutoff_intensity=I
+```
+
+To plot the line profiles of the predicted phases in the measured spectrum for comparison, the ```--plot``` option may also be used:
 
 ```
 python run_CNN.py --plot
 ```
-
-Note that the iterative process of phase identification and profile subtraction will proceed until all measured intensities fall below some cutoff value. By default, the cutoff is set to 10% of the maximum diffraction peak intensity. Alternatively, if you are only working with single-phase (or N-phase) patterns, the number of maximum phases considered can be manually set to 1 (or N).
