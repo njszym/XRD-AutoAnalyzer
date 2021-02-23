@@ -79,3 +79,7 @@ To plot the line profiles of the predicted phases in the measured spectrum for c
 ```
 python run_CNN.py --plot
 ```
+
+Which will yield a plot of the form:
+
+![sample](https://github.com/njszym/XRD-AutoAnalyzer/blob/main/Example/sample-image.jpg?raw=true)
