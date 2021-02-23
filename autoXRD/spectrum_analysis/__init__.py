@@ -20,7 +20,7 @@ class SpectrumAnalyzer(object):
     Class used to process and classify xrd spectra.
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -33,6 +33,8 @@ class SpectrumAnalyzer(object):
         self.spectrum_fname = spectrum_fname
         self.ref_dir = reference_dir
         self.calculator = xrd.XRDCalculator()
+        self.max_phases = max_phases
+        self.cutoff = cutoff_intensity
 
     @property
     def reference_phases(self):
@@ -124,7 +126,7 @@ class SpectrumAnalyzer(object):
 
         return smoothed_ys
 
-    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], max_phases=3, is_first=True):
+    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], is_first=True):
         """
         A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
         For each mixture, the associated phases and probabilities are tabulated.
@@ -199,7 +201,7 @@ class SpectrumAnalyzer(object):
 
             else:
                 # If the maximum number of phases has been reached, tabulate mixture and move on to next
-                if len(indiv_pred) == max_phases:
+                if len(indiv_pred) == self.max_phases:
                     confidence_list.append(indiv_conf)
                     prediction_list.append(indiv_pred)
                     if i == (num_phases - 1):
@@ -213,7 +215,7 @@ class SpectrumAnalyzer(object):
 
         return prediction_list, confidence_list
 
-    def get_reduced_pattern(self, predicted_cmpd, orig_y, last_normalization=1.0, cutoff=10):
+    def get_reduced_pattern(self, predicted_cmpd, orig_y, last_normalization=1.0):
         """
         Subtract a phase that has already been identified from a given XRD spectrum.
         If all phases have already been identified, halt the iteration.
@@ -254,7 +256,7 @@ class SpectrumAnalyzer(object):
         stripped_y = np.array(stripped_y) - min(stripped_y)
 
         # If intensities remain above cutoff, return stripped spectrum
-        if max(stripped_y) >= (cutoff*last_normalization):
+        if max(stripped_y) >= (self.cutoff*last_normalization):
             new_normalization = 100/max(stripped_y)
             stripped_y = new_normalization*stripped_y
             return stripped_y, new_normalization
@@ -432,7 +434,7 @@ class PhaseIdentifier(object):
     Class used to identify phases from a given set of xrd spectra
     """
 
-    def __init__(self, spectra_directory, reference_directory):
+    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity):
         """
         Args:
             spectra_dir: path to directory containing the xrd
@@ -444,6 +446,8 @@ class PhaseIdentifier(object):
         self.num_cpu = multiprocessing.cpu_count()
         self.spectra_dir = spectra_directory
         self.ref_dir = reference_directory
+        self.max_phases = max_phases
+        self.cutoff = cutoff_intensity
 
     @property
     def all_predictions(self):
@@ -480,7 +484,7 @@ class PhaseIdentifier(object):
         total_confidence, all_predictions = [], []
         tabulate_conf, predicted_cmpd_set = [], []
 
-        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname)
+        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases, self.cutoff)
 
         mixtures, confidences = spec_analysis.suspected_mixtures
 
@@ -500,9 +504,9 @@ class PhaseIdentifier(object):
         return [spectrum_fname, predicted_set, final_confidences]
 
 
-def main(spectra_directory, reference_directory):
+def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10):
 
-    phase_id = PhaseIdentifier(spectra_directory, reference_directory)
+    phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases, cutoff_intensity)
 
     spectrum_names, predicted_phases, confidences = phase_id.all_predictions
 

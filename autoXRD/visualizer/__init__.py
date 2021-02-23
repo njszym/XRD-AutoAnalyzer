@@ -210,7 +210,7 @@ def main(spectra_directory, spectrum_fname, predicted_phases):
         i = 0
         for (angles, intensities, phase) in zip(angle_sets, intensity_sets, phase_names):
             for (x, y) in zip(angles, intensities):
-                plt.vlines(x, 0, y, color=color_list[i])
+                plt.vlines(x, 0, y, color=color_list[i], linewidth=2.5)
             plt.plot([0], [0], color=color_list[i], label='Predicted: %s' % phase)
             i += 1
 
