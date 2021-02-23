@@ -1,4 +1,4 @@
-# AutoAnalyzer for XRD
+# An automatic analysis tool for XRD
 
 A package designed to automate the process of phase identification from XRD spectra using a probabilistic deep learning trained with physics-informed data augmentation.
 
@@ -33,14 +33,14 @@ The characterization of each spectrum should take around 1-2 minutes on a single
 To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into ```Novel_Space/All_CIFs```. Then navigate to the ```Novel_Space/```directory and execute:
 
 ```
-python construct_model.py --include_ns
+python construct_model.py
 ```
 
 This script will:
 
 1) Filter all unique stoichiometric phases from the provided CIFs.
 
-2) Generate hypothetical solid solutions between these materials (if ```--include_ns``` is specified).
+2) If ```--include_ns``` is specified: generate hypothetical solid solutions between the stoichiometric phases.
 
 3) Simulate augmented XRD spectra from the phases produced by (1) and (2).
 
