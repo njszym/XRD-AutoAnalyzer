@@ -134,7 +134,7 @@ class StrainGen(object):
         half_step = step_size/2.0
         for val in x:
             ysum = 0
-            for (ang, pk) in zip(angles, textured_intensities):
+            for (ang, pk) in zip(angles, intensities):
                 if np.isclose(ang, val, atol=half_step):
                     ysum += pk
             y.append(ysum)
