@@ -282,11 +282,13 @@ class SpectrumAnalyzer(object):
         peaks = pattern.y
 
         x = np.linspace(10, 80, 4501)
+        step_size = (80. - 10.)/4501.
+        half_step = step_size/2.0
         y = []
         for val in x:
             ysum = 0
             for (ang, pk) in zip(angles, peaks):
-                if np.isclose(ang, val, atol=0.05):
+                if np.isclose(ang, val, atol=half_step):
                     ysum += pk
             y.append(ysum)
 
