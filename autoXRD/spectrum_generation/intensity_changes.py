@@ -75,7 +75,7 @@ class TextureGen(object):
             norm_1 = math.sqrt(np.dot(np.array(hkl), np.array(hkl)))
             norm_2 = math.sqrt(np.dot(np.array(preferred_direction), np.array(preferred_direction)))
             total_norm = norm_1 * norm_2
-            texture_factor = np.dot(np.array(hkl), np.array(preferred_direction)) / total_norm
+            texture_factor = abs(np.dot(np.array(hkl), np.array(preferred_direction)) / total_norm)
             texture_factor = self.map_interval(texture_factor)
             scaled_intensities.append(peak*texture_factor)
 
