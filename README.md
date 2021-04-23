@@ -52,7 +52,9 @@ When the procedure is completed, a trained ```Model.h5``` file will be made avai
 
 ## Characterizing multi-phase spectra
 
-In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. Then execute:
+In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format and the diffraction angles should span at least 10-80 degrees. Wider ranges may be used, but will be curtailed to make predictions based only on angles between 10-80 degrees.
+
+Once all files are placed in the ```Spectra/``` folder, they can be classified by executing:
 
 ```
 python run_CNN.py
@@ -68,7 +70,9 @@ Confidence: (probabilities associated with the phases above)
 
 Phase labels are denoted as ```formula_spacegroup```.
 
-By default, the phase identification algorithm will run until either (i) a maximum of three unique compounds have been identified, or (ii) all peaks with intensities greater than or equal to 10% of the spectrum's maximum intensity have been identified. Alternatively, these parameters (denoted ```N``` and ```I```) can be set as follows:
+By default, only phases with a confidence above 50% will be shown. To also show low-confidence phases, the ```-all``` argument can be used at runtime.
+
+For each spectrum, the phase identification algorithm runs until either (i) a maximum of three unique compounds have been identified, or (ii) all peaks with intensities greater than or equal to 10% of the spectrum's maximum intensity have been identified. To change these parameters (denoted ```N``` and ```I```), the following arguments can be specified:
 
 ```
 python run_CNN.py --max_phases=N --cutoff_intensity=I
