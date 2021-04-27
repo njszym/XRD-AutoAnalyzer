@@ -50,6 +50,18 @@ This process may require a substantial amount of computational resources dependi
 
 When the procedure is completed, a trained ```Model.h5``` file will be made available. 
 
+By default, the following bounds are used on artifacts included during data augmentation:
+
+* Peak shifts: up to +/- 4% strain applied to each lattice parameter
+* Peak broadening: domain size ranging from 1-100 nm
+* Peak intensity variation: texture causing as much as +/- 50% change in peak height
+
+However, custom bounds can also be specified, e.g., as follows:
+
+```
+python construct_model.py --max_strain=0.04 --min_domain_size=1 --max_domain_size=100 --max_texture=0.5
+```
+
 ## Characterizing multi-phase spectra
 
 In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format and the diffraction angles should span at least 10-80 degrees. Wider ranges may be used, but will be curtailed to make predictions based only on angles between 10-80 degrees.
