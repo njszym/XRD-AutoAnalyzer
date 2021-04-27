@@ -116,9 +116,9 @@ class TextureGen(object):
 
         return all_I
 
-def main(struc, num_textured):
+def main(struc, num_textured, max_texture=0.6):
 
-    texture_generator = TextureGen(struc)
+    texture_generator = TextureGen(struc, max_texture)
 
     textured_patterns = [texture_generator.textured_spectrum for i in range(num_textured)]
 

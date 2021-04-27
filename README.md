@@ -72,7 +72,7 @@ Phase labels are denoted as ```formula_spacegroup```.
 
 By default, only phases with a confidence above 50% will be shown. To also show low-confidence phases, the ```-all``` argument can be used at runtime.
 
-The model assumes that spectra are measured using Cu K-alpha radiation. However, the user can specify any arbitary wavelength (lambda, in angstroms) as follows:
+The model assumes that spectra are measured using Cu K-alpha radiation. However, the user can specify any arbitary wavelength (```lambda```, in angstroms) as follows:
 
 ```
 python run_CNN.py --wavelength=lambda

@@ -158,9 +158,9 @@ class StrainGen(object):
         return all_I
 
 
-def main(struc, num_strains):
+def main(struc, num_strains, max_strain):
 
-    strain_generator = StrainGen(struc)
+    strain_generator = StrainGen(struc, max_strain)
 
     strained_patterns = [strain_generator.strained_spectrum for i in range(num_strains)]
 

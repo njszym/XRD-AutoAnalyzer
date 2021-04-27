@@ -12,7 +12,7 @@ class SpectraGenerator(object):
     for all reference phases
     """
 
-    def __init__(self, reference_dir):
+    def __init__(self, reference_dir, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04):
         """
         Args:
             reference_dir: path to directory containing
@@ -20,6 +20,10 @@ class SpectraGenerator(object):
         """
         self.num_cpu = multiprocessing.cpu_count()
         self.ref_dir = reference_dir
+        self.max_texture = max_texture
+        self.min_domain_size = min_domain_size
+        self.max_domain_size = max_domain_size
+        self.max_strain = max_strain
 
     def augment(self, phase_info):
         """
@@ -39,9 +43,9 @@ class SpectraGenerator(object):
         struc, filename = phase_info[0], phase_info[1]
         patterns = []
 
-        patterns += peak_shifts.main(struc, 50)
-        patterns += peak_broadening.main(struc, 50)
-        patterns += intensity_changes.main(struc, 50)
+        patterns += peak_shifts.main(struc, 50, self.max_strain)
+        patterns += peak_broadening.main(struc, 50, self.min_domain_size, self.max_domain_size)
+        patterns += intensity_changes.main(struc, 50, self.max_texture)
 
         return (patterns, filename)
 

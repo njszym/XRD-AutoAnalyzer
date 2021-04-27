@@ -41,6 +41,7 @@ class BroadGen(object):
     def broadened_spectrum(self):
         angles = self.angles
         intensities = self.intensities
+        tau = random.choice(self.possible_domains)
 
         x = np.linspace(10, 80, 4501)
         y = []
@@ -58,7 +59,6 @@ class BroadGen(object):
         for (ang, int) in zip(x, y):
             if int != 0:
                 ## Calculate FWHM based on the Scherrer eqtn
-                tau = random.choice(self.possible_domains)
                 K = 0.9 ## shape factor
                 wavelength = 0.15406 ## Cu K-alpha in nm
                 theta = math.radians(ang/2.) ## Bragg angle in radians
@@ -83,9 +83,9 @@ class BroadGen(object):
 
         return all_I
 
-def main(struc, num_broadened):
+def main(struc, num_broadened, min_domain_size, max_domain_size):
 
-    broad_generator = BroadGen(struc)
+    broad_generator = BroadGen(struc, min_domain_size, max_domain_size)
 
     broadened_patterns = [broad_generator.broadened_spectrum for i in range(num_broadened)]
 
