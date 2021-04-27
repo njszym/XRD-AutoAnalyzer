@@ -13,6 +13,7 @@ import numpy as np
 import os
 import multiprocessing
 from multiprocessing import Pool, Manager
+import math
 
 
 class SpectrumAnalyzer(object):
@@ -20,13 +21,15 @@ class SpectrumAnalyzer(object):
     Class used to process and classify xrd spectra.
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, wavelen='CuKa', reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
                 xrd spectrum (in xy format)
             reference_dir: path to directory containing the
                 reference phases (CIF files)
+            wavelen: wavelength used for diffraction (angstroms).
+                Defaults to Cu K-alpha radiation (1.5406 angstroms).
         """
 
         self.spectra_dir = spectra_dir
@@ -35,6 +38,7 @@ class SpectrumAnalyzer(object):
         self.calculator = xrd.XRDCalculator()
         self.max_phases = max_phases
         self.cutoff = cutoff_intensity
+        self.wavelen = wavelen
 
     @property
     def reference_phases(self):
@@ -58,6 +62,24 @@ class SpectrumAnalyzer(object):
 
         return prediction_list, confidence_list
 
+    def convert_angle(self, angle):
+        """
+        Convert two-theta into Cu K-alpha radiation.
+        """
+
+        orig_theta = math.radians(angle/2.)
+
+        orig_lambda = self.wavelen
+        target_lambda = 1.5406 # Cu k-alpha
+        ratio_lambda = target_lambda/orig_lambda
+
+        asin_argument = ratio_lambda*math.sin(orig_theta)
+
+        # Curtail two-theta range if needed to avoid domain errors
+        if asin_argument <= 1:
+            new_theta = math.degrees(math.asin(ratio_lambda*math.sin(orig_theta)))
+            return 2*new_theta
+
     @property
     def formatted_spectrum(self):
         """
@@ -74,6 +96,16 @@ class SpectrumAnalyzer(object):
         data = np.loadtxt('%s/%s' % (self.spectra_dir, self.spectrum_fname))
         x = data[:, 0]
         y = data[:, 1]
+
+        ## Convert to Cu K-alpha radiation if needed
+        if str(self.wavelen) != 'CuKa':
+            Cu_x, Cu_y = [], []
+            for (two_thet, intens) in zip(x, y):
+                scaled_x = self.convert_angle(two_thet)
+                if scaled_x is not None:
+                    Cu_x.append(scaled_x)
+                    Cu_y.append(intens)
+            x, y = Cu_x, Cu_y
 
         ## Fit to 4,501 values as to be compatible with CNN
         f = ip.CubicSpline(x, y)
@@ -436,7 +468,7 @@ class PhaseIdentifier(object):
     Class used to identify phases from a given set of xrd spectra
     """
 
-    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity):
+    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, wavelength):
         """
         Args:
             spectra_dir: path to directory containing the xrd
@@ -450,6 +482,7 @@ class PhaseIdentifier(object):
         self.ref_dir = reference_directory
         self.max_phases = max_phases
         self.cutoff = cutoff_intensity
+        self.wavelen = wavelength
 
     @property
     def all_predictions(self):
@@ -486,7 +519,8 @@ class PhaseIdentifier(object):
         total_confidence, all_predictions = [], []
         tabulate_conf, predicted_cmpd_set = [], []
 
-        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases, self.cutoff)
+        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases,
+            self.cutoff, wavelen=self.wavelen)
 
         mixtures, confidences = spec_analysis.suspected_mixtures
 
@@ -506,9 +540,10 @@ class PhaseIdentifier(object):
         return [spectrum_fname, predicted_set, final_confidences]
 
 
-def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10):
+def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa'):
 
-    phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases, cutoff_intensity)
+    phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases,
+        cutoff_intensity, wavelength)
 
     spectrum_names, predicted_phases, confidences = phase_id.all_predictions
 
