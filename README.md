@@ -9,7 +9,7 @@ The corresponding manuscript can be found at [arXiv](http://arxiv.org/abs/2103.1
 First clone the repository:
 
 ```
-git clone https://github.com/njszym/Auto-XRD.git
+git clone https://github.com/njszym/XRD-AutoAnalyzer.git
 ```
 
 Then, to install all required modules, navigate to the cloned directory and execute:
