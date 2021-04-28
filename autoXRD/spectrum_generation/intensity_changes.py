@@ -107,7 +107,7 @@ class TextureGen(object):
         mixed_data = zip(*conv)
         all_I = []
         for values in mixed_data:
-            noise = random.choice(np.linspace(-0.75, 0.75, 1000))
+            noise = random.choice(np.linspace(-0.5, 0.5, 1000))
             all_I.append(sum(values) + noise)
 
         shifted_vals = np.array(all_I) - min(all_I)
