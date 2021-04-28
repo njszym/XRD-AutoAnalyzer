@@ -47,4 +47,4 @@ if __name__ == '__main__':
         np.save('XRD', xrd_specs)
 
         # Train, test, and save the CNN
-        cnn.main(xrd_specs, testing_fraction=0.2)
+        cnn.main(xrd_specs, num_epochs=2, testing_fraction=0.2)

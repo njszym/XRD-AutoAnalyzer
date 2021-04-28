@@ -9,7 +9,7 @@ class DataSetUp(object):
     set of X-ray diffraction spectra to perform phase identification.
     """
 
-    def __init__(self, xrd, testing_fraction=0):
+    def __init__(self, xrd, num_epochs=2, testing_fraction=0):
         """
         Args:
             xrd: a numpy array containing xrd spectra categorized by
@@ -23,6 +23,7 @@ class DataSetUp(object):
                 By default, all spectra will be used for training.
         """
         self.xrd = xrd
+        self.num_epochs = num_epochs
         self.testing_fraction = testing_fraction
         self.num_phases = len(xrd)
 
@@ -139,7 +140,7 @@ def train_model(x_train, y_train, n_phases, n_dense=[3100, 1200], dropout_rate=0
     model.compile(loss=tf.nn.sigmoid_cross_entropy_with_logits, optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.BinaryAccuracy()])
 
     # Fit model to training data
-    model.fit(x_train, y_train, batch_size=32, epochs=2,
+    model.fit(x_train, y_train, batch_size=32, epochs=self.num_epochs,
     validation_split=0.2, shuffle=True)
 
     return model
