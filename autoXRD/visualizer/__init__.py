@@ -7,6 +7,7 @@ from pymatgen.analysis.diffraction import xrd
 import cv2
 from cv2_rolling_ball import subtract_background_rolling_ball
 from scipy import interpolate as ip
+from pymatgen.core import Structure
 import numpy as np
 import os
 
@@ -127,7 +128,7 @@ class SpectrumPlotter(object):
             all_I: list of intensities as a function of two-theta
         """
 
-        struct = mg.Structure.from_file('%s/%s' % (self.ref_dir, ref_phase))
+        struct = Structure.from_file('%s/%s' % (self.ref_dir, ref_phase))
 
         pattern = self.calculator.get_pattern(struct, two_theta_range=(10,80))
         angles = pattern.x

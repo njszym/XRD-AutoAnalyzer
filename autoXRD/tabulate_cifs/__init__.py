@@ -3,6 +3,7 @@ import shutil
 import os
 import pymatgen as mg
 from pymatgen import analysis
+from pymatgen.core import Structure
 
 
 class StructureFilter(object):
@@ -37,7 +38,7 @@ class StructureFilter(object):
 
         stoich_strucs, temps, dates = [], [], []
         for cmpd in os.listdir(self.cif_dir):
-            struc = mg.Structure.from_file('%s/%s' % (self.cif_dir, cmpd))
+            struc = Structure.from_file('%s/%s' % (self.cif_dir, cmpd))
             if struc.is_ordered:
                 stoich_strucs.append(struc)
                 t, d = self.parse_measurement_conditions(cmpd)

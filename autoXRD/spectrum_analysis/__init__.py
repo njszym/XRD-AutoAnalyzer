@@ -13,6 +13,7 @@ import numpy as np
 import os
 import multiprocessing
 from multiprocessing import Pool, Manager
+from pymatgen.core import Structure
 import math
 
 
@@ -307,7 +308,7 @@ class SpectrumAnalyzer(object):
             all_I: list of intensities as a function of two-theta
         """
 
-        struct = mg.Structure.from_file('%s/%s' % (self.ref_dir, cmpd))
+        struct = Structure.from_file('%s/%s' % (self.ref_dir, cmpd))
         equil_vol = struct.volume
         pattern = self.calculator.get_pattern(struct, two_theta_range=(10,80))
         angles = pattern.x

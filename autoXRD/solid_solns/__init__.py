@@ -8,6 +8,7 @@ from pymatgen import Composition
 from pymatgen import analysis
 import multiprocessing
 from multiprocessing import Pool, Manager
+from pymatgen.core import Structure
 
 
 class SolidSolnsGen(object):
@@ -62,9 +63,9 @@ class SolidSolnsGen(object):
         reference_directory = self.ref_dir
 
         cmpd_A, cmpd_B = pair[0], pair[1]
-        struc_A = mg.Structure.from_file('%s/%s' % (reference_directory, cmpd_A))
+        struc_A = Structure.from_file('%s/%s' % (reference_directory, cmpd_A))
         formula_A = struc_A.composition.reduced_formula
-        struc_B = mg.Structure.from_file('%s/%s' % (reference_directory, cmpd_B))
+        struc_B = Structure.from_file('%s/%s' % (reference_directory, cmpd_B))
         formula_B = struc_B.composition.reduced_formula
 
         if formula_A != formula_B:
@@ -140,8 +141,8 @@ class SolidSolnsGen(object):
                 (pymatgen Structure objects)
         """
 
-        struc_A = mg.Structure.from_file('%s/%s' % (self.ref_dir, pair[0]))
-        struc_B = mg.Structure.from_file('%s/%s' % (self.ref_dir, pair[1]))
+        struc_A = Structure.from_file('%s/%s' % (self.ref_dir, pair[0]))
+        struc_B = Structure.from_file('%s/%s' % (self.ref_dir, pair[1]))
 
         try:
             struc_B = self.matcher.get_s2_like_s1(struc_A, struc_B)

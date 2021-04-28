@@ -4,6 +4,7 @@ import numpy as np
 import os
 import multiprocessing
 from multiprocessing import Pool, Manager
+from pymatgen.core import Structure
 
 
 class SpectraGenerator(object):
@@ -54,7 +55,7 @@ class SpectraGenerator(object):
 
         phases = []
         for filename in sorted(os.listdir(self.ref_dir)):
-            phases.append([mg.Structure.from_file('%s/%s' % (self.ref_dir, filename)), filename])
+            phases.append([Structure.from_file('%s/%s' % (self.ref_dir, filename)), filename])
 
         with Manager() as manager:
 
