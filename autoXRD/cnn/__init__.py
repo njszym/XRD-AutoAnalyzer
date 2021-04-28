@@ -9,7 +9,7 @@ class DataSetUp(object):
     set of X-ray diffraction spectra to perform phase identification.
     """
 
-    def __init__(self, xrd, num_epochs=2, testing_fraction=0):
+    def __init__(self, xrd, testing_fraction=0):
         """
         Args:
             xrd: a numpy array containing xrd spectra categorized by
@@ -23,7 +23,6 @@ class DataSetUp(object):
                 By default, all spectra will be used for training.
         """
         self.xrd = xrd
-        self.num_epochs = num_epochs
         self.testing_fraction = testing_fraction
         self.num_phases = len(xrd)
 
@@ -101,7 +100,7 @@ class DataSetUp(object):
             return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
 
 
-def train_model(x_train, y_train, n_phases, n_dense=[3100, 1200], dropout_rate=0.7):
+def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], dropout_rate=0.7):
     """
     Args:
         x_train: numpy array of simulated xrd spectra
@@ -140,7 +139,7 @@ def train_model(x_train, y_train, n_phases, n_dense=[3100, 1200], dropout_rate=0
     model.compile(loss=tf.nn.sigmoid_cross_entropy_with_logits, optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.BinaryAccuracy()])
 
     # Fit model to training data
-    model.fit(x_train, y_train, batch_size=32, epochs=self.num_epochs,
+    model.fit(x_train, y_train, batch_size=32, epochs=num_epochs,
     validation_split=0.2, shuffle=True)
 
     return model
@@ -156,7 +155,7 @@ def test_model(model, test_x, test_y):
     _, acc = model.evaluate(test_x, test_y)
     print('Test Accuracy: ' + str(acc*100) + '%')
 
-def main(xrd, testing_fraction, fmodel='Model.h5'):
+def main(xrd, num_epochs, testing_fraction, fmodel='Model.h5'):
 
     # Organize data
     obj = DataSetUp(xrd, testing_fraction)
@@ -164,7 +163,7 @@ def main(xrd, testing_fraction, fmodel='Model.h5'):
     train_x, train_y, test_x, test_y = obj.split_training_testing()
 
     # Train model
-    model = train_model(train_x, train_y, num_phases)
+    model = train_model(train_x, train_y, num_phases, num_epochs)
 
     # Save model
     model.save(fmodel)
