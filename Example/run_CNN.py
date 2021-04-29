@@ -27,7 +27,7 @@ if __name__ == '__main__':
             all_probs = [float(val[:-1]) for val in confidence]
             final_phases, final_confidence = [], []
             for (ph, cf) in zip(all_phases, all_probs):
-                if cf >= 50.0:
+                if cf >= 25.0:
                     final_phases.append(ph)
                     final_confidence.append(cf)
 
