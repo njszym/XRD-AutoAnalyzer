@@ -15,7 +15,7 @@ git clone https://github.com/njszym/XRD-AutoAnalyzer.git
 Then, to install all required modules, navigate to the cloned directory and execute:
 
 ```
-python setup.py install --user
+pip install . --user
 ```
 
 ## Usage example

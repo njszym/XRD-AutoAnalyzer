@@ -14,10 +14,6 @@ setup(
     url='https://github.com/njszym/XRD-AutoAnalyzer',
     license='MIT',
     packages=find_packages(),
-    install_requires=['numpy', 'pymatgen', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'keras', 'tensorflow']
+    install_requires=['numpy==1.19.2', 'pymatgen==2020.6.8', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'keras', 'tensorflow==2.4.0']
 )
 
-# Copy autoXRD to python path
-pythonpath = os.__file__.split('/')[:-1]
-pythonpath = '/'.join(pythonpath)
-copytree('autoXRD', '%s/autoXRD' % pythonpath)
