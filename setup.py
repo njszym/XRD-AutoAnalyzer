@@ -14,6 +14,6 @@ setup(
     url='https://github.com/njszym/XRD-AutoAnalyzer',
     license='MIT',
     packages=find_packages(),
-    install_requires=['numpy==1.19.2', 'pymatgen==2020.6.8', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'keras', 'tensorflow==2.4.0']
+    install_requires=['numpy==1.19.2', 'pymatgen==2020.6.8', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball',
+        'keras', 'tensorflow==2.4.0', 'gast', 'astunparse', 'flatbuffers', 'spglib', 'monty', 'tabulate', 'google', 'protobuf']
 )
-
