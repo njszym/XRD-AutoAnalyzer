@@ -1,4 +1,3 @@
-import keras
 from scipy.signal import find_peaks, filtfilt
 from dtw import dtw, warp
 import random
