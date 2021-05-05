@@ -28,7 +28,7 @@ python run_CNN.py
 
 The characterization of each spectrum should take around 1-2 minutes on a single processor. Once all classifications are made, the predicted phases will be printed along with their associated probabilities.
 
-For a detailed walkthrough of the steps used to perform phase identification, the user may refer to the Jupyter notebook provided in the ```Tutorial``` folder.
+For a detailed walkthrough of the steps used to perform phase identification, please see https://github.com/njszym/XRD-AutoAnalyzer/blob/main/Tutorial/tutorial-notebook.ipynb.
 
 ## Training the model for new compositions
 
