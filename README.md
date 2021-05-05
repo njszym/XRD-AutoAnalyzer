@@ -28,6 +28,8 @@ python run_CNN.py
 
 The characterization of each spectrum should take around 1-2 minutes on a single processor. Once all classifications are made, the predicted phases will be printed along with their associated probabilities.
 
+For a detailed walkthrough of the steps used to perform phase identification, the user may refer to the Jupyter notebook provided in the ```Tutorial``` folder.
+
 ## Training the model for new compositions
 
 To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into ```Novel_Space/All_CIFs```. Then navigate to the ```Novel_Space/```directory and execute:

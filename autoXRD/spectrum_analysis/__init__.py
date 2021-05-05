@@ -473,7 +473,7 @@ class PhaseIdentifier(object):
     Class used to identify phases from a given set of xrd spectra
     """
 
-    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, wavelength):
+    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, wavelength, parallel=True):
         """
         Args:
             spectra_dir: path to directory containing the xrd
@@ -488,6 +488,7 @@ class PhaseIdentifier(object):
         self.max_phases = max_phases
         self.cutoff = cutoff_intensity
         self.wavelen = wavelength
+        self.parallel = parallel
 
     @property
     def all_predictions(self):
@@ -501,17 +502,25 @@ class PhaseIdentifier(object):
         reference_phases = sorted(os.listdir(self.ref_dir))
         spectrum_filenames = os.listdir(self.spectra_dir)
 
-        with Manager() as manager:
+        if self.parallel:
+            with Manager() as manager:
+                pool = Pool(self.num_cpu)
+                print('Running phase identification')
+                all_info = list(tqdm(pool.imap(self.classify_mixture, spectrum_filenames),
+                    total=len(spectrum_filenames)))
+                spectrum_fnames = [info[0] for info in all_info]
+                predicted_phases = [info[1] for info in all_info]
+                confidences = [info[2] for info in all_info]
 
-            pool = Pool(self.num_cpu)
-            print('Running phase identification')
-            all_info = list(tqdm(pool.imap(self.classify_mixture, spectrum_filenames),
-                total=len(spectrum_filenames)))
-            spectrum_fnames = [info[0] for info in all_info]
-            predicted_phases = [info[1] for info in all_info]
-            confidences = [info[2] for info in all_info]
+        else:
+            all_info = []
+            for filename in spectrum_filenames:
+                all_info.append(self.classify_mixture(filename))
+                spectrum_fnames = [info[0] for info in all_info]
+                predicted_phases = [info[1] for info in all_info]
+                confidences = [info[2] for info in all_info]
 
-            return spectrum_fnames, predicted_phases, confidences
+        return spectrum_fnames, predicted_phases, confidences
 
     def classify_mixture(self, spectrum_fname):
         """
@@ -547,10 +556,10 @@ class PhaseIdentifier(object):
         return [spectrum_fname, predicted_set, final_confidences]
 
 
-def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa'):
+def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa', parallel=True):
 
     phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases,
-        cutoff_intensity, wavelength)
+        cutoff_intensity, wavelength, parallel)
 
     spectrum_names, predicted_phases, confidences = phase_id.all_predictions
 
