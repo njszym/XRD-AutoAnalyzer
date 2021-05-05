@@ -15,6 +15,5 @@ setup(
     license='MIT',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['numpy==1.19.2', 'pymatgen==2020.6.8', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'absl-py',
-        'wheel>=0.36.2', 'six==1.15.0', 'keras', 'tensorflow==2.4.0', 'gast', 'astunparse', 'flatbuffers', 'spglib', 'monty', 'tabulate', 'google', 'protobuf']
+    install_requires=['numpy', 'pymatgen', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'tensorflow==2.4.*']
 )
