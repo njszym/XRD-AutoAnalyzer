@@ -5,11 +5,12 @@ import pymatgen as mg
 from pymatgen.analysis.diffraction import xrd
 import cv2
 from cv2_rolling_ball import subtract_background_rolling_ball
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 from tensorflow.python.keras.backend import eager_learning_phase_scope
 from scipy import interpolate as ip
 import numpy as np
-import os
 import multiprocessing
 from multiprocessing import Pool, Manager
 from pymatgen.core import Structure
@@ -54,7 +55,7 @@ class SpectrumAnalyzer(object):
 
         spectrum = self.formatted_spectrum
 
-        self.model = tf.keras.models.load_model('Model.h5',
+        self.model = tf.keras.models.load_model('Model.h5', compile=False,
             custom_objects={'sigmoid_cross_entropy_with_logits_v2': tf.nn.sigmoid_cross_entropy_with_logits})
         self.kdp = KerasDropoutPrediction(self.model)
 
