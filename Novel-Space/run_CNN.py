@@ -22,12 +22,12 @@ if __name__ == '__main__':
 
     for (spectrum_fname, phase_set, confidence) in zip(spectrum_names, predicted_phases, confidences):
 
-        if '--all' not in sys.argv: # By default: only include phases with a confidence > 50%
+        if '--all' not in sys.argv: # By default: only include phases with a confidence > 30%
             all_phases = phase_set.split(' + ')
             all_probs = [float(val[:-1]) for val in confidence]
             final_phases, final_confidence = [], []
             for (ph, cf) in zip(all_phases, all_probs):
-                if cf >= 50.0:
+                if cf >= 25.0:
                     final_phases.append(ph)
                     final_confidence.append(cf)
 

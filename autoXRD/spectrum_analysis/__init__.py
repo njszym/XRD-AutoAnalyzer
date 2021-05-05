@@ -1,6 +1,8 @@
 from scipy.signal import find_peaks, filtfilt
 from dtw import dtw, warp
+import warnings
 import random
+from tqdm import tqdm
 import pymatgen as mg
 from pymatgen.analysis.diffraction import xrd
 import cv2
@@ -308,7 +310,9 @@ class SpectrumAnalyzer(object):
             all_I: list of intensities as a function of two-theta
         """
 
-        struct = Structure.from_file('%s/%s' % (self.ref_dir, cmpd))
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore") # don't print occupancy-related warnings
+            struct = Structure.from_file('%s/%s' % (self.ref_dir, cmpd))
         equil_vol = struct.volume
         pattern = self.calculator.get_pattern(struct, two_theta_range=(10,80))
         angles = pattern.x
@@ -500,7 +504,9 @@ class PhaseIdentifier(object):
         with Manager() as manager:
 
             pool = Pool(self.num_cpu)
-            all_info = pool.map(self.classify_mixture, spectrum_filenames)
+            print('Running phase identification')
+            all_info = list(tqdm(pool.imap(self.classify_mixture, spectrum_filenames),
+                total=len(spectrum_filenames)))
             spectrum_fnames = [info[0] for info in all_info]
             predicted_phases = [info[1] for info in all_info]
             confidences = [info[2] for info in all_info]
