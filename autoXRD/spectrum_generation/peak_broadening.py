@@ -68,7 +68,7 @@ class BroadGen(object):
                 std_dev = beta/2.35482
 
                 ## Convlution of gaussian
-                gauss = [int*np.exp((-(val - ang)**2)/std_dev) for val in x]
+                gauss = [int*np.exp((-0.5*(val - ang)**2)/std_dev) for val in x]
                 conv.append(gauss)
 
         mixed_data = zip(*conv)
