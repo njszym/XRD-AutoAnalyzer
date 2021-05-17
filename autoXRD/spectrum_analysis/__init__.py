@@ -516,9 +516,9 @@ class PhaseIdentifier(object):
             all_info = []
             for filename in spectrum_filenames:
                 all_info.append(self.classify_mixture(filename))
-                spectrum_fnames = [info[0] for info in all_info]
-                predicted_phases = [info[1] for info in all_info]
-                confidences = [info[2] for info in all_info]
+            spectrum_fnames = [info[0] for info in all_info]
+            predicted_phases = [info[1] for info in all_info]
+            confidences = [info[2] for info in all_info]
 
         return spectrum_fnames, predicted_phases, confidences
 
