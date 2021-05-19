@@ -40,7 +40,7 @@ if __name__ == '__main__':
             print('Predicted phases: %s' % phase_set)
             print('Confidence: %s' % confidence)
 
-        if '--plot' in sys.argv:
+        if ('--plot' in sys.argv) and (phase_set != 'None'):
 
             # Format predicted phases into a list of their CIF filenames
             predicted_phases = phase_set.split(' + ')
