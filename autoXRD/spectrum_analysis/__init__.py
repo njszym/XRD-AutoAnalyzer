@@ -161,7 +161,7 @@ class SpectrumAnalyzer(object):
 
         return smoothed_ys
 
-    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list = [], is_first=True):
+    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list=[], is_first=True):
         """
         A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
         For each mixture, the associated phases and probabilities are tabulated.
@@ -548,9 +548,9 @@ class PhaseIdentifier(object):
             predicted_cmpds = [fname[:-4] for fname in mixtures[max_conf_ind]]
             predicted_set = ' + '.join(predicted_cmpds)
 
-        # Otherwise, return Nontype
+        # Otherwise, return None
         else:
-            max_conf = 0.0
+            final_confidences = ['0%']
             predicted_set = 'None'
 
         return [spectrum_fname, predicted_set, final_confidences]
