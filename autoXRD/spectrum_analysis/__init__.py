@@ -461,7 +461,7 @@ class KerasDropoutPrediction(object):
         certanties = []
         for each_count in counts:
             conf = each_count/sum(counts)
-            if conf >= 0.25: ## If prediction occurs at least 25% of the time
+            if conf >= 0.10: ## If prediction occurs at least 10% of the time
                 certanties.append(conf)
         certanties = sorted(certanties, reverse=True)
 
