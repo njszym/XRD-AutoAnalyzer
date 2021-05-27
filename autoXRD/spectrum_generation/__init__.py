@@ -13,7 +13,7 @@ class SpectraGenerator(object):
     for all reference phases
     """
 
-    def __init__(self, reference_dir, num_spectra=50, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04):
+    def __init__(self, reference_dir, num_spectra=50, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04, min_angle=10.0, max_angle=80.0):
         """
         Args:
             reference_dir: path to directory containing
@@ -26,6 +26,8 @@ class SpectraGenerator(object):
         self.min_domain_size = min_domain_size
         self.max_domain_size = max_domain_size
         self.max_strain = max_strain
+        self.min_angle = min_angle
+        self.max_angle = max_angle
 
     def augment(self, phase_info):
         """
@@ -45,9 +47,9 @@ class SpectraGenerator(object):
         struc, filename = phase_info[0], phase_info[1]
         patterns = []
 
-        patterns += peak_shifts.main(struc, self.num_spectra, self.max_strain)
-        patterns += peak_broadening.main(struc, self.num_spectra, self.min_domain_size, self.max_domain_size)
-        patterns += intensity_changes.main(struc, self.num_spectra, self.max_texture)
+        patterns += peak_shifts.main(struc, self.num_spectra, self.max_strain, self.min_angle, self.max_angle)
+        patterns += peak_broadening.main(struc, self.num_spectra, self.min_domain_size, self.max_domain_size, self.min_angle, self.max_angle)
+        patterns += intensity_changes.main(struc, self.num_spectra, self.max_texture, self.min_angle, self.max_angle)
 
         return (patterns, filename)
 

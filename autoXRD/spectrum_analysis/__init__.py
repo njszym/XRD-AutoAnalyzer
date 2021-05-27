@@ -24,7 +24,7 @@ class SpectrumAnalyzer(object):
     Class used to process and classify xrd spectra.
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, wavelen='CuKa', reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, wavelen='CuKa', reference_dir='References', min_angle=10.0, max_angle=80.0):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -42,6 +42,8 @@ class SpectrumAnalyzer(object):
         self.max_phases = max_phases
         self.cutoff = cutoff_intensity
         self.wavelen = wavelen
+        self.min_angle = min_angle
+        self.max_angle = max_angle
 
     @property
     def reference_phases(self):
@@ -112,7 +114,7 @@ class SpectrumAnalyzer(object):
 
         ## Fit to 4,501 values as to be compatible with CNN
         f = ip.CubicSpline(x, y)
-        xs = np.linspace(10, 80, 4501)
+        xs = np.linspace(self.min_angle, self.max_angle, 4501)
         ys = f(xs)
 
         ## Smooth out noise
@@ -314,12 +316,12 @@ class SpectrumAnalyzer(object):
             warnings.simplefilter("ignore") # don't print occupancy-related warnings
             struct = Structure.from_file('%s/%s' % (self.ref_dir, cmpd))
         equil_vol = struct.volume
-        pattern = self.calculator.get_pattern(struct, two_theta_range=(10,80))
+        pattern = self.calculator.get_pattern(struct, two_theta_range=(self.min_angle, self.max_angle))
         angles = pattern.x
         peaks = pattern.y
 
-        x = np.linspace(10, 80, 4501)
-        step_size = (80. - 10.)/4501.
+        x = np.linspace(self.min_angle, self.max_angle, 4501)
+        step_size = (self.max_angle - self.min_angle)/4501.
         half_step = step_size/2.0
         y = []
         for val in x:
@@ -473,7 +475,7 @@ class PhaseIdentifier(object):
     Class used to identify phases from a given set of xrd spectra
     """
 
-    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, wavelength, parallel=True):
+    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, wavelength, min_angle=10.0, max_angle=80.0, parallel=True):
         """
         Args:
             spectra_dir: path to directory containing the xrd
@@ -489,6 +491,8 @@ class PhaseIdentifier(object):
         self.cutoff = cutoff_intensity
         self.wavelen = wavelength
         self.parallel = parallel
+        self.min_angle = min_angle
+        self.max_angle = max_angle
 
     @property
     def all_predictions(self):
@@ -536,7 +540,7 @@ class PhaseIdentifier(object):
         tabulate_conf, predicted_cmpd_set = [], []
 
         spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases,
-            self.cutoff, wavelen=self.wavelen)
+            self.cutoff, wavelen=self.wavelen, min_angle=self.min_angle, max_angle=self.max_angle)
 
         mixtures, confidences = spec_analysis.suspected_mixtures
 
@@ -556,10 +560,10 @@ class PhaseIdentifier(object):
         return [spectrum_fname, predicted_set, final_confidences]
 
 
-def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa', parallel=True):
+def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa', min_angle=10.0, max_angle=80.0, parallel=True):
 
     phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases,
-        cutoff_intensity, wavelength, parallel)
+        cutoff_intensity, wavelength, min_angle, max_angle, parallel)
 
     spectrum_names, predicted_phases, confidences = phase_id.all_predictions
 

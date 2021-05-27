@@ -12,7 +12,7 @@ class TextureGen(object):
         stochastically chosen crystallographic directions.
     """
 
-    def __init__(self, struc, max_texture=0.6):
+    def __init__(self, struc, max_texture=0.6, min_angle=10.0, max_angle=80.0):
         """
         Args:
             struc: pymatgen structure object from which xrd
@@ -25,11 +25,13 @@ class TextureGen(object):
         self.calculator = xrd.XRDCalculator()
         self.struc = struc
         self.max_texture = max_texture
+        self.min_angle = min_angle
+        self.max_angle = max_angle
 
     @property
     def pattern(self):
         struc = self.struc
-        return self.calculator.get_pattern(struc, two_theta_range=(0,80))
+        return self.calculator.get_pattern(struc, two_theta_range=(self.min_angle, self.max_angle))
 
     @property
     def angles(self):
@@ -86,10 +88,10 @@ class TextureGen(object):
         angles = self.angles
         textured_intensities = self.textured_intensities
 
-        x = np.linspace(10, 80, 4501)
+        x = np.linspace(self.min_angle, self.max_angle, 4501)
         y = []
 
-        step_size = (80. - 10.)/4501.
+        step_size = (self.max_angle - self.min_angle)/4501.
         half_step = step_size/2.0
         for val in x:
             ysum = 0
@@ -116,9 +118,9 @@ class TextureGen(object):
 
         return all_I
 
-def main(struc, num_textured, max_texture=0.6):
+def main(struc, num_textured, max_texture=0.6, min_angle=10.0, max_angle=80.0):
 
-    texture_generator = TextureGen(struc, max_texture)
+    texture_generator = TextureGen(struc, max_texture, min_angle, max_angle)
 
     textured_patterns = [texture_generator.textured_spectrum for i in range(num_textured)]
 

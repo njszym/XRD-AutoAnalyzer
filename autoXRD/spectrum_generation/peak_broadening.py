@@ -11,7 +11,7 @@ class BroadGen(object):
         that are associated with small domain size
     """
 
-    def __init__(self, struc, min_domain_size=1, max_domain_size=100):
+    def __init__(self, struc, min_domain_size=1, max_domain_size=100, min_angle=10.0, max_angle=80.0):
         """
         Args:
             struc: structure to simulate augmented xrd spectra from
@@ -22,8 +22,10 @@ class BroadGen(object):
         """
         self.calculator = xrd.XRDCalculator()
         self.struc = struc
-        self.pattern = self.calculator.get_pattern(struc, two_theta_range=(0,80))
         self.possible_domains = np.linspace(min_domain_size, max_domain_size, 100)
+        self.min_angle = min_angle
+        self.max_angle = max_angle
+        self.pattern = self.calculator.get_pattern(struc, two_theta_range=(self.min_angle, self.max_angle))
 
     @property
     def angles(self):
@@ -43,10 +45,10 @@ class BroadGen(object):
         intensities = self.intensities
         tau = random.choice(self.possible_domains)
 
-        x = np.linspace(10, 80, 4501)
+        x = np.linspace(self.min_angle, self.max_angle, 4501)
         y = []
 
-        step_size = (80. - 10.)/4501.
+        step_size = (self.max_angle - self.min_angle)/4501.
         half_step = step_size/2.0
         for val in x:
             ysum = 0
@@ -83,9 +85,9 @@ class BroadGen(object):
 
         return all_I
 
-def main(struc, num_broadened, min_domain_size, max_domain_size):
+def main(struc, num_broadened, min_domain_size, max_domain_size, min_angle=10.0, max_angle=80.0):
 
-    broad_generator = BroadGen(struc, min_domain_size, max_domain_size)
+    broad_generator = BroadGen(struc, min_domain_size, max_domain_size, min_angle, max_angle)
 
     broadened_patterns = [broad_generator.broadened_spectrum for i in range(num_broadened)]
 

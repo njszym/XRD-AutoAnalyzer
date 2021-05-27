@@ -11,7 +11,7 @@ class StrainGen(object):
     strain to a pymatgen structure object.
     """
 
-    def __init__(self, struc, max_strain=0.04):
+    def __init__(self, struc, max_strain=0.04, min_angle=10.0, max_angle=80.0):
         """
         Args:
             struc: pymatgen structure object
@@ -21,6 +21,8 @@ class StrainGen(object):
         self.calculator = xrd.XRDCalculator()
         self.struc = struc
         self.max_strain = max_strain
+        self.min_angle = min_angle
+        self.max_angle = max_angle
 
     @property
     def sg(self):
@@ -124,13 +126,13 @@ class StrainGen(object):
     @property
     def strained_spectrum(self):
         struc = self.strained_struc
-        pattern = self.calculator.get_pattern(struc, two_theta_range=(0,80))
+        pattern = self.calculator.get_pattern(struc, two_theta_range=(self.min_angle, self.max_angle))
         angles, intensities = pattern.x, pattern.y
 
-        x = np.linspace(10, 80, 4501)
+        x = np.linspace(self.min_angle, self.max_angle, 4501)
         y = []
 
-        step_size = (80. - 10.)/4501.
+        step_size = (self.max_angle - self.min_angle)/4501.
         half_step = step_size/2.0
         for val in x:
             ysum = 0
@@ -158,9 +160,9 @@ class StrainGen(object):
         return all_I
 
 
-def main(struc, num_strains, max_strain):
+def main(struc, num_strains, max_strain, min_angle=10.0, max_angle=80.0):
 
-    strain_generator = StrainGen(struc, max_strain)
+    strain_generator = StrainGen(struc, max_strain, min_angle, max_angle)
 
     strained_patterns = [strain_generator.strained_spectrum for i in range(num_strains)]
 

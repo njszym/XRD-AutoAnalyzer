@@ -19,7 +19,7 @@ class SpectrumPlotter(object):
     (ii) line profiles of identified phases
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -33,6 +33,8 @@ class SpectrumPlotter(object):
         self.pred_phases = predicted_phases
         self.ref_dir = reference_dir
         self.calculator = xrd.XRDCalculator()
+        self.min_angle = min_angle
+        self.max_angle = max_angle
 
     @property
     def formatted_spectrum(self):
@@ -53,7 +55,7 @@ class SpectrumPlotter(object):
 
         ## Fit to 4,501 values as to be compatible with CNN
         f = ip.CubicSpline(x, y)
-        xs = np.linspace(10, 80, 4501)
+        xs = np.linspace(self.min_angle, self.max_angle, 4501)
         ys = f(xs)
 
         ## Smooth out noise
@@ -130,7 +132,7 @@ class SpectrumPlotter(object):
 
         struct = Structure.from_file('%s/%s' % (self.ref_dir, ref_phase))
 
-        pattern = self.calculator.get_pattern(struct, two_theta_range=(10,80))
+        pattern = self.calculator.get_pattern(struct, two_theta_range=(self.min_angle, self.max_angle))
         angles = pattern.x
         intensities = pattern.y
 
@@ -194,11 +196,11 @@ class SpectrumPlotter(object):
         return best_scale
 
 
-def main(spectra_directory, spectrum_fname, predicted_phases):
+def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0):
 
-        spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases)
+        spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, min_angle, max_angle)
 
-        x = np.linspace(10, 80, 4501)
+        x = np.linspace(min_angle, max_angle, 4501)
         measured_spectrum = spec_plot.formatted_spectrum
         angle_sets, intensity_sets = spec_plot.scaled_patterns
 
@@ -215,7 +217,7 @@ def main(spectra_directory, spectrum_fname, predicted_phases):
             plt.plot([0], [0], color=color_list[i], label='Predicted: %s' % phase)
             i += 1
 
-        plt.xlim(10, 80)
+        plt.xlim(min_angle, max_angle)
         plt.ylim(0, 105)
         plt.legend(prop={'size': 16})
         plt.xlabel(r'2$\Theta$', fontsize=16, labelpad=12)
