@@ -48,7 +48,13 @@ This script will:
 
 4) Train a convolutional neural network on the augmented spectra.
 
-This process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: training our model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 12 hours of computational runtime on 16 cores. Necessary computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
+By default, training spectra will be simulated over 2$\theta$ spanning 10-80 degrees. However, this can be customized as follows:
+
+```
+python construct_model.py --min_angle=10.0 --max_angle=80.0
+```
+
+The model creation process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: performing all necessary steps to create a model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 12 hours of computational runtime on 16 cores. Required computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
 
 When the procedure is completed, a trained ```Model.h5``` file will be made available. 
 
@@ -66,7 +72,7 @@ python construct_model.py --max_strain=0.04 --min_domain_size=1 --max_domain_siz
 
 ## Characterizing multi-phase spectra
 
-In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format and the diffraction angles should span at least 10-80 degrees. Wider ranges may be used, but will be curtailed to make predictions based only on angles between 10-80 degrees.
+In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format.
 
 Once all files are placed in the ```Spectra/``` folder, they can be classified by executing:
 
@@ -85,6 +91,12 @@ Confidence: (probabilities associated with the phases above)
 Phase labels are denoted as ```formula_spacegroup```.
 
 By default, only phases with a confidence above 25% will be shown. To also show low-confidence phases, the ```-all``` argument can be used at runtime.
+
+If spectra with a range of 2$\theta$ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
+
+```
+python run_CNN.py --min_angle=10.0 --max_angle=80.0
+```
 
 The model assumes that spectra are measured using Cu K-alpha radiation. However, the user can specify any arbitary wavelength (```lambda```, in angstroms) as follows:
 
