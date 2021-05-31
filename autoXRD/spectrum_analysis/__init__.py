@@ -112,6 +112,11 @@ class SpectrumAnalyzer(object):
                     Cu_y.append(intens)
             x, y = Cu_x, Cu_y
 
+        assert (min(x) <= self.min_angle) and (max(x) >= self.max_angle), """
+               Measured spectrum does not span the specified two-theta range!
+               Either use a broader spectrum or change the two-theta range via
+               the --min_angle and --max_angle arguments."""
+
         ## Fit to 4,501 values as to be compatible with CNN
         f = ip.CubicSpline(x, y)
         xs = np.linspace(self.min_angle, self.max_angle, 4501)
