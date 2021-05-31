@@ -48,7 +48,7 @@ This script will:
 
 4) Train a convolutional neural network on the augmented spectra.
 
-By default, training spectra will be simulated over 2θ spanning 10-80 degrees. However, this can be customized as follows:
+By default, training spectra will be simulated over 2θ spanning 10-80 degrees in Cu K-alpha radiation. However, this can be customized as follows:
 
 ```
 python construct_model.py --min_angle=10.0 --max_angle=80.0
@@ -92,7 +92,7 @@ Phase labels are denoted as ```formula_spacegroup```.
 
 By default, only phases with a confidence above 25% will be shown. To also show low-confidence phases, the ```-all``` argument can be used at runtime.
 
-If spectra with a range of 2θ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
+If spectra with a range of 2θ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles (in Cu K-alpha) should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
 
 ```
 python run_CNN.py --min_angle=10.0 --max_angle=80.0
