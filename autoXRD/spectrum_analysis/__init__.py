@@ -11,6 +11,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 from tensorflow.python.keras.backend import eager_learning_phase_scope
+from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 import numpy as np
 import multiprocessing
@@ -307,6 +308,25 @@ class SpectrumAnalyzer(object):
         else:
             return orig_y, None
 
+    def calc_std_dev(self, two_theta, tau):
+        """
+        calculate standard deviation based on angle (two theta) and domain size (tau)
+        Args:
+            two_theta: angle in two theta space
+            tau: domain size in nm
+        Returns:
+            standard deviation for gaussian kernel
+        """
+        ## Calculate FWHM based on the Scherrer equation
+        K = 0.9 ## shape factor
+        wavelength = self.calculator.wavelength * 0.1 ## angstrom to nm
+        theta = np.radians(two_theta/2.) ## Bragg angle in radians
+        beta = (K * wavelength) / (np.cos(theta) * tau) # in radians
+
+        ## Convert FWHM to std deviation of gaussian
+        sigma = np.sqrt(1/(2*np.log(2)))*0.5*np.degrees(beta)
+        return sigma**2
+
     def generate_pattern(self, cmpd):
         """
         Calculate the XRD spectrum of a given compound.
@@ -323,33 +343,36 @@ class SpectrumAnalyzer(object):
         equil_vol = struct.volume
         pattern = self.calculator.get_pattern(struct, two_theta_range=(self.min_angle, self.max_angle))
         angles = pattern.x
-        peaks = pattern.y
+        intensities = pattern.y
 
-        x = np.linspace(self.min_angle, self.max_angle, 4501)
-        step_size = (self.max_angle - self.min_angle)/4501.
-        half_step = step_size/2.0
-        y = []
-        for val in x:
-            ysum = 0
-            for (ang, pk) in zip(angles, peaks):
-                if np.isclose(ang, val, atol=half_step):
-                    ysum += pk
-            y.append(ysum)
+        steps = np.linspace(self.min_angle, self.max_angle, 4501)
 
-        conv = []
-        for (ang, int) in zip(x, y):
-            if int != 0:
-                gauss = [int*np.exp((-(val - ang)**2)/0.15) for val in x]
-                conv.append(gauss)
-        mixed_data = zip(*conv)
-        all_I = []
-        for values in mixed_data:
-            all_I.append(sum(values))
+        signals = np.zeros([len(angles), steps.shape[0]])
 
-        all_I = np.array(all_I) - min(all_I)
-        all_I = 100*all_I/max(all_I)
+        for i, ang in enumerate(angles):
+            # Map angle to closest datapoint step
+            idx = np.argmin(np.abs(ang-steps))
+            signals[i,idx] = intensities[i]
 
-        return all_I
+        # Convolute every row with unique kernel
+        # Iterate over rows; not vectorizable, changing kernel for every row
+        domain_size = 25.0
+        step_size = (self.max_angle - self.min_angle)/4501
+        for i in range(signals.shape[0]):
+            row = signals[i,:]
+            ang = steps[np.argmax(row)]
+            std_dev = self.calc_std_dev(ang, domain_size)
+            # Gaussian kernel expects step size 1 -> adapt std_dev
+            signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size,
+                                             mode='constant')
+
+        # Combine signals
+        signal = np.sum(signals, axis=0)
+
+        # Normalize signal
+        norm_signal = 100 * signal / max(signal)
+
+        return norm_signal
 
     def scale_spectrum(self, warped_spectrum, orig_y):
         """
