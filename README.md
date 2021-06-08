@@ -60,8 +60,8 @@ When the procedure is completed, a trained ```Model.h5``` file will be made avai
 
 By default, the following bounds are used on artifacts included during data augmentation:
 
-* Peak shifts: up to +/- 4% strain applied to each lattice parameter
-* Peak broadening: domain size ranging from 1-100 nm
+* Peak shifts: up to +/- 3% strain applied to each lattice parameter
+* Peak broadening: domain size ranging from 5-50 nm
 * Peak intensity variation: texture causing as much as +/- 50% change in peak height
 
 However, custom bounds can also be specified, e.g., as follows:
