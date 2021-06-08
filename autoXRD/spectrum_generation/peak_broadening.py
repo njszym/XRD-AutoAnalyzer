@@ -1,5 +1,6 @@
 import pymatgen as mg
 from pymatgen.analysis.diffraction import xrd
+from scipy.ndimage import gaussian_filter1d
 import random
 import math
 import numpy as np
@@ -39,51 +40,67 @@ class BroadGen(object):
     def hkl_list(self):
         return [v[0]['hkl'] for v in self.pattern.hkls]
 
+    def calc_std_dev(self, two_theta, tau):
+        """
+        calculate standard deviation based on angle (two theta) and domain size (tau)
+        Args:
+            two_theta: angle in two theta space
+            tau: domain size in nm
+        Returns:
+            standard deviation for gaussian kernel
+        """
+        ## Calculate FWHM based on the Scherrer equation
+        K = 0.9 ## shape factor
+        wavelength = self.calculator.wavelength * 0.1 ## angstrom to nm
+        theta = np.radians(two_theta/2.) ## Bragg angle in radians
+        beta = (K * wavelength) / (np.cos(theta) * tau) # in radians
+
+        ## Convert FWHM to std deviation of gaussian
+        sigma = np.sqrt(1/(2*np.log(2)))*0.5*np.degrees(beta)
+        return sigma**2
+
+
     @property
     def broadened_spectrum(self):
+
         angles = self.angles
         intensities = self.intensities
-        tau = random.choice(self.possible_domains)
 
-        x = np.linspace(self.min_angle, self.max_angle, 4501)
-        y = []
+        steps = np.linspace(self.min_angle, self.max_angle, 4501)
 
-        step_size = (self.max_angle - self.min_angle)/4501.
-        half_step = step_size/2.0
-        for val in x:
-            ysum = 0
-            for (ang, pk) in zip(angles, intensities):
-                if np.isclose(ang, val, atol=half_step):
-                    ysum += pk
-            y.append(ysum)
+        signals = np.zeros([len(angles), steps.shape[0]])
 
-        conv = []
-        for (ang, int) in zip(x, y):
-            if int != 0:
-                ## Calculate FWHM based on the Scherrer eqtn
-                K = 0.9 ## shape factor
-                wavelength = 0.15406 ## Cu K-alpha in nm
-                theta = math.radians(ang/2.) ## Bragg angle in radians
-                beta = (K / wavelength) * (math.cos(theta) / tau)
+        for i, ang in enumerate(angles):
+            # Map angle to closest datapoint step
+            idx = np.argmin(np.abs(ang-steps))
+            signals[i,idx] = intensities[i]
 
-                ## Convert FWHM to std deviation of gaussian
-                std_dev = beta/2.35482
+        # Convolute every row with unique kernel
+        # Iterate over rows; not vectorizable, changing kernel for every row
+        domain_size = random.choice(self.possible_domains)
+        step_size = (self.max_angle - self.min_angle)/4501
+        for i in range(signals.shape[0]):
+            row = signals[i,:]
+            ang = steps[np.argmax(row)]
+            std_dev = self.calc_std_dev(ang, domain_size)
+            # Gaussian kernel expects step size 1 -> adapt std_dev
+            signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size,
+                                             mode='constant')
 
-                ## Convlution of gaussian
-                gauss = [int*np.exp((-0.5*(val - ang)**2)/std_dev) for val in x]
-                conv.append(gauss)
+        # Combine signals
+        signal = np.sum(signals, axis=0)
 
-        mixed_data = zip(*conv)
-        all_I = []
-        for values in mixed_data:
-            noise = random.choice(np.linspace(-0.75, 0.75, 1000))
-            all_I.append(sum(values) + noise)
+        # Normalize signal
+        norm_signal = 100 * signal / max(signal)
 
-        shifted_vals = np.array(all_I) - min(all_I)
-        scaled_vals = 100*np.array(shifted_vals)/max(shifted_vals)
-        all_I = [[val] for val in scaled_vals]
+        noise = np.random.normal(0, 0.25, 4501)
+        noisy_signal = norm_signal + noise
 
-        return all_I
+        # Formatted for CNN
+        form_signal = [[val] for val in noisy_signal]
+
+        return form_signal
+
 
 def main(struc, num_broadened, min_domain_size, max_domain_size, min_angle=10.0, max_angle=80.0):
 
