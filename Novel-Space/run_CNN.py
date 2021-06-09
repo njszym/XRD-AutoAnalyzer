@@ -52,4 +52,4 @@ if __name__ == '__main__':
             predicted_phases = ['%s.cif' % phase for phase in predicted_phases]
 
             # Plot measured spectrum with line profiles of predicted phases
-            visualizer.main('Spectra', spectrum_fname, predicted_phases, min_angle, max_angle)
+            visualizer.main('Spectra', spectrum_fname, predicted_phases, min_angle, max_angle, wavelength)

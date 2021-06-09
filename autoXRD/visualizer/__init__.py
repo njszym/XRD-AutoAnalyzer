@@ -9,6 +9,7 @@ from cv2_rolling_ball import subtract_background_rolling_ball
 from scipy import interpolate as ip
 from pymatgen.core import Structure
 import numpy as np
+import math
 import os
 
 
@@ -19,7 +20,7 @@ class SpectrumPlotter(object):
     (ii) line profiles of identified phases
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, wavelength='CuKa', reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -35,6 +36,25 @@ class SpectrumPlotter(object):
         self.calculator = xrd.XRDCalculator()
         self.min_angle = min_angle
         self.max_angle = max_angle
+        self.wavelen = wavelength
+
+    def convert_angle(self, angle):
+        """
+        Convert two-theta into Cu K-alpha radiation.
+        """
+
+        orig_theta = math.radians(angle/2.)
+
+        orig_lambda = self.wavelen
+        target_lambda = 1.5406 # Cu k-alpha
+        ratio_lambda = target_lambda/orig_lambda
+
+        asin_argument = ratio_lambda*math.sin(orig_theta)
+
+        # Curtail two-theta range if needed to avoid domain errors
+        if asin_argument <= 1:
+            new_theta = math.degrees(math.asin(ratio_lambda*math.sin(orig_theta)))
+            return 2*new_theta
 
     @property
     def formatted_spectrum(self):
@@ -52,6 +72,16 @@ class SpectrumPlotter(object):
         data = np.loadtxt('%s/%s' % (self.spectra_dir, self.spectrum_fname))
         x = data[:, 0]
         y = data[:, 1]
+
+        ## Convert to Cu K-alpha radiation if needed
+        if str(self.wavelen) != 'CuKa':
+            Cu_x, Cu_y = [], []
+            for (two_thet, intens) in zip(x, y):
+                scaled_x = self.convert_angle(two_thet)
+                if scaled_x is not None:
+                    Cu_x.append(scaled_x)
+                    Cu_y.append(intens)
+            x, y = Cu_x, Cu_y
 
         ## Fit to 4,501 values as to be compatible with CNN
         f = ip.CubicSpline(x, y)
@@ -196,9 +226,9 @@ class SpectrumPlotter(object):
         return best_scale
 
 
-def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0):
+def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, wavelength='CuKa'):
 
-        spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, min_angle, max_angle)
+        spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, min_angle, max_angle, wavelength)
 
         x = np.linspace(min_angle, max_angle, 4501)
         measured_spectrum = spec_plot.formatted_spectrum
