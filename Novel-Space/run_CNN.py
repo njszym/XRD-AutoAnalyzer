@@ -41,6 +41,7 @@ if __name__ == '__main__':
             print('Confidence: %s' % final_confidence)
 
         else: # If --all is specified, print *all* suspected phases
+            final_phases = phase_set.split(' + ')
             print('Filename: %s' % spectrum_fname)
             print('Predicted phases: %s' % phase_set)
             print('Confidence: %s' % confidence)
@@ -48,8 +49,7 @@ if __name__ == '__main__':
         if ('--plot' in sys.argv) and (phase_set != 'None'):
 
             # Format predicted phases into a list of their CIF filenames
-            predicted_phases = phase_set.split(' + ')
-            predicted_phases = ['%s.cif' % phase for phase in predicted_phases]
+            final_phases = ['%s.cif' % phase for phase in final_phases]
 
             # Plot measured spectrum with line profiles of predicted phases
-            visualizer.main('Spectra', spectrum_fname, predicted_phases, min_angle, max_angle, wavelength)
+            visualizer.main('Spectra', spectrum_fname, final_phases, min_angle, max_angle, wavelength)
