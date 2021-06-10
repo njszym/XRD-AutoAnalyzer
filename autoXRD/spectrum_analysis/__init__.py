@@ -462,7 +462,7 @@ class KerasDropoutPrediction(object):
 
         self.f = tf.keras.backend.function(model.layers[0].input, model.layers[-1].output)
 
-    def predict(self, x, n_iter=100):
+    def predict(self, x, n_iter=200):
         """
         Args:
             x: xrd spectrum to be classified
