@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 if __name__ == '__main__':
 
     max_phases = 3 # default: a maximum 3 phases in each mixture
-    cutoff_intensity = 10 # default: ID all peaks with I >= 10% maximum spectrum intensity
+    cutoff_intensity = 5 # default: ID all peaks with I >= 10% maximum spectrum intensity
     wavelength = 'CuKa' # default: spectra was measured using Cu K_alpha radiation
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
