@@ -184,7 +184,8 @@ class SpectrumPlotter(object):
         """
 
         ## Convert indices to two-theta
-        peak_inds = (4501./70.)*(np.array(angles) - 10.)
+        span = self.max_angle - self.min_angle
+        peak_inds = (4501./span)*(np.array(angles) - self.min_angle)
         peak_inds = [int(i) for i in peak_inds]
         y = []
         qi = 0
