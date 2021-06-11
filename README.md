@@ -119,3 +119,11 @@ python run_CNN.py --plot
 Which will yield a plot of the form:
 
 ![sample](./Example/sample-image.png)
+
+If the user wishes to compare specific reference phases to the measured spectrum, the ```visualize.py``` script can be used as follows:
+
+```
+python visualize.py --ph='cmpd1_sg' --ph='cmpd2_sg'
+```
+
+Where ```cmpd1_sg``` and ```cmpd2_sg``` refer to the phases that will be fit to the spectrum and plotted. Note that minimum and maximum angles, as well as the wavelength, must also be specified if they differ from default values.
