@@ -12,6 +12,7 @@ if __name__ == '__main__':
     max_strain = 0.03 # default: up to +/- 3% strain
     num_spectra = 50 # Number of spectra to simulate per phase
     min_angle, max_angle = 10.0, 80.0
+    skip_filter = False
     for arg in sys.argv:
         if '--max_texture' in arg:
             max_texture = float(arg.split('=')[1])
@@ -27,29 +28,26 @@ if __name__ == '__main__':
             min_angle = float(arg.split('=')[1])
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
+        if '--skip_filter' in arg:
+            skip_filter = True
 
-    check = True
-    if 'References' in os.listdir('.'):
-        if input('References directory already exists. Do you wish to overwrite? (y/n)') != 'y':
-            check = False
-
-    if 'XRD.npy' in os.listdir('.'):
-        if input('XRD.npy already exists. Do you wish to overwrite? (y/n)') != 'y':
-            check = False
-
-    if check == True:
-
+    if not skip_filter:
         # Filter CIF files to create unique reference phases
+        assert 'All_CIFs' in os.listdir('.'), 'No All_CIFs directory was provided. Please create or use --skip_filter'
+        assert 'References' not in os.listdir('.'), 'References directory already exists. Please remove or use --skip_filter'
         tabulate_cifs.main('All_CIFs', 'References')
 
+    else:
+        assert 'References' in os.listdir('.'), '--skip_filter was specified, but no References directory was provided'
+
+    if '--include_ns' in sys.argv:
         # Generate hypothetical solid solutions
-        if '--include_ns' in sys.argv:
-            solid_solns.main('References')
+        solid_solns.main('References')
 
-        # Simulate and save augmented XRD spectra
-        xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, min_angle, max_angle)
-        xrd_specs = xrd_obj.augmented_spectra
-        np.save('XRD', xrd_specs)
+    # Simulate and save augmented XRD spectra
+    xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, min_angle, max_angle)
+    xrd_specs = xrd_obj.augmented_spectra
+    np.save('XRD', xrd_specs)
 
-        # Train, test, and save the CNN
-        cnn.main(xrd_specs, num_epochs=2, testing_fraction=0.2)
+    # Train, test, and save the CNN
+    cnn.main(xrd_specs, num_epochs=2, testing_fraction=0.2)

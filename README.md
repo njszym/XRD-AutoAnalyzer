@@ -40,7 +40,7 @@ python construct_model.py
 
 This script will:
 
-1) Filter all unique stoichiometric phases from the provided CIFs.
+1) Filter all unique stoichiometric phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, add the ```--skip_filter``` command and place all CIFs into a folder labeled ```References```.
 
 2) If ```--include_ns``` is specified: generate hypothetical solid solutions between the stoichiometric phases.
 
