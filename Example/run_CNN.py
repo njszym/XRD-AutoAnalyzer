@@ -1,4 +1,4 @@
-from autoXRD import spectrum_analysis, visualizer
+from autoXRD import spectrum_analysis, visualizer, quantifier
 import sys
 import numpy as np
 import pymatgen as mg
@@ -49,7 +49,17 @@ if __name__ == '__main__':
         if ('--plot' in sys.argv) and (phase_set != 'None'):
 
             # Format predicted phases into a list of their CIF filenames
-            final_phases = ['%s.cif' % phase for phase in final_phases]
+            final_phasenames = ['%s.cif' % phase for phase in final_phases]
 
             # Plot measured spectrum with line profiles of predicted phases
-            visualizer.main('Spectra', spectrum_fname, final_phases, min_angle, max_angle, wavelength)
+            visualizer.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength)
+
+        if ('--weights' in sys.argv) and (phase_set != 'None'):
+
+            # Format predicted phases into a list of their CIF filenames
+            final_phasenames = ['%s.cif' % phase for phase in final_phases]
+
+            # Get weight fractions
+            weights = quantifier.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength)
+            print('Weight fractions: %s' % weights)
+

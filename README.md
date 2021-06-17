@@ -120,6 +120,23 @@ Which will yield a plot of the form:
 
 ![sample](./Example/sample-image.png)
 
+Based on this plot, weight fractions can also be approximated by adding the ```--weights``` argument:
+
+```
+python run_CNN.py --weights
+```
+
+Which will provide an additional line in the output:
+
+```
+Filename: (name of the spectrum)
+Predicted phases: (phase_1 + phase_2 + ...)
+Confidence: (probabilities associated with the phases above)
+Weight fractions: (% associated with each phase above)
+```
+
+We caution that these weight fractions should be treated only as an estimation. They are calculated by fitting over peak heights, whereas weight fraction is instead related to peak areas. For a more reliable quantification of each phase, a separate technique such as Rietveld refinement is required. 
+
 If the user wishes to compare specific reference phases to the measured spectrum, the ```visualize.py``` script can be used as follows:
 
 ```
