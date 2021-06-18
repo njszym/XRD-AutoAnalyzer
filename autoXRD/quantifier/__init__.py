@@ -1,3 +1,4 @@
+from pymatgen.core.periodic_table import Element
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt
 from dtw import dtw, warp
@@ -259,7 +260,10 @@ def get_density(ref_phase, ref_dir='References'):
 
     mass = 0
     for site in struct:
-        mass += site.specie.element.atomic_mass
+        elem_dict = site.species.remove_charges().as_dict()
+        for elem_key in elem_dict.keys():
+            # Take into account occupancies and species
+            mass += elem_dict[elem_key]*Element(elem_key).atomic_mass
 
     return mass/struct.volume
 
