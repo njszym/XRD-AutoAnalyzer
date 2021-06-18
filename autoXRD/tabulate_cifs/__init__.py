@@ -139,7 +139,7 @@ class StructureFilter(object):
         return filtered_cmpds
 
 
-def write_cifs(unique_strucs, dir):
+def write_cifs(unique_strucs, dir, include_elems):
     """
     Write structures to CIF files
 
@@ -152,6 +152,10 @@ def write_cifs(unique_strucs, dir):
         os.mkdir(dir)
 
     for struc in unique_strucs:
+        num_elems = struc.composition.elements
+        if num_elems == 1:
+            if not include_elems:
+                continue
         formula = struc.composition.reduced_formula
         f = struc.composition.reduced_formula
         sg = struc.get_space_group_info()[1]
@@ -162,12 +166,12 @@ def write_cifs(unique_strucs, dir):
 
 
 
-def main(cif_directory, ref_directory):
+def main(cif_directory, ref_directory, include_elems=True):
 
     # Get unique structures
     struc_filter = StructureFilter(cif_directory)
     final_refs = struc_filter.filtered_refs
 
     # Write unique structures (as CIFs) to reference directory
-    write_cifs(final_refs, ref_directory)
+    write_cifs(final_refs, ref_directory, include_elems)
 

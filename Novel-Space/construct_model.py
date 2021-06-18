@@ -13,6 +13,7 @@ if __name__ == '__main__':
     num_spectra = 50 # Number of spectra to simulate per phase
     min_angle, max_angle = 10.0, 80.0
     skip_filter = False
+    include_elems = True
     for arg in sys.argv:
         if '--max_texture' in arg:
             max_texture = float(arg.split('=')[1])
@@ -30,12 +31,14 @@ if __name__ == '__main__':
             max_angle = float(arg.split('=')[1])
         if '--skip_filter' in arg:
             skip_filter = True
+        if '--ignore_elems' in arg:
+            include_elems = False
 
     if not skip_filter:
         # Filter CIF files to create unique reference phases
         assert 'All_CIFs' in os.listdir('.'), 'No All_CIFs directory was provided. Please create or use --skip_filter'
         assert 'References' not in os.listdir('.'), 'References directory already exists. Please remove or use --skip_filter'
-        tabulate_cifs.main('All_CIFs', 'References')
+        tabulate_cifs.main('All_CIFs', 'References', include_elems)
 
     else:
         assert 'References' in os.listdir('.'), '--skip_filter was specified, but no References directory was provided'

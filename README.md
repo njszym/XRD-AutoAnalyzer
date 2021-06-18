@@ -40,7 +40,7 @@ python construct_model.py
 
 This script will:
 
-1) Filter all unique stoichiometric phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, place all CIFs into a folder labeled ```References``` and run ```python construct_model.py --skip_filter```.
+1) Filter all unique stoichiometric phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, place all CIFs into a folder labeled ```References``` and run ```python construct_model.py --skip_filter```. To employ automated filtering but exclude elemental phases, run ```python construct_model.py --ignore_elems```.
 
 2) If ```--include_ns``` is specified: generate hypothetical solid solutions between the stoichiometric phases.
 
@@ -54,7 +54,7 @@ By default, training spectra will be simulated over 2θ spanning 10-80 degrees i
 python construct_model.py --min_angle=10.0 --max_angle=80.0
 ```
 
-The model creation process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: performing all necessary steps to create a model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 12 hours of computational runtime on 16 cores. Required computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
+The model creation process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: performing all necessary steps to create a model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 4 hours of computational runtime on a single core. Required computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
 
 When the procedure is completed, a trained ```Model.h5``` file will be made available. 
 
