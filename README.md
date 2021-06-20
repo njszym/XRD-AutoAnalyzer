@@ -104,7 +104,7 @@ The model assumes that spectra are measured using Cu K-alpha radiation. However,
 python run_CNN.py --wavelength=lambda
 ```
 
-For each spectrum, the phase identification algorithm runs until either (i) a maximum of three unique compounds have been identified, or (ii) all peaks with intensities greater than or equal to 5% of the spectrum's maximum intensity have been identified. To change these parameters (denoted ```N``` and ```I```), the following arguments can be specified:
+For each spectrum, the phase identification algorithm runs until either (i) a maximum of four unique compounds have been identified, or (ii) all peaks with intensities greater than or equal to 5% of the spectrum's maximum intensity have been identified. To change these parameters (denoted ```N``` and ```I```), the following arguments can be specified:
 
 ```
 python run_CNN.py --max_phases=N --cutoff_intensity=I
