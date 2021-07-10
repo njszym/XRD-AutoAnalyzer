@@ -15,5 +15,5 @@ setup(
     license='MIT',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['numpy', 'pymatgen', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'tensorflow==2.4.*']
+    install_requires=['numpy', 'pymatgen', 'dtw-python', 'scipy', 'opencv-python', 'opencv-rolling-ball', 'tensorflow==2.4.*', 'pyxtal']
 )

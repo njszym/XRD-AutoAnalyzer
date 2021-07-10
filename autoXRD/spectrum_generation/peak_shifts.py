@@ -5,6 +5,7 @@ import math
 import os
 from pymatgen.analysis.diffraction import xrd
 from scipy.ndimage import gaussian_filter1d
+from pyxtal import pyxtal
 
 class StrainGen(object):
     """
@@ -43,86 +44,13 @@ class StrainGen(object):
         return self.struc.lattice.matrix
 
     @property
-    def diag_range(self):
-        max_strain = self.max_strain
-        return np.linspace(1-max_strain, 1+max_strain, 1000)
-
-    @property
-    def off_diag_range(self):
-        max_strain = self.max_strain
-        return np.linspace(0-max_strain, 0+max_strain, 1000)
-
-    @property
-    def sg_class(self):
-        sg = self.sg
-        if sg in list(range(195, 231)):
-            return 'cubic'
-        elif sg in list(range(16, 76)):
-            return 'orthorhombic'
-        elif sg in list(range(3, 16)):
-            return 'monoclinic'
-        elif sg in list(range(1, 3)):
-            return 'triclinic'
-        elif sg in list(range(76, 195)):
-            if sg in list(range(75, 83)) + list(range(143, 149)) + list(range(168, 175)):
-                return 'low-sym hexagonal/tetragonal'
-            else:
-                return 'high-sym hexagonal/tetragonal'
-
-    @property
-    def strain_tensor(self):
-        diag_range = self.diag_range
-        off_diag_range = self.off_diag_range
-        s11, s22, s33 = [random.choice(diag_range) for v in range(3)]
-        s12, s13, s21, s23, s31, s32 = [random.choice(off_diag_range) for v in range(6)]
-        sg_class = self.sg_class
-
-        if sg_class in ['cubic', 'orthorhombic', 'monoclinic', 'high-sym hexagonal/tetragonal']:
-            v1 = [s11, 0, 0]
-        elif sg_class == 'low-sym hexagonal/tetragonal':
-            v1 = [s11, s12, 0]
-        elif sg_class == 'triclinic':
-            v1 = [s11, s12, s13]
-
-        if sg_class in ['cubic', 'high-sym hexagonal/tetragonal']:
-            v2 = [0, s11, 0]
-        elif sg_class == 'orthorhombic':
-            v2 = [0, s22, 0]
-        elif sg_class == 'monoclinic':
-            v2 = [0, s22, s23]
-        elif sg_class == 'low-sym hexagonal/tetragonal':
-            v2 = [-s12, s22, 0]
-        elif sg_class == 'triclinic':
-            v2 = [s21, s22, s23]
-
-        if sg_class == 'cubic':
-            v3 = [0, 0, s11]
-        elif sg_class == 'high-sym hexagonal/tetragonal':
-            v3 = [0, 0, s33]
-        elif sg_class == 'orthorhombic':
-            v3 = [0, 0, s33]
-        elif sg_class == 'monoclinic':
-            v3 = [0, s23, s33]
-        elif sg_class == 'low-sym hexagonal/tetragonal':
-            v3 = [0, 0, s33]
-        elif sg_class == 'triclinic':
-            v3 = [s31, s32, s33]
-
-        return np.array([v1, v2, v3])
-
-    @property
-    def strained_matrix(self):
-        return np.matmul(self.matrix, self.strain_tensor)
-
-    @property
-    def strained_lattice(self):
-        return mg.Lattice(self.strained_matrix)
-
-    @property
     def strained_struc(self):
-        new_struc = self.struc.copy()
-        new_struc.lattice = self.strained_lattice
-        return new_struc
+        ref_struc = self.struc.copy()
+        xtal_struc = pyxtal()
+        xtal_struc.from_seed(ref_struc)
+        xtal_struc.apply_perturbation(d_lat=self.max_strain, d_coor=0.0)
+        pmg_struc = xtal_struc.to_pymatgen()
+        return pmg_struc
 
     def calc_std_dev(self, two_theta, tau):
         """
