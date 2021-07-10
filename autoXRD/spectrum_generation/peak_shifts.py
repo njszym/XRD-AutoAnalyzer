@@ -23,6 +23,7 @@ class StrainGen(object):
         self.calculator = xrd.XRDCalculator()
         self.struc = struc
         self.max_strain = max_strain
+        self.strain_range = np.linspace(0.0, max_strain, 100)
         self.min_angle = min_angle
         self.max_angle = max_angle
 
@@ -48,7 +49,8 @@ class StrainGen(object):
         ref_struc = self.struc.copy()
         xtal_struc = pyxtal()
         xtal_struc.from_seed(ref_struc)
-        xtal_struc.apply_perturbation(d_lat=self.max_strain, d_coor=0.0)
+        current_strain = random.choice(self.strain_range)
+        xtal_struc.apply_perturbation(d_lat=current_strain, d_coor=0.0)
         pmg_struc = xtal_struc.to_pymatgen()
         return pmg_struc
 
