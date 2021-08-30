@@ -25,7 +25,7 @@ if __name__ == '__main__':
         if '--max_strain' in arg:
             max_strain = float(arg.split('=')[1])
         if '--num_spectra' in arg:
-            num_spectra = float(arg.split('=')[1])
+            num_spectra = int(arg.split('=')[1])
         if '--min_angle' in arg:
             min_angle = float(arg.split('=')[1])
         if '--max_angle' in arg:
