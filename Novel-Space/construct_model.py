@@ -12,6 +12,7 @@ if __name__ == '__main__':
     max_strain = 0.03 # default: up to +/- 3% strain
     num_spectra = 50 # Number of spectra to simulate per phase
     min_angle, max_angle = 10.0, 80.0
+    separate = True
     skip_filter = False
     include_elems = True
     for arg in sys.argv:
@@ -33,6 +34,8 @@ if __name__ == '__main__':
             skip_filter = True
         if '--ignore_elems' in arg:
             include_elems = False
+        if '--mixed_artifacts' in arg:
+            separate = False
 
     if not skip_filter:
         # Filter CIF files to create unique reference phases
@@ -48,7 +51,7 @@ if __name__ == '__main__':
         solid_solns.main('References')
 
     # Simulate and save augmented XRD spectra
-    xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, min_angle, max_angle)
+    xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, min_angle, max_angle, separate)
     xrd_specs = xrd_obj.augmented_spectra
     np.save('XRD', xrd_specs)
 
