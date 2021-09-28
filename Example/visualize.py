@@ -23,4 +23,4 @@ if __name__ == '__main__':
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
 
-    visualizer.main('Spectra', spectrum_fname, phases, min_angle, max_angle)
+    visualizer.main('Spectra', spectrum_fname, phases, min_angle, max_angle, wavelength)
