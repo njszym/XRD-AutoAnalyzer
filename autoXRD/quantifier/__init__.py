@@ -353,5 +353,5 @@ def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, ma
             m3 = (dens[2] * c3) / ((dens[0] * c1) + (dens[1] * c2) + (dens[2] * c3) + (dens[3] * c4) + (dens[4] * c5))
             m4 = (dens[3] * c4) / ((dens[0] * c1) + (dens[1] * c2) + (dens[2] * c3) + (dens[3] * c4) + (dens[4] * c5))
             m5 = 1. - m1 - m2 - m3 - m4
-            return [m1, m2, m3, m4]
+            return [m1, m2, m3, m4, m5]
 
