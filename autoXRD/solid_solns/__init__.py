@@ -4,7 +4,7 @@ from pymatgen.core import periodic_table as pt
 import numpy as np
 import os
 import pymatgen as mg
-from pymatgen import Composition
+from pymatgen.core import Composition
 from pymatgen import analysis
 import multiprocessing
 from multiprocessing import Pool, Manager
