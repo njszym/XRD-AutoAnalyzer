@@ -113,6 +113,15 @@ class SpectrumAnalyzer(object):
                     Cu_y.append(intens)
             x, y = Cu_x, Cu_y
 
+        # Allow some tolerance (0.2 degrees) in the two-theta range
+        if (min(x) > self.min_angle) and np.isclose(min(x), self.min_angle, atol=0.2):
+            x = np.concatenate([np.array([self.min_angle]), x])
+       	    y = np.concatenate([np.array([y[0]]), y])
+       	if (max(x) < self.max_angle) and np.isclose(max(x), self.max_angle, atol=0.2):
+       	    x = np.concatenate([x, np.array([self.max_angle])])
+            y = np.concatenate([y, np.array([y[-1]])])
+
+        # Otherwise, raise an assertion error
         assert (min(x) <= self.min_angle) and (max(x) >= self.max_angle), """
                Measured spectrum does not span the specified two-theta range!
                Either use a broader spectrum or change the two-theta range via
