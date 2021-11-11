@@ -127,12 +127,12 @@ def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], 
     tf.keras.layers.Conv1D(filters=64, kernel_size=10, strides=1, padding='same', activation = tf.nn.relu),
     tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dropout(dropout_rate, activation=tf.nn.relu),
-    tf.keras.layers.Dense(n_dense[0]),
-    tf.keras.layers.Dropout(dropout_rate, activation=tf.nn.relu),
-    tf.keras.layers.Dense(n_dense[1]),
-    tf.keras.layers.Dropout(dropout_rate, activation=tf.nn.softmax),
-    tf.keras.layers.Dense(n_phases)])
+    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.Dense(n_dense[0], activation=tf.nn.relu),
+    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.Dense(n_dense[1], activation=tf.nn.relu),
+    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.Dense(n_phases, activation=tf.nn.softmax)])
 
     # Compile model
     model.compile(loss=tf.keras.losses.CategoricalCrossentropy(from_logits=False), optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.BinaryAccuracy()])
