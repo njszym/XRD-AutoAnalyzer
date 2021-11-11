@@ -60,8 +60,7 @@ class SpectrumAnalyzer(object):
 
         spectrum = self.formatted_spectrum
 
-        self.model = tf.keras.models.load_model('Model.h5', compile=False,
-            custom_objects={'sigmoid_cross_entropy_with_logits_v2': tf.nn.sigmoid_cross_entropy_with_logits})
+        self.model = tf.keras.models.load_model('Model.h5', compile=False)
         self.kdp = KerasDropoutPrediction(self.model)
 
         prediction_list, confidence_list = self.enumerate_routes(spectrum)
