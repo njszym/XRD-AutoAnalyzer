@@ -1,4 +1,5 @@
 from itertools import combinations as comb
+from pymatgen.core import PeriodicSite
 from pymatgen.analysis import structure_matcher
 import warnings
 from pymatgen.core import periodic_table as pt
@@ -164,7 +165,7 @@ class SolidSolnsGen(object):
                 A_species.append(site_dict['species'][0]['element'])
                 site_dict['species'] = []
                 site_dict['species'].append({'element': 'Li', 'oxidation_state': 0.0, 'occu': 1.0})
-                struc_A[index] = mg.PeriodicSite.from_dict(site_dict)
+                struc_A[index] = PeriodicSite.from_dict(site_dict)
                 index += 1
 
             index = 0
@@ -174,7 +175,7 @@ class SolidSolnsGen(object):
                 B_species.append(site_dict['species'][0]['element'])
                 site_dict['species'] = []
                 site_dict['species'].append({'element': 'Li', 'oxidation_state': 0.0, 'occu': 1.0})
-                struc_B[index] = mg.PeriodicSite.from_dict(site_dict)
+                struc_B[index] = PeriodicSite.from_dict(site_dict)
                 index += 1
 
             # Interpolate structure but ignore the first returned entry (this is just an end-member)
@@ -194,7 +195,7 @@ class SolidSolnsGen(object):
                         site_dict = interp_structs[i][index].as_dict()
                         site_dict['species'] = []
                         site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': 1.0})
-                        interp_structs[i][index] = mg.PeriodicSite.from_dict(site_dict)
+                        interp_structs[i][index] = PeriodicSite.from_dict(site_dict)
 
                 else:
                     for i in range(num_solns):
@@ -204,7 +205,7 @@ class SolidSolnsGen(object):
                         c2 = soln_fractions[i]
                         site_dict['species'].append({'element': A, 'oxidation_state': 0.0, 'occu': c1})
                         site_dict['species'].append({'element': B, 'oxidation_state': 0.0, 'occu': c2})
-                        interp_structs[i][index] = mg.PeriodicSite.from_dict(site_dict)
+                        interp_structs[i][index] = PeriodicSite.from_dict(site_dict)
 
                 index += 1
 
