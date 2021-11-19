@@ -1,4 +1,5 @@
 from itertools import combinations as comb
+from pymatgen.analysis import structure_matcher
 import warnings
 from pymatgen.core import periodic_table as pt
 import numpy as np
@@ -25,7 +26,7 @@ class SolidSolnsGen(object):
         """
 
         self.ref_dir = reference_directory
-        self.matcher = analysis.structure_matcher.StructureMatcher(
+        self.matcher = structure_matcher.StructureMatcher(
             scale=True, attempt_supercell=True, primitive_cell=False,
             comparator=mg.analysis.structure_matcher.FrameworkComparator())
         self.num_cpu = multiprocessing.cpu_count()
