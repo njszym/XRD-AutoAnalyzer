@@ -297,6 +297,9 @@ class SpectrumAnalyzer(object):
         warp_indices = warp(dtw_info)
         warped_spectrum = list(pred_y[warp_indices])
         warped_spectrum.append(0.0) # Necessary to preserve length
+        warped_spectrum = self.smooth_spectrum(warped_spectrum) # Remove irregularities
+        warped_spectrum *= 100/max(warped_spectrum) # Nomralize
+
 
         # Scale warped spectrum so y-values match measured spectrum
         scaled_spectrum = self.scale_spectrum(warped_spectrum, orig_y)
@@ -382,48 +385,32 @@ class SpectrumAnalyzer(object):
 
         return norm_signal
 
-    def scale_spectrum(self, warped_spectrum, orig_y):
+    def scale_spectrum(self, pred_y, obs_y):
         """
         Scale the magnitude of a calculated spectrum associated with an identified
         phase so that its peaks match with those of the measured spectrum being classified.
 
         Args:
-            warped_spectrum: spectrum calculated from the identified phase after fitting
+            pred_y: spectrum calculated from the identified phase after fitting
                 has been performed along the x-axis using DTW
-            orig_y: original (measured) spectrum containing all peaks
+            obs_y: observed (experimental) spectrum containing all peaks
         Returns:
             scaled_spectrum: spectrum associated with the reference phase after scaling
                 has been performed to match the peaks in the measured pattern.
         """
 
-        # Get peak indices
-        orig_peaks = find_peaks(orig_y, height=5)[0]
-        pred_peaks = find_peaks(warped_spectrum, height=5)[0]
+        # Ensure inputs are numpy arrays
+        pred_y = np.array(pred_y)
+        obs_y = np.array(obs_y)
 
-        # Determine which peaks are associated with one another
-        matched_orig_peaks = []
-        matched_pred_peaks = []
-        for a in orig_peaks:
-            for b in pred_peaks:
-                if np.isclose(a, b, atol=50):
-                    matched_orig_peaks.append(a)
-                    matched_pred_peaks.append(b)
-
-        # Find scaling factor that gives best match in peak intensities
-        num_match = []
-        for scaled_spec in np.linspace(1.2, 0.2, 101):
-            check = scaled_spec*np.array(warped_spectrum)
-            good_peaks = 0
-            for (a, b) in zip(matched_orig_peaks, matched_pred_peaks):
-                A_magnitude = orig_y[a]
-                B_magnitude = check[b]
-                if abs((A_magnitude - B_magnitude)/A_magnitude) < 0.1: ## If peaks are within 10% of one another
-                    good_peaks += 1
-            num_match.append(good_peaks)
-
-        # Scale the predicted spectrum accordingly
-        best_scale = np.linspace(1.2, 0.2, 101)[np.argmax(num_match)]
-        scaled_spectrum = best_scale*np.array(warped_spectrum)
+        # Find scaling constant that minimizes MSE between pred_y and obs_y
+        all_mse = []
+        for scale_spectrum in np.linspace(1.1, 0.05, 101):
+            ydiff = obs_y - (scale_spectrum*pred_y)
+            mse = np.mean(ydiff**2)
+            all_mse.append(mse)
+        best_scale = np.linspace(1.0, 0.05, 101)[np.argmin(all_mse)]
+        scaled_spectrum = best_scale*np.array(pred_y)
 
         return scaled_spectrum
 
