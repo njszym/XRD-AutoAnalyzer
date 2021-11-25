@@ -528,6 +528,7 @@ class PhaseIdentifier(object):
 
         reference_phases = sorted(os.listdir(self.ref_dir))
         spectrum_filenames = os.listdir(self.spectra_dir)
+        spectrum_filenames = [fname for fname in spectrum_filenames if fname[0] != '.']
 
         if self.parallel:
             with Manager() as manager:
