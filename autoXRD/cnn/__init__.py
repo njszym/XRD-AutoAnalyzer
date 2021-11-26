@@ -165,7 +165,7 @@ def main(xrd, num_epochs, testing_fraction, fmodel='Model.h5'):
     model = train_model(train_x, train_y, num_phases, num_epochs)
 
     # Save model
-    model.save(fmodel)
+    model.save(fmodel, include_optimizer=False)
 
     # Test model is any data is reserved for testing
     if testing_fraction != 0:
