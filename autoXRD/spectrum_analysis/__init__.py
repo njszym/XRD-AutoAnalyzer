@@ -211,6 +211,18 @@ class SpectrumAnalyzer(object):
 
         prediction, num_phases, certanties = self.kdp.predict(spectrum)
 
+        # If no phases are suspected
+        if num_phases == 0:
+
+            # If individual predictions have been updated recursively, use them for this iteration
+            if 'updated_pred' in globals():
+                if updated_pred != None:
+                    indiv_pred, indiv_conf = updated_pred, updated_conf
+                    updated_pred, updated_conf = None, None
+
+            confidence_list.append(indiv_conf)
+            prediction_list.append(indiv_pred)
+
         # Explore all phases with a non-trival probability
         for i in range(num_phases):
 
