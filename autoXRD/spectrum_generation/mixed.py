@@ -249,7 +249,7 @@ class MixedGen(object):
 
 def main(struc, num_specs, max_strain, min_domain_size, max_domain_size, max_texture, min_angle=10.0, max_angle=80.0):
 
-    mixed_generator = MixedGen(struc, max_strain=0.04, min_domain_size=1, max_domain_size=100,  max_texture=0.6, min_angle=10.0, max_angle=80.0)
+    mixed_generator = MixedGen(struc, max_strain, min_domain_size, max_domain_size,  max_texture, min_angle, max_angle)
 
     mixed_patterns = [mixed_generator.mixed_spectrum for i in range(num_specs)]
 
