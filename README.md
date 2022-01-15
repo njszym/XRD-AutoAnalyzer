@@ -26,7 +26,7 @@ A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```E
 python run_CNN.py
 ```
 
-The characterization of each spectrum should take around 1-2 minutes on a single processor. Once all classifications are made, the predicted phases will be printed along with their associated probabilities.
+The process should take about 10 seconds per spectrum on a single CPU. If multiple spectra are present, parallelization across all available CPU will be executed by default. Once all classifications are made, the predicted phases will be printed along with their associated probabilities.
 
 For a detailed walkthrough of the steps used to perform phase identification, please see https://github.com/njszym/XRD-AutoAnalyzer/blob/main/Tutorial/tutorial-notebook.ipynb.
 
