@@ -17,6 +17,7 @@ import numpy as np
 import multiprocessing
 from multiprocessing import Pool, Manager
 from pymatgen.core import Structure
+from fastdtw import fastdtw
 import math
 
 
@@ -303,15 +304,19 @@ class SpectrumAnalyzer(object):
         # Simulate spectrum for predicted compounds
         pred_y = self.generate_pattern(predicted_cmpd)
 
-        # Perform dynamic time warping to fit predicted spectrum to measured spectrum
-        dtw_info = dtw(pred_y, orig_y, window_type="slantedband",
-            window_args={'window_size': 20}) # a window_size of 20 allows a ~1.5 degree shift
-        warp_indices = warp(dtw_info)
-        warped_spectrum = list(pred_y[warp_indices])
-        warped_spectrum.append(0.0) # Necessary to preserve length
-        warped_spectrum = self.smooth_spectrum(warped_spectrum) # Remove irregularities
-        warped_spectrum *= 100/max(warped_spectrum) # Nomralize
+        pred_y = np.array(pred_y)
+        orig_y = np.array(orig_y)
 
+        # Map pred_y onto orig_y through DTW
+        distance, index_pairs = fastdtw(pred_y, orig_y, radius=50)
+        warped_spectrum = orig_y.copy()
+        for ind1, ind2 in index_pairs:
+            distance = abs(ind1 - ind2)
+            if distance <= 50:
+                warped_spectrum[ind2] = pred_y[ind1]
+            else:
+                warped_spectrum[ind2] = 0.0
+        warped_spectrum *= 100/max(warped_spectrum)
 
         # Scale warped spectrum so y-values match measured spectrum
         scaled_spectrum = self.scale_spectrum(warped_spectrum, orig_y)
@@ -469,7 +474,7 @@ class KerasDropoutPrediction(object):
 
         self.f = tf.keras.backend.function(model.layers[0].input, model.layers[-1].output)
 
-    def predict(self, x, n_iter=500):
+    def predict(self, x, n_iter=100):
         """
         Args:
             x: xrd spectrum to be classified
@@ -498,7 +503,7 @@ class KerasDropoutPrediction(object):
         certanties = []
         for each_count in counts:
             conf = each_count/sum(counts)
-            if conf >= 0.10: ## If prediction occurs at least 10% of the time
+            if conf >= 0.20: ## If prediction occurs at least 20% of the time
                 certanties.append(conf)
         certanties = sorted(certanties, reverse=True)
 

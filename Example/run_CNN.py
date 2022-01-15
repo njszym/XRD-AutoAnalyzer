@@ -3,9 +3,12 @@ import sys
 import numpy as np
 import pymatgen as mg
 import matplotlib.pyplot as plt
+import time
 
 
 if __name__ == '__main__':
+
+    start = time.time()
 
     max_phases = 4 # default: a maximum 4 phases in each mixture
     cutoff_intensity = 5 # default: ID all peaks with I >= 5% maximum spectrum intensity
@@ -63,3 +66,7 @@ if __name__ == '__main__':
             weights = quantifier.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength)
             print('Weight fractions: %s' % weights)
 
+    end = time.time()
+
+    elapsed_time = round(end - start, 1)
+    print('Total time: %s sec' % elapsed_time)
