@@ -20,6 +20,8 @@ from pymatgen.core import Structure
 from fastdtw import fastdtw
 import math
 
+np.random.seed(1)
+tf.random.set_seed(1)
 
 class SpectrumAnalyzer(object):
     """
