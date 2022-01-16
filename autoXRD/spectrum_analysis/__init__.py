@@ -180,7 +180,7 @@ class SpectrumAnalyzer(object):
 
         return smoothed_ys
 
-    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list=[], is_first=True):
+    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list=[], is_first=True, normalization=1.0):
         """
         A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
         For each mixture, the associated phases and probabilities are tabulated.
@@ -199,6 +199,9 @@ class SpectrumAnalyzer(object):
                 required will scale exponentially with the number of phases.
             is_first: determines whether this is the first iteration for a given mixture. If it is,
                 all global variables will be reset
+            normalization: keep track of stripped pattern intensity relative to initial maximum.
+                For example, a stripped pattern with half the intensity of hte initial maximum
+                should be associated with a normalization constant of 2 (I_0/I_new).
         Returns:
             prediction_list: a list of all enumerated mixtures
             confidence_list: a list of probabilities associated with the above mixtures
@@ -253,7 +256,7 @@ class SpectrumAnalyzer(object):
             indiv_conf.append(certanties[i])
 
             # Subtract identified phase from the spectrum
-            reduced_spectrum, norm = self.get_reduced_pattern(predicted_cmpd, spectrum)
+            reduced_spectrum, norm = self.get_reduced_pattern(predicted_cmpd, spectrum, last_normalization=normalization)
 
             # If all phases have been identified, tabulate mixture and move on to next
             if norm == None:
@@ -277,7 +280,7 @@ class SpectrumAnalyzer(object):
                     continue
 
                 # Otherwise if more phases are to be explored, recursively enter enumerate_routes with the newly reduced spectrum
-                prediction_list, confidence_list = self.enumerate_routes(reduced_spectrum, indiv_conf, indiv_pred, confidence_list, prediction_list, is_first=False)
+                prediction_list, confidence_list = self.enumerate_routes(reduced_spectrum, indiv_conf, indiv_pred, confidence_list, prediction_list, is_first=False, normalization=norm)
 
         return prediction_list, confidence_list
 
@@ -328,11 +331,14 @@ class SpectrumAnalyzer(object):
         stripped_y = self.smooth_spectrum(stripped_y)
         stripped_y = np.array(stripped_y) - min(stripped_y)
 
+        # Normalization
+        new_normalization = 100/max(stripped_y)
+        actual_intensity = max(stripped_y)/last_normalization
+
         # If intensities remain above cutoff, return stripped spectrum
-        if max(stripped_y) >= (self.cutoff*last_normalization):
-            new_normalization = 100/max(stripped_y)
+        if (new_normalization > 1.05) and (actual_intensity >= self.cutoff):
             stripped_y = new_normalization*stripped_y
-            return stripped_y, new_normalization
+            return stripped_y, last_normalization*new_normalization
 
         # Otherwise if intensities are too low, halt the enumaration
         else:
