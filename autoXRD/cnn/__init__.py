@@ -99,7 +99,7 @@ class DataSetUp(object):
 
             return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
 
-def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], dropout_rate=0.7):
+def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], dropout_rate=0.5):
     """
     Args:
         x_train: numpy array of simulated xrd spectra

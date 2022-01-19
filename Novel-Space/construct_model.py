@@ -12,6 +12,7 @@ if __name__ == '__main__':
     max_strain = 0.03 # default: up to +/- 3% strain
     num_spectra = 50 # Number of spectra to simulate per phase
     min_angle, max_angle = 10.0, 80.0
+    num_epochs = 5
     separate = True
     skip_filter = False
     include_elems = True
@@ -30,6 +31,8 @@ if __name__ == '__main__':
             min_angle = float(arg.split('=')[1])
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
+        if '--num_epochs' in arg:
+            num_epochs = int(arg.split('=')[1])
         if '--skip_filter' in arg:
             skip_filter = True
         if '--ignore_elems' in arg:
@@ -56,4 +59,4 @@ if __name__ == '__main__':
     np.save('XRD', xrd_specs)
 
     # Train, test, and save the CNN
-    cnn.main(xrd_specs, num_epochs=2, testing_fraction=0.2)
+    cnn.main(xrd_specs, num_epochs=num_epochs, testing_fraction=0.2)
