@@ -12,7 +12,7 @@ if __name__ == '__main__':
     max_strain = 0.03 # default: up to +/- 3% strain
     num_spectra = 50 # Number of spectra to simulate per phase
     min_angle, max_angle = 10.0, 80.0
-    num_epochs = 5
+    num_epochs = 2
     separate = True
     skip_filter = False
     include_elems = True
