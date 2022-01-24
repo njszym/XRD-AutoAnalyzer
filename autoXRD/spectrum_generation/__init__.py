@@ -1,4 +1,4 @@
-from autoXRD.spectrum_generation import peak_shifts, intensity_changes, peak_broadening, mixed
+from autoXRD.spectrum_generation import strain_shifts, uniform_shifts, intensity_changes, peak_broadening, mixed
 import pymatgen as mg
 import numpy as np
 import os
@@ -13,7 +13,7 @@ class SpectraGenerator(object):
     for all reference phases
     """
 
-    def __init__(self, reference_dir, num_spectra=50, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04, min_angle=10.0, max_angle=80.0, separate=True):
+    def __init__(self, reference_dir, num_spectra=50, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04, max_shift=0.25, min_angle=10.0, max_angle=80.0, separate=True):
         """
         Args:
             reference_dir: path to directory containing
@@ -26,6 +26,7 @@ class SpectraGenerator(object):
         self.min_domain_size = min_domain_size
         self.max_domain_size = max_domain_size
         self.max_strain = max_strain
+        self.max_shift = max_shift
         self.min_angle = min_angle
         self.max_angle = max_angle
         self.separate = separate
@@ -49,11 +50,12 @@ class SpectraGenerator(object):
         patterns = []
 
         if self.separate:
-            patterns += peak_shifts.main(struc, self.num_spectra, self.max_strain, self.min_angle, self.max_angle)
+            patterns += strain_shifts.main(struc, self.num_spectra, self.max_strain, self.min_angle, self.max_angle)
+            patterns += uniform_shifts.main(struc, self.num_spectra, self.max_shift, self.min_angle, self.max_angle)
             patterns += peak_broadening.main(struc, self.num_spectra, self.min_domain_size, self.max_domain_size, self.min_angle, self.max_angle)
             patterns += intensity_changes.main(struc, self.num_spectra, self.max_texture, self.min_angle, self.max_angle)
         else:
-            patterns += mixed.main(struc, self.num_spectra, self.max_strain, self.min_domain_size, self.max_domain_size,  self.max_texture, self.min_angle, self.max_angle)
+            patterns += mixed.main(struc, 4*self.num_spectra, self.max_shift, self.max_strain, self.min_domain_size, self.max_domain_size,  self.max_texture, self.min_angle, self.max_angle)
 
         return (patterns, filename)
 

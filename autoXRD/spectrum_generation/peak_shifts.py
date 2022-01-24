@@ -1,4 +1,3 @@
-from pymatgen.core import Lattice
 import pymatgen as mg
 import numpy as np
 import random
@@ -134,7 +133,7 @@ class StrainGen(object):
 
     @property
     def strained_lattice(self):
-        return Lattice(self.strained_matrix)
+        return mg.Lattice(self.strained_matrix)
 
     def calc_std_dev(self, two_theta, tau):
         """

@@ -13,7 +13,7 @@ class MixedGen(object):
     strain to a pymatgen structure object.
     """
 
-    def __init__(self, struc, max_strain=0.04, min_domain_size=1, max_domain_size=100, max_texture=0.6, min_angle=10.0, max_angle=80.0):
+    def __init__(self, struc, max_shift=0.5, max_strain=0.04, min_domain_size=1, max_domain_size=100, max_texture=0.6, min_angle=10.0, max_angle=80.0):
         """
         Args:
             struc: pymatgen structure object
@@ -22,6 +22,7 @@ class MixedGen(object):
         """
         self.calculator = xrd.XRDCalculator()
         self.struc = struc
+        self.max_shift = max_shift
         self.max_strain = max_strain
         self.possible_domains = np.linspace(min_domain_size, max_domain_size, 100)
         self.max_texture = max_texture
@@ -211,6 +212,10 @@ class MixedGen(object):
 
         angles, intensities = self.textured_pattern
 
+        shift_range = np.linspace(-self.max_shift, self.max_shift, 1000)
+        shift = random.choice(shift_range)
+        angles = np.array(angles) + shift
+
         steps = np.linspace(self.min_angle, self.max_angle, 4501)
 
         signals = np.zeros([len(angles), steps.shape[0]])
@@ -247,9 +252,9 @@ class MixedGen(object):
         return form_signal
 
 
-def main(struc, num_specs, max_strain, min_domain_size, max_domain_size, max_texture, min_angle=10.0, max_angle=80.0):
+def main(struc, num_specs, max_shift, max_strain, min_domain_size, max_domain_size, max_texture, min_angle=10.0, max_angle=80.0):
 
-    mixed_generator = MixedGen(struc, max_strain, min_domain_size, max_domain_size,  max_texture, min_angle, max_angle)
+    mixed_generator = MixedGen(struc, max_shift, max_strain, min_domain_size, max_domain_size,  max_texture, min_angle, max_angle)
 
     mixed_patterns = [mixed_generator.mixed_spectrum for i in range(num_specs)]
 

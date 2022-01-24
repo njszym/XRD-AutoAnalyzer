@@ -60,14 +60,15 @@ When the procedure is completed, a trained ```Model.h5``` file will be made avai
 
 By default, the following bounds are used on artifacts included during data augmentation:
 
-* Peak shifts: up to +/- 3% strain applied to each lattice parameter
+* Peak shifts (non-uniform): up to +/- 3% strain applied to each lattice parameter
+* Peak shifts (uniform): up to +/- 0.5 degrees shift in all peak positions due to sample height error
 * Peak broadening: domain size ranging from 5-30 nm
 * Peak intensity variation: texture causing as much as +/- 50% change in peak height
 
 However, custom bounds can also be specified, e.g., as follows:
 
 ```
-python construct_model.py --max_strain=0.04 --min_domain_size=1 --max_domain_size=100 --max_texture=0.5
+python construct_model.py --max_strain=0.04 --max_shift=1.0 --min_domain_size=1 --max_domain_size=100 --max_texture=0.5
 ```
 
 ## Characterizing multi-phase spectra
