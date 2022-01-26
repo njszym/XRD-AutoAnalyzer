@@ -10,7 +10,7 @@ if __name__ == '__main__':
     max_texture = 0.5 # default: texture associated with up to +/- 50% changes in peak intensities
     min_domain_size, max_domain_size = 5.0, 30.0 # default: domain sizes ranging from 5 to 30 nm
     max_strain = 0.03 # default: up to +/- 3% strain
-    max_shift = 0.25 # default: up to +/- 0.25 degrees shift in two-theta
+    max_shift = 0.5 # default: up to +/- 0.5 degrees shift in two-theta
     num_spectra = 50 # Number of spectra to simulate per phase
     min_angle, max_angle = 10.0, 80.0
     num_epochs = 2
