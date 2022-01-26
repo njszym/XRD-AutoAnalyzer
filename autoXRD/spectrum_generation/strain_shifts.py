@@ -5,6 +5,7 @@ import math
 import os
 from pymatgen.analysis.diffraction import xrd
 from scipy.ndimage import gaussian_filter1d
+from pymatgen.core import Lattice
 from pyxtal import pyxtal
 
 class StrainGen(object):
@@ -133,7 +134,7 @@ class StrainGen(object):
 
     @property
     def strained_lattice(self):
-        return mg.Lattice(self.strained_matrix)
+        return Lattice(self.strained_matrix)
 
     def calc_std_dev(self, two_theta, tau):
         """

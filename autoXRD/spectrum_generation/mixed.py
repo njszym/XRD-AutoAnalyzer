@@ -5,6 +5,7 @@ import math
 import os
 from pymatgen.analysis.diffraction import xrd
 from scipy.ndimage import gaussian_filter1d
+from pymatgen.core import Lattice
 from pyxtal import pyxtal
 
 class MixedGen(object):
@@ -139,7 +140,7 @@ class MixedGen(object):
 
     @property
     def strained_lattice(self):
-        return mg.Lattice(self.strained_matrix)
+        return Lattice(self.strained_matrix)
 
     @property
     def hkl_list(self):
