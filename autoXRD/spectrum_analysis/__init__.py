@@ -597,15 +597,13 @@ class PhaseIdentifier(object):
         if len(confidences) > 0:
             avg_conf = [np.mean(conf) for conf in confidences]
             max_conf_ind = np.argmax(avg_conf)
-            confidences = [round(100*val, 2) for val in confidences[max_conf_ind]]
-            final_confidences = ['%s%%' % val for val in confidences]
-            predicted_cmpds = [fname[:-4] for fname in mixtures[max_conf_ind]]
-            predicted_set = ' + '.join(predicted_cmpds)
+            final_confidences = [round(100*val, 2) for val in confidences[max_conf_ind]]
+            predicted_set = [fname[:-4] for fname in mixtures[max_conf_ind]]
 
         # Otherwise, return None
         else:
-            final_confidences = ['0%']
-            predicted_set = 'None'
+            final_confidences = [0.0]
+            predicted_set = ['None']
 
         return [spectrum_fname, predicted_set, final_confidences]
 

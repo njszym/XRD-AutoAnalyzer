@@ -9,6 +9,7 @@ from cv2_rolling_ball import subtract_background_rolling_ball
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 from pymatgen.core import Structure
+from fastdtw import fastdtw
 import numpy as np
 import math
 import os
@@ -236,15 +237,16 @@ class SpectrumPlotter(object):
         obs_y = self.formatted_spectrum
         pred_y = self.get_cont_profile(angles, intensities)
 
-        # Perform dynamic time warping to fit predicted spectrum to measured spectrum
-        dtw_info = dtw(pred_y, obs_y, window_type="slantedband",
-            window_args={'window_size': 20}) # a window_size of 20 allows a ~1.5 degree shift
-        warp_indices = warp(dtw_info)
-        warped_spectrum = list(pred_y[warp_indices])
-        warped_spectrum.append(0.0) # Necessary to preserve length
-        warped_spectrum = self.smooth_spectrum(warped_spectrum) # Remove irregularities
-        pred_y = np.array(warped_spectrum)
-        pred_y *= 100/max(pred_y) # Normalize
+        # Map pred_y onto orig_y through DTW
+        distance, index_pairs = fastdtw(pred_y, obs_y, radius=50)
+        warped_spectrum = obs_y.copy()
+        for ind1, ind2 in index_pairs:
+            distance = abs(ind1 - ind2)
+            if distance <= 50:
+                warped_spectrum[ind2] = pred_y[ind1]
+            else:
+                warped_spectrum[ind2] = 0.0
+        pred_y = 100*np.array(warped_spectrum)/max(warped_spectrum)
 
         # Find scaling constant that minimizes MSE between pred_y and obs_y
         all_mse = []

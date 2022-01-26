@@ -31,10 +31,8 @@ if __name__ == '__main__':
     for (spectrum_fname, phase_set, confidence) in zip(spectrum_names, predicted_phases, confidences):
 
         if '--all' not in sys.argv: # By default: only include phases with a confidence > 25%
-            all_phases = phase_set.split(' + ')
-            all_probs = [float(val[:-1]) for val in confidence]
             final_phases, final_confidence = [], []
-            for (ph, cf) in zip(all_phases, all_probs):
+            for (ph, cf) in zip(phase_set, confidence):
                 if cf >= 25.0:
                     final_phases.append(ph)
                     final_confidence.append(cf)
@@ -44,7 +42,6 @@ if __name__ == '__main__':
             print('Confidence: %s' % final_confidence)
 
         else: # If --all is specified, print *all* suspected phases
-            final_phases = phase_set.split(' + ')
             print('Filename: %s' % spectrum_fname)
             print('Predicted phases: %s' % phase_set)
             print('Confidence: %s' % confidence)
@@ -64,6 +61,7 @@ if __name__ == '__main__':
 
             # Get weight fractions
             weights = quantifier.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength)
+            weights = [round(val, 2) for val in weights]
             print('Weight fractions: %s' % weights)
 
     end = time.time()
