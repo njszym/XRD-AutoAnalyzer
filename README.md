@@ -145,3 +145,16 @@ python visualize.py --spectrum='filename' --ph='cmpd1_sg' --ph='cmpd2_sg'
 ```
 
 Where ```cmpd1_sg``` and ```cmpd2_sg``` refer to the phases that will be fit to the spectrum and plotted. Note that minimum and maximum angles, as well as the wavelength, must also be specified if they differ from default values.
+
+## Stochastic nature of the model
+
+Model performance may vary between different training procedures with the same set of hyperparameters. There are two sources of stochastic variations:
+
+* Simulated spectra are randomly perturbed by experimental artifacts. As long as a sufficient number of spectra are simulated for each reference phase, this effect is usually negligible.
+* The CNN is trained using a random seed, which can have a significant influence on convergence.
+
+In cases where a model performs poorly on clean XRD data, one may considering re-training their model from scratch. Alternatively, an ensemble of different models may be used, where the final prediction is an average over all individual predictions.
+
+We are currently working on a more generalizable solution to this problem. Stay tuned.
+
+
