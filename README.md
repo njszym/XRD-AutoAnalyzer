@@ -153,7 +153,7 @@ Model performance may vary between different training procedures with the same s
 * Simulated spectra are randomly perturbed by experimental artifacts. As long as a sufficient number of spectra are simulated for each reference phase, this effect is usually negligible.
 * The CNN is trained using a random seed, which can have a significant influence on convergence.
 
-In cases where a model performs poorly on clean XRD data, one may considering re-training their model from scratch. Alternatively, an ensemble of different models may be used, where the final prediction is an average over all individual predictions.
+In cases where a model performs poorly on clean XRD data, one may considering re-training their model from scratch. Alternatively, an ensemble of different models may be used, where the final prediction is an averaged over all individual predictions.
 
 We are currently working on a more generalizable solution to this problem. Stay tuned.
 
