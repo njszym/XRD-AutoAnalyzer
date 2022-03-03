@@ -1,7 +1,6 @@
 from pymatgen.core.periodic_table import Element
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt
-from dtw import dtw, warp
 import random
 import pymatgen as mg
 from pymatgen.analysis.diffraction import xrd
