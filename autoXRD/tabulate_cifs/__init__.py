@@ -2,8 +2,8 @@ import numpy as np
 import shutil
 import os
 import pymatgen as mg
-from pymatgen import analysis
 from pymatgen.core import Structure
+from pymatgen.analysis import structure_matcher
 
 
 class StructureFilter(object):
@@ -81,7 +81,7 @@ class StructureFilter(object):
 
         stoich_strucs, temps, dates = self.stoichiometric_info
 
-        matcher = analysis.structure_matcher.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False)
+        matcher = structure_matcher.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False)
 
         unique_frameworks = []
         for struc_1 in stoich_strucs:
