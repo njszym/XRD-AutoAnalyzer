@@ -335,7 +335,7 @@ class SpectrumAnalyzer(object):
         actual_intensity = max(stripped_y)/last_normalization
 
         # If intensities remain above cutoff, return stripped spectrum
-        if (new_normalization > 1.05) and (actual_intensity >= self.cutoff):
+        if actual_intensity >= self.cutoff:
             stripped_y = new_normalization*stripped_y
             return stripped_y, last_normalization*new_normalization
 
