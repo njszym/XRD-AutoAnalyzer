@@ -3,8 +3,7 @@ from scipy.signal import find_peaks, filtfilt
 import random
 import pymatgen as mg
 from pymatgen.analysis.diffraction import xrd
-import cv2
-from cv2_rolling_ball import subtract_background_rolling_ball
+from skimage import restoration
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 from pymatgen.core import Structure
@@ -92,20 +91,13 @@ class SpectrumPlotter(object):
         ## Smooth out noise
         ys = self.smooth_spectrum(ys)
 
-        ## Map to integers in range 0 to 255 so cv2 can handle
-        ys = [val - min(ys) for val in ys]
-        ys = [255*(val/max(ys)) for val in ys]
-        ys = [int(val) for val in ys]
+        ## Normalize from 0 to 255
+        ys = np.array(ys) - min(ys)
+        ys = list(255*np.array(ys)/max(ys))
 
-        ## Perform baseline correction with cv2
-        pixels = []
-        for q in range(10):
-            pixels.append(ys)
-        pixels = np.array(pixels)
-        img, background = subtract_background_rolling_ball(pixels, 800, light_background=False,
-                                             use_paraboloid=True, do_presmooth=False)
-        yb = np.array(background[0])
-        ys = np.array(ys) - yb
+        # Subtract background
+        background = restoration.rolling_ball(ys, radius=80)
+        ys = np.array(ys) - np.array(background)
 
         ## Normalize from 0 to 100
         ys = np.array(ys) - min(ys)
