@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
     max_phases = 4 # default: a maximum 4 phases in each mixture
     cutoff_intensity = 5 # default: ID all peaks with I >= 5% maximum spectrum intensity
+    min_conf = 10.0 # Minimum confidence included if --all argument is used
     wavelength = 'CuKa' # default: spectra was measured using Cu K_alpha radiation
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
@@ -19,6 +20,8 @@ if __name__ == '__main__':
             max_phases = int(arg.split('=')[1])
         if '--cutoff_intensity' in arg:
             cutoff_intensity = int(arg.split('=')[1])
+        if '--min_conf' in arg:
+            min_conf = int(arg.split('=')[1])
         if '--wavelength' in arg:
             wavelength = float(arg.split('=')[1])
         if '--min_angle' in arg:
@@ -26,7 +29,7 @@ if __name__ == '__main__':
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
 
-    spectrum_names, predicted_phases, confidences, backup_phases = spectrum_analysis.main('Spectra', 'References', max_phases, cutoff_intensity, wavelength, min_angle, max_angle)
+    spectrum_names, predicted_phases, confidences, backup_phases = spectrum_analysis.main('Spectra', 'References', max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle)
 
     for (spectrum_fname, phase_set, confidence, backup_set) in zip(spectrum_names, predicted_phases, confidences, backup_phases):
 

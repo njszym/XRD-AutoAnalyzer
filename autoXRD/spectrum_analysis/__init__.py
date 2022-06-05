@@ -26,7 +26,7 @@ class SpectrumAnalyzer(object):
     Class used to process and classify xrd spectra.
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, wavelen='CuKa', reference_dir='References', min_angle=10.0, max_angle=80.0, model_path='Model.h5'):
+    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, min_conf=10.0, wavelen='CuKa', reference_dir='References', min_angle=10.0, max_angle=80.0, model_path='Model.h5'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -43,6 +43,7 @@ class SpectrumAnalyzer(object):
         self.calculator = xrd.XRDCalculator()
         self.max_phases = max_phases
         self.cutoff = cutoff_intensity
+        self.min_conf = min_conf
         self.wavelen = wavelen
         self.min_angle = min_angle
         self.max_angle = max_angle
@@ -207,7 +208,7 @@ class SpectrumAnalyzer(object):
             prediction_list, confidence_list, backup_list = [], [], []
             indiv_pred, indiv_conf, indiv_backup = [], [], []
 
-        prediction, num_phases, certanties = self.kdp.predict(spectrum)
+        prediction, num_phases, certanties = self.kdp.predict(spectrum, self.min_conf)
 
         # If no phases are suspected
         if num_phases == 0:
@@ -495,7 +496,7 @@ class KerasDropoutPrediction(object):
 
         self.f = tf.keras.backend.function(model.layers[0].input, model.layers[-1].output)
 
-    def predict(self, x, n_iter=100):
+    def predict(self, x, min_conf=10.0, n_iter=100):
         """
         Args:
             x: xrd spectrum to be classified
@@ -504,6 +505,10 @@ class KerasDropoutPrediction(object):
             len(certainties): number of phases with probabilities > 10%
             certanties: associated probabilities
         """
+
+        # Convert from % to 0-1 fractional
+        if min_conf > 1.0:
+            min_conf /= 100.0
 
         x = [[val] for val in x]
         x = np.array([x])
@@ -524,7 +529,7 @@ class KerasDropoutPrediction(object):
         certanties = []
         for each_count in counts:
             conf = each_count/sum(counts)
-            if conf >= 0.20: ## If prediction occurs at least 20% of the time
+            if conf >= min_conf:
                 certanties.append(conf)
         certanties = sorted(certanties, reverse=True)
 
@@ -536,7 +541,7 @@ class PhaseIdentifier(object):
     Class used to identify phases from a given set of xrd spectra
     """
 
-    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, wavelength, min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5'):
+    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, min_conf, wavelength, min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5'):
         """
         Args:
             spectra_dir: path to directory containing the xrd
@@ -550,6 +555,7 @@ class PhaseIdentifier(object):
         self.ref_dir = reference_directory
         self.max_phases = max_phases
         self.cutoff = cutoff_intensity
+        self.min_conf = min_conf
         self.wavelen = wavelength
         self.parallel = parallel
         self.min_angle = min_angle
@@ -601,7 +607,7 @@ class PhaseIdentifier(object):
         total_confidence, all_predictions = [], []
         tabulate_conf, predicted_cmpd_set = [], []
 
-        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases, self.cutoff,
+        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases, self.cutoff, self.min_conf,
             wavelen=self.wavelen, min_angle=self.min_angle, max_angle=self.max_angle, model_path=self.model_path)
 
         mixtures, confidences, backup_mixtures = spec_analysis.suspected_mixtures
@@ -628,10 +634,10 @@ class PhaseIdentifier(object):
         return [spectrum_fname, predicted_set, final_confidences, backup_set]
 
 
-def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa', min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5'):
+def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, min_conf=10.0, wavelength='CuKa', min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5'):
 
     phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases,
-        cutoff_intensity, wavelength, min_angle, max_angle, parallel, model_path)
+        cutoff_intensity, min_conf, wavelength, min_angle, max_angle, parallel, model_path)
 
     spectrum_names, predicted_phases, confidences, backup_phases = phase_id.all_predictions
 
