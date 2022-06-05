@@ -64,9 +64,9 @@ class SpectrumAnalyzer(object):
         self.model = tf.keras.models.load_model('Model.h5', compile=False)
         self.kdp = KerasDropoutPrediction(self.model)
 
-        prediction_list, confidence_list = self.enumerate_routes(spectrum)
+        prediction_list, confidence_list, backup_list = self.enumerate_routes(spectrum)
 
-        return prediction_list, confidence_list
+        return prediction_list, confidence_list, backup_list
 
     def convert_angle(self, angle):
         """
@@ -171,7 +171,7 @@ class SpectrumAnalyzer(object):
 
         return smoothed_ys
 
-    def enumerate_routes(self, spectrum, indiv_conf=[], indiv_pred=[], confidence_list=[], prediction_list=[], is_first=True, normalization=1.0):
+    def enumerate_routes(self, spectrum, indiv_pred=[], indiv_conf=[], indiv_backup=[], prediction_list=[], confidence_list=[], backup_list=[], is_first=True, normalization=1.0):
         """
         A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
         For each mixture, the associated phases and probabilities are tabulated.
@@ -201,10 +201,10 @@ class SpectrumAnalyzer(object):
         # Make prediction and confidence lists global so they can be updated recursively
         # If this is the top-level of a new mixture (is_first), reset all variables
         if is_first:
-            global updated_pred, updated_conf
-            updated_pred, updated_conf = None, None
-            prediction_list, confidence_list = [], []
-            indiv_pred, indiv_conf = [], []
+            global updated_pred, updated_conf, updated_backup
+            updated_pred, updated_conf, updated_backup = None, None, None
+            prediction_list, confidence_list, backup_list = [], [], []
+            indiv_pred, indiv_conf, indiv_backup = [], [], []
 
         prediction, num_phases, certanties = self.kdp.predict(spectrum)
 
@@ -232,12 +232,28 @@ class SpectrumAnalyzer(object):
             phase_index = np.array(prediction).argsort()[-(i+1)]
             predicted_cmpd = self.reference_phases[phase_index]
 
+            # If there exists two probable phases
+            if num_phases > 1:
+                # For 1st most probable phase, choose 2nd most probable as backup
+                if i == 0:
+                    backup_index = np.array(prediction).argsort()[-(i+2)]
+                # For 2nd most probable phase, choose 1st most probable as backup
+                # For 3rd most probable phase, choose 2nd most probable as backup (and so on)
+                elif i >= 1:
+                    backup_index = np.array(prediction).argsort()[-i]
+                backup_cmpd = self.reference_phases[backup_index]
+            # If only one phase is suspected, no backups are needed
+            else:
+                backup_cmpd = None
+
             # If the predicted phase has already been identified for the mixture, ignore and move on
             if predicted_cmpd in indiv_pred:
                 if i == (num_phases - 1):
                     confidence_list.append(indiv_conf)
                     prediction_list.append(indiv_pred)
-                    updated_conf, updated_pred = indiv_conf[:-1], indiv_pred[:-1]
+                    backup_list.append(indiv_backup)
+                    updated_conf, updated_pred, updated_backup = indiv_conf[:-1], indiv_pred[:-1], indiv_backup[:-1]
+
                 continue
 
             # Otherwise if phase is new, add to the suspected mixture
@@ -246,6 +262,9 @@ class SpectrumAnalyzer(object):
             # Tabulate the probability associated with the predicted phase
             indiv_conf.append(certanties[i])
 
+            # Tabulate alternative phases
+            indiv_backup.append(backup_cmpd)
+
             # Subtract identified phase from the spectrum
             reduced_spectrum, norm = self.get_reduced_pattern(predicted_cmpd, spectrum, last_normalization=normalization)
 
@@ -253,10 +272,11 @@ class SpectrumAnalyzer(object):
             if norm == None:
                 confidence_list.append(indiv_conf)
                 prediction_list.append(indiv_pred)
+                backup_list.append(indiv_backup)
                 if i == (num_phases - 1):
-                    updated_conf, updated_pred = indiv_conf[:-2], indiv_pred[:-2]
+                    updated_conf, updated_pred, updated_backup = indiv_conf[:-2], indiv_pred[:-2], indiv_backup[:-2]
                 else:
-                    indiv_conf, indiv_pred = indiv_conf[:-1], indiv_pred[:-1]
+                    indiv_conf, indiv_pred, indiv_backup = indiv_conf[:-1], indiv_pred[:-1], indiv_backup[:-1]
                 continue
 
             else:
@@ -264,16 +284,17 @@ class SpectrumAnalyzer(object):
                 if len(indiv_pred) == self.max_phases:
                     confidence_list.append(indiv_conf)
                     prediction_list.append(indiv_pred)
+                    backup_list.append(indiv_backup)
                     if i == (num_phases - 1):
-                        updated_conf, updated_pred = indiv_conf[:-2], indiv_pred[:-2]
+                        updated_conf, updated_pred, updated_backup = indiv_conf[:-2], indiv_pred[:-2], indiv_backup[:-2]
                     else:
-                        indiv_conf, indiv_pred = indiv_conf[:-1], indiv_pred[:-1]
+                        indiv_conf, indiv_pred, indiv_backup = indiv_conf[:-1], indiv_pred[:-1], indiv_backup[:-1]
                     continue
 
                 # Otherwise if more phases are to be explored, recursively enter enumerate_routes with the newly reduced spectrum
-                prediction_list, confidence_list = self.enumerate_routes(reduced_spectrum, indiv_conf, indiv_pred, confidence_list, prediction_list, is_first=False, normalization=norm)
+                prediction_list, confidence_list, backup_list = self.enumerate_routes(reduced_spectrum, indiv_pred, indiv_conf, indiv_backup, prediction_list, confidence_list, backup_list, is_first=False, normalization=norm)
 
-        return prediction_list, confidence_list
+        return prediction_list, confidence_list, backup_list
 
     def get_reduced_pattern(self, predicted_cmpd, orig_y, last_normalization=1.0):
         """
@@ -552,19 +573,18 @@ class PhaseIdentifier(object):
                 print('Running phase identification')
                 all_info = list(tqdm(pool.imap(self.classify_mixture, spectrum_filenames),
                     total=len(spectrum_filenames)))
-                spectrum_fnames = [info[0] for info in all_info]
-                predicted_phases = [info[1] for info in all_info]
-                confidences = [info[2] for info in all_info]
 
         else:
             all_info = []
             for filename in spectrum_filenames:
                 all_info.append(self.classify_mixture(filename))
-            spectrum_fnames = [info[0] for info in all_info]
-            predicted_phases = [info[1] for info in all_info]
-            confidences = [info[2] for info in all_info]
 
-        return spectrum_fnames, predicted_phases, confidences
+        spectrum_fnames = [info[0] for info in all_info]
+        predicted_phases = [info[1] for info in all_info]
+        confidences = [info[2] for info in all_info]
+        backup_phases = [info[3] for info in all_info]
+
+        return spectrum_fnames, predicted_phases, confidences, backup_phases
 
     def classify_mixture(self, spectrum_fname):
         """
@@ -582,21 +602,29 @@ class PhaseIdentifier(object):
         spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases,
             self.cutoff, wavelen=self.wavelen, min_angle=self.min_angle, max_angle=self.max_angle)
 
-        mixtures, confidences = spec_analysis.suspected_mixtures
+        mixtures, confidences, backup_mixtures = spec_analysis.suspected_mixtures
 
         # If classification is non-trival, identify most probable mixture
         if len(confidences) > 0:
+            print(confidences)
             avg_conf = [np.mean(conf) for conf in confidences]
             max_conf_ind = np.argmax(avg_conf)
             final_confidences = [round(100*val, 2) for val in confidences[max_conf_ind]]
             predicted_set = [fname[:-4] for fname in mixtures[max_conf_ind]]
+            backup_set = []
+            for ph in backup_mixtures[max_conf_ind]:
+                if 'cif' in str(ph):
+                    backup_set.append(ph[:-4])
+                else:
+                    backup_set.append('None')
 
         # Otherwise, return None
         else:
             final_confidences = [0.0]
             predicted_set = ['None']
+            backup_set = ['None']
 
-        return [spectrum_fname, predicted_set, final_confidences]
+        return [spectrum_fname, predicted_set, final_confidences, backup_set]
 
 
 def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, wavelength='CuKa', min_angle=10.0, max_angle=80.0, parallel=True):
@@ -604,6 +632,6 @@ def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=
     phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases,
         cutoff_intensity, wavelength, min_angle, max_angle, parallel)
 
-    spectrum_names, predicted_phases, confidences = phase_id.all_predictions
+    spectrum_names, predicted_phases, confidences, backup_phases = phase_id.all_predictions
 
-    return spectrum_names, predicted_phases, confidences
+    return spectrum_names, predicted_phases, confidences, backup_phases

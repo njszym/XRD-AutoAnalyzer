@@ -26,26 +26,35 @@ if __name__ == '__main__':
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
 
-    spectrum_names, predicted_phases, confidences = spectrum_analysis.main('Spectra', 'References', max_phases, cutoff_intensity, wavelength, min_angle, max_angle)
+    spectrum_names, predicted_phases, confidences, backup_phases = spectrum_analysis.main('Spectra', 'References', max_phases, cutoff_intensity, wavelength, min_angle, max_angle)
 
-    for (spectrum_fname, phase_set, confidence) in zip(spectrum_names, predicted_phases, confidences):
+    for (spectrum_fname, phase_set, confidence, backup_set) in zip(spectrum_names, predicted_phases, confidences, backup_phases):
 
         if '--all' not in sys.argv: # By default: only include phases with a confidence > 25%
-            final_phases, final_confidence = [], []
-            for (ph, cf) in zip(phase_set, confidence):
+            final_phases, final_confidence, final_backups = [], [], []
+            for (ph, cf, bk) in zip(phase_set, confidence, backup_set):
                 if cf >= 25.0:
                     final_phases.append(ph)
                     final_confidence.append(cf)
+                    final_backups.append(bk)
 
             print('Filename: %s' % spectrum_fname)
             print('Predicted phases: %s' % final_phases)
             print('Confidence: %s' % final_confidence)
+
+            # If this option is specified, show backup predictions (2nd-most probable phases)
+            if '--show_backups' in sys.argv:
+                print('Alternative phases: %s' % final_backups)
 
         else: # If --all is specified, print *all* suspected phases
             final_phases = phase_set.copy()
             print('Filename: %s' % spectrum_fname)
             print('Predicted phases: %s' % phase_set)
             print('Confidence: %s' % confidence)
+
+            # If this option is specified, show backup predictions (2nd-most probable phases)
+            if '--show_backups' in sys.argv:
+                print('Alternative phases: %s' % backup_set)
 
         if ('--plot' in sys.argv) and (phase_set != 'None'):
 
