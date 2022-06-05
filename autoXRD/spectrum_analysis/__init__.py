@@ -613,7 +613,7 @@ class PhaseIdentifier(object):
         mixtures, confidences, backup_mixtures = spec_analysis.suspected_mixtures
 
         # If classification is non-trival, identify most probable mixture
-        if len(confidences) > 0:
+        if any(confidences):
             avg_conf = [np.mean(conf) for conf in confidences]
             max_conf_ind = np.argmax(avg_conf)
             final_confidences = [round(100*val, 2) for val in confidences[max_conf_ind]]
