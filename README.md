@@ -18,8 +18,6 @@ Then, to install all required modules, navigate to the cloned directory and exec
 pip install . --user
 ```
 
-Currently, a tensorflow version of 2.5 or below is required, as later versions lead to overconfident models. We plan to resolve this in future updates.
-
 ## Usage example
 
 A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example/``` directory. To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, run the following:

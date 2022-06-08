@@ -8,7 +8,6 @@ from skimage import restoration
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
-from tensorflow.python.keras.backend import eager_learning_phase_scope
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 import numpy as np
@@ -494,7 +493,7 @@ class KerasDropoutPrediction(object):
                 (tensorflow.keras Model object)
         """
 
-        self.f = tf.keras.backend.function(model.layers[0].input, model.layers[-1].output)
+        self.model = model
 
     def predict(self, x, min_conf=10.0, n_iter=100):
         """
@@ -510,12 +509,14 @@ class KerasDropoutPrediction(object):
         if min_conf > 1.0:
             min_conf /= 100.0
 
+        # Format input
         x = [[val] for val in x]
         x = np.array([x])
+
+        # Monte Carlo Dropout
         result = []
-        with eager_learning_phase_scope(value=1):
-            for _ in range(n_iter):
-                result.append(self.f(x))
+        for _ in range(n_iter):
+            result.append(self.model(x, training=True))
 
         result = np.array([list(np.array(sublist).flatten()) for sublist in result]) ## Individual predictions
         prediction = result.mean(axis=0) ## Average prediction

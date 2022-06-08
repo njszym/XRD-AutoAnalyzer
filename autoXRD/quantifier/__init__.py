@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt
 import random
 import pymatgen as mg
+from skimage import restoration
 from pymatgen.analysis.diffraction import xrd
-import cv2
-from cv2_rolling_ball import subtract_background_rolling_ball
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 from pymatgen.core import Structure
@@ -85,6 +84,20 @@ class QuantAnalysis(object):
                     Cu_y.append(intens)
             x, y = Cu_x, Cu_y
 
+        # Allow some tolerance (0.2 degrees) in the two-theta range
+        if (min(x) > self.min_angle) and np.isclose(min(x), self.min_angle, atol=0.2):
+            x = np.concatenate([np.array([self.min_angle]), x])
+       	    y = np.concatenate([np.array([y[0]]), y])
+       	if (max(x) < self.max_angle) and np.isclose(max(x), self.max_angle, atol=0.2):
+       	    x = np.concatenate([x, np.array([self.max_angle])])
+            y = np.concatenate([y, np.array([y[-1]])])
+
+        # Otherwise, raise an assertion error
+        assert (min(x) <= self.min_angle) and (max(x) >= self.max_angle), """
+               Measured spectrum does not span the specified two-theta range!
+               Either use a broader spectrum or change the two-theta range via
+               the --min_angle and --max_angle arguments."""
+
         ## Fit to 4,501 values as to be compatible with CNN
         f = ip.CubicSpline(x, y)
         xs = np.linspace(self.min_angle, self.max_angle, 4501)
@@ -93,20 +106,13 @@ class QuantAnalysis(object):
         ## Smooth out noise
         ys = self.smooth_spectrum(ys)
 
-        ## Map to integers in range 0 to 255 so cv2 can handle
-        ys = [val - min(ys) for val in ys]
-        ys = [255*(val/max(ys)) for val in ys]
-        ys = [int(val) for val in ys]
+        ## Normalize from 0 to 255
+        ys = np.array(ys) - min(ys)
+        ys = list(255*np.array(ys)/max(ys))
 
-        ## Perform baseline correction with cv2
-        pixels = []
-        for q in range(10):
-            pixels.append(ys)
-        pixels = np.array(pixels)
-        img, background = subtract_background_rolling_ball(pixels, 800, light_background=False,
-                                             use_paraboloid=True, do_presmooth=False)
-        yb = np.array(background[0])
-        ys = np.array(ys) - yb
+        # Subtract background
+        background = restoration.rolling_ball(ys, radius=800)
+        ys = np.array(ys) - np.array(background)
 
         ## Normalize from 0 to 100
         ys = np.array(ys) - min(ys)

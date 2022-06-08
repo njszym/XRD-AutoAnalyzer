@@ -15,5 +15,5 @@ setup(
     license='MIT',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['numpy', 'pymatgen', 'scipy', 'scikit-image', 'tensorflow==2.5.*', 'pyxtal', 'fastdtw']
+    install_requires=['numpy', 'pymatgen', 'scipy', 'scikit-image', 'tensorflow', 'pyxtal', 'fastdtw', 'tqdm']
 )
