@@ -18,6 +18,8 @@ Then, to install all required modules, navigate to the cloned directory and exec
 pip install . --user
 ```
 
+A word of caution: the classification of multi-phase patterns relies on [fastdtw](https://github.com/slaypni/fastdtw) for peak fitting. This package performs dynamic time warping quickly by using a C++ implementation. In some cases, however, the C++ implementation is not successfully install, forcing the code to fall back to pure Python (without any warning). If one finds that ```run_CNN.py``` takes more > 1 minute per pattern, it is likely indicative of an issue with ```fastdtw```. To resolve this, please see [previous posts](https://stackoverflow.com/questions/44994866/efficient-pairwise-dtw-calculation-using-numpy-or-cython).
+
 ## Usage example
 
 A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example/``` directory. To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, run the following:
