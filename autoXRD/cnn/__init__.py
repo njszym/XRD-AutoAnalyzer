@@ -135,7 +135,7 @@ def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], 
     tf.keras.layers.Dense(n_phases, activation=tf.nn.softmax)])
 
     # Compile model
-    model.compile(loss=tf.keras.losses.CategoricalCrossentropy(from_logits=False), optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.BinaryAccuracy()])
+    model.compile(loss=tf.keras.losses.CategoricalCrossentropy(from_logits=False), optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.CategoricalAccuracy()])
 
     # Fit model to training data
     model.fit(x_train, y_train, batch_size=32, epochs=num_epochs,
