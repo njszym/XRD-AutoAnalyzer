@@ -18,7 +18,7 @@ Then, to install all required modules, navigate to the cloned directory and exec
 pip install . --user
 ```
 
-A word of caution: the classification of multi-phase patterns relies on [fastdtw](https://github.com/slaypni/fastdtw) for peak fitting. This package performs dynamic time warping quickly by using a C++ implementation. In some cases, however, the C++ implementation is not successfully install, forcing the code to fall back to pure Python (without any warning). If one finds that ```run_CNN.py``` takes more > 1 minute per pattern, it is likely indicative of an issue with ```fastdtw```. To resolve this, please see [previous posts](https://stackoverflow.com/questions/44994866/efficient-pairwise-dtw-calculation-using-numpy-or-cython).
+**A word of caution:** the classification of multi-phase patterns relies on [fastdtw](https://github.com/slaypni/fastdtw) for peak fitting. This package performs dynamic time warping quickly by using a C++ implementation. In some cases, however, the C++ implementation is not successfully install, forcing the code to fall back to pure Python (without any warning). If one finds that ```run_CNN.py``` takes more > 1 minute per pattern, it is likely indicative of an issue with ```fastdtw```. To resolve this, please see previous posts: [#1](https://stackoverflow.com/questions/44994866/efficient-pairwise-dtw-calculation-using-numpy-or-cython) or [#2](https://github.com/slaypni/fastdtw/issues/7).
 
 ## Usage example
 
