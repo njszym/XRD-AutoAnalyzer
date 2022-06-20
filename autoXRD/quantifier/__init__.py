@@ -260,7 +260,7 @@ class QuantAnalysis(object):
         warped_spectrum = obs_y.copy()
         for ind1, ind2 in index_pairs:
             distance = abs(ind1 - ind2)
-            if distance <= 50:
+            if distance <= window_size:
                 warped_spectrum[ind2] = pred_y[ind1]
             else:
                 warped_spectrum[ind2] = 0.0
