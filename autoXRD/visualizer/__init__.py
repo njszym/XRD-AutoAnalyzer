@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from scipy.signal import find_peaks, filtfilt
+from scipy.signal import find_peaks, filtfilt, resample
 import random
 import pymatgen as mg
 from pymatgen.analysis.diffraction import xrd
@@ -7,7 +7,7 @@ from skimage import restoration
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 from pymatgen.core import Structure
-from fastdtw import fastdtw
+from pyts import metrics
 import numpy as np
 import math
 import os
@@ -224,12 +224,24 @@ class SpectrumPlotter(object):
                 in the measured spectrum.
         """
 
-        x = np.linspace(10, 80, 4501)
+        # Get patterns
         obs_y = self.formatted_spectrum
         pred_y = self.get_cont_profile(angles, intensities)
 
-        # Map pred_y onto orig_y through DTW
-        distance, index_pairs = fastdtw(pred_y, obs_y, radius=50)
+        # Downsample
+        downsampled_res = 0.1
+        num_pts = int((self.max_angle - self.min_angle) / downsampled_res)
+        obs_y = resample(obs_y, num_pts)
+        pred_y = resample(pred_y, num_pts)
+        x = np.linspace(self.min_angle, self.max_angle, num_pts)
+
+        # Calculate window size for DTW
+        allow_shifts = 0.75
+        window_size = int(allow_shifts * num_pts / (self.max_angle - self.min_angle))
+
+        # Get warped spectrum
+        distance, path = metrics.dtw(pred_y, obs_y, method='sakoechiba', options={'window_size': window_size}, return_path=True)
+        index_pairs = path.transpose()
         warped_spectrum = obs_y.copy()
         for ind1, ind2 in index_pairs:
             distance = abs(ind1 - ind2)

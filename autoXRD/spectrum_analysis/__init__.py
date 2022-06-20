@@ -1,4 +1,4 @@
-from scipy.signal import find_peaks, filtfilt
+from scipy.signal import find_peaks, filtfilt, resample
 import warnings
 import random
 from tqdm import tqdm
@@ -14,7 +14,7 @@ import numpy as np
 import multiprocessing
 from multiprocessing import Pool, Manager
 from pymatgen.core import Structure
-from fastdtw import fastdtw
+from pyts import metrics
 import math
 
 np.random.seed(1)
@@ -322,19 +322,34 @@ class SpectrumAnalyzer(object):
         # Simulate spectrum for predicted compounds
         pred_y = self.generate_pattern(predicted_cmpd)
 
+        # Convert to numpy arrays
         pred_y = np.array(pred_y)
         orig_y = np.array(orig_y)
 
-        # Map pred_y onto orig_y through DTW
-        distance, index_pairs = fastdtw(pred_y, orig_y, radius=50)
+        # Downsample spectra (helps reduce time for DTW)
+        downsampled_res = 0.1 # new resolution: 0.1 degrees
+        num_pts = int((self.max_angle - self.min_angle) / downsampled_res)
+        orig_y = resample(orig_y, num_pts)
+        pred_y = resample(pred_y, num_pts)
+
+        # Calculate window size for DTW
+        allow_shifts = 0.75 # Allow shifts up to 0.75 degrees
+        window_size = int(allow_shifts * num_pts / (self.max_angle - self.min_angle))
+
+        # Get warped spectrum (DTW)
+        distance, path = metrics.dtw(pred_y, orig_y, method='sakoechiba', options={'window_size': window_size}, return_path=True)
+        index_pairs = path.transpose()
         warped_spectrum = orig_y.copy()
         for ind1, ind2 in index_pairs:
             distance = abs(ind1 - ind2)
-            if distance <= 50:
+            if distance <= window_size:
                 warped_spectrum[ind2] = pred_y[ind1]
             else:
                 warped_spectrum[ind2] = 0.0
-        warped_spectrum *= 100/max(warped_spectrum)
+
+        # Now, upsample spectra back to their original size (4501)
+        warped_spectrum = resample(warped_spectrum, 4501)
+        orig_y = resample(orig_y, 4501)
 
         # Scale warped spectrum so y-values match measured spectrum
         scaled_spectrum = self.scale_spectrum(warped_spectrum, orig_y)
@@ -356,6 +371,7 @@ class SpectrumAnalyzer(object):
         # Otherwise if intensities are too low, halt the enumaration
         else:
             return orig_y, None
+
 
     def calc_std_dev(self, two_theta, tau):
         """
