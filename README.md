@@ -28,8 +28,6 @@ python run_CNN.py
 
 The process should take about 10 seconds per spectrum on a single CPU. If multiple spectra are present, parallelization across all available CPU will be executed by default. Once all classifications are made, the predicted phases will be printed along with their associated probabilities.
 
-For a detailed walkthrough of the steps used to perform phase identification, please see https://github.com/njszym/XRD-AutoAnalyzer/blob/main/Tutorial/tutorial-notebook.ipynb.
-
 ## Training the model for new compositions
 
 To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into ```Novel_Space/All_CIFs```. Then navigate to the ```Novel_Space/```directory and execute:
