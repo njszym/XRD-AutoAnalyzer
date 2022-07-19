@@ -138,7 +138,6 @@ class StructureFilter(object):
 
         return filtered_cmpds
 
-
 def write_cifs(unique_strucs, dir, include_elems):
     """
     Write structures to CIF files
@@ -158,13 +157,20 @@ def write_cifs(unique_strucs, dir, include_elems):
                 continue
         formula = struc.composition.reduced_formula
         f = struc.composition.reduced_formula
-        sg = struc.get_space_group_info()[1]
-        filepath = '%s/%s_%s.cif' % (dir, f, sg)
-        struc.to(filename=filepath, fmt='cif')
+        try:
+            sg = struc.get_space_group_info()[1]
+            filepath = '%s/%s_%s.cif' % (dir, f, sg)
+            struc.to(filename=filepath, fmt='cif')
+        except:
+            try:
+                print('%s Space group cant be determined, lowering tolerance', str(f))
+                sg = struc.get_space_group_info(symprec=0.1, angle_tolerance=5.0)[1]
+                filepath = '%s/%s_%s.cif' % (dir, f, sg)
+                struc.to(filename=filepath, fmt='cif')
+            except:
+                print('%s Space group cant be determined even after lowering tolerance, Setting to None', str(f))
 
     assert len(os.listdir(dir)) > 0, 'Something went wrong. No reference phases were found.'
-
-
 
 def main(cif_directory, ref_directory, include_elems=True):
 
