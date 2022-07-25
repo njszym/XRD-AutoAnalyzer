@@ -1,12 +1,14 @@
+from pymatgen.analysis.diffraction import xrd
+from scipy.ndimage import gaussian_filter1d
+from pymatgen.core import Structure
+from pymatgen.core import Lattice
+from pyxtal import pyxtal
 import pymatgen as mg
 import numpy as np
 import random
 import math
 import os
-from pymatgen.analysis.diffraction import xrd
-from scipy.ndimage import gaussian_filter1d
-from pymatgen.core import Lattice
-from pyxtal import pyxtal
+
 
 class MixedGen(object):
     """
@@ -14,7 +16,7 @@ class MixedGen(object):
     strain to a pymatgen structure object.
     """
 
-    def __init__(self, struc, max_shift=0.5, max_strain=0.04, min_domain_size=1, max_domain_size=100, max_texture=0.6, min_angle=10.0, max_angle=80.0):
+    def __init__(self, struc, max_shift=0.5, max_strain=0.04, min_domain_size=1, max_domain_size=100, max_texture=0.6, impur_amt=70.0, min_angle=10.0, max_angle=80.0, ref_dir='References'):
         """
         Args:
             struc: pymatgen structure object
@@ -23,13 +25,67 @@ class MixedGen(object):
         """
         self.calculator = xrd.XRDCalculator()
         self.struc = struc
+        self.ref_dir = ref_dir
         self.max_shift = max_shift
         self.max_strain = max_strain
         self.possible_domains = np.linspace(min_domain_size, max_domain_size, 100)
         self.max_texture = max_texture
+        self.impur_amt = impur_amt
         self.strain_range = np.linspace(0.0, max_strain, 100)
         self.min_angle = min_angle
         self.max_angle = max_angle
+
+    @property
+    def impurity_spectrum(self):
+
+        # Choose random impurity phase
+        possible_refs = self.ref_strucs
+        impurity_phase = random.choice(possible_refs)
+
+        # Simulate impurity peaks
+        pattern = self.calculator.get_pattern(impurity_phase, two_theta_range=(self.min_angle, self.max_angle))
+        angles = pattern.x
+        intensities = pattern.y
+
+        steps = np.linspace(self.min_angle, self.max_angle, 4501)
+        signals = np.zeros([len(angles), steps.shape[0]])
+
+        for i, ang in enumerate(angles):
+            # Map angle to closest datapoint step
+            idx = np.argmin(np.abs(ang-steps))
+            signals[i,idx] = intensities[i]
+
+        # Convolute every row with unique kernel
+        # Iterate over rows; not vectorizable, changing kernel for every row
+        domain_size = 25.0
+        step_size = (self.max_angle - self.min_angle)/4501
+        for i in range(signals.shape[0]):
+            row = signals[i,:]
+            ang = steps[np.argmax(row)]
+            std_dev = self.calc_std_dev(ang, domain_size)
+            # Gaussian kernel expects step size 1 -> adapt std_dev
+            signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size,
+                                             mode='constant')
+
+        # Combine signals
+        signal = np.sum(signals, axis=0)
+
+        # Normalize signal
+        norm_signal = 100 * signal / max(signal)
+
+        return norm_signal
+
+    @property
+    def ref_strucs(self):
+        current_lat = self.struc.lattice.abc
+        all_strucs = []
+        for fname in os.listdir(self.ref_dir):
+            fpath = '%s/%s' % (self.ref_dir, fname)
+            struc = Structure.from_file(fpath)
+            # Ensure no duplicate structures
+            if False in np.isclose(struc.lattice.abc, current_lat, atol=0.01):
+                all_strucs.append(struc)
+        return all_strucs
 
     def pattern(self, struc):
         return self.calculator.get_pattern(struc, two_theta_range=(self.min_angle, self.max_angle))
@@ -242,6 +298,15 @@ class MixedGen(object):
         signal = np.sum(signals, axis=0)
 
         # Normalize signal
+        signal = 100 * signal / max(signal)
+
+        # Add impurity signal
+        impurity_signal = self.impurity_spectrum
+        impurity_magnitude = random.choice(np.linspace(0, self.impur_amt, 100))
+        impurity_signal = impurity_magnitude * impurity_signal / max(impurity_signal)
+        signal += impurity_signal
+
+        # Renormalize signal
         norm_signal = 100 * signal / max(signal)
 
         noise = np.random.normal(0, 0.25, 4501)
@@ -253,9 +318,9 @@ class MixedGen(object):
         return form_signal
 
 
-def main(struc, num_specs, max_shift, max_strain, min_domain_size, max_domain_size, max_texture, min_angle=10.0, max_angle=80.0):
+def main(struc, num_specs, max_shift, max_strain, min_domain_size, max_domain_size, max_texture, impur_amt, min_angle=10.0, max_angle=80.0):
 
-    mixed_generator = MixedGen(struc, max_shift, max_strain, min_domain_size, max_domain_size,  max_texture, min_angle, max_angle)
+    mixed_generator = MixedGen(struc, max_shift, max_strain, min_domain_size, max_domain_size,  max_texture, impur_amt, min_angle, max_angle)
 
     mixed_patterns = [mixed_generator.mixed_spectrum for i in range(num_specs)]
 

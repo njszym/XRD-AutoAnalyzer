@@ -1,6 +1,26 @@
 import numpy as np
 import tensorflow as tf
 from random import shuffle
+from tensorflow.keras import regularizers
+
+
+# Used to apply dropout during training *and* inference
+class CustomDropout(tf.keras.layers.Layer):
+
+    def __init__(self, rate, **kwargs):
+        super(CustomDropout, self).__init__(**kwargs)
+        self.rate = rate
+
+    def get_config(self):
+        config = super().get_config()
+        config.update({
+            "rate": self.rate
+        })
+        return config
+
+    # Always apply dropout
+    def call(self, inputs, training=None):
+        return tf.nn.dropout(inputs, rate=self.rate)
 
 
 class DataSetUp(object):
@@ -99,7 +119,7 @@ class DataSetUp(object):
 
             return np.array(train_x), np.array(train_y), np.array(test_x), np.array(test_y)
 
-def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], dropout_rate=0.7):
+def train_model(x_train, y_train, n_phases, num_epochs, n_dense=[3100, 1200], dropout_rate=0.7):
     """
     Args:
         x_train: numpy array of simulated xrd spectra
@@ -127,11 +147,13 @@ def train_model(x_train, y_train, n_phases, num_epochs=2, n_dense=[3100, 1200], 
     tf.keras.layers.Conv1D(filters=64, kernel_size=10, strides=1, padding='same', activation = tf.nn.relu),
     tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
     tf.keras.layers.Flatten(),
-    tf.keras.layers.Dropout(dropout_rate),
+    CustomDropout(dropout_rate),
     tf.keras.layers.Dense(n_dense[0], activation=tf.nn.relu),
-    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.BatchNormalization(),
+    CustomDropout(dropout_rate),
     tf.keras.layers.Dense(n_dense[1], activation=tf.nn.relu),
-    tf.keras.layers.Dropout(dropout_rate),
+    tf.keras.layers.BatchNormalization(),
+    CustomDropout(dropout_rate),
     tf.keras.layers.Dense(n_phases, activation=tf.nn.softmax)])
 
     # Compile model

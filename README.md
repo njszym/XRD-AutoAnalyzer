@@ -62,11 +62,12 @@ By default, the following bounds are used on artifacts included during data augm
 * Peak shifts (uniform): up to +/- 0.5 degrees shift in all peak positions due to sample height error
 * Peak broadening: domain size ranging from 5-30 nm
 * Peak intensity variation: texture causing as much as +/- 50% change in peak height
+* Impurity peaks: up to 70% of the maximum peak height
 
 However, custom bounds can also be specified, e.g., as follows:
 
 ```
-python construct_model.py --max_strain=0.04 --max_shift=1.0 --min_domain_size=1 --max_domain_size=100 --max_texture=0.5
+python construct_model.py --max_strain=0.04 --max_shift=1.0 --min_domain_size=1.0 --max_domain_size=100.0 --max_texture=0.5 --impur_amt=70.0
 ```
 
 ## Characterizing multi-phase spectra

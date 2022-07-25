@@ -20,6 +20,26 @@ import math
 np.random.seed(1)
 tf.random.set_seed(1)
 
+
+# Used to apply dropout during training *and* inference
+class CustomDropout(tf.keras.layers.Layer):
+
+    def __init__(self, rate, **kwargs):
+        super(CustomDropout, self).__init__(**kwargs)
+        self.rate = rate
+
+    def get_config(self):
+        config = super().get_config()
+        config.update({
+            "rate": self.rate
+        })
+        return config
+
+    # Always apply dropout
+    def call(self, inputs, training=None):
+        return tf.nn.dropout(inputs, rate=self.rate)
+
+
 class SpectrumAnalyzer(object):
     """
     Class used to process and classify xrd spectra.
@@ -62,7 +82,7 @@ class SpectrumAnalyzer(object):
 
         spectrum = self.formatted_spectrum
 
-        self.model = tf.keras.models.load_model(self.model_path, compile=False)
+        self.model = tf.keras.models.load_model(self.model_path, custom_objects={'CustomDropout': CustomDropout}, compile=False)
         self.kdp = KerasDropoutPrediction(self.model)
 
         prediction_list, confidence_list, backup_list = self.enumerate_routes(spectrum)
@@ -532,7 +552,7 @@ class KerasDropoutPrediction(object):
         # Monte Carlo Dropout
         result = []
         for _ in range(n_iter):
-            result.append(self.model(x, training=True))
+            result.append(self.model(x))
 
         result = np.array([list(np.array(sublist).flatten()) for sublist in result]) ## Individual predictions
         prediction = result.mean(axis=0) ## Average prediction

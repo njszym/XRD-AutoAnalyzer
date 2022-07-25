@@ -11,10 +11,11 @@ if __name__ == '__main__':
     min_domain_size, max_domain_size = 5.0, 30.0 # default: domain sizes ranging from 5 to 30 nm
     max_strain = 0.03 # default: up to +/- 3% strain
     max_shift = 0.5 # default: up to +/- 0.5 degrees shift in two-theta
+    impur_amt = 70.0 # Max amount of impurity phases to include (%)
     num_spectra = 50 # Number of spectra to simulate per phase
+    separate = False # If False: apply all artifacts simultaneously
     min_angle, max_angle = 10.0, 80.0
-    num_epochs = 2
-    separate = True
+    num_epochs = 50
     skip_filter = False
     include_elems = True
     for arg in sys.argv:
@@ -40,8 +41,8 @@ if __name__ == '__main__':
             skip_filter = True
         if '--ignore_elems' in arg:
             include_elems = False
-        if '--mixed_artifacts' in arg:
-            separate = False
+        if '--separate_artifacts' in arg:
+            separate = True
 
     if not skip_filter:
         # Filter CIF files to create unique reference phases
@@ -57,9 +58,8 @@ if __name__ == '__main__':
         solid_solns.main('References')
 
     # Simulate and save augmented XRD spectra
-    xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, max_shift, min_angle, max_angle, separate)
+    xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, max_shift, impur_amt, min_angle, max_angle, separate)
     xrd_specs = xrd_obj.augmented_spectra
-    np.save('XRD', xrd_specs)
 
     # Train, test, and save the CNN
     cnn.main(xrd_specs, num_epochs=num_epochs, testing_fraction=0.2)
