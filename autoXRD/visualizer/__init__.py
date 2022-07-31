@@ -262,7 +262,7 @@ class SpectrumPlotter(object):
         return best_scale
 
 
-def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, wavelength='CuKa'):
+def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False):
 
         spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, min_angle, max_angle, wavelength)
 
@@ -288,4 +288,14 @@ def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, ma
         plt.legend(prop={'size': 16})
         plt.xlabel(r'2$\Theta$', fontsize=16, labelpad=12)
         plt.ylabel('Intensity', fontsize=16, labelpad=12)
-        plt.show()
+
+        if save:
+            savename = '%s.png' % spectrum_fname.split('.')[0]
+            plt.tight_layout()
+            plt.savefig(savename, dpi=400)
+            plt.close()
+
+        else:
+            plt.show()
+
+        plt.close()

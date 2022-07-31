@@ -61,11 +61,15 @@ if __name__ == '__main__':
 
         if ('--plot' in sys.argv) and (phase_set != 'None'):
 
+            save = False
+            if '--save' in sys.argv:
+                save = True
+
             # Format predicted phases into a list of their CIF filenames
             final_phasenames = ['%s.cif' % phase for phase in final_phases]
 
             # Plot measured spectrum with line profiles of predicted phases
-            visualizer.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength)
+            visualizer.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength, save)
 
         if ('--weights' in sys.argv) and (phase_set != 'None'):
 
