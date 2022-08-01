@@ -31,6 +31,54 @@ class ImpurGen(object):
         self.max_angle = max_angle
         self.pattern = self.calculator.get_pattern(struc, two_theta_range=(self.min_angle, self.max_angle))
 
+        # Generate a single clean spectrum for each reference phase
+        self.saved_patterns = self.clean_specs
+
+    @property
+    def clean_specs(self):
+
+        # Iterate through all reference structures
+        ref_patterns = []
+        for struc in self.ref_strucs:
+
+            pattern = self.calculator.get_pattern(struc, two_theta_range=(self.min_angle, self.max_angle))
+            angles = pattern.x
+            intensities = pattern.y
+
+            steps = np.linspace(self.min_angle, self.max_angle, 4501)
+            signals = np.zeros([len(angles), steps.shape[0]])
+
+            for i, ang in enumerate(angles):
+                # Map angle to closest datapoint step
+                idx = np.argmin(np.abs(ang-steps))
+                signals[i,idx] = intensities[i]
+
+            # Convolute every row with unique kernel
+            # Iterate over rows; not vectorizable, changing kernel for every row
+            domain_size = 25.0
+            step_size = (self.max_angle - self.min_angle)/4501
+            for i in range(signals.shape[0]):
+                row = signals[i,:]
+                ang = steps[np.argmax(row)]
+                std_dev = self.calc_std_dev(ang, domain_size)
+                # Gaussian kernel expects step size 1 -> adapt std_dev
+                signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size, mode='constant')
+
+            # Combine signals
+            signal = np.sum(signals, axis=0)
+
+            # Normalize signal
+            norm_signal = 100 * signal / max(signal)
+
+            ref_patterns.append(norm_signal)
+
+        return ref_patterns
+
+    @property
+    def impurity_spectrum(self):
+        signal = random.choice(self.saved_patterns)
+        return signal
+
     @property
     def ref_strucs(self):
         current_lat = self.struc.lattice.abc
@@ -42,46 +90,6 @@ class ImpurGen(object):
             if False in np.isclose(struc.lattice.abc, current_lat, atol=0.01):
                 all_strucs.append(struc)
         return all_strucs
-
-    @property
-    def impurity_spectrum(self):
-
-        # Choose random impurity phase
-        possible_refs = self.ref_strucs
-        impurity_phase = random.choice(possible_refs)
-
-        # Simulate impurity peaks
-        pattern = self.calculator.get_pattern(impurity_phase, two_theta_range=(self.min_angle, self.max_angle))
-        angles = pattern.x
-        intensities = pattern.y
-
-        steps = np.linspace(self.min_angle, self.max_angle, 4501)
-        signals = np.zeros([len(angles), steps.shape[0]])
-
-        for i, ang in enumerate(angles):
-            # Map angle to closest datapoint step
-            idx = np.argmin(np.abs(ang-steps))
-            signals[i,idx] = intensities[i]
-
-        # Convolute every row with unique kernel
-        # Iterate over rows; not vectorizable, changing kernel for every row
-        domain_size = 25.0
-        step_size = (self.max_angle - self.min_angle)/4501
-        for i in range(signals.shape[0]):
-            row = signals[i,:]
-            ang = steps[np.argmax(row)]
-            std_dev = self.calc_std_dev(ang, domain_size)
-            # Gaussian kernel expects step size 1 -> adapt std_dev
-            signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size,
-                                             mode='constant')
-
-        # Combine signals
-        signal = np.sum(signals, axis=0)
-
-        # Normalize signal
-        norm_signal = 100 * signal / max(signal)
-
-        return norm_signal
 
     @property
     def angles(self):
