@@ -9,6 +9,7 @@ from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
 from pymatgen.core import Structure
 from pyts import metrics
+import warnings
 import numpy as np
 import math
 import os
@@ -21,7 +22,7 @@ class QuantAnalysis(object):
     (ii) line profiles of identified phases
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, wavelength='CuKa', reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, scale_factors, min_angle=10.0, max_angle=80.0, wavelength='CuKa', reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -33,11 +34,205 @@ class QuantAnalysis(object):
         self.spectra_dir = spectra_dir
         self.spectrum_fname = spectrum_fname
         self.pred_phases = predicted_phases
+        self.scale_factors = scale_factors
         self.ref_dir = reference_dir
         self.calculator = xrd.XRDCalculator()
         self.min_angle = min_angle
         self.max_angle = max_angle
         self.wavelen = wavelength
+
+        # If scale factors haven't been calculated yet, do it now
+        # For use with the visualize script
+        if self.scale_factors == None:
+            self.scale_factors = self.calc_scale()
+
+    def calc_scale(self):
+
+        norm = 1.0
+        heights = []
+        spec = self.formatted_spectrum
+        for cmpd in self.pred_phases:
+            spec, norm, scale = self.get_reduced_pattern(cmpd, spec, norm)
+            heights.append(scale)
+
+        return heights
+
+    def get_reduced_pattern(self, predicted_cmpd, orig_y, last_normalization=1.0):
+        """
+        Subtract a phase that has already been identified from a given XRD spectrum.
+        If all phases have already been identified, halt the iteration.
+
+        Args:
+            predicted_cmpd: phase that has been identified
+            orig_y: measured spectrum including the phase the above phase
+            last_normalization: normalization factor used to scale the previously stripped
+                spectrum to 100 (required by the CNN). This is necessary to determine the
+                magnitudes of intensities relative to the initially measured pattern.
+            cutoff: the % cutoff used to halt the phase ID iteration. If all intensities are
+                below this value in terms of the originally measured maximum intensity, then
+                the code assumes that all phases have been identified.
+        Returns:
+            stripped_y: new spectrum obtained by subtrating the peaks of the identified phase
+            new_normalization: scaling factor used to ensure the maximum intensity is equal to 100
+            Or
+            If intensities fall below the cutoff, preserve orig_y and return Nonetype
+                the for new_normalization constant.
+        """
+
+        # Simulate spectrum for predicted compounds
+        pred_y = self.generate_pattern(predicted_cmpd)
+
+        # Convert to numpy arrays
+        pred_y = np.array(pred_y)
+        orig_y = np.array(orig_y)
+
+        # Downsample spectra (helps reduce time for DTW)
+        downsampled_res = 0.1 # new resolution: 0.1 degrees
+        num_pts = int((self.max_angle - self.min_angle) / downsampled_res)
+        orig_y = resample(orig_y, num_pts)
+        pred_y = resample(pred_y, num_pts)
+
+        # Calculate window size for DTW
+        allow_shifts = 0.75 # Allow shifts up to 0.75 degrees
+        window_size = int(allow_shifts * num_pts / (self.max_angle - self.min_angle))
+
+        # Get warped spectrum (DTW)
+        distance, path = metrics.dtw(pred_y, orig_y, method='sakoechiba', options={'window_size': window_size}, return_path=True)
+        index_pairs = path.transpose()
+        warped_spectrum = orig_y.copy()
+        for ind1, ind2 in index_pairs:
+            distance = abs(ind1 - ind2)
+            if distance <= window_size:
+                warped_spectrum[ind2] = pred_y[ind1]
+            else:
+                warped_spectrum[ind2] = 0.0
+
+        # Now, upsample spectra back to their original size (4501)
+        warped_spectrum = resample(warped_spectrum, 4501)
+        orig_y = resample(orig_y, 4501)
+
+        # Scale warped spectrum so y-values match measured spectrum
+        scaled_spectrum, scaling_constant = self.scale_spectrum(warped_spectrum, orig_y)
+
+        # Subtract scaled spectrum from measured spectrum
+        stripped_y = self.strip_spectrum(scaled_spectrum, orig_y)
+        stripped_y = self.smooth_spectrum(stripped_y)
+        stripped_y = np.array(stripped_y) - min(stripped_y)
+
+        # Normalization
+        new_normalization = 100/max(stripped_y)
+        actual_intensity = max(stripped_y)/last_normalization
+
+        # Calculate actual scaling constant
+        scaling_constant /= last_normalization
+
+        # Return stripped spectrum
+        stripped_y = new_normalization*stripped_y
+        return stripped_y, last_normalization*new_normalization, scaling_constant
+
+    def scale_spectrum(self, pred_y, obs_y):
+        """
+        Scale the magnitude of a calculated spectrum associated with an identified
+        phase so that its peaks match with those of the measured spectrum being classified.
+
+        Args:
+            pred_y: spectrum calculated from the identified phase after fitting
+                has been performed along the x-axis using DTW
+            obs_y: observed (experimental) spectrum containing all peaks
+        Returns:
+            scaled_spectrum: spectrum associated with the reference phase after scaling
+                has been performed to match the peaks in the measured pattern.
+        """
+
+        # Ensure inputs are numpy arrays
+        pred_y = np.array(pred_y)
+        obs_y = np.array(obs_y)
+
+        # Find scaling constant that minimizes MSE between pred_y and obs_y
+        all_mse = []
+        for scale_spectrum in np.linspace(1.1, 0.05, 101):
+            ydiff = obs_y - (scale_spectrum*pred_y)
+            mse = np.mean(ydiff**2)
+            all_mse.append(mse)
+        best_scale = np.linspace(1.0, 0.05, 101)[np.argmin(all_mse)]
+        scaled_spectrum = best_scale*np.array(pred_y)
+
+        return scaled_spectrum, best_scale
+
+    def strip_spectrum(self, warped_spectrum, orig_y):
+        """
+        Subtract one spectrum from another. Note that when subtraction produces
+        negative intensities, those values are re-normalized to zero. This way,
+        the CNN can handle the spectrum reliably.
+
+        Args:
+            warped_spectrum: spectrum associated with the identified phase
+            orig_y: original (measured) spectrum
+        Returns:
+            fixed_y: resulting spectrum from the subtraction of warped_spectrum
+                from orig_y
+        """
+
+        # Subtract predicted spectrum from measured spectrum
+        stripped_y = orig_y - warped_spectrum
+
+        # Normalize all negative values to 0.0
+        fixed_y = []
+        for val in stripped_y:
+            if val < 0:
+                fixed_y.append(0.0)
+            else:
+                fixed_y.append(val)
+
+        return fixed_y
+
+    def generate_pattern(self, cmpd):
+        """
+        Calculate the XRD spectrum of a given compound.
+
+        Args:
+            cmpd: filename of the structure file to calculate the spectrum for
+        Returns:
+            all_I: list of intensities as a function of two-theta
+        """
+
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore") # don't print occupancy-related warnings
+            struct = Structure.from_file('%s/%s' % (self.ref_dir, cmpd))
+        equil_vol = struct.volume
+        pattern = self.calculator.get_pattern(struct, two_theta_range=(self.min_angle, self.max_angle))
+        angles = pattern.x
+        intensities = pattern.y
+
+        steps = np.linspace(self.min_angle, self.max_angle, 4501)
+
+        signals = np.zeros([len(angles), steps.shape[0]])
+
+        for i, ang in enumerate(angles):
+            # Map angle to closest datapoint step
+            idx = np.argmin(np.abs(ang-steps))
+            signals[i,idx] = intensities[i]
+
+        # Convolute every row with unique kernel
+        # Iterate over rows; not vectorizable, changing kernel for every row
+        domain_size = 25.0
+        step_size = (self.max_angle - self.min_angle)/4501
+        for i in range(signals.shape[0]):
+            row = signals[i,:]
+            ang = steps[np.argmax(row)]
+            std_dev = self.calc_std_dev(ang, domain_size)
+            # Gaussian kernel expects step size 1 -> adapt std_dev
+            signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size,
+                                             mode='constant')
+
+        # Combine signals
+        signal = np.sum(signals, axis=0)
+
+        # Normalize signal
+        norm_signal = 100 * signal / max(signal)
+
+        return norm_signal
+
 
     def convert_angle(self, angle):
         """
@@ -151,12 +346,12 @@ class QuantAnalysis(object):
 
         measured_spectrum = self.formatted_spectrum
         pred_phases = self.pred_phases
+        heights = self.scale_factors
 
         angle_sets, intensity_sets = [], []
-        for phase in pred_phases:
+        for phase, ht in zip(pred_phases, heights):
             angles, intensities = self.get_stick_pattern(phase)
-            scaling_constant = self.scale_line_profile(angles, intensities)
-            scaled_intensities = scaling_constant*np.array(intensities)
+            scaled_intensities = ht*np.array(intensities)
             angle_sets.append(angles)
             intensity_sets.append(scaled_intensities)
 
@@ -317,9 +512,9 @@ def get_density(ref_phase, ref_dir='References'):
 
     return mass/struct.volume
 
-def main(spectra_directory, spectrum_fname, predicted_phases, min_angle=10.0, max_angle=80.0, wavelength='CuKa'):
+def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle=10.0, max_angle=80.0, wavelength='CuKa'):
 
-        analyzer = QuantAnalysis(spectra_directory, spectrum_fname, predicted_phases, min_angle, max_angle, wavelength)
+        analyzer = QuantAnalysis(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle, max_angle, wavelength)
 
         if len(predicted_phases) == 1:
             return [1.0]

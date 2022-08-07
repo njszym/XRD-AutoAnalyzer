@@ -29,17 +29,19 @@ if __name__ == '__main__':
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
 
-    spectrum_names, predicted_phases, confidences, backup_phases = spectrum_analysis.main('Spectra', 'References', max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle)
+    spectrum_names, predicted_phases, confidences, backup_phases, scale_factors = spectrum_analysis.main('Spectra', 'References',
+        max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle)
 
-    for (spectrum_fname, phase_set, confidence, backup_set) in zip(spectrum_names, predicted_phases, confidences, backup_phases):
+    for (spectrum_fname, phase_set, confidence, backup_set, heights) in zip(spectrum_names, predicted_phases, confidences, backup_phases, scale_factors):
 
         if '--all' not in sys.argv: # By default: only include phases with a confidence > 25%
-            final_phases, final_confidence, final_backups = [], [], []
-            for (ph, cf, bk) in zip(phase_set, confidence, backup_set):
+            final_phases, final_confidence, final_backups, final_heights = [], [], [], []
+            for (ph, cf, bk, ht) in zip(phase_set, confidence, backup_set, heights):
                 if cf >= 25.0:
                     final_phases.append(ph)
                     final_confidence.append(cf)
                     final_backups.append(bk)
+                    final_heights.append(ht)
 
             print('Filename: %s' % spectrum_fname)
             print('Predicted phases: %s' % final_phases)
@@ -51,6 +53,7 @@ if __name__ == '__main__':
 
         else: # If --all is specified, print *all* suspected phases
             final_phases = phase_set.copy()
+            final_heights = heights.copy()
             print('Filename: %s' % spectrum_fname)
             print('Predicted phases: %s' % phase_set)
             print('Confidence: %s' % confidence)
@@ -69,7 +72,7 @@ if __name__ == '__main__':
             final_phasenames = ['%s.cif' % phase for phase in final_phases]
 
             # Plot measured spectrum with line profiles of predicted phases
-            visualizer.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength, save)
+            visualizer.main('Spectra', spectrum_fname, final_phasenames, final_heights, min_angle, max_angle, wavelength, save)
 
         if ('--weights' in sys.argv) and (phase_set != 'None'):
 
@@ -77,7 +80,7 @@ if __name__ == '__main__':
             final_phasenames = ['%s.cif' % phase for phase in final_phases]
 
             # Get weight fractions
-            weights = quantifier.main('Spectra', spectrum_fname, final_phasenames, min_angle, max_angle, wavelength)
+            weights = quantifier.main('Spectra', spectrum_fname, final_phasenames, final_heights, min_angle, max_angle, wavelength)
             weights = [round(val, 2) for val in weights]
             print('Weight fractions: %s' % weights)
 

@@ -23,12 +23,13 @@ if __name__ == '__main__':
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
 
-    visualizer.main('Spectra', spectrum_fname, phases, min_angle, max_angle, wavelength)
+    scale_factors = None # Not known yet
+    visualizer.main('Spectra', spectrum_fname, phases, scale_factors, min_angle, max_angle, wavelength)
 
     if '--weights' in sys.argv:
 
         # Get weight fractions
-        weights = quantifier.main('Spectra', spectrum_fname, phases, min_angle, max_angle, wavelength)
+        weights = quantifier.main('Spectra', spectrum_fname, phases, scale_factors, min_angle, max_angle, wavelength)
         weights = [round(val, 2) for val in weights]
         print('Phases: %s' % phases)
         print('Weight fractions: %s' % weights)
