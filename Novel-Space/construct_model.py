@@ -61,5 +61,9 @@ if __name__ == '__main__':
     xrd_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size, max_domain_size, max_strain, max_shift, impur_amt, min_angle, max_angle, separate)
     xrd_specs = xrd_obj.augmented_spectra
 
+    # Save XRD patterns if flag is specified
+    if '--save_xrd' in sys.argv:
+        np.save('XRD', np.array(xrd_specs))
+
     # Train, test, and save the CNN
     cnn.main(xrd_specs, num_epochs=num_epochs, testing_fraction=0.2)
