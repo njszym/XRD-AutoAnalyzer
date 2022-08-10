@@ -29,6 +29,8 @@ if __name__ == '__main__':
             max_strain = float(arg.split('=')[1])
         if '--max_shift' in arg:
             max_shift = float(arg.split('=')[1])
+        if '--impur_amt' in arg:
+            impur_amt = float(arg.split('=')[1])
         if '--num_spectra' in arg:
             num_spectra = int(arg.split('=')[1])
         if '--min_angle' in arg:
