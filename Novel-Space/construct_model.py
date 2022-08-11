@@ -18,6 +18,7 @@ if __name__ == '__main__':
     num_epochs = 50
     skip_filter = False
     include_elems = True
+    enforce_order = False
     for arg in sys.argv:
         if '--max_texture' in arg:
             max_texture = float(arg.split('=')[1])
@@ -43,6 +44,8 @@ if __name__ == '__main__':
             skip_filter = True
         if '--ignore_elems' in arg:
             include_elems = False
+        if '--enforce_order' in arg:
+            enforce_order = True
         if '--separate_artifacts' in arg:
             separate = True
 
@@ -50,7 +53,7 @@ if __name__ == '__main__':
         # Filter CIF files to create unique reference phases
         assert 'All_CIFs' in os.listdir('.'), 'No All_CIFs directory was provided. Please create or use --skip_filter'
         assert 'References' not in os.listdir('.'), 'References directory already exists. Please remove or use --skip_filter'
-        tabulate_cifs.main('All_CIFs', 'References', include_elems)
+        tabulate_cifs.main('All_CIFs', 'References', include_elems, enforce_order)
 
     else:
         assert 'References' in os.listdir('.'), '--skip_filter was specified, but no References directory was provided'

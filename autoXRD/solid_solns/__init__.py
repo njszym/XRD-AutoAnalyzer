@@ -40,9 +40,15 @@ class SolidSolnsGen(object):
                 (denoted by their filenames)
         """
 
-        all_filenames = os.listdir(self.ref_dir)
-        all_pairs = list(comb(all_filenames, 2))
+        # Only included ordered structures
+        ordered_refs = []
+        for fname in os.listdir(self.ref_dir):
+            struc = Structure.from_file('%s/%s' % (self.ref_dir, fname))
+            if struc.is_ordered:
+                ordered_refs.append(fname)
+        all_pairs = list(comb(ordered_refs, 2))
 
+        # Get soluble pairs
         with Manager() as manager:
             pool = Pool(self.num_cpu)
             matching_pairs = pool.map(self.are_soluble, all_pairs)

@@ -13,7 +13,7 @@ class StructureFilter(object):
     under (or nearest to) ambient conditions.
     """
 
-    def __init__(self, cif_directory):
+    def __init__(self, cif_directory, enforce_order):
         """
         Args:
             cif_directory: path to directory containing
@@ -22,6 +22,7 @@ class StructureFilter(object):
         """
 
         self.cif_dir = cif_directory
+        self.enforce_order = enforce_order
 
     @property
     def stoichiometric_info(self):
@@ -36,15 +37,22 @@ class StructureFilter(object):
             dates: dates the measurements were reported
         """
 
-        stoich_strucs, temps, dates = [], [], []
+        strucs, temps, dates = [], [], []
         for cmpd in os.listdir(self.cif_dir):
             struc = Structure.from_file('%s/%s' % (self.cif_dir, cmpd))
-            if struc.is_ordered:
-                stoich_strucs.append(struc)
+            if self.enforce_order:
+                if struc.is_ordered:
+                    strucs.append(struc)
+                    t, d = self.parse_measurement_conditions(cmpd)
+                    temps.append(t)
+                    dates.append(d)
+            else:
+                strucs.append(struc)
                 t, d = self.parse_measurement_conditions(cmpd)
                 temps.append(t)
                 dates.append(d)
-        return stoich_strucs, temps, dates
+
+        return strucs, temps, dates
 
     def parse_measurement_conditions(self, filename):
         """
@@ -172,10 +180,10 @@ def write_cifs(unique_strucs, dir, include_elems):
 
     assert len(os.listdir(dir)) > 0, 'Something went wrong. No reference phases were found.'
 
-def main(cif_directory, ref_directory, include_elems=True):
+def main(cif_directory, ref_directory, include_elems=True, enforce_order=False):
 
     # Get unique structures
-    struc_filter = StructureFilter(cif_directory)
+    struc_filter = StructureFilter(cif_directory, enforce_order)
     final_refs = struc_filter.filtered_refs
 
     # Write unique structures (as CIFs) to reference directory
