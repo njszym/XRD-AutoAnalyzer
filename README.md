@@ -1,6 +1,6 @@
 # An automatic analysis tool for XRD
 
-A package designed to automate the process of phase identification from XRD spectra using a probabilistic deep learning trained with physics-informed data augmentation.
+A package designed to automate phase identification from XRD spectra using a probabilistic deep learning model trained with physics-informed data augmentation.
 
 The corresponding manuscript can be found at [Chemistry of Materials](https://pubs.acs.org/doi/full/10.1021/acs.chemmater.1c01071). Reproducing the published results can be accomplished using the data provided in [figshare](https://figshare.com/s/69030545b8020de35633).
 
@@ -20,13 +20,15 @@ pip install . --user
 
 ## Usage example
 
-A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example/``` directory. To classify the experimentally measured patterns tabulated in the ```Spectra/``` sub-folder, run the following:
+A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```Example/``` directory. To classify the experimental patterns in the ```Spectra/``` sub-folder, run the following:
 
 ```
 python run_CNN.py
 ```
 
-The process should take about 10 seconds per spectrum on a single CPU. If multiple spectra are present, parallelization across all available CPU will be executed by default. Once all classifications are made, the predicted phases will be printed along with their associated probabilities.
+The process should take about 1-2 minutes. Runtime is typically ~10 seconds per spectrum on a single CPU, but may vary from system to system. Parallelization is also possible, and all available CPU will be utilized by default.
+
+Once all spectra have been classified, each set of predicted phases will be printed along with their associated probabilities (%). These represent the confidence associated with each predicted phase. Generally, higher values of confidence are associated with more reliable predictions.
 
 ## Training the model for new compositions
 
@@ -38,7 +40,7 @@ python construct_model.py
 
 This script will:
 
-1) Filter all unique stoichiometric phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, place all CIFs into a folder labeled ```References``` and run ```python construct_model.py --skip_filter```. To employ automated filtering but exclude elemental phases, run ```python construct_model.py --ignore_elems```.
+1) Filter all unique phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, place all CIFs into a folder labeled ```References``` and run ```python construct_model.py --skip_filter```. 
 
 2) If ```--include_ns``` is specified: generate hypothetical solid solutions between the stoichiometric phases.
 
@@ -49,10 +51,10 @@ This script will:
 By default, training spectra will be simulated over 2θ spanning 10-80 degrees in Cu K-alpha radiation. However, this can be customized as follows:
 
 ```
-python construct_model.py --min_angle=10.0 --max_angle=80.0
+python construct_model.py --min_angle=10.0 --max_angle=80.0 --wavelength=1.5406
 ```
 
-The model creation process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: performing all necessary steps to create a model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 4 hours of computational runtime on a single core. Required computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (i.e., independent of one another).
+The model creation process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: performing all necessary steps to create a model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 4 hours of computational runtime on a single core. Required computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (independent of one another).
 
 When the procedure is completed, a trained ```Model.h5``` file will be made available. 
 
@@ -70,9 +72,15 @@ However, custom bounds can also be specified, e.g., as follows:
 python construct_model.py --max_strain=0.04 --max_shift=1.0 --min_domain_size=1.0 --max_domain_size=100.0 --max_texture=0.5 --impur_amt=70.0
 ```
 
+Training is performed for 50 epochs, which is generally sufficient to achieve convergence without overfitting. However, this may also be tuned by the user:
+
+```
+python construct_model.py --num_epochs=50
+```
+
 ## Characterizing multi-phase spectra
 
-In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format.
+In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format (two-column data).
 
 Once all files are placed in the ```Spectra/``` folder, they can be classified by executing:
 
@@ -90,7 +98,7 @@ Confidence: (probabilities associated with the phases above)
 
 Phase labels are denoted as ```formula_spacegroup```.
 
-By default, only phases with a confidence above 25% will be shown. To also show low-confidence phases, the ```-all``` argument can be used at runtime.
+By default, only phases with a confidence above 25% will be shown. To also show low-confidence phases, the ```-all``` argument can be used at runtime. Use this option with caution, as low-confidence phases are generally not reliable.
 
 If spectra with a range of 2θ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles (in Cu K-alpha) should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
 
@@ -120,7 +128,13 @@ Which will yield a plot of the form:
 
 ![sample](./Example/sample-image.png)
 
-Based on this plot, weight fractions can also be approximated by adding the ```--weights``` argument:
+By default, the plots will be shown to the user and then discarded. However, they may instead be saved as png files with the following options:
+
+```
+python run_CNN.py --plot --save
+```
+
+Based on the heights of these line profiles, weight fractions can also be approximated by using the ```--weights``` argument:
 
 ```
 python run_CNN.py --weights
