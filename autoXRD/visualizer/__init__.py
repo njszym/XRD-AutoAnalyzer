@@ -456,7 +456,7 @@ class SpectrumPlotter(object):
         return best_scale
 
 
-def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False):
+def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum, min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False, show_reduced=False):
 
         spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle, max_angle, wavelength)
 
@@ -472,10 +472,13 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min
         color_list = ['g', 'r', 'm', 'k', 'c']
         i = 0
         for (angles, intensities, phase) in zip(angle_sets, intensity_sets, phase_names):
-            for (x, y) in zip(angles, intensities):
-                plt.vlines(x, 0, y, color=color_list[i], linewidth=2.5)
+            for (xv, yv) in zip(angles, intensities):
+                plt.vlines(xv, 0, yv, color=color_list[i], linewidth=2.5)
             plt.plot([0], [0], color=color_list[i], label='Predicted: %s' % phase)
             i += 1
+
+        if show_reduced:
+            plt.plot(x, reduced_spectrum, color='orange', linestyle='dashed', label='Reduced spectrum')
 
         plt.xlim(min_angle, max_angle)
         plt.ylim(0, 105)
