@@ -24,7 +24,8 @@ if __name__ == '__main__':
             max_angle = float(arg.split('=')[1])
 
     scale_factors = None # Not known yet
-    visualizer.main('Spectra', spectrum_fname, phases, scale_factors, min_angle, max_angle, wavelength)
+    final_spectrum = None # Not known yet
+    visualizer.main('Spectra', spectrum_fname, phases, scale_factors, final_spectrum, min_angle, max_angle, wavelength)
 
     if '--weights' in sys.argv:
 
