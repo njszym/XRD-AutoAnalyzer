@@ -1,25 +1,26 @@
 from scipy.signal import find_peaks, filtfilt, resample
-import warnings
-import random
+from pymatgen.analysis.diffraction import xrd
+from scipy.ndimage import gaussian_filter1d
+from multiprocessing import Pool, Manager
+from scipy import interpolate as ip
+from pymatgen.core import Structure
+from skimage import restoration
+import tensorflow as tf
+from scipy import signal
+from pyts import metrics
+import multiprocessing
 from tqdm import tqdm
 import pymatgen as mg
-from pymatgen.analysis.diffraction import xrd
-from skimage import restoration
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-import tensorflow as tf
-from scipy.ndimage import gaussian_filter1d
-from scipy import interpolate as ip
 import numpy as np
-import multiprocessing
-from multiprocessing import Pool, Manager
-from pymatgen.core import Structure
-from pyts import metrics
+import warnings
+import random
 import math
+import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 np.random.seed(1)
 tf.random.set_seed(1)
-
 
 # Used to apply dropout during training *and* inference
 class CustomDropout(tf.keras.layers.Layer):
@@ -45,7 +46,8 @@ class SpectrumAnalyzer(object):
     Class used to process and classify xrd spectra.
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, min_conf=25.0, wavelen='CuKa', reference_dir='References', min_angle=10.0, max_angle=80.0, model_path='Model.h5'):
+    def __init__(self, spectra_dir, spectrum_fname, max_phases, cutoff_intensity, min_conf=25.0, wavelen='CuKa',
+        reference_dir='References', min_angle=10.0, max_angle=80.0, model_path='Model.h5', is_pdf=False):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -67,6 +69,7 @@ class SpectrumAnalyzer(object):
         self.min_angle = min_angle
         self.max_angle = max_angle
         self.model_path = model_path
+        self.is_pdf = is_pdf
 
     @property
     def reference_phases(self):
@@ -192,14 +195,14 @@ class SpectrumAnalyzer(object):
 
         return smoothed_ys
 
-    def enumerate_routes(self, spectrum, indiv_pred=[], indiv_conf=[], indiv_backup=[], prediction_list=[], confidence_list=[],
+    def enumerate_routes(self, xrd_spectrum, indiv_pred=[], indiv_conf=[], indiv_backup=[], prediction_list=[], confidence_list=[],
         backup_list=[], is_first=True, normalization=1.0, indiv_scale=[], scale_list=[], indiv_spec=[], spec_list=[]):
         """
         A branching algorithm designed to explore all suspected mixtures predicted by the CNN.
         For each mixture, the associated phases and probabilities are tabulated.
 
         Args:
-            spectrum: a numpy array containing the measured spectrum that is to be classified
+            xrd_spectrum: a numpy array containing the measured spectrum that is to be classified
             kdp: a KerasDropoutPrediction model object
             reference_phases: a list of reference phase strings
             indiv_conf: list of probabilities associated with an individual mixture (one per branch)
@@ -220,6 +223,10 @@ class SpectrumAnalyzer(object):
             confidence_list: a list of probabilities associated with the above mixtures
         """
 
+        # Convert to PDF if specified
+        if self.is_pdf:
+            pdf_spectrum = self.XRDtoPDF(xrd_spectrum, self.min_angle, self.max_angle)
+
         # Make prediction and confidence lists global so they can be updated recursively
         # If this is the top-level of a new mixture (is_first), reset all variables
         if is_first:
@@ -229,7 +236,11 @@ class SpectrumAnalyzer(object):
             indiv_pred, indiv_conf, indiv_backup, indiv_scale = [], [], [], []
             indiv_spec, spec_list = [], []
 
-        prediction, num_phases, certanties = self.kdp.predict(spectrum, self.min_conf)
+        # Make prediction regarding top phases
+        if self.is_pdf:
+            prediction, num_phases, certanties = self.kdp.predict(pdf_spectrum, self.min_conf)
+        else:
+            prediction, num_phases, certanties = self.kdp.predict(xrd_spectrum, self.min_conf)
 
         # If no phases are suspected
         if num_phases == 0:
@@ -296,7 +307,7 @@ class SpectrumAnalyzer(object):
             indiv_backup.append(backup_cmpd)
 
             # Subtract identified phase from the spectrum
-            reduced_spectrum, norm, scaling_constant, is_done = self.get_reduced_pattern(predicted_cmpd, spectrum, last_normalization=normalization)
+            reduced_spectrum, norm, scaling_constant, is_done = self.get_reduced_pattern(predicted_cmpd, xrd_spectrum, last_normalization=normalization)
 
             # Record actual spectrum (non-scaled) after peak substraction of known phases
             actual_spectrum = reduced_spectrum / norm
@@ -342,9 +353,10 @@ class SpectrumAnalyzer(object):
                     continue
 
                 # Otherwise if more phases are to be explored, recursively enter enumerate_routes with the newly reduced spectrum
-                prediction_list, confidence_list, backup_list, scale_list, spec_list = self.enumerate_routes(reduced_spectrum, indiv_pred, indiv_conf, indiv_backup,
-                    prediction_list, confidence_list, backup_list, is_first=False, normalization=norm, indiv_scale=indiv_scale, scale_list=scale_list,
-                    indiv_spec=indiv_spec, spec_list=spec_list)
+                prediction_list, confidence_list, backup_list, scale_list, spec_list = \
+                    self.enumerate_routes(reduced_spectrum, indiv_pred, indiv_conf, indiv_backup, prediction_list,
+                    confidence_list, backup_list, is_first=False, normalization=norm, indiv_scale=indiv_scale,
+                    scale_list=scale_list, indiv_spec=indiv_spec, spec_list=spec_list)
 
         return prediction_list, confidence_list, backup_list, scale_list, spec_list
 
@@ -550,6 +562,21 @@ class SpectrumAnalyzer(object):
 
         return fixed_y
 
+    def XRDtoPDF(self, xrd, min_angle, max_angle):
+
+        thetas = np.linspace(min_angle/2.0, max_angle/2.0, 4501)
+        Q = [4*math.pi*math.sin(math.radians(theta))/1.5406 for theta in thetas]
+        S = [float(v) for v in xrd]
+
+        pdf = []
+        R = np.linspace(1, 40, 1000) # Only 1000 used to reduce compute time
+        integrand = [[Q[i] * S[i] * math.sin(Q[i] * r) for i in range(len(Q))] for r in R]
+
+        pdf = (2*np.trapz(integrand, Q) / math.pi)
+        pdf = list(signal.resample(pdf, 4501))
+
+        return pdf
+
 
 class KerasDropoutPrediction(object):
     """
@@ -613,7 +640,8 @@ class PhaseIdentifier(object):
     Class used to identify phases from a given set of xrd spectra
     """
 
-    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, min_conf, wavelength, min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5'):
+    def __init__(self, spectra_directory, reference_directory, max_phases, cutoff_intensity, min_conf, wavelength,
+        min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5', is_pdf=False):
         """
         Args:
             spectra_dir: path to directory containing the xrd
@@ -633,6 +661,7 @@ class PhaseIdentifier(object):
         self.min_angle = min_angle
         self.max_angle = max_angle
         self.model_path = model_path
+        self.is_pdf = is_pdf
 
     @property
     def all_predictions(self):
@@ -681,8 +710,9 @@ class PhaseIdentifier(object):
         total_confidence, all_predictions = [], []
         tabulate_conf, predicted_cmpd_set = [], []
 
-        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases, self.cutoff, self.min_conf,
-            wavelen=self.wavelen, min_angle=self.min_angle, max_angle=self.max_angle, model_path=self.model_path)
+        spec_analysis = SpectrumAnalyzer(self.spectra_dir, spectrum_fname, self.max_phases, self.cutoff,
+            self.min_conf, wavelen=self.wavelen, min_angle=self.min_angle, max_angle=self.max_angle,
+            model_path=self.model_path, is_pdf=self.is_pdf)
 
         mixtures, confidences, backup_mixtures, scalings, spectra = spec_analysis.suspected_mixtures
 
@@ -711,11 +741,118 @@ class PhaseIdentifier(object):
 
         return [spectrum_fname, predicted_set, final_confidences, backup_set, scaling_constants, specs]
 
+#def merge_predictions(preds, confs, cutoff, max_phases):
+def merge_results(results, cutoff, max_phases):
+    """
+    Aggregate XRD + PDF predictions through an ensemble approach
+    whereby each phase is weighted by its confidence.
 
-def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, min_conf=10.0, wavelength='CuKa', min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5'):
+    xrd: dictionary containing predictions from XRD analysis
+    pdf: dictionary containing predictions from PDF analysis
+    cutoff: minimum confidence (%) to include in final predictions
+    max_phases: maximum no. of phases to include in final predictions
+    """
+
+    # First, sort by filename to ensure consistent ordering
+    zipped_xrd = zip(results['XRD']['filenames'], results['XRD']['phases'], results['XRD']['confs'],
+            results['XRD']['backup_phases'], results['XRD']['scale_factors'], results['XRD']['reduced_spectra'])
+    zipped_pdf = zip(results['PDF']['filenames'], results['PDF']['phases'], results['PDF']['confs'],
+            results['PDF']['backup_phases'], results['PDF']['scale_factors'], results['PDF']['reduced_spectra'])
+    sorted_xrd = sorted(zipped_xrd, key=lambda x:x[0])
+    sorted_pdf = sorted(zipped_pdf, key=lambda x:x[0])
+    results['XRD']['filenames'], results['XRD']['phases'], results['XRD']['confs'], results['XRD']['backup_phases'], \
+        results['XRD']['scale_factors'], results['XRD']['reduced_spectra'] = \
+        list(zip(*sorted_xrd))
+    results['PDF']['filenames'], results['PDF']['phases'], results['PDF']['confs'], results['PDF']['backup_phases'], \
+        results['PDF']['scale_factors'], results['PDF']['reduced_spectra'] = \
+        list(zip(*sorted_pdf))
+
+    # Double-check consistent length and order
+    assert len(results['XRD']['filenames']) == len(results['PDF']['filenames']), \
+        'XRD and PDF prediction are not the same length. Something went wrong.'
+    for i, filename in enumerate(results['XRD']['filenames']):
+        assert filename == results['XRD']['filenames'][i], \
+        'Mismatch between order of XRD and PDF predictions. Something went wrong'
+
+    # Concatenate phases and confidences
+    results['All'] = {}
+    results['All']['phases'] = []
+    for l1, l2 in zip(results['XRD']['phases'], results['PDF']['phases']):
+        results['All']['phases'].append(list(l1) + list(l2))
+    results['All']['confs'] = []
+    for l1, l2 in zip(results['XRD']['confs'], results['PDF']['confs']):
+        results['All']['confs'].append(list(l1) + list(l2))
+
+    # Aggregate XRD and PDF predictions into merged dictionary
+    results['Merged'] = {}
+    results['Merged']['phases'] = []
+    results['Merged']['confs'] = []
+    results['Merged']['backup_phases'] = []
+    results['Merged']['scale_factors'] = []
+    results['Merged']['filenames'] = results['XRD']['filenames']
+    results['Merged']['reduced_spectra'] = results['XRD']['reduced_spectra']
+    for phases, confs, xrd_phases, xrd_confs, pdf_phases, pdf_confs, xrd_backup_phases, \
+        pdf_backup_phases, xrd_scale_factors, pdf_scale_factors in \
+        zip(results['All']['phases'], results['All']['confs'], results['XRD']['phases'],\
+        results['XRD']['confs'], results['PDF']['phases'], results['PDF']['confs'], \
+        results['XRD']['backup_phases'], results['PDF']['backup_phases'],
+        results['XRD']['scale_factors'], results['PDF']['scale_factors']):
+
+        # Allocate confidences for each phase
+        avg_soln = {}
+        for cmpd, cf in zip(phases, confs):
+            if cmpd not in avg_soln.keys():
+                avg_soln[cmpd] = [cf]
+            else:
+                avg_soln[cmpd].append(cf)
+
+        # Average over confidences for each phase
+        unique_phases, avg_confs = [], []
+        for cmpd in avg_soln.keys():
+            unique_phases.append(cmpd)
+            num_zeros = 2 - len(avg_soln[cmpd])
+            avg_soln[cmpd] += [0.0]*num_zeros
+            avg_confs.append(np.mean(avg_soln[cmpd]))
+
+        # Sort by confidence
+        info = zip(unique_phases, avg_confs)
+        info = sorted(info, key=lambda x: x[1])
+        info.reverse()
+
+        # Get all unique phases below max no.
+        unique_phases, unique_confs = [], []
+        for cmpd, cf in info:
+            if (len(unique_phases) < max_phases) and (cf > cutoff):
+                unique_phases.append(cmpd)
+                unique_confs.append(cf)
+
+        # Collect final backups and scale factors
+        unique_backups, unique_scales = [], []
+        for cmpd in unique_phases:
+            xrd_ind = xrd_phases.index(cmpd)
+            xrd_conf = xrd_confs[xrd_ind]
+            pdf_ind = pdf_phases.index(cmpd)
+            pdf_conf = pdf_confs[pdf_ind]
+            if xrd_conf >= pdf_conf:
+                unique_backups.append(xrd_backup_phases[xrd_ind])
+                unique_scales.append(xrd_scale_factors[xrd_ind])
+            else:
+                unique_backups.append(pdf_backup_phases[pdf_ind])
+                unique_scales.append(pdf_scale_factors[pdf_ind])
+
+        results['Merged']['phases'].append(unique_phases)
+        results['Merged']['confs'].append(unique_confs)
+        results['Merged']['backup_phases'].append(unique_backups)
+        results['Merged']['scale_factors'].append(unique_scales)
+
+    return results['Merged']
+
+
+def main(spectra_directory, reference_directory, max_phases=3, cutoff_intensity=10, min_conf=10.0,wavelength='CuKa',
+    min_angle=10.0, max_angle=80.0, parallel=True, model_path='Model.h5', is_pdf=False):
 
     phase_id = PhaseIdentifier(spectra_directory, reference_directory, max_phases,
-        cutoff_intensity, min_conf, wavelength, min_angle, max_angle, parallel, model_path)
+        cutoff_intensity, min_conf, wavelength, min_angle, max_angle, parallel, model_path, is_pdf)
 
     spectrum_names, predicted_phases, confidences, backup_phases, scale_factors, reduced_spectra = phase_id.all_predictions
 

@@ -12,10 +12,12 @@ if __name__ == '__main__':
 
     max_phases = 4 # default: a maximum 4 phases in each mixture
     cutoff_intensity = 5 # default: ID all peaks with I >= 5% maximum spectrum intensity
-    min_conf = 25.0 # Minimum confidence included in predictions
+    min_conf = 50.0 # Minimum confidence included in predictions
     wavelength = 'CuKa' # default: spectra was measured using Cu K_alpha radiation
     unknown_threshold = 25.0 # default: raise warning when peaks with >= 25% intensity are unknown
     show_reduced = False # Whether to plot reduced spectrum (after subtraction of known phases)
+    inc_pdf = False # Whether to include PDF analysis (requires trained model first)
+    parallel = True # Run phase analysis in parallel across available CPUs
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
         if '--max_phases' in arg:
@@ -34,11 +36,40 @@ if __name__ == '__main__':
             unknown_threshold = float(arg.split('=')[1])
         if '--show_reduced' in arg:
             show_reduced = True
+        if '--inc_pdf' in arg:
+            inc_pdf = True
 
-    spectrum_names, predicted_phases, confidences, backup_phases, scale_factors, reduced_spectra = spectrum_analysis.main('Spectra', 'References',
-        max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle)
+    # Keep results separate
+    results = {'XRD': {}, 'PDF': {}}
 
-    for (spectrum_fname, phase_set, confidence, backup_set, heights, final_spectrum) in zip(spectrum_names, predicted_phases, confidences, backup_phases, scale_factors, reduced_spectra):
+    # Path to trained CNN model
+    if inc_pdf:
+        model_path = 'Models/XRD_Model.h5'
+    else:
+        model_path = 'Model.h5'
+
+    # Get predictions from XRD analysis
+    results['XRD']['filenames'], results['XRD']['phases'], results['XRD']['confs'], results['XRD']['backup_phases'], \
+        results['XRD']['scale_factors'], results['XRD']['reduced_spectra'] = spectrum_analysis.main('Spectra', 'References',
+        max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle, parallel, model_path, is_pdf=False)
+
+    if inc_pdf:
+        # If specified, get predictions from PDF analysis
+        model_path = 'Models/PDF_Model.h5'
+        results['PDF']['filenames'], results['PDF']['phases'], results['PDF']['confs'], results['PDF']['backup_phases'], \
+            results['PDF']['scale_factors'], results['PDF']['reduced_spectra'] = spectrum_analysis.main('Spectra', 'References',
+            max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle, parallel, model_path, is_pdf=True)
+
+        # Aggregate XRD and PDF predictions
+        results['Merged'] = spectrum_analysis.merge_results(results, min_conf, max_phases)
+
+    else:
+        # Otherwise, rely only on predictions from XRD
+        results['Merged'] = results['XRD']
+
+    for (spectrum_fname, phase_set, confidence, backup_set, heights, final_spectrum) in \
+        zip(results['Merged']['filenames'], results['Merged']['phases'], results['Merged']['confs'], \
+        results['Merged']['backup_phases'], results['Merged']['scale_factors'], results['Merged']['reduced_spectra']):
 
         # Print phase ID info
         print('Filename: %s' % spectrum_fname)

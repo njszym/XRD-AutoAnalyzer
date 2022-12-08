@@ -1,10 +1,12 @@
 from autoXRD.spectrum_generation import strain_shifts, uniform_shifts, intensity_changes, peak_broadening, impurity_peaks, mixed
-import pymatgen as mg
-import numpy as np
-import os
-import multiprocessing
 from multiprocessing import Pool, Manager
 from pymatgen.core import Structure
+from scipy import signal
+import multiprocessing
+import pymatgen as mg
+import numpy as np
+import math
+import os
 
 
 class SpectraGenerator(object):
@@ -13,7 +15,7 @@ class SpectraGenerator(object):
     for all reference phases
     """
 
-    def __init__(self, reference_dir, num_spectra=50, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04, max_shift=0.25, impur_amt=70.0, min_angle=10.0, max_angle=80.0, separate=True):
+    def __init__(self, reference_dir, num_spectra=50, max_texture=0.6, min_domain_size=1.0, max_domain_size=100.0, max_strain=0.04, max_shift=0.25, impur_amt=70.0, min_angle=10.0, max_angle=80.0, separate=True, is_pdf=False):
         """
         Args:
             reference_dir: path to directory containing
@@ -31,6 +33,7 @@ class SpectraGenerator(object):
         self.min_angle = min_angle
         self.max_angle = max_angle
         self.separate = separate
+        self.is_pdf = is_pdf
 
     def augment(self, phase_info):
         """
@@ -48,7 +51,7 @@ class SpectraGenerator(object):
         """
 
         struc, filename = phase_info[0], phase_info[1]
-        patterns = []
+        patterns, pdf_specs = [], []
 
         if self.separate:
             patterns += strain_shifts.main(struc, self.num_spectra, self.max_strain, self.min_angle, self.max_angle)
@@ -58,6 +61,14 @@ class SpectraGenerator(object):
             patterns += impurity_peaks.main(struc, self.num_spectra, self.impur_amt, self.min_angle, self.max_angle)
         else:
             patterns += mixed.main(struc, 5*self.num_spectra, self.max_shift, self.max_strain, self.min_domain_size, self.max_domain_size,  self.max_texture, self.impur_amt, self.min_angle, self.max_angle)
+
+        if self.is_pdf:
+            for xrd in patterns:
+                xrd = np.array(xrd).flatten()
+                pdf = self.XRDtoPDF(xrd, self.min_angle, self.max_angle)
+                pdf = [[v] for v in pdf]
+                pdf_specs.append(pdf)
+            return (pdf_specs, filename)
 
         return (patterns, filename)
 
@@ -77,4 +88,18 @@ class SpectraGenerator(object):
 
             return np.array(sorted_spectra)
 
+    def XRDtoPDF(self, xrd, min_angle, max_angle):
+
+        thetas = np.linspace(min_angle/2.0, max_angle/2.0, 4501)
+        Q = [4*math.pi*math.sin(math.radians(theta))/1.5406 for theta in thetas]
+        S = [float(v) for v in xrd]
+
+        pdf = []
+        R = np.linspace(1, 40, 1000) # Only 1000 used to reduce compute time
+        integrand = [[Q[i] * S[i] * math.sin(Q[i] * r) for i in range(len(Q))] for r in R]
+
+        pdf = (2*np.trapz(integrand, Q) / math.pi)
+        pdf = list(signal.resample(pdf, 4501))
+
+        return pdf
 
