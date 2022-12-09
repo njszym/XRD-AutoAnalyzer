@@ -679,7 +679,10 @@ class PhaseIdentifier(object):
         if self.parallel:
             with Manager() as manager:
                 pool = Pool(self.num_cpu)
-                print('Running phase identification')
+                if self.is_pdf:
+                    print('Running PDF analysis')
+                else:
+                    print('Running XRD analysis')
                 all_info = list(tqdm(pool.imap(self.classify_mixture, spectrum_filenames),
                     total=len(spectrum_filenames)))
 
