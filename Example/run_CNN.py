@@ -32,7 +32,7 @@ if __name__ == '__main__':
             min_angle = float(arg.split('=')[1])
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
-        if '--unkown_thresh' in arg:
+        if '--unknown_thresh' in arg:
             unknown_threshold = float(arg.split('=')[1])
         if '--show_reduced' in arg:
             show_reduced = True
