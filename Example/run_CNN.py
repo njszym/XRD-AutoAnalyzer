@@ -1,9 +1,10 @@
 from autoXRD import spectrum_analysis, visualizer, quantifier
-import sys
-import numpy as np
-import pymatgen as mg
 import matplotlib.pyplot as plt
+import pymatgen as mg
+import numpy as np
 import time
+import sys
+import os
 
 
 if __name__ == '__main__':
@@ -38,6 +39,9 @@ if __name__ == '__main__':
             show_reduced = True
         if '--inc_pdf' in arg:
             inc_pdf = True
+
+    # Make sure at least one spectrum is provided
+    assert len(os.listdir('Spectra')) > 0, 'Please provide at least one pattern in the Spectra directory.'
 
     # Keep results separate
     results = {'XRD': {}, 'PDF': {}}

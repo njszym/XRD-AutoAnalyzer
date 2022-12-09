@@ -1,9 +1,10 @@
 from autoXRD import spectrum_analysis, visualizer, quantifier
-import sys
-import numpy as np
-import pymatgen as mg
 import matplotlib.pyplot as plt
+import pymatgen as mg
+import numpy as np
 import time
+import sys
+import os
 
 
 if __name__ == '__main__':
@@ -32,12 +33,15 @@ if __name__ == '__main__':
             min_angle = float(arg.split('=')[1])
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
-        if '--unkown_thresh' in arg:
+        if '--unknown_thresh' in arg:
             unknown_threshold = float(arg.split('=')[1])
         if '--show_reduced' in arg:
             show_reduced = True
         if '--inc_pdf' in arg:
             inc_pdf = True
+
+    # Make sure at least one spectrum is provided
+    assert len(os.listdir('Spectra')) > 0, 'Please provide at least one pattern in the Spectra directory.'
 
     # Keep results separate
     results = {'XRD': {}, 'PDF': {}}
