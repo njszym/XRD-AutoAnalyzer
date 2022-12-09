@@ -318,7 +318,7 @@ class SpectrumAnalyzer(object):
 
             # If all phases have been identified, tabulate mixture and move on to next
             if is_done:
-                reduced_spectrum = spectrum.copy()
+                reduced_spectrum = xrd_spectrum.copy()
                 confidence_list.append(indiv_conf)
                 prediction_list.append(indiv_pred)
                 scale_list.append(indiv_scale)

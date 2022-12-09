@@ -81,12 +81,13 @@ if __name__ == '__main__':
         print('Confidence: %s' % confidence)
 
         # If there are unknown peaks with intensity > threshold, raise warning
-        if 'None' not in phase_set:
+        if (len(phase_set) > 0) and ('None' not in phase_set):
             remaining_I = max(final_spectrum)
             if remaining_I > unknown_threshold:
                 print('WARNING: some peaks (I ~ %s%%) were not identified.' % int(remaining_I))
         else:
             print('WARNING: no phases were identified')
+            continue
 
         # If this option is specified, show backup predictions (2nd-most probable phases)
         if '--show_backups' in sys.argv:
