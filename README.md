@@ -48,11 +48,13 @@ This script will:
 
 4) Train a convolutional neural network on the augmented spectra.
 
-By default, training spectra will be simulated over 2θ spanning 10-80 degrees in Cu K-alpha radiation. However, this can be customized as follows:
+By default, training spectra will be simulated over 2θ spanning 10-80 degrees (assuming Cu K-alpha radiation). However, this can be customized as follows:
 
 ```
-python construct_model.py --min_angle=10.0 --max_angle=80.0 --wavelength=1.5406
+python construct_model.py --min_angle=10.0 --max_angle=80.0
 ```
+
+Different X-ray wavelengths may also be considered, but this should only be specified at inference. All patterns will be converted back to Cu K-alpha.
 
 The model creation process may require a substantial amount of computational resources depending on the size of the composition space considered. For example: performing all necessary steps to create a model in the Li-Mn-Ti-O-F space, which included 255 reference phases, required about 4 hours of computational runtime on a single core. Required computational time should scale linearly with the number of reference phases. Similarily, time is reduced linearly with the number of cores used as all processes executed here are perfectly parallel (independent of one another).
 
