@@ -103,7 +103,8 @@ if __name__ == '__main__':
             phasenames = ['%s.cif' % phase for phase in phase_set]
 
             # Plot measured spectrum with line profiles of predicted phases
-            visualizer.main('Spectra', spectrum_fname, phasenames, heights, final_spectrum, min_angle, max_angle, wavelength, save, show_reduced)
+            visualizer.main('Spectra', spectrum_fname, phasenames, heights, final_spectrum,
+                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf)
 
         if ('--weights' in sys.argv) and ('None' not in phase_set):
 

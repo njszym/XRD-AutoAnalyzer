@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt, resample
 import random
 import pymatgen as mg
+from scipy import signal
 from pymatgen.analysis.diffraction import xrd
 from skimage import restoration
 from scipy.ndimage import gaussian_filter1d
@@ -21,7 +22,8 @@ class SpectrumPlotter(object):
     (ii) line profiles of identified phases
     """
 
-    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, scale_factors, min_angle=10.0, max_angle=80.0, wavelength='CuKa', reference_dir='References'):
+    def __init__(self, spectra_dir, spectrum_fname, predicted_phases, scale_factors,
+        min_angle=10.0, max_angle=80.0, wavelength='CuKa', reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -455,8 +457,23 @@ class SpectrumPlotter(object):
 
         return best_scale
 
+def XRDtoPDF(xrd, min_angle, max_angle):
 
-def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum, min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False, show_reduced=False):
+    thetas = np.linspace(min_angle/2.0, max_angle/2.0, 4501)
+    Q = np.array([4*math.pi*math.sin(math.radians(theta))/1.5406 for theta in thetas])
+    S = np.array(xrd).flatten()
+
+    pdf = []
+    R = np.linspace(1, 40, 1000) # Only 1000 used to reduce compute time
+    integrand = Q * S * np.sin(Q * R[:, np.newaxis])
+
+    pdf = (2*np.trapz(integrand, Q) / math.pi)
+
+    return R, pdf
+
+
+def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum,
+    min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False):
 
         spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle, max_angle, wavelength)
 
@@ -496,3 +513,36 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
             plt.show()
 
         plt.close()
+
+        if inc_pdf:
+
+            r, measured_pdf = XRDtoPDF(measured_spectrum, min_angle, max_angle)
+
+            plt.figure()
+
+            plt.plot(r, measured_pdf, 'b-', label='Measured: %s' % spectrum_fname)
+
+            phase_names = [fname[:-4] for fname in predicted_phases] # remove .cif
+            color_list = ['g', 'r', 'm', 'k', 'c']
+            i = 0
+            for (angles, intensities, phase) in zip(angle_sets, intensity_sets, phase_names):
+                ys = spec_plot.get_cont_profile(angles, intensities)
+                r, ref_pdf = XRDtoPDF(ys, min_angle, max_angle)
+                plt.plot(r, ref_pdf, color=color_list[i], linestyle='dashed', label='Predicted: %s' % phase)
+                i += 1
+
+            plt.xlim(1, 30)
+            plt.legend(prop={'size': 16})
+            plt.xlabel(r'r (Å)', fontsize=16, labelpad=12)
+            plt.ylabel('G(r)', fontsize=16, labelpad=12)
+
+            if save:
+                savename = '%s_PDF.png' % spectrum_fname.split('.')[0]
+                plt.tight_layout()
+                plt.savefig(savename, dpi=400)
+                plt.close()
+
+            else:
+                plt.show()
+
+

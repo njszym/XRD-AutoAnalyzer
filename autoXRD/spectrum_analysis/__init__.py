@@ -744,7 +744,6 @@ class PhaseIdentifier(object):
 
         return [spectrum_fname, predicted_set, final_confidences, backup_set, scaling_constants, specs]
 
-#def merge_predictions(preds, confs, cutoff, max_phases):
 def merge_results(results, cutoff, max_phases):
     """
     Aggregate XRD + PDF predictions through an ensemble approach

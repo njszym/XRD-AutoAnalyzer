@@ -9,6 +9,9 @@ if __name__ == '__main__':
 
     wavelength = 'CuKa'
     min_angle, max_angle = 10.0, 80.0
+    show_reduced = False
+    inc_pdf = False
+    save = False
     phases = []
     for arg in sys.argv:
         if '--spectrum' in arg:
@@ -22,10 +25,17 @@ if __name__ == '__main__':
             min_angle = float(arg.split('=')[1])
         if '--max_angle' in arg:
             max_angle = float(arg.split('=')[1])
+        if '--show_reduced' in arg:
+            show_reduced = True
+        if '--inc_pdf' in arg:
+            inc_pdf = True
+        if '--save' in arg:
+            save = True
 
     scale_factors = None # Not known yet
     final_spectrum = None # Not known yet
-    visualizer.main('Spectra', spectrum_fname, phases, scale_factors, final_spectrum, min_angle, max_angle, wavelength)
+    visualizer.main('Spectra', spectrum_fname, phases, scale_factors, final_spectrum,
+        min_angle, max_angle, wavelength, save, show_reduced, inc_pdf)
 
     if '--weights' in sys.argv:
 
