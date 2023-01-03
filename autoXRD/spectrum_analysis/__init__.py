@@ -831,10 +831,16 @@ def merge_results(results, cutoff, max_phases):
         # Collect final backups and scale factors
         unique_backups, unique_scales = [], []
         for cmpd in unique_phases:
-            xrd_ind = xrd_phases.index(cmpd)
-            xrd_conf = xrd_confs[xrd_ind]
-            pdf_ind = pdf_phases.index(cmpd)
-            pdf_conf = pdf_confs[pdf_ind]
+            if cmpd in xrd_phases:
+                xrd_ind = xrd_phases.index(cmpd)
+                xrd_conf = xrd_confs[xrd_ind]
+            else:
+                xrd_conf = 0.0
+            if cmpd in pdf_phases:
+                pdf_ind = pdf_phases.index(cmpd)
+                pdf_conf = pdf_confs[pdf_ind]
+            else:
+                pdf_conf = 0.0
             if xrd_conf >= pdf_conf:
                 unique_backups.append(xrd_backup_phases[xrd_ind])
                 unique_scales.append(xrd_scale_factors[xrd_ind])
