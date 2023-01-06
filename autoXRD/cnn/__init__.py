@@ -152,7 +152,7 @@ def train_model(x_train, y_train, n_phases, num_epochs, is_pdf, n_dense=[3100, 1
         CustomDropout(dropout_rate),
         tf.keras.layers.Dense(n_phases, activation=tf.nn.softmax)])
 
-    # Optimized architecture for PDF analysis
+    # Optimized architecture for XRD analysis
     else:
         model = tf.keras.Sequential([
         tf.keras.layers.Conv1D(filters=64, kernel_size=35, strides=1, padding='same', activation = tf.nn.relu),
