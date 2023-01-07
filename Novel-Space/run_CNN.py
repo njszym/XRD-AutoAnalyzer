@@ -46,6 +46,11 @@ if __name__ == '__main__':
     # Keep results separate
     results = {'XRD': {}, 'PDF': {}}
 
+    # XRD/PDF ensemble requires all predictions
+    if inc_pdf:
+        final_conf = min_conf # For final (merged) predictions
+        min_conf = 10.0 # For individual (XRD/PDF) predictions
+
     # Path to trained CNN model
     if inc_pdf:
         model_path = 'Models/XRD_Model.h5'
@@ -65,7 +70,7 @@ if __name__ == '__main__':
             max_phases, cutoff_intensity, min_conf, wavelength, min_angle, max_angle, parallel, model_path, is_pdf=True)
 
         # Aggregate XRD and PDF predictions
-        results['Merged'] = spectrum_analysis.merge_results(results, min_conf, max_phases)
+        results['Merged'] = spectrum_analysis.merge_results(results, final_conf, max_phases)
 
     else:
         # Otherwise, rely only on predictions from XRD
