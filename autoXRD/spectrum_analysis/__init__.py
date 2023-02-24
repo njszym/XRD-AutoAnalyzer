@@ -263,7 +263,7 @@ class SpectrumAnalyzer(object):
             # If individual predictions have been updated recursively, use them for this iteration
             if 'updated_pred' in globals():
                 if updated_pred != None:
-                    indiv_pred, indiv_conf, indiv_scale, indiv_backup, indiv_spec = updated_pred, updated_conf, updated_scale, updated_spec, updated_backup
+                    indiv_pred, indiv_conf, indiv_scale, indiv_backup, indiv_spec = updated_pred, updated_conf, updated_scale, updated_backup, updated_spec
                     updated_pred, updated_conf, updated_scale, updated_backup, updated_spec = None, None, None, None, None
 
             phase_index = np.array(prediction).argsort()[-(i+1)]
