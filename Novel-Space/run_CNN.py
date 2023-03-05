@@ -19,6 +19,7 @@ if __name__ == '__main__':
     show_reduced = False # Whether to plot reduced spectrum (after subtraction of known phases)
     inc_pdf = False # Whether to include PDF analysis (requires trained model first)
     parallel = True # Run phase analysis in parallel across available CPUs
+    raw = False # Whether to show the raw spectrum or its denoised product
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
         if '--max_phases' in arg:
@@ -39,6 +40,8 @@ if __name__ == '__main__':
             show_reduced = True
         if '--inc_pdf' in arg:
             inc_pdf = True
+        if '--raw_spec' in arg:
+            raw = True
 
     # Make sure at least one spectrum is provided
     assert len(os.listdir('Spectra')) > 0, 'Please provide at least one pattern in the Spectra directory.'
@@ -109,7 +112,7 @@ if __name__ == '__main__':
 
             # Plot measured spectrum with line profiles of predicted phases
             visualizer.main('Spectra', spectrum_fname, phasenames, heights, final_spectrum,
-                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf)
+                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf, raw)
 
         if ('--weights' in sys.argv) and ('None' not in phase_set):
 

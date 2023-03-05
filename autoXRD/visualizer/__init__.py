@@ -23,7 +23,7 @@ class SpectrumPlotter(object):
     """
 
     def __init__(self, spectra_dir, spectrum_fname, predicted_phases, scale_factors,
-        min_angle=10.0, max_angle=80.0, wavelength='CuKa', reference_dir='References'):
+        min_angle=10.0, max_angle=80.0, wavelength='CuKa', raw=False, reference_dir='References'):
         """
         Args:
             spectrum_fname: name of file containing the
@@ -41,6 +41,7 @@ class SpectrumPlotter(object):
         self.min_angle = min_angle
         self.max_angle = max_angle
         self.wavelen = wavelength
+        self.raw = raw
 
         # If scale factors haven't been calculated yet, do it now
         # For use with the visualize script
@@ -284,16 +285,18 @@ class SpectrumPlotter(object):
         xs = np.linspace(self.min_angle, self.max_angle, 4501)
         ys = f(xs)
 
-        ## Smooth out noise
-        ys = self.smooth_spectrum(ys)
+        if not self.raw:
 
-        ## Normalize from 0 to 255
-        ys = np.array(ys) - min(ys)
-        ys = list(255*np.array(ys)/max(ys))
+            ## Smooth out noise
+            ys = self.smooth_spectrum(ys)
 
-        # Subtract background
-        background = restoration.rolling_ball(ys, radius=80)
-        ys = np.array(ys) - np.array(background)
+            ## Normalize from 0 to 255
+            ys = np.array(ys) - min(ys)
+            ys = list(255*np.array(ys)/max(ys))
+
+            # Subtract background
+            background = restoration.rolling_ball(ys, radius=80)
+            ys = np.array(ys) - np.array(background)
 
         ## Normalize from 0 to 100
         ys = np.array(ys) - min(ys)
@@ -473,9 +476,9 @@ def XRDtoPDF(xrd, min_angle, max_angle):
 
 
 def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum,
-    min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False):
+    min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False, raw=False):
 
-        spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle, max_angle, wavelength)
+        spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle, max_angle, wavelength, raw)
 
         x = np.linspace(min_angle, max_angle, 4501)
         measured_spectrum = spec_plot.formatted_spectrum

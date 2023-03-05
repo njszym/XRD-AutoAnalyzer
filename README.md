@@ -130,7 +130,13 @@ Which will yield a plot of the form:
 
 ![sample](./Example/sample-image.png)
 
-By default, the plots will be shown to the user and then discarded. However, they may instead be saved as png files with the following options:
+The spectrum shown has already been denoised and its background has been subtracted. To instead show the raw spectrum, the ```--raw_spec``` option may be added:
+
+```
+python run_CNN.py --plot --raw_spec
+```
+
+By default, all plots will be shown to the user and then discarded. However, they may instead be saved as png files with the following options:
 
 ```
 python run_CNN.py --plot --save
