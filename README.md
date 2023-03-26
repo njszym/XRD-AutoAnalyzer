@@ -100,7 +100,7 @@ Confidence: (probabilities associated with the phases above)
 
 Phase labels are denoted as ```formula_spacegroup```.
 
-By default, only phases with a confidence above 50% will be shown. To raise or lower the minimum confidence, one may specify a new bound using the ```--min_conf``` argument at runtime. Use this option with caution, as low-confidence phases are generally not reliable.
+By default, only phases with a confidence above 40% will be shown. To raise or lower the minimum confidence, one may specify a new bound using the ```--min_conf``` argument at runtime. Use this option with caution, as low-confidence phases are generally not reliable.
 
 If spectra with a range of 2θ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles (in Cu K-alpha) should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
 
