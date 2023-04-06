@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     start = time.time()
 
-    max_phases = 4 # default: a maximum 4 phases in each mixture
+    max_phases = 3 # default: a maximum 4 phases in each mixture
     cutoff_intensity = 5 # default: ID all peaks with I >= 5% maximum spectrum intensity
     min_conf = 40.0 # Minimum confidence included in predictions
     wavelength = 'CuKa' # default: spectra was measured using Cu K_alpha radiation
