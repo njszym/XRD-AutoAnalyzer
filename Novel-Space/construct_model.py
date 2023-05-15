@@ -19,6 +19,7 @@ if __name__ == '__main__':
     skip_filter = False
     include_elems = True
     enforce_order = False
+    oxi_filter = False
     inc_pdf = False
     for arg in sys.argv:
         if '--max_texture' in arg:
@@ -47,6 +48,8 @@ if __name__ == '__main__':
             include_elems = False
         if '--enforce_order' in arg:
             enforce_order = True
+        if '--oxi_filter' in arg:
+            oxi_filter = True
         if '--separate_artifacts' in arg:
             separate = True
         if '--inc_pdf' in arg:
@@ -59,11 +62,11 @@ if __name__ == '__main__':
         # Filter CIF files to create unique reference phases
         assert 'All_CIFs' in os.listdir('.'), 'No All_CIFs directory was provided. Please create or use --skip_filter'
         assert 'References' not in os.listdir('.'), 'References directory already exists. Please remove or use --skip_filter'
-        tabulate_cifs.main('All_CIFs', 'References', include_elems, enforce_order)
+        tabulate_cifs.main('All_CIFs', 'References', oxi_filter, include_elems, enforce_order)
 
     else:
         assert 'References' in os.listdir('.'), '--skip_filter was specified, but no References directory was provided'
-
+"""
     if '--include_ns' in sys.argv:
         # Generate hypothetical solid solutions
         solid_solns.main('References')
@@ -99,3 +102,4 @@ if __name__ == '__main__':
         test_fraction = 0.2
         cnn.main(pdf_specs, num_epochs, test_fraction, is_pdf=True)
         os.rename('Model.h5', 'Models/PDF_Model.h5')
+"""

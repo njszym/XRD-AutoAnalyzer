@@ -48,6 +48,12 @@ This script will:
 
 4) Train a convolutional neural network on the augmented spectra.
 
+In cases where the user supplies many possible reference phases to may or may not be reasonably accessible under common experimental conditions, it is often useful to exclude any compounds that place elements in unusual oxidation states. This can be done by adding the option:
+
+```
+python construct_model.py --oxi_filter
+```
+
 By default, training spectra will be simulated over 2θ spanning 10-80 degrees (assuming Cu K-alpha radiation). However, this can be customized as follows:
 
 ```
