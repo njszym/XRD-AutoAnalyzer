@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
     else:
         assert 'References' in os.listdir('.'), '--skip_filter was specified, but no References directory was provided'
-"""
+
     if '--include_ns' in sys.argv:
         # Generate hypothetical solid solutions
         solid_solns.main('References')
@@ -102,4 +102,3 @@ if __name__ == '__main__':
         test_fraction = 0.2
         cnn.main(pdf_specs, num_epochs, test_fraction, is_pdf=True)
         os.rename('Model.h5', 'Models/PDF_Model.h5')
-"""
