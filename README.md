@@ -26,7 +26,7 @@ A pre-trained model for the Li-Mn-Ti-O-F chemical space is available in the ```E
 python run_CNN.py
 ```
 
-The process should take about 1-2 minutes. Runtime is typically ~10 seconds per spectrum on a single CPU, but may vary from system to system. Parallelization is also possible, and all available CPU will be utilized by default.
+The process should take about 1-2 minutes. Runtime is typically ~10 seconds per spectrum on a single CPU, but may vary from system to system. Parallelization is also possible, and all available CPU will be utilized by default. GPU can also be used for the training and inference steps.
 
 Once all spectra have been classified, each set of predicted phases will be printed along with their associated probabilities (%). These represent the confidence associated with each predicted phase. Generally, higher values of confidence are associated with more reliable predictions.
 
