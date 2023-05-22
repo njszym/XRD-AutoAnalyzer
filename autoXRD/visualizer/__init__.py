@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt, resample
+import matplotlib
 import random
 import pymatgen as mg
 from scipy import signal
@@ -500,9 +501,13 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
         if show_reduced:
             plt.plot(x, reduced_spectrum, color='orange', linestyle='dashed', label='Reduced spectrum')
 
+        # Variable legend and ylim
+        legend_labels = ['Measured: %s' % spectrum_fname] + list(phase_names)
+        longest_label_len = len(max(legend_labels, key=len))
+        plt.legend(prop={'size': int(16.0-longest_label_len*0.175)},loc='upper left')
+        plt.ylim(0, 105+(len(phase_names)+1)*10)
+
         plt.xlim(min_angle, max_angle)
-        plt.ylim(0, 105)
-        plt.legend(prop={'size': 16})
         plt.xlabel(r'2$\Theta$', fontsize=16, labelpad=12)
         plt.ylabel('Intensity', fontsize=16, labelpad=12)
 
@@ -517,6 +522,7 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
 
         plt.close()
 
+"""
         if inc_pdf:
 
             r, measured_pdf = XRDtoPDF(measured_spectrum, min_angle, max_angle)
@@ -547,5 +553,4 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
 
             else:
                 plt.show()
-
-
+"""
