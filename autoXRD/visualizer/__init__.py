@@ -512,7 +512,7 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
         plt.ylabel('Intensity', fontsize=16, labelpad=12)
 
         if save:
-            savename = '%s.png' % spectrum_fname.split('.')[0]
+            savename = '%s.png' % '.'.join(spectrum_fname.split('.')[:-1])
             plt.tight_layout()
             plt.savefig(savename, dpi=400)
             plt.close()
