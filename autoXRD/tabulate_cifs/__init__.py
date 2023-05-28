@@ -14,7 +14,7 @@ common_oxi = {
     'Be': [2],  # Beryllium
     'B': [3],  # Boron
     'C': [-4, 4],  # Carbon
-    'N': [-3, 3, 5],  # Nitrogen
+    'N': [-3],  # Nitrogen
     'O': [-2],  # Oxygen
     'F': [-1],  # Fluorine
     'Ne': [0],  # Neon
@@ -24,7 +24,7 @@ common_oxi = {
     'Si': [-4, 4],  # Silicon
     'P': [-3, 3, 5],  # Phosphorus
     'S': [-2, 4, 6],  # Sulfur
-    'Cl': [-1, 1, 3, 5, 7],  # Chlorine
+    'Cl': [-1],  # Chlorine
     'Ar': [0],  # Argon
     'K': [1],  # Potassium
     'Ca': [2],  # Calcium
@@ -42,7 +42,7 @@ common_oxi = {
     'Ge': [2, 4],  # Germanium
     'As': [-3, 3, 5],  # Arsenic
     'Se': [-2, 4, 6],  # Selenium
-    'Br': [-1, 1, 3, 5],  # Bromine
+    'Br': [-1],  # Bromine
     'Kr': [0],  # Krypton
     'Rb': [1],  # Rubidium
     'Sr': [2],  # Strontium
@@ -60,8 +60,8 @@ common_oxi = {
     'Sn': [2, 4],  # Tin
     'Sb': [-3, 3, 5],  # Antimony
     'Te': [-2, 4, 6],  # Tellurium
-    'I': [-1, 1, 3, 5, 7],  # Iodine
-    'Xe': [0, 2, 4, 6],  # Xenon
+    'I': [-1],  # Iodine
+    'Xe': [0],  # Xenon
     'Cs': [1],  # Cesium
     'Ba': [2],  # Barium
     'La': [3],  # Lanthanum
