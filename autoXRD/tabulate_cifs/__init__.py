@@ -2,10 +2,13 @@ from itertools import combinations_with_replacement
 from pymatgen.core import Structure, Composition
 from pymatgen.analysis import structure_matcher
 from itertools import product
+from functools import reduce
 from shutil import copytree
 import pymatgen as mg
 import numpy as np
+import itertools
 import shutil
+import math
 import os
 import re
 
@@ -115,6 +118,27 @@ common_oxi = {
     'Hs': [8],  # Hassium
 }
 
+def round_dict_values(data):
+    """
+    Used to round off coefficients
+    of highly complex formulae.
+    """
+
+    for key, value in data.items():
+        if value > 1e5:
+            data[key] = round(value, -3)
+        elif value > 1e4:
+            data[key] = round(value, -2)
+        elif value > 1e3:
+            data[key] = round(value, -1)
+
+    # Reduce coefficients by gcd
+    gcd = reduce(math.gcd, list(data.values()))
+    for key in data:
+        data[key] = int(data[key]/gcd)
+
+    return data
+
 def parse_formula(formula):
     element_pattern = r'([A-Z][a-z]*)(\d*)'
     compound_pattern = r'\(([A-Z][a-z]*\d*)\)(\d*)'
@@ -129,6 +153,19 @@ def parse_formula(formula):
     # Parse elements and their counts
     parsed = re.findall(element_pattern, formula)
     counts = {element: int(count) if count else 1 for element, count in parsed}
+
+    multi_oxi = False
+    for elem in counts.keys():
+        if len(common_oxi[elem]) > 1:
+            multi_oxi = True
+
+    """
+    If coefficients of the chemical formula are unreasonably large, reduce them by rounding.
+    However, only do this in the case of multiple oxidation states per element.
+    Without rounding, these can lead to combinatorial explosion.
+    """
+    if multi_oxi:
+        counts = round_dict_values(counts)
 
     return counts
 
