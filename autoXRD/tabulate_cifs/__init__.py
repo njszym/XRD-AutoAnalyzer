@@ -1,10 +1,13 @@
+from itertools import combinations_with_replacement
 from pymatgen.core import Structure, Composition
 from pymatgen.analysis import structure_matcher
+from itertools import product
 from shutil import copytree
 import pymatgen as mg
 import numpy as np
 import shutil
 import os
+import re
 
 
 common_oxi = {
@@ -112,6 +115,66 @@ common_oxi = {
     'Hs': [8],  # Hassium
 }
 
+def parse_formula(formula):
+    element_pattern = r'([A-Z][a-z]*)(\d*)'
+    compound_pattern = r'\(([A-Z][a-z]*\d*)\)(\d*)'
+
+    # Expand compounds in parentheses
+    while '(' in formula:
+        match = re.search(compound_pattern, formula)
+        compound, multiplier = match.groups()
+        expanded = ''.join(f"{element}{int(count)*int(multiplier)}" for element, count in re.findall(element_pattern, compound))
+        formula = formula.replace(match.group(), expanded)
+
+    # Parse elements and their counts
+    parsed = re.findall(element_pattern, formula)
+    counts = {element: int(count) if count else 1 for element, count in parsed}
+
+    return counts
+
+def balance_oxidation_states(formula, oxidation_states):
+    """
+    Note: this is *not* an exhaustive oxidation state solver.
+    Rather, it will find if there exists at least one solution
+    that satisfies charge balance given the possible oxidation
+    states. This method is fast and suitable for the current
+    application; however, caution should be used if one
+    implements it outside of XRD-AutoAnalyzer.
+    """
+    element_counts = parse_formula(formula)
+    elements = list(element_counts.keys())
+
+    balanced_combinations = []
+
+    for el in elements:
+        if len(oxidation_states[el]) > 1:
+            multi_valent_element = el
+            multi_valent_count = element_counts[el]
+            possible_states = oxidation_states[el]
+
+            combinations = list(combinations_with_replacement(possible_states, multi_valent_count))
+            for combination in combinations:
+                sum_states = sum([oxidation_states[el][0]*element_counts[el] for el in elements if el != multi_valent_element])
+                sum_states += sum(combination)
+
+                if sum_states == 0:
+                    unique_combination = tuple(set(combination))
+                    if len(unique_combination) == 1:
+                        unique_combination = unique_combination[0]
+                    balanced_combinations.append(
+                        {**{el: oxidation_states[el][0] for el in elements if el != multi_valent_element},
+                         multi_valent_element: unique_combination})
+
+    if not balanced_combinations:  # no multivalent elements or no solution found yet
+        all_state_combinations = product(*[oxidation_states[el] for el in elements])
+
+        for state_combination in all_state_combinations:
+            if sum(element_counts[el] * state for el, state in zip(elements, state_combination)) == 0:
+                balanced_combination = dict(zip(elements, state_combination))
+                if balanced_combination not in balanced_combinations:
+                    balanced_combinations.append(balanced_combination)
+
+    return balanced_combinations
 
 class StructureFilter(object):
     """
@@ -274,7 +337,7 @@ def oxi_filter(cif_dir):
         struc = Structure.from_file('%s/%s' % (cif_dir, filename))
         formula = struc.composition.get_integer_formula_and_factor()[0]
 
-        oxi_guesses = Composition(formula).oxi_state_guesses()
+        oxi_guesses = balance_oxidation_states(formula, common_oxi)
 
         if len(oxi_guesses) > 0:
 
@@ -282,8 +345,13 @@ def oxi_filter(cif_dir):
             for oxi_dict in oxi_guesses:
                 plausible = True
                 for elem in oxi_dict.keys():
-                    if int(oxi_dict[elem]) not in common_oxi[elem]:
-                        plausible = False
+                    if type(oxi_dict[elem]) is tuple:
+                        for oxi_state in oxi_dict[elem]:
+                            if int(oxi_state) not in common_oxi[elem]:
+                                plausible = False
+                    else:
+                        if int(oxi_dict[elem]) not in common_oxi[elem]:
+                            plausible = False
                 check_list.append(plausible)
 
             if True in check_list:
