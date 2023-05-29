@@ -9,6 +9,7 @@ import numpy as np
 import itertools
 import shutil
 import math
+import time
 import os
 import re
 
@@ -169,7 +170,7 @@ def parse_formula(formula):
 
     return counts
 
-def balance_oxidation_states(formula, oxidation_states):
+def balance_oxidation_states(formula, oxidation_states, max_time=10):
     """
     Note: this is *not* an exhaustive oxidation state solver.
     Rather, it will find if there exists at least one solution
@@ -188,12 +189,13 @@ def balance_oxidation_states(formula, oxidation_states):
             multi_valent_element = el
             multi_valent_count = element_counts[el]
             possible_states = oxidation_states[el]
-
-            combinations = list(combinations_with_replacement(possible_states, multi_valent_count))
-            for combination in combinations:
+            start_time=time.time()
+            for combination in combinations_with_replacement(possible_states, multi_valent_count):
+                current_time=time.time()
                 sum_states = sum([oxidation_states[el][0]*element_counts[el] for el in elements if el != multi_valent_element])
                 sum_states += sum(combination)
-
+                if current_time - start_time > max_time:
+                    break
                 if sum_states == 0:
                     unique_combination = tuple(set(combination))
                     if len(unique_combination) == 1:
@@ -201,6 +203,7 @@ def balance_oxidation_states(formula, oxidation_states):
                     balanced_combinations.append(
                         {**{el: oxidation_states[el][0] for el in elements if el != multi_valent_element},
                          multi_valent_element: unique_combination})
+                    break
 
     if not balanced_combinations:  # no multivalent elements or no solution found yet
         all_state_combinations = product(*[oxidation_states[el] for el in elements])
