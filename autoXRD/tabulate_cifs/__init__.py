@@ -1,9 +1,14 @@
+from pymatgen.core import Structure, Composition,PeriodicSite
+from pymatgen.analysis.diffraction.xrd import XRDCalculator
+from scipy.signal import find_peaks, filtfilt, resample
 from itertools import combinations_with_replacement
-from pymatgen.core import Structure, Composition
 from pymatgen.analysis import structure_matcher
+from scipy.ndimage import gaussian_filter1d
 from itertools import product
+from scipy import interpolate
 from functools import reduce
 from shutil import copytree
+from pyts import metrics
 import pymatgen as mg
 import numpy as np
 import itertools
@@ -12,6 +17,7 @@ import math
 import time
 import os
 import re
+import copy
 
 
 common_oxi = {
@@ -118,6 +124,181 @@ common_oxi = {
     'Bh': [7],  # Bohrium
     'Hs': [8],  # Hassium
 }
+
+def calc_std_dev(two_theta, tau):
+    """
+    calculate standard deviation based on angle (two theta) and domain size (tau)
+    Args:
+        two_theta: angle in two theta space
+        tau: domain size in nm
+    Returns:
+        standard deviation for gaussian kernel
+    """
+    ## Calculate FWHM based on the Scherrer equation
+    K = 0.9 ## shape factor
+    wavelength = XRDCalculator().wavelength * 0.1 ## angstrom to nm
+    theta = np.radians(two_theta/2.) ## Bragg angle in radians
+    beta = (K * wavelength) / (np.cos(theta) * tau) # in radians
+
+    ## Convert FWHM to std deviation of gaussian
+    sigma = np.sqrt(1/(2*np.log(2)))*0.5*np.degrees(beta)
+    return sigma**2
+
+def remap_pattern(angles, intensities):
+
+    steps = np.linspace(10, 100, 4501)
+    signals = np.zeros([len(angles), steps.shape[0]])
+
+    for i, ang in enumerate(angles):
+        # Map angle to closest datapoint step
+        idx = np.argmin(np.abs(ang-steps))
+        signals[i,idx] = intensities[i]
+    domain_size = 25.0
+    step_size = (100-10)/4501
+    for i in range(signals.shape[0]):
+        row = signals[i,:]
+        ang = steps[np.argmax(row)]
+        std_dev = calc_std_dev(ang, domain_size)
+        # Gaussian kernel expects step size 1 -> adapt std_dev
+        signals[i,:] = gaussian_filter1d(row, np.sqrt(std_dev)*1/step_size, mode='constant')
+
+    # Combine signals
+    signal = np.sum(signals, axis=0)
+
+    # Normalize signal
+    norm_signal = 100 * signal / max(signal)
+
+    # Combine signals
+    signal = np.sum(signals, axis=0)
+
+    # Normalize signal
+    norm_signal = 100 * signal / max(signal)
+
+    return norm_signal
+
+def smooth_spectrum(spectrum, n=20):
+    """
+    Process and remove noise from the spectrum.
+
+    Args:
+        spectrum: list of intensities as a function of 2-theta
+        n: parameters used to control smooth. Larger n means greater smoothing.
+            20 is typically a good number such that noise is reduced while
+            still retaining minor diffraction peaks.
+    Returns:
+        smoothed_ys: processed spectrum after noise removal
+    """
+
+    # Smoothing parameters defined by n
+    b = [1.0 / n] * n
+    a = 1
+
+    # Filter noise
+    smoothed_ys = filtfilt(b, a, spectrum)
+
+    return smoothed_ys
+
+def strip_spectrum(warped_spectrum, orig_y):
+    """
+    Subtract one spectrum from another. Note that when subtraction produces
+    negative intensities, those values are re-normalized to zero. This way,
+    the CNN can handle the spectrum reliably.
+
+    Args:
+        warped_spectrum: spectrum associated with the identified phase
+        orig_y: original (measured) spectrum
+    Returns:
+        fixed_y: resulting spectrum from the subtraction of warped_spectrum
+            from orig_y
+    """
+
+    # Subtract predicted spectrum from measured spectrum
+    stripped_y = orig_y - warped_spectrum
+
+    # Normalize all negative values to 0.0
+    fixed_y = []
+    for val in stripped_y:
+        if val < 0:
+            fixed_y.append(0.0)
+        else:
+            fixed_y.append(val)
+
+    return fixed_y
+
+def scale_spectrum(pred_y, obs_y):
+    """
+    Scale the magnitude of a calculated spectrum associated with an identified
+    phase so that its peaks match with those of the measured spectrum being classified.
+
+    Args:
+        pred_y: spectrum calculated from the identified phase after fitting
+            has been performed along the x-axis using DTW
+        obs_y: observed (experimental) spectrum containing all peaks
+    Returns:
+        scaled_spectrum: spectrum associated with the reference phase after scaling
+            has been performed to match the peaks in the measured pattern.
+    """
+
+    # Ensure inputs are numpy arrays
+    pred_y = np.array(pred_y)
+    obs_y = np.array(obs_y)
+
+    # Find scaling constant that minimizes MSE between pred_y and obs_y
+    all_mse = []
+    for scale_spectrum in np.linspace(1.1, 0.05, 101):
+        ydiff = obs_y - (scale_spectrum*pred_y)
+        mse = np.mean(ydiff**2)
+        all_mse.append(mse)
+    best_scale = np.linspace(1.0, 0.05, 101)[np.argmin(all_mse)]
+    scaled_spectrum = best_scale*np.array(pred_y)
+
+    return scaled_spectrum, best_scale
+
+def get_reduced_pattern(y1, y2, last_normalization=1.0):
+    """
+    Subtract y1 from y2 using dynamic time warping (DTW) and return the new spectrum.
+    Returns:
+        stripped_y: new spectrum obtained by subtrating the peaks of the identified phase
+    """
+
+    # Convert to numpy arrays
+    pred_y = np.array(y1)
+    orig_y = np.array(y2)
+
+    # Downsample spectra (helps reduce time for DTW)
+    downsampled_res = 0.1 # new resolution: 0.1 degrees
+    num_pts = int((100-10) / downsampled_res)
+    orig_y = resample(orig_y, num_pts)
+    pred_y = resample(pred_y, num_pts)
+
+    # Calculate window size for DTW
+    allow_shifts = 0.75 # Allow shifts up to 0.75 degrees
+    window_size = int(allow_shifts * num_pts / (100-10))
+
+    # Get warped spectrum (DTW)
+    distance, path = metrics.dtw(pred_y, orig_y, method='sakoechiba', options={'window_size': window_size}, return_path=True)
+    index_pairs = path.transpose()
+    warped_spectrum = orig_y.copy()
+    for ind1, ind2 in index_pairs:
+        distance = abs(ind1 - ind2)
+        if distance <= window_size:
+            warped_spectrum[ind2] = pred_y[ind1]
+        else:
+            warped_spectrum[ind2] = 0.0
+
+    # Now, upsample spectra back to their original size (4501)
+    warped_spectrum = resample(warped_spectrum, 4501)
+    orig_y = resample(orig_y, 4501)
+
+    # Scale warped spectrum so y-values match measured spectrum
+    scaled_spectrum, scaling_constant = scale_spectrum(warped_spectrum, orig_y)
+
+    # Subtract scaled spectrum from measured spectrum
+    stripped_y = strip_spectrum(scaled_spectrum, orig_y)
+    stripped_y = smooth_spectrum(stripped_y)
+    stripped_y = np.array(stripped_y) - min(stripped_y)
+
+    return stripped_y
 
 def round_dict_values(data):
     """
@@ -301,12 +482,72 @@ class StructureFilter(object):
 
         matcher = structure_matcher.StructureMatcher(scale=True, attempt_supercell=True, primitive_cell=False)
 
+        XRD_calculator = XRDCalculator(wavelength='CuKa', symprec = 0.0)
+
         unique_frameworks = []
         for struc_1 in stoich_strucs:
+
             unique = True
             for struc_2 in unique_frameworks:
+
+                # Check if structures are identical. If so, exclude.
                 if matcher.fit(struc_1, struc_2):
                     unique = False
+
+                # Check if compositions are similar If so, check structural framework.
+                temp_struc_1 = struc_1.copy()
+                reduced_comp_1_dict = temp_struc_1.composition.remove_charges().reduced_composition.to_reduced_dict
+                divider_1 = 1
+
+                for key in reduced_comp_1_dict:
+                    divider_1 = max(divider_1,reduced_comp_1_dict[key])
+
+                reduced_comp_1 = temp_struc_1.composition.remove_charges().reduced_composition/divider_1
+                temp_struc_2 = struc_2.copy()
+                reduced_comp_2_dict = temp_struc_2.composition.remove_charges().reduced_composition.to_reduced_dict
+                divider_2 = 1
+
+                for key in reduced_comp_2_dict:
+                    divider_2 = max(divider_2,reduced_comp_2_dict[key])
+                reduced_comp_2 = temp_struc_2.composition.remove_charges().reduced_composition/divider_2
+
+                if reduced_comp_1.almost_equals(reduced_comp_2, atol=0.5):
+
+                    # Replace with dummy species (H) for structural framework check.
+                    temp_struc_1 = struc_1.copy()
+                    for index,site in enumerate(temp_struc_1.sites):
+                        site_dict = site.as_dict()
+                        site_dict['species'] = []
+                        site_dict['species'].append({'element': 'H', 'oxidation_state': 0.0, 'occu': 1.0}) # dummy species
+                        temp_struc_1[index]=PeriodicSite.from_dict(site_dict)
+                    temp_struc_2 = struc_2.copy()
+                    for index,site in enumerate(temp_struc_2.sites):
+                        site_dict = site.as_dict()
+                        site_dict['species'] = []
+                        site_dict['species'].append({'element': 'H', 'oxidation_state': 0.0, 'occu': 1.0}) # dummy species
+                        temp_struc_2[index]=PeriodicSite.from_dict(site_dict)
+
+                    # Checking structural framework.
+                    if matcher.fit(temp_struc_1, temp_struc_2):
+
+                        # Before excluding, check if their XRD patterns differ.
+                        """
+                        This check is necessary as sometimes materials with identical compositions can adopt the
+                        same structural framework but still differ in their XRD, e.g., when individual site
+                        occupancies differ between them. For example, site inversion in spinels.
+
+                        Accordingly, we still include identical structures/compositions in the cases
+                        where their XRD patterns differ by some predefined amount.
+                        """
+                        y_1 = remap_pattern(XRD_calculator.get_pattern(struc_1, scaled=True, two_theta_range=(10,100)).x, XRD_calculator.get_pattern(struc_1, scaled=True, two_theta_range=(10,100)).y)
+                        y_2 = remap_pattern(XRD_calculator.get_pattern(struc_2, scaled=True, two_theta_range=(10,100)).x, XRD_calculator.get_pattern(struc_2, scaled=True, two_theta_range=(10,100)).y)
+                        reduced_pattern=np.array(get_reduced_pattern(y_1,y_2))
+
+                        # If 20% peak intensity remains after subtracting one pattern from the other.
+                        diff_threshold = 20.0
+                        if (reduced_pattern < diff_threshold).all():
+                            unique = False
+
             if unique:
                 unique_frameworks.append(struc_1)
 
@@ -426,12 +667,12 @@ def write_cifs(unique_strucs, dir, include_elems):
             struc.to(filename=filepath, fmt='cif')
         except:
             try:
-                print('%s Space group cant be determined, lowering tolerance' % str(f))
+                print('%s Space group cannot be determined, lowering tolerance' % str(f))
                 sg = struc.get_space_group_info(symprec=0.1, angle_tolerance=5.0)[1]
                 filepath = '%s/%s_%s.cif' % (dir, f, sg)
                 struc.to(filename=filepath, fmt='cif')
             except:
-                print('%s Space group cant be determined even after lowering tolerance, Setting to None' % str(f))
+                print('%s Space group cannot be determined even after lowering tolerance, Setting to None' % str(f))
 
     assert len(os.listdir(dir)) > 0, 'Something went wrong. No reference phases were found.'
 
