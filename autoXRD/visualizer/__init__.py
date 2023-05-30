@@ -504,7 +504,7 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
         # Variable legend and ylim
         legend_labels = ['Measured: %s' % spectrum_fname] + list(phase_names)
         longest_label_len = len(max(legend_labels, key=len))
-        plt.legend(prop={'size': int(16.0-longest_label_len*0.175)},loc='upper left')
+        plt.legend(prop={'size': int(16.0-longest_label_len*0.1)},loc='upper left')
         plt.ylim(0, 105+(len(phase_names)+1)*10)
 
         plt.xlim(min_angle, max_angle)
