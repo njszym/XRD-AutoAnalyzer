@@ -1,4 +1,4 @@
-from pymatgen.core import Structure, Composition,PeriodicSite
+from pymatgen.core import Structure, Composition, PeriodicSite
 from pymatgen.analysis.diffraction.xrd import XRDCalculator
 from scipy.signal import find_peaks, filtfilt, resample
 from itertools import combinations_with_replacement
@@ -322,6 +322,11 @@ def round_dict_values(data):
     return data
 
 def parse_formula(formula):
+
+    # Convert to alphabetical (no parentheses)
+    c = Composition(formula)
+    formula = c.alphabetical_formula.replace(' ', '')
+
     element_pattern = r'([A-Z][a-z]*)(\d*)'
     compound_pattern = r'\(([A-Z][a-z]*\d*)\)(\d*)'
 
