@@ -20,6 +20,7 @@ if __name__ == '__main__':
     inc_pdf = False # Whether to include PDF analysis (requires trained model first)
     parallel = True # Run phase analysis in parallel across available CPUs
     raw = False # Whether to show the raw spectrum or its denoised product
+    show_indiv = False # Whether to show individual predictions from XRD and PDF
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
         if '--max_phases' in arg:
@@ -42,6 +43,8 @@ if __name__ == '__main__':
             inc_pdf = True
         if '--raw_spec' in arg:
             raw = True
+        if '--show_indiv' in arg:
+            show_indiv = True
 
     # Make sure at least one spectrum is provided
     assert len(os.listdir('Spectra')) > 0, 'Please provide at least one pattern in the Spectra directory.'
@@ -79,6 +82,7 @@ if __name__ == '__main__':
         # Otherwise, rely only on predictions from XRD
         results['Merged'] = results['XRD']
 
+    ph_index = 0
     for (spectrum_fname, phase_set, confidence, backup_set, heights, final_spectrum) in \
         zip(results['Merged']['filenames'], results['Merged']['phases'], results['Merged']['confs'], \
         results['Merged']['backup_phases'], results['Merged']['scale_factors'], results['Merged']['reduced_spectra']):
@@ -100,6 +104,14 @@ if __name__ == '__main__':
         # If this option is specified, show backup predictions (2nd-most probable phases)
         if '--show_backups' in sys.argv:
             print('Alternative phases: %s' % backup_set)
+
+        if show_indiv:
+
+            print('XRD predicted phases: %s' % results['XRD']['phases'][ph_index])
+            print('XRD confidence: %s' % results['XRD']['confs'][ph_index])
+            print('PDF predicted phases: %s' % results['PDF']['phases'][ph_index])
+            print('PDF confidence: %s' % results['PDF']['confs'][ph_index])
+            ph_index += 1
 
         if ('--plot' in sys.argv) and ('None' not in phase_set):
 
