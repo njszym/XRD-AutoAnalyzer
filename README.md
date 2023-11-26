@@ -209,6 +209,8 @@ All runtime arguments described in the previous section hold for PDF analysis. T
 python run_CNN.py --inc_pdf --plot --both
 ```
 
-In addition to the XRD pattern, this will generate a virtual PDF with all identified phases - an example is given below:
+In addition to the XRD pattern, this will generate a virtual PDF with all identified phases - for example:
 
 ![pdf_sample](./PDF_Example/sample-image.png)
+
+This spectrum is available in the ``PDF_Example``` directory, which contains two pre-trained models for XRD and PDF analysis in the Li-La-Zr-O space.
