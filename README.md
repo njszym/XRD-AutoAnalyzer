@@ -202,3 +202,13 @@ Following a similar procedure as described above for standalone XRD analysis, bo
 ```
 python run_CNN.py --inc_pdf
 ```
+
+All runtime arguments described in the previous section hold for PDF analysis. The user can also choose to plot the virtual PDF by adding two arguments:
+
+```
+python run_CNN.py --inc_pdf --plot --both
+```
+
+Which will generate, for example, a plot of the form below:
+
+![pdf_sample](./PDF_Example/sample-image.png)

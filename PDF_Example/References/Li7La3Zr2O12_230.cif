@@ -1,0 +1,160 @@
+
+#(C) 2021 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_238685-ICSD
+_database_code_ICSD 238685
+_audit_creation_date 2016-02-01
+_chemical_name_common 'Lanthanum lithium zirconium oxide (3/7/2/12)'
+_chemical_formula_structural 'La3 Li7 Zr2 O12'
+_chemical_formula_sum 'La3 Li7 O12 Zr2'
+_chemical_name_structure_type Li7La3Zr2O12(cub)
+_exptl_crystal_density_diffrn 4.87
+_diffrn_ambient_temperature 1273.
+_citation_title 'Origin of high Li+ conduction in doped Li7 La3 Zr2 O12 garnets'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Chemistry of Materials' 2015 27 5491 5494 CMATEX
+loop_
+_citation_author_citation_id
+_citation_author_name
+primary 'Chen, Yan'
+primary 'Rangasamy, Ezhiylmurugan'
+primary 'Liang, Chengdu'
+primary 'An, Ke'
+_cell_length_a 13.1842(3)
+_cell_length_b 13.1842(3)
+_cell_length_c 13.1842(3)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 2291.72
+_cell_formula_units_Z 8
+_space_group_name_H-M_alt 'I a -3 d'
+_space_group_IT_number 230
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 '-z+3/4, y+1/4, x+3/4'
+2 'z+3/4, -y+3/4, x+1/4'
+3 'z+1/4, y+3/4, -x+3/4'
+4 '-z+1/4, -y+1/4, -x+1/4'
+5 'y+1/4, x+3/4, -z+3/4'
+6 '-y+3/4, x+1/4, z+3/4'
+7 'y+3/4, -x+3/4, z+1/4'
+8 '-y+1/4, -x+1/4, -z+1/4'
+9 'x+3/4, -z+3/4, y+1/4'
+10 'x+1/4, z+3/4, -y+3/4'
+11 '-x+3/4, z+1/4, y+3/4'
+12 '-x+1/4, -z+1/4, -y+1/4'
+13 'z+3/4, -y+1/4, -x+3/4'
+14 '-z+3/4, y+3/4, -x+1/4'
+15 '-z+1/4, -y+3/4, x+3/4'
+16 'z+1/4, y+1/4, x+1/4'
+17 '-y+1/4, -x+3/4, z+3/4'
+18 'y+3/4, -x+1/4, -z+3/4'
+19 '-y+3/4, x+3/4, -z+1/4'
+20 'y+1/4, x+1/4, z+1/4'
+21 '-x+3/4, z+3/4, -y+1/4'
+22 '-x+1/4, -z+3/4, y+3/4'
+23 'x+3/4, -z+1/4, -y+3/4'
+24 'x+1/4, z+1/4, y+1/4'
+25 '-z+1/2, x+1/2, y'
+26 'z+1/2, x, -y+1/2'
+27 'z, -x+1/2, y+1/2'
+28 '-z, -x, -y'
+29 'y, -z+1/2, x+1/2'
+30 '-y+1/2, z+1/2, x'
+31 'y+1/2, z, -x+1/2'
+32 '-y, -z, -x'
+33 'x+1/2, y, -z+1/2'
+34 'x, -y+1/2, z+1/2'
+35 '-x+1/2, y+1/2, z'
+36 '-x, -y, -z'
+37 'z+1/2, -x+1/2, -y'
+38 '-z+1/2, -x, y+1/2'
+39 '-z, x+1/2, -y+1/2'
+40 'z, x, y'
+41 '-y, z+1/2, -x+1/2'
+42 'y+1/2, -z+1/2, -x'
+43 '-y+1/2, -z, x+1/2'
+44 'y, z, x'
+45 '-x+1/2, -y, z+1/2'
+46 '-x, y+1/2, -z+1/2'
+47 'x+1/2, -y+1/2, -z'
+48 'x, y, z'
+49 '-z+1/4, y+3/4, x+1/4'
+50 'z+1/4, -y+1/4, x+3/4'
+51 'z+3/4, y+1/4, -x+1/4'
+52 '-z+3/4, -y+3/4, -x+3/4'
+53 'y+3/4, x+1/4, -z+1/4'
+54 '-y+1/4, x+3/4, z+1/4'
+55 'y+1/4, -x+1/4, z+3/4'
+56 '-y+3/4, -x+3/4, -z+3/4'
+57 'x+1/4, -z+1/4, y+3/4'
+58 'x+3/4, z+1/4, -y+1/4'
+59 '-x+1/4, z+3/4, y+1/4'
+60 '-x+3/4, -z+3/4, -y+3/4'
+61 'z+1/4, -y+3/4, -x+1/4'
+62 '-z+1/4, y+1/4, -x+3/4'
+63 '-z+3/4, -y+1/4, x+1/4'
+64 'z+3/4, y+3/4, x+3/4'
+65 '-y+3/4, -x+1/4, z+1/4'
+66 'y+1/4, -x+3/4, -z+1/4'
+67 '-y+1/4, x+1/4, -z+3/4'
+68 'y+3/4, x+3/4, z+3/4'
+69 '-x+1/4, z+1/4, -y+3/4'
+70 '-x+3/4, -z+1/4, y+1/4'
+71 'x+1/4, -z+3/4, -y+1/4'
+72 'x+3/4, z+3/4, y+3/4'
+73 '-z, x, y+1/2'
+74 'z, x+1/2, -y'
+75 'z+1/2, -x, y'
+76 '-z+1/2, -x+1/2, -y+1/2'
+77 'y+1/2, -z, x'
+78 '-y, z, x+1/2'
+79 'y, z+1/2, -x'
+80 '-y+1/2, -z+1/2, -x+1/2'
+81 'x, y+1/2, -z'
+82 'x+1/2, -y, z'
+83 '-x, y, z+1/2'
+84 '-x+1/2, -y+1/2, -z+1/2'
+85 'z, -x, -y+1/2'
+86 '-z, -x+1/2, y'
+87 '-z+1/2, x, -y'
+88 'z+1/2, x+1/2, y+1/2'
+89 '-y+1/2, z, -x'
+90 'y, -z, -x+1/2'
+91 '-y, -z+1/2, x'
+92 'y+1/2, z+1/2, x+1/2'
+93 '-x, -y+1/2, z'
+94 '-x+1/2, y, -z'
+95 'x, -y, -z+1/2'
+96 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+La3+ 3
+Zr4+ 4
+Li1+ 1
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_occupancy
+La1 La3+ 24 c 0.125 0 0.25 0.0208(4) 1.
+Zr1 Zr4+ 16 a 0 0 0 0.0161(4) 1.
+Li1 Li1+ 24 d 0.375 0 0.25 0.0503(57) 0.433(23)
+Li2 Li1+ 96 h 0.0957(5) 0.1866(6) 0.4227(5) 0.0433(25) 0.475(6)
+O1 O2- 96 h 0.10085(8) 0.19759(8) 0.28076(7) 0.0280(4) 1.
+#End of TTdata_238685-ICSD

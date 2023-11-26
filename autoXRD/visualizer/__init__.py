@@ -476,8 +476,8 @@ def XRDtoPDF(xrd, min_angle, max_angle):
     return R, pdf
 
 
-def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum,
-    min_angle=10.0, max_angle=80.0, wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False, raw=False):
+def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum, min_angle=10.0, max_angle=80.0,
+    wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False, plot_both=False, raw=False):
 
         spec_plot = SpectrumPlotter(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle, max_angle, wavelength, raw)
 
@@ -522,8 +522,7 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
 
         plt.close()
 
-"""
-        if inc_pdf:
+        if inc_pdf and plot_both:
 
             r, measured_pdf = XRDtoPDF(measured_spectrum, min_angle, max_angle)
 
@@ -553,4 +552,3 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
 
             else:
                 plt.show()
-"""

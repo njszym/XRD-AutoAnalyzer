@@ -1,0 +1,89 @@
+
+#(C) 2021 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_66941-ICSD
+_database_code_ICSD 66941
+_audit_creation_date 1998-06-26
+_audit_update_record 2005-10-01
+_chemical_name_common 'Lithium carbonate'
+_chemical_formula_structural 'Li2 (C O3)'
+_chemical_formula_sum 'C1 Li2 O3'
+_chemical_name_structure_type Li2CO3
+_exptl_crystal_density_diffrn 2.1
+_citation_title
+
+;
+Crystal structure of (Lix K1-x)2 (C O3) (x= 0, 0.43, 0.5, 0.62, 1) by neutron
+powder diffraction analysis
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Physics and Chemistry of Solids' 1998 59 363 376 JPCSAW
+loop_
+_citation_author_citation_id
+_citation_author_name
+primary 'Idemoto, Y.'
+primary 'Ricardson, J.W.jr.'
+primary 'Koura, N.'
+primary 'Kohara, S.'
+primary 'Loong, C.-K.'
+_cell_length_a 8.35884(12)
+_cell_length_b 4.97375(6)
+_cell_length_c 6.19377(8)
+_cell_angle_alpha 90.
+_cell_angle_beta 114.789(1)
+_cell_angle_gamma 90.
+_cell_volume 233.78
+_cell_formula_units_Z 4
+_space_group_name_H-M_alt 'C 1 2/c 1'
+_space_group_IT_number 15
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 'x, -y, z+1/2'
+2 '-x, -y, -z'
+3 '-x, y, -z+1/2'
+4 'x, y, z'
+5 'x+1/2, -y+1/2, z+1/2'
+6 '-x+1/2, -y+1/2, -z'
+7 '-x+1/2, y+1/2, -z+1/2'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Li1+ 1
+C4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+Li1 Li1+ 8 f 0.1968(4) 0.4454(7) 0.8334(6) . 1.
+C1 C4+ 4 e 0 0.0665(4) 0.25 . 1.
+O1 O2- 4 e 0 0.3213(4) 0.25 . 1.
+O2 O2- 8 f 0.1463(1) -.0631(3) 0.3133(2) . 1.
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Li1 Li1+ 0.0111(15) 0.0162(17) 0.0241(17) -.0005(14) 0.0083(14) -.0031(17)
+C1 C4+ 0.0101(9) 0.0072(8) 0.0138(9) 0 0.0051(6) 0
+O1 O2- 0.0128(9) 0.0037(8) 0.0444(12) 0 0.0122(9) 0
+O2 O2- 0.0093(6) 0.0084(6) 0.0209(7) 0.0044(5) 0.0074(5) 0.0013(6)
+#End of TTdata_66941-ICSD

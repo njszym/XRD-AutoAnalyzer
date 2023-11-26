@@ -1,0 +1,68 @@
+
+#(C) 2021 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_60675-ICSD
+_database_code_ICSD 60675
+_audit_creation_date 1987-03-16
+_chemical_name_common 'Lanthanum oxohydroxide'
+_chemical_formula_structural 'La O O H'
+_chemical_formula_sum 'H1 La1 O2'
+_chemical_name_structure_type YOOH
+_exptl_crystal_density_diffrn 5.42
+_citation_title
+
+;
+Thermo- and roentgenographical study of crystalline hydroxides of rare earths
+and of yttrium
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Izvestiya Akademii Nauk SSSR, Neorganicheskie Materialy' 1965 1 2219
+2226 IVNMAW
+loop_
+_citation_author_citation_id
+_citation_author_name
+primary 'Klevtsov, P.V.'
+primary 'Sheina, L.P.'
+_cell_length_a 4.417(6)
+_cell_length_b 3.929(8)
+_cell_length_c 6.572(9)
+_cell_angle_alpha 90.
+_cell_angle_beta 112.5
+_cell_angle_gamma 90.
+_cell_volume 105.37
+_cell_formula_units_Z 2
+_space_group_name_H-M_alt 'P 1 21/m 1'
+_space_group_IT_number 11
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 'x, -y+1/2, z'
+2 '-x, -y, -z'
+3 '-x, y+1/2, -z'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+La3+ 3
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+La1 La3+ 2 e 0.643 0.25 0.312 . 1.
+O1 O2- 2 e 0.781 0.75 0.552 . 1.
+O2 O2- 2 e 0.31 0.75 0.058 . 1.
+#End of TTdata_60675-ICSD

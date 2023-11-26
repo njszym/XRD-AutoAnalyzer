@@ -1,0 +1,55 @@
+# generated using pymatgen
+data_Zr3O
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.67400000
+_cell_length_b   5.67400000
+_cell_length_c   15.69700000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zr3O
+_chemical_formula_sum   'Zr18 O6'
+_cell_volume   437.64901251
+_cell_formula_units_Z   6
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_type_symbol
+ _atom_type_oxidation_number
+  Zr0+  0.0
+  O0+  0.0
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zr0+  Zr0  1  0.33333400  0.00666700  0.41666700  1.0
+  Zr0+  Zr1  1  0.67333300  0.66666600  0.41666700  1.0
+  Zr0+  Zr2  1  0.99333300  0.32666700  0.41666700  1.0
+  Zr0+  Zr3  1  0.33333400  0.32666700  0.91666700  1.0
+  Zr0+  Zr4  1  0.99333300  0.66666600  0.91666700  1.0
+  Zr0+  Zr5  1  0.67333300  0.00666700  0.91666700  1.0
+  Zr0+  Zr6  1  0.66666600  0.99333300  0.58333300  1.0
+  Zr0+  Zr7  1  0.32666700  0.33333400  0.58333300  1.0
+  Zr0+  Zr8  1  0.00666700  0.67333300  0.58333300  1.0
+  Zr0+  Zr9  1  0.66666600  0.67333300  0.08333300  1.0
+  Zr0+  Zr10  1  0.00666700  0.33333400  0.08333300  1.0
+  Zr0+  Zr11  1  0.32666700  0.99333300  0.08333300  1.0
+  Zr0+  Zr12  1  0.00000067  0.34000033  0.75000033  1.0
+  Zr0+  Zr13  1  0.33999967  0.99999933  0.75000033  1.0
+  Zr0+  Zr14  1  0.65999967  0.66000033  0.75000033  1.0
+  Zr0+  Zr15  1  0.00000067  0.66000033  0.25000033  1.0
+  Zr0+  Zr16  1  0.65999967  0.99999933  0.25000033  1.0
+  Zr0+  Zr17  1  0.33999967  0.34000033  0.25000033  1.0
+  O0+  O18  1  0.00000000  0.00000000  0.50000000  1.0
+  O0+  O19  1  0.00000000  0.00000000  0.00000000  1.0
+  O0+  O20  1  0.66666667  0.33333333  0.83333333  1.0
+  O0+  O21  1  0.66666667  0.33333333  0.33333333  1.0
+  O0+  O22  1  0.33333333  0.66666667  0.16666667  1.0
+  O0+  O23  1  0.33333333  0.66666667  0.66666667  1.0

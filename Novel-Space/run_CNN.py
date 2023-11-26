@@ -103,16 +103,22 @@ if __name__ == '__main__':
 
         if ('--plot' in sys.argv) and ('None' not in phase_set):
 
+            # Whether to save as png file
             save = False
             if '--save' in sys.argv:
                 save = True
+
+            # Whether to plot XRD and PDF
+            plot_both = False
+            if '--both' in sys.argv:
+                plot_both = True
 
             # Format predicted phases into a list of their CIF filenames
             phasenames = ['%s.cif' % phase for phase in phase_set]
 
             # Plot measured spectrum with line profiles of predicted phases
             visualizer.main('Spectra', spectrum_fname, phasenames, heights, final_spectrum,
-                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf, raw)
+                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf, plot_both, raw)
 
         if ('--weights' in sys.argv) and ('None' not in phase_set):
 
