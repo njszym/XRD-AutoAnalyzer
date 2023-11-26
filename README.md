@@ -213,4 +213,4 @@ In addition to the XRD pattern, this will generate a virtual PDF with all identi
 
 ![pdf_sample](./PDF_Example/sample-image.png)
 
-This spectrum is available in the ``PDF_Example``` directory, which contains two pre-trained models for XRD and PDF analysis in the Li-La-Zr-O space.
+This spectrum is available in the ```PDF_Example``` directory, which contains two pre-trained models for XRD and PDF analysis in the Li-La-Zr-O space.
