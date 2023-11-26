@@ -4,7 +4,7 @@ A package designed to automate phase identification from XRD spectra using a pro
 
 The corresponding manuscript can be found at [Chemistry of Materials](https://pubs.acs.org/doi/full/10.1021/acs.chemmater.1c01071). Reproducing the published results can be accomplished using the data provided in [figshare](https://figshare.com/s/69030545b8020de35633).
 
-We have also recently integrated Pair Distribution Function (PDF) analysis with the existing methods for XRD analysis. Further details on the methodology behind this new approach, as well as instructions on how to implement it, are provided at the bottom of this page.
+We have also recently integrated Pair Distribution Function (PDF) analysis into the package. Further details on the methodology behind this new approach, as well as instructions on how to implement it, are provided at the bottom of this page.
 
 ## Installation
 
@@ -189,7 +189,7 @@ By default, the warning message will appear when unknown peaks remain with inten
 
 ## Pair distribution functions
 
-To achieve more accurate phase identification, the user may consider training two models: one on simulated XRD patterns and another on virtual PDFs computed through a Fourier transform of those XRD patterns. This can be accomplished as follows:
+To achieve more accurate phase identification, the user can train two models: one on simulated XRD patterns and another on virtual PDFs computed through a Fourier transform of those XRD patterns. This can be accomplished using the following command:
 
 ```
 python construct_model.py --inc_pdf
@@ -197,7 +197,7 @@ python construct_model.py --inc_pdf
 
 Once training is finished, two files named ```XRD_Model.h5``` and ```PDF_Model.h5``` will be placed in a ```Models``` folder. This folder should be present in any directory where the user wishes to analyze new patterns.
 
-Following a similar procedure as described above for standalone XRD analysis, both models can now be applied to perform phase identification on patterns placed in the ```Spectra``` folder. To ensure both models are used, the ```--inc_pdf``` flag should be specified at runtime:
+Following a similar procedure as described above for standalone XRD analysis, both models can now be applied to perform phase identification based on XRD patterns placed in the ```Spectra``` folder. To ensure both models are used, the ```--inc_pdf``` flag should be specified at runtime:
 
 ```
 python run_CNN.py --inc_pdf
