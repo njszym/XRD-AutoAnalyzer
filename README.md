@@ -203,9 +203,13 @@ Following a similar procedure as described above for standalone XRD analysis, bo
 python run_CNN.py --inc_pdf
 ```
 
-This will yield predictions that are derived from a confidence-weighted sum of the predicted phases from both models trained on XRD patterns and virtual PDFs.
+This will yield predictions that are derived from a confidence-weighted sum of the predicted phases from both models trained on XRD patterns and virtual PDFs. By default, only the merged predictions will be shown. However, the user can choose to show predictions from each individual method by specifying:
 
-All runtime arguments described in the previous section hold for PDF analysis. The user can also choose to plot the virtual PDF by adding two arguments:
+```
+python run_CNN.py --inc_pdf --show_indiv
+```
+
+All other runtime arguments described in the previous section hold for PDF analysis. The user can also choose to plot the virtual PDF by adding two arguments:
 
 ```
 python run_CNN.py --inc_pdf --plot --both
