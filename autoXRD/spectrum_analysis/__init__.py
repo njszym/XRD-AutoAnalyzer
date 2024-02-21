@@ -73,7 +73,8 @@ class SpectrumAnalyzer(object):
 
     @property
     def reference_phases(self):
-        return sorted(os.listdir(self.ref_dir))
+        # Ignore hidden files that sometimes appear (like .DS_Store on Mac)
+        return [fname for fname in sorted(os.listdir(self.ref_dir)) if fname[0] != '.']
 
     @property
     def suspected_mixtures(self):
@@ -672,7 +673,9 @@ class PhaseIdentifier(object):
             confidences: the associated confidence with the prediction above
         """
 
-        reference_phases = sorted(os.listdir(self.ref_dir))
+        # Ignore hidden files that sometimes appear (like .DS_Store on Mac)
+        reference_phases = [fname for fname in sorted(os.listdir(self.ref_dir)) if fname[0] != '.']
+
         spectrum_filenames = os.listdir(self.spectra_dir)
         spectrum_filenames = [fname for fname in spectrum_filenames if fname[0] != '.']
 
