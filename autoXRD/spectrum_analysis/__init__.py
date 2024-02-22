@@ -239,9 +239,15 @@ class SpectrumAnalyzer(object):
 
         # Make prediction regarding top phases
         if self.is_pdf:
-            prediction, num_phases, certanties = self.kdp.predict(pdf_spectrum, self.min_conf)
+            prediction, num_phases, certanties, num_outputs = self.kdp.predict(pdf_spectrum, self.min_conf)
         else:
-            prediction, num_phases, certanties = self.kdp.predict(xrd_spectrum, self.min_conf)
+            prediction, num_phases, certanties, num_outputs = self.kdp.predict(xrd_spectrum, self.min_conf)
+
+        assert num_outputs == len(self.reference_phases), \
+            """The number of files in the References folder does not
+            match the number of outputs in the CNN. Please ensure
+            you have not added or removed any of the CIFs in
+            your References folder since training the model."""
 
         # If no phases are suspected
         if num_phases == 0:
@@ -620,6 +626,8 @@ class KerasDropoutPrediction(object):
         result = np.array([list(np.array(sublist).flatten()) for sublist in result]) ## Individual predictions
         prediction = result.mean(axis=0) ## Average prediction
 
+        num_outputs = len(prediction) # Check how many possible phases there are
+
         all_preds = [np.argmax(pred) for pred in result] ## Individual max indices (associated with phases)
 
         counts = []
@@ -633,7 +641,7 @@ class KerasDropoutPrediction(object):
                 certanties.append(conf)
         certanties = sorted(certanties, reverse=True)
 
-        return prediction, len(certanties), certanties
+        return prediction, len(certanties), certanties, num_outputs
 
 
 class PhaseIdentifier(object):
