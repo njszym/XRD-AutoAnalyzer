@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from random import shuffle
 from tensorflow.keras import regularizers
-
+import sys
 
 # Used to apply dropout during training *and* inference
 class CustomDropout(tf.keras.layers.Layer):
@@ -80,8 +80,8 @@ class DataSetUp(object):
         one_hot_vectors = []
         for (augmented_spectra, index) in zip(xrd, phase_indices):
             for pattern in augmented_spectra:
-                assigned_vec = [[0]]*len(xrd)
-                assigned_vec[index] = [1.0]
+                assigned_vec = [0]*len(xrd)
+                assigned_vec[index] = 1.0
                 one_hot_vectors.append(assigned_vec)
         return np.array(one_hot_vectors)
 
@@ -135,7 +135,7 @@ def train_model(x_train, y_train, n_phases, num_epochs, is_pdf, n_dense=[3100, 1
     # Optimized architecture for PDF analysis
     if is_pdf:
         model = tf.keras.Sequential([
-        tf.keras.layers.Conv1D(filters=64, kernel_size=60, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=60, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=3, strides=2, padding='same'),
         tf.keras.layers.MaxPool1D(pool_size=3, strides=2, padding='same'),
         tf.keras.layers.MaxPool1D(pool_size=2, strides=2, padding='same'),
@@ -144,38 +144,38 @@ def train_model(x_train, y_train, n_phases, num_epochs, is_pdf, n_dense=[3100, 1
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
         tf.keras.layers.Flatten(),
         CustomDropout(dropout_rate),
-        tf.keras.layers.Dense(n_dense[0], activation=tf.nn.relu),
+        tf.keras.layers.Dense(n_dense[0], activation='relu'),
         tf.keras.layers.BatchNormalization(),
         CustomDropout(dropout_rate),
-        tf.keras.layers.Dense(n_dense[1], activation=tf.nn.relu),
+        tf.keras.layers.Dense(n_dense[1], activation='relu'),
         tf.keras.layers.BatchNormalization(),
         CustomDropout(dropout_rate),
-        tf.keras.layers.Dense(n_phases, activation=tf.nn.softmax)])
+        tf.keras.layers.Dense(n_phases, activation='softmax')])
 
     # Optimized architecture for XRD analysis
     else:
         model = tf.keras.Sequential([
-        tf.keras.layers.Conv1D(filters=64, kernel_size=35, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=35, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=3, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=64, kernel_size=30, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=30, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=3, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=64, kernel_size=25, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=25, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=2, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=64, kernel_size=20, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=20, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=64, kernel_size=15, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=15, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
-        tf.keras.layers.Conv1D(filters=64, kernel_size=10, strides=1, padding='same', activation = tf.nn.relu),
+        tf.keras.layers.Conv1D(filters=64, kernel_size=10, strides=1, padding='same', activation='relu'),
         tf.keras.layers.MaxPool1D(pool_size=1, strides=2, padding='same'),
         tf.keras.layers.Flatten(),
         CustomDropout(dropout_rate),
-        tf.keras.layers.Dense(n_dense[0], activation=tf.nn.relu),
+        tf.keras.layers.Dense(n_dense[0], activation='relu'),
         tf.keras.layers.BatchNormalization(),
         CustomDropout(dropout_rate),
-        tf.keras.layers.Dense(n_dense[1], activation=tf.nn.relu),
+        tf.keras.layers.Dense(n_dense[1], activation='relu'),
         tf.keras.layers.BatchNormalization(),
         CustomDropout(dropout_rate),
-        tf.keras.layers.Dense(n_phases, activation=tf.nn.softmax)])
+        tf.keras.layers.Dense(n_phases, activation='softmax')])
 
     # Compile model
     model.compile(loss=tf.keras.losses.CategoricalCrossentropy(from_logits=False), optimizer=tf.keras.optimizers.Adam(), metrics=[tf.keras.metrics.CategoricalAccuracy()])

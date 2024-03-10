@@ -1,4 +1,5 @@
 from scipy.signal import find_peaks, filtfilt, resample
+from tensorflow.keras.utils import custom_object_scope
 from pymatgen.analysis.diffraction import xrd
 from scipy.ndimage import gaussian_filter1d
 from multiprocessing import Pool, Manager
@@ -86,7 +87,8 @@ class SpectrumAnalyzer(object):
 
         spectrum = self.formatted_spectrum
 
-        self.model = tf.keras.models.load_model(self.model_path, custom_objects={'CustomDropout': CustomDropout}, compile=False)
+        with custom_object_scope({'CustomDropout': CustomDropout}):
+            self.model = tf.keras.models.load_model(self.model_path, compile=False)
         self.kdp = KerasDropoutPrediction(self.model)
 
         prediction_list, confidence_list, backup_list, scale_list, spec_list = self.enumerate_routes(spectrum)
@@ -615,7 +617,6 @@ class KerasDropoutPrediction(object):
             min_conf /= 100.0
 
         # Format input
-        x = [[val] for val in x]
         x = np.array([x])
 
         # Monte Carlo Dropout
