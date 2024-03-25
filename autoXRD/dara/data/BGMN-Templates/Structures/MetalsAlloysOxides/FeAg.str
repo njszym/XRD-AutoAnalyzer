@@ -1,0 +1,8 @@
+PHASE=FeAg // 04-003-7119
+Formula=Fe0.78_Ag0.22 //
+SpacegroupNo=229 HermannMauguin=I4/m-32/m Setting=1 Lattice=Cubic //
+PARAM=A=0.2940_0.2800^0.3050 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:FeAg=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AG,FE(p)) p=0.78 Wyckoff=a

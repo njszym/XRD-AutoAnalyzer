@@ -1,0 +1,11 @@
+PHASE=Gypsum //
+SpacegroupNo=15 HermannMauguin=I12/a1 //
+PARAM=A=0.6522_0.645^0.658 PARAM=B=1.5202_1.51^1.53 PARAM=C=0.5679_0.56^0.575 //
+PARAM=BETA=118.4_118^119 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR6 //
+GOAL:gypsum=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) GOAL=GrainSize(1,1,0)
+E=CA+2 Wyckoff=e y=0.4213 TDS=0.0088
+E=S    Wyckoff=e y=0.9216 TDS=0.0066
+E=O-2  Wyckoff=f x=0.5505 y=0.1319 z=0.9632 TDS=0.0149
+E=O-2  Wyckoff=f x=0.6671 y=0.0223 z=0.7582 TDS=0.0141
+E=O-2  Wyckoff=f x=0.4588 y=0.1821 z=0.3796 TDS=0.0219

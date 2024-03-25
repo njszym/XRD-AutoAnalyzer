@@ -1,0 +1,22 @@
+PHASE=Uricacid //
+SpacegroupNo=14 HermannMauguin=P12_1/a1 //
+PARAM=A=1.4463_1.4405^1.4521 PARAM=B=0.7403_0.7373^0.7433 PARAM=C=0.6208_0.6183^0.6233 //
+PARAM=BETA=65.1_64.6^65.6 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:uricacid=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=e x=0.3959 y=0.4220 z=-0.1224 TDS=0.0400
+E=C Wyckoff=e x=0.3654 y=0.2665 z=-0.4167 TDS=0.0400
+E=C Wyckoff=e x=0.4648 y=0.2175 z=-0.5360 TDS=0.0400
+E=C Wyckoff=e x=0.5383 y=0.2665 z=-0.4525 TDS=0.0400
+E=C Wyckoff=e x=0.3811 y=0.1111 z=-0.7381 TDS=0.0400
+E=H Wyckoff=e x=0.5460 y=0.4010 z=-0.1800 TDS=0.0400
+E=H Wyckoff=e x=0.2680 y=0.4280 z=-0.1630 TDS=0.0400
+E=H Wyckoff=e x=0.5500 y=0.0610 z=-0.8540 TDS=0.0400
+E=H Wyckoff=e x=0.2570 y=0.2130 z=-0.5080 TDS=0.0400
+E=N Wyckoff=e x=0.4943 y=0.3642 z=-0.2408 TDS=0.0400
+E=N Wyckoff=e x=0.3288 y=0.3668 z=-0.2153 TDS=0.0400
+E=N Wyckoff=e x=0.4747 y=0.1234 z=-0.7378 TDS=0.0400
+E=N Wyckoff=e x=0.3142 y=0.2017 z=-0.5404 TDS=0.0400
+E=O Wyckoff=e x=0.3678 y=0.5166 z=0.0554 TDS=0.0400
+E=O Wyckoff=e x=0.6300 y=0.2303 z=-0.5475 TDS=0.0400
+E=O Wyckoff=e x=0.3594 y=0.0335 z=-0.8880 TDS=0.0400

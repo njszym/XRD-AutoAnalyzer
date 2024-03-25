@@ -1,0 +1,14 @@
+PHASE=Natrojarosite // amcsd_0004575
+Reference=amcsd_0004575 //
+Formula=Na.85_K.11_Fe3_S2_O14_H6 //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.731440_0.724126^0.738754 PARAM=C=1.664910_1.648261^1.681559 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Natrojarosite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=d x=0.500000 y=0.000000 z=0.500000 TDS=0.016202
+E=H Wyckoff=h x=0.162000 y=0.838000 z=0.169000 TDS=0.020000
+E=(K(0.1100),NA(0.8500)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.033999
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.400800 TDS=0.013999
+E=O Wyckoff=h x=0.222900 y=0.777100 z=0.949000 TDS=0.015002
+E=O Wyckoff=h x=0.125700 y=0.874300 z=0.130500 TDS=0.004003
+E=S Wyckoff=c x=0.000000 y=0.000000 z=0.312100 TDS=0.012001

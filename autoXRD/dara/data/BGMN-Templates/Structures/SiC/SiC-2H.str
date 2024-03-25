@@ -1,0 +1,9 @@
+PHASE=SiC-2H // 01-070-2550
+Reference=01-070-2550 //
+Formula=Si_C //
+SpacegroupNo=186 Setting=1 HermannMauguin=P6_3mc Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.307600_0.304524^0.310676 PARAM=C=0.504800_0.499752^0.509848  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC2H=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=b x=2/3 y=1/3 z=0.500000 TDS=0.00200000
+E=C Wyckoff=b x=2/3 y=1/3 z=0.875000 TDS=0.00200000

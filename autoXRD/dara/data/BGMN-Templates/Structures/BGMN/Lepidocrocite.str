@@ -1,0 +1,8 @@
+PHASE=Lepidocrocite //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m //
+PARAM=A=0.3060_0.3029^0.3091 PARAM=B=1.2510_1.2385^1.2635 PARAM=C=0.3870_0.3831^0.3909 //
+RP=3 B1=ANISO^0.008 GEWICHT=SPHAR4 //
+GOAL:lepidocrocite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=c y=0.3220 TDS=0.01
+E=O-2 Wyckoff=c y=0.7180 TDS=0.01
+E=O-2 Wyckoff=c y=0.9250 TDS=0.01

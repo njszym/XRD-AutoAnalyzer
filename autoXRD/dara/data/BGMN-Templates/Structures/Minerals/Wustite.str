@@ -1,0 +1,9 @@
+PHASE=Wustite // 04-001-9939
+Formula=FeO //
+MineralName=Wustite
+SpacegroupNo=225 HermannMauguin=F4/m-32/m Setting=1 Lattice=Cubic //
+PARAM=A=0.431000_0.426690^0.435310 PARAM=B=0.431000_0.426690^0.435310 PARAM=C=0.431000_0.426690^0.435310 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:Wustite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.000000
+E=O Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.000000

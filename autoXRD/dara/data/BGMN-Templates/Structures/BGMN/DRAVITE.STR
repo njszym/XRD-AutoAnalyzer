@@ -1,0 +1,19 @@
+PHASE=Dravite //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=1.5999_1.5839^1.6159 PARAM=C=0.7236_0.7164^0.7308 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:dravite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(CA+2(0.3010),NA+1(0.7130)) Wyckoff=a z=0.2298 TDS=0.0158
+E=(MG+2(0.7400),FE+2(0.0300),FE+3(0.2300)) Wyckoff=b x=0.2712 z=0.3003 TDS=0.0060
+E=(AL+3(0.8817),FE+3(0.0367),MG+2(0.0800)) Wyckoff=c x=0.2981 y=0.2618 z=0.6125 TDS=0.0041
+E=B Wyckoff=b x=0.4432 z=0.1205 TDS=0.0054
+E=(SI+4(0.9900),TI+4(0.0100)) Wyckoff=c x=0.1917 y=0.1900 z=0.0000 TDS=0.0041
+E=(O(0.5800),F-1(0.4200)) Wyckoff=a z=0.7748 TDS=0.0109
+E=O-2 Wyckoff=b x=0.3942 z=0.1465 TDS=0.0081
+E=O-2 Wyckoff=b x=0.2001 z=0.1790 TDS=0.0090
+E=O-2 Wyckoff=b x=0.4258 z=0.7373 TDS=0.0076
+E=O-2 Wyckoff=b x=0.2420 z=0.7572 TDS=0.0077
+E=O-2 Wyckoff=c x=0.1961 y=0.1867 z=0.7783 TDS=0.0069
+E=O-2 Wyckoff=c x=0.2848 y=0.2843 z=0.0801 TDS=0.0072
+E=O-2 Wyckoff=c x=0.2094 y=0.2699 z=0.4418 TDS=0.0080
+E=H Wyckoff=b x=0.2023 z=0.0757 TDS=0.0079

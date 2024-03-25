@@ -1,0 +1,11 @@
+PHASE=Monticellite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=1.1105_1.0994^1.1216 PARAM=B=0.6381_0.6317^0.6445 PARAM=C=0.4821_0.4773^0.4869 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:monticellite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a TDS=0.0104
+E=CA+2 Wyckoff=c x=0.7771 z=0.5226 TDS=0.0101
+E=SI+4 Wyckoff=c x=0.5823 z=0.0889 TDS=0.0096
+E=O-2 Wyckoff=c x=0.5773 z=0.7526 TDS=0.0117
+E=O-2 Wyckoff=c x=0.9494 z=0.2477 TDS=0.0104
+E=O-2 Wyckoff=d x=0.1470 y=0.0467 z=0.2728 TDS=0.0114

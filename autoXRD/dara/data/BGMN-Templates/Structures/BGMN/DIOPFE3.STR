@@ -1,0 +1,12 @@
+PHASE=Diopside_Fe0.26 //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.9773_0.975^0.9793 PARAM=B=0.8952_0.8907^0.897 PARAM=C=0.5252_0.5226^0.5278 //
+PARAM=BETA=105.7_105^106 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00002 GEWICHT=SPHAR4 //
+GOAL:diopfe3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2(0.7400),FE+2(0.2600)) Wyckoff=e y=0.9080 TDS=0.0037
+E=CA+2 Wyckoff=e y=0.3000 TDS=0.0063
+E=SI+4 Wyckoff=f x=0.2873 y=0.0932 z=0.2323 TDS=0.0035
+E=O Wyckoff=f x=0.1169 y=0.0912 z=0.1453 TDS=0.0051
+E=O Wyckoff=f x=0.3623 y=0.2488 z=0.3227 TDS=0.0065
+E=O Wyckoff=f x=0.3505 y=0.0178 z=0.9980 TDS=0.0056

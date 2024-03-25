@@ -1,0 +1,31 @@
+PHASE=Ettringite //
+SpacegroupNo=159 HermannMauguin=P31c //
+PARAM=A=1.1260_1.1^1.15 PARAM=C=2.1480_2.12^2.18 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:ettringite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=a x=0.0000 y=0.0000 z=1.0000 TDS=0.0120
+E=AL+3 Wyckoff=a x=0.0000 y=0.0000 z=0.7500 TDS=0.0120
+E=CA+2 Wyckoff=c x=0.0090 y=0.8160 z=0.8750 TDS=0.0170
+E=CA+2 Wyckoff=c x=0.9940 y=0.1890 z=0.1250 TDS=0.0180
+E=O-2 Wyckoff=c x=0.9940 y=0.1340 z=0.9480 TDS=0.02000
+E=O-2 Wyckoff=c x=0.9960 y=0.8650 z=0.0570 TDS=0.02000
+E=O-2 Wyckoff=c x=0.0040 y=0.1460 z=0.8050 TDS=0.02000
+E=O-2 Wyckoff=c x=0.0040 y=0.8760 z=0.1980 TDS=0.02000
+E=O-2 Wyckoff=c x=0.0000 y=0.3480 z=0.0470 TDS=0.02000
+E=O-2 Wyckoff=c x=0.0100 y=0.6630 z=0.9580 TDS=0.02000
+E=O-2 Wyckoff=c x=0.9970 y=0.3450 z=0.1990 TDS=0.02000
+E=O-2 Wyckoff=c x=0.9960 y=0.6550 z=0.7880 TDS=0.02000
+E=O-2 Wyckoff=c x=0.2630 y=0.4050 z=0.6180 TDS=0.02000
+E=O-2 Wyckoff=c x=0.7440 y=0.5930 z=0.3740 TDS=0.02000
+E=O-2 Wyckoff=c x=0.2590 y=0.4060 z=0.1260 TDS=0.02000
+E=O-2 Wyckoff=c x=0.7680 y=0.5980 z=0.8700 TDS=0.02000
+E=O-2 Wyckoff=b x=0.3333 y=0.6667 z=0.4200 TDS=0.0190
+E=O-2 Wyckoff=b x=0.3333 y=0.6667 z=0.8140 TDS=0.0280
+E=O-2 Wyckoff=b x=0.3333 y=0.6667 z=0.0700 TDS=0.0420
+E=O-2 Wyckoff=c x=0.1950 y=0.6420 z=0.5180 TDS=0.0470
+E=O-2 Wyckoff=c x=0.1950 y=0.6200 z=0.7230 TDS=0.0430
+E=O-2 Wyckoff=c x=0.1920 y=0.5850 z=0.9820 TDS=0.0210
+E=O-2(0.6667) Wyckoff=c x=0.1970 y=0.6370 z=0.2430 TDS=0.02000
+E=S Wyckoff=b x=0.3333 y=0.6667 z=0.4910 TDS=0.0220
+E=S Wyckoff=b x=0.3333 y=0.6667 z=0.7500 TDS=0.0160
+E=S Wyckoff=b x=0.3333 y=0.6667 z=0.0090 TDS=0.0140

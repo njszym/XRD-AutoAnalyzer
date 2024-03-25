@@ -1,0 +1,14 @@
+PHASE=Pyrophyllite1T //
+SpacegroupNo=2 HermannMauguin=C-1 //
+PARAM=A=0.5161_0.5109^0.5213 PARAM=B=0.8957_0.8867^0.9047 PARAM=C=0.9351_0.9257^0.9445 PARAM=ALPHA=91.000 PARAM=BETA=100.400 PARAM=GAMMA=89.800 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR2 TDS=0.01 //
+GOAL:pyrophyllite1t=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=i x=0.5000 y=0.1667 z=0.0000
+E=SI+4 Wyckoff=i x=0.7480 y=0.0000 z=0.2890
+E=SI+4 Wyckoff=i x=0.7590 y=0.3310 z=0.2890
+E=O-2 Wyckoff=i x=0.6710 y=0.0040 z=0.1130
+E=O-2 Wyckoff=i x=0.7210 y=0.3190 z=0.1130
+E=O-2 Wyckoff=i x=0.2210 y=0.1860 z=0.1130
+E=O-2 Wyckoff=i x=0.0550 y=0.3870 z=0.3530
+E=O-2 Wyckoff=i x=0.7240 y=0.1667 z=0.3530
+E=O-2 Wyckoff=i x=0.5500 y=0.4480 z=0.3360

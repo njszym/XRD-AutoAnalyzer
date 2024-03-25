@@ -1,0 +1,154 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Bruker D8
+%    --------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    December 11, 2014
+%
+%    Device Configuration:
+%    - Detector: LynxEye XE
+%    - Radiation: CuKa
+%    - Soller Slits: 2.5°
+%    - Divergence Slit: Automatic 15mm
+%    - Anti-Scatter Slit: 9mm
+%    - Goniometer Radius: 350 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=RMS-D8-FDS-03-LynxEyeXE.ger
+GEQ=RMS-D8-FDS-03-LynxEyeXE.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer
+%-----------------------------------------------------------------------------------------------
+
+% Instrument geometry
+GEOMETRY=REFLEXION
+
+% Goniometer radius (mm)
+R=350.0
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% Axial dimension (length, mm)
+FocusH=12.00
+
+% Optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.0400
+
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (°)
+div=0.3000
+
+% Distance from sample (mm)
+HSlitR=270
+
+% Divergence slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Primary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+PColl=0.0218
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample
+%-----------------------------------------------------------------------------------------------
+
+% Diameter of round sample (mm)
+SamplD=10.00
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% Distance from sample (mm)
+SSlitR=260.00
+
+% Anti-scatter slit width (mm)
+SSlitW=9.0000
+
+
+%-----------------------------------------------------------------------------------------------
+% Secondary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+SColl=0.0218
+
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% Total sensor height (mm)
+DetArrayW=14.40
+
+% Height of one strip (mm)
+DetW=0.0750
+
+% Total axial detector width (mm)
+DetH=16.00
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=4
+zweiTheta[2]=5
+zweiTheta[3]=12
+zweiTheta[4]=21
+zweiTheta[5]=32
+zweiTheta[6]=45
+zweiTheta[7]=59
+zweiTheta[8]=74
+zweiTheta[9]=90
+zweiTheta[10]=106
+zweiTheta[11]=121
+zweiTheta[12]=135
+zweiTheta[13]=148
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=4
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+PHASE=C2SH_alpha //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a //
+PARAM=A=0.9487_0.9297^0.9677 PARAM=B=0.9179_0.8995^0.9363 PARAM=C=1.0666_1.0453^1.0879 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR4 //
+GOAL:c2shalpha=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=c x=0.4841 y=0.1696 z=0.0686 TDS=0.0068
+E=CA+2 Wyckoff=c x=0.3457 y=0.0058 z=0.3888 TDS=0.0062
+E=SI+4 Wyckoff=c x=0.1693 y=0.2129 z=0.1597 TDS=0.0053
+E=O-2 Wyckoff=c x=0.0560 y=0.1383 z=0.0650 TDS=0.0067
+E=O-2 Wyckoff=c x=0.2493 y=0.3458 z=0.0728 TDS=0.0000
+E=O-2 Wyckoff=c x=0.2958 y=0.0994 z=0.1904 TDS=0.0084
+E=O-2 Wyckoff=c x=0.1018 y=0.2923 z=0.2797 TDS=0.0081
+E=O-2 Wyckoff=c x=0.3940 y=0.4525 z=0.3962 TDS=0.0000
+E=H Wyckoff=c x=0.2380 y=0.4380 z=0.1100 TDS=0.0371
+E=H Wyckoff=c x=0.4060 y=0.4130 z=0.3390 TDS=0.0490

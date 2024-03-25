@@ -1,0 +1,10 @@
+PHASE=Ilmenite // amcsd_0000925
+Reference=amcsd_0000925
+Formula=Fe_Ti_O3 //
+SpacegroupNo=148 HermannMauguin=R-3 Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.508840_0.503752^0.513928 PARAM=C=1.408550_1.394464^1.422635 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ilmenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=c x=0.000000 y=0.000000 z=0.355370 TDS=0.005819
+E=O Wyckoff=f x=0.317430 y=0.023320 z=0.245060 TDS=0.005803
+E=TI Wyckoff=c x=0.000000 y=0.000000 z=0.146400 TDS=0.004579

@@ -1,0 +1,12 @@
+PHASE=Dolomite // 04-008-0789
+MineralName=Dolomite //
+Formula=Ca_Mg_(CO3)2 //
+SpacegropuNo=148 HermannMauguin=R-3 //
+PARAM=A=0.4806_0.4758^0.4854 PARAM=C=1.6006_1.5846^1.6166  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Dolomite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=a  TDS=0.00709822
+E=MG Wyckoff=b  TDS=0.00499797
+E=C Wyckoff=c z=0.2431 TDS=0.00730351
+E=O Wyckoff=f x=0.2482 y=-0.0357 z=0.2440 TDS=0.00840101

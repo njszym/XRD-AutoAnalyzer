@@ -1,0 +1,10 @@
+PHASE=NiNitrate // 04-006-5678
+Formula=Ni_(NO3)2 //
+SpacegroupNo=205 HermannMauguin=P2_1/a-3 //
+PARAM=A=0.7310_0.72^0.74 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NiNitrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NI Wyckoff=a
+E=N Wyckoff=c x=0.338
+E=O Wyckoff=d x=0.245 y=0.280 z=0.467

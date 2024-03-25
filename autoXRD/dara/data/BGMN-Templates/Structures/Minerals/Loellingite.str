@@ -1,0 +1,9 @@
+PHASE=Loellingite // ICDD790251
+SpacegroupNo=58 HermannMauguin=P2_1/n2_1/n2/m //
+Group=Sulfide Formula=Fe_As2 ICDD=790251 Reference=65168 //
+PARAM=A=0.53_0.5274^0.5326 PARAM=B=0.5984_0.5954^0.6014 PARAM=C=0.2882_0.2868^0.2896 //
+//
+PARAM=B1=0_0^0.005 GOAL=GrainSize(1,0,0) PARAM=k2=0_0^0.000010 GOAL=sqrt(k2) RP=4 //
+GEWICHT=SPHAR4 GOAL:Loellingite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE(1))  Wyckoff=a x=0 y=0 z=0 TDS=0.0045
+E=(AS(1))  Wyckoff=g x=0.824 y=0.6375 z=0 TDS=0.005

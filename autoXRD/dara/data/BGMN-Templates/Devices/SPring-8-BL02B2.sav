@@ -1,0 +1,147 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for beamline BL02B2 of SPring-8
+%    --------------------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    November 23, 2018
+%
+%    Device Configuration:
+%    - Radiation: 0.496 A
+%    - Detector: MYTHEN Si micro-strip
+%
+%    Hardware info was taken from Kawaguchi et al. Rev. Sci. Instrum. 88, 085111 (2017)
+%    and manually matched to dataset 180711_CeO2_01.
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+GEOMETRY=CAPILLARY
+VERZERR=SPring-8-BL02B2.ger
+GEQ=SPring-8-BL02B2.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% beam dimensions
+FocusH=0.05
+FocusW=0.05
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=477.46
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+HSlitR=1.0
+
+% fixed divergence slit width (mm)
+HSlitW=0.05
+
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% total detector height (mm)
+DetArrayW=2.5
+
+% height of one strip (mm)
+DetW=0.05
+
+% total detector width (mm)
+DetH=0.0
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% NOTE: The parameters T and D have a massive influence on the peak shape.
+%       If manual fitting is necessary, D and T may be the parameters to start
+%       with. D is material specific.
+
+% length of the capillary (mm)
+SamplH=20
+
+% inner diameter of the capillary (mm)
+T=0.03
+
+% Reciprocal value in mm of the linear absorption coefficient (LAC). 
+% Add "GOAL=my" to a structure file to print the LAC to the LST file.
+% For CeO2 at 25 keV it is 0.077 mm
+D=0.077
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% the beam is parallel, so we need to fake these values
+
+% primary soller slit (radians)
+PColl=0.0
+
+% secondary soller slit (radians)
+% SColl=0.0
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=125
+zweiTheta[12]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=3*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

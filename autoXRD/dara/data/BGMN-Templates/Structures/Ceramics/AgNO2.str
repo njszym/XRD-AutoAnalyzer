@@ -1,0 +1,10 @@
+PHASE=AgNO2 // 04-009-3701
+Formula=Ag_(NO2) //
+SpacegroupNo=44 HermannMauguin=Imm2 //
+PARAM=A=0.5170^0.51^0.522 PARAM=B=0.6171_0.61^0.624 PARAM=C=0.3528_0.3475^0.3575 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:AgNO2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AG Wyckoff=a z=0 TDS=0.0296654
+E=N  Wyckoff=a z=0.478 TDS=0.0109995
+E=O  Wyckoff=d y=0.168 z=0.576 TDS=0.038665

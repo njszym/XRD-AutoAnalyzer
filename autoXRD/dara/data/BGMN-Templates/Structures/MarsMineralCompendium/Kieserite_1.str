@@ -1,0 +1,14 @@
+PHASE=Kieserite // amcsd_0018262
+Reference=amcsd_0018262 //
+Formula=Mg_S_O5_H2 //
+SpacegroupNo=15 HermannMauguin=C12/c1 Setting=1 CellChoice=1 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.689100_0.682209^0.695991 PARAM=B=0.762400_0.754776^0.770024 PARAM=C=0.764500_0.756855^0.772145 //
+PARAM=BETA=117.683000_116.506170^118.859830 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Kieserite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=H Wyckoff=f x=0.125000 y=0.708000 z=0.298000 TDS=0.010000 // check Wyckoff
+E=MG Wyckoff=b x=0.000000 y=0.500000 z=0.000000 TDS=0.010000
+E=O Wyckoff=f x=0.175500 y=0.044500 z=0.394200 TDS=0.010000
+E=O Wyckoff=f x=0.089500 y=0.266700 z=0.148500 TDS=0.010000
+E=O Wyckoff=e x=0.000000 y=0.636600 z=0.250000 TDS=0.010000
+E=S Wyckoff=e x=0.000000 y=0.154800 z=0.250000 TDS=0.010000

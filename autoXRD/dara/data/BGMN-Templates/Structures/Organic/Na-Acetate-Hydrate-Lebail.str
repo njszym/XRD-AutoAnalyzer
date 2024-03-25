@@ -1,0 +1,8 @@
+PHASE=NaAcetateHydrate // 00-028-1030
+Formula=CH3COONa!3H2O //
+SpacegroupNo=15 HermannMauguin=C12/c1 Setting=1 //
+PARAM=A=1.2353_1.23^1.24 PARAM=B=1.0451_1.04^1.05 PARAM=C=1.0414_1.037^1.047 //
+PARAM=BETA=111.72_110.0^113.0 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL=GrainSize(1,1,1) //
+LeBail=1

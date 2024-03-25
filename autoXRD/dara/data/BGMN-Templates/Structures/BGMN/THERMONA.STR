@@ -1,0 +1,14 @@
+PHASE=Thermonatrite //
+SpacegroupNo=29 HermannMauguin=Pca2_1 //
+PARAM=A=1.0724_1.0617^1.0831 PARAM=B=0.5259_0.5206^0.5312 PARAM=C=0.6474_0.6409^0.6539 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:thermona=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=a x=0.1938 y=0.1398 z=0.0000 TDS=0.0143
+E=NA+1 Wyckoff=a x=0.0020 y=0.6214 z=0.0651 TDS=0.0146
+E=C Wyckoff=a x=0.2556 y=0.6025 z=0.7849 TDS=0.0091
+E=O Wyckoff=a x=0.1381 y=0.5457 z=0.7990 TDS=0.0167
+E=O Wyckoff=a x=0.3369 y=0.4267 z=0.7973 TDS=0.0141
+E=O Wyckoff=a x=0.2876 y=0.8361 z=0.7602 TDS=0.0149
+E=O Wyckoff=a x=0.9704 y=0.0683 z=0.0325 TDS=0.0166
+E=H Wyckoff=a x=0.9400 y=0.1500 z=0.1100 TDS=0.0000
+E=H Wyckoff=a x=0.9200 y=0.1200 z=0.9000 TDS=0.0000

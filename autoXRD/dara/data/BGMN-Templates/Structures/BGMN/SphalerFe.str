@@ -1,0 +1,6 @@
+PHASE=SPHALERITE_Fe //
+SpacegroupNo=216 HermannMauguin=F-43m //
+PARAM=A=0.5415_0.541^0.5425 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR6 GOAL:sphalerFe=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.003
+E=(ZN(0.73),FE(0.27)) Wyckoff=a
+E=S  Wyckoff=c

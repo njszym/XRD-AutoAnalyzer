@@ -1,0 +1,9 @@
+PHASE=CoO // 04-001-8626
+Reference=04-001-8626 //
+Formula=Co_O //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.426000_0.421740^0.430260  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:CoO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CO Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=O Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.00000000

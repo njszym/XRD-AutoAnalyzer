@@ -1,0 +1,23 @@
+PHASE=Nacrite //
+SpacegroupNo=9 HermannMauguin=C1c1 //
+PARAM=A=0.8906_0.8817^0.8995 PARAM=B=0.5146_0.5095^0.5197 PARAM=C=1.5664_1.5507^1.5821 //
+PARAM=BETA=113.6_112.8^114.4 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR2 //
+GOAL:nacrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=a x=0.1552 y=0.3198 z=0.2177 TDS=0.0105
+E=AL+3 Wyckoff=a x=0.4901 y=0.3245 z=0.2173 TDS=0.0109
+E=SI+4 Wyckoff=a x=0.2012 y=0.4700 z=0.0277 TDS=0.0099
+E=SI+4 Wyckoff=a x=0.3715 y=0.9831 z=0.0270 TDS=0.0097
+E=O-2 Wyckoff=a x=0.2411 y=0.7499 z=-0.0041 TDS=0.0138
+E=O-2 Wyckoff=a x=0.2723 y=0.2470 z=-0.0188 TDS=0.0131
+E=O-2 Wyckoff=a x=0.0029 y=0.4417 z=-0.0193 TDS=0.0124
+E=O-2 Wyckoff=a x=0.2696 y=0.4385 z=0.1385 TDS=0.0096
+E=O-2 Wyckoff=a x=0.4618 y=0.0110 z=0.1381 TDS=0.0127
+E=O-2 Wyckoff=a x=0.0795 y=0.0118 z=0.1432 TDS=0.012
+E=O-2 Wyckoff=a x=0.5580 y=0.6342 z=0.2838 TDS=0.01
+E=O-2 Wyckoff=a x=0.1780 y=0.6296 z=0.2825 TDS=0.011
+E=O-2 Wyckoff=a x=0.3693 y=0.2066 z=0.2826 TDS=0.012
+E=H Wyckoff=a x=0.6346 y=0.4510 z=0.1277 TDS=0.0000
+E=H Wyckoff=a x=0.5475 y=0.6736 z=0.3279 TDS=0.0000
+E=H Wyckoff=a x=0.2432 y=0.6096 z=0.3296 TDS=0.0000
+E=H Wyckoff=a x=0.4317 y=0.1386 z=0.3228 TDS=0.0000

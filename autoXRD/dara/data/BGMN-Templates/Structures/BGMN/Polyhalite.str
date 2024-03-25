@@ -1,0 +1,20 @@
+PHASE=Polyhalite //
+SpacegroupNo=2 HermannMauguin=F-1 //
+PARAM=A=1.1690_1.1632^1.1748 PARAM=B=1.6330_1.6248^1.6412 PARAM=C=0.7600_0.7562^0.7638 //
+PARAM=ALPHA=91.6_91^92.2 PARAM=BETA=90.001_89.5^90.5 PARAM=GAMMA=91.9_91.4^92.4 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR0 //
+GOAL:polyhalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=i x=0.1319 y=0.2862 z=0.6300 TDS=0.0130
+E=CA+2 Wyckoff=i x=0.1191 y=0.3712 z=0.1262 TDS=0.0080
+E=MG+2 Wyckoff=a TDS=0.0075
+E=S Wyckoff=i x=0.1258 y=0.0705 z=0.6323 TDS=0.0065
+E=S Wyckoff=i x=0.1206 y=0.1790 z=0.1142 TDS=0.0068
+E=O-1 Wyckoff=i x=0.0278 y=0.1201 z=0.5947 TDS=0.0150
+E=O-1 Wyckoff=i x=0.2276 y=0.1243 z=0.6631 TDS=0.0104
+E=O-1 Wyckoff=i x=0.1030 y=0.0195 z=0.7884 TDS=0.0113
+E=O-1 Wyckoff=i x=0.1479 y=0.0110 z=0.4855 TDS=0.0135
+E=O-1 Wyckoff=i x=0.1317 y=0.2296 z=0.2776 TDS=0.0135
+E=O-1 Wyckoff=i x=0.0962 y=0.2341 z=0.9686 TDS=0.0134
+E=O-1 Wyckoff=i x=0.0225 y=0.1181 z=0.1313 TDS=0.0123
+E=O-1 Wyckoff=i x=0.2255 y=0.1346 z=0.0808 TDS=0.0113
+E=O-1 Wyckoff=i x=0.1352 y=0.4575 z=0.6349 TDS=0.0106

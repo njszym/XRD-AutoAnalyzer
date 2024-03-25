@@ -1,0 +1,27 @@
+PHASE=Vermiculite // amcsd_0000012
+Reference=amcsd_0000012 //
+Formula=Mg3_Si4_(O12_H2) //
+SpacegroupNo=9 HermannMauguin=C1c1 Setting=1 CellChoice=1 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.531000_0.525690^0.536310 PARAM=B=0.920000_0.910800^0.929200 PARAM=C=2.846000_2.817540^2.874460 //
+PARAM=BETA=97.140000_96.168600^98.111400 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Vermiculite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=MG Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000 // check Wyckoff
+E=MG Wyckoff=a x=0.000000 y=0.333333 z=0.000000 TDS=0.010000 // check Wyckoff
+E=MG Wyckoff=a x=0.000000 y=0.666667 z=0.000000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.858000 y=0.833333 z=0.039000 TDS=0.010000 // O-H1, check Wyckoff
+E=O Wyckoff=a x=0.142000 y=0.833333 z=0.461000 TDS=0.010000 // O-H2, check Wyckoff
+E=O Wyckoff=a x=0.858000 y=0.500000 z=0.039000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.142000 y=0.166667 z=0.461000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.858000 y=0.166667 z=0.039000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.161000 y=0.083333 z=0.115000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.661000 y=0.083333 z=0.115000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.911000 y=0.333333 z=0.115000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.839000 y=0.083333 z=0.385000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.339000 y=0.083333 z=0.385000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.089000 y=0.333333 z=0.385000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.142000 y=0.500000 z=0.461000 TDS=0.010000 // check Wyckoff
+E=SI Wyckoff=a x=0.397000 y=0.000000 z=0.094000 TDS=0.010000 // check Wyckoff
+E=SI Wyckoff=a x=0.897000 y=0.166667 z=0.094000 TDS=0.010000 // check Wyckoff
+E=SI Wyckoff=a x=0.603000 y=0.000000 z=0.406000 TDS=0.010000 // check Wyckoff
+E=SI Wyckoff=a x=0.103000 y=0.166667 z=0.406000 TDS=0.010000 // check Wyckoff

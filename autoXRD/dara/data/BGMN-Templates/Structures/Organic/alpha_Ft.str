@@ -1,0 +1,53 @@
+PHASE=alpha_Ft //
+SpacegropuNo=2 HermannMauguin=P-1 Setting=1 //
+PARAM=A=0.8994_0.89^0.91 PARAM=B=1.6612_1.64^1.68 PARAM=C=0.5981_0.59^0.61  // 
+PARAM=ALPHA=86.40_85.54^87.26 PARAM=BETA=94.06_93.12^95.00 PARAM=GAMMA=80.29_79.49^81.09  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:alphaFt=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=N Wyckoff=i x=0.0633 y=0.1428 z=0.8699
+E=C Wyckoff=i x=0.0412 y=0.0884 z=0.7149
+E=O Wyckoff=i x=-0.0499 y=0.1045 z=0.5504
+E=N Wyckoff=i x=0.1306 y=0.0120 z=0.7541
+E=C Wyckoff=i x=0.2384 y=-0.0143 z=0.9301
+E=O Wyckoff=i x=0.3142 y=-0.0830 z=0.9441
+E=C Wyckoff=i x=0.2481 y=0.0468 z=1.0867
+E=F Wyckoff=i x=0.3469 y=0.0255 z=1.2681
+E=C Wyckoff=i x=0.1643 y=0.1211 z=1.0558
+E=C Wyckoff=i x=-0.0248 y=0.2274 z=0.8373
+E=C Wyckoff=i x=-0.1326 y=0.2487 z=1.0205
+E=C Wyckoff=i x=-0.0635 y=0.3073 z=1.1574
+E=C Wyckoff=i x=0.0254 y=0.3454 z=0.9903
+E=O Wyckoff=i x=0.0811 y=0.2813 z=0.8536
+E=H Wyckoff=i x=0.1100 y=-0.0250 z=0.6390
+E=H Wyckoff=i x=0.1750 y=0.1620 z=1.1610
+E=H Wyckoff=i x=-0.0810 y=0.2310 z=0.6800
+E=H Wyckoff=i x=-0.2280 y=0.2800 z=0.9310
+E=H Wyckoff=i x=-0.1460 y=0.2060 z=1.0970
+E=H Wyckoff=i x=-0.1470 y=0.3500 z=1.1930
+E=H Wyckoff=i x=0.0170 y=0.2710 z=1.2880
+E=H Wyckoff=i x=0.1120 y=0.3650 z=1.0640
+E=H Wyckoff=i x=-0.0480 y=0.3930 z=0.8830
+E=N Wyckoff=i x=0.6348 y=0.6393 z=0.6622
+E=C Wyckoff=i x=0.5821 y=0.5838 z=0.8034
+E=O Wyckoff=i x=0.5096 y=0.6053 z=0.9616
+E=N Wyckoff=i x=0.6182 y=0.5036 z=0.7562
+E=C Wyckoff=i x=0.6990 y=0.4725 z=0.5841
+E=O Wyckoff=i x=0.7204 y=0.4000 z=0.5547
+E=C Wyckoff=i x=0.7509 y=0.5361 z=0.4494
+E=F Wyckoff=i x=0.8330 y=0.5113 z=0.2789
+E=C Wyckoff=i x=0.7195 y=0.6143 z=0.4887
+E=C Wyckoff=i x=0.5895 y=0.7281 z=0.7031
+E=C Wyckoff=i x=0.4301 y=0.7614 z=0.6107
+E=C Wyckoff=i x=0.4490 y=0.7872 z=0.3685
+E=C Wyckoff=i x=0.5969 y=0.8194 z=0.3940
+E=O Wyckoff=i x=0.6834 y=0.7728 z=0.5853
+E=H Wyckoff=i x=0.6010 y=0.4700 z=0.8490
+E=H Wyckoff=i x=0.7410 y=0.6560 z=0.3910
+E=H Wyckoff=i x=0.6190 y=0.7320 z=0.8670
+E=H Wyckoff=i x=0.3700 y=0.7240 z=0.6040
+E=H Wyckoff=i x=0.3970 y=0.8150 z=0.7050
+E=H Wyckoff=i x=0.4610 y=0.7320 z=0.2680
+E=H Wyckoff=i x=0.4020 y=0.8470 z=0.4300
+E=H Wyckoff=i x=0.6470 y=0.8100 z=0.2650
+E=H Wyckoff=i x=0.5780 y=0.8790 z=0.4530

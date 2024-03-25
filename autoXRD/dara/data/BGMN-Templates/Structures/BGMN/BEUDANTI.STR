@@ -1,0 +1,11 @@
+PHASE=Beudantite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.7315_0.7278^0.7352 PARAM=C=1.7035_1.6950^1.7120 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:beudanti=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB(0.1670) Wyckoff=f x=0.9617 TDS=0.0172
+E=(AS(0.5350),S(0.4650)) Wyckoff=c z=0.6851 TDS=0.0072
+E=(FE+3(0.8470),AL+3(0.1530)) Wyckoff=d TDS=0.0066
+E=O Wyckoff=c z=0.5932 TDS=0.0213
+E=O Wyckoff=h x=0.1188 z=0.7199 TDS=0.0141
+E=O Wyckoff=h x=0.2079 z=0.5324 TDS=0.0096

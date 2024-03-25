@@ -1,0 +1,9 @@
+PHASE=W2C // 04-003-5411
+Formula=W2_C //
+SpacegroupNo=164 HermannMauguin=P-32/m1 Setting=1 //
+PARAM=A=0.3003_0.2903^0.3103 PARAM=C=0.4730_0.4630^0.4830 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:W2C=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=W Wyckoff=d z=0.2500
+E=C Wyckoff=a

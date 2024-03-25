@@ -1,0 +1,7 @@
+PHASE=CRN //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4144_0.4103^0.4185 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR6 TDS=0.01 //
+GOAL:crn=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CR Wyckoff=a
+E=N Wyckoff=b

@@ -1,0 +1,12 @@
+PHASE=AmmoniumFluoride // 01-073-1290
+Reference=01-073-1290 //
+Formula=(_N_H4_)_F //
+SpacegroupNo=186 Setting=1 HermannMauguin=P6_3mc Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.443900_0.439461^0.448339 PARAM=C=0.716500_0.709335^0.723665  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:AmmoniumFluoride=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=N Wyckoff=b x=0.333300 y=0.666700 z=0.378000 TDS=0.00860630
+E=H Wyckoff=b x=0.333300 y=0.666700 z=0.233700 TDS=0.01868908
+E=H Wyckoff=c x=0.461400 y=0.538600 z=0.427000 TDS=0.01947865
+E=F Wyckoff=b x=0.333300 y=0.666700 z=0.000000 TDS=0.00813255

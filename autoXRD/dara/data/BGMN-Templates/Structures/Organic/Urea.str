@@ -1,0 +1,13 @@
+PHASE=Urea // 01-083-1436
+MineralName=Urea //
+Formula=C_O_(NH2)2 //
+SpacegropuNo=113 HermannMauguin=P-42_1m //
+PARAM=A=0.5645_0.5589^0.5701 PARAM=C=0.4704_0.4657^0.4751  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:urea=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=c x=0.0000 y=0.5000 z=0.3328 TDS=0.02266061
+E=O Wyckoff=c x=0.0000 y=0.5000 z=0.5976 TDS=0.03084580
+E=N Wyckoff=e x=0.1418 y=0.6418 z=0.1830 TDS=0.04303148
+E=H Wyckoff=e x=0.2527 y=0.7527 z=0.2839 TDS=0.05669101
+E=H Wyckoff=e x=0.1389 y=0.6389 z=-0.0306 TDS=0.05192728

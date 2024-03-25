@@ -1,0 +1,10 @@
+PHASE=Manganite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.5304_0.5277^0.5331 PARAM=B=0.5277_0.5251^0.5303 PARAM=C=0.5304_0.5277^0.5331 //
+PARAM=BETA=114.4_114^115 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:Manganite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+3 Wyckoff=e x=0.7632 y=0.0103 z=0.7546 TDS=0.0050
+E=O Wyckoff=e x=0.3749 y=0.1238 z=0.6279 TDS=0.0066
+E=O Wyckoff=e x=0.8752 y=0.1256 z=0.1206 TDS=0.0100
+E=H Wyckoff=e x=0.2840 y=0.0270 z=0.7250 TDS=0.0229

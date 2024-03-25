@@ -1,0 +1,45 @@
+PHASE=SiC-19T // 04-007-1613
+Reference=04-007-1613 //
+Formula=Si_C //
+SpacegroupNo=156 Setting=1 HermannMauguin=P3m1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.307900_0.304821^0.310979 PARAM=C=4.784900_4.737051^4.832749  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC19T=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.000000 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.105260 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.210520 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.421050 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.578940 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.789470 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.894730 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.052630 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.263150 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.368420 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.473680 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.684210 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.842100 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.157890 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.315780 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.526310 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.631570 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.736840 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.947360 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.039470 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.144730 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.250000 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.460520 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.618420 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.828940 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.934210 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.092100 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.302630 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.407890 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.513150 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.723680 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.881570 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.197360 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.355260 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.565780 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.671050 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.776310 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.986840 TDS=0.00200000

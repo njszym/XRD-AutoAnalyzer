@@ -1,0 +1,7 @@
+PHASE=SIC3C //
+SpacegroupNo=216 HermannMauguin=F-43m //
+PARAM=A=0.4358_0.4314^0.4402 //
+RP=4 PARAM=B1=0_0^0.02 PARAM=k2=0_0^0.001 //
+PARAM=GEWICHT=0_0 GOAL:sic3c=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.01
+E=SI Wyckoff=a
+E=C Wyckoff=c

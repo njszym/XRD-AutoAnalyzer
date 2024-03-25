@@ -1,0 +1,14 @@
+PHASE=Jarosite // amcsd_0020094
+Reference=amcsd_0020094 //
+Formula=K_(Fe2.79_Al.21)_S2_O14_H6 //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.729130_0.721839^0.736421 PARAM=C=1.717440_1.700266^1.734614 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Jarosite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(AL(0.0700),FE(0.9300)) Wyckoff=d x=0.500000 y=0.000000 z=0.500000 TDS=0.004422
+E=H Wyckoff=h x=0.188000 y=0.812000 z=0.112000 TDS=0.034741
+E=K Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.012633
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.606500 TDS=0.010028
+E=O Wyckoff=h x=0.222870 y=0.777130 z=0.945970 TDS=0.009001
+E=O Wyckoff=h x=0.127130 y=0.872870 z=0.135530 TDS=0.008054
+E=S Wyckoff=c x=0.000000 y=0.000000 z=0.308620 TDS=0.005843

@@ -1,0 +1,9 @@
+PHASE=Corundum //
+SpacegroupNo=167 //
+PARAM=A=0.4761_0.474^0.478 PARAM=C=1.2995_1.29^1.31 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR6 //
+GOAL:corundum=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,0,4)
+E=AL+3 Wyckoff=c TDS=0.0032 z=0.3522
+E=O-2 Wyckoff=e  TDS=0.0033 x=0.6937 
+

@@ -1,0 +1,7 @@
+PHASE=PbO_alpha_Litharge //
+SpacegroupNo=129 HermannMauguin=P4/n2_1/m2/m //
+PARAM=A=0.3974_0.3934^0.4014 PARAM=C=0.5022_0.4972^0.5072 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:pboalpha=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=c z=0.2351 TDS=0.0080
+E=O-2 Wyckoff=a TDS=0.0120

@@ -1,0 +1,10 @@
+PHASE=AlTiO5 //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m //
+PARAM=A=0.3591_0.3555^0.3627 PARAM=B=0.9429_0.9335^0.9523 PARAM=C=0.9636_0.9540^0.9732 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:altio5=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(TI+4(0.3330),AL+3(0.6670)) Wyckoff=c y=0.1863 TDS=0.0111
+E=(AL+3(0.6670),TI+4(0.3330)) Wyckoff=f y=0.8649 z=0.4387 TDS=0.0010
+E=O Wyckoff=c y=0.7590 TDS=0.0090
+E=O Wyckoff=f y=0.9520 z=0.8820 TDS=0.0060
+E=O Wyckoff=f y=0.6830 z=0.9250 TDS=0.0090

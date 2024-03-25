@@ -1,0 +1,18 @@
+PHASE=LCystine //
+SpacegroupNo=178 HermannMauguin=P6_122 //
+PARAM=A=0.5426_0.5406^0.5438 PARAM=C=5.634_5.6106^5.6444 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:lcystine=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=S Wyckoff=c x=0.1987 y=0.0314 z=-0.2539 TDS=0.04
+E=C Wyckoff=c x=0.0886 y=-0.2690 z=-0.2740 TDS=0.03
+E=C Wyckoff=c x=0.0515 y=-0.2164 z=-0.2997 TDS=0.03
+E=C Wyckoff=c x=-0.2033 y=-0.1699 z=-0.3044 TDS=0.03
+E=N Wyckoff=c x=0.3165 y=0.0337 z=-0.3098 TDS=0.04
+E=O-2 Wyckoff=c x=-0.1507 y=0.0732 z=-0.3105 TDS=0.04
+E=O-2 Wyckoff=c x=-0.4414 y=-0.3800 z=-0.3009 TDS=0.04
+E=H Wyckoff=c x=0.2230 y=-0.3250 z=-0.2744 TDS=0.06
+E=H Wyckoff=c x=-0.0740 y=-0.4380 z=-0.2706 TDS=0.06
+E=H Wyckoff=c x=0.0100 y=-0.3800 z=-0.3104 TDS=0.06
+E=H Wyckoff=c x=0.4930 y=0.0150 z=-0.3129 TDS=0.06
+E=H Wyckoff=c x=0.3830 y=0.2150 z=-0.3000 TDS=0.06
+E=H Wyckoff=c x=0.2830 y=-0.0150 z=-0.3277 TDS=0.06

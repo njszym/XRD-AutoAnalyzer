@@ -1,0 +1,10 @@
+PHASE=Ce2O3cubic // cod_1531470
+Reference=cod_1531470 //
+Formula=Ce2_O3 //
+SpacegroupNo=206 HermannMauguin=I2_1/a-3 Setting=1 Lattice=Cubic //
+PARAM=A=1.141000_1.129590^1.152410 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:Ce2O3cubic=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CE+3 Wyckoff=b x=0.250000 y=0.250000 z=0.250000 TDS=0.010000
+E=CE+3 Wyckoff=d x=0.969900 y=0.000000 z=0.250000 TDS=0.010000
+E=O-2 Wyckoff=e x=0.390300 y=0.149000 z=0.378400 TDS=0.010000

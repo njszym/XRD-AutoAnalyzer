@@ -1,0 +1,9 @@
+PHASE=YAG //
+SpacegroupNo=230 HermannMauguin=I4_1/a-32/d //
+PARAM=A=1.2006_1.1994^1.2018 //
+RP=4 PARAM=B1=0_0^0.005 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR6 //
+GOAL:yag=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=Y+3 Wyckoff=c TDS=0.0032
+E=AL+3 Wyckoff=a TDS=0.0037
+E=AL+3 Wyckoff=d TDS=0.0039
+E=O-1 Wyckoff=h x=-0.0318 y=0.0511 z=0.1498 TDS=0.0031

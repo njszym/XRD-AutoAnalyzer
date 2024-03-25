@@ -1,0 +1,79 @@
+TITEL=Kaolinite_disordered  SpacegroupNo=1 HermannMauguin=C1 //
+PARAM=A=0.5155_0.513^0.519 PARAM=B=0.8945_0.892^0.898 PARAM=C=0.7405_0.738^0.744 //
+PARAM=ALPHA=91.7_91^92.3 PARAM=BETA=104.900_104^106 //
+PARAM=GAMMA=89.800_89^90.6 //
+RefMult=2 GEWICHT=SPHAR2 RP=4 //
+// g[i] eventuell konstant halten
+PARAM=g1=0.5_0^1 // geordnete/ungeordnete Dom"anen
+GEWICHT[1]=g1*GEWICHT GEWICHT[2]=(1-g1)*GEWICHT
+GOAL:Kaolinitedis=GEWICHT //
+// ideale Peakbreite, sollte variabel bleiben, eventuell isotrop
+b10=ANISOLIN^0.1 //
+// Ausdehnung der Rots f"ur Subphase i ist b11*c1[iref]
+// eventuell kann b11 konstant gehalten werden, ich empfehle mindestens
+// diese Gr"o\3e ebenfalls variabel zu lassen
+// theoretisch existiert eine Beziehung zwischen b11 und dem Betrag des
+// unten eingef"uhrten Vektors tau, ich lasse es aber variabel
+// relative Breite der Subphasen
+PARAM=cb1=0.1_0^1 //
+PARAM=b11=0.6^0.7_0 //
+c1[2]==1 c1[1]=cb1 //
+// Quadrat der Verbreiterung des L2-Ausl"aufers ist c12sqr*sqr(c1[iref]*b11)
+// Eventuell kann c12sqr konstant gehalten werden
+c12sqr==1 //
+// Verschiebung des Ausl"aufers ist c2*sqr(c1[iref]*b11)
+// eventuell kann c2 konstant gehalten werden
+c2==1 //
+// Gitterkonstanten"anderung durch tau,
+// c3[i] kann eventuell konstant gehalten werden
+// eventuell kann c3 auch f"ur alle 3 Subphasen identisch gesetzt
+// werden (variabel oder konstant).
+PARAM=c3=0_-3^3 //
+PARAM=k2=0_0 // Stress
+// folgender Vektor ist der Differenzvektor zwischen dem in
+// "X-Ray Diffraction by Disordered Lamellar Structures"
+// Victor A. Drits - Cyril Tchoubar, Springer Berlin Heidelberg 1990
+// ISBN 3-540-51222-5, ISBN 0-387-51222-5
+// Kap. 8.1.5 Models for the Stacking Faults in Kaolinite
+// Pkt. 4: Model containing only enantiomorphic B layers, S. 245
+// angegebenem tau und der idealen Translation b/3, multipliziert
+// mit einem beliebigen Faktor
+// tau in Kugelkoordinaten, um die Richtung fest halten zu k"onnen
+// (theta und phi konstant, tau variabel)
+// in Abweichung zu obiger Literatur wird eine Komponente in c-Richtung
+// angenommen, die sich auch als signifikant ergibt.
+PARAM=theta=0 PARAM=phi=0 PARAM=tau=0.2_-0.5^0.5 //
+// tau in Kristallkoordinaten
+taua==tau*cos(theta)*cos(phi) //
+taub==tau*cos(theta)*sin(phi) //
+tauc==tau*sin(theta) //
+pi==2*acos(0) //
+cosALPHA==cos(ALPHA*pi/180) //
+cosBETA==cos(BETA*pi/180) //
+sinGAMMA==sin(GAMMA*pi/180) //
+cosGAMMA==cos(GAMMA*pi/180) //
+K13==(cosALPHA*cosGAMMA-cosBETA)/A //
+K23==(cosBETA*cosGAMMA-cosALPHA)/B //
+K33==sqr(sinGAMMA)/C //
+B1=cat(hklK==h*K13+k*K23+l*K33,hkltau==h*taua+k*taub+l*tauc,
+b1k==K33*sqr(hkltau),
+B2==k2*sqr(sk)+sqr(sqrt(sqr(sk)+
+sqrt(c12sqr)*sqr(c1[iref]*ifthenelse(mod(k,3),b11+b1k,b1k)))-sk),
+DELTAsk==sqrt(sqr(sk)+c2*sqr(c1[iref]*ifthenelse(mod(k,3),b11+b1k,b1k)))-sk+
+c3*c1[iref]*K33*hklK*hkltau/sk,
+b10+c1[iref]*ifthenelse(mod(k,3),b11+b1k,b1k)*abs(hklK)/sk) //
+GOAL=taua GOAL=taub GOAL=tauc
+E=SI+4 Wyckoff=a x=0.9942 y=0.3393 z=0.0909 TDS=0.0044
+E=SI+4 Wyckoff=a x=0.5064 y=0.1665 z=0.0913 TDS=0.0044
+E=AL+3 Wyckoff=a x=0.2971 y=0.4957 z=0.4721 TDS=0.0083
+E=AL+3 Wyckoff=a x=0.7926 y=0.3300 z=0.4699 TDS=0.0083
+E=O Wyckoff=a x=0.0501 y=0.3539 z=0.3170 TDS=0.0071
+E=O Wyckoff=a x=0.1214 y=0.6604 z=0.3175 TDS=0.0071
+E=O Wyckoff=a x=0.0000 y=0.5000 z=0.0000 TDS=0.0071
+E=O Wyckoff=a x=0.2085 y=0.2305 z=0.0247 TDS=0.0071
+E=O Wyckoff=a x=0.2012 y=0.7657 z=0.0032 TDS=0.0071
+E=O Wyckoff=a x=0.0510 y=0.9698 z=0.3220 TDS=0.0090
+E=O Wyckoff=a x=0.9649 y=0.1665 z=0.6051 TDS=0.0090
+E=O Wyckoff=a x=0.0348 y=0.4769 z=0.6080 TDS=0.0090
+E=O Wyckoff=a x=0.0334 y=0.8570 z=0.6094 TDS=0.0090
+

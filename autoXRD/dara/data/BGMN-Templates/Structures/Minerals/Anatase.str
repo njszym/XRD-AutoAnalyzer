@@ -1,0 +1,10 @@
+PHASE=Anatase // 04-007-0701
+MineralName=Anatase //
+Formula=Ti_O2 //
+SpacegroupNo=141 HermannMauguin=I4_1/a2/m2/d //
+PARAM=A=0.3784_0.36^0.39 PARAM=C=0.9514_0.9230^0.9800 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Anatase=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=TI+4 Wyckoff=a TDS=0.0045795
+E=O-2 Wyckoff=e z=0.20806 TDS=0.0056849

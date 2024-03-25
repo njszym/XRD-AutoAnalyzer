@@ -1,0 +1,8 @@
+PHASE=Nickel //
+Reference=04-010-6148 //
+Formula=Ni //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.352850_0.349322^0.356378  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:Nickel=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000

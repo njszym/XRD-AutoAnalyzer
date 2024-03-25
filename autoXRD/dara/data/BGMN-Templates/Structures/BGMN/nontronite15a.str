@@ -1,0 +1,107 @@
+// turbostratically disordered smectite
+// d(001) approx. 15 A
+// structure of TOT layer (cis-vacant):
+// Tsipurski et al., Clay Minerals 19(1984), 177-193 (modified)
+// model for turbostratic disorder:
+// Ufer et al., ZKristallogr. 219(2004), 519-527
+// 
+PHASE=nontronite15a  SpacegroupNo=5 HermannMauguin=C121
+PARAM=A=0.53_0.525^0.535 PARAM=B=0.915_0.91^0.92 PARAM=c0=1.5_1.4^1.58
+BETA=100.2
+pi==2*acos(0)
+RP=4
+layer==9  // layer: factor for elongation in c direction 
+C=c0*layer // C: lattice parameter c for supercell
+PARAM=b10=0.002_0^0.015 // isotropic broadening of hkl reflections
+PARAM=b1l=0.03_0^0.1  // separate broadening of 00l reflections
+B1=ifthenelse(and(eq(h,0),eq(k,0)),b10+b1l,b10)
+// K20: strain broadening of hkl lines
+PARAM=K20=0.000026_0.00001^0.0001
+// K2l: strain broadening of 00l lines
+PARAM=K2l=0_0^0.002
+breit2=1/sqr(C) // additional l-dependent broadening to avoid "ripples"
+PARAM=GEWICHT=0_0 // refining the scale factor
+GOAL:nontronite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) // definition of the helper variable "smectite.." for calculation of phase abundances
+// 
+// squared lorentzian (Gauss-like) broadening
+B2=cat(R2==sqr(h/A)+sqr(k/B),Z2==max(sqr(sk)-R2,0),
+orientierung2==Z2/sqr(sk),
+ifthenelse(and(eq(h,0),eq(k,0)),K2l*sqr(sk),K20*sqr(sk)+breit2*orientierung2))
+//
+// scaling of classes (00l und hkl) and removal of redundant 00l reflections
+GEWICHT[1]=GEWICHT*ifthenelse(and(eq(h,0),eq(k,0)),
+ifthenelse(mod(l,layer),0,layer),1)
+//
+// === occupancies =====================
+// --- octahedra position -------
+pMG=0.02 PARAM=pFE=0.7_0.5^1 pAL=(1-pMG-pFE)  
+PARAM=ptrans=0.5_0.0^1.0     // mixing parameter for cis- and trans-vacancy; 0 => trans-vacant
+//
+// --- tetrahedra position ------
+sitet=(1-fetet-altet) PARAM=fetet=0.01_0^0.5 altet=0.05 
+// --- interlayer ---------------
+PARAM=pCA=0.1_0.0^0.3                       
+pOZ=pCA
+//
+// ==== rigid body of the interlayer complex =====================
+//    cation, octahedrally surrounded by 6 oxygen (water)
+// definition of the positions in cartesian co-ordinates
+// 
+dCAO=0.241        // distance cation - oxygen
+//
+set(ECA,0,0,0)      // cation in the middle of the interlayer
+set(EOZ1,0,0,dCAO)   // O above
+set(EOZ2,0,0,-dCAO)   // O below
+set(EOZ3,dCAO,0,0)
+set(EOZ4,-dCAO,0,0)
+set(EOZ5,0,dCAO,0)
+set(EOZ6,0,-dCAO,0)
+// 0.6892: shifting of the interlayer complex in x fixed
+// 0.2092: shifting of the interlayer complex in y fixed
+// the first two Eulerian angles rotate the interlayer octahedra
+//  with two planes parallel to the xy plane
+// -18.42: the 3th eulerian angle was fixed at this value
+// the 3th eulerian angle is a rotation around the cartesian z-axis 
+// which is perpendicular to the xy-plane
+// shifting and rotation of the rigid body
+T(0.6892,0.2092,0.5*c0*sin(pi*BETA/180),45,180*acos(1/sqrt(3))/pi,-18.42,
+ECA,EOZ1,EOZ2,EOZ3,EOZ4,EOZ5,EOZ6) 
+//
+// --- isotropic temperature factors (nm^2) -------------------------------
+//
+tdsint=0.008
+tdsH2O=0.025
+tdsoct=0.005
+tdstet=0.004
+tdso=0.008
+//
+// --- positions -------------------------- 
+//  absolute positions in c-direction [nm]
+//  to avoid a stretching/shortening of the TOT layer by varying c0
+// 
+zT=0.271350
+zO11=0.10955
+zO12=0.10553
+zO2=0.33668
+// 
+E=(AL+3(ptrans*pAL),MG+2(ptrans*pMG),FE+3(ptrans*pFE)) Wyckoff=a y=0.0 TDS=tdsoct         // trans
+E=(AL+3((1-ptrans)*pAL),MG+2((1-ptrans)*pMG),FE+3((1-ptrans)*pFE)) Wyckoff=a y=0.6540 TDS=tdsoct // cis
+E=(AL+3(pAL),MG+2(pMG),FE+3(pFE)) Wyckoff=a y=0.3210 TDS=tdsoct                      // cis, always occupied
+E=(SI+4(sitet),AL+3(altet),FE+3(fetet)) Wyckoff=c x=0.4320 y=0.3330 z=zT/(layer*c0) TDS=tdstet 
+E=(SI+4(sitet),AL+3(altet),FE+3(fetet)) Wyckoff=c x=0.4320 y=0.6620 z=zT/(layer*c0) TDS=tdstet 
+E=O Wyckoff=c x=0.1730 y=0.7250 z=zO2/(layer*c0) TDS=tdso
+E=O Wyckoff=c x=0.1700 y=0.2680 z=zO2/(layer*c0) TDS=tdso
+E=O Wyckoff=c x=0.4170 y=0.6560 z=zO11/(layer*c0) TDS=tdso
+E=O Wyckoff=c x=0.3430 y=0.3470 z=zO11/(layer*c0) TDS=tdso
+E=O Wyckoff=c x=0.3340 y=0.9760 z=zO12/(layer*c0) TDS=tdso
+E=O Wyckoff=c x=0.4890 y=0.4960 z=zO2/(layer*c0) TDS=tdso
+// 
+// list of interlayer positions
+// 
+E=CA+2(pCA) Wyckoff=c x=X(ECA) y=Y(ECA) z=Z(ECA)   TDS=tdsint
+E=O-2(pOZ)  Wyckoff=c x=X(EOZ1) y=Y(EOZ1) z=Z(EOZ1)   TDS=tdsH2O
+E=O-2(pOZ)  Wyckoff=c x=X(EOZ2) y=Y(EOZ2) z=Z(EOZ2)   TDS=tdsH2O
+E=O-2(pOZ)  Wyckoff=c x=X(EOZ3) y=Y(EOZ3) z=Z(EOZ3)   TDS=tdsH2O
+E=O-2(pOZ)  Wyckoff=c x=X(EOZ4) y=Y(EOZ4) z=Z(EOZ4)   TDS=tdsH2O
+E=O-2(pOZ)  Wyckoff=c x=X(EOZ5) y=Y(EOZ5) z=Z(EOZ5)   TDS=tdsH2O
+E=O-2(pOZ)  Wyckoff=c x=X(EOZ6) y=Y(EOZ6) z=Z(EOZ6)   TDS=tdsH2O

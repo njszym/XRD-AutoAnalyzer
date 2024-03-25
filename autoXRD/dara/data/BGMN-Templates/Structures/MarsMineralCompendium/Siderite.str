@@ -1,0 +1,10 @@
+PHASE=Siderite // amcsd_0020837
+Reference=amcsd_0020837 //
+Formula=Fe_(_C_O3_) //
+SpacegroupNo=167 Setting=1 HermannMauguin=R-32/c Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.469160_0.464468^0.473852 PARAM=C=1.537960_1.522580^1.553340  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Siderite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.00440579
+E=C Wyckoff=a x=0.000000 y=0.000000 z=0.250000 TDS=0.00435052
+E=O Wyckoff=e x=0.274270 y=0.000000 z=0.250000 TDS=0.00502955

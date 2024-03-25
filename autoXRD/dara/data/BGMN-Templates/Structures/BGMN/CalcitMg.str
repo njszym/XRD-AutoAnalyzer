@@ -1,0 +1,9 @@
+PHASE=CalcitMg //
+SpacegroupNo=167 //
+PARAM=A=0.4943_0.488^0.4966 PARAM=C=1.685_1.642^1.695 GAMMA=120 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.001 //
+GEWICHT=SPHAR4 GOAL:calcitmg=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,0,4)
+E=(CA+2,MG+2(p)) PARAM=p=0_0^0.5 Wyckoff=b TDS=0.0095
+E=C Wyckoff=a TDS=0.0090
+E=O-2  Wyckoff=e x=0.257 TDS=0.0094

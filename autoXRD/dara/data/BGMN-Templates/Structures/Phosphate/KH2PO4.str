@@ -1,0 +1,11 @@
+PHASE=KH2PO4 // 04-006-6042
+MineralName=Archerite //
+Formula=K_H2_(PO4) //
+SpacegroupNo=122 HermannMauguin=I-42d //
+PARAM=A=0.7451_0.7351^0.7551 PARAM=C=0.6973_0.6873^0.7073 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:KH2PO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K Wyckoff=b x=0.0 y=0.0 z=0.5 TDS=0.0149228
+E=P Wyckoff=a x=0.0 y=0.0 z=0.0 TDS=0.0105013
+E=O Wyckoff=e x=0.1486 y=0.0825 z=0.1262 TDS=0.0134227

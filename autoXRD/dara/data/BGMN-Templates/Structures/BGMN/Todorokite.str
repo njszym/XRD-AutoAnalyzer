@@ -1,0 +1,19 @@
+PHASE=Todorokite //
+SpacegroupNo=10 HermannMauguin=P12/m1 //
+PARAM=A=0.9764_0.9666^0.9862 PARAM=B=0.2842_0.2814^0.2870 PARAM=C=0.9551_0.9455^0.9647 //
+PARAM=BETA=94.1_93.5^95 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:todorokite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+4 Wyckoff=e TDS=0.0080
+E=MN+4 Wyckoff=m x=0.2360 z=0.9980 TDS=0.0080
+E=MN+4 Wyckoff=c TDS=0.0080
+E=MN+4 Wyckoff=n x=0.0260 z=0.2350 TDS=0.0080
+E=O-2 Wyckoff=n x=0.8220 z=0.8810 TDS=0.0100
+E=O-2 Wyckoff=m x=0.5820 z=0.9210 TDS=0.0100
+E=O-2 Wyckoff=n x=0.3350 z=0.9100 TDS=0.0100
+E=O-2 Wyckoff=m x=0.0830 z=0.8500 TDS=0.0100
+E=O-2 Wyckoff=n x=0.0870 z=0.5930 TDS=0.0100
+E=O-2 Wyckoff=m x=0.1200 z=0.3510 TDS=0.0100
+E=O-2(0.9200) Wyckoff=m x=0.6370 z=0.6470 TDS=0.0500
+E=O-2(0.4200) Wyckoff=n x=0.3040 z=0.6200 TDS=0.0500
+E=O-2(0.4800) Wyckoff=h TDS=0.0500

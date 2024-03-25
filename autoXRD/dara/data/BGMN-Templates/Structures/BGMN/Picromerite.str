@@ -1,0 +1,22 @@
+PHASE=Picromerite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.9556_0.9509^0.9605 PARAM=B=1.221_1.2151^1.2273 PARAM=C=0.9073_0.9027^0.9117 //
+PARAM=BETA=141.7_141^142.6 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:picromerite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a TDS=0.0096
+E=K+1 Wyckoff=e x=0.6551 y=0.3459 z=0.7861 TDS=0.013
+E=S Wyckoff=e x=0.2710 y=0.1370 z=0.6810 TDS=0.0077
+E=O-2 Wyckoff=e x=0.3790 y=0.0600 z=0.6640 TDS=0.0145
+E=O-2 Wyckoff=e x=0.4310 y=0.2320 z=0.8340 TDS=0.0145
+E=O-2 Wyckoff=e x=0.0550 y=0.1730 z=0.4430 TDS=0.0145
+E=O-2 Wyckoff=e x=0.2420 y=0.0800 z=0.7950 TDS=0.0145
+E=O-2 Wyckoff=e x=0.8310 y=0.1110 z=0.0030 TDS=0.0145
+E=O-2 Wyckoff=e x=0.9740 y=0.1130 z=0.8050 TDS=0.0145
+E=O-2 Wyckoff=e x=0.3070 y=0.0660 z=0.3110 TDS=0.0145
+E=H Wyckoff=e x=0.8980 y=0.1270 z=0.1410 TDS=0.015
+E=H Wyckoff=e x=0.6730 y=0.0950 z=0.8870 TDS=0.015
+E=H Wyckoff=e x=0.0200 y=0.8240 z=0.1590 TDS=0.015
+E=H Wyckoff=e x=0.9370 y=0.9060 z=0.2070 TDS=0.015
+E=H Wyckoff=e x=0.6790 y=0.8500 z=0.6920 TDS=0.015
+E=H Wyckoff=e x=0.3350 y=0.0600 z=0.4390 TDS=0.015

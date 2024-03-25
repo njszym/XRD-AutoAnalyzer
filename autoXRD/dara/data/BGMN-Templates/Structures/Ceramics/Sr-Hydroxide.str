@@ -1,0 +1,11 @@
+PHASE=StrontiumHydroxide // 04-013-8832
+Reference=04-013-8832 //
+Formula=Sr_(_O_H_)2 //
+SpacegroupNo=62 Setting=6 HermannMauguin=P2_1/n2_1/a2_1/m Lattice=Orthorhombic //
+PARAM=A=0.988900_0.979011^0.998789 PARAM=B=0.612020_0.605900^0.618140 PARAM=C=0.391840_0.387922^0.395758  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:StrontiumHydroxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=SR Wyckoff=c x=0.161290 y=0.095920 z=0.250000 TDS=0.00640010
+E=O Wyckoff=c x=0.395200 y=0.344200 z=0.250000 TDS=0.01070000
+E=O Wyckoff=c x=0.369300 y=0.865100 z=0.250000 TDS=0.00970000

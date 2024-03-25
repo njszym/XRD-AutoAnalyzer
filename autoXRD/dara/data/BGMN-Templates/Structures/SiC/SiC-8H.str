@@ -1,0 +1,15 @@
+PHASE=SiC-8H // 00-048-0708
+Reference=00-048-0708 //
+Formula=Si_C //
+SpacegroupNo=186 Setting=1 HermannMauguin=P6_3mc Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.307900_0.304821^0.310979 PARAM=C=2.014700_1.994553^2.034847  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC8H=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.000000 TDS=0.00200000
+E=SI Wyckoff=b x=2/3 y=1/3 z=0.125000 TDS=0.00200000
+E=SI Wyckoff=b x=2/3 y=1/3 z=0.375000 TDS=0.00200000
+E=SI Wyckoff=b x=2/3 y=1/3 z=0.750000 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.093750 TDS=0.00200000
+E=C Wyckoff=b x=2/3 y=1/3 z=0.218750 TDS=0.00200000
+E=C Wyckoff=b x=2/3 y=1/3 z=0.468750 TDS=0.00200000
+E=C Wyckoff=b x=2/3 y=1/3 z=0.843750 TDS=0.00200000

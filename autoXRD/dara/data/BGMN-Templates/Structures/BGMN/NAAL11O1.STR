@@ -1,0 +1,15 @@
+PHASE=NaAl11O17_beta_Diaoyudaoite //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.5602_0.5546^0.5658 PARAM=C=2.2626_2.2400^2.2852 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:naal11o17=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O Wyckoff=k x=0.1667 z=0.4506 TDS=0.0071
+E=O Wyckoff=f z=0.9452 TDS=0.0039
+E=O Wyckoff=e z=0.3579 TDS=0.0032
+E=O Wyckoff=k x=0.5000 z=0.3534 TDS=0.0047
+E=O Wyckoff=c TDS=0.0418
+E=NA+1 Wyckoff=d TDS=0.1255
+E=AL+3 Wyckoff=a TDS=0.0063
+E=AL+3 Wyckoff=f z=0.4752 TDS=0.0024
+E=AL+3 Wyckoff=k x=0.8333 z=0.3938 TDS=0.0055
+E=AL+3 Wyckoff=f z=0.3243 TDS=0.0032

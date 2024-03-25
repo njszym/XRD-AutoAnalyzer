@@ -1,0 +1,7 @@
+PHASE=Hematite //
+SpacegroupNo=167 //
+PARAM=A=0.5038_0.501^0.507 PARAM=C=1.3772_1.37^1.383 //
+RP=3 PARAM=B1=0_0^0.008  //
+GEWICHT=SPHAR4 GOAL:hematite=GEWICHT
+E=FE+3  Wyckoff=c z=0.3553 TDS=0.005
+E=O-2  Wyckoff=e x=0.3059 TDS=0.007

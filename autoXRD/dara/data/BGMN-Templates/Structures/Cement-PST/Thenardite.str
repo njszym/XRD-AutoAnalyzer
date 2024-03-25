@@ -1,0 +1,10 @@
+PHASE=Thenardite // amcsd_0005113
+Reference=amcsd_0005113 //
+Formula=Na2_S_O4 //
+SpacegroupNo=70 HermannMauguin=F2/d2/d2/d Setting=2 OriginChoice=2 Lattice=Orthorhombic //
+PARAM=A=0.982900_0.973071^0.992729 PARAM=B=1.230200_1.217898^1.242502 PARAM=C=0.586800_0.580932^0.592668 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Thenardite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NA+1 Wyckoff=e x=0.441600 y=0.125000 z=0.125000 TDS=0.015125
+E=S Wyckoff=a x=0.125000 y=0.125000 z=0.125000 TDS=0.008475
+E=O-2 Wyckoff=h x=0.213800 y=0.057200 z=0.979300 TDS=0.014333

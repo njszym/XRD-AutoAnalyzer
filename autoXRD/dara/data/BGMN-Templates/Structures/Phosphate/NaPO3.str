@@ -1,0 +1,18 @@
+PHASE=NaPO3 // 04-009-8784
+Formula=Na_P_O3 //
+SpacegroupNo=14 HermannMauguin=P12_1/n1 //
+PARAM=A=1.212_1.202^1.222 PARAM=B=0.620_0.610^0.630 PARAM=C=0.699_0.689^0.701 // 
+PARAM=BETA=92.00_91.00^93.00 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NaPO3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA Wyckoff=e x=0.0060 y=0.379 z=0.764
+E=P Wyckoff=e x=0.215 y=0.362 z=0.489
+E=O Wyckoff=e x=0.217 y=0.231 z=0.286
+E=O Wyckoff=e x=0.042 y=0.29 z=0.087
+E=O Wyckoff=e x=0.056 y=0.978 z=0.314
+E=O Wyckoff=e x=0.228 y=0.215 z=0.654
+E=NA Wyckoff=e x=0.13 y=0.87 z=0.629
+E=P Wyckoff=e x=0.111 y=0.125 z=0.182
+E=O Wyckoff=e x=0.12 y=0.512 z=0.499
+E=O Wyckoff=e x=0.173 y=0.987 z=0.021

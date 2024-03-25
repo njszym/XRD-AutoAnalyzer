@@ -1,0 +1,10 @@
+PHASE=CaO // 04-007-9734
+MineralName=Lime //
+Formula=Ca_O //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4819_0.4771^0.4867 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:CaO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.00350000
+E=O-2 Wyckoff=b x=0.5000 y=0.5000 z=0.5000 TDS=0.00440000

@@ -1,0 +1,34 @@
+PHASE=Ca4Al6O12so4 //
+SpacegroupNo=27 HermannMauguin=Pcc2 //
+PARAM=A=1.3028_1.2898^1.3158 PARAM=B=1.3037_1.2907^1.3167 PARAM=C=0.9161_0.9069^0.9253 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ca4Al6O12so4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=S Wyckoff=e x=0.2537 y=0.2487 z=0.9822 TDS=0.0190
+E=O-2 Wyckoff=e x=0.7290 y=0.3170 z=0.6120 TDS=0.0750
+E=O-2 Wyckoff=e x=0.8380 y=0.1840 z=0.4600 TDS=0.0750
+E=O-2 Wyckoff=e x=0.7700 y=0.3360 z=0.3790 TDS=0.0750
+E=O-2 Wyckoff=e x=0.6510 y=0.2010 z=0.4170 TDS=0.0750
+E=CA+2 Wyckoff=e x=0.0580 y=0.2510 z=0.1490 TDS=0.0210
+E=CA+2 Wyckoff=e x=0.2370 y=0.9260 z=0.2860 TDS=0.0210
+E=CA+2 Wyckoff=e x=0.2570 y=0.5120 z=0.2540 TDS=0.0210
+E=CA+2 Wyckoff=e x=0.4830 y=0.2530 z=0.2280 TDS=0.0210
+E=AL+3 Wyckoff=d z=0.7300 TDS=0.0040
+E=AL+3 Wyckoff=c z=0.7500 TDS=0.0040
+E=AL+3 Wyckoff=a z=0.7050 TDS=0.0040
+E=AL+3 Wyckoff=b z=0.7000 TDS=0.0040
+E=AL+3 Wyckoff=e x=0.6270 y=0.1210 z=-0.0040 TDS=0.0020
+E=AL+3 Wyckoff=e x=0.1220 y=0.6250 z=0.9490 TDS=0.0020
+E=AL+3 Wyckoff=e x=0.3690 y=0.6290 z=0.9800 TDS=0.0020
+E=AL+3 Wyckoff=e x=0.1220 y=0.8760 z=0.9600 TDS=0.0020
+E=O-2 Wyckoff=e x=0.4000 y=0.2460 z=0.4380 TDS=0.0138
+E=O-2 Wyckoff=e x=0.5670 y=0.4090 z=0.1400 TDS=0.0138
+E=O-2 Wyckoff=e x=0.5550 y=0.1050 z=0.1550 TDS=0.0138
+E=O-2 Wyckoff=e x=0.7550 y=0.5900 z=0.5040 TDS=0.0138
+E=O-2 Wyckoff=e x=0.5960 y=0.4430 z=0.8260 TDS=0.0138
+E=O-2 Wyckoff=e x=0.9070 y=0.4460 z=0.8020 TDS=0.0138
+E=O-2 Wyckoff=e x=0.7570 y=0.9020 z=0.5360 TDS=0.0138
+E=O-2 Wyckoff=e x=0.9010 y=0.0340 z=0.8240 TDS=0.0138
+E=O-2 Wyckoff=e x=0.6080 y=0.0330 z=0.8540 TDS=0.0138
+E=O-2 Wyckoff=e x=0.1030 y=0.2470 z=0.3910 TDS=0.0138
+E=O-2 Wyckoff=e x=0.9530 y=0.1150 z=0.1250 TDS=0.0138
+E=O-2 Wyckoff=e x=0.9480 y=0.3890 z=0.1100 TDS=0.0138

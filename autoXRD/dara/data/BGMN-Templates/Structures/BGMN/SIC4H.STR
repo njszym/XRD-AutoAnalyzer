@@ -1,0 +1,9 @@
+PHASE=SiC4H  //
+SpacegroupNo=186 HermannMauguin=P6_3mc //
+PARAM=A=0.3073_0.3042^0.3104 PARAM=C=1.0053_0.9952^1.0154 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:sic4h=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI Wyckoff=a z=0.1880 TDS=0.0100
+E=SI Wyckoff=b z=0.4380 TDS=0.0100
+E=C Wyckoff=a z=1.0000 TDS=0.0110
+E=C Wyckoff=b z=0.2500 TDS=0.0110

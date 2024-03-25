@@ -1,0 +1,21 @@
+PHASE=Bonattite //
+SpacegroupNo=9 HermannMauguin=C1c1 //
+PARAM=A=0.5592_0.5536^0.5648 PARAM=B=1.3029_1.2899^1.3159 PARAM=C=0.7341_0.7268^0.7414 //
+PARAM=BETA=97.1_96^98 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 TDS=0.01 //
+GOAL:bonattite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+2 Wyckoff=a x=0.5000 y=0.3640 z=0.5000
+E=S Wyckoff=a x=0.2643 y=0.1115 z=0.4168
+E=O-2 Wyckoff=a x=0.1618 y=0.1639 z=0.2446
+E=O-2 Wyckoff=a x=0.8319 y=0.3057 z=0.0505
+E=O-2 Wyckoff=a x=0.4788 y=0.0536 z=0.3805
+E=O-2 Wyckoff=a x=0.0866 y=0.9562 z=0.9825
+E=O-2 Wyckoff=a x=0.3360 y=0.3725 z=0.2462
+E=O-2 Wyckoff=a x=0.6940 y=0.0911 z=0.0809
+E=O-2 Wyckoff=a x=0.7840 y=0.3041 z=0.4103
+E=H Wyckoff=a x=0.4280 y=0.3970 z=0.1510
+E=H Wyckoff=a x=0.1740 y=0.3550 z=0.1920
+E=H Wyckoff=a x=0.6350 y=0.0930 z=0.2000
+E=H Wyckoff=a x=0.6040 y=0.0400 z=0.0030
+E=H Wyckoff=a x=0.9300 y=0.2760 z=0.4760
+E=H Wyckoff=a x=0.7950 y=0.3040 z=0.2800

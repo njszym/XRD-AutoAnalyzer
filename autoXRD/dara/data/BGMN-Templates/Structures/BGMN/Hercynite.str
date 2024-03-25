@@ -1,0 +1,8 @@
+PHASE=Hercynite //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=0.8151_0.8069^0.8233 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:hercynite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE+2(0.8990),AL+3(0.1010)) Wyckoff=a TDS=0.0068
+E=(FE+2(0.0505),AL+3(0.9495)) Wyckoff=d TDS=0.0051
+E=O-2 Wyckoff=e x=0.7355 TDS=0.0088

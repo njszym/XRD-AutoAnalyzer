@@ -1,0 +1,35 @@
+PHASE=Bredigite //
+SpacegroupNo=34 HermannMauguin=Pnn2 //
+PARAM=A=1.8340_1.8157^1.8523 PARAM=B=0.6739_0.6672^0.6806 PARAM=C=1.0909_1.0800^1.1018 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:bredigite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(CA+2(0.7070),BA+2(0.2930)) Wyckoff=a z=0.0000 TDS=0.0162
+E=CA+2 Wyckoff=a z=0.5016 TDS=0.0144
+E=CA+2 Wyckoff=c x=0.2284 y=0.0000 z=0.2362 TDS=0.0071
+E=CA+2 Wyckoff=c x=0.2272 y=0.0056 z=0.7728 TDS=0.0106
+E=(CA+2(0.8800),MG+2(0.1200)) Wyckoff=c x=0.4103 y=0.1540 z=0.2564 TDS=0.0132
+E=CA+2 Wyckoff=c x=0.4119 y=0.1614 z=0.7556 TDS=0.0099
+E=CA+2 Wyckoff=c x=0.1722 y=0.3310 z=0.0081 TDS=0.0125
+E=CA+2 Wyckoff=c x=0.1654 y=0.3008 z=0.5061 TDS=0.0138
+E=(MG+2(0.6400),MN+2(0.3600)) Wyckoff=b z=0.4997 TDS=0.0074
+E=(MG+2(0.9300),MN+2(0.0700)) Wyckoff=b z=0.0000 TDS=0.0045
+E=SI+4 Wyckoff=c x=0.0811 y=0.2188 z=0.7542 TDS=0.0100
+E=SI+4 Wyckoff=c x=0.0798 y=0.2199 z=0.2594 TDS=0.0070
+E=SI+4 Wyckoff=c x=0.1649 y=0.7659 z=0.0037 TDS=0.0080
+E=SI+4 Wyckoff=c x=0.3364 y=0.2831 z=0.0043 TDS=0.0080
+E=O-2 Wyckoff=c x=0.0259 y=0.2695 z=0.6388 TDS=0.0240
+E=O-2 Wyckoff=c x=0.0495 y=0.3444 z=0.8681 TDS=0.0150
+E=O-2 Wyckoff=c x=0.1605 y=0.3054 z=0.7196 TDS=0.0110
+E=O-2 Wyckoff=c x=0.0883 y=0.9919 z=0.7885 TDS=0.0210
+E=O-2 Wyckoff=c x=0.0609 y=0.3311 z=0.1285 TDS=0.0220
+E=O-2 Wyckoff=c x=0.0241 y=0.2900 z=0.3626 TDS=0.0090
+E=O-2 Wyckoff=c x=0.1592 y=0.3233 z=0.2923 TDS=0.0170
+E=O-2 Wyckoff=c x=0.0913 y=0.9897 z=0.2294 TDS=0.0110
+E=O-2 Wyckoff=c x=0.1991 y=0.6537 z=0.8870 TDS=0.0460
+E=O-2 Wyckoff=c x=0.1985 y=0.6607 z=0.1249 TDS=0.0030
+E=O-2 Wyckoff=c x=0.0796 y=0.7206 z=0.9958 TDS=0.0210
+E=O-2 Wyckoff=c x=0.1912 y=0.9890 z=0.0057 TDS=0.0220
+E=O-2 Wyckoff=c x=0.2900 y=0.2500 z=0.8781 TDS=0.0060
+E=O-2 Wyckoff=c x=0.2850 y=0.2699 z=0.1198 TDS=0.0200
+E=O-2 Wyckoff=c x=0.3969 y=0.1015 z=0.0127 TDS=0.0130
+E=O-2 Wyckoff=c x=0.3760 y=0.4934 z=0.0000 TDS=0.0120

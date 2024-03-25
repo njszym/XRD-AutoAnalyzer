@@ -1,0 +1,11 @@
+PHASE=MolybdenumIronNickelNitride // 04-011-9109
+Reference=04-011-9109 //
+Formula=Mo3_Fe0.1_Ni1.9_N //
+SpacegroupNo=213 Setting=1 HermannMauguin=P4_132 Lattice=Cubic //
+PARAM=A=0.663740_0.657103^0.670377  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:MolybdenumIronNickelNitride=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI(0.9500) Wyckoff=c x=0.066800 y=0.066800 z=0.066800 TDS=0.00102644
+E=FE(0.0500) Wyckoff=c x=0.066800 y=0.066800 z=0.066800 TDS=0.00102644
+E=MO Wyckoff=d x=0.125000 y=0.201610 z=0.451610 TDS=0.00157914
+E=N Wyckoff=a x=0.375000 y=0.375000 z=0.375000 TDS=0.00236871

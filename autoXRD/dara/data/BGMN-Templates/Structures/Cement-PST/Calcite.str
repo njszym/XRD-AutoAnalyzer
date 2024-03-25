@@ -1,0 +1,11 @@
+PHASE=Calcite // 04-008-0788
+MineralName=Calcite //
+Formula=Ca_(CO3) //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.4991_0.4941^0.5041 PARAM=C=1.7062_1.6891^1.7233  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Calcite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=b x=0.0000 y=0.0000 z=0.0000 TDS=0.00796938
+E=C Wyckoff=a x=0.0000 y=0.0000 z=0.2500 TDS=0.00757986
+E=O Wyckoff=e x=0.2573 y=0.0000 z=0.2500 TDS=0.01400168

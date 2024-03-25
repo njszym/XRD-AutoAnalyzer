@@ -1,0 +1,11 @@
+PHASE=SiO2 // cod_4124084
+Reference=cod_4124084 //
+Formula=O2_Si //
+SpacegroupNo=163 HermannMauguin=P-312/c Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.812338_0.804215^0.820461 PARAM=C=0.705098_0.698047^0.712149 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:SiO2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O-2 Wyckoff=i x=0.694990 y=0.850020 z=0.604030 TDS=0.010000
+E=O-2 Wyckoff=h x=0.201400 y=0.798600 z=0.250000 TDS=0.010000
+E=O-2 Wyckoff=g x=0.500000 y=0.000000 z=0.000000 TDS=0.010000
+E=SI+4 Wyckoff=i x=0.705170 y=0.657230 z=0.576920 TDS=0.010000

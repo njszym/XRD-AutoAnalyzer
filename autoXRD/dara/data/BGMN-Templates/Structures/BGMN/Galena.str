@@ -1,0 +1,8 @@
+PHASE=Galena //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5931_0.5925^0.5937 //
+LIMIT2=6 LIMIT4=12 LIMIT6=20 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:galena=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=PB Wyckoff=a TDS=0.0129
+E=S  Wyckoff=b TDS=0.0123

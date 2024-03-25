@@ -1,0 +1,11 @@
+PHASE=CaCl2 // 04-007-1446
+Reference=COD_1011280
+MineralName=Hydrophillite //
+Formula=Ca_Cl2 //
+SpacegroupNo=58 Setting=2 HermannMauguin=P2_1/n2_1/n2/m Lattice=Orthorhombic //
+PARAM=A=0.624000_0.617760^0.630240 PARAM=B=0.643000_0.636570^0.649430 PARAM=C=0.420000_0.415800^0.424200  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:CaCl2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA+2 Wyckoff=a x=0.00000000 y=0.00000000 z=0.00000000 TDS=0.00000000
+E=CL-1 Wyckoff=g x=0.27500000 y=0.32500000 z=0.00000000 TDS=0.00000000

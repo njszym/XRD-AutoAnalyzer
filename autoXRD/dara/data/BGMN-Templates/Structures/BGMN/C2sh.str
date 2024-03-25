@@ -1,0 +1,18 @@
+PHASE=C2SH_Hillebrandite //
+SpacegroupNo=36 HermannMauguin=Cmc2_1 //
+PARAM=A=0.3639_0.3566^0.3712 PARAM=B=1.6311_1.5985^1.6637 PARAM=C=1.1829_1.1592^1.2066 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR4 //
+GOAL:c2sh=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a y=0.7836 z=0.5640 TDS=0.0108
+E=CA+2 Wyckoff=a y=0.1008 z=0.4521 TDS=0.0090
+E=CA+2 Wyckoff=a y=0.4510 z=0.6888 TDS=0.0093
+E=SI+4(0.5000) Wyckoff=b x=0.4300 y=0.0863 z=0.8981 TDS=0.0087
+E=SI+4(0.5000) Wyckoff=a y=0.1273 z=0.7134 TDS=0.0063
+E=O-2 Wyckoff=a y=0.6909 z=0.4188 TDS=0.0111
+E=O-2 Wyckoff=a y=0.3741 z=0.5198 TDS=0.0103
+E=O-2 Wyckoff=a y=0.0363 z=0.6380 TDS=0.0189
+E=O-2 Wyckoff=a y=0.2036 z=0.6251 TDS=0.0150
+E=O-2 Wyckoff=a y=0.5110 z=0.3877 TDS=0.0079
+E=O-2 Wyckoff=a y=0.8630 z=0.7361 TDS=0.0103
+E=O-2(0.5000) Wyckoff=b x=0.3640 y=0.1328 z=0.7950 TDS=0.0111
+E=O-2(0.5000) Wyckoff=a y=0.8900 z=0.3730 TDS=0.0111

@@ -1,0 +1,11 @@
+PHASE=Mayenite //
+SpacegroupNo=220 HermannMauguin=I-43d //
+PARAM=A=1.1981_1.1861^1.2101 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR0 //
+GOAL:mayenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=d x=0.6086 TDS=0.0122
+E=AL+3 Wyckoff=c x=0.7681 TDS=0.0080
+E=AL+3 Wyckoff=b TDS=0.0057
+E=O-2 Wyckoff=e x=0.1509 y=-0.0368 z=0.0583 TDS=0.0082
+E=O-2 Wyckoff=c x=0.6854 TDS=0.0084
+E=O-2(0.0830) Wyckoff=d x=0.3990 TDS=0.0085

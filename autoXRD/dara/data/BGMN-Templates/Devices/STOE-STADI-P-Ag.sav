@@ -1,0 +1,159 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for STOE STADI MP in Position 2
+%    --------------------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    February 11, 2019
+%
+%    Device Configuration:
+%    - Detector: MYTHEN 1K
+%    - Radiation: CoKa, Ge111 primary beam monochromator
+%    - Primary Soller Slits: none
+%    - Secondary Soller Slits: none
+%    - Divergence Slit: fix, 0.2�
+%    - Goniometer Radius: 190 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=STOE-STADI-P-Ag.ger
+GEQ=STOE-STADI-P-Ag.geq
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer
+%-----------------------------------------------------------------------------------------------
+
+% Instrument geometry
+GEOMETRY=CAPILLARY
+
+% Goniometer radius (mm)
+R=190.0
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% Axial dimension (length, mm)
+FocusH=12.00
+
+% Optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.0400
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (°)
+div=0.2000
+
+% Distance from sample (mm)
+HSlitR=100.00
+
+% Divergence slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+%-----------------------------------------------------------------------------------------------
+% Primary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+PColl=0.0295
+
+%-----------------------------------------------------------------------------------------------
+% Incident beam mask
+%-----------------------------------------------------------------------------------------------
+
+% Distance form sample (mm)
+VSlitR=100.00
+
+% Axial beam width (mm)
+VSlitH=4.00
+
+%-----------------------------------------------------------------------------------------------
+% Sample
+%-----------------------------------------------------------------------------------------------
+
+% Length of capillary (mm)
+SamplH=25.00
+
+% Inner diameter of capillary (mm)
+T=0.0200
+
+% Inverse linear absorption coefficient (mm)
+D=0.3333
+
+%-----------------------------------------------------------------------------------------------
+% Secondary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+SColl=0.0295
+
+%-----------------------------------------------------------------------------------------------
+% Secondary beam monochromator crystal
+%-----------------------------------------------------------------------------------------------
+
+% Distance from sample (mm)
+MonR=190.00
+
+% Polyrization
+POL=sqr(cos(15.89*pi/180))
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% Total sensor height (mm)
+DetArrayW=0.00
+
+% Height of one strip (mm)
+DetW=0.1000
+
+% Total axial detector width (mm)
+DetH=16.00
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=5
+zweiTheta[3]=12
+zweiTheta[4]=21
+zweiTheta[5]=32
+zweiTheta[6]=45
+zweiTheta[7]=59
+zweiTheta[8]=74
+zweiTheta[9]=90
+zweiTheta[10]=106
+zweiTheta[11]=121
+zweiTheta[12]=135
+zweiTheta[13]=148
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

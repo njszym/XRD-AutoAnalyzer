@@ -1,0 +1,9 @@
+PHASE=NiAl //
+Reference=04-003-3563 //
+Formula=Ni_Al //
+SpacegroupNo=221 Setting=1 HermannMauguin=P4/m-32/m  //
+PARAM=A=0.287700_0.284823^0.290577  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NiAl=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=AL Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.00000000

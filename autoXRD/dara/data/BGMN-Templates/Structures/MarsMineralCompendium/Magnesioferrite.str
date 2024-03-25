@@ -1,0 +1,10 @@
+PHASE=Magnesioferrite // amcsd_0008864
+Reference=amcsd_0008864
+Formula=(Mg_Fe2)_O4 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=2 OriginChoice=2 Lattice=Cubic //
+PARAM=A=0.836000_0.827640^0.844360 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Magnesioferrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(FE(0.8540),MG(0.1460)) Wyckoff=a x=0.125000 y=0.125000 z=0.125000 TDS=0.006617
+E=(FE(0.5730),MG(0.4270)) Wyckoff=d x=0.500000 y=0.500000 z=0.500000 TDS=0.007003
+E=O Wyckoff=e x=0.257300 y=0.257300 z=0.257300 TDS=0.007848

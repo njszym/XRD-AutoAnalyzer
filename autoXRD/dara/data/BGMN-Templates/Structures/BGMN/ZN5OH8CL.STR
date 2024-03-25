@@ -1,0 +1,11 @@
+PHASE=Zn5(OH)8CL2(H2O) //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.6340_0.6277^0.6403 PARAM=C=2.3640_2.3404^2.3876 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:zn5oh8cl=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=e TDS=0.0069
+E=ZN+2 Wyckoff=c z=0.9282 TDS=0.0059
+E=CL-1 Wyckoff=c z=0.8306 TDS=0.0089
+E=O Wyckoff=h x=0.5043 z=0.6161 TDS=0.0035
+E=O Wyckoff=c z=0.6252 TDS=0.0027
+E=O(0.1667) Wyckoff=h x=0.3683 z=0.1717 TDS=0.0300

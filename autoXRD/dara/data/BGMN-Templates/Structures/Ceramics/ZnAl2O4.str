@@ -1,0 +1,12 @@
+PHASE=ZnAl2O4 // 04-007-6610
+Reference=04-007-6610 //
+Formula=Zn_Al2_O4 //
+MineralName=Gahnite //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.808800_0.800712^0.816888  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:ZnAl2O4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=ZN Wyckoff=a x=0.125000 y=0.125000 z=0.125000 TDS=0.00360000
+E=AL Wyckoff=d x=0.500000 y=0.500000 z=0.500000 TDS=0.00360000
+E=O Wyckoff=e x=0.264200 y=0.264200 z=0.264200 TDS=0.00540000

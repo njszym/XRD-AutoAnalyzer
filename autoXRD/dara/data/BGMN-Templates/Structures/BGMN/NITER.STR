@@ -1,0 +1,9 @@
+PHASE=Niter //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.6431_0.6367^0.6495 PARAM=B=0.5414_0.5360^0.5468 PARAM=C=0.9166_0.9074^0.9258 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:niter=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=c x=0.2568 z=0.0834 TDS=0.0240
+E=N Wyckoff=c x=0.4152 z=0.7452 TDS=0.0213
+E=O-2 Wyckoff=c x=0.4107 z=0.6098 TDS=0.0318
+E=O-2 Wyckoff=d x=0.9151 y=0.4492 z=0.6866 TDS=0.0306

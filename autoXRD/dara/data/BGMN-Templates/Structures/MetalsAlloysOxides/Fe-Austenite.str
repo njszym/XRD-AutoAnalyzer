@@ -1,0 +1,8 @@
+PHASE=FeAustenite // 04-002-3692
+Reference=04-002-3692 //
+Formula=Fe //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.361300_0.357687^0.364913  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:FeAustenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a TDS=0.00500000

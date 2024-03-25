@@ -1,0 +1,11 @@
+PHASE=FeOOH_Goethite // 04-015-2898
+MineralName=Goethite //
+Formula=Fe_O_(OH) //
+SpacegroupNo=62 HermannMauguin=P2_1/b2_1/n2_1/m Setting=3 Lattice=Orthorhombic //
+PARAM=A=0.4605_0.4505^0.4705 PARAM=B=0.9960_0.9860^1.0060 PARAM=C=0.3023_0.2923^0.3123 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Goethite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=c x=0.0477 y=-0.1461
+E=O-2 Wyckoff=c x=0.708 y=0.1996
+E=O-2 Wyckoff=c x=0.204 y=0.0531

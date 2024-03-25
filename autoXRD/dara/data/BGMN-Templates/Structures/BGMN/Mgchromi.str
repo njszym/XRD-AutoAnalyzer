@@ -1,0 +1,8 @@
+PHASE=Magnesiochromite //
+SpacegroupNo=227 OriginChoice=2 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.8338_0.83^0.838 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:mgchromi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2(0.9840),CR+3(0.0160)) Wyckoff=a TDS=0.0045
+E=(CR+3(0.9920),MG+2(0.0080)) Wyckoff=d TDS=0.0032
+E=O-1 Wyckoff=e x=0.7388 TDS=0.0042

@@ -1,0 +1,19 @@
+PHASE=Brushite //
+SpacegroupNo=9 HermannMauguin=C1c1 //
+PARAM=A=0.636_0.6335^0.6386 PARAM=B=1.5181_1.5119^1.5241 PARAM=C=0.58112_0.5789^0.5835 //
+PARAM=BETA=118.53_117.5^119.5 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:brushite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a x=0.494 y=0.3267 z=0.2500 TDS=0.0097
+E=P Wyckoff=a x=0.0143 y=0.3225 z=0.2628 TDS=0.0079
+E=O-2 Wyckoff=a x=0.7837 y=0.3675 z=0.0260 TDS=0.0124
+E=O-2 Wyckoff=a x=0.9199 y=0.2823 z=0.4342 TDS=0.0100
+E=O-2 Wyckoff=a x=0.2016 y=0.3927 z=0.3934 TDS=0.0111
+E=O-2 Wyckoff=a x=0.1091 y=0.2532 z=0.1437 TDS=0.0092
+E=O-2 Wyckoff=a x=0.2657 y=0.4262 z=0.8890 TDS=0.0183
+E=O-2 Wyckoff=a x=0.7262 y=0.4473 z=0.5085 TDS=0.0198
+E=H Wyckoff=a x=0.7103 y=0.3293 z=0.8671 TDS=0.0225
+E=H Wyckoff=a x=0.2518 y=0.4898 z=0.8945 TDS=0.0260
+E=H Wyckoff=a x=0.2548 y=0.4121 z=0.7195 TDS=0.0262
+E=H Wyckoff=a x=0.7206 y=0.5094 z=0.4991 TDS=0.0415
+E=H Wyckoff=a x=0.8833 y=0.4334 z=0.6393 TDS=0.0429

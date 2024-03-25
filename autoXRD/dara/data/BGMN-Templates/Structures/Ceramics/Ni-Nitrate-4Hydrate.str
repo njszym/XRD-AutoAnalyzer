@@ -1,0 +1,30 @@
+PHASE=NiNitrate4Hydrate // 04-012-8474
+Formula=Ni_(NO3)2_(H2O)4 //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.7484_0.743^0.752 PARAM=B=1.0277_1.022^1.032 PARAM=C=0.5476_0.542^0.552 // 
+PARAM=ALPHA=101.06_100.5^101.5 PARAM=BETA=101.53_101^102 PARAM=GAMMA=68.77_68.0^69.2 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NiNitrate4Hydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NI  Wyckoff=a 
+E=NI  Wyckoff=h 
+E=N  Wyckoff=i x=0.2953 y=0.0893 z=-0.1501
+E=N  Wyckoff=i x=0.2197 y=0.3991 z=0.6613
+E=O  Wyckoff=i x=-0.2273 y=0.088 z=-0.2726
+E=O  Wyckoff=i x=-0.0629 y=0.201 z=0.1859
+E=O  Wyckoff=i x=0.1699 y=0.025 z=-0.2288
+E=O  Wyckoff=i x=0.3769 y=0.1067 z=-0.3086
+E=O  Wyckoff=i x=0.3275 y=0.1282 z=0.0766
+E=O  Wyckoff=i x=0.7596 y=0.3722 z=0.6658
+E=O  Wyckoff=i x=0.5145 y=0.3383 z=0.2073
+E=O  Wyckoff=i x=0.3775 y=0.4298 z=0.7299
+E=O  Wyckoff=i x=0.1323 y=0.3966 z=0.8262
+E=O  Wyckoff=i x=0.1658 y=0.374 z=0.4341
+E=H  Wyckoff=i x=-0.18 y=0.05 z=-0.4
+E=H  Wyckoff=i x=-0.33 y=0.088 z=-0.26
+E=H  Wyckoff=i x=0.01 y=0.247 z=0.27
+E=H  Wyckoff=i x=0.08 y=0.211 z=0.12
+E=H  Wyckoff=i x=0.5 y=0.368 z=0.1
+E=H  Wyckoff=i x=0.45 y=0.286 z=0.22
+E=H  Wyckoff=i x=0.86 y=0.394 z=0.72
+E=H  Wyckoff=i x=0.76 y=0.306 z=0.66

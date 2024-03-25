@@ -1,0 +1,15 @@
+PHASE=CaSrFApatite // 04-002-8320
+Reference=04-002-8320 //
+Formula=Sr2.5_Ca2.5_(_P_O4_)3_F //
+SpacegroupNo=176 Setting=1 HermannMauguin=P6_3/m Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.954000_0.944460^0.963540 PARAM=C=0.708000_0.700920^0.715080  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:CaSrFApatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=(CA(0.5),SR(0.5)) Wyckoff=f x=0.333333 y=0.666667 z=0.001100 TDS=0.01
+E=(CA(0.5),SR(0.5)) Wyckoff=h x=0.241540 y=0.248750 z=0.250000 TDS=0.01
+E=P Wyckoff=h x=0.397850 y=0.029320 z=0.250000 TDS=0.01
+E=O Wyckoff=h x=0.157700 y=0.484400 z=0.250000 TDS=0.02
+E=O Wyckoff=h x=0.587300 y=0.120700 z=0.250000 TDS=0.02
+E=O Wyckoff=i x=0.341600 y=0.084400 z=0.070500 TDS=0.02
+E=F Wyckoff=a x=0.000000 y=0.000000 z=0.250000 TDS=0.02

@@ -1,0 +1,7 @@
+PHASE=ESKOLAITE //
+SpacegroupNo=167 //
+PARAM=A=0.4961_0.49^0.50 PARAM=C=1.3599_1.35^1.37 //
+RP=3 PARAM=B1=0_0^0.01 PARAM=GEWICHT=0_0 //
+GOAL:eskolaite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CR+3 Wyckoff=c z=0.8475 TDS=0.0100
+E=O-2 Wyckoff=e x=0.3060 TDS=0.0100

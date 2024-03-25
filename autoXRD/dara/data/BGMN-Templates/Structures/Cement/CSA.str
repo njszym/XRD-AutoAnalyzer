@@ -1,0 +1,12 @@
+PHASE=CSA // 04-007-6682
+MineralName=Anhydrite //
+Formula=Ca_(SO4) //
+SpacegroupNo=63 HermannMauguin=B2/m2_1/m2/b Setting=6 //
+PARAM=A=0.6992_0.6892^0.7092 PARAM=B=0.6999_0.6899^0.7099 PARAM=C=0.6240_0.6140^0.6340 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:CSA=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=c x=0.0000 y=0.7500 z=0.6522 TDS=0.0077611
+E=S Wyckoff=c x=0.0000 y=0.7500 z=0.1556 TDS=0.0069139
+E=O Wyckoff=g x=0.1700 y=0.7500 z=0.0157 TDS=0.0113528
+E=O Wyckoff=f x=0.0000 y=0.5814 z=0.2972 TDS=0.0110200

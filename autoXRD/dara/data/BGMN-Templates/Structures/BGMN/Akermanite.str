@@ -1,0 +1,11 @@
+PHASE=Akermanite //
+SpacegroupNo=113 HermannMauguin=P-42_1m //
+PARAM=A=0.7833_0.7755^0.7911 PARAM=C=0.5002_0.4952^0.5052 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR0 //
+GOAL:akermanite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.8318 z=0.4937 TDS=0.0162
+E=MG+2 Wyckoff=a TDS=0.0102
+E=SI+4 Wyckoff=e x=0.6399 z=0.0643 TDS=0.0088
+E=O-2 Wyckoff=c z=0.8182 TDS=0.0238
+E=O-2 Wyckoff=e x=0.3594 z=0.7452 TDS=0.0187
+E=O-2 Wyckoff=f x=0.0800 y=0.1867 z=0.7850 TDS=0.0207

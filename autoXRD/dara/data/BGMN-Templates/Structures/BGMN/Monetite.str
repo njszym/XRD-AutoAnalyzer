@@ -1,0 +1,21 @@
+PHASE=Monetite  //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.6916_0.6881^0.6951 PARAM=B=0.6619_0.6586^0.6652 PARAM=C=0.6946_0.6911^0.6981 //
+PARAM=ALPHA=96.2_95.7^96.7 PARAM=BETA=103.8_103.3^104.3 PARAM=GAMMA=88.3_87.8^88.8 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:monetite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=P Wyckoff=i x=0.2105 y=0.3819 z=0.7242 TDS=0.0033
+E=P Wyckoff=i x=0.2924 y=-0.0663 z=0.2057 TDS=0.0065
+E=CA+2 Wyckoff=i x=0.2919 y=0.4219 z=0.2781 TDS=0.0060
+E=CA+2 Wyckoff=i x=0.1774 y=0.8371 z=0.6607 TDS=0.0058
+E=O-2 Wyckoff=i x=0.3232 y=0.3317 z=0.9420 TDS=0.0062
+E=O-2 Wyckoff=i x=0.3570 y=0.4938 z=0.6369 TDS=0.0059
+E=O-2 Wyckoff=i x=0.1413 y=0.1840 z=0.5955 TDS=0.0066
+E=O-2 Wyckoff=i x=0.0431 y=0.5281 z=0.7477 TDS=0.0062
+E=O-2 Wyckoff=i x=0.3354 y=-0.1594 z=0.0102 TDS=0.0077
+E=O-2 Wyckoff=i x=0.4615 y=0.0848 z=0.3172 TDS=0.0102
+E=O-2 Wyckoff=i x=0.1020 y=0.0698 z=0.1637 TDS=0.0071
+E=O-2 Wyckoff=i x=0.2720 y=-0.2258 z=0.3401 TDS=0.0105
+E=H Wyckoff=a TDS=0.0250
+E=H Wyckoff=i x=0.4280 y=0.2740 z=0.9390 TDS=0.0330
+E=H(0.5000) Wyckoff=i x=0.5090 y=0.0940 z=0.4800 TDS=0.0320

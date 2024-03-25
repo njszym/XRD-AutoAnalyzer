@@ -1,0 +1,7 @@
+PHASE=Arsenolite SpacegroupNo=227 HermannMauguin=F4_1/d-32/m //
+PARAM=A=1.1074_1.0963^1.1185 //
+PARAM=B1=0_0^0.007 GOAL=GrainSize(1,0,0) RP=3 //
+GEWICHT=SPHAR6 GOAL:Arsenolite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AS(1))  Wyckoff=e x=0.3529 y=0 z=0 TDS=0.0133
+E=(O-1(1))  Wyckoff=f x=0.8274 y=0 z=0 TDS=0.0175
+

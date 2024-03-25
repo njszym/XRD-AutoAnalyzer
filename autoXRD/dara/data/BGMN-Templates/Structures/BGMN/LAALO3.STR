@@ -1,0 +1,8 @@
+PHASE=LaAlO3 //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.5365_0.5311^0.5419 PARAM=C=1.3111_1.2980^1.3242 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:laalo3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=LA+3 Wyckoff=a TDS=0.0038
+E=AL+3 Wyckoff=b TDS=0.0085
+E=O-2 Wyckoff=e x=0.4740 TDS=0.0062

@@ -1,0 +1,15 @@
+PHASE=Lizardite1T // amcsd_0005583
+Reference=amcsd_0005583 //
+Formula=Mg3_Si2_H4_O9 //
+SpacegroupNo=157 HermannMauguin=P31m Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.532600_0.527274^0.537926 PARAM=C=0.728800_0.721512^0.736088 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Lizardite1T=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=H Wyckoff=c x=0.583000 y=0.000000 z=0.732000 TDS=0.011054
+E=H Wyckoff=a x=0.000000 y=0.000000 z=0.197000 TDS=0.011668
+E=MG Wyckoff=c x=0.331800 y=0.000000 z=0.455000 TDS=0.007369
+E=O Wyckoff=b x=0.333333 y=0.666667 z=0.291100 TDS=0.010352
+E=O Wyckoff=c x=0.507000 y=0.000000 z=0.992000 TDS=0.007632
+E=O Wyckoff=c x=0.664000 y=0.000000 z=0.588000 TDS=0.010000
+E=O Wyckoff=a x=0.000000 y=0.000000 z=0.304000 TDS=0.010000
+E=SI Wyckoff=b x=0.333333 y=0.666667 z=0.074000 TDS=0.010264

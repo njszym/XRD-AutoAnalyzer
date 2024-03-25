@@ -1,0 +1,9 @@
+PHASE=Ankerite_Fe0.2 //
+SpacegroupNo=148 HermannMauguin=R-3 //
+PARAM=A=0.4812_0.48^0.482 PARAM=C=1.6042_1.59^1.61 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.001 GEWICHT=SPHAR4 //
+GOAL:ankerit02=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) GOAL=GrainSize(1,0,4)
+E=(CA+2(0.9440),FE+2(0.0560)) Wyckoff=a TDS=0.009
+E=(MG+2,FE+2(p)) PARAM=p=0.1780_0^0.5 Wyckoff=b TDS=0.007
+E=C Wyckoff=c z=0.7570 TDS=0.0086
+E=O-2 Wyckoff=f x=0.2485 y=-0.0336 z=0.2443 TDS=0.01

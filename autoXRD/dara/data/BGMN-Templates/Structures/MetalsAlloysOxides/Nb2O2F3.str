@@ -1,0 +1,12 @@
+PHASE=NiobiumOxideFluoride // 04-022-3419
+Reference=04-022-3419 //
+Formula=Nb2_O2_F3 //
+SpacegroupNo=15 HermannMauguin=I12/a1 Setting=13 CellChoice=3 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.570480_0.564775^0.576185 PARAM=B=0.516100_0.510939^0.521261 PARAM=C=1.222850_1.210622^1.235078 //
+PARAM=BETA=95.751000_94.793490^96.708510 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NiobiumOxideFluoride=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NB Wyckoff=f x=0.653583 y=0.254545 z=0.340725 TDS=0.003324
+E=F Wyckoff=f x=0.367340 y=0.050850 z=0.397290 TDS=0.007888
+E=F Wyckoff=e x=0.250000 y=0.893500 z=0.000000 TDS=0.008275
+E=O Wyckoff=f x=0.560020 y=0.043000 z=0.200930 TDS=0.005582

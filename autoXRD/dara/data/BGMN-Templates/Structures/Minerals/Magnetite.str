@@ -1,0 +1,12 @@
+PHASE=Magnetite // 04-005-4319
+MineralName=Magnetite //
+Formula=Fe3_O4 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=2 Lattice=Cubic OriginChoice=2 //
+PARAM=A=0.83958_0.77958^0.90958 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Magnetite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=d TDS=0.0047 // octahedral
+E=FE+2 Wyckoff=a TDS=0.0037 // tetrahedral
+E=O-2 Wyckoff=e x=0.2547 TDS=0.0064
+

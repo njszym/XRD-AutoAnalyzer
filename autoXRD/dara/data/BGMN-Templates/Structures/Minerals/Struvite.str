@@ -1,0 +1,29 @@
+PHASE=Struvite // 04-010-2533
+MineralName=Struvite //
+Formula=(NH4)_Mg_(PO4)_(H2O)6 //
+SpacegropuNo=31 HermannMauguin=Pmn2_1 //
+PARAM=A=0.6955_0.6885^0.7025 PARAM=B=0.6142_0.6081^0.6203 PARAM=C=1.1218_1.1106^1.1330  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Struvite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG Wyckoff=a y=0.3766 z=0.3741 TDS=0.01279890
+E=N Wyckoff=a y=0.3657 z=0.7351 TDS=0.02600049
+E=H Wyckoff=a y=0.2186 z=0.7832 TDS=0.03299606
+E=H Wyckoff=a y=0.3311 z=0.6473 TDS=0.06160212
+E=H Wyckoff=b x=0.1148 y=0.4557 z=0.7535 TDS=0.05129826
+E=P Wyckoff=a y=-0.0069 z=0.0019 TDS=0.01090394
+E=O Wyckoff=a y=-0.0236 z=-0.1351 TDS=0.01669937
+E=O Wyckoff=a y=-0.2382 z=0.0558 TDS=0.01699941
+E=O Wyckoff=b x=0.1823 y=0.1139 z=0.0436 TDS=0.01479651
+E=O Wyckoff=a y=0.6829 z=0.2878 TDS=0.02660056
+E=O Wyckoff=a y=0.0768 z=0.4664 TDS=0.03009835
+E=O Wyckoff=b x=0.2179 y=0.2618 z=0.2643 TDS=0.01920230
+E=O Wyckoff=b x=0.2115 y=0.4852 z=0.4874 TDS=0.02400288
+E=H Wyckoff=a y=0.7192 z=0.2017 TDS=0.02810074
+E=H Wyckoff=a y=0.8174 z=0.3299 TDS=0.04040221
+E=H Wyckoff=b x=0.1157 y=0.0070 z=0.4999 TDS=0.02510038
+E=H Wyckoff=b x=0.1989 y=0.2007 z=0.1824 TDS=0.02460295
+E=H Wyckoff=b x=0.3169 y=0.1702 z=0.3020 TDS=0.02619788
+E=H Wyckoff=b x=0.3200 y=0.3904 z=0.5120 TDS=0.02630052
+E=H Wyckoff=b x=0.2511 y=0.6354 z=0.5027 TDS=0.02679795
+

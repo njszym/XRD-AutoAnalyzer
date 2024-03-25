@@ -1,0 +1,7 @@
+PHASE=Quartz //
+SpacegroupNo=154 //
+PARAM=A=0.4913_0.49^0.4935 PARAM=C=0.5404_0.538^0.545 GAMMA=120 //
+RP=3 PARAM=B1=0.0_0.0^0.01  //
+GEWICHT=SPHAR0 GOAL:quartz=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) GOAL=GrainSize(1,0,1)
+E=SI+4  Wyckoff=a x=0.47 TDS=0.0056
+E=O-2  Wyckoff=c x=0.415 y=0.268 z=0.786 TDS=0.0096

@@ -1,0 +1,40 @@
+PHASE=Alunogen //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.7425_0.7351^0.7499 PARAM=B=2.6975_2.6705^2.7245 PARAM=C=0.6061_0.6000^0.6122 //
+PARAM=ALPHA=90.01_89^91 PARAM=BETA=97.7_97^98.7 PARAM=GAMMA=91.9_91^93 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:alunogen=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=i x=0.2365 y=0.0996 z=1.0033 TDS=0.0084
+E=AL+3 Wyckoff=i x=0.2195 y=0.4012 z=0.9987 TDS=0.0104
+E=S Wyckoff=i x=0.7422 y=0.0607 z=0.4866 TDS=0.0104
+E=S Wyckoff=i x=0.7318 y=0.4394 z=0.4809 TDS=0.0132
+E=S Wyckoff=i x=0.1303 y=0.2474 z=0.4731 TDS=0.0255
+E=O-2 Wyckoff=i x=0.6726 y=0.0337 z=0.2781 TDS=0.0249
+E=O-2 Wyckoff=i x=0.8059 y=0.0257 z=0.6623 TDS=0.0245
+E=O-2 Wyckoff=i x=0.5925 y=0.0886 z=0.5552 TDS=0.0175
+E=O-2 Wyckoff=i x=0.8928 y=0.0952 z=0.4512 TDS=0.0200
+E=O-2 Wyckoff=i x=0.6752 y=0.4664 z=0.2740 TDS=0.0248
+E=O-2 Wyckoff=i x=0.8029 y=0.4744 z=0.6573 TDS=0.0283
+E=O-2 Wyckoff=i x=0.5715 y=0.4113 z=0.5438 TDS=0.0212
+E=O-2 Wyckoff=i x=0.8728 y=0.4047 z=0.4455 TDS=0.0262
+E=O-2 Wyckoff=i x=0.2626 y=0.2177 z=0.6116 TDS=0.0553
+E=O-2 Wyckoff=i x=0.1042 y=0.2268 z=0.2475 TDS=0.0424
+E=O-2 Wyckoff=i x=-0.0438 y=0.2464 z=0.5573 TDS=0.0621
+E=O-2 Wyckoff=i x=0.2023 y=0.2983 z=0.4664 TDS=0.0502
+E=O-2 Wyckoff=i x=0.1400 y=0.0380 z=0.8830 TDS=0.0000
+E=O-2 Wyckoff=i x=0.2768 y=0.0690 z=1.2845 TDS=0.0000
+E=O-2 Wyckoff=i x=0.4730 y=0.0819 z=0.9545 TDS=0.0000
+E=O-2 Wyckoff=i x=0.3265 y=0.1606 z=1.1258 TDS=0.0000
+E=O-2 Wyckoff=i x=0.1967 y=0.1276 z=0.7168 TDS=0.0000
+E=O-2 Wyckoff=i x=-0.0010 y=0.1149 z=1.0522 TDS=0.0000
+E=O-2 Wyckoff=i x=0.4521 y=0.4225 z=0.9364 TDS=0.0000
+E=O-2 Wyckoff=i x=0.2687 y=0.4304 z=1.2832 TDS=0.0000
+E=O-2 Wyckoff=i x=0.1266 y=0.4632 z=0.8868 TDS=0.0000
+E=O-2 Wyckoff=i x=-0.0183 y=0.3829 z=1.0549 TDS=0.0000
+E=O-2 Wyckoff=i x=0.1665 y=0.3753 z=0.7124 TDS=0.0000
+E=O-2 Wyckoff=i x=0.3100 y=0.3419 z=0.1112 TDS=0.0000
+E=O-2 Wyckoff=i x=0.7916 y=0.1748 z=0.8023 TDS=0.0000
+E=O-2 Wyckoff=i x=0.8842 y=0.2906 z=0.9493 TDS=0.0000
+E=O-2 Wyckoff=i x=0.6497 y=0.1967 z=0.2262 TDS=0.0000
+E=O-2 Wyckoff=i x=0.4949 y=0.2834 z=0.9045 TDS=0.0000
+E=O-2(0.4000) Wyckoff=i x=0.6440 y=0.2960 z=0.4440 TDS=0.0968

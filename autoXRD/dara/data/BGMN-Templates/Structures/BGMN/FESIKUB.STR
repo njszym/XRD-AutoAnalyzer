@@ -1,0 +1,7 @@
+PHASE=Iron_Silicide_kub //
+SpacegroupNo=198 HermannMauguin=P2_13 //
+PARAM=A=0.4496_0.4451^0.4541 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.001 GEWICHT=SPHAR6 TDS=0.0036 //
+GOAL:fesikub=GEWICHT*(my*d*3/4)
+E=FE Wyckoff=a x=0.1359
+E=SI Wyckoff=a x=0.8419

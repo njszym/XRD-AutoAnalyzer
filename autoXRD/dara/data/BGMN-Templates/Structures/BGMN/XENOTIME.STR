@@ -1,0 +1,8 @@
+PHASE=Xenotime //
+SpacegroupNo=141 HermannMauguin=I4_1/a2/m2/d OriginChoice=2 //
+PARAM=A=0.6895_0.6826^0.6964 PARAM=C=0.6028_0.5968^0.6088 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:xenotime=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=Y+3 Wyckoff=a TDS=0.0046
+E=P Wyckoff=b TDS=0.0062
+E=O-2 Wyckoff=h y=0.5753 z=0.7842 TDS=0.0094

@@ -1,0 +1,17 @@
+PHASE=Mascagnite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.7782_0.7743^0.7821 PARAM=B=0.5993_0.5963^0.6023 PARAM=C=1.0636_1.0583^1.0689 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:mascagni=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=S Wyckoff=c x=0.7440 z=0.9192 TDS=0.0202
+E=O Wyckoff=c x=0.5612 z=0.8887 TDS=0.0436
+E=O Wyckoff=c x=0.7701 z=0.0559 TDS=0.0333
+E=O Wyckoff=d x=0.3239 y=0.0488 z=0.6335 TDS=0.0343
+E=N Wyckoff=c x=0.1895 z=0.9025 TDS=0.0225
+E=N Wyckoff=c x=0.4677 z=0.2050 TDS=0.0248
+E=H Wyckoff=c x=0.3100 z=0.8720 TDS=0.0746
+E=H Wyckoff=c x=0.1000 z=0.8430 TDS=0.0758
+E=H Wyckoff=d x=0.6760 y=0.1220 z=0.5430 TDS=0.0898
+E=H Wyckoff=c x=0.5690 z=0.1490 TDS=0.0612
+E=H Wyckoff=c x=0.4910 z=0.2920 TDS=0.0881
+E=H Wyckoff=d x=0.8930 y=0.1240 z=0.3180 TDS=0.0779

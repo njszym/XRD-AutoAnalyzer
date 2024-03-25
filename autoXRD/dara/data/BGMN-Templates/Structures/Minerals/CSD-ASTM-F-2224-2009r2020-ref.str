@@ -1,0 +1,13 @@
+PHASE=CalciumSulfateDihydrate // 00-033-0311
+Reference=00-033-0311 //
+Formula=Ca_S_O4_·2_H2_O //
+SpacegroupNo=15 HermannMauguin=C12/c1 Setting=1 CellChoice=1 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.628450_0.622166^0.634735 PARAM=B=1.520790_1.505582^1.535998 PARAM=C=0.567760_0.562082^0.573438 //
+PARAM=BETA=114.090000_112.949100^115.230900 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CalciumSulfateDihydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=f x=0.082600 y=0.227900 z=0.092800 TDS=0.010000
+E=O Wyckoff=f x=0.200500 y=0.117300 z=0.414700 TDS=0.010000
+E=O Wyckoff=f x=0.205300 y=0.432600 z=0.077400 TDS=0.010000
+E=S Wyckoff=e x=0.000000 y=0.172200 z=0.250000 TDS=0.010000
+E=CA Wyckoff=e x=0.000000 y=0.671700 z=0.250000 TDS=0.010000

@@ -1,0 +1,9 @@
+PHASE=Witherite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.6428_0.6364^0.6492 PARAM=B=0.5313_0.5260^0.5366 PARAM=C=0.8896_0.8807^0.8985 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:witherite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=c x=0.2549 z=0.0837 TDS=0.0046
+E=C Wyckoff=c x=0.4190 z=0.7430 TDS=0.0112
+E=O-2 Wyckoff=c x=0.4122 z=0.5989 TDS=0.0120
+E=O-2 Wyckoff=d x=0.9210 y=0.4595 z=0.6839 TDS=0.0100

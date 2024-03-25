@@ -1,0 +1,10 @@
+PHASE=BaTiO3Tetragonal // 04-012-8127
+Formula=Ba_Ti_O3 //
+SpacegroupNo=99 HermannMauguin=P4mm Setting=1 UniqueAxis=c Lattice=Tetragonal //
+PARAM=A=0.401490_0.397475^0.405505 PARAM=B=0.401490_0.397475^0.405505 PARAM=C=0.401490_0.397475^0.405505 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:BaTiO3Tetragonal=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=BA Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.002000
+E=TI Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.002600
+E=O Wyckoff=b x=0.500000 y=0.500000 z=0.018000 TDS=0.005700
+E=O Wyckoff=c x=0.500000 y=0.000000 z=0.512000 TDS=0.005700

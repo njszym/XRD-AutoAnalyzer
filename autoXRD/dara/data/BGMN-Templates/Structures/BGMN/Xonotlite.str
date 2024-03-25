@@ -1,0 +1,23 @@
+PHASE=Xonotlite //
+SpacegroupNo=13 HermannMauguin=P12/c1 //
+PARAM=A=1.7967_1.7877^1.8057 PARAM=B=0.7330_0.7293^0.7367 PARAM=C=1.6530_1.6447^1.6613 //
+PARAM=BETA=156.931_156.4^157.3 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:xonotlite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e y=0.3750 TDS=0.0058
+E=CA+2 Wyckoff=e y=0.8750 TDS=0.0058
+E=CA+2 Wyckoff=g x=0.8400 y=0.1250 z=0.9090 TDS=0.0058
+E=CA+2 Wyckoff=g x=0.8400 y=0.6250 z=0.9090 TDS=0.0058
+E=SI+4 Wyckoff=g x=0.7290 y=0.1700 z=0.1210 TDS=0.0058
+E=SI+4 Wyckoff=g x=0.7290 y=0.5800 z=0.1210 TDS=0.0058
+E=SI+4 Wyckoff=g x=0.5570 y=0.8750 z=0.7150 TDS=0.0058
+E=O-2 Wyckoff=f y=0.1250 TDS=0.0058
+E=O-2 Wyckoff=g x=0.6880 y=0.3750 z=0.0800 TDS=0.0058
+E=O-2 Wyckoff=g x=0.8840 y=0.6250 z=0.2090 TDS=0.0058
+E=O-2 Wyckoff=g x=0.8840 y=0.1250 z=0.2090 TDS=0.0058
+E=O-2 Wyckoff=g x=0.5400 y=0.0520 z=0.9250 TDS=0.0058
+E=O-2 Wyckoff=g x=0.5400 y=0.6980 z=0.9250 TDS=0.0058
+E=O-2 Wyckoff=g x=0.8290 y=0.6250 z=0.3070 TDS=0.0058
+E=O-2 Wyckoff=g x=0.8290 y=0.1250 z=0.3070 TDS=0.0058
+E=O-2 Wyckoff=g x=0.7770 y=0.8750 z=0.9230 TDS=0.0058
+E=O-2 Wyckoff=g x=0.7770 y=0.3750 z=0.9230 TDS=0.0058

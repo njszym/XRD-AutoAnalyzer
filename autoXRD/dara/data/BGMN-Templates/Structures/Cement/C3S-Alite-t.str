@@ -1,0 +1,91 @@
+PHASE=C3SaliteT // 04-012-3692
+Formula=Ca3_(SiO4)_O //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=1.167_1.157^1.177 PARAM=B=1.424_1.414^1.434 PARAM=C=1.372_1.362^1.382  // 
+PARAM=ALPHA=105.5_104.5^106.5 PARAM=BETA=94.3_93.3^95.3 PARAM=GAMMA=90.0_89.0^91.0  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:C3SaliteT=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=i x=0.7102 y=0.0039 z=0.975
+E=CA+2 Wyckoff=i x=0.3541 y=0.1525 z=0.6275
+E=CA+2 Wyckoff=i x=0.6751 y=0.3207 z=0.3351
+E=CA+2 Wyckoff=i x=0.8454 y=0.1667 z=0.1697
+E=CA+2 Wyckoff=i x=0.1908 y=0.3284 z=0.8152
+E=CA+2 Wyckoff=i x=0.3328 y=0.4107 z=0.6483
+E=CA+2 Wyckoff=i x=0.6476 y=0.0817 z=0.334
+E=CA+2 Wyckoff=i x=0.0536 y=0.1663 z=0.6176
+E=CA+2 Wyckoff=i x=0.6438 y=0.1808 z=0.7226
+E=CA+2 Wyckoff=i x=0.383 y=0.3474 z=0.3033
+E=CA+2 Wyckoff=i x=0.965 y=0.3339 z=0.3678
+E=CA+2 Wyckoff=i x=0.0498 y=0.3977 z=0.6244
+E=CA+2 Wyckoff=i x=0.3604 y=0.0547 z=0.2888
+E=CA+2 Wyckoff=i x=0.622 y=0.4145 z=0.7117
+E=CA+2 Wyckoff=i x=0.9682 y=0.1048 z=0.3762
+E=CA+2 Wyckoff=i x=0.4651 y=0.0913 z=0.8506
+E=CA+2 Wyckoff=i x=0.2141 y=0.2419 z=0.4658
+E=CA+2 Wyckoff=i x=0.804 y=0.2472 z=0.5175
+E=CA+2 Wyckoff=i x=0.5363 y=0.4148 z=0.1508
+E=CA+2 Wyckoff=i x=0.7012 y=0.488 z=0.9589
+E=CA+2 Wyckoff=i x=0.7241 y=0.2378 z=0.97
+E=CA+2 Wyckoff=i x=0.3039 y=0.2766 z=0.0251
+E=CA+2 Wyckoff=i x=0.8729 y=0.0824 z=0.8173
+E=CA+2 Wyckoff=i x=0.1371 y=0.4262 z=0.1848
+E=CA+2 Wyckoff=i x=0.0205 y=0.2604 z=0.9897
+E=CA+2 Wyckoff=a x=0.0 y=0.0 z=0.0
+E=CA+2 Wyckoff=c x=0.0 y=0.5 z=0.0
+E=CA+2 Wyckoff=f x=0.5 y=0.0 z=0.5
+E=CA+2 Wyckoff=h x=0.5 y=0.5 z=0.5
+E=SI+4 Wyckoff=i x=0.8322 y=0.4165 z=0.1646
+E=SI+4 Wyckoff=i x=0.4748 y=0.344 z=0.871
+E=SI+4 Wyckoff=i x=0.1616 y=0.08 z=0.8192
+E=SI+4 Wyckoff=i x=0.8002 y=0.0183 z=0.5467
+E=SI+4 Wyckoff=i x=0.1922 y=0.4972 z=0.4486
+E=SI+4 Wyckoff=i x=0.5221 y=0.1553 z=0.1222
+E=SI+4 Wyckoff=i x=0.1492 y=0.1806 z=0.2057
+E=SI+4 Wyckoff=i x=0.8709 y=0.3207 z=0.7842
+E=O-2 Wyckoff=i x=0.0339 y=0.1943 z=0.2619
+E=O-2 Wyckoff=i x=0.5127 y=0.2655 z=0.1925
+E=O-2 Wyckoff=i x=0.6528 y=0.1486 z=0.0807
+E=O-2 Wyckoff=i x=0.1584 y=0.0685 z=0.1427
+E=O-2 Wyckoff=i x=0.2204 y=0.2685 z=0.6427
+E=O-2 Wyckoff=i x=0.5037 y=0.0541 z=0.6743
+E=O-2 Wyckoff=i x=0.4211 y=0.1297 z=0.0254
+E=O-2 Wyckoff=i x=0.2625 y=0.206 z=0.2903
+E=O-2 Wyckoff=i x=0.6673 y=0.0923 z=0.8532
+E=O-2 Wyckoff=i x=0.0105 y=0.2584 z=0.4944
+E=O-2 Wyckoff=i x=0.5133 y=0.0806 z=0.191
+E=O-2 Wyckoff=i x=0.1592 y=0.2553 z=0.1291
+E=O-2 Wyckoff=i x=0.8279 y=0.395 z=0.4729
+E=O-2 Wyckoff=i x=0.3124 y=0.4978 z=0.4018
+E=O-2 Wyckoff=i x=0.1825 y=0.4137 z=0.5105
+E=O-2 Wyckoff=i x=0.3379 y=0.4353 z=0.1771
+E=O-2 Wyckoff=i x=0.161 y=0.3931 z=0.986
+E=O-2 Wyckoff=i x=0.088 y=0.4729 z=0.356
+E=O-2 Wyckoff=i x=0.2777 y=0.0582 z=0.7617
+E=O-2 Wyckoff=i x=0.9492 y=0.4026 z=0.107
+E=O-2 Wyckoff=i x=0.161 y=0.1919 z=0.8857
+E=O-2 Wyckoff=i x=0.1468 y=0.0064 z=0.8928
+E=O-2 Wyckoff=i x=0.8031 y=0.1819 z=0.3337
+E=O-2 Wyckoff=i x=0.8955 y=0.1402 z=0.9995
+E=O-2 Wyckoff=i x=0.5583 y=0.4518 z=0.338
+E=O-2 Wyckoff=i x=0.0487 y=0.0587 z=0.7321
+E=O-2 Wyckoff=i x=0.6123 y=0.2397 z=0.446
+E=O-2 Wyckoff=i x=0.7683 y=0.0509 z=0.6645
+E=O-2 Wyckoff=i x=0.4446 y=0.3903 z=0.9879
+E=O-2 Wyckoff=i x=0.6109 y=0.3254 z=0.863
+E=O-2 Wyckoff=i x=0.9981 y=0.3075 z=0.7361
+E=O-2 Wyckoff=i x=0.6869 y=0.0169 z=0.4682
+E=O-2 Wyckoff=i x=0.8604 y=0.2449 z=0.8521
+E=O-2 Wyckoff=i x=0.7189 y=0.3952 z=0.0806
+E=O-2 Wyckoff=i x=0.7741 y=0.3028 z=0.6875
+E=O-2 Wyckoff=i x=0.8915 y=0.0963 z=0.5267
+E=O-2 Wyckoff=i x=0.8639 y=0.4292 z=0.8575
+E=O-2 Wyckoff=i x=0.4144 y=0.1476 z=0.4653
+E=O-2 Wyckoff=i x=0.1459 y=0.0887 z=0.4737
+E=O-2 Wyckoff=i x=0.827 y=0.3351 z=0.2302
+E=O-2 Wyckoff=i x=0.3964 y=0.244 z=0.8327
+E=O-2 Wyckoff=i x=0.5193 y=0.2654 z=0.6264
+E=O-2 Wyckoff=i x=0.4178 y=0.3379 z=0.484
+E=O-2 Wyckoff=i x=0.182 y=0.4733 z=0.7596
+E=O-2 Wyckoff=i x=0.44 y=0.4192 z=0.8047
+E=SI+4 Wyckoff=i x=0.4977 y=0.2486 z=0.5043

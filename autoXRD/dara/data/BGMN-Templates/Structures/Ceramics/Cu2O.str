@@ -1,0 +1,9 @@
+PHASE=Cuprite // 04-007-1413
+Reference=04-007-1413 //
+Formula=Cu2_O //
+SpacegroupNo=224 Setting=1 HermannMauguin=P4_2/n-32/m Lattice=Cubic OriginChoice=1 //
+PARAM=A=0.462700_0.458073^0.467327  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Cuprite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CU Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.00604020
+E=O Wyckoff=a x=0.250000 y=0.250000 z=0.250000 TDS=0.00660079

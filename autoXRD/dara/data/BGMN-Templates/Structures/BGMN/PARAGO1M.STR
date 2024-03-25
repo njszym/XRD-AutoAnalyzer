@@ -1,0 +1,12 @@
+PHASE=PARAGONITE_1M //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.5135_0.5084^0.5186 PARAM=B=0.8890_0.8801^0.8979 //
+PARAM=C=0.9740_0.9643^0.9837 PARAM=BETA=99.7_98.7^100.7 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR2 GOAL:parago1m=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.008
+E=AL+3(0.9400) Wyckoff=g y=0.6780
+E=(SI+4(0.8625),AL+3(0.1375)) Wyckoff=j x=0.4200 y=0.3300 z=0.2800
+E=NA+1(0.9100) Wyckoff=d
+E=O-2 Wyckoff=i x=0.6090 z=0.8960
+E=O-2 Wyckoff=j x=0.3650 y=0.3240 z=0.1120
+E=O-2 Wyckoff=i x=0.9690 z=0.6660
+E=O-2 Wyckoff=j x=0.1400 y=0.3020 z=0.3440

@@ -1,0 +1,20 @@
+PHASE=C3S_rh_Jeffrey //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.7150_0.7007^0.7293 PARAM=C=2.5560_2.5049^2.6071 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR0 TDS=0.01 //
+GOAL:c3srhjef=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a z=1.0000
+E=SI+4 Wyckoff=a z=0.2260
+E=SI+4 Wyckoff=a z=0.7830
+E=CA+2 Wyckoff=b x=0.1617 z=0.3363
+E=CA+2 Wyckoff=b x=0.5017 z=0.4453
+E=CA+2 Wyckoff=b x=0.1717 z=0.5573
+E=O-2 Wyckoff=a z=0.0640
+E=O-2 Wyckoff=a z=0.2900
+E=O-2 Wyckoff=a z=0.8470
+E=O-2 Wyckoff=a z=0.3980
+E=O-2 Wyckoff=a z=0.5060
+E=O-2 Wyckoff=a z=0.6140
+E=O-2 Wyckoff=b x=0.7907 z=0.3133
+E=O-2 Wyckoff=b x=0.5427 z=0.5393
+E=O-2 Wyckoff=b x=0.7907 z=0.0963

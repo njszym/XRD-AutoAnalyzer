@@ -1,0 +1,9 @@
+PHASE=Ti2O // 04-004-6416
+Reference=04-004-6416 //
+Formula=Ti2_O //
+SpacegroupNo=164 Setting=1 HermannMauguin=P-32/m1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.296000_0.293040^0.298960 PARAM=C=0.483000_0.478170^0.487830  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ti2O=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00100000
+E=TI Wyckoff=d x=0.333333 y=0.666666 z=0.266000 TDS=0.00100000

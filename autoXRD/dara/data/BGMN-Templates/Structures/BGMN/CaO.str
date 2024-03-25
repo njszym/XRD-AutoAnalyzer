@@ -1,0 +1,7 @@
+Phase=CaO_Lime //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4805_0.4757^0.4853 //
+RP=3 PARAM=B1=0_0^0.01 PARAM=GEWICHT=0.0_0 //
+GOAL:CaO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a TDS=0.0050
+E=O-2 Wyckoff=b TDS=0.0230

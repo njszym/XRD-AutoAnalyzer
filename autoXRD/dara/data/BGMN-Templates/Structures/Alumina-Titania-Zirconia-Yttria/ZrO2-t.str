@@ -1,0 +1,9 @@
+PHASE=ZrO2tetragonal // 04-005-4207
+Formula=Zr_O2 //
+SpacegroupNo=137 HermannMauguin=P4_2/n2_1/m2/c //
+PARAM=A=0.3607_0.3507^0.3707 PARAM=C=0.5176_0.50^0.525 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:ZrO2tetragonal=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4 Wyckoff=a TDS=0.00370000
+E=O-2 Wyckoff=d z=0.2911 TDS=0.0065215

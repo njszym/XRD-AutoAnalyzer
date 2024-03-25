@@ -1,0 +1,10 @@
+PHASE=CaS // 04-001-3758
+MineralName=Oldhamite //
+Formula=Ca_S //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5696_0.5656^0.5746 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:CaS=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.002
+E=S Wyckoff=b x=0.5000 y=0.5000 z=0.5000 TDS=0.002

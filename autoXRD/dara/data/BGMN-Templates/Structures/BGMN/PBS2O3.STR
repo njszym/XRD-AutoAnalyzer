@@ -1,0 +1,11 @@
+PHASE=PbS2O3 //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a //
+PARAM=A=0.7180_0.7108^0.7252 PARAM=B=0.6919_0.6850^0.6988 PARAM=C=1.6110_1.5949^1.6271 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pbs2o3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=c x=0.9789 y=0.3384 z=0.3803 TDS=0.0213
+E=S Wyckoff=c x=0.5010 y=0.3318 z=0.3916 TDS=0.0020
+E=S Wyckoff=c x=0.6166 y=0.1752 z=0.2917 TDS=0.0113
+E=O Wyckoff=c x=0.4662 y=0.1827 z=0.4463 TDS=0.0165
+E=O Wyckoff=c x=0.6423 y=0.4703 z=0.4240 TDS=0.0083
+E=O Wyckoff=c x=0.3341 y=0.4406 z=0.3754 TDS=0.0038

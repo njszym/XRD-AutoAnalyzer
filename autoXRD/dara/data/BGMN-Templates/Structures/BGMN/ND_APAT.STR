@@ -1,0 +1,12 @@
+PHASE=Nd-Apatite SpacegroupNo=173 //
+PARAM=A=0.95525_0.9545^0.9565 PARAM=C=0.70844_0.707^0.7099 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 GOAL:apatit=GEWICHT //
+E=SI Wyckoff=c x=0.3998 y=0.0278 z=0.4953 TDS=0
+E=ND Wyckoff=c x=0.2411 y=0.0089 z=0.003  TDS=0
+E=ND Wyckoff=b z=0.25   TDS=0
+E=ND Wyckoff=b z=0.7501 TDS=0
+E=(N,O(p)) PARAM=p=0.5_0.45^0.55 Wyckoff=c x=-0.168 y=0.513 z=0.001 TDS=0
+E=O Wyckoff=c x=0.601 y=0.128 z=0.486 TDS=0
+E=O Wyckoff=c x=0.247 y=0.329 z=0.184 TDS=0
+E=O Wyckoff=c x=0.358 y=0.101 z=0.308 TDS=0
+E=O Wyckoff=a z=-0.023 TDS=0

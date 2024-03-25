@@ -1,0 +1,14 @@
+PHASE=Azurite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.5011_0.4961^0.5061 PARAM=B=0.5848_0.5790^0.5906 PARAM=C=1.0345_1.0242^1.0448 //
+PARAM=BETA=92.4_91.5^93.3 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:azurite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+2 Wyckoff=a TDS=0.0060
+E=CU+2 Wyckoff=e x=0.2502 y=0.4986 z=0.0834 TDS=0.0060
+E=C Wyckoff=e x=0.3289 y=0.2999 z=0.3183 TDS=0.0065
+E=O-2 Wyckoff=e x=0.1036 y=0.3995 z=0.3316 TDS=0.0103
+E=O-2 Wyckoff=e x=0.4501 y=0.2080 z=0.4173 TDS=0.0094
+E=O-2 Wyckoff=e x=0.4313 y=0.2960 z=0.2074 TDS=0.0095
+E=O-2 Wyckoff=e x=0.0727 y=0.8115 z=0.4453 TDS=0.0073
+E=H Wyckoff=e x=0.1802 y=0.8005 z=0.3694 TDS=0.0195

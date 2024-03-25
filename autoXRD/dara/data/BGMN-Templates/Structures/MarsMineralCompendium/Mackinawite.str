@@ -1,0 +1,9 @@
+PHASE=Mackinawite // amcsd_0014518
+Reference=amcsd_0014518 //
+Formula=Fe_S //
+SpacegroupNo=129 HermannMauguin=P4/n2_1/m2/m Setting=1 OriginChoice=1 UniqueAxis=c Lattice=Tetragonal //
+PARAM=A=0.367350_0.363677^0.371024 PARAM=C=0.503280_0.498247^0.508313 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Mackinawite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.004098
+E=S Wyckoff=c x=0.000000 y=0.500000 z=0.260200 TDS=0.001998

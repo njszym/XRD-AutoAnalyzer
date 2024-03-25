@@ -1,0 +1,9 @@
+PHASE=FeMartensite // 04-014-0361
+Reference=04-014-0361 //
+Formula=Fe_C0.016 //
+SpacegroupNo=139 Setting=1 HermannMauguin=I4/m2/m2/m Lattice=Tetragonal UniqueAxis=c //
+PARAM=A=0.282320_0.279497^0.285143 PARAM=C=0.286780_0.283912^0.289648  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:FeMartensite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a TDS=0.00500000
+E=C(0.0160) Wyckoff=b TDS=0.00500000

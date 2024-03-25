@@ -1,0 +1,9 @@
+PHASE=Ag2O // 04-004-5271
+Formula=Ag2_O //
+SpacegroupNo=224 HermannMauguin=P4_2/n-32/m //
+PARAM=A=0.4735_0.46^0.486 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Ag2O=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AG Wyckoff=b
+E=O Wyckoff=a

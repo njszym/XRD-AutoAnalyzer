@@ -1,0 +1,10 @@
+PHASE=ZrB2 //
+Reference=04-001-1203 //
+Formula=Zr_B2 //
+SpacegroupNo=191 Setting=1 HermannMauguin=P6/m2/m2/m Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.316940_0.313771^0.320109 PARAM=C=0.353070_0.349539^0.356601  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:ZrB2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=ZR Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=B Wyckoff=d x=0.333330 y=0.666660 z=0.500000 TDS=0.00000000

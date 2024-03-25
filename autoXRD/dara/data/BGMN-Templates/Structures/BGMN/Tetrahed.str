@@ -1,0 +1,10 @@
+PHASE=Tetrahedrite  //
+SpacegroupNo=217 HermannMauguin=I-43m //
+PARAM=A=1.0364_1.0312^1.0416 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:tetrahed=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=S Wyckoff=g x=0.3841 z=0.8615 TDS=0.0017
+E=S Wyckoff=a TDS=0.0126
+E=SB Wyckoff=c x=0.7679 TDS=0.0022
+E=CU Wyckoff=d TDS=0.0023
+E=CU Wyckoff=e x=0.7835 TDS=0.0074

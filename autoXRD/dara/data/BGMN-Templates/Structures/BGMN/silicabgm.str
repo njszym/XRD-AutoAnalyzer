@@ -1,0 +1,12 @@
+PHASE=Silica,_LeBail //
+SpacegroupNo=19 // Le Bail, refined by J. Bergmann
+A=0.7368 B=0.5786 C=0.8169 B1=0.2775 //
+RP=4 k1=1 GEWICHT=SPHAR0 //
+GOAL:silica=GEWICHT
+E=SI+4 Wyckoff=a x=0.277 y=0.275 z=0.282
+E=SI+4 Wyckoff=a x=0.009 y=0.022 z=0.016
+E=O-2  Wyckoff=a x=0.125 y=0.149 z=0.152
+E=O-2  Wyckoff=a x=0.635 y=0.657 z=0.061
+E=O-2  Wyckoff=a x=0.065 y=0.646 z=0.654
+E=O-2  Wyckoff=a x=0.670 y=0.060 z=0.621
+

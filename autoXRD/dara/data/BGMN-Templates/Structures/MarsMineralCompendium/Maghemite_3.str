@@ -1,0 +1,29 @@
+PHASE=Maghemite // amcsd_0007900
+Reference=amcsd_0007900 //
+Formula=Fe3_O4 //
+SpacegroupNo=96 HermannMauguin=P4_32_12 Setting=1 UniqueAxis=c Lattice=Tetragonal //
+PARAM=A=0.833000_0.824670^0.841330 PARAM=C=2.499000_2.474010^2.523990 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Maghemite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=b x=0.625000 y=0.375000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=b x=0.125000 y=0.625000 z=0.000000 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=b x=0.375000 y=0.125000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=b x=0.125000 y=0.875000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=b x=0.875000 y=0.625000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=a x=0.375000 y=0.375000 z=0.000000 TDS=0.010000
+E=FE Wyckoff=a x=0.875000 y=0.875000 z=0.000000 TDS=0.010000
+E=FE Wyckoff=b x=0.500000 y=0.750000 z=0.041670 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=b x=0.000000 y=0.250000 z=0.041670 TDS=0.010000 // check Wyckoff
+E=FE Wyckoff=b x=0.250000 y=0.500000 z=0.125000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.125000 y=0.125000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.875000 y=0.375000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.875000 y=0.875000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.125000 y=0.625000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.625000 y=0.625000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.625000 y=0.375000 z=0.000000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.375000 y=0.125000 z=0.000000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.625000 y=0.875000 z=0.000000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.125000 y=0.875000 z=0.000000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.625000 y=0.125000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.375000 y=0.375000 z=0.083333 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.375000 y=0.875000 z=0.083333 TDS=0.010000 // check Wyckoff

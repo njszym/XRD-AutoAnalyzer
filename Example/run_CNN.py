@@ -2,6 +2,7 @@ from autoXRD import spectrum_analysis, visualizer, quantifier
 import matplotlib.pyplot as plt
 import pymatgen as mg
 import numpy as np
+import shutil
 import time
 import sys
 import os
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     show_reduced = False # Whether to plot reduced spectrum (after subtraction of known phases)
     inc_pdf = False # Whether to include PDF analysis (requires trained model first)
     parallel = True # Run phase analysis in parallel across available CPUs
-    raw = False # Whether to show the raw spectrum or its denoised product
+    raw = True # Whether to show the raw spectrum or its denoised product
     show_indiv = False # Whether to show individual predictions from XRD and PDF
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
@@ -41,8 +42,6 @@ if __name__ == '__main__':
             show_reduced = True
         if '--inc_pdf' in arg:
             inc_pdf = True
-        if '--raw_spec' in arg:
-            raw = True
         if '--show_indiv' in arg:
             show_indiv = True
 
@@ -63,6 +62,10 @@ if __name__ == '__main__':
     else:
         model_path = 'Model.h5'
 
+    # Used for writing temporary files
+    if not os.path.exists('temp'):
+        os.mkdir('temp')
+
     # Get predictions from XRD analysis
     results['XRD']['filenames'], results['XRD']['phases'], results['XRD']['confs'], results['XRD']['backup_phases'], \
         results['XRD']['scale_factors'], results['XRD']['reduced_spectra'] = spectrum_analysis.main('Spectra', 'References',
@@ -81,6 +84,10 @@ if __name__ == '__main__':
     else:
         # Otherwise, rely only on predictions from XRD
         results['Merged'] = results['XRD']
+
+    # Remove temporary files
+    if os.path.exists('temp'):
+        shutil.rmtree('temp')
 
     ph_index = 0
     for (spectrum_fname, phase_set, confidence, backup_set, heights, final_spectrum) in \

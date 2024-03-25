@@ -1,0 +1,8 @@
+PHASE=Rhodochrosite //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.4768_0.4744^0.4792 PARAM=C=1.5635_1.5557^1.5713 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:rhodochr=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+2 Wyckoff=b TDS=0.0051
+E=C Wyckoff=a TDS=0.0048
+E=O Wyckoff=e x=0.2699 TDS=0.0066

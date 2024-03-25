@@ -1,0 +1,23 @@
+PHASE=Monohydrocalcite //
+SpacegroupNo=144 HermannMauguin=P3_1 //
+PARAM=A=1.0554_1.0448^1.0660 PARAM=C=0.7545_0.7470^0.7620 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:monohydrocalcite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a x=0.1853 y=0.0879 z=0.3333 TDS=0.0140
+E=CA+2 Wyckoff=a x=0.8413 y=0.4235 z=0.3271 TDS=0.0120
+E=CA+2 Wyckoff=a x=0.5259 y=0.7641 z=0.3398 TDS=0.0030
+E=O-2 Wyckoff=a x=0.3920 y=0.1910 z=0.8350 TDS=0.0060
+E=O-2 Wyckoff=a x=0.0660 y=0.5410 z=0.8240 TDS=0.0160
+E=O-2 Wyckoff=a x=0.7480 y=0.8770 z=0.8490 TDS=0.0130
+E=O-2 Wyckoff=a x=0.2060 y=0.2400 z=0.0640 TDS=0.0160
+E=O-2 Wyckoff=a x=0.0200 y=0.2450 z=0.9360 TDS=0.0160
+E=O-2 Wyckoff=a x=0.8850 y=0.5870 z=0.0880 TDS=0.0090
+E=O-2 Wyckoff=a x=0.7010 y=0.5790 z=0.9360 TDS=0.0090
+E=O-2 Wyckoff=a x=0.5470 y=0.8990 z=0.0660 TDS=0.0200
+E=O-2 Wyckoff=a x=0.3700 y=0.9120 z=0.9270 TDS=0.0200
+E=O-2 Wyckoff=a x=0.0600 y=0.0620 z=0.8790 TDS=0.0160
+E=O-2 Wyckoff=a x=0.6600 y=0.4000 z=0.1230 TDS=0.0090
+E=O-2 Wyckoff=a x=0.4010 y=0.7230 z=0.8790 TDS=0.0200
+E=C Wyckoff=a x=0.0920 y=0.1790 z=0.9650 TDS=0.0160
+E=C Wyckoff=a x=0.7500 y=0.5160 z=0.0380 TDS=0.0090
+E=C Wyckoff=a x=0.4290 y=0.8360 z=0.9730 TDS=0.0200

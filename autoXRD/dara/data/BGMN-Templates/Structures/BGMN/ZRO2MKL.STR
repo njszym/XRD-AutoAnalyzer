@@ -1,0 +1,8 @@
+PHASE=ZrO2_Baddeleyite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.5145_0.5042^0.5248 PARAM=B=0.5207_0.5103^0.5311 PARAM=C=0.5311_0.5205^0.5417 PARAM=BETA=99.200 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 TDS=0.01 //
+GOAL:zro2mkl=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4 Wyckoff=e x=0.2758 y=0.0411 z=0.2082
+E=O-2 Wyckoff=e x=0.0703 y=0.3359 z=0.3406
+E=O-2 Wyckoff=e x=0.4423 y=0.7549 z=0.4789

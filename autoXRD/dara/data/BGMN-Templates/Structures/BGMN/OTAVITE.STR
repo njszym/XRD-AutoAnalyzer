@@ -1,0 +1,8 @@
+PHASE=Otavite //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.4923_0.4874^0.4972 PARAM=C=1.6287_1.6124^1.6450 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:otavite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CD+2 Wyckoff=b TDS=0.0047
+E=C Wyckoff=a TDS=0.0045
+E=O-2 Wyckoff=e x=0.7379 TDS=0.00515

@@ -1,0 +1,11 @@
+PHASE=Archerite // amcsd_0013165
+Reference=amcsd_0013165 //
+Formula=K_H2_P_O4 //
+SpacegroupNo=122 HermannMauguin=I-42d Setting=1 UniqueAxis=c Lattice=Tetragonal //
+PARAM=A=0.745210_0.737758^0.752662 PARAM=C=0.697400_0.690426^0.704374 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Archerite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=H(0.5000) Wyckoff=e x=0.147570 y=0.225590 z=0.121610 TDS=0.019476
+E=K Wyckoff=b x=0.000000 y=0.000000 z=0.500000 TDS=0.014449
+E=O Wyckoff=e x=0.148390 y=0.082640 z=0.125840 TDS=0.012423
+E=P Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.009212

@@ -1,0 +1,14 @@
+PHASE=Hydroniumjarosite // amcsd_0004431
+Reference=amcsd_0004431 //
+Formula=K.2_H6.81_Fe3_S2_O14 //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.734280_0.726937^0.741623 PARAM=C=1.703160_1.686128^1.720192 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Hydroniumjarosite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=d x=0.500000 y=0.000000 z=0.500000 TDS=0.030004
+E=H Wyckoff=h x=0.155000 y=0.845000 z=0.092000 TDS=0.020000
+E=(H(0.8100),K(0.2000)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.027998
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.396200 TDS=0.063000
+E=O Wyckoff=h x=0.226400 y=0.773600 z=0.941100 TDS=0.024003
+E=O Wyckoff=h x=0.130900 y=0.869100 z=0.133400 TDS=0.018997
+E=S Wyckoff=c x=0.000000 y=0.000000 z=0.310900 TDS=0.021997

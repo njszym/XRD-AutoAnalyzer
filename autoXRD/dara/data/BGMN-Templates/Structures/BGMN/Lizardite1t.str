@@ -1,0 +1,13 @@
+PHASE=Lizardite1t //
+SpacegroupNo=157 HermannMauguin=P31m //
+PARAM=A=0.5338_0.5285^0.5391 PARAM=C=0.7257_0.7184^0.7330 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR2 //
+GOAL:lizardite1t=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=b z=0.0699 TDS=0.0072
+E=MG+2 Wyckoff=c x=0.3326 z=0.4513 TDS=0.0081
+E=O-2 Wyckoff=b z=0.2920 TDS=0.0073
+E=O-2 Wyckoff=c x=0.5071 z=0.9901 TDS=0.0137
+E=O-2 Wyckoff=c x=0.6662 z=0.5869 TDS=0.0084
+E=O-2 Wyckoff=a z=0.2990 TDS=0.0084
+E=H Wyckoff=c x=0.6600 z=0.7100 TDS=0.0395
+E=H Wyckoff=a z=0.2000 TDS=0.0395

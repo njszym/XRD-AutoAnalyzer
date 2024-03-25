@@ -1,0 +1,11 @@
+PHASE=Aphthitalite //
+SpacegroupNo=164 HermannMauguin=P-32/m1 //
+PARAM=A=0.5680_0.5623^0.5737 PARAM=C=0.7309_0.7236^0.7382 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:aphthitalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=K+1 Wyckoff=a TDS=0.024
+E=NA+1 Wyckoff=b TDS=0.0131 
+E=K+1 Wyckoff=d z=0.3169 TDS=0.0168
+E=S Wyckoff=d z=0.7662 TDS=0.0087
+E=O-2 Wyckoff=d z=0.9684 TDS=0.0303
+E=O-2 Wyckoff=i x=0.1927 z=0.6982 TDS=0.0209

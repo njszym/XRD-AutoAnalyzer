@@ -1,0 +1,16 @@
+PHASE=CalciumOxidePhosphate // 04-023-8826
+Reference=04-023-8826 //
+Formula=Ca5_(_P_O4_)3_O0.5 //
+SpacegroupNo=173 HermannMauguin=P6_3 Setting=1 UniqueAxis=c Lattice=Hexagonal //
+PARAM=A=0.940521_0.931116^0.949926 PARAM=C=0.688127_0.681246^0.695008 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CalciumOxidePhosphate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA Wyckoff=b x=0.333333 y=0.666667 z=0.025422 TDS=0.010000
+E=CA Wyckoff=b x=0.333333 y=0.666667 z=0.521765 TDS=0.010000
+E=CA Wyckoff=c x=0.244833 y=0.990128 z=0.266086 TDS=0.010000
+E=P Wyckoff=c x=0.396856 y=0.367997 z=0.268535 TDS=0.010000
+E=O Wyckoff=c x=0.328529 y=0.486929 z=0.279871 TDS=0.010000
+E=O Wyckoff=c x=0.585326 y=0.466809 z=0.255554 TDS=0.010000
+E=O Wyckoff=c x=0.349970 y=0.265028 z=0.067163 TDS=0.010000
+E=O Wyckoff=c x=0.673398 y=0.757733 z=0.929893 TDS=0.010000
+E=O(0.4550) Wyckoff=a x=0.000000 y=0.000000 z=0.337400 TDS=0.010000

@@ -1,0 +1,18 @@
+PHASE=Syngenite //
+SpacegroupNo=11 HermannMauguin=P12_1/m1 //
+PARAM=A=0.9770_0.9672^0.9868 PARAM=B=0.7150_0.7079^0.7221 PARAM=C=0.6250_0.6188^0.6312 //
+PARAM=BETA=104.0_103^105 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR4 //
+GOAL:syngenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=f x=0.3357 y=0.0068 z=0.1947 TDS=0.0135
+E=CA+2 Wyckoff=e x=0.9679 z=0.3327 TDS=0.0047
+E=S Wyckoff=e x=0.9897 z=0.8396 TDS=0.0038
+E=S Wyckoff=e x=0.6373 z=0.2697 TDS=0.0066
+E=O-2 Wyckoff=e x=0.1191 z=0.0167 TDS=0.0126
+E=O-2 Wyckoff=e x=0.2244 z=0.5015 TDS=0.0105
+E=O-2 Wyckoff=e x=0.5322 z=0.0586 TDS=0.0112
+E=O-2 Wyckoff=e x=0.5650 z=0.4493 TDS=0.0149
+E=O-2 Wyckoff=f x=0.7296 y=0.0842 z=0.2837 TDS=0.0147
+E=O-2 Wyckoff=e x=0.8687 z=0.9421 TDS=0.0120
+E=O-2 Wyckoff=f x=0.9813 y=0.0840 z=0.6959 TDS=0.0089
+E=H Wyckoff=f x=0.2430 y=0.3540 z=0.5970 TDS=0.0000

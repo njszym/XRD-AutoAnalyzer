@@ -1,0 +1,10 @@
+PHASE=Aragonite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.5741_0.565^0.58 PARAM=B=0.4961_0.49^0.5 PARAM=C=0.7967_0.79^0.81 //
+RP=3 PARAM=B1=0_0^0.01  GEWICHT=SPHAR6 //
+GOAL:aragonite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1)
+E=CA+2 Wyckoff=c x=0.7405 z=0.0849 TDS=0.0066
+E=C    Wyckoff=c x=0.5852 z=0.7379 TDS=0.0047
+E=O-2  Wyckoff=c x=0.5956 z=0.5778 TDS=0.0085
+E=O-2  Wyckoff=d x=0.0873 y=0.4735 z=0.6806 TDS=0.0079

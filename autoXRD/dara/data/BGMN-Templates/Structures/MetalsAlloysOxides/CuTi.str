@@ -1,0 +1,9 @@
+PHASE=CuTi // 01-071-7895
+Reference=ICSD_103127 //
+Formula=Cu_Ti //
+SpacegroupNo=123 Setting=1 HermannMauguin=P4/m2/m2/m Lattice=Tetragonal UniqueAxis=c //
+PARAM=A=0.314000_0.310860^0.317140 PARAM=C=0.285600_0.282744^0.288456  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CuTi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CU Wyckoff=a x=0.00000000 y=0.00000000 z=0.00000000 TDS=0.00500000
+E=TI Wyckoff=d x=0.50000000 y=0.50000000 z=0.50000000 TDS=0.00500000

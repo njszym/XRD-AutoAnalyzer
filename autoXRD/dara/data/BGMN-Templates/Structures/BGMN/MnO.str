@@ -1,0 +1,7 @@
+PHASE=Manganosite  //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4446_0.4424^0.4468 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:manganosite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+2 Wyckoff=a TDS=0.0062
+E=O-2 Wyckoff=b TDS=0.0072

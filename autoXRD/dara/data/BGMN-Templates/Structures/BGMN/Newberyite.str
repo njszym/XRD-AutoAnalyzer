@@ -1,0 +1,21 @@
+PHASE=Newberyite //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a //
+PARAM=A=1.0204_1.0162^1.0244 PARAM=B=1.0677_1.0635^1.0721 PARAM=C=1.0015_0.9975^1.0055 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:newberyite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=P Wyckoff=c x=-0.009 y=0.1329 z=0.1535 TDS=0.0082
+E=MG+2 Wyckoff=c x=0.297 y=0.2467 z=0.0861 TDS=0.0081
+E=O-2 Wyckoff=c x=-0.088 y=0.1995 z=0.2575 TDS=0.0154
+E=O-2 Wyckoff=c x=-0.0517 y=0.1615 z=0.0100 TDS=0.0123
+E=O-2 Wyckoff=c x=0.1386 y=0.1533 z=0.1678 TDS=0.0119
+E=O-2 Wyckoff=c x=-0.0337 y=-0.0129 z=0.1781 TDS=0.0145
+E=O-2 Wyckoff=c x=0.1670 y=0.3131 z=-0.0616 TDS=0.0194
+E=O-2 Wyckoff=c x=0.2495 y=0.4131 z=0.1895 TDS=0.0175
+E=O-2 Wyckoff=c x=0.3540 y=0.0926 z=-0.0327 TDS=0.0232
+E=H Wyckoff=c x=0.1779 y=0.3193 z=-0.1573 TDS=0.0331
+E=H Wyckoff=c x=0.0799 y=0.2788 z=-0.0497 TDS=0.0394
+E=H Wyckoff=c x=0.2913 y=0.4935 z=0.1766 TDS=0.0290
+E=H Wyckoff=c x=0.1663 y=0.4306 z=0.2310 TDS=0.0293
+E=H Wyckoff=c x=0.3522 y=0.1069 z=-0.1252 TDS=0.0495
+E=H Wyckoff=c x=0.3461 y=0.0042 z=-0.0203 TDS=0.0460
+E=H Wyckoff=c x=-0.0026 y=-0.0700 z=0.1052 TDS=0.0247

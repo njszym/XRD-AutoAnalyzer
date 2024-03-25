@@ -1,0 +1,12 @@
+PHASE=Crandallite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.7006_0.6866^0.7146 PARAM=C=1.6192_1.5868^1.6516 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:crandallite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2(0.0834) Wyckoff=f x=0.9560 TDS=0.0105
+E=P Wyckoff=c z=0.6863 TDS=0.0053
+E=AL+3 Wyckoff=d TDS=0.0043
+E=O-2 Wyckoff=c z=0.5924 TDS=0.0088
+E=O-2 Wyckoff=h x=0.1191 z=0.7196 TDS=0.0094
+E=O-2 Wyckoff=h x=0.2096 z=0.5314 TDS=0.0056
+E=CA+2(0.0834) Wyckoff=f x=0.9510 TDS=0.0056

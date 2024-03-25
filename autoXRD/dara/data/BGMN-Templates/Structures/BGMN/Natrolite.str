@@ -1,0 +1,17 @@
+PHASE=Natrolite //
+SpacegroupNo=43 HermannMauguin=Fdd2 //
+PARAM=A=1.8300_1.8117^1.8483 PARAM=B=1.8630_1.8444^1.8816 PARAM=C=0.6600_0.6534^0.6666 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:natrolite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=b x=0.2216 y=0.0311 z=0.6158 TDS=0.0112
+E=AL+3 Wyckoff=b x=0.0373 y=0.0944 z=0.6120 TDS=0.0050
+E=SI+4 Wyckoff=a z=1.0000 TDS=0.0047
+E=SI+4 Wyckoff=b x=0.1542 y=0.2111 z=0.6220 TDS=0.0059
+E=O-2 Wyckoff=b x=0.0230 y=0.0683 z=0.8595 TDS=0.0107
+E=O-2 Wyckoff=b x=0.0703 y=0.1821 z=0.5954 TDS=0.0030
+E=O-2 Wyckoff=b x=0.0980 y=0.0351 z=0.4967 TDS=0.0090
+E=O-2 Wyckoff=b x=0.2066 y=0.1530 z=0.7219 TDS=0.0089
+E=O-2 Wyckoff=b x=0.1804 y=0.2275 z=0.3828 TDS=0.0108
+E=O-2 Wyckoff=b x=0.0562 y=0.1894 z=0.1045 TDS=0.0178
+E=H Wyckoff=b x=0.0513 y=0.1443 z=0.0282 TDS=0.0283
+E=H Wyckoff=b x=0.1012 y=0.1883 z=0.1740 TDS=0.0373

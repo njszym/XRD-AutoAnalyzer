@@ -1,0 +1,31 @@
+PHASE=Hexahydrite //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=1.0110_1.0009^1.0211 PARAM=B=0.7212_0.7140^0.7284 PARAM=C=2.4410_2.4166^2.4654 //
+PARAM=BETA=98.3_97.5^99 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:hexahydrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a TDS=0.0192
+E=MG+2 Wyckoff=e y=0.9425 TDS=0.0174
+E=S Wyckoff=f x=0.8659 y=0.4490 z=0.1241 TDS=0.0192
+E=O-2 Wyckoff=f x=0.7747 y=0.5986 z=0.1361 TDS=0.0250
+E=O-2 Wyckoff=f x=0.9834 y=0.4442 z=0.1665 TDS=0.0200
+E=O-2 Wyckoff=f x=0.9096 y=0.4854 z=0.0692 TDS=0.0200
+E=O-2 Wyckoff=f x=0.7961 y=0.2688 z=0.1211 TDS=0.0200
+E=O-2 Wyckoff=f x=0.5852 y=0.7125 z=0.0483 TDS=0.0200
+E=O-2 Wyckoff=f x=0.5393 y=0.3162 z=0.0640 TDS=0.0200
+E=O-2 Wyckoff=f x=0.3126 y=0.5464 z=0.0231 TDS=0.0200
+E=O-2 Wyckoff=f x=0.8887 y=0.1486 z=0.2820 TDS=0.0200
+E=O-2 Wyckoff=f x=0.8884 y=0.7405 z=0.2811 TDS=0.0200
+E=O-2 Wyckoff=f x=0.8598 y=0.9435 z=0.1799 TDS=0.0200
+E=H Wyckoff=f x=0.6430 y=0.6980 z=0.0760 TDS=0.0190
+E=H Wyckoff=f x=0.5390 y=0.8060 z=0.0450 TDS=0.0520
+E=H Wyckoff=f x=0.4950 y=0.2320 z=0.0600 TDS=0.0190
+E=H Wyckoff=f x=0.6140 y=0.3400 z=0.0930 TDS=0.0570
+E=H Wyckoff=f x=0.3040 y=0.6500 z=0.0550 TDS=0.0560
+E=H Wyckoff=f x=0.2710 y=0.5440 z=0.0140 TDS=0.0190
+E=H Wyckoff=f x=0.8400 y=0.0920 z=0.3120 TDS=0.0430
+E=H Wyckoff=f x=0.9370 y=0.2350 z=0.2960 TDS=0.0130
+E=H Wyckoff=f x=0.9400 y=0.6510 z=0.2910 TDS=0.0590
+E=H Wyckoff=f x=0.8200 y=0.7330 z=0.2750 TDS=0.0310
+E=H Wyckoff=f x=0.8490 y=0.8310 z=0.1640 TDS=0.0260
+E=H Wyckoff=f x=0.6470 y=0.0330 z=0.1640 TDS=0.0200

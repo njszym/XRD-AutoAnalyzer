@@ -1,0 +1,8 @@
+PHASE=SiliconOxide // 
+Formula= //
+SpacegroupNo=152 HermannMauguin=P3_121 Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.467640_0.462964^0.472316 PARAM=B=0.467640_0.462964^0.472316 PARAM=C=0.524750_0.519502^0.529997 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:SiliconOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=a x=0.450300 y=0.000000 z=0.333300 TDS=0.003900
+E=O Wyckoff=c x=0.401200 y=0.297100 z=0.237200 TDS=0.006782

@@ -1,0 +1,7 @@
+PHASE=Magnetite_Ti //
+SpacegroupNo=227 OriginChoice=2 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.8463_0.8378^0.8548 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR6
+E=FE+3 Wyckoff=a TDS=0.0064
+E=(FE+2(0.7500),TI+4(0.2500)) Wyckoff=d TDS=0.0055
+E=O Wyckoff=e x=0.2570 TDS=0.0085

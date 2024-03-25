@@ -1,0 +1,10 @@
+PHASE=NiAl2O4 // 04-005-6872
+Reference=04-005-6872 //
+Formula=Ni_Al2_O4 //
+SpacegroupNo=227 Setting=1 HermannMauguin=F4_1/d-32/m Lattice=Cubic OriginChoice=1 //
+PARAM=A=0.805300_0.797247^0.813353  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NiAl2O4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI+2 Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=AL+3 Wyckoff=d x=0.625000 y=0.625000 z=0.625000 TDS=0.00000000
+E=O-2 Wyckoff=e x=0.380300 y=0.380300 z=0.380300 TDS=0.00000000

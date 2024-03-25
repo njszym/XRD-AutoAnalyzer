@@ -1,0 +1,15 @@
+PHASE=AmmoniumCopperChlorideHydrate // 04-009-3801
+Reference=04-009-3801 //
+Formula=(_N_H4_)2_Cu_Cl4_(_H2_O_)2 //
+SpacegroupNo=136 Setting=1 HermannMauguin=P4_2/m2_1/n2/m Lattice=Tetragonal UniqueAxis=c //
+PARAM=A=0.759600_0.752004^0.767196 PARAM=C=0.797600_0.789624^0.805576  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:AmmoniumCopperChlorideHydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=e x=0.000000 y=0.000000 z=0.245000 TDS=0.02408183
+E=CL Wyckoff=g x=0.723500 y=0.276500 z=0.000000 TDS=0.01800216
+E=CL Wyckoff=f x=0.211400 y=0.211400 z=0.000000 TDS=0.01665989
+E=H(0.3600) Wyckoff=k x=0.065900 y=0.413000 z=0.175300 TDS=0.04571601
+E=H(0.6400) Wyckoff=k x=0.074000 y=0.419600 z=0.322400 TDS=0.04808471
+E=H Wyckoff=j x=0.073100 y=0.073100 z=0.315300 TDS=0.03221439
+E=CU Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.01460701
+E=N Wyckoff=d x=0.000000 y=0.500000 z=0.250000 TDS=0.02100252

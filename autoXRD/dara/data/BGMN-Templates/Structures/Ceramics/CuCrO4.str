@@ -1,0 +1,10 @@
+PHASE=CopperChromate // 
+Formula=CuCrO4 //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m Setting=1 Lattice=Orthorhombic //
+PARAM=A=0.543300_0.537867^0.548733 PARAM=B=0.896800_0.887832^0.905768 PARAM=C=0.589000_0.583110^0.594890 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CopperChromate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CU Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.007738
+E=CR Wyckoff=c x=0.000000 y=0.370500 z=0.250000 TDS=0.007501
+E=O Wyckoff=f x=0.000000 y=0.266900 z=0.029200 TDS=0.012712
+E=O Wyckoff=g x=0.237100 y=0.979500 z=0.250000 TDS=0.009080

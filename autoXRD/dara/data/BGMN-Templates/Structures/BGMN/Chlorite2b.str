@@ -1,0 +1,19 @@
+PHASE=CHLORITE_IIb-2 //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.5350_0.5190^0.5510 PARAM=B=0.9267_0.8989^0.9545 PARAM=C=1.4270_1.3842^1.43 //
+PARAM=BETA=96.3_95.5^97 //
+RP=3 B1=ANISO^0.01 GEWICHT=SPHAR2 GOAL:chlorite2b=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2,FE+2(p)) PARAM=p=0.4_0^1 Wyckoff=a TDS=0.01
+E=(MG+2,FE+2(p)) PARAM=p=0.35_0^1 Wyckoff=g y=0.6678 TDS=0.01
+E=O-2 Wyckoff=i x=0.3150 z=0.9257 TDS=0.01
+E=O-2 Wyckoff=j x=0.1890 y=0.1667 z=0.0774 TDS=0.01
+E=(SI+4(0.6560),AL+3(0.3440)) Wyckoff=j x=0.2248 y=0.1669 z=0.1937 TDS=0.01
+E=O-2 Wyckoff=i x=0.8030 z=0.7643 TDS=0.01
+E=O-2 Wyckoff=j x=0.5110 y=0.2280 z=0.2363 TDS=0.01
+E=O-2 Wyckoff=i x=0.8280 z=0.5711 TDS=0.01
+E=O-2 Wyckoff=j x=0.1310 y=0.3463 z=0.4285 TDS=0.01
+E=(MG+2,FE+2(p)) PARAM=p=0.32_0^1 Wyckoff=h y=0.8336 TDS=0.01
+E=AL+3(0.9650) Wyckoff=d TDS=0.01
+E=H Wyckoff=i x=0.2887 z=0.8552 TDS=0.02
+E=H Wyckoff=i x=0.8377 z=0.6339 TDS=0.02
+E=H Wyckoff=j x=0.1586 y=0.3359 z=0.3698 TDS=0.02

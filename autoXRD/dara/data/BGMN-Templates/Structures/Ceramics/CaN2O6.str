@@ -1,0 +1,10 @@
+PHASE=CaN2O6 // 04-006-5679
+Formula=Ca_(NO3)2 //
+SpacegroupNo=205 HermannMauguin=P2_1/a-3 //
+PARAM=A=0.76_0.75^0.77 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:CaN2O6=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=a
+E=N Wyckoff=c  x=0.339 y=0.339 z=0.339
+E=O Wyckoff=d x=0.253 y=0.293 z=0.467

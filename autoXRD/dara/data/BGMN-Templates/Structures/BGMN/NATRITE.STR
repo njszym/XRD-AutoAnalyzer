@@ -1,0 +1,12 @@
+PHASE=Natrite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.8904_0.8815^0.8993 PARAM=B=0.5239_0.5187^0.5291 PARAM=C=0.6042_0.5982^0.6102 //
+PARAM=BETA=101.3_100.3^102.3 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:natrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=a TDS=0.0119
+E=NA+1 Wyckoff=c TDS=0.0046
+E=NA+1 Wyckoff=i x=0.3240 z=0.2522 TDS=0.0175
+E=C Wyckoff=i x=0.3359 z=0.7504 TDS=0.0079
+E=O Wyckoff=i x=0.2103 z=0.8229 TDS=0.0148
+E=O Wyckoff=j x=0.1016 y=0.2940 z=0.2855 TDS=0.0155

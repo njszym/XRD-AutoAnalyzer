@@ -1,0 +1,196 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Rigaku Ultima+
+%    -------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    December 14, 2012
+%
+%    Device Configuration:
+%    - Detector: Scintillation Counter
+%    - Radiation: CuKa, Graphite Monochromator
+%    - Soller Slits: 5°
+%    - Divergence Slit: fixed, 2°
+%    - Anti-Scatter Slit: fixed, 1°
+%    - Receiving Slit: 0.60 mm
+%    - Goniometer Radius: 185 mm
+%    - Beam Mask: 10 mm
+%    - Toshiba X-ray Tube: 1 x 10 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=rigaku-ultima.ger
+GEQ=rigaku-ultima.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% Rigaku Ultimas aparently use one of the following tubes (all with a 6° take-off angle):
+% Normal Focus: 1 x 10 mm
+% Line Beam: 0.1 x 10 mm
+% Point Beam: 1 x 1 mm
+% This instrument uses a Toshiba tube "A41L Cu", which has a focus of 1 x 10 mm.
+% http://www.toshiba-tetd.co.jp/eng/product/xray/02analy.htm
+
+% axial dimension (length, mm)
+FocusH=10
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.1
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=185
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Note: Rigaku specifies the divergence slit in °, but BGMN requires the width of the
+% slit in mm. Here we calculate the width from the divergence angle and the distance
+% from the tube. For HSlitR enter any value shorter than the goniometer radius R,
+% and HSlitW will calculate the slit width resulting in a divergence angle of "div" degrees.
+
+% beam divergence (°)
+div=2.0
+
+% distance from sample (mm)
+HSlitR=100
+
+% fixed slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Primary Beam Mask
+%-----------------------------------------------------------------------------------------------
+
+% This is called "Divergence height limiting slit" in Rigaku speak. Not sure if the
+% distance from sample is absolutely correct.
+
+% width (mm)
+VSlitH=10.0
+
+% distance from sample (mm)
+VSlitR=90.0
+
+
+%-----------------------------------------------------------------------------------------------
+% Receiving slit
+%-----------------------------------------------------------------------------------------------
+
+% width (mm)
+DetW=0.60
+
+% height (mm)
+DetH=20
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% dimensions of the sample holder (mm)
+SamplW=20
+SamplH=20
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% Note: For some manufacturers we have to use half the opening angle given on the soller
+% slits (Rigaku, Bruker), but for others (Panalytical) we have to use the full value. Here soller
+% slits of 5° were used, which is 0.0873 radians. We use 0.0873 / 2 = 0.0436 rad.
+
+% primary soller slit (radians)
+PColl=0.044
+
+% secondary soller slit (radians)
+SColl=0.044
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% Note: Rigaku specifies the anti-scatter slit in °, but BGMN requires the width of the
+% slit in mm. Here we calculate the width from the divergence angle and the distance
+% from the tube. For SSlitR enter any value shorter than the goniometer radius R,
+% and SSlitW will calculate the slit width resulting in a divergence angle of "div" degrees.
+
+% beam divergence
+adiv=1.0
+
+% distance from sample (mm)
+SSlitR=100
+
+% slit width (mm)
+SSlitW=2*tan(adiv*pi/360)*(R-SSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% Note: The position of the monochromator was taken from a Rigaku D/Max-B, which is a predecessor
+% of the Ultima+.
+
+% Distance from sample (mm)
+MonR=R+51.5
+
+% Polarization
+POL=sqr(cos(26.57*pi/180))
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=2
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

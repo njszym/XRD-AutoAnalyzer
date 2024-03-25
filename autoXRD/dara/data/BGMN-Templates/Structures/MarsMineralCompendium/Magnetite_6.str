@@ -1,0 +1,10 @@
+PHASE=Magnetite // amcsd_0000945
+Reference=amcsd_0000945 //
+Formula=Fe3_O4 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=2 OriginChoice=2 Lattice=Cubic //
+PARAM=A=0.839580_0.831184^0.847976 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Magnetite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a x=0.125000 y=0.125000 z=0.125000 TDS=0.003703
+E=FE Wyckoff=d x=0.500000 y=0.500000 z=0.500000 TDS=0.004698
+E=O Wyckoff=e x=0.254700 y=0.254700 z=0.254700 TDS=0.006403

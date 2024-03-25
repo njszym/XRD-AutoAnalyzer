@@ -1,0 +1,10 @@
+PHASE=Barite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a  //
+PARAM=A=0.8884_0.8857^0.8911 PARAM=B=0.5456_0.5440^0.5472 PARAM=C=0.7157_0.7136^0.7178 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:barite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=BA+2 Wyckoff=c x=0.6845 z=0.3415 TDS=0.0084
+E=S Wyckoff=c x=0.5627 z=0.8087 TDS=0.0084
+E=O-1 Wyckoff=c x=0.4110 z=0.8934 TDS=0.0175
+E=O-1 Wyckoff=c x=0.6817 z=0.9482 TDS=0.0189
+E=O-1 Wyckoff=d x=0.4204 y=0.9700 z=0.3116 TDS=0.0108

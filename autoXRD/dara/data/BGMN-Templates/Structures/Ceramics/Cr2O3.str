@@ -1,0 +1,8 @@
+PHASE=Eskolaite // 04-008-6181
+Formula=Cr2_O3 //
+SpacegroupNo=167 HermannMauguin=R-32/c Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.496004_0.491044^0.500964 PARAM=B=0.496004_0.491044^0.500964 PARAM=C=1.359820_1.346222^1.373418 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:Eskolaite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CR Wyckoff=c x=0.000000 y=0.000000 z=0.097560 TDS=0.002000
+E=O Wyckoff=e x=0.305900 y=0.000000 z=0.250000 TDS=0.002000

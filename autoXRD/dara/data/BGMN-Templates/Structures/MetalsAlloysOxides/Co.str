@@ -1,0 +1,8 @@
+PHASE=Cobalt //
+Reference=04-001-3273 //
+Formula=Co //
+SpacegroupNo=194 Setting=1 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.250710_0.248203^0.253217 PARAM=C=0.406860_0.402791^0.410929  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Cobalt=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CO Wyckoff=c x=0.333333 y=0.666666 z=0.250000 TDS=0.00500000

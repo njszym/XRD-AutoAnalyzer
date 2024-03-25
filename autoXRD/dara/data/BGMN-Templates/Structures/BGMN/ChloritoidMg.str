@@ -1,0 +1,19 @@
+PHASE=Chloritoidmg //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.9460_0.9365^0.9555 PARAM=B=0.5471_0.5416^0.5526 PARAM=C=1.8182_1.8000^1.8364 //
+PARAM=BETA=101.4_100.5^102.5 ANISOLIMIT=5 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=ANISO //
+GOAL:chloritoidmg=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=c TDS=0.0042
+E=AL+3 Wyckoff=e y=0.4025 TDS=0.0034
+E=(MG+2(0.6500),FE+2(0.3500)) Wyckoff=f x=0.0840 y=0.7458 z=0.0009 TDS=0.0055
+E=AL+3 Wyckoff=f x=0.2499 y=0.6536 z=0.2489 TDS=0.0035
+E=SI+4 Wyckoff=f x=0.4640 y=0.4030 z=0.1559 TDS=0.0027
+E=O-2 Wyckoff=f x=0.1146 y=0.3927 z=0.0529 TDS=0.0058
+E=O-2 Wyckoff=f x=0.2646 y=0.9447 z=0.0500 TDS=0.0055
+E=O-2 Wyckoff=f x=0.4267 y=0.3977 z=0.0636 TDS=0.0049
+E=O-2 Wyckoff=f x=0.3945 y=0.1589 z=0.1882 TDS=0.0039
+E=O-2 Wyckoff=f x=0.3949 y=0.6479 z=0.1873 TDS=0.0039
+E=O-2 Wyckoff=f x=0.1393 y=0.9037 z=0.1870 TDS=0.0039
+E=O-2 Wyckoff=f x=0.1485 y=0.4016 z=0.2016 TDS=0.0032
+E=H Wyckoff=f x=0.1370 y=0.4040 z=0.1120 TDS=0.01

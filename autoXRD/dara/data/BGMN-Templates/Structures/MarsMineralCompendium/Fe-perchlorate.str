@@ -1,0 +1,15 @@
+PHASE=FePerchlorate // 
+Formula=Cl3_Fe_H18_O21 //
+SpacegroupNo=167 HermannMauguin=R-32/c Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=1.604700_1.588653^1.620747 PARAM=C=1.135610_1.124254^1.146966 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:FePerchlorate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=e x=0.414637 y=0.000000 z=0.250000 TDS=0.034978
+E=FE Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.019029
+E=H Wyckoff=f x=0.162500 y=0.132800 z=0.089000 TDS=0.032372
+E=H Wyckoff=f x=0.140600 y=0.049900 z=0.141400 TDS=0.032372
+E=H Wyckoff=f x=0.242000 y=0.047700 z=0.293100 TDS=0.031583
+E=O Wyckoff=f x=0.116250 y=0.073580 z=0.099700 TDS=0.026766
+E=O Wyckoff=f x=0.187300 y=0.302100 z=0.179700 TDS=0.090958
+E=O Wyckoff=f x=0.265300 y=0.256500 z=0.045300 TDS=0.053296
+E=O Wyckoff=e x=0.186800 y=0.000000 z=0.250000 TDS=0.026529

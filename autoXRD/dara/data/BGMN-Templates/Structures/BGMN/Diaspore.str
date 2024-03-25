@@ -1,0 +1,9 @@
+PHASE=diaspore //
+SpacegroupNo=62 //
+PARAM=C=0.4401_0.435^0.445 PARAM=A=0.9425_0.935^0.95 PARAM=B=0.2845_0.28^0.29 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:diaspore=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3  Wyckoff=c z=0.0447 x=-0.1445 TDS=0.012
+E=O-2  Wyckoff=c  z=0.7123 x=0.1989  TDS=0.019
+E=O-2  Wyckoff=c  z=0.1971 x=0.0534  TDS=0.014
+E=H    Wyckoff=c  z=0.4095 x=0.0876  TDS=0.014

@@ -1,0 +1,12 @@
+PHASE=Cryolite SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.7777_0.77^0.784 PARAM=B=0.5601_0.555^0.565 PARAM=C=0.946_0.9366^0.9555 //
+PARAM=BETA=145.09_144^146 //
+PARAM=B1=0_0^0.007 GOAL=GrainSize(1,0,0) RP=3 //
+GEWICHT=SPHAR4 GOAL:Cryolite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AL+3(1))  Wyckoff=a x=0 y=0 z=0 TDS=0.006
+E=(NA+1(1))  Wyckoff=b x=0 y=0 z=0 TDS=0.01
+E=(NA+1(1))  Wyckoff=e x=0.2647 y=0.4492 z=0.0121 TDS=0.013
+E=(F-1(1))  Wyckoff=e x=0.1172 y=0.0442 z=0.8984 TDS=0.013
+E=(F-1(1))  Wyckoff=e x=0.3172 y=0.3267 z=0.7722 TDS=0.013
+E=(F-1(1))  Wyckoff=e x=0.7761 y=0.2687 z=0.8378 TDS=0.013
+

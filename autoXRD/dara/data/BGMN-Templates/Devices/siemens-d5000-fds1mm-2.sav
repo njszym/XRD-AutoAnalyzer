@@ -1,0 +1,157 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Siemens D5000
+%    ------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    August 27, 2014
+%
+%    Device Configuration:
+%    - Detector: Scintillation point detector
+%    - Radiation: CuKa, Graphite monochromated
+%    - Soller Slits: unknown, matched to reference pattern
+%    - Divergence Slit: fix, 1.0°
+%    - Goniometer Radius: 217.5 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=siemens-d5000-fds1mm-2.ger
+GEQ=siemens-d5000-fds1mm-2.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=12
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=217.5
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% beam divergence (°)
+div=1.0
+
+% distance from sample (mm) *guessed*
+HSlitR=129
+
+% fixed slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Receiving slit
+%-----------------------------------------------------------------------------------------------
+
+% width (mm)
+DetW=0.2
+
+% height (mm) Fitted to measured pattern
+DetH=12
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% diameter of the sample holder (mm)
+SamplD=25
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% Note: No information on Soller slits was found. These values were fitted to a measured pattern
+
+% primary soller slit (radians)
+PColl=0.01
+
+% secondary soller slit (radians)
+SColl=PColl
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% beam divergence (°)
+adiv=1.0
+
+% distance from sample (mm)
+SSlitR=112
+
+% slit width (mm) *empty slot*
+SSlitW=2*tan(adiv*pi/360)*(R-SSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% Note: The position of the monochromator was guessed!
+
+% Distance from sample (mm)
+MonR=R+50
+
+% Polarization
+POL=sqr(cos(26.6*pi/180))
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=2
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+PHASE=Stannite_Zn //
+SpacegroupNo=121 HermannMauguin=I-42m //
+PARAM=A=0.5449_0.5422^0.5476 PARAM=C=1.0757_1.0703^1.0811 //
+RP=4 PARAM=B1=0_0 PARAM=k1=0_0^1 PARAM=k2=0_0 GEWICHT=SPHAR4 //
+GOAL:stannite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE+2(0.8100),ZN+2(0.1900)) Wyckoff=a TDS=0.0092
+E=SN+4 Wyckoff=b TDS=0.0078
+E=CU+1 Wyckoff=d TDS=0.0155
+E=S Wyckoff=i x=0.7449 z=0.3702 TDS=0.0093

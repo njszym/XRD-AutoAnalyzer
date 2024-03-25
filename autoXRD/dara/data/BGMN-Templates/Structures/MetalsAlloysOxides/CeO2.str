@@ -1,0 +1,9 @@
+PHASE=CeO2 // cod_4343161
+Reference=cod_4343161 //
+Formula=Ce_O2 //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m Setting=1 Lattice=Cubic //
+PARAM=A=0.540972_0.535562^0.546382 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CeO2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CE Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.004887
+E=O Wyckoff=c x=0.250000 y=0.250000 z=0.250000 TDS=0.008685

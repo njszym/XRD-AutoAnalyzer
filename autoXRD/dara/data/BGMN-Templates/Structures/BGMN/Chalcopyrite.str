@@ -1,0 +1,8 @@
+PHASE=Chalcopyrite //
+SpacegroupNo=122 HermannMauguin=I-42d //
+PARAM=A=0.5289_0.522^0.5338 PARAM=C=1.0423_1.02^1.06 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:chalcopyrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) GOAL=GrainSize(1,1,1)
+E=CU+2 Wyckoff=a TDS=0.0149
+E=FE+2 Wyckoff=b TDS=0.0093
+E=S Wyckoff=d x=0.2574 TDS=0.0100

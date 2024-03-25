@@ -1,0 +1,35 @@
+PHASE=Chloritfxbg SpacegroupNo=12 HermannMauguin=C12/m1 UniqueAxis=b //
+PARAM=A=0.53392_0.525^0.55 PARAM=B=0.92463_0.915^0.945 //
+PARAM=C=1.44655_1.41^1.46 PARAM=BETA=97.1507_95.0^97.5 TDS=0.01 //
+RP=4 GEWICHT=SPHAR4 PARAM=k2=0.00000206_0 //
+RefMult=2 PARAM=g2=0.6_0^1 //
+GEWICHT[1]=(1-g2)*GEWICHT GEWICHT[2]=g2*GEWICHT GOAL:chloritfxbg=GEWICHT //
+pi==2*acos(0) //
+sinBETA==sin(BETA*pi/180) //
+cosBETA==cos(BETA*pi/180) //
+// Definition der L"angen der Rots||c-Achse f"uer beide Subphasen
+PARAM=cb1=0.1_0^0.5 b11[1]=cb1*b11[2] PARAM=b11[2]=0.3_0^0.8 //
+// quadratische Aufweitung der Subphase (Breite der 0k0-Reflexe mit k!=3n)
+PARAM=c1sqr=0.25_0^4 //
+// Verschiebung dieser Reflexe durch quadratische Effekte
+PARAM=c2=0.5_0^2 //
+// Breite der scharfen Reflexe k==3n,
+// wird breiter fuer ungeordnete Phase (Unterschied zu Kaolinit!)
+b10[2]=ANISOLIN^0.01 b10[1]=b10[2]*cb1 //
+// Orientierungsfaktor
+faktor=abs(l/C-h*cosBETA/A)/(sk*sinBETA) //
+B1=b10[iref]+ifthenelse(mod(k,3),b11[iref]*faktor,0) //
+B2=k2*sqr(sk)+ifthenelse(mod(k,3),
+sqr(sqrt(sqr(sk)+sqrt(c1sqr)*sqr(b11[iref]))-sk),0) //
+DELTAsk=ifthenelse(mod(k,3),sqrt(sqr(sk)+c2*sqr(b11[iref]))-sk,0)
+E=(MG+2,FE+2(p)) Wyckoff=a PARAM=p=0_0^1
+E=(MG+2,FE+3(p)) PARAM=p=0_0^1 Wyckoff=g y=0.3322
+E=(FE+3(p),MG+2) PARAM=p=0.068_0^1 Wyckoff=h y=0.1664
+E=(FE+2,AL+3(p)) PARAM=p=1_0.8^1 Wyckoff=d
+E=(SI+4,AL+3(p)) PARAM=p=0.2_0.2^0.5 Wyckoff=j x=0.2248 y=0.1669 z=0.194
+E=O-2 Wyckoff=i x=0.185 y=1/2 z=0.0743
+E=O-2 Wyckoff=j x=0.189 y=1/6 z=0.0774
+E=O-2 Wyckoff=i x=0.197 y=0 z=0.2357
+E=O-2 Wyckoff=j x=0.511 y=0.228 z=0.2363
+E=O-2 Wyckoff=i x=0.172 y=0 z=0.4289
+E=O-2 Wyckoff=j x=0.131 y=0.3463 z=0.4285

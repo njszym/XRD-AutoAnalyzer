@@ -1,0 +1,15 @@
+PHASE=Hydroxylapatite // amcsd_0001257
+Reference=amcsd_0001257 //
+Formula=Ca5_P3_O13_H //
+SpacegroupNo=176 HermannMauguin=P6_3/m Setting=1 UniqueAxis=c Lattice=Hexagonal //
+PARAM=A=0.941660_0.932243^0.951077 PARAM=C=0.687450_0.680575^0.694325 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Hydroxylapatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA Wyckoff=f x=0.333333 y=0.666667 z=0.501440 TDS=0.010000
+E=CA Wyckoff=h x=0.993430 y=0.247060 z=0.250000 TDS=0.010000
+E=H(0.5000) Wyckoff=e x=0.000000 y=0.000000 z=0.040000 TDS=0.032996
+E=O(0.5000) Wyckoff=e x=0.000000 y=0.000000 z=0.197900 TDS=0.010000
+E=O Wyckoff=h x=0.485000 y=0.328900 z=0.250000 TDS=0.010000
+E=O Wyckoff=h x=0.464900 y=0.587100 z=0.250000 TDS=0.010000
+E=O Wyckoff=i x=0.258000 y=0.343500 z=0.070300 TDS=0.010000
+E=P Wyckoff=h x=0.368600 y=0.398660 z=0.250000 TDS=0.010000

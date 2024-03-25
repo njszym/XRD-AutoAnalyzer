@@ -1,0 +1,54 @@
+PHASE=Scholzite // 04-010-2736
+MineralName=Scholzite //
+Reference=amcsd_0000476 //
+Formula=Ca_Zn2_P2_O10_H4 //
+SpacegroupNo=29 Setting=2 HermannMauguin=Pbc2_1 Lattice=Orthorhombic //
+PARAM=A=1.714900_1.697751^1.732049 PARAM=B=2.223600_2.201364^2.245836 PARAM=C=0.666700_0.660033^0.673367  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Scholzite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA Wyckoff=a x=0.7657 y=0.0432 z=0.254 TDS=0.0069
+E=CA Wyckoff=a x=0.7433 y=0.1232 z=0.748 TDS=0.0104
+E=CA Wyckoff=a x=0.7425 y=0.7897 z=0.758 TDS=0.0225
+E=ZN Wyckoff=a x=0.9611 y=0.9197 z=0.1955 TDS=0.0046
+E=ZN Wyckoff=a x=0.5201 y=0.9138 z=0.3211 TDS=0.0035
+E=ZN Wyckoff=a x=0.0322 y=0.0853 z=0.1941 TDS=0.0081
+E=ZN Wyckoff=a x=0.4744 y=0.0828 z=0.3195 TDS=0.0072
+E=ZN Wyckoff=a x=0.0174 y=0.7451 z=0.1853 TDS=0.0068
+E=ZN Wyckoff=a x=0.5392 y=0.2469 z=0.8116 TDS=0.0071
+E=P Wyckoff=a x=0.9025 y=0.0275 z=0.93 TDS=0.0034
+E=O Wyckoff=a x=0.9051 y=0.9951 z=0.138 TDS=0.002
+E=O Wyckoff=a x=0.9068 y=0.982 z=0.757 TDS=0.0103
+E=O Wyckoff=a x=0.9779 y=0.0686 z=0.952 TDS=0.0106
+E=O Wyckoff=a x=0.8282 y=0.065 z=0.942 TDS=0.0021
+E=P Wyckoff=a x=0.6023 y=0.0201 z=0.556 TDS=0.0016
+E=O Wyckoff=a x=0.5954 y=0.9811 z=0.754 TDS=0.023
+E=O Wyckoff=a x=0.5916 y=0.9753 z=0.381 TDS=0.0102
+E=O Wyckoff=a x=0.5287 y=0.0658 z=0.586 TDS=0.0046
+E=O Wyckoff=a x=0.6797 y=0.0523 z=0.563 TDS=0.0095
+E=P Wyckoff=a x=0.9071 y=0.1451 z=0.442 TDS=0.0017
+E=O Wyckoff=a x=0.9142 y=0.1828 z=0.631 TDS=0.0048
+E=O Wyckoff=a x=0.9086 y=0.1811 z=0.257 TDS=0.0076
+E=O Wyckoff=a x=0.9783 y=0.1021 z=0.468 TDS=0.0014
+E=O Wyckoff=a x=0.8314 y=0.1085 z=0.475 TDS=0.0014
+E=P Wyckoff=a x=0.6067 y=0.1421 z=0.07 TDS=0.0013
+E=O Wyckoff=a x=0.5968 y=0.1767 z=0.257 TDS=0.0137
+E=O Wyckoff=a x=0.6038 y=0.1816 z=0.882 TDS=0.0049
+E=O Wyckoff=a x=0.5331 y=0.0968 z=0.076 TDS=0.0017
+E=O Wyckoff=a x=0.685 y=0.1092 z=0.072 TDS=0.0103
+E=P Wyckoff=a x=0.8921 y=0.8106 z=0.435 TDS=0.0067
+E=O Wyckoff=a x=0.9032 y=0.8404 z=0.637 TDS=0.0049
+E=O Wyckoff=a x=0.8947 y=0.8518 z=0.26 TDS=0.0019
+E=O Wyckoff=a x=0.9609 y=0.7656 z=0.438 TDS=0.0059
+E=O Wyckoff=a x=0.8184 y=0.7725 z=0.454 TDS=0.0035
+E=P Wyckoff=a x=0.5923 y=0.8083 z=0.056 TDS=0.0013
+E=O Wyckoff=a x=0.5919 y=0.8528 z=0.885 TDS=0.0169
+E=O Wyckoff=a x=0.5842 y=0.842 z=0.262 TDS=0.0014
+E=O Wyckoff=a x=0.6659 y=0.771 z=0.076 TDS=0.0136
+E=O Wyckoff=a x=0.5186 y=0.7652 z=0.075 TDS=0.0014
+E=O Wyckoff=a x=0.7997 y=0.9626 z=0.471 TDS=0.0135
+E=O Wyckoff=a x=0.6953 y=0.97 z=0.092 TDS=0.0095
+E=O Wyckoff=a x=0.808 y=0.2024 z=0.964 TDS=0.0237
+E=O Wyckoff=a x=0.7093 y=0.2073 z=0.544 TDS=0.0198
+E=O Wyckoff=a x=0.7855 y=0.8691 z=0.965 TDS=0.0166
+E=O Wyckoff=a x=0.695 y=0.8675 z=0.576 TDS=0.0102

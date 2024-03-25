@@ -1,0 +1,7 @@
+PHASE=Rutile  //
+SpacegroupNo=136 HermannMauguin=P4_2/m2_1/n2/m //
+PARAM=A=0.4593_0.456^0.464 PARAM=C=0.2959_0.295^0.297 //
+RP=3 PARAM=B1=0.0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:rutile=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=TI+4 Wyckoff=a TDS=0.0042
+E=O-2 Wyckoff=f x=0.6949 TDS=0.0060

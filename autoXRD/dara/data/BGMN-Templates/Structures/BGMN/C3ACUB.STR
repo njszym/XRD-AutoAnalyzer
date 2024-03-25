@@ -1,0 +1,19 @@
+PHASE=C3Acub //
+SpacegroupNo=205 HermannMauguin=P2_1/a-3 //
+PARAM=A=1.5263_1.4958^1.5568 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:c3acub=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=CA+2 Wyckoff=a TDS=0.0047
+E=CA+2 Wyckoff=b TDS=0.0066
+E=CA+2 Wyckoff=c x=0.7439 TDS=0.0062
+E=CA+2 Wyckoff=c x=0.6250 TDS=0.0092
+E=CA+2 Wyckoff=d x=0.1386 y=0.3763 z=0.1272 TDS=0.0103
+E=CA+2 Wyckoff=d x=0.3800 y=0.3838 z=0.1209 TDS=0.0065
+E=AL+3 Wyckoff=d x=0.2526 y=0.0133 z=0.0197 TDS=0.0052
+E=AL+3 Wyckoff=d x=0.2444 y=0.2335 z=0.0046 TDS=0.0053
+E=O-2 Wyckoff=d x=0.2777 y=0.1241 z=0.0103 TDS=0.0117
+E=O-2 Wyckoff=d x=0.4835 y=0.1315 z=0.2536 TDS=0.011
+E=O-2 Wyckoff=d x=0.2664 y=0.2841 z=0.1049 TDS=0.01
+E=O-2 Wyckoff=d x=0.2350 y=0.4047 z=0.2921 TDS=0.01
+E=O-2 Wyckoff=d x=0.3491 y=-0.0385 z=-0.0174 TDS=0.01
+E=O-2 Wyckoff=d x=0.1509 y=-0.0104 z=-0.0242 TDS=0.0095

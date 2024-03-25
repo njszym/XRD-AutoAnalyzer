@@ -1,0 +1,8 @@
+PHASE=BaTiO3_cubic //
+SpacegroupNo=221 HermannMauguin=P4/m-32/m //
+PARAM=A=0.4006_0.3986^0.4026 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:batio3c=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=a TDS=0.0043
+E=TI+4 Wyckoff=b TDS=0.0069
+E=O Wyckoff=c TDS=0.0056

@@ -1,0 +1,17 @@
+PHASE=Chlorapatite // 04-012-1323
+MineralName=Chlorapatite //
+Formula=Ca5_(PO4)3_Cl0.9_F0.1 //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=0.9598_0.9502^0.9694 PARAM=C=0.6776_0.6708^0.6844  // 
+RP=4 k1=0 k2=0 B1=ANISO^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(0,0,1) //
+GOAL=GrainSize(1,0,0) //
+GOAL:Chlorapatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=f x=0.6667 y=0.3333 z=0.0027 TDS=0.00991961
+E=CA Wyckoff=h x=0.0011 y=0.2576 z=0.2500 TDS=0.01124872
+E=P Wyckoff=h x=0.3736 y=0.4058 z=0.2500 TDS=0.00797727
+E=O Wyckoff=h x=0.4902 y=0.3403 z=0.2500 TDS=0.01564924
+E=O Wyckoff=h x=0.4654 y=0.5908 z=0.2500 TDS=0.01450174
+E=O Wyckoff=i x=0.2655 y=0.3522 z=0.0684 TDS=0.02077354
+E=CL(0.4400) Wyckoff=e x=0.0000 y=0.0000 z=0.4323 TDS=0.02684532
+E=F(0.1200) Wyckoff=a x=0.0000 y=0.0000 z=0.2500

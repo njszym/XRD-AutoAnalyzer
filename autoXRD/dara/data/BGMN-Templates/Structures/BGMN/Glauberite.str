@@ -1,0 +1,13 @@
+PHASE=Glauberite //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=1.0129_1.0028^1.0230 PARAM=B=0.8306_0.8223^0.8389 PARAM=C=0.8533_0.8448^0.8618 //
+PARAM=BETA=112.2_111.2^113.2 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:glauberite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e y=0.9356 TDS=0.0033
+E=NA+1 Wyckoff=f x=0.1371 y=0.4445 z=0.4394 TDS=0.0150
+E=S Wyckoff=f x=0.1856 y=0.2143 z=0.1888 TDS=0.0025
+E=O-2 Wyckoff=f x=0.1252 y=0.0894 z=0.0583 TDS=0.0108
+E=O-2 Wyckoff=f x=0.1616 y=0.1633 z=0.3399 TDS=0.0094
+E=O-2 Wyckoff=f x=0.3400 y=0.2294 z=0.2303 TDS=0.0140
+E=O-2 Wyckoff=f x=0.1134 y=0.3697 z=0.1325 TDS=0.0095

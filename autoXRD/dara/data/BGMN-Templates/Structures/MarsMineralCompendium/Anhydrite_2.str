@@ -1,0 +1,11 @@
+PHASE=Anhydrite // amcsd_0005117
+Reference=amcsd_0005117
+Formula=Ca_S_O4 //
+SpacegroupNo=63 HermannMauguin=A2_1/m2/m2/a Setting=3 Lattice=Orthorhombic //
+PARAM=A=0.699300_0.692307^0.706293 PARAM=B=0.699500_0.692505^0.706495 PARAM=C=0.624500_0.618255^0.630745 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Anhydrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA Wyckoff=c x=0.250000 y=0.000000 z=0.652400 TDS=0.006538
+E=O Wyckoff=g x=0.250000 y=0.169900 z=0.016200 TDS=0.009849
+E=O Wyckoff=f x=0.081900 y=0.000000 z=0.297500 TDS=0.009388
+E=S Wyckoff=c x=0.250000 y=0.000000 z=0.155560 TDS=0.005503

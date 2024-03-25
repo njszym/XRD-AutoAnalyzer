@@ -1,0 +1,8 @@
+PHASE=Magnesite //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.4633_0.4587^0.4679 PARAM=C=1.5013_1.4863^1.5163 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:magnesite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=b TDS=0.0053
+E=C Wyckoff=a TDS=0.0047
+E=O-2 Wyckoff=e x=0.2774 TDS=0.0056

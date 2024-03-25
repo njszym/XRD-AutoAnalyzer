@@ -1,0 +1,12 @@
+PHASE=Jadeite  //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.9423_0.9329^0.9517 PARAM=B=0.8564_0.8478^0.8650 PARAM=C=0.5223_0.5171^0.5275 //
+PARAM=BETA=107.6_107^108.3 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:jadeite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O-2 Wyckoff=f x=0.1092 y=0.0760 z=0.1285 TDS=0.0045
+E=O-2 Wyckoff=f x=0.3611 y=0.2633 z=0.2932 TDS=0.0061
+E=O-2 Wyckoff=f x=0.3537 y=0.0072 z=0.0060 TDS=0.0055
+E=SI+4 Wyckoff=f x=0.2906 y=0.0933 z=0.2277 TDS=0.0034
+E=AL+3 Wyckoff=e y=0.9058 TDS=0.0037
+E=NA+1 Wyckoff=e y=0.3005 TDS=0.0100

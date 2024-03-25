@@ -1,0 +1,14 @@
+PHASE=Biotite_M //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.5358_0.5304^0.5411 PARAM=B=0.9290_0.9197^0.9383 PARAM=C=1.0240_1.0137^1.0342 //
+PARAM=BETA=100.354_99.8^101 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:biotite1m=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O-2 Wyckoff=i x=0.9823 z=0.8334 TDS=0.0139
+E=O-2 Wyckoff=j x=0.3217 y=0.2315 z=0.1645 TDS=0.0137
+E=O-2 Wyckoff=j x=0.1298 y=0.1697 z=0.3905 TDS=0.0075
+E=O-2 Wyckoff=i x=0.3665 z=0.5994 TDS=0.0084
+E=(MG+2(0.4480),FE+2(0.5520)) Wyckoff=h y=0.6546 TDS=0.0085
+E=(FE+2(0.5520),MG+2(0.4480)) Wyckoff=c TDS=0.0071
+E=K+1 Wyckoff=b TDS=0.0219
+E=(AL+3(0.2500),SI+4(0.7500)) Wyckoff=j x=0.0730 y=0.1673 z=0.2228 TDS=0.0075

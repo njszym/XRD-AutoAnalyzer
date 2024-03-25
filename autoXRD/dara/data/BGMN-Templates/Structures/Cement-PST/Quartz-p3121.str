@@ -1,0 +1,10 @@
+PHASE=SiO2p3121 // 04-008-4821
+MineralName=Quartz //
+Formula=Si_O2 //
+SpacegropuNo=152 HermannMauguin=P3_121 //
+PARAM=A=0.49650_0.4872^0.4970 PARAM=C=0.54240_0.5362^0.5470  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:SiO2p3121=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a x=0.5248 TDS=0.0083362
+E=O-2 Wyckoff=c x=0.157 y=0.416 z=-0.1232 TDS=0.0160569

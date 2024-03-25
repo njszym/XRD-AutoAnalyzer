@@ -1,0 +1,9 @@
+PHASE=Pb3O4_Minium //
+SpacegroupNo=135 HermannMauguin=P4_2/m2_1/b2/c //
+PARAM=A=0.8811_0.8723^0.8899 PARAM=C=0.6563_0.6497^0.6629 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:pb3o4minium=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.005
+E=PB Wyckoff=d
+E=PB Wyckoff=h x=0.6400 y=0.3370
+E=O-2 Wyckoff=g x=0.3290
+E=O-2 Wyckoff=h x=0.5960 y=0.8630

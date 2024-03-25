@@ -1,0 +1,8 @@
+PHASE=Greigite //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=0.9876_0.9777^0.9975 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:greigite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=a TDS=0.0250
+E=FE+3 Wyckoff=d TDS=0.0300
+E=S Wyckoff=e x=0.7495 TDS=0.0320

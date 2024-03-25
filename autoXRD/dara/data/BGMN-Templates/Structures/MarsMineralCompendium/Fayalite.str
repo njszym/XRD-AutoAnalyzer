@@ -1,0 +1,13 @@
+PHASE=Fayalite // amcsd_0000480
+Reference=amcsd_0000480 //
+Formula=Fe2_Si_O4 //
+SpacegroupNo=62 HermannMauguin=P2_1/b2_1/n2_1/m Setting=3 Lattice=Orthorhombic //
+PARAM=A=0.481800_0.476982^0.486618 PARAM=B=1.047100_1.036629^1.057571 PARAM=C=0.608600_0.602514^0.614686 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Fayalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.005590
+E=FE Wyckoff=c x=0.985300 y=0.280000 z=0.250000 TDS=0.004972
+E=O Wyckoff=c x=0.768700 y=0.092800 z=0.250000 TDS=0.005272
+E=O Wyckoff=c x=0.207600 y=0.452900 z=0.250000 TDS=0.004251
+E=O Wyckoff=d x=0.288400 y=0.163700 z=0.038300 TDS=0.004914
+E=SI Wyckoff=c x=0.429200 y=0.097500 z=0.250000 TDS=0.004022

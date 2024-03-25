@@ -1,0 +1,9 @@
+PHASE=gammaAl2O3 // 01-084-9871
+Formula=Al2_O3 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=2 OriginChoice=2 Lattice=Cubic //
+PARAM=A=0.794000_0.786060^0.801940 PARAM=B=0.794000_0.786060^0.801940 PARAM=C=0.794000_0.786060^0.801940 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:gammaAl2O3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=f x=0.000000 y=0.125000 z=0.125000 TDS=0.000000
+E=AL Wyckoff=d x=0.500000 y=0.500000 z=0.500000 TDS=0.000000
+E=AL Wyckoff=c x=0.000000 y=0.000000 z=0.000000 TDS=0.000000

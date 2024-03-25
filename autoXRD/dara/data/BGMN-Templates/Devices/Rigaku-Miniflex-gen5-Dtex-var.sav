@@ -1,0 +1,185 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Rigaku MiniFlex+
+%    ---------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    December 04, 2012
+%    Adapted by Daniel Van Opdenbosch, TU Munich, Germany
+%    March 01, 2022
+%
+%    Device Configuration:
+%    - 5th generation Rigaku Miniflex
+%    - Detector: D/tex Ultra
+%    - Radiation: CuKa, Ni-filtered
+%    - Soller Slits: 2.5�
+%    - Divergence Slit: variable for 20 mm irradiated length below 67� twotheta  & fixed 4.2�
+%    - Anti-Scatter Slit: 13 mm, open
+%    - Receiving Slit: 13 mm, effectively 0.1 mm
+%    - Goniometer Radius: 150 mm
+%    - Monochromator: none
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=Rigaku-Miniflex-gen5-Dtex-var.ger
+GEQ=Rigaku-Miniflex-gen5-Dtex-var.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=10
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+% the MiniFlex comes either with a fine focus tube (0.4 mm width) or a normal focus
+% tube (1 mm width)
+FocusW=0.1
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=150
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% For variable & fixed slit
+% Variable slit with a constant irradiated length of 20 mm. HSlitR is unknown, but it is
+% only used to calculate HSlitW in mm, so for HSlitR enter any value shorter than the
+% goniometer radius.
+% &
+% Note: Rigaku specifies the divergence slit in �, but BGMN requires the width of the
+% slit in mm. Here we calculate the width from the divergence angle and the distance
+% from the tube. For HSlitR enter any value shorter than the goniometer radius R,
+% and HSlitW will calculate the slit width resulting in a divergence angle of "div" degrees.
+
+% irradiated length (mm)
+irr=20
+
+% beam divergence (�)
+div=4.2
+
+% distance from sample (mm) (Irrelevant, but used to calculate HSlitW)
+HSlitR=100
+
+% automatic divergence slit width (mm)
+HSlitW0=(2*(R-HSlitR)*irr*sin(pi*zweiTheta/360))/(2*R+irr*cos(pi*zweiTheta/360))
+
+% fixed slit width (mm)
+HSlitW1=2*tan(div*pi/360)*(R-HSlitR)
+
+HSlitW=ifthenelse(lt(HSlitW0,HSlitW1),HSlitW0,HSlitW1)
+
+
+%-----------------------------------------------------------------------------------------------
+% Receiving Slit
+%-----------------------------------------------------------------------------------------------
+
+% width (mm)
+DetW=0.1
+DetArrayW=20
+
+% height (mm) UNKNOWN
+% DetH=
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% diameter of the sample holder (mm)
+SamplD=25
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% ATTENTION: Manual says +- 2.5�, could be 5�!
+
+% primary soller slit (radians), 2.5�
+PColl=0.0436
+
+% secondary soller slit (radians), 2.5�
+SColl=0.0436
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter Slit
+%-----------------------------------------------------------------------------------------------
+
+% Note: Rigaku specifies the antiscatter slit in �, but BGMN requires the width of the
+% slit in mm. Here we calculate the width from the divergence angle and the distance
+% from the tube. For HSlitR enter any value shorter than the goniometer radius R,
+% and SSlitW will calculate the slit width resulting in a divergence angle of "ass" degrees.
+
+% Opening in �
+ass=4.2
+
+% Distance from Sample (mm) (Irrelevant, but used to calculate SSlitW)
+SSlitR=75
+
+% Overwritten with direct value:
+% height (mm)
+SSlitW=13	%2*tan(ass*pi/360)*(R-SSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=4
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

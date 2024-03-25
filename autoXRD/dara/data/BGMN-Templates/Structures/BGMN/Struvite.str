@@ -1,0 +1,25 @@
+PHASE=Struvite //
+SpacegroupNo=31 HermannMauguin=Pmn2_1 //
+PARAM=A=0.6951_0.6927^0.6983 PARAM=B=0.6141_0.6117^0.6167 PARAM=C=1.1214_1.1173^1.1263 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:struvite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=P Wyckoff=a y=0.993 z=0.0018 TDS=0.011
+E=MG+2 Wyckoff=a y=0.3767 z=0.374 TDS=0.017
+E=O-2 Wyckoff=a y=0.9765 z=0.865 TDS=0.016
+E=O-2 Wyckoff=a y=0.7617 z=0.0557 TDS=0.015
+E=O-2 Wyckoff=b x=0.1823 y=0.1139 z=0.0436 TDS=0.013
+E=O-2 Wyckoff=a y=0.6829 z=0.2878 TDS=0.027
+E=O-2 Wyckoff=a y=0.0768 z=0.4664 TDS=0.03
+E=O-2 Wyckoff=b x=0.2179 y=0.2618 z=0.2643 TDS=0.019
+E=O-2 Wyckoff=b x=0.2115 y=0.4852 z=0.4874 TDS=0.024
+E=N Wyckoff=a y=0.3567 z=0.7351 TDS=0.0260
+E=H Wyckoff=a y=0.7192 z=0.2017 TDS=0.0330
+E=H Wyckoff=a y=0.8174 z=0.3299 TDS=0.0615
+E=H Wyckoff=b x=0.1157 y=0.0070 z=0.4999 TDS=0.051
+E=H Wyckoff=b x=0.1989 y=0.2007 z=0.1824 TDS=0.028
+E=H Wyckoff=b x=0.3169 y=0.1702 z=0.3020 TDS=0.041
+E=H Wyckoff=b x=0.3200 y=0.3904 z=0.5120 TDS=0.025
+E=H Wyckoff=b x=0.2511 y=0.6354 z=0.5027 TDS=0.025
+E=H Wyckoff=a y=0.2186 z=0.7832 TDS=0.026
+E=H Wyckoff=a y=0.3311 z=0.6473 TDS=0.026
+E=H Wyckoff=b x=0.1148 y=0.4557 z=0.7535 TDS=0.027

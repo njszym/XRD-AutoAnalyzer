@@ -1,0 +1,11 @@
+PHASE=ANDALUSITE //
+SpacegroupNo=58 HermannMauguin=P2_1/n2_1/n2/m //
+PARAM=A=0.7794_0.7716^0.7872 PARAM=B=0.7898_0.7819^0.7977 PARAM=C=0.5559_0.5503^0.5615 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR6 GOAL:andalusite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 TDS=0.0028 Wyckoff=e z=0.7578
+E=AL+3 TDS=0.0024 Wyckoff=g x=0.8708 y=0.3613
+E=SI+4 TDS=0.0026 Wyckoff=g x=0.7538 y=0.7471
+E=O-2 TDS=0.0041 Wyckoff=g x=0.9232 y=0.1373
+E=O-2 TDS=0.0036 Wyckoff=g x=0.5760 y=0.6371
+E=O-2 TDS=0.0038 Wyckoff=g x=0.8962 y=0.5987
+E=O-2 TDS=0.0042 Wyckoff=h x=0.2303 y=0.1343 z=0.2390

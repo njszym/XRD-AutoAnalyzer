@@ -1,0 +1,10 @@
+PHASE=Zircon // 04-007-5058
+Reference=04-007-5058 //
+Formula=Zr_(_Si_O4_) //
+SpacegroupNo=141 Setting=2 HermannMauguin=I4_1/a2/m2/d Lattice=Tetragonal //
+PARAM=A=0.661640_0.655024^0.668256 PARAM=C=0.601500_0.595485^0.607515  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Zircon=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=h x=0.000000 y=0.067000 z=0.198000 TDS=0.00200000
+E=SI Wyckoff=b x=0.000000 y=0.250000 z=0.375000 TDS=0.00100000
+E=ZR Wyckoff=a x=0.000000 y=0.750000 z=0.125000 TDS=0.00100000

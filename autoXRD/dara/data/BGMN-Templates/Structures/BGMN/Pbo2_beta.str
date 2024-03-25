@@ -1,0 +1,7 @@
+PHASE=PBO2_beta_Plattnerite //
+SpacegroupNo=136 HermannMauguin=P4_2/m2_1/n2/m //
+PARAM=A=0.4958_0.4908^0.5008 PARAM=C=0.3388_0.3354^0.3422 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:pbo2beta=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=a TDS=0.0044
+E=O-2 Wyckoff=f x=0.6933 TDS=0.0076

@@ -1,0 +1,26 @@
+PHASE=C3S_r3m_Nishi //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.7135_0.6992^0.7278 PARAM=C=2.5586_2.5074^2.6098 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR0 //
+GOAL:c3sr2mni=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=b x=0.8213 z=0.6657 TDS=0.0578
+E=CA+2 Wyckoff=b x=0.1593 z=0.7777 TDS=0.0726
+E=CA+2 Wyckoff=b x=0.8423 z=0.8917 TDS=0.0395
+E=SI+4 Wyckoff=a z=1.0000 TDS=0.0205
+E=SI+4 Wyckoff=a z=0.2130 TDS=0.0500
+E=SI+4 Wyckoff=a z=0.7840 TDS=0.0272
+E=O-2 Wyckoff=a z=0.3850 TDS=0.0300
+E=O-2 Wyckoff=a z=0.5040 TDS=0.1300
+E=O-2 Wyckoff=a z=0.6270 TDS=0.0100
+E=O-2(0.3333) Wyckoff=b x=0.3903 z=0.7237 TDS=0.3600
+E=O-2(0.3333) Wyckoff=b x=0.2033 z=0.6737 TDS=0.1100
+E=O-2(0.3333) Wyckoff=c x=0.2230 y=0.1480 z=-0.0320 TDS=0.1100
+E=O-2(0.1000) Wyckoff=b x=0.3493 z=0.9427 TDS=0.0100
+E=O-2(0.1000) Wyckoff=b x=0.2053 z=0.8657 TDS=0.0100
+E=O-2(0.1000) Wyckoff=c x=0.2410 y=0.1300 z=0.1880 TDS=0.0100
+E=O-2(0.2300) Wyckoff=b x=0.3653 z=0.8187 TDS=0.0100
+E=O-2(0.2300) Wyckoff=b x=0.2023 z=0.8857 TDS=0.0100
+E=O-2(0.2300) Wyckoff=c x=0.2340 y=0.1370 z=0.2410 TDS=0.0100
+E=O-2(0.3333) Wyckoff=b x=0.3013 z=0.5117 TDS=0.0500
+E=O-2(0.3333) Wyckoff=b x=0.4643 z=0.4447 TDS=0.2200
+E=O-2(0.3333) Wyckoff=c x=0.1370 y=0.2340 z=0.7560 TDS=0.2200

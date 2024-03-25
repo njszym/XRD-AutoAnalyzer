@@ -1,0 +1,11 @@
+PHASE=Silica,_LeBail //
+SpacegroupNo=19 //
+A=0.722 B=0.709 C=0.730 //
+RP=3 PARAM=B1=0_0 GEWICHT=SPHAR4 //
+GOAL:silica=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a x=0.277 y=0.275 z=0.282
+E=SI+4 Wyckoff=a x=0.009 y=0.022 z=0.016
+E=O-2  Wyckoff=a x=0.125 y=0.149 z=0.152
+E=O-2  Wyckoff=a x=0.635 y=0.657 z=0.061
+E=O-2  Wyckoff=a x=0.065 y=0.646 z=0.654
+E=O-2  Wyckoff=a x=0.670 y=0.060 z=0.621

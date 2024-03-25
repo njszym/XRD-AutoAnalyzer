@@ -1,0 +1,23 @@
+PHASE=NiNitrate6Hydrate // 04-011-1578
+Formula=Ni_(NO3)2_(H2O)6 //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.7694_0.765^0.775 PARAM=B=1.1664_1.16^1.172 PARAM=C=0.5817_0.576^0.588 // 
+PARAM=ALPHA=98.02_97.5^98.5 PARAM=BETA=102.40_102.0^103.0 PARAM=GAMMA=105.82_105.0^106.4 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NiNitrate6Hydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NI Wyckoff=i x=0.0900 y=0.2325 z=0.0606 TDS=0.0206032 
+E=O  Wyckoff=i x=0.0135 y=0.3655 z=0.2694 TDS=0.0179149 
+E=O  Wyckoff=i x=0.1112 y=0.1448 z=0.333 TDS=0.0157737 
+E=O  Wyckoff=i x=0.1700 y=0.1038 z=-0.1467 TDS=0.0157482 
+E=O  Wyckoff=i x=0.0773 y=0.3149 z=-0.224 TDS=0.0182338 
+E=O  Wyckoff=i x=0.3614 y=0.3496 z=0.2179 TDS=0.0185205 
+E=O  Wyckoff=i x=-0.1834 y=0.1262 z=-0.0969 TDS=0.0188456 
+E=O  Wyckoff=i x=0.4696 y=0.8648 z=0.8845 TDS=0.0265165 
+E=O  Wyckoff=i x=0.5323 y=0.8766 z=0.5422 TDS=0.0203805 
+E=O  Wyckoff=i x=0.2611 y=0.8757 z=0.5844 TDS=0.022985 
+E=O  Wyckoff=i x=0.5386 y=0.6283 z=0.2804 TDS=0.0271161 
+E=O  Wyckoff=i x=0.2587 y=0.6035 z=0.3158 TDS=0.0248988 
+E=O  Wyckoff=i x=0.3106 y=0.5904 z=-0.0424 TDS=0.0324641 
+E=N  Wyckoff=i x=0.4207 y=0.8730 z=0.6648 TDS=0.0136927 
+E=N  Wyckoff=i x=0.3707 y=0.6081 z=0.1900 TDS=0.0169677

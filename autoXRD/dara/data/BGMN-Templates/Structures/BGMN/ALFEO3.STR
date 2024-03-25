@@ -1,0 +1,15 @@
+PHASE=AlFeO3 //
+SpacegroupNo=33 HermannMauguin=Pna2_1 //
+PARAM=A=0.4984_0.4934^0.5034 PARAM=B=0.8554_0.8468^0.8640 PARAM=C=0.9241_0.9149^0.9333 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:alfeo3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=a x=0.1850 y=0.1518 z=0.5827 TDS=0.0020
+E=FE+3 Wyckoff=a x=0.6731 y=0.0334 z=0.7982 TDS=0.0038
+E=AL+3 Wyckoff=a x=0.1729 y=0.1528 z=0.0000 TDS=0.0056
+E=AL+3 Wyckoff=a x=0.8155 y=0.1600 z=0.3035 TDS=0.0060
+E=O-2 Wyckoff=a x=0.9822 y=0.3230 z=0.4211 TDS=0.0058
+E=O-2 Wyckoff=a x=0.5101 y=0.4911 z=0.4294 TDS=0.0058
+E=O-2 Wyckoff=a x=0.6581 y=1.0019 z=0.2005 TDS=0.0058
+E=O-2 Wyckoff=a x=0.1555 y=0.1629 z=0.1948 TDS=0.0058
+E=O-2 Wyckoff=a x=0.8451 y=0.1683 z=0.6727 TDS=0.0058
+E=O-2 Wyckoff=a x=0.5089 y=0.1727 z=0.9409 TDS=0.0058

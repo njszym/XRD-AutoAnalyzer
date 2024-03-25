@@ -1,0 +1,9 @@
+PHASE=Troilite  //
+SpacegroupNo=190 HermannMauguin=P-62c //
+PARAM=A=0.5962_0.5932^0.5992 PARAM=C=1.1750_1.1691^1.1809 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:troilite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=i x=0.3797 y=0.0551 z=0.1230 TDS=0.0118
+E=S Wyckoff=a TDS=0.0083
+E=S Wyckoff=f z=0.4801 TDS=0.0079
+E=S Wyckoff=h x=0.3317 y=0.3348 TDS=0.0075

@@ -1,0 +1,9 @@
+PHASE=Ti6O // 04-007-2177
+Reference=04-007-2177 //
+Formula=Ti6_O //
+SpacegroupNo=163 Setting=1 HermannMauguin=P-312/c Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.506000_0.500940^0.511060 PARAM=C=0.948000_0.938520^0.957480  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ti6O=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=c x=0.333330 y=0.666660 z=0.250000 TDS=0.00100000
+E=TI Wyckoff=i x=0.333330 y=0.000000 z=0.125000 TDS=0.00100000

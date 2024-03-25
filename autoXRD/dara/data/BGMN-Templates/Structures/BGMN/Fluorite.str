@@ -1,0 +1,5 @@
+PHASE=Fluorite //
+SpacegroupNo=225 PARAM=A=0.5461_0.54^0.55 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 GOAL:fluorite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a TDS=0.0041
+E=F-1  Wyckoff=c TDS=0.0062

@@ -1,0 +1,19 @@
+PHASE=Bloedite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=1.1463_1.1404^1.1519 PARAM=B=0.8241_0.8201^0.8283 PARAM=C=1.1125_1.1070^1.1182 //
+PARAM=BETA=151.68_151^152.3 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:bloedite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a TDS=0.0084
+E=NA+1 Wyckoff=e x=0.8694 y=0.0706 z=0.2312 TDS=0.0158
+E=S Wyckoff=e x=0.6305 y=0.2908 z=0.767 TDS=0.0083
+E=O-2 Wyckoff=e x=0.6524 y=0.2711 z=0.9189 TDS=0.0154
+E=O-2 Wyckoff=e x=0.7907 y=0.4213 z=0.871 TDS=0.0160
+E=O-2 Wyckoff=e x=0.6943 y=0.1374 z=0.7645 TDS=0.0150
+E=O-2 Wyckoff=e x=0.3704 y=0.3284 z=0.5023 TDS=0.0155
+E=O-2 Wyckoff=e x=0.1274 y=0.0376 z=0.2878 TDS=0.0116
+E=O-2 Wyckoff=e x=0.8225 y=0.7907 z=0.9033 TDS=0.0137
+E=H Wyckoff=e x=0.1981 y=0.119 z=0.351 TDS=0.0100
+E=H Wyckoff=e x=0.786 y=0.0342 z=0.6102 TDS=0.0100
+E=H Wyckoff=e x=0.2451 y=0.2261 z=0.7112 TDS=0.0100
+E=H Wyckoff=e x=0.2761 y=0.2022 z=0.1392 TDS=0.0100

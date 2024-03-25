@@ -1,0 +1,11 @@
+PHASE=Spinel // 04-007-2712
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=1 //
+PARAM=A=0.8086_0.7986^0.8186 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Spinel=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+pMg=0.794
+pAl=0.897
+E=(MG+2(pMg),AL+3(1-pMg)) Wyckoff=a TDS=0.004159
+E=(AL+3(pAl),MG+2(1-pAl)) Wyckoff=d TDS=0.0034266
+E=O-2 Wyckoff=e x=0.3872 TDS=0.0059115

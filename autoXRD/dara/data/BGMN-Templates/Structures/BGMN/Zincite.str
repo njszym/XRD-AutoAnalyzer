@@ -1,0 +1,7 @@
+PHASE=Zincite //
+SpacegroupNo=186 HermannMauguin=P6_3mc //
+PARAM=A=0.3250_0.3217^0.3282 PARAM=C=0.5207_0.5155^0.5259 //
+RP=3 PARAM=B1=0_0^0.01 PARAM=GEWICHT=0.0_0 //
+GOAL:zincite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=b z=1.0000 TDS=0.0045
+E=O-2 Wyckoff=b z=0.3750 TDS=0.0073

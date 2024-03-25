@@ -1,0 +1,14 @@
+PHASE=NiNitrate2Hydrate // 04-011-5171
+Formula=Ni_(NO3)2_(H2O)2 //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 Setting=1 //
+PARAM=A=0.8467_0.84^0.85 PARAM=B=0.5907_0.585^0.595 PARAM=C=0.5766_0.57^0.58 // 
+PARAM=BETA=90.96_90.0^101.0 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NiNitrate2Hydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NI Wyckoff=c TDS=0.0072246 //
+E=O  Wyckoff=e x=0.0485 y=0.3664 z=0.2285 TDS=0.0133753
+E=O  Wyckoff=e x=0.4237 y=0.4147 z=0.2424 TDS=0.017331
+E=O  Wyckoff=e x=0.2524 y=0.2184 z=0.422 TDS=0.0124594
+E=N  Wyckoff=e x=0.2441 y=0.3352 z=0.2954 TDS=0.0102802
+E=O  Wyckoff=e x=0.2439 y=-0.2474 z=0.5119 TDS=0.0128621

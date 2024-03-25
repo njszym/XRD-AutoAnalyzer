@@ -1,0 +1,16 @@
+PHASE=Trona //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=2.0422_2.0218^2.0626 PARAM=B=0.3491_0.3456^0.3526 PARAM=C=1.0333_1.0230^1.0436 //
+PARAM=BETA=106.5_106^107 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR2 //
+GOAL:trona=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=e y=0.7464 TDS=0.0169
+E=NA+1 Wyckoff=f x=0.1507 y=0.1645 z=0.4259 TDS=0.02
+E=C Wyckoff=f x=0.0931 y=0.2653 z=0.1035 TDS=0.0129
+E=O-2 Wyckoff=f x=0.1511 y=0.3995 z=0.1020 TDS=0.0178
+E=O-2 Wyckoff=f x=0.0544 y=0.1310 z=0.9880 TDS=0.0175
+E=O-2 Wyckoff=f x=0.0724 y=0.2533 z=0.2076 TDS=0.0156
+E=O-2 Wyckoff=f x=0.2121 y=0.6646 z=0.3544 TDS=0.0156
+E=H Wyckoff=f x=0.1940 y=0.6120 z=0.2690 TDS=0.0347
+E=H Wyckoff=f x=0.2480 y=0.7240 z=0.3620 TDS=0.0403
+E=H(0.5000) Wyckoff=f x=0.0220 y=0.0350 z=0.9960 TDS=0.0134

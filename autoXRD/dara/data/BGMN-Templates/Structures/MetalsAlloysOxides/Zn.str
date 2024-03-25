@@ -1,0 +1,8 @@
+PHASE=Zinc // 04-003-5661
+Reference=04-003-5661 //
+Formula=Zn //
+SpacegroupNo=194 Setting=1 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.265750_0.263093^0.268408 PARAM=C=0.493400_0.488466^0.498334  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Zinc=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=ZN Wyckoff=c TDS=0.00500000

@@ -1,0 +1,8 @@
+PHASE=Tenorite //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.4684_0.4637^0.4731 PARAM=B=0.3423_0.3389^0.3457 PARAM=C=0.5129_0.5078^0.5180 //
+PARAM=BETA=99.5_99^100 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:tenorite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+2 Wyckoff=c TDS=0.0047
+E=O-2 Wyckoff=e y=0.4184 TDS=0.0060

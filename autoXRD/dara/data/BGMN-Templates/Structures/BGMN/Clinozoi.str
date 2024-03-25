@@ -1,0 +1,25 @@
+PHASE=Clinozoisite //
+SpacegroupNo=11 HermannMauguin=P12_1/m1 //
+PARAM=A=0.8870_0.8781^0.8959 PARAM=B=0.5592_0.5536^0.5648 PARAM=C=1.0144_1.0043^1.0245 //
+PARAM=BETA=115.4_114.5^116.3 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:clinozoi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.2394 z=0.8454 TDS=0.0066
+E=CA+2 Wyckoff=e x=0.3932 z=0.5765 TDS=0.0084
+E=SI+4 Wyckoff=e x=0.6615 z=0.9519 TDS=0.0035
+E=SI+4 Wyckoff=e x=0.6791 z=0.2752 TDS=0.0037
+E=SI+4 Wyckoff=e x=0.8174 z=0.6836 TDS=0.0035
+E=AL+3 Wyckoff=a TDS=0.0040
+E=AL+3 Wyckoff=c TDS=0.0040
+E=(AL+3(0.7900),FE+3(0.2100)) Wyckoff=e x=0.2893 z=0.2239 TDS=0.0046
+E=O-2 Wyckoff=f x=0.2344 y=0.9964 z=0.0446 TDS=0.0059
+E=O-2 Wyckoff=f x=0.3011 y=0.9852 z=0.3522 TDS=0.0060
+E=O-2 Wyckoff=f x=0.7893 y=0.0129 z=0.3454 TDS=0.0067
+E=O-2 Wyckoff=e x=0.0543 z=0.1316 TDS=0.0046
+E=O-2 Wyckoff=e x=0.9604 z=0.8568 TDS=0.0046
+E=O-2 Wyckoff=e x=0.9390 z=0.5985 TDS=0.0049
+E=O-2 Wyckoff=e x=0.4833 z=0.8218 TDS=0.0071
+E=O-2 Wyckoff=e x=0.5122 z=0.2976 TDS=0.0088
+E=O-2 Wyckoff=e x=0.6384 z=0.1033 TDS=0.0128
+E=O-2 Wyckoff=e x=0.0770 z=0.4246 TDS=0.0049
+E=H Wyckoff=e x=0.0530 z=0.3510 TDS=0.0395

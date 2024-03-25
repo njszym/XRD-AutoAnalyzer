@@ -1,0 +1,13 @@
+PHASE=Braunite //
+SpacegroupNo=142 OriginChoice=2 HermannMauguin=I4_1/a2/c2/d //
+PARAM=A=0.9426_0.9379^0.9473 PARAM=C=1.8696_1.8603^1.8789 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:Braunite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+2 Wyckoff=b TDS=0.0108
+E=MN+3 Wyckoff=c TDS=0.0079
+E=MN+3 Wyckoff=e x=0.5334 TDS=0.0078
+E=MN+3 Wyckoff=f x=0.7672 TDS=0.0078
+E=SI+4 Wyckoff=a TDS=0.0068
+E=O Wyckoff=g x=0.1507 y=0.8553 z=0.9456 TDS=0.0098
+E=O Wyckoff=g x=0.1444 y=0.0733 z=0.0567 TDS=0.0097
+E=O Wyckoff=g x=0.0778 y=0.1340 z=0.9252 TDS=0.0104

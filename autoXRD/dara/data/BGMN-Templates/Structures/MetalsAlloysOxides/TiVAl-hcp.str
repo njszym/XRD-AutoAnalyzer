@@ -1,0 +1,10 @@
+PHASE=TiVAl-hcp // 04-002-8708
+Reference=04-002-8708 //
+Formula=Ti0.862_V0.036_Al0.102 //
+SpacegroupNo=194 Setting=1 HermannMauguin=P6_3/m2/m2/c Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.293300_0.290367^0.296233 PARAM=C=0.467700_0.463023^0.472377  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:TiVAlHcp=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=V(0.0360) Wyckoff=c TDS=0.0050000
+E=AL(0.1020) Wyckoff=c TDS=0.00500000
+E=TI(0.8620) Wyckoff=c TDS=0.0050000

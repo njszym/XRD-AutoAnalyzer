@@ -1,0 +1,8 @@
+PHASE=Coppersyn //
+Reference=04-009-2090 //
+Formula=Cu //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.360350_0.356747^0.363953  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR6 //
+GOAL:Coppersyn=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CU Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00179000

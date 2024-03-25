@@ -1,0 +1,158 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Rigaku MiniFlex+
+%    ---------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    December 04, 2012
+%    Adapted by Daniel Van Opdenbosch, TU Munich, Germany
+%    July 08, 2020
+%
+%    Device Configuration:
+%    - 5th generation Rigaku Miniflex
+%    - Detector: D/tex Ultra
+%    - Radiation: CuKa, Ni-filtered
+%    - Soller Slits: 2.5�
+%    - Divergence Slit: variable for 20 mm irradiated length below 10� twotheta  & fixed 0.625�
+%    - Anti-Scatter Slit: 8 mm fixed
+%    - Receiving Slit: 13 mm, effectively 0.1 mm
+%    - Goniometer Radius: 150 mm
+%    - Monochromator: none
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=Rigaku-Miniflex-600-DTEXultra2-fds.ger
+GEQ=Rigaku-Miniflex-600-DTEXultra2-fds.geq
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer
+%-----------------------------------------------------------------------------------------------
+
+% Instrument geometry
+GEOMETRY=REFLEXION
+
+% Goniometer radius (mm)
+R=150.0
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% Axial dimension (length, mm)
+FocusH=10.00
+
+% Optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.1000
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (°)
+div=0.6250
+
+% Distance from sample (mm)
+HSlitR=91.50
+
+% Divergence slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+%-----------------------------------------------------------------------------------------------
+% Primary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+PColl=0.0436
+
+%-----------------------------------------------------------------------------------------------
+% Incident beam mask
+%-----------------------------------------------------------------------------------------------
+
+% Distance form sample (mm)
+VSlitR=79.00
+
+% Axial beam width (mm)
+VSlitH=10.00
+
+%-----------------------------------------------------------------------------------------------
+% Sample
+%-----------------------------------------------------------------------------------------------
+
+% Diameter of round sample (mm)
+SamplD=25.00
+
+%-----------------------------------------------------------------------------------------------
+% Anti-scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% Distance from sample (mm)
+SSlitR=46.60
+
+% Anti-scatter slit width (mm)
+SSlitW=13.0000
+
+%-----------------------------------------------------------------------------------------------
+% Secondary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+SColl=0.0436
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% Total sensor height (mm)
+DetArrayW=19.40
+
+% Height of one strip (mm)
+DetW=0.0750
+
+% Total axial detector width (mm)
+DetH=20.00
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=5
+zweiTheta[3]=12
+zweiTheta[4]=21
+zweiTheta[5]=32
+zweiTheta[6]=45
+zweiTheta[7]=59
+zweiTheta[8]=74
+zweiTheta[9]=90
+zweiTheta[10]=106
+zweiTheta[11]=121
+zweiTheta[12]=135
+zweiTheta[13]=148
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

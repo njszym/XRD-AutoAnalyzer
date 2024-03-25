@@ -1,0 +1,13 @@
+PHASE=BaTi4O9 //
+SpacegroupNo=59 HermannMauguin=P2_1/m2_1/m2/n OriginChoice=2 //
+PARAM=A=1.4527_1.4454^1.4600 PARAM=B=0.3794_0.3775^0.3813 PARAM=C=0.6293_0.6262^0.6324 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL=bati4o9=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=b z=0.7082 TDS=0.0096
+E=TI+4 Wyckoff=f x=0.4633 z=0.8041 TDS=0.0024
+E=TI+4 Wyckoff=f x=0.3710 z=0.2486 TDS=0.0032
+E=O-1 Wyckoff=f x=0.9902 z=0.1504 TDS=0.0036
+E=O-1 Wyckoff=f x=0.8988 z=0.7400 TDS=0.0044
+E=O-1 Wyckoff=f x=0.3480 z=0.9547 TDS=0.0046
+E=O-1 Wyckoff=f x=0.4066 z=0.5610 TDS=0.0068
+E=O-1 Wyckoff=a z=0.3430 TDS=0.0062

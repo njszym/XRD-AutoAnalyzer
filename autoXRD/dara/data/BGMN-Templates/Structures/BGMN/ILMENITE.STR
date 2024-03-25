@@ -1,0 +1,8 @@
+PHASE=Ilmenite //
+SpacegroupNo=148 HermannMauguin=R-3 //
+PARAM=A=0.5088_0.5037^0.5139 PARAM=C=1.4085_1.3944^1.4226 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:ilmenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=c z=0.6446 TDS=0.0058
+E=TI+4 Wyckoff=c z=0.8536 TDS=0.0046
+E=O-2 Wyckoff=f x=0.3174 y=0.0233 z=0.2451 TDS=0.0058

@@ -1,0 +1,10 @@
+PHASE=ZrO2cubic // 04-002-8314
+MineralName=Tazheranite //
+Formula=Zr_O2 //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5110_0.5000^0.5200 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:ZrO2cubic=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4 Wyckoff=a TDS=0.004
+E=O-2 Wyckoff=c TDS=0.007

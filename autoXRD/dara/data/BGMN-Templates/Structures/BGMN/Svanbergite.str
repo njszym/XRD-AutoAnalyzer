@@ -1,0 +1,11 @@
+PHASE=Svanbergite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.6991_0.6964^0.7020 PARAM=C=1.6568_1.6501^1.6633 //
+RP=4 PARAM=B1=0_0^0.006 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:svanbergite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SR+2 Wyckoff=a TDS=0.013
+E=(P(0.5000),S(0.5000)) Wyckoff=c z=0.6906 TDS=0.0012
+E=AL+3 Wyckoff=d TDS=0.0021
+E=O-1 Wyckoff=c z=0.6006 TDS=0.0036
+E=O-1 Wyckoff=h x=0.1155 z=0.7227 TDS=0.0046
+E=O-1 Wyckoff=h x=0.2084 z=0.531 TDS=0.0013

@@ -1,0 +1,12 @@
+PHASE=Mimetite //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=1.0211_1.0160^1.0262 PARAM=C=0.7418_0.7381^0.7455 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:mimetite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=f z=0.9930 TDS=0.0113
+E=PB Wyckoff=h x=0.2464 y=0.9953 TDS=0.0118
+E=AS Wyckoff=h x=0.0254 y=0.6163 TDS=0.0049
+E=O Wyckoff=h x=0.8330 y=0.5050 TDS=0.0172
+E=O Wyckoff=h x=0.1180 y=0.5140 TDS=0.0131
+E=O Wyckoff=i x=0.2750 y=0.3590 z=0.0670 TDS=0.0323
+E=CL-1 Wyckoff=b TDS=0.0154

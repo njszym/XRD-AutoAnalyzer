@@ -1,0 +1,12 @@
+PHASE=Chiolite  //
+SpacegroupNo=128 HermannMauguin=P4/m2_1/n2/c //
+PARAM=A=0.7014_0.6944^0.7084 PARAM=C=1.0400_1.0296^1.0504 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:chiolite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=b TDS=0.01
+E=NA+1 Wyckoff=g x=0.2750 TDS=0.01
+E=AL+3 Wyckoff=a TDS=0.01
+E=AL+3 Wyckoff=c TDS=0.01
+E=F-1 Wyckoff=e z=0.1850 TDS=0.01
+E=F-1 Wyckoff=h x=0.9300 y=0.7500 TDS=0.01
+E=F-1 Wyckoff=i x=0.2500 y=0.5350 z=0.1200 TDS=0.01

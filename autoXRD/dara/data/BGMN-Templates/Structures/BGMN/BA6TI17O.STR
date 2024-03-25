@@ -1,0 +1,40 @@
+PHASE=Ba6Ti17O40 //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.9887_0.9867^0.9907 PARAM=B=1.7097_1.7063^1.7131 PARAM=C=1.8918_1.8880^1.8956 //
+PARAM=BETA=98.7_98^99.4 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:ba6ti17o=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=f x=0.0701 y=0.0900 z=0.4427 TDS=0.0048
+E=BA+2 Wyckoff=f x=0.8624 y=0.4257 z=0.8214 TDS=0.0051
+E=BA+2 Wyckoff=f x=0.8535 y=0.2833 z=0.3148 TDS=0.0052
+E=TI+4 Wyckoff=e y=0.1042 TDS=0.0036
+E=TI+4 Wyckoff=e y=0.9380 TDS=0.0045
+E=TI+4 Wyckoff=f x=0.7217 y=0.9009 z=0.8612 TDS=0.0027
+E=TI+4 Wyckoff=e y=0.7470 TDS=0.0030
+E=TI+4 Wyckoff=f x=0.7037 y=0.9259 z=0.3689 TDS=0.0051
+E=TI+4 Wyckoff=f x=0.7095 y=0.7531 z=0.3731 TDS=0.0033
+E=TI+4 Wyckoff=f x=0.9775 y=0.1602 z=0.8812 TDS=0.0041
+E=TI+4 Wyckoff=c TDS=0.0039
+E=TI+4 Wyckoff=f x=0.9675 y=0.0000 z=0.0000 TDS=0.0034
+E=TI+4 Wyckoff=f x=0.2562 y=0.4197 z=0.0133 TDS=0.0000
+E=TI+4 Wyckoff=b TDS=0.0000
+E=O Wyckoff=f x=0.9327 y=0.0807 z=0.5582 TDS=0.0048
+E=O Wyckoff=f x=0.9384 y=0.2439 z=0.5525 TDS=0.0037
+E=O Wyckoff=f x=0.9403 y=0.4134 z=0.5537 TDS=0.0040
+E=O Wyckoff=f x=0.2024 y=0.0155 z=0.0666 TDS=0.0036
+E=O Wyckoff=f x=0.1859 y=0.1580 z=0.5735 TDS=0.0030
+E=O Wyckoff=f x=0.1886 y=0.3261 z=0.5668 TDS=0.0041
+E=O Wyckoff=f x=0.1789 y=0.4962 z=0.0602 TDS=0.0035
+E=O Wyckoff=f x=0.9295 y=0.4170 z=0.0579 TDS=0.0039
+E=O Wyckoff=f x=0.9308 y=0.2546 z=0.0688 TDS=0.0046
+E=O Wyckoff=f x=0.1756 y=0.3299 z=0.0546 TDS=0.0038
+E=O Wyckoff=f x=0.2051 y=0.1655 z=0.0596 TDS=0.0027
+E=O Wyckoff=f x=0.9014 y=0.0178 z=0.1991 TDS=0.0037
+E=O Wyckoff=f x=0.9099 y=0.1615 z=0.6917 TDS=0.0027
+E=O Wyckoff=f x=0.8910 y=0.3293 z=0.6955 TDS=0.0054
+E=O Wyckoff=f x=0.8750 y=0.4885 z=0.6848 TDS=0.0047
+E=O Wyckoff=f x=0.1269 y=0.0796 z=0.6800 TDS=0.0038
+E=O Wyckoff=f x=0.1300 y=0.2431 z=0.6824 TDS=0.0033
+E=O Wyckoff=f x=0.8783 y=0.3423 z=0.1829 TDS=0.0042
+E=O Wyckoff=f x=0.8848 y=0.1801 z=0.1908 TDS=0.0060
+E=O Wyckoff=f x=0.1307 y=0.1110 z=0.1823 TDS=0.0053

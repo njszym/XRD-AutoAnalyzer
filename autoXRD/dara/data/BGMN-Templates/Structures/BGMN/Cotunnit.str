@@ -1,0 +1,8 @@
+PHASE=PbCl2_Cotunnite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.7620_0.7582^0.7658 PARAM=B=0.4535_0.4512^0.4558 PARAM=C=0.9050_0.9005^0.9095 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:cotunnit=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=c x=0.7617 z=0.5956 TDS=0.0200
+E=CL-1 Wyckoff=c x=0.8610 z=0.9258 TDS=0.0200
+E=CL-1 Wyckoff=c x=0.9768 z=0.3370 TDS=0.0200

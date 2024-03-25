@@ -1,0 +1,12 @@
+PHASE=Aragonite // 01-071-2396
+MineralName=Aragonite // ICSD15198 AMCSD0000236
+Formula=Ca_(CO3) //
+SpacegroupNo=62 HermannMauguin=P2_1/m2_1/c2_1/n //
+PARAM=A=0.4962_0.4912^0.5011 PARAM=B=0.7971_0.7891^0.8050 PARAM=C=0.5739_0.5682^0.5797  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Aragonite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=c x=0.2500 y=0.4151 z=0.2403 TDS=0.00667712
+E=C Wyckoff=c x=0.2500 y=0.7627 z=0.0850 TDS=0.00802201
+E=O Wyckoff=c x=0.2500 y=0.9231 z=0.0952 TDS=0.01247518
+E=O Wyckoff=d x=0.4729 y=0.6801 z=0.0870 TDS=0.01194880

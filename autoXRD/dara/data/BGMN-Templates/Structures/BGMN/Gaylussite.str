@@ -1,0 +1,15 @@
+PHASE=Gaylussite //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=1.4349_1.4206^1.4492 PARAM=B=0.7780_0.7702^0.7858 PARAM=C=1.1207_1.1095^1.1319 //
+PARAM=BETA=127.8_126.5^129 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR2 //
+GOAL:gaylussite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=NA+1 Wyckoff=f x=0.4122 y=0.8182 z=0.5109 TDS=0.0086
+E=CA+2 Wyckoff=e y=0.3065 TDS=0.0040
+E=O-2 Wyckoff=f x=0.3345 y=0.9902 z=0.0894 TDS=0.0058
+E=O-2 Wyckoff=f x=0.3962 y=0.9960 z=0.3245 TDS=0.0074
+E=O-2 Wyckoff=f x=0.2149 y=0.0909 z=0.1367 TDS=0.0072
+E=O-2 Wyckoff=f x=0.3526 y=0.5965 z=0.1893 TDS=0.0082
+E=O-2 Wyckoff=f x=0.5707 y=0.7073 z=0.5034 TDS=0.0075
+E=O-2 Wyckoff=e y=0.8191 TDS=0.0076
+E=C Wyckoff=f x=0.3153 y=0.0266 z=0.1844 TDS=0.0036

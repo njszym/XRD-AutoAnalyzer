@@ -1,0 +1,31 @@
+PHASE=Muscovite_1Md //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.5208_0.5156^0.5260 PARAM=B=0.8995_0.8905^0.9085 PARAM=C=1.0275_1.0172^1.0378 PARAM=BETA=101.300 //
+RP=4 LIMIT2=10 GEWICHT=SPHAR2 PARAM=k2=0.000002_0^0.0001 //
+RefMult=2 PARAM=g2=0.6_0^1 //
+GEWICHT[1]=(1-g2)*GEWICHT GEWICHT[2]=g2*GEWICHT GOAL:musc1md=GEWICHT //
+pi==2*acos(0) //
+sinBETA==sin(BETA*pi/180) //
+cosBETA==cos(BETA*pi/180) //
+// Definition der L"angen der Rots||c-Achse f"uer beide Subphasen
+PARAM=cb1=0.1_0^0.5 b11[1]=cb1*b11[2] PARAM=b11[2]=0.3_0^0.7 //
+// quadratische Aufweitung der Subphase (Breite der 0k0-Reflexe mit k!=3n)
+PARAM=c1sqr=0.25_0^2 //
+// Verschiebung dieser Reflexe durch quadratische Effekte
+PARAM=c2=0.5_0^1.5 //
+// Breite der scharfen Reflexe k==3n,
+// wird breiter fuer ungeordnete Phase 
+b10[2]=ANISOLIN^0.01 b10[1]=b10[2]*cb1 //
+// Orientierungsfaktor
+faktor=abs(l/C-h*cosBETA/A)/(sk*sinBETA) //
+B1=b10[iref]+ifthenelse(mod(k,3),b11[iref]*faktor,0) //
+B2=k2*sqr(sk)+ifthenelse(mod(k,3),
+sqr(sqrt(sqr(sk)+sqrt(c1sqr)*sqr(b11[iref]))-sk),0) //
+DELTAsk=ifthenelse(mod(k,3),sqrt(sqr(sk)+c2*sqr(b11[iref]))-sk,0)
+E=K+1(p) PARAM=p=0.7_0.5^1 Wyckoff=d TDS=0.0424
+E=(SI+4(0.8500),AL+3(0.1500)) Wyckoff=j x=0.4250 y=0.3320 z=0.2760 TDS=0.0388
+E=AL+3 Wyckoff=g y=0.6680 TDS=0.0424
+E=O-2 Wyckoff=i x=0.6200 z=0.8870 TDS=0.0388
+E=O-2 Wyckoff=j x=0.3530 y=0.3170 z=0.1070 TDS=0.0425
+E=O-2 Wyckoff=i x=0.9980 z=0.6700 TDS=0.0395
+E=O-2 Wyckoff=j x=0.1820 y=0.2670 z=0.3290 TDS=0.0415

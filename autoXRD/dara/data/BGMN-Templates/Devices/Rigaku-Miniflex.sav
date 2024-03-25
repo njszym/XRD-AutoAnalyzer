@@ -1,0 +1,166 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Rigaku MiniFlex+
+%    ---------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    December 04, 2012
+%
+%    Device Configuration:
+%    - Detector: Small Scintillation Counter
+%    - Radiation: CuKa, Ni-filtered
+%    - Soller Slits: +-2.5°
+%    - Divergence Slit: variable, 11.5 mm irradiated length
+%    - Anti-Scatter Slit: 4.2° fixed
+%    - Receiving Slit: 0.3 mm
+%    - Goniometer Radius: 150 mm
+%    - Monochromator: none
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=Rigaku-Miniflex.ger
+GEQ=Rigaku-Miniflex.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=10
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+% the MiniFlex comes either with a fine focus tube (0.4 mm width) or a normal focus
+% tube (1 mm width)
+FocusW=0.1
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=150
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Variable slit with a constant irradiated length of 11.5 mm. HSlitR is unknown, but it is
+% only used to calculate HSlitW in mm, so for HSlitR enter any value shorter than the
+% goniometer radius.
+
+% irradiated length (mm)
+irr=11.5
+
+% distance from sample (mm) (Irrelevant, but used to calculate HSlitW)
+HSlitR=100
+
+% automatic divergence slit width (mm)
+HSlitW=(2*(R-HSlitR)*irr*sin(pi*zweiTheta/360))/(2*R+irr*cos(pi*zweiTheta/360))
+
+
+%-----------------------------------------------------------------------------------------------
+% Receiving Slit
+%-----------------------------------------------------------------------------------------------
+
+% height (mm)
+DetW=0.3
+
+% width (mm) UNKNOWN
+% DetH=
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% diameter of the sample holder (mm)
+SamplD=25
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% ATTENTION: Manual says +- 2.5°, could be 5°!
+
+% primary soller slit (radians), 2.5°
+PColl=0.0436
+
+% secondary soller slit (radians), 2.5°
+SColl=0.0436
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter Slit
+%-----------------------------------------------------------------------------------------------
+
+% Note: Rigaku specifies the antiscatter slit in °, but BGMN requires the width of the
+% slit in mm. Here we calculate the width from the divergence angle and the distance
+% from the tube. For HSlitR enter any value shorter than the goniometer radius R,
+% and SSlitW will calculate the slit width resulting in a divergence angle of "adiv" degrees.
+
+% Opening in °
+adiv=4.2
+
+% Distance from Sample (mm) (Irrelevant, but used to calculate SSlitW)
+SSlitR=75
+
+% height (mm)
+SSlitW=2*tan(adiv*pi/360)*(R-SSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=2
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

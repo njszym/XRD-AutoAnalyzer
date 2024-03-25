@@ -1,0 +1,33 @@
+PHASE=Clinoptilolite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.7668_1.7491^1.7845 PARAM=B=1.7986_1.7806^1.8166 PARAM=C=0.7417_0.7343^0.7491 PARAM=BETA=116.300 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:clinopt=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.8700),AL+3(0.1300)) Wyckoff=j x=0.1784 y=0.1707 z=0.0956 TDS=0.0118
+E=(SI+4(0.6800),AL+3(0.3200)) Wyckoff=j x=0.2148 y=0.4105 z=0.5067 TDS=0.0120
+E=(SI+4(0.7900),AL+3(0.2100)) Wyckoff=j x=0.2079 y=0.1907 z=0.7151 TDS=0.0123
+E=(SI+4(0.8500),AL+3(0.1500)) Wyckoff=j x=0.0667 y=0.2993 z=0.4163 TDS=0.0120
+E=(SI+4(0.9100),AL+3(0.0900)) Wyckoff=g y=0.7813 TDS=0.0120
+E=O-2 Wyckoff=i x=0.3009 z=0.5360 TDS=0.0262
+E=O-2 Wyckoff=j x=0.2325 y=0.1205 z=0.6145 TDS=0.0265
+E=O-2 Wyckoff=j x=0.1845 y=0.1559 z=0.8878 TDS=0.0289
+E=O-2 Wyckoff=j x=0.2315 y=0.1057 z=0.2503 TDS=0.0253
+E=O-2 Wyckoff=h y=0.6754 TDS=0.0290
+E=O-2 Wyckoff=j x=0.0803 y=0.1650 z=0.0539 TDS=0.0232
+E=O-2 Wyckoff=j x=0.1258 y=0.2331 z=0.5488 TDS=0.0322
+E=O-2 Wyckoff=j x=0.0133 y=0.2710 z=0.1863 TDS=0.0280
+E=O-2 Wyckoff=j x=0.2128 y=0.2519 z=0.1856 TDS=0.0249
+E=O-2 Wyckoff=j x=0.1205 y=0.3721 z=0.4187 TDS=0.0227
+E=(NA+1(0.4900),CA+2(0.0500)) Wyckoff=i x=0.8533 z=0.3300 TDS=0.0548
+E=NA+1(0.2300) Wyckoff=i x=0.4210 z=0.1600 TDS=0.0395
+E=CA+2(0.1600) Wyckoff=i x=0.4210 z=0.8400 TDS=0.0395
+E=(K+1(0.0925),BA+2(0.0375)) Wyckoff=i x=0.2524 z=0.9470 TDS=0.0372
+E=MG+2(0.4000) Wyckoff=c TDS=0.0242
+E=O-2(0.7600) Wyckoff=i x=0.7110 z=0.9770 TDS=0.11
+E=O-2(0.3700) Wyckoff=i x=0.9210 z=0.1600 TDS=0.17
+E=O-2(0.7600) Wyckoff=j x=0.0793 y=0.4219 z=0.9660 TDS=0.08
+E=O-2(0.8800) Wyckoff=d TDS=0.064
+E=O-2(0.6900) Wyckoff=h y=0.8990 TDS=0.20
+E=O-2(0.7400) Wyckoff=i x=0.9240 z=0.7100 TDS=0.23
+E=O-2(0.3800) Wyckoff=i x=0.8820 z=0.3000 TDS=0.19
+E=O-2(0.2200) Wyckoff=i x=0.9480 z=0.9400 TDS=0.09

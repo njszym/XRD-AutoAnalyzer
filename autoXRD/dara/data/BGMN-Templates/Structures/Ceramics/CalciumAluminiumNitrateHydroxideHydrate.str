@@ -1,0 +1,15 @@
+PHASE=CalciumAluminumNitrateHydroxideHydrate // 04-021-1843
+Reference=04-021-1843 //
+Formula=Ca2_Al_(_N_O3_)_(_O_H_)6_(_H2_O_) //
+SpacegroupNo=167 HermannMauguin=R-32/c Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.573100_0.567369^0.578831 PARAM=C=4.832000_4.783680^4.880320 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CalciumAluminumNitrateHydroxideHydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AL Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.010000
+E=CA Wyckoff=c x=0.000000 y=0.000000 z=0.677967 TDS=0.010000
+E=O Wyckoff=f x=0.055600 y=0.305400 z=0.020900 TDS=0.010000
+E=H Wyckoff=f x=0.070000 y=0.290000 z=0.040200 TDS=0.010000
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.728067 TDS=0.010000
+E=O(0.1670) Wyckoff=f x=0.530000 y=0.570000 z=0.083333 TDS=0.010000
+E=N(0.1670) Wyckoff=f x=0.622000 y=0.411000 z=0.083333 TDS=0.010000
+E=O(0.1700) Wyckoff=f x=0.110000 y=0.860000 z=0.088000 TDS=0.010000

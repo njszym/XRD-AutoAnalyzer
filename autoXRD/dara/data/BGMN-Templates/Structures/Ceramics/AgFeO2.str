@@ -1,0 +1,10 @@
+PHASE=AgFeO2 // 01-075-2147
+Reference=01-075-2147 //
+Formula=Ag_Fe_O2 //
+SpacegroupNo=166 Setting=1 HermannMauguin=R-32/m Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.303910_0.300871^0.306949 PARAM=C=1.859000_1.840410^1.877590  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:AgFeO2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AG Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00780000
+E=FE Wyckoff=b x=0.000000 y=0.000000 z=0.500000 TDS=0.00460000
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.111200 TDS=0.00660000

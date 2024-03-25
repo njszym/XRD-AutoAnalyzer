@@ -1,0 +1,25 @@
+PHASE=Natron(Soda) //
+SpacegroupNo=9 HermannMauguin=C1c1 //
+PARAM=A=1.2830_1.2702^1.2958 PARAM=B=0.9026_0.8936^0.9116 PARAM=C=1.3440_1.3306^1.3574 //
+PARAM=BETA=123.0_122^124 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:soda=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=a x=0.2400 y=0.2250 z=0.1280 TDS=0.0170
+E=NA+1 Wyckoff=a x=0.2520 y=0.2700 z=-0.1280 TDS=0.0190
+E=O-2 Wyckoff=a x=0.1250 y=-0.0120 z=0.0910 TDS=0.0300
+E=O-2 Wyckoff=a x=0.3760 y=-0.4400 z=0.2080 TDS=0.0200
+E=O-2 Wyckoff=a x=0.0930 y=0.3120 z=0.1750 TDS=0.0170
+E=O-2 Wyckoff=a x=0.3740 y=0.1210 z=0.3220 TDS=0.0180
+E=O-2 Wyckoff=a x=0.1390 y=0.3740 z=-0.0580 TDS=0.0220
+E=O-2 Wyckoff=a x=0.3550 y=0.1250 z=0.0470 TDS=0.0200
+E=O-2 Wyckoff=a x=0.1280 y=0.0490 z=-0.2150 TDS=0.0250
+E=O-2 Wyckoff=a x=0.3720 y=0.5020 z=-0.0800 TDS=0.0240
+E=O-2 Wyckoff=a x=0.1200 y=0.3760 z=-0.3320 TDS=0.0270
+E=O-2 Wyckoff=a x=0.3990 y=0.1870 z=-0.1860 TDS=0.0270
+E=C Wyckoff=a x=0.2500 y=0.7540 z=0.0000 TDS=0.0100
+E=O-2(0.5000) Wyckoff=a x=0.2660 y=0.7180 z=0.0970 TDS=0.0350
+E=O-2(0.5000) Wyckoff=a x=0.3440 y=0.7930 z=-0.0030 TDS=0.0250
+E=O-2(0.5000) Wyckoff=a x=0.1390 y=0.7940 z=-0.0960 TDS=0.0200
+E=O-2(0.5000) Wyckoff=a x=0.2530 y=0.8340 z=-0.0730 TDS=0.0460
+E=O-2(0.5000) Wyckoff=a x=0.1510 y=0.6750 z=-0.0010 TDS=0.0380
+E=O-2(0.5000) Wyckoff=a x=0.3360 y=0.8090 z=0.0930 TDS=0.0410

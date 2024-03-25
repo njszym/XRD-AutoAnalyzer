@@ -1,0 +1,10 @@
+PHASE=Ti3O //
+Reference=04-019-2602 //
+Formula=Ti3_O //
+SpacegroupNo=163 Setting=1 HermannMauguin=P-312/c Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.489810_0.484912^0.494708 PARAM=C=0.988410_0.978526^0.998294  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ti3O=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=TI Wyckoff=i x=0.000000 y=0.333000 z=0.118000 TDS=0.00100000
+E=O Wyckoff=c x=0.333330 y=0.666660 z=0.250000 TDS=0.00100000
+E=O Wyckoff=a x=0.000000 y=0.000000 z=0.250000 TDS=0.00100000

@@ -1,0 +1,8 @@
+PHASE=alphaFerrite // 04-007-9753
+Reference=04-007-9753 //
+Formula=Fe //
+SpacegroupNo=229 Setting=1 HermannMauguin=I4/m-32/m Lattice=Cubic //
+PARAM=A=0.286520_0.283655^0.289385  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:alphaFe=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00400311

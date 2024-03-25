@@ -1,0 +1,10 @@
+PHASE=TiVAl-ccp // 04-0018-5433
+Reference=04-018-5433 //
+Formula=Ti0.76_V0.18_Al0.06 //
+SpacegroupNo=229 Setting=1 HermannMauguin=I4/m-32/m Lattice=Cubic //
+PARAM=A=0.321600_0.318384^0.324816  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:TiVAlCcp=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=TI(0.7600) Wyckoff=a TDS=0.00500000
+E=V(0.1800) Wyckoff=a TDS=0.00500000
+E=AL(0.0600) Wyckoff=a TDS=0.00500000

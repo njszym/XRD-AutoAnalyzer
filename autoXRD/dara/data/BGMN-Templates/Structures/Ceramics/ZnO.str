@@ -1,0 +1,9 @@
+PHASE=ZnO // 04-005-4315
+Formula=Zn_O //
+SpacegroupNo=205 HermannMauguin=P2_1/a-3 Setting=1 Lattice=Cubic //
+PARAM=A=0.4871_0.4700^0.4990 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:ZnO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=b TDS=0.002
+E=O-2 Wyckoff=c x=0.088 TDS=0.004

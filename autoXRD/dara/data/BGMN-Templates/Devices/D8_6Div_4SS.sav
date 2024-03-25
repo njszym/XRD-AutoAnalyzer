@@ -1,0 +1,159 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Bruker D8
+%    --------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    November 12, 2012
+%  *** Modified by P. Stutzman for Bruker D8 with a Vantec Detector    07-06-2017
+%    Device Configuration:
+%    - Detector: LynxEye
+%    - Radiation: CuKa, Ni-filtered
+%    - Soller Slits: 2.5�
+%    - Divergence Slit: fixed, 0.6 mm
+%    - Anti-Scatter Slit: fixed, 6.76 mm
+%    -�Goniometer Radius: 217.5 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=D8_6Div_4SS.ger
+GEQ=D8_6Div_4SS.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=12
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=217.5
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+dsdiv=0.6
+
+% distance from sample (mm)
+HSlitR=150
+
+% fixed slit width (mm)  running a 0.6 degree divergence slit
+% HSlitW=0.3
+HSlitW=2*tan(dsdiv*pi/360)*(R-HSlitR)
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% Note: The LynxEye detector has a DetW of 0.075 mm, but this results in wrong crystallite sizes.
+% The value for DetW used here was fitted to a LaB6 pattern to obtain realistic cryst sizes.
+% PES  Changed DetArrayW from 14.5 to 50 per the Vantec manual, and strip height to 100 for the 1600 strips or pixels
+
+% total detector height (mm)
+DetArrayW=16
+
+% height of one strip (mm)
+DetW=DetArrayW/1600
+
+% total detector width (mm)
+DetH=50
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% Note:�The diameter was guessed!
+
+% diameter of the sample holder (mm)
+SamplD=25
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% Note: For some manufacturers we have to use half the opening angle given on the soller
+% slits (Bruker), but for others (Panalytical) we have to use the full value. Here soller
+% slits of 2.5� were used, which is 0.0436 radians. We use 0.0436 / 2 = 0.0218 rad.
+% PES  Using 4 degree Sollers but TOPAS fit improves when this refines to 3.3 for both (0.0576 rad) so we will try that
+
+% primary soller slit (radians)
+PColl=0.0288
+
+% secondary soller slit (radians)
+SColl=0.0288
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+SSlitR=R-54
+
+% slit width (mm)
+SSlitW=6.76
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (�2theta)
+zweiTheta[1]=4
+zweiTheta[2]=8
+zweiTheta[3]=13
+zweiTheta[4]=20
+zweiTheta[5]=30
+zweiTheta[6]=42
+zweiTheta[7]=56
+zweiTheta[8]=76
+zweiTheta[9]=90
+zweiTheta[10]=105
+zweiTheta[11]=120
+zweiTheta[12]=135
+zweiTheta[13]=150
+
+% angular range (�2theta)
+WMIN=4
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (�2theta)
+WSTEP=3*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=2
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

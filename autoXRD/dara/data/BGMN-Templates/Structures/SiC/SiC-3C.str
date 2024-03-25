@@ -1,0 +1,9 @@
+PHASE=SiC-3C // 00-029-1129
+Reference=00-029-1129 //
+Formula=Si_C //
+SpacegroupNo=216 Setting=1 HermannMauguin=F-43m Lattice=Cubic //
+PARAM=A=0.435890_0.431531^0.440249  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC3C=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00200000
+E=C Wyckoff=c x=0.250000 y=0.250000 z=0.250000 TDS=0.00200000

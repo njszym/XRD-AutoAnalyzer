@@ -1,0 +1,15 @@
+PHASE=MgPerchlorate // cod_2104833
+Reference=cod_2104833 //
+Formula=Cl2_H4_Mg_O10 //
+SpacegroupNo=12 HermannMauguin=C12/m1 Setting=8 CellChoice=2 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=1.438776_1.424388^1.453164 PARAM=B=0.521861_0.516642^0.527080 PARAM=C=0.543805_0.538367^0.549243 //
+PARAM=BETA=108.198700_107.116713^109.280687 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:MgPerchlorate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=i x=0.625780 y=0.000000 z=0.830430 TDS=0.004000
+E=H Wyckoff=j x=0.671870 y=0.626170 z=0.437660 TDS=0.010000
+E=MG Wyckoff=d x=0.500000 y=0.500000 z=0.500000 TDS=0.008000
+E=O Wyckoff=i x=0.881670 y=0.000000 z=0.648370 TDS=0.012000
+E=O Wyckoff=i x=0.320430 y=0.000000 z=0.890000 TDS=0.012000
+E=O Wyckoff=j x=0.057620 y=0.250000 z=0.793170 TDS=0.012000 // check Wyckoff
+E=O Wyckoff=i x=0.312650 y=0.000000 z=0.345250 TDS=0.012000

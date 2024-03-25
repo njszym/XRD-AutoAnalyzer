@@ -1,0 +1,24 @@
+PHASE=Isoniazid //
+Formula=C6_H7_N3_O //
+SpacegropuNo=19 HermannMauguin=P2_12_12_1 //
+PARAM=A=1.4915_1.48^1.50 PARAM=B=1.1400_1.13^1.15 PARAM=C=0.3835_0.37^0.39  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:isoniazid=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=a x=-0.4295 y=0.0475 z=0.0234
+E=C Wyckoff=a x=-0.3491 y=0.0902 z=0.1589
+E=C Wyckoff=a x=-0.3417 y=0.2105 z=0.2250
+E=C Wyckoff=a x=-0.4160 y=0.2814 z=0.1525
+E=C Wyckoff=a x=-0.4934 y=0.2296 z=0.0161
+E=C Wyckoff=a x=-0.2545 y=0.2555 z=0.3756
+E=H Wyckoff=a x=-0.1140 y=0.4300 z=0.3400
+E=H Wyckoff=a x=-0.1520 y=0.3880 z=0.7030
+E=H Wyckoff=a x=-0.4370 y=-0.0380 z=-0.0360
+E=H Wyckoff=a x=-0.2980 y=0.0360 z=0.2450
+E=H Wyckoff=a x=-0.4140 y=0.3680 z=0.2370
+E=H Wyckoff=a x=-0.5480 y=0.2800 z=-0.0550
+E=H Wyckoff=a x=-0.2770 y=0.4230 z=0.2620
+E=N Wyckoff=a x=-0.5015 y=0.1137 z=-0.0460
+E=N Wyckoff=a x=-0.1664 y=0.4266 z=0.5203
+E=N Wyckoff=a x=-0.2413 y=0.3721 z=0.3538
+E=O Wyckoff=a x=-0.2000 y=0.1897 z=0.5191

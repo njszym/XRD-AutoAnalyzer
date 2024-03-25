@@ -1,0 +1,10 @@
+PHASE=Halite // COD9003308
+MineralName=Halite //
+Formula=NaCl //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.564010_0.558370^0.569650  //
+RP=4 k1=0 k2=0 B1=ANISO^0.01 GEWICHT=SPHAR0 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Halite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NA Wyckoff=a x=0.00000000 y=0.00000000 z=0.00000000 TDS=0.00000000
+E=CL Wyckoff=b x=0.50000000 y=0.50000000 z=0.50000000 TDS=0.00000000

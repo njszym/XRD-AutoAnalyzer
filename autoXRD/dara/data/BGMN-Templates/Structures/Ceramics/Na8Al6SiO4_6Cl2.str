@@ -1,0 +1,11 @@
+PHASE=SodiumAluminumChlorideSilicate // 04-013-1713
+Formula=Na8_Al6_(Si_O4)6_Cl2 //
+SpacegroupNo=218 HermannMauguin=P-43n Setting=1 Lattice=Cubic //
+PARAM=A=0.888535_0.879650^0.897420 PARAM=B=0.888535_0.879650^0.897420 PARAM=C=0.888535_0.879650^0.897420 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:SodiumAluminumChlorideSilicate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=d x=0.250000 y=0.000000 z=0.500000 TDS=0.026845
+E=AL Wyckoff=c x=0.250000 y=0.500000 z=0.000000 TDS=0.026845
+E=NA Wyckoff=e x=0.178000 y=0.178000 z=0.178000 TDS=0.045795
+E=O Wyckoff=i x=0.137000 y=0.444000 z=0.150000 TDS=0.026845
+E=CL(0.9200) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.045795

@@ -1,0 +1,10 @@
+PHASE=YTZPtetra // 04-016-2092
+Formula=Y0.126_Zr0.874_O1.937
+SpacegroupNo=137 HermannMauguin=P4_2/n2_1/m2/c //
+PARAM=A=0.3622_0.3507^0.3707 PARAM=C=0.5152_0.49^0.525 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:YTZPtetra=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4(0.874) Wyckoff=a TDS=0.0126331
+E=Y+3(0.126) Wyckoff=a TDS=0.0126331
+E=O-2(0.969) Wyckoff=d z=0.207 TDS=0.0371097

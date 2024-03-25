@@ -1,0 +1,35 @@
+PHASE=Ferricopiapite //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.7390_0.7316^0.7464 PARAM=B=1.8213_1.8031^1.8395 PARAM=C=0.7290_0.7217^0.7363 //
+PARAM=ALPHA=93.7_93^94.4 PARAM=BETA=102.1_101^103 PARAM=GAMMA=99.3_98.5^100 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:ferricopiapite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3(0.6900) Wyckoff=a TDS=0.0354
+E=FE+3 Wyckoff=i x=0.7848 y=0.3135 z=0.5524 TDS=0.0241
+E=FE+3 Wyckoff=i x=0.5990 y=0.6718 z=0.8058 TDS=0.0241
+E=S Wyckoff=i x=0.8325 y=0.7398 z=0.2195 TDS=0.0197
+E=S Wyckoff=i x=0.8170 y=0.4175 z=0.2188 TDS=0.0193
+E=S Wyckoff=i x=0.6402 y=0.1927 z=0.1953 TDS=0.0196
+E=O-2 Wyckoff=i x=0.7367 y=0.6750 z=0.0714 TDS=0.0267
+E=O-2 Wyckoff=i x=0.6930 y=0.7698 z=0.2963 TDS=0.0312
+E=O-2 Wyckoff=i x=0.0483 y=0.2921 z=0.6322 TDS=0.0312
+E=O-2 Wyckoff=i x=0.0527 y=0.2022 z=0.8547 TDS=0.0337
+E=O-2 Wyckoff=i x=0.6201 y=0.3910 z=0.1085 TDS=0.0245
+E=O-2 Wyckoff=i x=0.8296 y=0.4886 z=0.3208 TDS=0.0244
+E=O-2 Wyckoff=i x=0.8774 y=0.3626 z=0.3474 TDS=0.0222
+E=O-2 Wyckoff=i x=0.9350 y=0.4228 z=0.0842 TDS=0.0255
+E=O-2 Wyckoff=i x=0.5655 y=0.1159 z=0.1687 TDS=0.0363
+E=O-2 Wyckoff=i x=0.5099 y=0.7637 z=0.8635 TDS=0.0255
+E=O-2 Wyckoff=i x=0.7921 y=0.2131 z=0.0980 TDS=0.0292
+E=O-2 Wyckoff=i x=0.7185 y=0.2128 z=0.4053 TDS=0.0237
+E=O-2 Wyckoff=i x=0.4626 y=0.6604 z=0.5454 TDS=0.0000
+E=O-2 Wyckoff=i x=0.6859 y=0.2699 z=0.7673 TDS=0.0000
+E=O-2 Wyckoff=i x=0.8686 y=0.4142 z=0.7138 TDS=0.0000
+E=O-2 Wyckoff=i x=0.2076 y=0.9474 z=0.0665 TDS=0.0000
+E=O-2 Wyckoff=i x=0.6933 y=0.5740 z=0.7598 TDS=0.0000
+E=O-2 Wyckoff=i x=0.0158 y=0.9866 z=0.7338 TDS=0.0000
+E=O-2 Wyckoff=i x=0.8301 y=0.7282 z=0.7309 TDS=0.0000
+E=O-2 Wyckoff=i x=0.1713 y=0.0926 z=0.0473 TDS=0.0000
+E=O-2 Wyckoff=i x=0.7660 y=0.9196 z=0.4381 TDS=0.0000
+E=O-2 Wyckoff=i x=0.5280 y=0.5608 z=0.2767 TDS=0.0000
+E=O-2 Wyckoff=i x=0.6356 y=0.0743 z=0.5949 TDS=0.0000

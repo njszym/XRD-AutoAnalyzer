@@ -1,0 +1,15 @@
+PHASE=Chabazite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=1.3879_1.3740^1.4017 PARAM=C=1.5029_1.4879^1.5179 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:chabazite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.6667),AL+3(0.3333)) Wyckoff=i x=0.6666 y=0.5622 z=0.4378 TDS=0.0020
+E=O-2 Wyckoff=f x=0.7360 TDS=0.0180
+E=O-2 Wyckoff=g x=0.3470 TDS=0.0180
+E=O-2 Wyckoff=h x=0.5477 z=0.1993 TDS=0.0180
+E=O-2 Wyckoff=h x=0.4327 z=0.5413 TDS=0.0180
+E=O-2 Wyckoff=h x=0.4430 z=0.3130 TDS=0.0180
+E=O-2 Wyckoff=e TDS=0.0180
+E=O-2 Wyckoff=c z=0.8060 TDS=0.0180
+E=O-2 Wyckoff=c z=0.5840 TDS=0.0180
+E=CA+2(0.1667) Wyckoff=i x=0.8783 y=0.9007 z=0.4757 TDS=0.0060

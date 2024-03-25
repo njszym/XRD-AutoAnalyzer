@@ -1,0 +1,9 @@
+PHASE=CoO2 //
+Reference=04-015-9980 //
+Formula=Co_O2 //
+SpacegroupNo=166 Setting=1 HermannMauguin=R-32/m //
+PARAM=A=0.283880_0.281041^0.286719 PARAM=C=1.343900_1.330461^1.357339  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:CoO2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CO Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=O Wyckoff=c x=0.333330 y=0.666660 z=0.063900 TDS=0.00000000

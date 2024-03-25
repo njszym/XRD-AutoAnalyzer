@@ -1,0 +1,23 @@
+PHASE=Epidote //
+SpacegroupNo=11 HermannMauguin=P12_1/m1 //
+PARAM=A=0.8914_0.8825^0.9003 PARAM=B=0.5640_0.5584^0.5696 PARAM=C=1.0162_1.0060^1.0264 PARAM=BETA=115.400 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:epidote=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.2438 z=0.8490 TDS=0.0094
+E=CA+2 Wyckoff=e x=0.3958 z=0.5759 TDS=0.0100
+E=SI+4 Wyckoff=e x=0.6604 z=0.9527 TDS=0.0041
+E=SI+4 Wyckoff=e x=0.6851 z=0.2744 TDS=0.0048
+E=SI+4 Wyckoff=e x=0.8156 z=0.6811 TDS=0.0042
+E=(AL+3(0.9300),FE+3(0.0500)) Wyckoff=a TDS=0.0051
+E=AL+3 Wyckoff=c TDS=0.0043
+E=(FE+3(0.7600),AL+3(0.2400)) Wyckoff=e x=0.2946 z=0.2245 TDS=0.0046
+E=O-2 Wyckoff=f x=0.2339 y=0.9923 z=0.0410 TDS=0.0070
+E=O-2 Wyckoff=f x=0.3040 y=0.9809 z=0.3554 TDS=0.0063
+E=O-2 Wyckoff=f x=0.7957 y=0.0152 z=0.3382 TDS=0.0079
+E=O-2 Wyckoff=e x=0.0528 z=0.1294 TDS=0.0060
+E=O-2 Wyckoff=e x=0.9583 z=0.8529 TDS=0.0060
+E=O-2 Wyckoff=e x=0.9317 z=0.5922 TDS=0.0050
+E=O-2 Wyckoff=e x=0.4836 z=0.8175 TDS=0.0060
+E=O-2 Wyckoff=e x=0.5281 z=0.3099 TDS=0.0090
+E=O-2 Wyckoff=e x=0.6265 z=0.0990 TDS=0.0100
+E=O-2 Wyckoff=e x=0.0838 z=0.4298 TDS=0.0070

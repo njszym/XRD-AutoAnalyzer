@@ -1,0 +1,10 @@
+PHASE=Maghemite //
+SpacegroupNo=212 HermannMauguin=P4_332 //
+PARAM=A=0.8347_0.8264^0.8430 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 TDS=0.0045 //
+GOAL:maghemite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=c x=0.2579
+E=FE+3 Wyckoff=d y=0.3650
+E=FE+3(0.3350) Wyckoff=b
+E=O-2 Wyckoff=c x=0.3890
+E=O-2 Wyckoff=e x=0.3720 y=0.3770 z=0.8760

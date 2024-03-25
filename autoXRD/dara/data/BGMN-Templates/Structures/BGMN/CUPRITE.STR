@@ -1,0 +1,7 @@
+PHASE=Cuprite //
+SpacegroupNo=224 HermannMauguin=P4_2/n-32/m OriginChoice=2 //
+PARAM=A=0.4267_0.4224^0.4310 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:cuprite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+1 Wyckoff=b TDS=0.0057
+E=O-2 Wyckoff=a TDS=0.0077

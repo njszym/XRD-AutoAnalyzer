@@ -1,0 +1,13 @@
+PHASE=thetaAl2O3 // 01-086-1410
+Formula=Al2_O3 //
+SpacegropuNo=12 HermannMauguin=C12/m1 Setting=1 //
+PARAM=A=1.1795_1.1677^1.1913 PARAM=B=0.2910_0.2881^0.2939 PARAM=C=0.5621_0.5565^0.5677  // 
+PARAM=BETA=103.79_102.75^104.83  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:thetaAl2O3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O-2 Wyckoff=i x=0.1627 y=0.0000 z=0.1228
+E=O-2 Wyckoff=i x=0.4894 y=0.0000 z=0.2613
+E=O-2 Wyckoff=i x=0.8299 y=0.0000 z=0.4386
+E=AL+3 Wyckoff=i x=0.1013 y=0.0000 z=0.7944 
+E=AL+3 Wyckoff=i x=0.3523 y=0.0000 z=0.6874 

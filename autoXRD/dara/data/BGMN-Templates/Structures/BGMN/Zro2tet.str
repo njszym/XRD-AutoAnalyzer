@@ -1,0 +1,7 @@
+PHASE=ZrO2_tetragonal //
+SpacegroupNo=137 HermannMauguin=P4_2/n2_1/m2/c OriginChoice=2 //
+PARAM=A=0.3596_0.3560^0.3632 PARAM=C=0.5184_0.5132^0.5236 //
+RP=3 PARAM=B1=0_0^0.02 GEWICHT=SPHAR0 //
+GOAL:zr02tet=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4 Wyckoff=b TDS=0.0048
+E=O-2 Wyckoff=d z=0.9545 TDS=0.0030

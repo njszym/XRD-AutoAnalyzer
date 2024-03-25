@@ -1,0 +1,30 @@
+PHASE=C6S3H_gamma_Dellaite //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.6825_0.6689^0.6961 PARAM=B=0.6931_0.6792^0.7070 PARAM=C=1.2907_1.2649^1.3165 //
+PARAM=ALPHA=90.7_90^92 PARAM=BETA=97.6_97^98.5 PARAM=GAMMA=98.2_97^99 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:c6s3h=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=i x=0.0823 y=0.1931 z=0.1036 TDS=0.0076
+E=CA+2 Wyckoff=i x=0.1923 y=0.2062 z=0.4897 TDS=0.0062
+E=CA+2 Wyckoff=i x=0.8947 y=0.4658 z=0.2913 TDS=0.0063
+E=CA+2 Wyckoff=i x=0.5597 y=0.0333 z=0.3211 TDS=0.0091
+E=CA+2 Wyckoff=i x=0.3145 y=0.1926 z=0.8758 TDS=0.0064
+E=CA+2 Wyckoff=i x=0.5919 y=0.4761 z=0.7026 TDS=0.0056
+E=SI+4 Wyckoff=i x=0.6160 y=0.2884 z=0.0978 TDS=0.0039
+E=SI+4 Wyckoff=i x=0.8105 y=0.2859 z=0.8857 TDS=0.0040
+E=SI+4 Wyckoff=i x=0.7156 y=0.2983 z=0.5090 TDS=0.0037
+E=O-2 Wyckoff=i x=0.6164 y=0.4863 z=0.1656 TDS=0.0063
+E=O-2 Wyckoff=i x=0.3940 y=0.1867 z=0.0539 TDS=0.0113
+E=O-2 Wyckoff=i x=0.6173 y=0.1824 z=0.8074 TDS=0.0106
+E=O-2 Wyckoff=i x=0.7477 y=0.1522 z=0.1747 TDS=0.0086
+E=O-2 Wyckoff=i x=0.9860 y=0.1517 z=0.9128 TDS=0.0090
+E=O-2 Wyckoff=i x=0.2288 y=0.1663 z=0.2997 TDS=0.0145
+E=O-2 Wyckoff=i x=0.8482 y=0.1286 z=0.4833 TDS=0.0107
+E=O-2 Wyckoff=i x=0.1901 y=0.2082 z=0.6863 TDS=0.0106
+E=O-2 Wyckoff=i x=0.5233 y=0.2157 z=0.5663 TDS=0.0075
+E=O-2 Wyckoff=i x=0.7450 y=0.3403 z=0.9998 TDS=0.0130
+E=O-2 Wyckoff=i x=0.6414 y=0.3684 z=0.3914 TDS=0.0083
+E=O-2 Wyckoff=i x=0.8340 y=0.4837 z=0.5817 TDS=0.0071
+E=O-2 Wyckoff=i x=0.1159 y=0.5120 z=0.1694 TDS=0.0071
+E=H Wyckoff=i x=0.1996 y=0.0501 z=0.2863 TDS=0.0231
+E=H Wyckoff=i x=0.0744 y=0.1300 z=0.6818 TDS=0.0272

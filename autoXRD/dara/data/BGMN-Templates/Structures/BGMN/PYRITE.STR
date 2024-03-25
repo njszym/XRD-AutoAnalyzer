@@ -1,0 +1,7 @@
+PHASE=Pyrite //
+SpacegroupNo=205 HermannMauguin=P2_1/a-3 //
+PARAM=A=0.5418_0.5310^0.5526 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR6 //
+GOAL:pyrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) GOAL=GrainSize(1,1,1)
+E=FE+2 Wyckoff=a TDS=0.0014
+E=S Wyckoff=c x=0.6160 TDS=0.0012

@@ -1,0 +1,10 @@
+PHASE=Lepidocrocite // amcsd_0011833
+Reference=amcsd_0011833 //
+Formula=Fe_O2_H //
+SpacegroupNo=63 HermannMauguin=B2/b2_1/m2/m Setting=5 Lattice=Orthorhombic //
+PARAM=A=1.240000_1.227600^1.252400 PARAM=B=0.387000_0.383130^0.390870 PARAM=C=0.306000_0.302940^0.309060 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Lepidocrocite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=c x=0.822000 y=0.250000 z=0.000000 TDS=0.010000
+E=O Wyckoff=c x=0.210000 y=0.250000 z=0.000000 TDS=0.010000
+E=O Wyckoff=c x=0.425000 y=0.250000 z=0.000000 TDS=0.010000 // O-H

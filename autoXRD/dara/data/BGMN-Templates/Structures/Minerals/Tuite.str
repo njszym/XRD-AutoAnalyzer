@@ -1,0 +1,13 @@
+PHASE=Tuite // 04-002-4776
+MineralName=Tuite //
+Formula=Ca3_(PO4)2 //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 //
+PARAM=A=0.5247898_0.514^0.5341 PARAM=C=1.8690996_1.8487^1.8860  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Tuite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=a TDS=0.012
+E=CA Wyckoff=c z=0.2035 TDS=0.008
+E=P Wyckoff=c z=0.4030 TDS=0.002
+E=O Wyckoff=c z=0.3223 TDS=0.019
+E=O Wyckoff=h x=0.8388 y=0.1612 z=0.4338 TDS=0.015

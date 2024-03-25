@@ -1,0 +1,18 @@
+PHASE=CuHydroxyapatite // 04-012-7193
+MineralName=Hydroxylapatite //
+Formula=Ca5_Cu0.27_(PO4)3_O0.54_(OH)0.32 //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=0.9430_0.9330^0.9530 PARAM=C=0.6907_0.6807^0.7007  // 
+RP=4 k1=0 k2=0 B1=ANISO^0.05 GEWICHT=SPHAR4 //
+GOAL=GrainSize(0,0,1) //
+GOAL=GrainSize(1,0,0) //
+GOAL:CuHydroxyapatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=f z=0.0015 TDS=0.0095775
+E=CA Wyckoff=h x=0.00695 y=0.25448 TDS=0.0105249
+E=CU(0.268) Wyckoff=b TDS=0.0115227
+E=P Wyckoff=h x=0.39914 y=0.36871 TDS=0.0066403
+E=O Wyckoff=h x=0.32920 y=0.48480 TDS=0.010446
+E=O Wyckoff=h x=0.58840 y=0.46590 TDS=0.0147807
+E=O Wyckoff=i x=0.34710 y=0.26000 z=0.0695 TDS=0.0167467
+E=O(0.2709) Wyckoff=e z=0.2170 TDS=0.0187444
+E=O(0.1591) Wyckoff=e z=0.2170 TDS=0.0187444

@@ -1,0 +1,12 @@
+PHASE=Zincowoodwardite1T // cod_9009407
+Reference=cod_9009407 //
+Formula=Al0.375_H6_O2.686_S0.188_Zn0.625 //
+SpacegroupNo=147 HermannMauguin=P-3 Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.306300_0.300237^0.312363 PARAM=C=0.891000_0.882090^0.899910 //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR4 //
+GOAL:Zincowoodwardite1T=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(AL(0.3750),ZN(0.6250)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000
+E=O Wyckoff=d x=0.333333 y=0.666667 z=0.110000 TDS=0.010000 // O-H1
+E=O(0.0830) Wyckoff=g x=0.267300 y=0.732700 z=0.420000 TDS=0.010000
+E=S(0.0940) Wyckoff=c x=0.000000 y=0.000000 z=0.464000 TDS=0.010000
+E=O(0.0940) Wyckoff=c x=0.000000 y=0.000000 z=0.600000 TDS=0.010000 // Wat3

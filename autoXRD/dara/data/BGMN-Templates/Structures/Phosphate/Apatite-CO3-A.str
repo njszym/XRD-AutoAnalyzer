@@ -1,0 +1,25 @@
+PHASE=CO3ApatiteA // 04-011-0242
+Reference=04-011-0242 //
+Formula=Ca9.75_(_P_O4_)5.5_(_C_O3_)1.5 //
+SpacegroupNo=174 Setting=1 HermannMauguin=P-6 Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.948000_0.938520^0.957480 PARAM=C=0.689800_0.682902^0.696698  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR8 //
+GOAL:CO3ApatiteA=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+PARAM=bOverall=0.02_0.005^0.05
+E=CA(1.0200) Wyckoff=i x=0.666660 y=0.333330 z=0.248700 TDS=bOverall
+E=CA(0.8900) Wyckoff=h x=0.333330 y=0.666660 z=0.253800 TDS=bOverall
+E=CA(0.9600) Wyckoff=j x=0.751700 y=0.741000 z=0.000000 TDS=bOverall
+E=CA(0.9500) Wyckoff=k x=0.249700 y=0.260800 z=0.500000 TDS=bOverall
+E=P(0.9500) Wyckoff=j x=0.370800 y=0.401900 z=0.000000 TDS=bOverall
+E=P(0.8900) Wyckoff=k x=0.628500 y=0.598500 z=0.500000 TDS=bOverall
+E=O(1.1700) Wyckoff=j x=0.485300 y=0.332600 z=0.000000 TDS=bOverall
+E=O(0.8400) Wyckoff=k x=0.515700 y=0.671200 z=0.500000 TDS=bOverall
+E=O(0.9700) Wyckoff=j x=0.462300 y=0.587500 z=0.000000 TDS=bOverall
+E=O(1.0500) Wyckoff=k x=0.530500 y=0.415400 z=0.500000 TDS=bOverall
+E=O(0.8300) Wyckoff=l x=0.261100 y=0.354200 z=0.182800 TDS=bOverall
+E=O(1.1100) Wyckoff=l x=0.737700 y=0.660600 z=0.328300 TDS=bOverall
+E=C(0.5400) Wyckoff=g x=0.000000 y=0.000000 z=0.249100 TDS=bOverall
+E=O(0.5500) Wyckoff=g x=0.000000 y=0.000000 z=0.064200 TDS=bOverall
+E=O(0.1800) Wyckoff=l x=0.124900 y=0.023900 z=0.341800 TDS=bOverall
+E=O(0.1800) Wyckoff=l x=0.872900 y=0.972400 z=0.341100 TDS=bOverall

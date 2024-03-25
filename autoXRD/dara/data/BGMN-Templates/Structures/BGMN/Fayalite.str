@@ -1,0 +1,11 @@
+PHASE=Fayalite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=1.0469_1.0337^1.0574 PARAM=B=0.6099_0.6038^0.6160 PARAM=C=0.4816_0.4768^0.4864 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:fayalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE+2,MG+2(p)) PARAM=p=0.08_0^0.5 Wyckoff=a TDS=0.0041
+E=(FE+2,MG+2(p)) PARAM=p=0.08_0^0.5 Wyckoff=c x=0.2800 z=0.9861 TDS=0.0036
+E=SI+4 Wyckoff=c x=0.0972 z=0.4307 TDS=0.0027
+E=O-2 Wyckoff=c x=0.0920 z=0.7668 TDS=0.0043
+E=O-2 Wyckoff=c x=0.4531 z=0.2103 TDS=0.0048
+E=O-2 Wyckoff=d x=0.1653 y=0.0363 z=0.2881 TDS=0.0052

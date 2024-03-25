@@ -1,0 +1,15 @@
+PHASE=LEUCITE //
+SpacegroupNo=88 HermannMauguin=I4_1/a OriginChoice=2 //
+PARAM=A=1.3090_1.2959^1.3221 PARAM=C=1.3750_1.3613^1.3887 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:leucite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.006
+E=K+1 Wyckoff=f x=0.3660 y=0.3645 z=0.1147
+E=(AL+3(0.3200),SI+4(0.6800)) Wyckoff=f x=0.0579 y=0.3964 z=0.1666
+E=(AL+3(0.3200),SI+4(0.6800)) Wyckoff=f x=0.1676 y=0.6115 z=0.1283
+E=(AL+3(0.3200),SI+4(0.6800)) Wyckoff=f x=0.3924 y=0.6418 z=0.0860
+E=O-2 Wyckoff=f x=0.1318 y=0.3131 z=0.1100
+E=O-2 Wyckoff=f x=0.0921 y=0.5107 z=0.1303
+E=O-2 Wyckoff=f x=0.1453 y=0.6798 z=0.2275
+E=O-2 Wyckoff=f x=0.1333 y=0.6841 z=0.0354
+E=O-2 Wyckoff=f x=0.2900 y=0.5772 z=0.1205
+E=O-2 Wyckoff=f x=0.4826 y=0.6174 z=0.1667

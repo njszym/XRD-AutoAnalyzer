@@ -1,0 +1,7 @@
+PHASE=ZrO2_cubic //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5129_0.5115^0.5138 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:zro2cub=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4 Wyckoff=a TDS=0.0072
+E=O-2 Wyckoff=c TDS=0.0157

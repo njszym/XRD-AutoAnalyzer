@@ -1,0 +1,16 @@
+PHASE=Malachite //
+SpacegroupNo=14 HermannMauguin=P12_1/a1 //
+PARAM=A=0.9502_0.9407^0.9597 PARAM=B=1.1974_1.1854^1.2094 PARAM=C=0.3240_0.3208^0.3272 //
+PARAM=BETA=98.8_98^99.6 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:malachite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+2 Wyckoff=e x=0.4981 y=0.2879 z=0.8925 TDS=0.0065
+E=CU+2 Wyckoff=e x=0.2324 y=0.3933 z=0.3880 TDS=0.0063
+E=O-2 Wyckoff=e x=0.1315 y=0.1365 z=0.3417 TDS=0.0091
+E=O-2 Wyckoff=e x=0.3332 y=0.2359 z=0.4500 TDS=0.0080
+E=O-2 Wyckoff=e x=0.3341 y=0.0562 z=0.6308 TDS=0.0093
+E=O-2 Wyckoff=e x=0.0940 y=0.3516 z=0.9191 TDS=0.0071
+E=O-2 Wyckoff=e x=0.3772 y=0.4162 z=0.8598 TDS=0.0077
+E=C Wyckoff=e x=0.2662 y=0.1408 z=0.4727 TDS=0.0057
+E=H Wyckoff=e x=0.0167 y=0.4048 z=0.8444 TDS=0.0188
+E=H Wyckoff=e x=0.4105 y=0.4918 z=0.8296 TDS=0.0220

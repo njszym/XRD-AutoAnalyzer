@@ -1,0 +1,10 @@
+PHASE=alphaAl2O3 // 04-004-2852
+MineralName=Corundum //
+Formula=Al2_O3 //
+SpacegroupNo=167 Setting=1 HermannMauguin=R-32/c //
+PARAM=A=0.4760_0.4712^0.4808 PARAM=C=1.2993_1.2863^1.3123  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:alphaAl2O3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AL+3(0.5),AL(0.5)) Wyckoff=c x=0.0000 y=0.0000 z=0.3522 TDS=0.00224764
+E=(O-2(0.5),O(0.5)) Wyckoff=e x=0.3062 y=0.0000 z=0.2500 TDS=0.00271875

@@ -1,0 +1,5 @@
+PHASE=Si SpacegroupNo=227 //
+RP=4 PARAM=B1=0.0000_0.0000^0.005 PARAM=k2=0_0 GEWICHT=SPHAR6 //
+PARAM=A=0.54286_0.54^0.545 GOAL:si=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI Wyckoff=a TDS=0.006 
+

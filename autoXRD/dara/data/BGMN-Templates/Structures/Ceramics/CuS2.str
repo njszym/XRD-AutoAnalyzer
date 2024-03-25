@@ -1,0 +1,9 @@
+PHASE=CuS2 // 04-004-6505
+Reference=04-004-6505 //
+Formula=Cu_S2 //
+SpacegroupNo=205 Setting=1 HermannMauguin=P2_1/a-3 Lattice=Cubic //
+PARAM=A=0.579100_0.573309^0.584891  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:CuS2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CU Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=S Wyckoff=c x=0.398000 y=0.398000 z=0.398000 TDS=0.00000000

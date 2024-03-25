@@ -1,0 +1,15 @@
+PHASE=Maghemite // amcsd_0013508
+Reference=amcsd_0013508 //
+Formula=Fe2.667_O4 //
+SpacegroupNo=96 HermannMauguin=P4_32_12 Setting=1 UniqueAxis=c Lattice=Tetragonal //
+PARAM=A=0.833960_0.825620^0.842300 PARAM=C=0.832200_0.823878^0.840522 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Maghemite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=b x=0.744000 y=0.996000 z=0.120000 TDS=0.001003
+E=FE Wyckoff=a x=0.620000 y=0.620000 z=0.000000 TDS=0.001003
+E=FE Wyckoff=b x=0.364000 y=0.867000 z=0.984000 TDS=0.001003
+E=FE(0.3330) Wyckoff=a x=0.140000 y=0.140000 z=0.000000 TDS=0.001003
+E=O Wyckoff=b x=0.615000 y=0.869000 z=0.986000 TDS=0.001003
+E=O Wyckoff=b x=0.119000 y=0.377000 z=0.995000 TDS=0.001003
+E=O Wyckoff=b x=0.137000 y=0.861000 z=0.007000 TDS=0.001003
+E=O Wyckoff=b x=0.383000 y=0.631000 z=0.997000 TDS=0.001003

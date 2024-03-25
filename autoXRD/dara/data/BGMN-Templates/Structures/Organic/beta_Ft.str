@@ -1,0 +1,30 @@
+PHASE=beta_Ft //
+SpacegropuNo=14 HermannMauguin=P12_1/n1 Setting=7 //
+PARAM=A=1.1891_1.18^1.20 PARAM=B=1.4556_1.44^1.47 PARAM=C=0.5062_0.50^0.51  // 
+PARAM=BETA=99.05_98.0^100.0  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:betaFt=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=N Wyckoff=e x=0.4779 y=0.1968 z=0.3809
+E=C Wyckoff=e x=0.5515 y=0.1588 z=0.5909
+E=O Wyckoff=e x=0.6501 y=0.1831 z=0.6465
+E=N Wyckoff=e x=0.5060 y=0.0904 z=0.7285
+E=C Wyckoff=e x=0.3943 y=0.0622 z=0.6973
+E=O Wyckoff=e x=0.3619 y=0.0018 z=0.8346
+E=C Wyckoff=e x=0.3247 y=0.1103 z=0.4840
+E=F Wyckoff=e x=0.2132 y=0.0876 z=0.4405
+E=C Wyckoff=e x=0.3649 y=0.1733 z=0.3360
+E=C Wyckoff=e x=0.5255 y=0.2707 z=0.2257
+E=C Wyckoff=e x=0.5345 y=0.3604 z=0.3765
+E=C Wyckoff=e x=0.4192 y=0.4037 z=0.2847
+E=C Wyckoff=e x=0.3961 y=0.3742 z=-0.0062
+E=O Wyckoff=e x=0.4492 y=0.2850 z=-0.0137
+E=H Wyckoff=e x=0.5490 y=0.0590 z=0.8450
+E=H Wyckoff=e x=0.3190 y=0.2120 z=0.2120
+E=H Wyckoff=e x=0.6000 y=0.2480 z=0.1900
+E=H Wyckoff=e x=0.5560 y=0.3510 z=0.5670
+E=H Wyckoff=e x=0.5910 y=0.3990 z=0.3140
+E=H Wyckoff=e x=0.3560 y=0.3760 z=0.3720
+E=H Wyckoff=e x=0.4210 y=0.4760 z=0.3010
+E=H Wyckoff=e x=0.3140 y=0.3680 z=-0.0820
+E=H Wyckoff=e x=0.4360 y=0.4220 z=-0.1100

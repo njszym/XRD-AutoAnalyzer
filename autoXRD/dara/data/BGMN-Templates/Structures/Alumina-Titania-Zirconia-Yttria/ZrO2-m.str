@@ -1,0 +1,12 @@
+PHASE=ZrO2monoclinic // 04-004-4339
+MineralName=Baddeleyite //
+Formula=Zr_O2 //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 Setting=14 //
+PARAM=A=0.51505_0.5000^0.5300 PARAM=B=0.52116_0.5150^0.5300 PARAM=C=0.53173_0.5250^0.5400 //
+PARAM=BETA=99.2300_98.5000^100.5000 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:ZrO2monoclinic=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZR+4 Wyckoff=e x=0.2754 y=0.0395 z=0.2083 TDS=0.0033
+E=O-2 Wyckoff=e x=0.0700 y=0.3317 z=0.3447 TDS=0.0055
+E=O-2 Wyckoff=e x=0.4496 y=0.7569 z=0.4792 TDS=0.0046

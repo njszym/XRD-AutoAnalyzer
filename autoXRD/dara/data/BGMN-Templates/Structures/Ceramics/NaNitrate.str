@@ -1,0 +1,10 @@
+PHASE=NaNO3 // 04-015-8704
+Reference=04-015-8704 //
+Formula=Na_(_N_O3_) //
+SpacegroupNo=167 Setting=1 HermannMauguin=R-32/c Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.507046_0.501975^0.512116 PARAM=C=1.682868_1.666039^1.699697  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:NaNO3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NA Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.02070248
+E=N Wyckoff=a x=0.000000 y=0.000000 z=0.250000 TDS=0.01865750
+E=O Wyckoff=e x=0.245990 y=0.000000 z=0.250000 TDS=0.02832182

@@ -1,0 +1,172 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Panalytical X'Pert Pro MPD
+%    -------------------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    September 16, 2014
+%
+%    Device Configuration:
+%    - Detector: X'Celerator
+%    - Radiation: CuKa, Ni-filtered
+%    - Soller Slits: 0.04 rad
+%    - Divergence Slit: fixed, 1.0°
+%    - Goniometer Radius: 240 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=xpert-xcel-fds-1000.ger
+GEQ=xpert-xcel-fds-1000.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=12
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=240
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% beam divergence (°)
+div=1.0
+
+% distance from sample (mm)
+HSlitR=140
+
+% fixed slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Incident beam mask
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+VSlitR=124
+
+% width (mm)
+VSlitH=6.6
+
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% total detector height (mm)
+DetArrayW=8.89
+
+% height of one strip (mm)
+DetW=0.07
+
+% total detector width (mm)
+DetH=15
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% diameter of the sample holder (mm)
+SamplD=15
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% primary soller slit (radians)
+PColl=0.04
+
+% secondary soller slit (radians)
+SColl=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% opening in degrees
+adiv=1.0
+
+% distance from sample (mm)
+SSlitR=100
+
+% slit width (mm)
+SSlitW=2*tan(adiv*pi/360)*(R-SSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Beam Knife
+%-----------------------------------------------------------------------------------------------
+
+% value unknown
+% AirScat=3.5
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=2
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

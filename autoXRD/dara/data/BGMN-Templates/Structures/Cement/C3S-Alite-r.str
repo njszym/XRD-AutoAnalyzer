@@ -1,0 +1,24 @@
+PHASE=C3SaliteR // 04-011-1393
+MineralName=Hatrurite //
+Formula=Ca3_(SiO4)_O //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.7057 PARAM=C=2.4974  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:C3SaliteR=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=b x=-0.1764 y=0.1764 z=0.667 0.0057 
+E=CA+2 Wyckoff=b x=-0.155 y=0.155 z=0.2174 0.0067 
+E=CA+2 Wyckoff=b x=-0.1674 y=0.1674 z=0.4415 0.0073 
+E=SI+4 Wyckoff=a x=0.0 y=0.0 z=0.9885 0.0052 
+E=SI+4 Wyckoff=a x=0.0 y=0.0 z=0.557 0.0096 
+E=SI+4 Wyckoff=a x=0.0 y=0.0 z=0.7737 0.006 
+E=O-2 Wyckoff=a x=0.0 y=0.0 z=0.8373 0.01 
+E=O-2 Wyckoff=a x=0.0 y=0.0 z=0.3957 0.009 
+E=O-2 Wyckoff=a x=0.0 y=0.0 z=0.1511 0.011 
+E=O-2 Wyckoff=a x=0.0 y=0.0 z=0.9248 0.008 
+E=O-2 Wyckoff=a x=0.0 y=0.0 z=0.2717 0.012 
+E=O-2 Wyckoff=a x=0.0 y=0.0 z=0.6218 0.021 
+E=O-2 Wyckoff=b x=0.115 y=-0.115 z=0.7427 0.036
+E=O-2 Wyckoff=b x=-0.118 y=0.118 z=0.5295 0.022
+E=O-2 Wyckoff=b x=0.1259 y=-0.1259 z=0.0092 0.009 
+

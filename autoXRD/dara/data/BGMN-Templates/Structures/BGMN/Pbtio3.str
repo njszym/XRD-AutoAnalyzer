@@ -1,0 +1,9 @@
+PHASE=PbTiO3_tet //
+SpacegroupNo=99 HermannMauguin=P4mm //
+PARAM=A=0.3905_0.3885^0.3925 PARAM=C=0.4156_0.4135^0.4177 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pbtio3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=a z=1.0000 TDS=0.0065
+E=TI+4 Wyckoff=b z=0.5390 TDS=0.0015
+E=O-2 Wyckoff=b z=0.1140 TDS=0.0066
+E=O-2 Wyckoff=c z=0.6170 TDS=0.0040

@@ -1,0 +1,8 @@
+PHASE=MolybdenumNickelNitride // 04-010-3582
+Reference=04-010-3582 //
+Formula=Mo3_Ni2_N //
+SpacegroupNo=213 Setting=1 HermannMauguin=P4_132 Lattice=Cubic //
+PARAM=A=0.665210_0.658558^0.671862  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:MolybdenumNickelNitride=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+LeBail=1

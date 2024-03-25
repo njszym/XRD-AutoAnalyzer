@@ -1,0 +1,19 @@
+PHASE=Hibonite5H // 04-007-8016
+MineralName=Hibonite //
+Formula=Ca_Al12_O19 //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.5559_0.5550^0.5570 PARAM=C=2.1893_2.1880^2.1910 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Hibonite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA+2 Wyckoff=d TDS=0.0102644
+E=AL+3 Wyckoff=a TDS=0.0024319
+E=AL+3(0.5) Wyckoff=e z=0.25771 TDS=0.0042795
+E=AL+3 Wyckoff=f z=0.02808 TDS=0.002495
+E=AL+3 Wyckoff=f z=0.19102 TDS=0.0025977
+E=AL+3 Wyckoff=k x=0.16855 z=-0.10914 TDS=0.0026766
+E=O-2 Wyckoff=e z=0.14907 TDS=0.0030556
+E=O-2 Wyckoff=f z=0.55461 TDS=0.0029056
+E=O-2 Wyckoff=h x=0.18107 TDS=0.0043663
+E=O-2 Wyckoff=k x=0.15505 z=0.05213 TDS=0.002953
+E=O-2 Wyckoff=k x=0.50325 z=0.14912 TDS=0.003332

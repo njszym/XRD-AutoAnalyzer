@@ -1,0 +1,24 @@
+PHASE=Pumpellyite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.9170_1.9074^1.9266 PARAM=B=0.5900_0.5871^0.5929 PARAM=C=2.0090_1.9990^2.0191 //
+PARAM=BETA=154.142_153^155 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pumpell=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=i x=0.4107 z=0.2502 TDS=0.0035
+E=CA+2 Wyckoff=i x=0.5345 z=0.1895 TDS=0.0095
+E=(MG+2(0.3500),FE+2(0.1500),AL+3(0.5000)) Wyckoff=f TDS=0.0057
+E=AL+3 Wyckoff=j x=0.2423 y=0.2454 z=0.7459 TDS=0.0008
+E=SI+4 Wyckoff=i x=0.9577 z=0.0484 TDS=0.0033
+E=SI+4 Wyckoff=i x=0.9192 z=0.1674 TDS=0.0038
+E=SI+4 Wyckoff=i x=0.0640 z=0.4661 TDS=0.0011
+E=O Wyckoff=j x=0.9325 y=0.2218 z=0.8640 TDS=0.0056
+E=O Wyckoff=j x=0.9770 y=0.2318 z=0.7326 TDS=0.0086
+E=O Wyckoff=j x=0.0525 y=0.2220 z=0.6316 TDS=0.0058
+E=O Wyckoff=i x=0.1856 z=0.1304 TDS=0.0027
+E=O Wyckoff=i x=0.6725 z=0.1283 TDS=0.0038
+E=O Wyckoff=i x=0.8250 z=0.3695 TDS=0.0037
+E=O Wyckoff=i x=0.3327 z=0.3665 TDS=0.0007
+E=O Wyckoff=i x=0.8597 z=0.0376 TDS=0.0031
+E=O Wyckoff=i x=0.7982 z=0.4746 TDS=0.0040
+E=O Wyckoff=i x=0.7515 z=0.0667 TDS=0.0040
+E=O Wyckoff=i x=0.6863 z=0.4992 TDS=0.0024

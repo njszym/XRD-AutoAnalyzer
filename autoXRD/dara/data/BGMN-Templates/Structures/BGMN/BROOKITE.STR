@@ -1,0 +1,8 @@
+PHASE=Brookite //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a //
+PARAM=A=0.9174_0.9082^0.9266 PARAM=B=0.5449_0.5395^0.5503 PARAM=C=0.5138_0.5087^0.5189 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:brookite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=TI+4 Wyckoff=c x=0.1289 y=0.0972 z=0.8628 TDS=0.0037
+E=O Wyckoff=c x=0.0095 y=0.1491 z=0.1835 TDS=0.0046
+E=O Wyckoff=c x=0.2314 y=0.1110 z=0.5366 TDS=0.0053

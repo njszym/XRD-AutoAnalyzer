@@ -1,0 +1,12 @@
+PHASE=Berthierite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=1.1401_1.1344^1.1458 PARAM=B=0.3758_0.3739^0.3777 PARAM=C=1.4148_1.4077^1.4219 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR4 //
+GOAL:berthierite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=c x=0.8166 z=0.8348 TDS=0.0106
+E=SB+3 Wyckoff=c x=0.6446 z=0.5630 TDS=0.0110
+E=SB+3 Wyckoff=c x=0.9612 z=0.3855 TDS=0.0089
+E=S Wyckoff=c x=0.8045 z=0.2702 TDS=0.0101
+E=S Wyckoff=c x=0.9220 z=0.6842 TDS=0.0109
+E=S Wyckoff=c x=0.7236 z=0.9945 TDS=0.0096
+E=S Wyckoff=c x=0.5494 z=0.4046 TDS=0.0097

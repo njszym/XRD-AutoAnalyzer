@@ -1,0 +1,10 @@
+PHASE=bayerite //
+SpacegroupNo=14 HermannMauguin=P12_1/a1 Lattice=Monoclinic UniqueAxis=b //
+PARAM=A=0.506_0.50^0.51 PARAM=B=0.8671_0.86^0.88 PARAM=C=0.4713_0.46^0.48 //
+PARAM=BETA=90.3_90.2^90.4 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:bayerite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3  Wyckoff=e x=0.527 y=0.167 z=-0.015 TDS=0.013
+E=O-2  Wyckoff=e x=0.365 y=-0.011 z=0.215 TDS=0.005
+E=O-2  Wyckoff=e x=0.204 y=0.176 z=0.777 TDS=0.005
+E=O-2  Wyckoff=e x=0.344 y=0.308 z=0.229 TDS=0.005

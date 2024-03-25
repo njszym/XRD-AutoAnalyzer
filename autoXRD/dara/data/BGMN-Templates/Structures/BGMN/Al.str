@@ -1,0 +1,6 @@
+PHASE=Aluminum //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4049_0.4037^0.4061 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:aluminum=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=AL Wyckoff=a TDS=0.0020

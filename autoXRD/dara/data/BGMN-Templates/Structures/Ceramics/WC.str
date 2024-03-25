@@ -1,0 +1,10 @@
+PHASE=WC // 04-001-2755
+MineralName=Qusongite //
+Formula=W_C //
+SpacegroupNo=187 HermannMauguin=P-6m2 Setting=1 //
+PARAM=A=0.2897_0.2797^0.2997 PARAM=C=0.2827_0.2727^0.2927 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:WC=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=d
+E=W Wyckoff=a

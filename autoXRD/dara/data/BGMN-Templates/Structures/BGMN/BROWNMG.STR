@@ -1,0 +1,11 @@
+PHASE=Brownmillerite(Si,Mg) //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.5427_0.5373^0.5481 PARAM=B=1.4777_1.4629^1.4925 PARAM=C=0.5596_0.5540^0.5652 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:brownmg=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=CA+2 Wyckoff=d x=0.4848 y=0.1084 z=0.9711 TDS=0.0029
+E=(FE+3(0.7750),MG+2(0.2250)) Wyckoff=a TDS=0.0029
+E=(FE+3(0.6250),MG+2(0.0725),SI+4(0.3000)) Wyckoff=c x=0.4498 z=0.4387 TDS=0.0029
+E=O-2 Wyckoff=d x=0.2550 y=0.9839 z=0.7655 TDS=0.0029
+E=O-2 Wyckoff=d x=0.0340 y=0.1398 z=0.9290 TDS=0.0029
+E=O-2 Wyckoff=c x=0.1050 z=0.3480 TDS=0.0029

@@ -1,0 +1,17 @@
+PHASE=Fluorapatite // AMCSD 0001256
+MineralName=Fluorapatite //
+Reference=amcsd_0001256 //
+Formula=Ca5_P3_O12_F //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=0.939730_0.930333^0.949127 PARAM=C=0.687820_0.680942^0.694698  //
+RP=4 k1=0 k2=0 B1=ANISO^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Fluorapatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA Wyckoff=f x=0.33333 y=0.66667 z=0.50100 TDS=0.00904056
+E=CA Wyckoff=h x=-0.00712 y=0.24227 z=0.25000 TDS=0.00759302
+E=P Wyckoff=h x=0.36895 y=0.39850 z=0.25000 TDS=0.00589544
+E=O Wyckoff=h x=0.48490 y=0.32730 z=0.25000 TDS=0.01061969
+E=O Wyckoff=h x=0.46670 y=0.58750 z=0.25000 TDS=0.01155665
+E=O Wyckoff=i x=0.25750 y=0.34210 z=0.07050 TDS=0.01406748
+E=F Wyckoff=a x=0.00000 y=0.00000 z=0.25000 TDS=0.00650868
+

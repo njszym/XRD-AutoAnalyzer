@@ -1,0 +1,19 @@
+PHASE=HORNBLENDE_iron_magnesium //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.9870_0.973^0.994 PARAM=B=1.8058_1.79^1.82 PARAM=C=0.5307_0.525^0.537 //
+PARAM=BETA=105.2_104.5^106 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 GOAL:hornbl1=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(NA+1(0.13),CA+2(0.815),MG+2(0.022),FE+2(0.011),TI+4(0.004)) Wyckoff=h y=0.7219 TDS=0.0085
+E=(NA+1(0.3),K+1(0.2)) Wyckoff=i x=0.5290 z=0.0612 TDS=0.0547
+E=(MG+2(0.557),FE+2(0.271),TI+4(0.096),AL+3(0.076)) Wyckoff=h y=0.9141 TDS=0.0087
+E=(MG+2(0.557),FE+2(0.271),TI+4(0.096),AL+3(0.076)) Wyckoff=g y=0.8222 TDS=0.0077
+E=(MG+2(0.557),FE+2(0.271),TI+4(0.096),AL+3(0.076)) Wyckoff=a TDS=0.0048
+E=(AL+3(0.34),SI+4(0.66)) Wyckoff=j x=0.2813 y=0.0857 z=0.3032 TDS=0.0049
+E=(AL+3(0.16),SI+4(0.84)) Wyckoff=j x=0.2909 y=0.1728 z=0.8112 TDS=0.0047
+E=O-2 Wyckoff=j x=0.1063 y=0.0882 z=0.2179 TDS=0.0077
+E=O-2 Wyckoff=j x=0.1186 y=0.1729 z=0.7310 TDS=0.0079
+E=O-2 Wyckoff=i x=0.8924 z=0.2878 TDS=0.0103
+E=O-2 Wyckoff=j x=0.3666 y=0.2505 z=0.7893 TDS=0.0107
+E=O-2 Wyckoff=j x=0.3501 y=0.1392 z=0.1094 TDS=0.0102
+E=O-2 Wyckoff=j x=0.3451 y=0.1175 z=0.6069 TDS=0.0109
+E=O-2 Wyckoff=i x=0.6608 z=0.7160 TDS=0.0127

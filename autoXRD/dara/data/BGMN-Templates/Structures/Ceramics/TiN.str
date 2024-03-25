@@ -1,0 +1,9 @@
+PHASE=TiN // 00-038-1420
+Reference=00-038-1420 //
+Formula=Ti_N //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.424173_0.419931^0.428415  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:TiN=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=TI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00100000
+E=N Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.00100000

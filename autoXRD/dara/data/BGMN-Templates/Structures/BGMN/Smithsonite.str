@@ -1,0 +1,8 @@
+PHASE=Smithsonite //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.4653_0.4606^0.4700 PARAM=C=1.5026_1.4876^1.5176 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:smithsonite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=b TDS=0.005
+E=C Wyckoff=a TDS=0.0037
+E=O-2 Wyckoff=e x=0.2764 TDS=0.0039

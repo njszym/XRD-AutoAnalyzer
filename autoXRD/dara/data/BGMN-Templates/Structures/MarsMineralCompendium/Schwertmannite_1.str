@@ -1,0 +1,10 @@
+PHASE=Schwertmannite // amcsd_0018670
+Reference=amcsd_0018670 //
+Formula=Fe_O2 //
+SpacegroupNo=1 HermannMauguin=P1 Setting=1 Lattice=Triclinic //
+PARAM=A=1.082100_1.071279^1.092921 PARAM=B=0.600200_0.594198^0.606202 PARAM=C=1.051400_1.040886^1.061914 //
+PARAM=ALPHA=90.000000_89.100000^90.900000 PARAM=BETA=92.600000_91.674000^93.526000 PARAM=GAMMA=90.000000_89.100000^90.900000 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Schwertmannite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=a x=0.363000 y=0.750000 z=0.835000 TDS=0.001579 // check Wyckoff
+E=O Wyckoff=a x=0.175000 y=0.750000 z=0.528000 TDS=0.007106 // check Wyckoff

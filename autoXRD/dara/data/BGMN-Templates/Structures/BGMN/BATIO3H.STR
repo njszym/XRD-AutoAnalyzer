@@ -1,0 +1,11 @@
+PHASE=BaTiO3_hex //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.5724_0.5695^0.5753 PARAM=C=1.3965_1.3895^1.4035 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:batio3h=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=b TDS=0.0043
+E=BA+2 Wyckoff=f z=0.4033 TDS=0.0053
+E=TI+4 Wyckoff=a TDS=0.0068
+E=TI+4 Wyckoff=f z=0.6537 TDS=0.0064
+E=O Wyckoff=h x=0.5185 TDS=0.0065
+E=O Wyckoff=k x=0.8349 z=0.4198 TDS=0.0066

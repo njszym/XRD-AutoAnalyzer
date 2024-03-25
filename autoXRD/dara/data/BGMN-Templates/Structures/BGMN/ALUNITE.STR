@@ -1,0 +1,12 @@
+PHASE=Alunite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.6970_0.6900^0.7040 PARAM=C=1.7270_1.7097^1.7443 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:alunite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=a TDS=0.0049
+E=S Wyckoff=c z=0.6970 TDS=0.0015
+E=AL+3 Wyckoff=d TDS=0.0029
+E=O Wyckoff=c z=0.6156 TDS=0.0205
+E=O Wyckoff=h x=0.1153 z=0.7255 TDS=0.0015
+E=O Wyckoff=h x=0.2086 z=0.5251 TDS=0.0049
+E=H Wyckoff=h x=0.1333 z=0.5567 TDS=0.0000

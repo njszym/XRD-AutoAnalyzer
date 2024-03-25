@@ -1,0 +1,10 @@
+PHASE=Y2O3 // 04-005-4378
+Reference=04-005-4378 //
+Formula=Y2_O3 //
+SpacegroupNo=206 Setting=1 HermannMauguin=I2_1/a-3 Lattice=Cubic //
+PARAM=A=1.060380_1.049776^1.070984  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Y2O3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=Y Wyckoff=b x=0.250000 y=0.250000 z=0.250000 TDS=0.00630000
+E=Y Wyckoff=d x=0.968000 y=0.000000 z=0.250000 TDS=0.00470000
+E=O Wyckoff=e x=0.391100 y=0.151600 z=0.382700 TDS=0.00410000

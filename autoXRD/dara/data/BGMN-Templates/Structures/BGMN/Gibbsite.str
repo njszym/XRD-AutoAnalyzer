@@ -1,0 +1,20 @@
+PHASE=Gibbsite //
+SpacegroupNo=14 HermannMauguin=P12_1/n1 Lattice=Monoclinic UniqueAxis=b //
+PARAM=A=0.8684_0.86^0.875 PARAM=B=0.5078_0.50^0.52 PARAM=C=0.9736_0.96^0.98 //
+PARAM=BETA=94.5_94^95 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:gibbsite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=e x=0.1679 y=0.5295 z=-0.0023 TDS=0.0056
+E=AL+3 Wyckoff=e x=0.3344 y=0.0236 z=-0.0024 TDS=0.0057
+E=O-2 Wyckoff=e x=0.1779 y=0.2183 z=-0.1115 TDS=0.0078
+E=O-2 Wyckoff=e x=0.6692 y=0.6558 z=-0.1023 TDS=0.0079
+E=O-2 Wyckoff=e x=0.4984 y=0.1315 z=-0.1044 TDS=0.0078
+E=O-2 Wyckoff=e x=-0.0205 y=0.6293 z=-0.1068 TDS=0.0080
+E=O-2 Wyckoff=e x=0.2971 y=0.7178 z=-0.1052 TDS=0.0081
+E=O-2 Wyckoff=e x=0.8194 y=0.1491 z=-0.1015 TDS=0.0076
+E=H Wyckoff=e x=0.1010 y=0.1520 z=-0.1240 TDS=0.0100
+E=H Wyckoff=e x=0.5950 y=0.5730 z=-0.0980 TDS=0.0100
+E=H Wyckoff=e x=0.5030 y=0.1370 z=-0.1900 TDS=0.0100
+E=H Wyckoff=e x=-0.0290 y=0.8010 z=-0.1070 TDS=0.0100
+E=H Wyckoff=e x=0.2930 y=0.7240 z=-0.1960 TDS=0.0100
+E=H Wyckoff=e x=0.8150 y=0.1600 z=-0.1900 TDS=0.0100

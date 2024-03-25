@@ -1,0 +1,10 @@
+PHASE=NickelSilicate // 04-007-6675
+Reference=04-007-6675 //
+Formula=Ni2_(_Si_O4_) //
+SpacegroupNo=227 Setting=1 HermannMauguin=F4_1/d-32/m Lattice=Cubic OriginChoice=1 //
+PARAM=A=0.804400_0.796356^0.812444  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:NickelSilicate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI Wyckoff=d x=0.625000 y=0.625000 z=0.625000 TDS=0.00341650
+E=SI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00282120
+E=O Wyckoff=e x=0.368900 y=0.368900 z=0.368900 TDS=0.00393420

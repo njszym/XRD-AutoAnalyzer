@@ -1,0 +1,8 @@
+PHASE=Thenardite //
+SpacegroupNo=70 HermannMauguin=F2/d2/d2/d OriginChoice=2 //
+PARAM=A=0.9829_0.9731^0.9927 PARAM=B=1.2302_1.2179^1.2425 PARAM=C=0.5868_0.5809^0.5927 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR2 //
+GOAL:thenardite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=NA+1 Wyckoff=e x=0.8084 TDS=0.0155
+E=S Wyckoff=a TDS=0.0085
+E=O-2 Wyckoff=h x=0.2138 y=0.0572 z=0.9793 TDS=0.0144

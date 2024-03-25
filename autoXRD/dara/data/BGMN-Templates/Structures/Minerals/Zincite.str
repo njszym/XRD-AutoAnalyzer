@@ -1,0 +1,10 @@
+PHASE=ZnO // 04-003-2106
+Formula=Zn_O //
+MineralName=Zincite //
+SpacegroupNo=186 HermannMauguin=P6_3mc //
+PARAM=A=0.3250_0.320^0.330 PARAM=C=0.5207_0.515^0.525 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:ZnO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=b z=0.0 TDS=0.0055
+E=O-2 Wyckoff=b z=0.3817 TDS=0.0055

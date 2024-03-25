@@ -2,6 +2,7 @@ from autoXRD import spectrum_analysis, visualizer, quantifier
 import matplotlib.pyplot as plt
 import pymatgen as mg
 import numpy as np
+import shutil
 import time
 import sys
 import os
@@ -63,6 +64,10 @@ if __name__ == '__main__':
     else:
         model_path = 'Model.h5'
 
+    # Used for writing temporary files
+    if not os.path.exists('temp'):
+        os.mkdir('temp')
+
     # Get predictions from XRD analysis
     results['XRD']['filenames'], results['XRD']['phases'], results['XRD']['confs'], results['XRD']['backup_phases'], \
         results['XRD']['scale_factors'], results['XRD']['reduced_spectra'] = spectrum_analysis.main('Spectra', 'References',
@@ -81,6 +86,10 @@ if __name__ == '__main__':
     else:
         # Otherwise, rely only on predictions from XRD
         results['Merged'] = results['XRD']
+
+    # Remove temporary files
+    if os.path.exists('temp'):
+        shutil.rmtree('temp')
 
     ph_index = 0
     for (spectrum_fname, phase_set, confidence, backup_set, heights, final_spectrum) in \

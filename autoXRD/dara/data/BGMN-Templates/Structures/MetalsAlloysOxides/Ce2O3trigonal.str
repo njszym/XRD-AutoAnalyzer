@@ -1,0 +1,10 @@
+PHASE=Ce2O3trigonal // cod_1531455
+Reference=cod_1531455 //
+Formula=Ce2_O3 //
+SpacegroupNo=164 HermannMauguin=P-32/m1 Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.394100_0.390159^0.398041 PARAM=C=0.618200_0.612018^0.624382 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:Ce2O3trigonal=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CE+3 Wyckoff=d x=0.333333 y=0.666667 z=0.248100 TDS=0.010000
+E=O-2 Wyckoff=d x=0.333333 y=0.666667 z=0.644700 TDS=0.010000
+E=O-2 Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000

@@ -1,0 +1,25 @@
+PHASE=Ardealite // 04-011-6882
+MineralName=Ardealite //
+Formula=Ca2_H_(PO4)_(SO4)_(H2O)4 //
+SpacegroupNo=9 HermannMauguin=C1c1 //
+PARAM=A=0.5721_0.5664^0.5778 PARAM=B=3.0992_3.0682^3.1302 PARAM=C=0.6250_0.6188^0.6312  // 
+PARAM=BETA=117.26_116.09^118.43  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Ardealite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=a x=0.5000 y=0.0383 z=0.2500 TDS=0.01500180
+E=CA Wyckoff=a x=0.5900 y=0.2120 z=0.4280 TDS=0.01099869
+E=(S(0.5),P(0.5)) Wyckoff=a x=0.9990 y=0.0388 z=0.7470 TDS=0.00600072
+E=(S(0.5),P(0.5)) Wyckoff=a x=0.5920 y=0.2111 z=0.9370 TDS=0.01599665
+E=O Wyckoff=a x=0.9420 y=0.0700 z=0.5490 TDS=0.01699941
+E=O Wyckoff=a x=0.0380 y=0.0632 z=0.9760 TDS=0.01800216
+E=O Wyckoff=a x=0.7710 y=0.0098 z=0.6760 TDS=0.01999977
+E=O Wyckoff=a x=0.2570 y=0.0151 z=0.8280 TDS=0.01999977
+E=O Wyckoff=a x=0.4120 y=0.1852 z=0.7140 TDS=0.03099845
+E=O Wyckoff=a x=0.7350 y=0.1809 z=0.1400 TDS=0.01999977
+E=O Wyckoff=a x=0.7750 y=0.2354 z=0.8720 TDS=0.02199737
+E=O Wyckoff=a x=0.4320 y=0.2399 z=0.0010 TDS=0.01500180
+E=O Wyckoff=a x=0.3730 y=0.0875 z=0.4930 TDS=0.02600049
+E=O Wyckoff=a x=0.6140 y=0.0931 z=0.0190 TDS=0.01999977
+E=O Wyckoff=a x=0.2270 y=0.1620 z=0.2000 TDS=0.03099845
+E=O Wyckoff=a x=0.9400 y=0.1554 z=0.6540 TDS=0.03099845

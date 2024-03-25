@@ -1,0 +1,10 @@
+PHASE=Cobalt_Hydroxide //
+Reference=04-014-7502 //
+Formula=Co_(_O_H_)2 //
+SpacegroupNo=164 Setting=1 HermannMauguin=P-32/m1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.318600_0.315414^0.321786 PARAM=C=0.465300_0.460647^0.469953  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:CoOH2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CO Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00700347
+E=O Wyckoff=d x=0.333330 y=0.666660 z=0.224600 TDS=0.00862998
+E=H Wyckoff=d x=0.333330 y=0.666660 z=0.429000 TDS=0.03150378

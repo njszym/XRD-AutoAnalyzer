@@ -1,0 +1,23 @@
+PHASE=C3A_Na_orthorhombic  //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a // 
+PARAM=A=1.0875_1.0821^1.0929 PARAM=B=1.0859_1.0805^1.0913 PARAM=C=1.5105_1.5029^1.5181 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:c3anaort=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2(0.2500) Wyckoff=c x=0.0027 y=0.0020 z=0.5182 TDS=0.0103
+E=CA+2 Wyckoff=c x=-0.0039 y=0.0177 z=0.2393 TDS=0.0070
+E=CA+2 Wyckoff=c x=0.0093 y=0.2674 z=0.1331 TDS=0.0069
+E=CA+2 Wyckoff=c x=0.2565 y=0.2707 z=0.2528 TDS=0.0113
+E=CA+2 Wyckoff=c x=0.2627 y=0.2462 z=0.4983 TDS=0.0105
+E=NA+1 Wyckoff=a TDS=0.0291
+E=AL+3 Wyckoff=c x=-0.0048 y=-0.2141 z=0.1160 TDS=0.0041
+E=AL+3 Wyckoff=c x=0.2375 y=-0.0033 z=0.1129 TDS=0.0062
+E=AL+3 Wyckoff=c x=0.2421 y=0.0054 z=-0.1086 TDS=0.0160
+E=O-2 Wyckoff=c x=-0.1442 y=-0.1339 z=0.1091 TDS=0.0164
+E=O-2 Wyckoff=c x=0.1107 y=-0.1012 z=0.1263 TDS=0.0176
+E=O-2 Wyckoff=c x=0.2870 y=-0.0221 z=0.0023 TDS=0.0094
+E=O-2 Wyckoff=c x=-0.0073 y=-0.2856 z=0.2178 TDS=0.0174
+E=O-2 Wyckoff=c x=0.0196 y=-0.2933 z=0.0172 TDS=0.0132
+E=O-2 Wyckoff=c x=0.3553 y=-0.0722 z=0.1736 TDS=0.0111
+E=O-2 Wyckoff=c x=0.1886 y=0.1479 z=0.1324 TDS=0.0127
+E=O-2 Wyckoff=c x=0.1623 y=-0.1277 z=-0.1419 TDS=0.0104
+E=O-2 Wyckoff=c x=0.3717 y=0.0661 z=-0.1597 TDS=0.0092

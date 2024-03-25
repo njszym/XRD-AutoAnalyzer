@@ -1,0 +1,23 @@
+PHASE=Benzoic-Acid // CSD BENZAC11
+SpacegroupNo=14 HermannMauguin=P12_1/c1 Setting=1 CellChoice=1 //
+PARAM=A=0.5496_0.54^0.56 PARAM=B=0.5090_0.50^0.52 PARAM=C=2.2013_2.19^2.22 //
+PARAM=BETA=97.86_97.00^99.00 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:BenzoicAcid=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O Wyckoff=e x=0.2188 y=0.2408 z=0.01314
+E=O Wyckoff=e x=-0.0919 y=0.1409 z=0.06528
+E=C Wyckoff=e x=0.0972 y=0.2750 z=0.05745
+E=C Wyckoff=e x=0.1788 y=0.4830 z=0.10386
+E=C Wyckoff=e x=0.3842 y=0.6370 z=0.09780
+E=C Wyckoff=e x=0.4579 y=0.8301 z=0.14104
+E=C Wyckoff=e x=0.3297 y=0.8684 z=0.19039
+E=C Wyckoff=e x=0.1236 y=0.7120 z=0.19674
+E=C Wyckoff=e x=0.0489 y=0.5224 z=0.15343
+E=H Wyckoff=e x=0.4834 y=0.6069 z=0.0585
+E=H Wyckoff=e x=0.6218 y=0.9519 z=0.1361
+E=H Wyckoff=e x=0.3887 y=0.0192 z=0.2262
+E=H Wyckoff=e x=0.0196 y=0.7449 z=0.2348
+E=H Wyckoff=e x=-0.1162 y=0.4055 z=0.1565
+E=H Wyckoff=e x=-0.1438 y=0.011 z=0.0328
+E=H Wyckoff=e x=-0.171 y=-0.124 z=0.0164

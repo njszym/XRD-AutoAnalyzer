@@ -1,0 +1,32 @@
+PHASE=Epsomite //
+SpacegroupNo=19 HermannMauguin=P2_12_12_1 //
+PARAM=A=1.1868_1.1749^1.1987 PARAM=B=1.1996_1.1876^1.2116 PARAM=C=0.6857_0.6788^0.6926 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:epsomite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a x=0.4226 y=0.1060 z=0.0392 TDS=0.0119
+E=S Wyckoff=a x=0.7259 y=0.1835 z=0.4909 TDS=0.0118
+E=O-2 Wyckoff=a x=0.6857 y=0.0747 z=0.4266 TDS=0.0289
+E=O-2 Wyckoff=a x=0.8498 y=0.1869 z=0.4835 TDS=0.0219
+E=O-2 Wyckoff=a x=0.6884 y=0.2063 z=0.6908 TDS=0.0277
+E=O-2 Wyckoff=a x=0.6807 y=0.2722 z=0.3617 TDS=0.0218
+E=O-2 Wyckoff=a x=0.2651 y=0.1743 z=0.0026 TDS=0.0200
+E=O-2 Wyckoff=a x=0.4724 y=0.2478 z=0.1990 TDS=0.0200
+E=O-2 Wyckoff=a x=0.4696 y=0.1775 z=-0.2214 TDS=0.0200
+E=O-2 Wyckoff=a x=0.5828 y=0.0462 z=0.0787 TDS=0.0200
+E=O-2 Wyckoff=a x=0.3760 y=-0.0387 z=-0.1118 TDS=0.0200
+E=O-2 Wyckoff=a x=0.3621 y=0.0342 z=0.2929 TDS=0.0200
+E=O-2 Wyckoff=a x=0.4908 y=0.4375 z=0.9383 TDS=0.0200
+E=H Wyckoff=a x=0.2346 y=0.2215 z=0.1058 TDS=0.0286
+E=H Wyckoff=a x=0.2377 y=0.1990 z=-0.1222 TDS=0.0284
+E=H Wyckoff=a x=0.4216 y=0.2719 z=0.3044 TDS=0.0287
+E=H Wyckoff=a x=0.5478 y=0.2518 z=0.2596 TDS=0.0253
+E=H Wyckoff=a x=0.4236 y=0.2222 z=-0.3062 TDS=0.0286
+E=H Wyckoff=a x=0.5479 y=0.1842 z=-0.2569 TDS=0.0227
+E=H Wyckoff=a x=0.6271 y=0.0574 z=0.1934 TDS=0.0309
+E=H Wyckoff=a x=0.6139 y=-0.0176 z=0.0170 TDS=0.0546
+E=H Wyckoff=a x=0.3668 y=-0.1065 z=-0.0357 TDS=0.0318
+E=H Wyckoff=a x=0.4217 y=-0.0541 z=-0.2239 TDS=0.0347
+E=H Wyckoff=a x=0.2840 y=0.0262 z=0.3207 TDS=0.0353
+E=H Wyckoff=a x=0.4067 y=0.0001 z=0.3926 TDS=0.0342
+E=H Wyckoff=a x=0.4252 y=0.4834 z=0.9562 TDS=0.0358
+E=H Wyckoff=a x=0.4746 y=0.3681 z=1.0014 TDS=0.0426

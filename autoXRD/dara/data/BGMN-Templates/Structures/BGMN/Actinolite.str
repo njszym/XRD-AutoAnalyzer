@@ -1,0 +1,18 @@
+PHASE=ACTINOLITE  //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.9891_0.9693^1.0089 PARAM=B=1.8200_1.7836^1.8564 PARAM=C=0.5305_0.5199^0.5411 //
+PARAM=BETA=104.6_104^105.4 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 GOAL:actinolite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(NA+1(0.04),CA+2(0.88),MN+2(0.08)) Wyckoff=h y=0.7231 TDS=0.0097
+E=(MG+2(0.39),FE+2(0.61)) Wyckoff=h y=0.9113 TDS=0.0058
+E=(MG+2(0.34),FE+2(0.46),FE+3(0.16)) Wyckoff=g y=0.8214 TDS=0.0055
+E=(MG+2(0.42),FE+2(0.58)) Wyckoff=a TDS=0.0068
+E=(AL+3(0.08),SI+4(0.92)) Wyckoff=j x=0.2807 y=0.0840 z=0.2943 TDS=0.0056
+E=SI+4 Wyckoff=j x=0.2895 y=0.1705 z=0.8022 TDS=0.0057
+E=O-2 Wyckoff=j x=0.1118 y=0.0874 z=0.2141 TDS=0.0089
+E=O-2 Wyckoff=j x=0.1209 y=0.1730 z=0.7240 TDS=0.0082
+E=O-2 Wyckoff=i x=0.8886 z=0.2871 TDS=0.01
+E=O-2 Wyckoff=j x=0.3675 y=0.2462 z=0.7906 TDS=0.0102
+E=O-2 Wyckoff=j x=0.3457 y=0.1335 z=0.0939 TDS=0.0088
+E=O-2 Wyckoff=j x=0.3432 y=0.1187 z=0.5841 TDS=0.0089
+E=O-2 Wyckoff=i x=0.6651 z=0.7086 TDS=0.0117

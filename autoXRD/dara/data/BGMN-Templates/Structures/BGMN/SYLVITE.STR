@@ -1,0 +1,7 @@
+PHASE=Sylvite //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.6279_0.6216^0.6342 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:sylvite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=a TDS=0.0060
+E=CL-1 Wyckoff=b TDS=0.0070

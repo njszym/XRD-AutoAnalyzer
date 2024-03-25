@@ -1,0 +1,9 @@
+PHASE=Grossular //
+SpacegroupNo=230 HermannMauguin=I4_1/a-32/d //
+PARAM=A=1.1847_1.1729^1.1965 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:grossula=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O-2 Wyckoff=h x=0.0382 y=0.0453 z=0.6514 TDS=0.0041
+E=CA+2 Wyckoff=c TDS=0.0045
+E=AL+3 Wyckoff=a TDS=0.0036
+E=SI+4 Wyckoff=d TDS=0.0033

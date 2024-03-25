@@ -1,0 +1,8 @@
+PHASE=Linnaeite //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=0.9406_0.9312^0.9500 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:linnaeite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CO+2 Wyckoff=a TDS=0.0011
+E=CO+3 Wyckoff=d TDS=0.0027
+E=S Wyckoff=e x=0.7409 TDS=0.0039

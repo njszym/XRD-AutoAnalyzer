@@ -1,0 +1,10 @@
+PHASE=Nordstrandite //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.5114_0.5063^0.5165 PARAM=B=0.5082_0.5031^0.5133 PARAM=C=0.5127_0.5076^0.5178 //
+PARAM=ALPHA=70.3_69.5^71 PARAM=BETA=74.0_73^75 PARAM=GAMMA=58.5_58^59 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 TDS=0.01 //
+GOAL:nordstrandite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=i x=0.3370 y=0.3330 z=0.0100
+E=O-2 Wyckoff=i x=0.3190 y=0.9330 z=0.2420
+E=O-2 Wyckoff=i x=0.9430 y=0.5910 z=0.2030
+E=O-2 Wyckoff=i x=0.6220 y=0.2850 z=0.2080

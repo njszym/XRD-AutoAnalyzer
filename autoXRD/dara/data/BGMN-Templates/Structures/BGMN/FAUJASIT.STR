@@ -1,0 +1,11 @@
+PHASE=Faujasite //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=2.4310_2.4188^2.4432 //
+RP=4 PARAM=B1=0_0^0.007  PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:faujasit=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3(0.4600) Wyckoff=e x=0.9087 TDS=0.2074
+E=(AL+3(0.1450),SI+4(0.7240)) Wyckoff=i x=-0.0540 y=0.1261 z=0.0358 TDS=0.0295
+E=O Wyckoff=h y=0.3942 TDS=0.0276
+E=O Wyckoff=g x=0.5044 z=0.8524 TDS=0.0350
+E=O(0.7400) Wyckoff=g x=0.3248 z=0.0416 TDS=0.0060
+E=O(0.8600) Wyckoff=g x=0.3139 z=0.6805 TDS=0.0551

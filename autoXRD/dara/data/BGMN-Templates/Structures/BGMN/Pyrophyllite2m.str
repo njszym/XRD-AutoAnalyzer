@@ -1,0 +1,15 @@
+PHASE=Pyrophyllite2M //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.5172_0.5120^0.5224 PARAM=B=0.8958_0.8868^0.9048 PARAM=C=1.8670_1.8483^1.8857 //
+PARAM=BETA=99.9_99^101 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR2 TDS=0.01 //
+GOAL:pyrophyllite2m=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=f x=0.0000 y=0.3333 z=0.0000
+E=O-2 Wyckoff=f x=0.2030 y=0.5000 z=0.0580
+E=O-2 Wyckoff=f x=0.2030 y=0.1667 z=0.0580
+E=O-2 Wyckoff=f x=0.2030 y=-0.1667 z=0.0580
+E=O-2 Wyckoff=f x=0.0250 y=0.0830 z=0.1760
+E=O-2 Wyckoff=f x=-0.4750 y=0.0830 z=0.1760
+E=O-2 Wyckoff=f x=0.2750 y=0.3333 z=0.1760
+E=SI+4 Wyckoff=f x=-0.2390 y=0.0000 z=0.1430
+E=SI+4 Wyckoff=f x=0.2610 y=0.1667 z=0.1430

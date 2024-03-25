@@ -1,0 +1,177 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for STOE STADI MP in Position 2
+%    --------------------------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    February 11, 2019
+%
+%    Device Configuration:
+%    - Detector: MYTHEN 1K
+%    - Radiation: CoKa, Ge111 primary beam monochromator
+%    - Primary Soller Slits: none
+%    - Secondary Soller Slits: none
+%    - Divergence Slit: fix, 0.2°
+%    - Goniometer Radius: 190 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=UIBK-STOE-STADI-MP-Pos2-fds.ger
+GEQ=UIBK-STOE-STADI-MP-Pos2-fds.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=12
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=190
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence was guessed
+
+% beam divergence (°)
+div=0.2
+
+% distance from sample (mm) *guessed*
+HSlitR=100
+
+% fixed slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Linear Detector
+%-----------------------------------------------------------------------------------------------
+
+% detector opening in degrees
+detDeg=2.37
+% detDeg=5.0
+
+% total detector height (mm)
+DetArrayW=R*tan(pi*detDeg/180)
+
+% height of one strip (mm)
+% Instrument manual says 50 um, but this leads to wrong peak shape. Using 100 um 
+% gives a nearly perfect fit of the LaB6 reference dataset.
+DetW=0.10
+
+% total detector width (mm)
+DetH=16
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% diameter of the sample holder (mm)
+SamplD=27
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% primary soller slit (radians)
+% Instrument manual says no soller slits used. But this leads to excessive asymmetry.
+% The value here was matched to a LaB6 reference dataset
+PColl=0.0295
+
+% secondary soller slit (radians)
+SColl=0.0295
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+%SSlitR=
+
+% slit width (mm)
+%SSlitW=
+
+
+%-----------------------------------------------------------------------------------------------
+% Beam Mask
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+VSlitR=100
+
+% slit width (mm)
+VSlitH=4
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% Note: Not used
+
+% Distance from sample (mm)
+MonR=190
+
+% Polarization
+POL=sqr(cos(15.89*pi/180))
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=7
+zweiTheta[4]=10
+zweiTheta[5]=15
+zweiTheta[6]=23
+zweiTheta[7]=30
+zweiTheta[8]=42
+zweiTheta[9]=56
+zweiTheta[10]=76
+zweiTheta[11]=96
+zweiTheta[12]=110
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (°2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (Â°2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

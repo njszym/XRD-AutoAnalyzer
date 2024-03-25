@@ -1,0 +1,7 @@
+PHASE=WURTZITE_2H //
+SpacegroupNo=186 HermannMauguin=P6_3mc //
+PARAM=A=0.3823_0.3785^0.3861 PARAM=C=0.6261_0.6198^0.6324 //
+RP=3 PARAM=B1=0_0^0.007 PARAM=GEWICHT=0_0 //
+GOAL:wurtzite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=b z=1.0000 TDS=0.0090
+E=S Wyckoff=b z=0.3748 TDS=0.0072

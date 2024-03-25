@@ -1,0 +1,68 @@
+PHASE=Ba2Ti9O20 //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=1.4358_1.4286^1.4430 PARAM=B=1.4095_1.4025^1.4165 PARAM=C=0.7477_0.7440^0.7514 //
+PARAM=ALPHA=95.5_95^96 PARAM=BETA=100.6_100^101.2 PARAM=GAMMA=89.9_89^90 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL=ba2ti9o20=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=i x=-0.1280 y=0.2508 z=0.0071 TDS=0.0060
+E=BA+2 Wyckoff=i x=0.2258 y=0.2510 z=-0.0099 TDS=0.0055
+E=BA+2 Wyckoff=i x=-0.4768 y=-0.4374 z=-0.2501 TDS=0.0060
+E=BA+2 Wyckoff=i x=0.4239 y=0.0617 z=-0.2590 TDS=0.0041
+E=TI+4 Wyckoff=i x=0.0684 y=0.0075 z=0.1771 TDS=0.0028
+E=TI+4 Wyckoff=i x=-0.1450 y=-0.0026 z=0.1920 TDS=0.0025
+E=TI+4 Wyckoff=i x=0.0075 y=0.1607 z=-0.4558 TDS=0.0030
+E=TI+4 Wyckoff=i x=0.2851 y=-0.0004 z=0.1753 TDS=0.0027
+E=TI+4 Wyckoff=i x=0.1975 y=-0.1555 z=-0.5437 TDS=0.0036
+E=TI+4 Wyckoff=i x=0.2125 y=0.1567 z=-0.4853 TDS=0.0014
+E=TI+4 Wyckoff=i x=-0.4055 y=0.1647 z=-0.4473 TDS=0.0026
+E=TI+4 Wyckoff=i x=-0.3363 y=0.1679 z=0.1675 TDS=0.0031
+E=TI+4 Wyckoff=i x=0.4517 y=0.1731 z=0.2004 TDS=0.0029
+E=TI+4 Wyckoff=i x=0.3088 y=0.3380 z=-0.5465 TDS=0.0024
+E=TI+4 Wyckoff=i x=0.1004 y=0.3431 z=-0.5418 TDS=0.0021
+E=TI+4 Wyckoff=i x=-0.1050 y=0.3444 z=-0.5326 TDS=0.0037
+E=TI+4 Wyckoff=i x=0.3121 y=-0.3498 z=-0.4649 TDS=0.0039
+E=TI+4 Wyckoff=i x=0.3639 y=-0.3370 z=0.1649 TDS=0.0044
+E=TI+4 Wyckoff=i x=0.4291 y=0.3200 z=-0.1965 TDS=0.0026
+E=TI+4 Wyckoff=i x=0.2531 y=-0.5095 z=-0.1814 TDS=0.0027
+E=TI+4 Wyckoff=i x=0.0356 y=-0.5041 z=-0.1773 TDS=0.0028
+E=TI+4 Wyckoff=i x=0.1797 y=-0.5011 z=0.1826 TDS=0.0023
+E=O Wyckoff=i x=0.6771 y=0.4289 z=0.2727 TDS=0.0024
+E=O Wyckoff=i x=0.3220 y=0.7458 z=-0.0082 TDS=0.0024
+E=O Wyckoff=i x=0.2685 y=0.4143 z=0.2570 TDS=0.0024
+E=O Wyckoff=i x=0.1131 y=0.2413 z=-0.3634 TDS=0.0024
+E=O Wyckoff=i x=0.0851 y=-0.2385 z=0.3539 TDS=0.0024
+E=O Wyckoff=i x=0.2175 y=-0.2618 z=0.6433 TDS=0.0024
+E=O Wyckoff=i x=0.2192 y=0.0846 z=-0.2722 TDS=0.0024
+E=O Wyckoff=i x=0.1864 y=0.2587 z=0.3494 TDS=0.0024
+E=O Wyckoff=i x=0.4442 y=-0.1070 z=-0.0870 TDS=0.0024
+E=O Wyckoff=i x=0.1236 y=0.5820 z=-0.2662 TDS=0.0024
+E=O Wyckoff=i x=0.1117 y=-0.0887 z=0.5888 TDS=0.0024
+E=O Wyckoff=i x=0.0157 y=-0.2650 z=-0.3570 TDS=0.0024
+E=O Wyckoff=i x=0.0580 y=0.5723 z=0.0622 TDS=0.0024
+E=O Wyckoff=i x=0.4293 y=0.2447 z=-0.0167 TDS=0.0024
+E=O Wyckoff=i x=0.2484 y=-0.0777 z=-0.0766 TDS=0.0024
+E=O Wyckoff=i x=0.3572 y=0.0849 z=0.0860 TDS=0.0024
+E=O Wyckoff=i x=0.3179 y=0.2479 z=-0.3605 TDS=0.0024
+E=O Wyckoff=i x=0.8098 y=0.4084 z=0.6068 TDS=0.0024
+E=O Wyckoff=i x=0.0739 y=0.4219 z=-0.7349 TDS=0.0024
+E=O Wyckoff=i x=0.1469 y=0.4299 z=-0.0666 TDS=0.0024
+E=O Wyckoff=i x=0.3427 y=0.4088 z=-0.0860 TDS=0.0024
+E=O Wyckoff=i x=0.0105 y=0.4067 z=-0.3947 TDS=0.0024
+E=O Wyckoff=i x=0.2820 y=0.0782 z=0.4003 TDS=0.0024
+E=O Wyckoff=i x=0.4925 y=0.1013 z=-0.5838 TDS=0.0024
+E=O Wyckoff=i x=0.0903 y=0.0906 z=0.3999 TDS=0.0024
+E=O Wyckoff=i x=0.2097 y=0.4076 z=0.6000 TDS=0.0024
+E=O Wyckoff=i x=0.2601 y=0.5772 z=0.0575 TDS=0.0024
+E=O Wyckoff=i x=0.3099 y=-0.1013 z=-0.4146 TDS=0.0024
+E=O Wyckoff=i x=0.1779 y=-0.0811 z=0.2544 TDS=0.0024
+E=O Wyckoff=i x=0.3788 y=-0.0769 z=0.2710 TDS=0.0024
+E=O Wyckoff=i x=0.0444 y=-0.0685 z=-0.0746 TDS=0.0024
+E=O Wyckoff=i x=0.4113 y=0.3997 z=0.6000 TDS=0.0024
+E=O Wyckoff=i x=0.6136 y=0.4071 z=0.6140 TDS=0.0024
+E=O Wyckoff=i x=0.4600 y=0.6031 z=0.0740 TDS=0.0024
+E=O Wyckoff=i x=0.3790 y=0.2651 z=0.3006 TDS=0.0024
+E=O Wyckoff=i x=0.1612 y=0.0643 z=0.0637 TDS=0.0024
+E=O Wyckoff=i x=0.4702 y=0.7511 z=0.3012 TDS=0.0024
+E=O Wyckoff=i x=0.5878 y=0.2542 z=0.3317 TDS=0.0024
+E=O Wyckoff=i x=0.0226 y=0.0709 z=-0.2691 TDS=0.0024
+E=O Wyckoff=i x=0.2878 y=-0.2506 z=0.3412 TDS=0.0024

@@ -1,0 +1,10 @@
+PHASE=Ferberite //
+SpacegroupNo=13 HermannMauguin=P12/c1 //
+PARAM=A=0.4730_0.4683^0.4777 PARAM=B=0.5703_0.5646^0.5760 PARAM=C=0.4952_0.4902^0.5002 //
+PARAM=BETA=90.01_89.5^90.5 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:ferberite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=f y=0.6744 TDS=0.0047
+E=W Wyckoff=e y=0.1799 TDS=0.0014
+E=O-2 Wyckoff=g x=0.2159 y=0.1050 z=0.5660 TDS=0.0057
+E=O-2 Wyckoff=g x=0.2538 y=0.3744 z=0.1096 TDS=0.0057

@@ -1,0 +1,19 @@
+PHASE=HydrogenHydraziniumPhosphate // 04-012-6227
+Formula=H4_(NH3)2_(PO4)2 //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.44831_0.44031^0.45331 PARAM=B=0.80389_0.80089^0.80689 PARAM=C=1.07014_0.06514^1.07514 // 
+PARAM=BETA=99.6780_99.6080^99.7580 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:HydrogenHydraziniumPhosphate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=P Wyckoff=e x=0.00236 y=0.16479 z=0.17487 TDS=0.0129489
+E=O Wyckoff=e x=0.07096 y=0.30991 z=0.09570 TDS=0.0203709
+E=O Wyckoff=e x=0.10179 y=0.72757 z=0.20020 TDS=0.0224237
+E=O Wyckoff=e x=0.26939 y=0.56710 z=0.40049 TDS=0.0289377
+E=O Wyckoff=e x=0.26125 y=0.04427 z=0.21375 TDS=0.0181048
+E=N Wyckoff=e x=0.49685 y=0.08171 z=0.47319 TDS=0.021721
+E=H Wyckoff=e x=0.162 y=0.848 z=0.205 TDS=0.0473741
+E=H Wyckoff=e x=0.449 y=0.558 z=0.357 TDS=0.0473741
+E=H Wyckoff=e x=0.410 y=0.068 z=0.379 TDS=0.0473741
+E=H Wyckoff=e x=0.354 y=0.156 z=0.515 TDS=0.0473741
+E=H Wyckoff=e x=0.714 y=0.128 z=0.484 TDS=0.0473741

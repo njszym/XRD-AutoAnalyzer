@@ -1,0 +1,12 @@
+PHASE=FeOOH_Lepidocrocite // 04-010-4300
+MineralName=Lepidocrocite //
+Formula=Fe_O_(OH) //
+SpacegroupNo=63 HermannMauguin=A2_1/m2/a2/m Setting=4 Lattice=Orthorhombic //
+PARAM=A=0.3873_0.3773^0.3973 PARAM=B=1.2516_1.2416^1.2616 PARAM=C=0.3072_0.2972^0.3172 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Lepidocrocite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE+3 Wyckoff=c y=0.6778 TDS=0.0302168
+E=O-2 Wyckoff=c y=0.2889 TDS=0.0293719
+E=O-2 Wyckoff=c y=0.0738 TDS=0.0505876
+E=H Wyckoff=f x=0.679 y=-0.001 TDS=0.0734299

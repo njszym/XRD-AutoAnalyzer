@@ -1,0 +1,10 @@
+PHASE=ThoriumNiobiumTungstenOxide // 04-001-8763
+Reference=04-001-8763 //
+Formula=Th0.03_Nb0.12_W0.88_O3 //
+SpacegroupNo=221 HermannMauguin=P4/m-32/m Setting=1 Lattice=Cubic //
+PARAM=A=0.379000_0.375210^0.382790 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:ThoriumNiobiumTungstenOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(NB(0.1200),W(0.8800)) Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.010000
+E=TH(0.0300) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000
+E=O Wyckoff=c x=0.000000 y=0.500000 z=0.500000 TDS=0.010000

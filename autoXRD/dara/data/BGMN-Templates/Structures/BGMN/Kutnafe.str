@@ -1,0 +1,9 @@
+PHASE=Kutnahorite_Fe //
+SpacegroupNo=148 HermannMauguin=R-3 //
+PARAM=A=0.4852_0.4813^0.4891 PARAM=C=1.6217_1.6087^1.6347 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:kutnafe=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(CA+2(0.1800),MG+2(0.2300),MN+2(0.4600),FE+2(0.1300)) Wyckoff=b TDS=0.0090
+E=(CA+2(0.8200),MN+2(0.1800)) Wyckoff=a TDS=0.0090
+E=C Wyckoff=c z=0.7480 TDS=0.0090
+E=O Wyckoff=f x=0.2500 y=-0.0270 z=0.2450 TDS=0.0090

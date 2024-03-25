@@ -1,0 +1,13 @@
+PHASE=Goyazite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.7016_0.6987^0.7043 PARAM=C=1.6557_1.6492^1.6624 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.000001 GEWICHT=SPHAR4 //
+GOAL:goyazite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SR+2 Wyckoff=a TDS=0.0098
+E=P Wyckoff=c z=0.6924 TDS=0.0051
+E=AL+3 Wyckoff=d TDS=0.0064
+E=O-2 Wyckoff=c z=0.5998 TDS=0.0070
+E=O-2 Wyckoff=h x=0.119 z=0.7233 TDS=0.0067
+E=O-2 Wyckoff=h x=0.2084 z=0.5297 TDS=0.0070
+E=H(0.5000) Wyckoff=c z=0.5371 TDS=0.03
+E=H Wyckoff=h x=0.1393 z=0.5566 TDS=0.03

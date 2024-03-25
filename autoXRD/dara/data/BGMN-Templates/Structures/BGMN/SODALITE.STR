@@ -1,0 +1,10 @@
+PHASE=Sodalite //
+SpacegroupNo=218 HermannMauguin=P-43n //
+PARAM=A=0.8876_0.8787^0.8965 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:sodalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=d TDS=0.0060
+E=SI+4 Wyckoff=c TDS=0.0080
+E=NA+1 Wyckoff=e x=0.6785 TDS=0.0170
+E=CL-1 Wyckoff=a TDS=0.0230
+E=O-2 Wyckoff=i x=0.1399 y=0.1496 z=0.4382 TDS=0.0090

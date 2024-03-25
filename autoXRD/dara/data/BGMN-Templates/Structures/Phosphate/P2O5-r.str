@@ -1,0 +1,14 @@
+PHASE=P2O5rhombo // 04-007-2237
+Reference=PDF-04-007-2237 //
+Formula=P2_O5 //
+SpacegroupNo=161 HermannMauguin=R3c Setting=1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=1.0304_0.9304^1.1304 PARAM=C=1.3510_1.3410^1.3610  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL=GrainSize(1,1,1) //
+GOAL:P2O5rhombo=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=P Wyckoff=a x=0.00000 y=0.00000 z=0.13000 TDS=0.027477
+E=P Wyckoff=b x=0.85140 y=0.01480 z=0.96110 TDS=0.0251872
+E=O Wyckoff=a x=0.00000 y=0.00000 z=0.23610 TDS=0.0496638
+E=O Wyckoff=b x=0.98500 y=0.85450 z=0.07850 TDS=0.0273191
+E=O Wyckoff=b x=0.85510 y=0.86820 z=0.92920 TDS=0.0251083
+E=O Wyckoff=b x=-0.0270 y=0.70000 z=-0.0741 TDS=0.0416892

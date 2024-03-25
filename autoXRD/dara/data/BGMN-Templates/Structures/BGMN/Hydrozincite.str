@@ -1,0 +1,15 @@
+PHASE=Hydrozincite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.3620_1.3484^1.3756 PARAM=B=0.6300_0.6237^0.6363 PARAM=C=0.5420_0.5366^0.5474 //
+PARAM=BETA=95.8_95^96.5 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:hydrozincite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=a TDS=0.0059
+E=ZN+2 Wyckoff=h y=0.7370 TDS=0.0056
+E=ZN+2 Wyckoff=i x=0.3710 z=0.9620 TDS=0.0067
+E=C Wyckoff=i x=0.1780 z=0.6910 TDS=0.0090
+E=O-2 Wyckoff=i x=0.0790 z=0.6820 TDS=0.0069
+E=O-2 Wyckoff=i x=0.2340 z=0.9310 TDS=0.0100
+E=O-2 Wyckoff=i x=0.2250 z=0.5000 TDS=0.0090
+E=O-2 Wyckoff=i x=0.5900 z=0.6760 TDS=0.0081
+E=O-2 Wyckoff=j x=0.0780 y=0.2450 z=0.1980 TDS=0.0081

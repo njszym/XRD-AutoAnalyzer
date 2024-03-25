@@ -1,0 +1,9 @@
+PHASE=LaB6 // 04-011-8988
+Formula=La_B6 //
+SpacegroupNo=221 HermannMauguin=P4/m-32/m //
+PARAM=A=0.415689_0.411532^0.419846 // 
+RP=4 k1=0 PARAM=k2=0_0^0.0001 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL=GrainSize(1,1,1) //
+GOAL:LaB6=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=LA Wyckoff=a x=0.0000 y=0.0000 z=0.0000 PARAM=TDS=0.006410_0^0.02
+E=B Wyckoff=f x=0.1991 y=0.5000 z=0.5000 PARAM=TDS=0.006410_0^0.02

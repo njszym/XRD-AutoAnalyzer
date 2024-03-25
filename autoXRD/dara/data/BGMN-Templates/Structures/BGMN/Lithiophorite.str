@@ -1,0 +1,10 @@
+PHASE=Lithiophorite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.2925_0.2896^0.2954 PARAM=C=2.8169_2.7887^2.8451 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:lithiophorite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+4 Wyckoff=a TDS=0.0110
+E=(AL+3(0.6500),LI+1(0.3330)) Wyckoff=b TDS=0.0072
+E=O-2 Wyckoff=c z=0.7010 TDS=0.0166
+E=O-2 Wyckoff=c z=0.7986 TDS=0.017
+E=H Wyckoff=c z=0.7657 TDS=0.0947

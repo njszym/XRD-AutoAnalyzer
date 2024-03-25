@@ -1,0 +1,12 @@
+PHASE=KPerchlorate // 04-007-6710
+Reference=04-007-6710
+Formula=Cl_K_O4 //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a Setting=1 Lattice=Orthorhombic //
+PARAM=A=0.886600_0.877734^0.895466 PARAM=B=0.566600_0.560934^0.572266 PARAM=C=0.725400_0.718146^0.732654 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:KPerchlorate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=c x=0.067900 y=0.250000 z=0.810500 TDS=0.010000
+E=K Wyckoff=c x=0.180900 y=0.250000 z=0.337400 TDS=0.010000
+E=O Wyckoff=c x=0.188500 y=0.250000 z=0.941900 TDS=0.010000
+E=O Wyckoff=d x=0.419700 y=0.543800 z=0.195200 TDS=0.010000
+E=O Wyckoff=c x=0.425300 y=0.250000 z=0.598100 TDS=0.010000

@@ -1,0 +1,7 @@
+PHASE=Cassiterite //
+SpacegroupNo=136 HermannMauguin=P4_2/m2_1/n2/m //
+PARAM=A=0.4736_0.4689^0.4783 PARAM=C=0.3185_0.3153^0.3217 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:cassiterite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SN+4 Wyckoff=a TDS=0.0029
+E=O-2 Wyckoff=f x=0.6947 TDS=0.0046

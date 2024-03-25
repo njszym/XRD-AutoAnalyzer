@@ -1,0 +1,15 @@
+PHASE=Gorceixite //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.7036_0.6895^0.7177 PARAM=C=1.7282_1.6936^1.7628 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:gorceixite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2(0.9500) Wyckoff=a z=1.0000 TDS=0.0050
+E=P Wyckoff=a z=0.2996 TDS=0.0060
+E=P Wyckoff=a z=0.6984 TDS=0.0050
+E=AL+3 Wyckoff=b x=0.1636 z=0.8316 TDS=0.0050
+E=O-2 Wyckoff=a z=0.3926 TDS=0.0070
+E=O-2 Wyckoff=a z=0.6120 TDS=0.0050
+E=O-2 Wyckoff=b x=0.8826 z=0.2723 TDS=0.0090
+E=O-2 Wyckoff=b x=0.4518 z=0.3963 TDS=0.0060
+E=O-2 Wyckoff=b x=0.7988 z=0.4736 TDS=0.0040
+E=O-2 Wyckoff=b x=0.5460 z=0.1944 TDS=0.0060

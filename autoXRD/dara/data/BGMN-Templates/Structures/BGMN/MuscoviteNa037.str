@@ -1,0 +1,16 @@
+PHASE=Muscovite_2M1(Na0.37) //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.5174_0.514^0.52 PARAM=B=0.8975_0.888^0.902 PARAM=C=1.9770_1.95^1.99 //
+PARAM=BETA=95.2_94.2^96.2 //
+RP=4 B1=ANISO^0.008  PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:muscovitena037=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.7575),AL+3(0.2425)) Wyckoff=f x=0.9633 y=0.4291 z=0.1373 TDS=0.0111
+E=(SI+4(0.7575),AL+3(0.2425)) Wyckoff=f x=0.4502 y=0.2581 z=0.1372 TDS=0.0108
+E=(AL+3(0.9400),FE+3(0.0600)) Wyckoff=f x=0.2495 y=0.0832 z=0.0000 TDS=0.0081
+E=(K+1(0.6000),NA+1(0.3700)) Wyckoff=e y=0.0976 TDS=0.0242
+E=O-2 Wyckoff=f x=0.9614 y=0.4441 z=0.0544 TDS=0.0122
+E=O-2 Wyckoff=f x=0.3839 y=0.2509 z=0.0543 TDS=0.0120
+E=O-2 Wyckoff=f x=0.4046 y=0.0925 z=0.1706 TDS=0.0153
+E=O-2 Wyckoff=f x=0.7531 y=0.3054 z=0.1593 TDS=0.0176
+E=O-2 Wyckoff=f x=0.2532 y=0.3742 z=0.1709 TDS=0.0147
+E=O-2 Wyckoff=f x=0.9567 y=0.0620 z=0.0506 TDS=0.0122

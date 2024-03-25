@@ -1,0 +1,8 @@
+PHASE=Siderite //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.4692_0.4645^0.4739 PARAM=C=1.5380_1.5226^1.5534 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:siderite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=b TDS=0.0054
+E=C Wyckoff=a TDS=0.0053
+E=O-2 Wyckoff=e x=0.2743 TDS=0.0051

@@ -1,0 +1,13 @@
+PHASE=NiOxalateHydrate // 01-073-2580
+Formula=Ni_C2_O6_H4 //
+SpacegroupNo=15 Setting=1 HermannMauguin=C12/c1 //
+PARAM=A=1.17748_1.16^1.19 PARAM=B=0.53328_0.52^0.55 PARAM=C=0.98326_0.97^1.00  //
+PARAM=BETA=127.21_126.0^128.5  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NiOxalateHydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI Wyckoff=e x=0.0000 y=0.1750 z=0.2500
+E=C Wyckoff=f  x=0.0370 y=0.6740 z=0.3350
+E=O Wyckoff=f  x=0.0850 y=0.4710 z=0.4200
+E=O Wyckoff=f  x=0.0850 y=0.8770 z=0.4200
+E=O Wyckoff=f  x=0.1720 y=0.1740 z=0.2500

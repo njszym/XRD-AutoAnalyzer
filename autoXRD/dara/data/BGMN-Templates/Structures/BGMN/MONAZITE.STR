@@ -1,0 +1,12 @@
+PHASE=Monazite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.6460_0.6395^0.6525 PARAM=B=0.7040_0.6970^0.7110 PARAM=C=0.8149_0.8067^0.8230 //
+PARAM=BETA=126.282_125.2^127.2 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR0 //
+GOAL:monazite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CE+3 Wyckoff=e x=0.8900 y=0.1600 z=0.7850 TDS=0.01
+E=P Wyckoff=e x=0.4060 y=0.1620 z=0.7800 TDS=0.01
+E=O-2 Wyckoff=e x=0.2270 y=0.0070 z=0.7670 TDS=0.01
+E=O-2 Wyckoff=e x=0.2840 y=0.3333 z=0.8470 TDS=0.01
+E=O-2 Wyckoff=e x=0.4050 y=0.2800 z=0.6270 TDS=0.01
+E=O-2 Wyckoff=e x=0.7220 y=0.1300 z=0.9550 TDS=0.01

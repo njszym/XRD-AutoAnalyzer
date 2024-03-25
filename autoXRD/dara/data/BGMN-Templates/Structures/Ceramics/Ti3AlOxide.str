@@ -1,0 +1,11 @@
+PHASE=Ti3AlOxide // 04-013-6698
+Reference=04-013-6698 //
+Formula=Ti3_Al_O0.31 //
+SpacegroupNo=194 Setting=1 HermannMauguin=P6_3/m2/m2/c Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.578702_0.572915^0.584489 PARAM=C=0.467783_0.463105^0.472461  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ti3AlOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=TI(0.9200) Wyckoff=h x=0.830300 y=0.660600 z=0.250000 TDS=0.00757986
+E=AL(0.0800) Wyckoff=h x=0.830300 y=0.660600 z=0.250000 TDS=0.00757986
+E=AL Wyckoff=c x=0.333330 y=0.666660 z=0.250000 TDS=0.00757986
+E=O(0.3590) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00529011

@@ -1,0 +1,7 @@
+PHASE=FeNbO4_ortho //
+SpacegroupNo=60 HermannMauguin=P2_1/b2/c2_1/n //
+PARAM=A=0.4650_0.4627^0.4673 PARAM=B=0.5618_0.5590^0.5646 PARAM=C=0.5006_0.4981^0.5031 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:FeNbO4o=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE+3(0.5000),NB+5(0.5000)) Wyckoff=c y=0.1747 TDS=0.0040
+E=O-1 Wyckoff=d x=0.2710 y=0.3850 z=0.0817 TDS=0.0024

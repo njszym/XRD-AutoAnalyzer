@@ -1,0 +1,9 @@
+PHASE=FeF3t // 04-014-0975
+Reference=04-014-0975 //
+Formula=Fe_F3 //
+SpacegroupNo=167 Setting=1 HermannMauguin=R-32/c //
+PARAM=A=0.472020_0.467300^0.476740 PARAM=C=1.341100_1.327689^1.354511  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:FeF3t=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.00165809
+E=F Wyckoff=e x=0.652000 y=0.000000 z=0.250000 TDS=0.00252662

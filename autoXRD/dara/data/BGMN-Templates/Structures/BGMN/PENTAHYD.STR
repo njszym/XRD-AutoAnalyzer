@@ -1,0 +1,28 @@
+PHASE=Pentahydrite //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.6314_0.6251^0.6377 PARAM=B=1.0565_1.0459^1.0671 PARAM=C=0.6030_0.5970^0.6090 //
+PARAM=ALPHA=81.1_80^82 PARAM=BETA=109.8_109^111 PARAM=GAMMA=105.1_104^106 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:pentahyd=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a TDS=0.0123
+E=MG+2 Wyckoff=e TDS=0.0082
+E=S Wyckoff=i x=0.0371 y=0.2897 z=0.6624 TDS=0.0077
+E=O Wyckoff=i x=0.9464 y=0.1509 z=0.7309 TDS=0.0155
+E=O Wyckoff=i x=0.2680 y=0.3344 z=0.8331 TDS=0.0152
+E=O Wyckoff=i x=0.8808 y=0.3711 z=0.6610 TDS=0.0163
+E=O Wyckoff=i x=0.0590 y=0.2686 z=0.4256 TDS=0.0150
+E=O Wyckoff=i x=0.8279 y=0.0768 z=0.1639 TDS=0.0100
+E=O Wyckoff=i x=0.3086 y=0.1139 z=0.1848 TDS=0.0100
+E=O Wyckoff=i x=0.4745 y=0.4042 z=0.3153 TDS=0.0100
+E=O Wyckoff=i x=0.7567 y=0.4077 z=0.0318 TDS=0.0100
+E=O Wyckoff=i x=0.4589 y=0.1324 z=0.6699 TDS=0.0100
+E=H Wyckoff=i x=0.9080 y=0.1460 z=0.2600 TDS=0.0250
+E=H Wyckoff=i x=0.7240 y=0.0230 z=0.2300 TDS=0.0250
+E=H Wyckoff=i x=0.3310 y=0.1920 z=0.1170 TDS=0.0190
+E=H Wyckoff=i x=0.3360 y=0.1480 z=0.3210 TDS=0.0190
+E=H Wyckoff=i x=0.5620 y=0.4020 z=0.4110 TDS=0.0180
+E=H Wyckoff=i x=0.3500 y=0.3920 z=0.3490 TDS=0.0180
+E=H Wyckoff=i x=0.7860 y=0.3850 z=0.9190 TDS=0.0210
+E=H Wyckoff=i x=0.8420 y=0.3740 z=0.1790 TDS=0.0210
+E=H Wyckoff=i x=0.5850 y=0.1150 z=0.7330 TDS=0.0220
+E=H Wyckoff=i x=0.4330 y=0.2010 z=0.7060 TDS=0.0220

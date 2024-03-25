@@ -1,0 +1,8 @@
+PHASE=PbZr0.58Ti0.42O3_trig //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.4070_0.4050^0.4090 PARAM=ALPHA=89.7_89.4^90 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pzttrig=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=a x=0.5520 TDS=0.01
+E=(ZR+4(0.5800),TI+4(0.4200)) Wyckoff=a x=0.0380 TDS=0.01
+E=O-2 Wyckoff=b x=1.0000 z=0.5580 TDS=0.01

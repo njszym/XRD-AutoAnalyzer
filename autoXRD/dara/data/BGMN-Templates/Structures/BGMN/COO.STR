@@ -1,0 +1,7 @@
+PHASE=CoO //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4263_0.4220^0.4306 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:coo=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CO+2 Wyckoff=a TDS=0.0051
+E=O-2 Wyckoff=b TDS=0.0067

@@ -1,0 +1,21 @@
+PHASE=KYANITE //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.7126_0.7055^0.7197 PARAM=B=0.7852_0.7773^0.7931 PARAM=C=0.5572_0.5516^0.5628 PARAM=ALPHA=90.000 PARAM=BETA=101.100 PARAM=GAMMA=106.000 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 GOAL:kyanite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+TDS=0.006
+E=AL+3 Wyckoff=i x=0.3254 y=0.7040 z=0.4582
+E=AL+3 Wyckoff=i x=0.2974 y=0.6989 z=0.9505
+E=AL+3 Wyckoff=i x=0.0998 y=0.3862 z=0.6403
+E=AL+3 Wyckoff=i x=0.1120 y=0.9175 z=0.1649
+E=SI+4 Wyckoff=i x=0.2962 y=0.0649 z=0.7066
+E=SI+4 Wyckoff=i x=0.2910 y=0.3317 z=0.1892
+E=O Wyckoff=i x=0.1095 y=0.1468 z=0.1288
+E=O Wyckoff=i x=0.1230 y=0.6856 z=0.1812
+E=O Wyckoff=i x=0.2747 y=0.4545 z=0.9547
+E=O Wyckoff=i x=0.2831 y=0.9354 z=0.9353
+E=O Wyckoff=i x=0.1084 y=0.1520 z=0.6669
+E=O Wyckoff=i x=0.1219 y=0.6307 z=0.6389
+E=O Wyckoff=i x=0.2822 y=0.4453 z=0.4288
+E=O Wyckoff=i x=0.2915 y=0.9467 z=0.4659
+E=O Wyckoff=i x=0.5008 y=0.2749 z=0.2440
+E=O Wyckoff=i x=0.5015 y=0.2312 z=0.7553

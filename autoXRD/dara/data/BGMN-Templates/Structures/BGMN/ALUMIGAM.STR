@@ -1,0 +1,9 @@
+PHASE=Alumina_Gamma //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=0.7911_0.7832^0.7990 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:alumigam=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O Wyckoff=e x=0.7453 TDS=0.0100
+E=AL+3(0.5800) Wyckoff=d TDS=0.0050
+E=AL+3(0.8400) Wyckoff=a TDS=0.0050
+E=AL+3(0.1700) Wyckoff=e x=0.9728 TDS=0.0050

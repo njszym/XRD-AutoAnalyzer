@@ -1,0 +1,8 @@
+PHASE=Ferrochromite //
+SpacegroupNo=227 OriginChoice=2 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.8379_0.833^0.841 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:fechromi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2,MG+2(p) PARAM=p=0.1_0^0.3 Wyckoff=a TDS=0.0045
+E=CR+3 Wyckoff=d TDS=0.0032
+E=O-1 Wyckoff=e x=0.7388 TDS=0.0042

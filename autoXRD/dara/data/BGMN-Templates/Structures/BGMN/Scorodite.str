@@ -1,0 +1,17 @@
+PHASE=Scorodite //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a //
+PARAM=A=1.0278_1.0175^1.0381 PARAM=B=0.8937_0.8848^0.9026 PARAM=C=0.9996_0.9896^1.0096 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:scorodite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=c x=0.1269 y=0.1468 z=0.8177 TDS=0.0159
+E=AS Wyckoff=c x=0.1516 y=0.4646 z=0.6364 TDS=0.0142
+E=O-2 Wyckoff=c x=0.3012 y=0.4955 z=0.6956 TDS=0.0183
+E=O-2 Wyckoff=c x=0.0508 y=0.5831 z=0.7170 TDS=0.0184
+E=O-2 Wyckoff=c x=0.1102 y=0.2859 z=0.6671 TDS=0.0203
+E=O-2 Wyckoff=c x=0.1426 y=0.4951 z=0.4707 TDS=0.0185
+E=O-2 Wyckoff=c x=0.5543 y=0.3282 z=0.5695 TDS=0.0200
+E=O-2 Wyckoff=c x=0.8006 y=0.2277 z=0.6164 TDS=0.0200
+E=H Wyckoff=c x=0.4760 y=0.3770 z=0.6030 TDS=0.0150
+E=H Wyckoff=c x=0.5340 y=0.3010 z=0.4990 TDS=0.0150
+E=H Wyckoff=c x=0.8540 y=0.1570 z=0.7030 TDS=0.0150
+E=H Wyckoff=c x=0.8100 y=0.3100 z=0.5820 TDS=0.0150

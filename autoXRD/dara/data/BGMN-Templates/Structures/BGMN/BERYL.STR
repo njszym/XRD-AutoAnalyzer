@@ -1,0 +1,10 @@
+PHASE=Beryl //
+SpacegroupNo=192 HermannMauguin=P6/m2/c2/c //
+PARAM=A=0.9219_0.9127^0.9311 PARAM=C=0.9198_0.9106^0.9290 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR0 //
+GOAL:beryl=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=(AL+3(0.9500),CR+3(0.0500)) Wyckoff=c TDS=0.0043
+E=BE+2 Wyckoff=f TDS=0.0023
+E=SI+4 Wyckoff=l x=0.2715 y=0.3875 TDS=0.0011
+E=O-2 Wyckoff=l x=0.0747 y=0.3120 TDS=0.0038
+E=O-2 Wyckoff=m x=0.4993 y=0.1456 z=0.1450 TDS=0.0027

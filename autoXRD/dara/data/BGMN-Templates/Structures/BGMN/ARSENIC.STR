@@ -1,0 +1,6 @@
+PHASE=Arsenic //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.3760_0.3722^0.3798 PARAM=C=1.0547_1.0442^1.0652 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:arsenic=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=AS Wyckoff=c z=0.7729 TDS=0.0092

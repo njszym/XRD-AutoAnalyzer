@@ -1,0 +1,177 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Bruker D8
+%    --------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    June 27, 2020
+%
+%    Device Configuration:
+%    - Detector: Eiger2R_500K 2D
+%    - Radiation: CuKa
+%    - Divergence Slit: fix 0.2mm
+%    - Goebel mirror: installed
+%    - Secondary Soller Slits: 2.5 deg
+%    - Anti-Scatter Slit: none
+%    - Goniometer Radius: 280 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=UIUC-D8-fds-Eiger2R-1D.ger
+GEQ=UIUC-D8-fds-Eiger2R-1D.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=12
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=280
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+HSlitR=150
+
+% automatic divergence slit width (mm)
+HSlitW=0.2
+
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% total detector height (mm)
+DetArrayW=17.33
+
+% height of one strip (mm)
+DetW=0.075
+
+% total detector width (mm)
+DetH=15.39
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% diameter of the sample holder (mm) guessed
+SamplD=25
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% Note: For some manufacturers we have to use half the opening angle given on the soller
+% slits (Bruker), but for others (Panalytical) we have to use the full value. Here soller
+% slits of 2.5deg were used, which is 0.0436 radians. We use 0.0436 / 2 = 0.0218 rad.
+
+% primary soller slit (radians)
+% PColl not used
+
+% secondary soller slit (radians)
+SColl=0.0218
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% distance from sample (mm)
+% SSlitR=
+
+% slit width (mm)
+% SSlitW=
+
+
+%-----------------------------------------------------------------------------------------------
+% Beam Mask
+%-----------------------------------------------------------------------------------------------
+
+% Bruker instruments don't have a beam mask, but the divergence slit has a defined
+% width
+
+% Width of the divergence slit (mm)
+VSlitH=16
+
+% Distance from sample (mm)
+VSlitR=150
+
+
+%-----------------------------------------------------------------------------------------------
+% Beam Knife
+%-----------------------------------------------------------------------------------------------
+
+% AirScat=
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+% Do not alter the SAV file
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

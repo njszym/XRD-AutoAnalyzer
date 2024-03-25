@@ -1,0 +1,15 @@
+PHASE=Hydromagnesite //
+SpacegroupNo=64 HermannMauguin=C2/m2/c2_1/a //
+PARAM=A=0.8384_0.8300^0.8468 PARAM=B=1.8371_1.8187^1.8555 PARAM=C=0.8961_0.8871^0.9051 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:hydromag=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=g x=0.1825 y=0.1726 z=0.0668 TDS=0.0080
+E=MG+2 Wyckoff=a TDS=0.0090
+E=C Wyckoff=e y=0.5436 TDS=0.0130
+E=C Wyckoff=f y=0.7637 z=0.6708 TDS=0.0020
+E=O-2 Wyckoff=f y=0.6133 z=0.5230 TDS=0.0050
+E=O-2 Wyckoff=g x=0.1694 y=0.3799 z=0.0982 TDS=0.0290
+E=O-2 Wyckoff=g x=0.1779 y=0.0052 z=0.1515 TDS=0.0380
+E=O-2 Wyckoff=e y=0.6109 TDS=0.0200
+E=O-2 Wyckoff=f y=0.7852 z=0.8040 TDS=0.0090
+E=O-2 Wyckoff=g x=0.3646 y=0.2479 z=0.1039 TDS=0.0090

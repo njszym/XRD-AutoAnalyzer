@@ -1,0 +1,10 @@
+PHASE=Rutile  // 04-003-0648
+MineralName=Rutile //
+Formula=Ti_O2 //
+SpacegroupNo=136 HermannMauguin=P4_2/m2_1/n2/m //
+PARAM=A=0.4594_0.456^0.464 PARAM=C=0.2959_0.295^0.297 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Rutile=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=TI+4 Wyckoff=a TDS=0.007
+E=O-2 Wyckoff=f x=0.306 TDS=0.007

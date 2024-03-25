@@ -1,0 +1,12 @@
+PHASE=CalciumSilicate21Alpha // ICSD_182053
+Reference=ICSD_182053 //
+Formula=Ca2_(Si_O4) //
+SpacegroupNo=186 HermannMauguin=P6_3mc Setting=1 UniqueAxis=c Lattice=Hexagonal //
+PARAM=A=0.547000_0.541530^0.552470 PARAM=B=0.547000_0.541530^0.552470 PARAM=C=0.723000_0.715770^0.730230 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CalciumSilicate21Alpha=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA+2 Wyckoff=b x=0.333300 y=0.666700 z=0.950000 TDS=0.000000
+E=CA+2 Wyckoff=a x=0.000000 y=0.000000 z=0.500000 TDS=0.000000
+E=SI+4 Wyckoff=b x=0.333300 y=0.666700 z=0.340000 TDS=0.000000
+E=O-2 Wyckoff=b x=0.333300 y=0.666700 z=0.560000 TDS=0.000000
+E=O-2 Wyckoff=c x=0.170000 y=0.830000 z=0.250000 TDS=0.000000

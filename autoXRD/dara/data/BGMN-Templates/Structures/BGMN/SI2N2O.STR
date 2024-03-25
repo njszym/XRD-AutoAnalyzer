@@ -1,0 +1,8 @@
+PHASE=Si2N2O //
+SpacegroupNo=36 HermannMauguin=Cmc2_1 //
+PARAM=A=0.8872_0.8783^0.8961 PARAM=B=0.5491_0.5436^0.5546 PARAM=C=0.4850_0.4802^0.4898 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:si2n2o=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=O-2 Wyckoff=a y=0.7873 z=0.7300 TDS=0.0076
+E=SI+4 Wyckoff=b x=0.1767 y=0.1511 z=0.2815 TDS=0.0042
+E=N Wyckoff=b x=0.2191 y=0.1228 z=0.6267 TDS=0.0055

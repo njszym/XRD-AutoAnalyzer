@@ -1,0 +1,8 @@
+PHASE=PbClF_Matlockite //
+SpacegroupNo=129 HermannMauguin=P4/n2_1/m2/m //
+PARAM=A=0.4106_0.4065^0.4147 PARAM=C=0.7226_0.7154^0.7298 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pbclf=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=c z=0.2055 TDS=0.0114
+E=CL-1 Wyckoff=c z=0.6485 TDS=0.0123
+E=F-1 Wyckoff=a TDS=0.0117

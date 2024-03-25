@@ -1,0 +1,35 @@
+PHASE=C3A_Na_cubic //
+SpacegroupNo=198 HermannMauguin=P2_13 //
+PARAM=A=1.5248_1.5172^1.5324 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR6 //
+GOAL:c3nacu=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a x=1.0000 TDS=0.0098
+E=CA+2 Wyckoff=a x=0.5018 TDS=0.0059
+E=(CA+2(0.9100),NA+1(0.0900)) Wyckoff=a x=0.2630 TDS=0.0074
+E=(CA+2(0.7300),NA+1(0.2700)) Wyckoff=a x=0.7438 TDS=0.0069
+E=(CA+2(0.9700),NA+1(0.0300)) Wyckoff=a x=0.3814 TDS=0.0113
+E=(CA+2(0.7600),NA+1(0.2400)) Wyckoff=a x=0.6237 TDS=0.0089
+E=CA+2(0.5000) Wyckoff=b x=0.3720 y=0.1400 z=0.1361 TDS=0.0217
+E=CA+2(0.5000) Wyckoff=b x=0.3678 y=0.1262 z=0.1345 TDS=0.0077
+E=CA+2(0.5000) Wyckoff=b x=0.6232 y=0.1376 z=0.1180 TDS=0.0078
+E=CA+2(0.5000) Wyckoff=b x=0.6431 y=0.1363 z=0.1287 TDS=0.0099
+E=CA+2 Wyckoff=b x=0.3821 y=0.3863 z=0.1213 TDS=0.0076
+E=CA+2 Wyckoff=b x=-0.3800 y=-0.3881 z=-0.1201 TDS=0.0062
+E=NA+1(0.3100) Wyckoff=a x=0.1210 TDS=0.0189
+E=NA+1(0.3100) Wyckoff=a x=0.8750 TDS=0.0756
+E=AL+3 Wyckoff=b x=0.2539 y=0.0134 z=0.0167 TDS=0.0046
+E=AL+3 Wyckoff=b x=-0.2534 y=-0.0129 z=-0.0232 TDS=0.0046
+E=AL+3 Wyckoff=b x=0.2434 y=0.2371 z=0.0053 TDS=0.0054
+E=AL+3 Wyckoff=b x=-0.2445 y=-0.2377 z=-0.0063 TDS=0.0043
+E=O-2 Wyckoff=b x=0.2630 y=0.1264 z=0.0029 TDS=0.0186
+E=O-2 Wyckoff=b x=-0.2658 y=-0.1258 z=-0.0230 TDS=0.0291
+E=O-2 Wyckoff=b x=0.4759 y=0.1327 z=0.2475 TDS=0.0089
+E=O-2 Wyckoff=b x=-0.4952 y=-0.1310 z=-0.2368 TDS=0.0154
+E=O-2 Wyckoff=b x=0.2729 y=0.2765 z=0.1082 TDS=0.0138
+E=O-2 Wyckoff=b x=-0.2629 y=-0.2906 z=-0.1058 TDS=0.0148
+E=O-2 Wyckoff=b x=0.2406 y=0.4114 z=0.3040 TDS=0.0126
+E=O-2 Wyckoff=b x=-0.2281 y=-0.4062 z=-0.2878 TDS=0.0123
+E=O-2 Wyckoff=b x=0.3502 y=-0.0321 z=-0.0274 TDS=0.0109
+E=O-2 Wyckoff=b x=-0.3505 y=0.0233 z=0.0234 TDS=0.0157
+E=O-2 Wyckoff=b x=0.1497 y=-0.0173 z=-0.0171 TDS=0.0102
+E=O-2 Wyckoff=b x=-0.1515 y=0.0150 z=0.0163 TDS=0.0059

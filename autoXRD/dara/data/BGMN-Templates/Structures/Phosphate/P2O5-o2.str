@@ -1,0 +1,14 @@
+PHASE=P2O5ortho2 // 04-005-4669
+Reference=PDF-04-005-4669 //
+Formula=P2_O5 //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/a2_1/m Setting=6 Lattice=Orthorhombic //
+PARAM=A=0.9230_0.91^0.93 PARAM=B=0.7180_0.70^0.73 PARAM=C=0.4940_0.48^0.51  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL=GrainSize(1,1,1) //
+GOAL:P2O5ortho2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=P Wyckoff=c x=0.2440 y=0.2880 z=0.25 TDS=0.02
+E=P Wyckoff=c x=-0.098 y=-0.156 z=0.25 TDS=0.02
+E=O Wyckoff=c x=-0.219 y=-0.011 z=0.25 TDS=0.02
+E=O Wyckoff=c x=-0.142 y=0.3460 z=0.25 TDS=0.02
+E=O Wyckoff=c x=0.0550 y=-0.089 z=0.25 TDS=0.02
+E=O Wyckoff=d x=0.1360 y=0.2820 z=0.00 TDS=0.02

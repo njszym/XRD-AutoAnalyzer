@@ -1,0 +1,27 @@
+PHASE=Clinomimetite //
+SpacegroupNo=14 HermannMauguin=P112_1/b //
+PARAM=A=1.0189_1.0138^1.0240 PARAM=B=2.0372_2.0270^2.0474 PARAM=C=0.7456_0.7419^0.7493 //
+PARAM=GAMMA=119.9_119.4^120.4 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:clinomim=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=e x=0.6694 y=0.4141 z=0.0071 TDS=0.0114
+E=PB Wyckoff=e x=0.3367 y=0.5806 z=0.5059 TDS=0.0113
+E=PB Wyckoff=e x=0.0045 y=0.3756 z=0.2364 TDS=0.0112
+E=PB Wyckoff=e x=0.2527 y=0.3730 z=0.7383 TDS=0.0124
+E=PB Wyckoff=e x=0.2466 y=0.7486 z=0.2723 TDS=0.0108
+E=AS Wyckoff=e x=0.3840 y=0.4545 z=0.2545 TDS=0.0125
+E=AS Wyckoff=e x=0.4103 y=0.2633 z=0.7533 TDS=0.0121
+E=AS Wyckoff=e x=0.0248 y=0.5580 z=0.2449 TDS=0.0097
+E=O Wyckoff=e x=0.4940 y=0.4130 z=0.2500 TDS=0.0153
+E=O Wyckoff=e x=0.3310 y=0.6670 z=0.7600 TDS=0.0215
+E=O Wyckoff=e x=0.8390 y=0.5040 z=0.2490 TDS=0.0123
+E=O Wyckoff=e x=0.4860 y=0.5486 z=0.2320 TDS=0.0058
+E=O Wyckoff=e x=0.6030 y=0.3100 z=0.7420 TDS=0.0302
+E=O Wyckoff=e x=0.1090 y=0.5050 z=0.2780 TDS=0.0114
+E=O Wyckoff=e x=0.2560 y=0.4220 z=0.0890 TDS=0.0189
+E=O Wyckoff=e x=0.6190 y=0.7100 z=0.0520 TDS=0.0324
+E=O Wyckoff=e x=0.0850 y=0.5990 z=0.0500 TDS=0.0226
+E=O Wyckoff=e x=0.2880 y=0.4400 z=0.4490 TDS=0.0246
+E=O Wyckoff=e x=0.6510 y=0.7050 z=0.4150 TDS=0.0023
+E=O Wyckoff=e x=0.0840 y=0.6230 z=0.4070 TDS=0.0111
+E=CL-1 Wyckoff=e x=0.0080 y=0.2505 z=0.4900 TDS=0.0161

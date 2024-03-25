@@ -1,0 +1,26 @@
+PHASE=betaTCP // 04-008-8714
+MineralName=Whitlockite //
+Formula=Ca3_(PO4)2 //
+SpacegroupNo=161 HermannMauguin=R3c //
+PARAM=A=1.0439_1.0335^1.0543 PARAM=C=3.7375_3.7001^3.7749  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:betaTCP=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=b x=-0.2766 y=-0.1421 z=0.1658 TDS=0.00686924
+E=CA Wyckoff=b x=-0.3836 y=-0.1775 z=-0.0336 TDS=0.00673765
+E=CA Wyckoff=b x=-0.2721 y=-0.1482 z=0.0606 TDS=0.01873909
+E=CA(0.5000) Wyckoff=a x=0.0000 y=0.0000 z=-0.0850 TDS=0.01105396
+E=CA Wyckoff=a x=0.0000 y=0.0000 z=-0.2658 TDS=0.01150138
+E=P Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.00886948
+E=O Wyckoff=b x=0.0070 y=-0.1366 z=-0.0136 TDS=0.02092356
+E=O Wyckoff=a x=0.0000 y=0.0000 z=0.0400 TDS=0.02031823
+E=P Wyckoff=b x=-0.3109 y=-0.1365 z=-0.1320 TDS=0.00802728
+E=O Wyckoff=b x=-0.2736 y=-0.0900 z=-0.0926 TDS=0.02473981
+E=O Wyckoff=b x=-0.2302 y=-0.2171 z=-0.1446 TDS=0.02316067
+E=O Wyckoff=b x=-0.2735 y=0.0053 z=-0.1523 TDS=0.00752722
+E=O Wyckoff=b x=-0.4777 y=-0.2392 z=-0.1378 TDS=0.01652830
+E=P Wyckoff=b x=-0.3465 y=-0.1537 z=-0.2333 TDS=0.00526379
+E=O Wyckoff=b x=-0.4031 y=-0.0489 z=-0.2211 TDS=0.01118555
+E=O Wyckoff=b x=-0.4246 y=-0.3056 z=-0.2152 TDS=0.01184353
+E=O Wyckoff=b x=-0.1814 y=-0.0805 z=-0.2233 TDS=0.01076445
+E=O Wyckoff=b x=-0.3696 y=-0.1748 z=-0.2735 TDS=0.01381745

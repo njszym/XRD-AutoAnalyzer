@@ -1,0 +1,9 @@
+<!DOCTYPE ProfexPreset>
+<preset version="20230305" name="Profex-OQ-v230305">
+ <device RelativePath="." MD5hash="22546d023e5a67567b8a64fcab53abb5">pw1800-ads-10mm.geq</device>
+ <device RelativePath="." MD5hash="55524f599dada02c2bd73a0c727667be">pw1800-ads-10mm.ger</device>
+ <template RelativePath="." MD5hash="6a7008c501b546de2b927aa632c25b74">Profex-OQ-v230305.tpl</template>
+ <structures>
+  <structure RelativePath="." MD5hash="5bfa9e99981013a49d8e06e39efc5cf1">LaB6.str</structure>
+ </structures>
+</preset>

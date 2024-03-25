@@ -1,0 +1,10 @@
+PHASE=Fluorite // 04-002-2191
+MineralName=Fluorite //
+Formula=Ca_F2 //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5463_0.54^0.55 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Fluorite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a TDS=0.0041
+E=F-1  Wyckoff=c TDS=0.0062

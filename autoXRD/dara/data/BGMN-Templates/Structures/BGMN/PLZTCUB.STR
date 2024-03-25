@@ -1,0 +1,8 @@
+PHASE=Pb0.9La0.1Zr0.65Ti0.35O3_cubic //
+SpacegroupNo=221 HermannMauguin=P4/m-32/m //
+PARAM=A=0.4078_0.4037^0.4119 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:plztcub=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(PB(0.9000),LA(0.1000)) Wyckoff=a TDS=0.0473
+E=(ZR+4(0.6500),TI+4(0.3500)) Wyckoff=b TDS=0.0093
+E=O-2 Wyckoff=c TDS=0.0357

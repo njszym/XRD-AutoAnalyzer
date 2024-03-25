@@ -1,0 +1,28 @@
+PHASE=Chalcanthite //
+SpacegroupNo=2 HermannMauguin=P-1 //
+PARAM=A=0.6141_0.6080^0.6202 PARAM=B=1.0736_1.0629^1.0843 PARAM=C=0.5986_0.5926^0.6046 //
+PARAM=ALPHA=82.3_81.5^83 PARAM=BETA=107.4_106.5^108.3 PARAM=GAMMA=102.7_102^103.5 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:chalcanthite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+2 Wyckoff=a TDS=0.0100
+E=CU+2 Wyckoff=e TDS=0.0110
+E=S Wyckoff=i x=0.0110 y=0.2870 z=0.6240 TDS=0.0110
+E=O-2 Wyckoff=i x=0.9070 y=0.1520 z=0.6750 TDS=0.0150
+E=O-2 Wyckoff=i x=0.2430 y=0.3180 z=0.7970 TDS=0.0150
+E=O-2 Wyckoff=i x=0.8590 y=0.3730 z=0.6350 TDS=0.0170
+E=O-2 Wyckoff=i x=0.0450 y=0.3000 z=0.3840 TDS=0.0150
+E=O-2 Wyckoff=i x=0.8170 y=0.0740 z=0.1540 TDS=0.0190
+E=O-2 Wyckoff=i x=0.2900 y=0.1180 z=0.1490 TDS=0.0160
+E=O-2 Wyckoff=i x=0.4650 y=0.4060 z=0.2990 TDS=0.0200
+E=O-2 Wyckoff=i x=0.7560 y=0.4160 z=0.0190 TDS=0.0250
+E=O-2 Wyckoff=i x=0.4340 y=0.1250 z=0.6300 TDS=0.0180
+E=H Wyckoff=i x=0.8970 y=0.1410 z=0.2500 TDS=0.0330
+E=H Wyckoff=i x=0.7190 y=0.0110 z=0.2290 TDS=0.0350
+E=H Wyckoff=i x=0.3000 y=0.2020 z=0.0670 TDS=0.0300
+E=H Wyckoff=i x=0.3350 y=0.1280 z=0.3220 TDS=0.0270
+E=H Wyckoff=i x=0.3200 y=0.3780 z=0.3420 TDS=0.0260
+E=H Wyckoff=i x=0.6030 y=0.3940 z=0.4250 TDS=0.0250
+E=H Wyckoff=i x=0.8050 y=0.4000 z=0.8880 TDS=0.0280
+E=H Wyckoff=i x=0.8530 y=0.3840 z=0.1590 TDS=0.0270
+E=H Wyckoff=i x=0.6010 y=0.1320 z=0.6700 TDS=0.0300
+E=H Wyckoff=i x=0.4100 y=0.1960 z=0.6970 TDS=0.0340

@@ -1,0 +1,9 @@
+PHASE=Vaterite //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.4130_0.4089^0.4171 PARAM=C=0.8490_0.8405^0.8575 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:vaterite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a TDS=0.0680
+E=C(0.3300) Wyckoff=h x=0.2900 TDS=0.0680
+E=O(0.3300) Wyckoff=h x=0.1200 TDS=0.0680
+E=O(0.3300) Wyckoff=k x=0.3800 z=0.3800 TDS=0.0680

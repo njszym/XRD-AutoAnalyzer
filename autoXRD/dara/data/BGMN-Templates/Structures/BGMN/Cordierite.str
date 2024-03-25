@@ -1,0 +1,21 @@
+PHASE=Cordierite //
+SpacegroupNo=66 HermannMauguin=C2/c2/c2/m //
+PARAM=A=1.7079_1.6908^1.7250 PARAM=B=0.9730_0.9633^0.9827 PARAM=C=0.9356_0.9262^0.9450 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:cordierite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=k z=0.7498 TDS=0.0050
+E=SI+4 Wyckoff=b TDS=0.0050
+E=SI+4 Wyckoff=l x=0.3074 y=0.4222 TDS=0.0050
+E=AL+3 Wyckoff=l x=0.4492 y=0.1921 TDS=0.0050
+E=SI+4 Wyckoff=l x=0.6352 y=0.2625 TDS=0.0050
+E=O Wyckoff=m x=0.2474 y=0.1029 z=0.1410 TDS=0.0050
+E=O Wyckoff=m x=0.0620 y=0.4160 z=0.1512 TDS=0.0050
+E=O Wyckoff=m x=-0.1732 y=0.3101 z=0.1416 TDS=0.0050
+E=O Wyckoff=l x=0.3777 y=0.3161 TDS=0.0050
+E=O Wyckoff=l x=0.5430 y=0.2524 TDS=0.0050
+E=O Wyckoff=l x=0.6645 y=0.4208 TDS=0.0050
+E=(MG+2(0.95),FE+2(0.0500)) Wyckoff=g x=0.3375 TDS=0.0050
+E=(NA+1(0.0500),CA+2(0.0200)) Wyckoff=c TDS=0.0500
+E=H Wyckoff=m x=0.0000 y=0.2397 z=0.1400 TDS=0.0500
+E=H(0.1400) Wyckoff=m x=0.0174 y=0.0833 z=0.3050 TDS=0.0500
+E=O(0.2800) Wyckoff=g x=0.9730 TDS=0.0050

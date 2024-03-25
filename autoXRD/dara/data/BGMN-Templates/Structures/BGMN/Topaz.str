@@ -1,0 +1,11 @@
+PHASE=Topaz //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.8801_0.8713^0.8889 PARAM=B=0.8404_0.8320^0.8488 PARAM=C=0.4652_0.4605^0.4699 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR2 //
+GOAL:topaz=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=d x=0.1309 y=0.0828 z=0.9030 TDS=0.0034
+E=SI+4 Wyckoff=c x=0.4403 z=0.1028 TDS=0.0029
+E=O-2 Wyckoff=c x=0.5321 z=0.7964 TDS=0.0038
+E=O-2 Wyckoff=c x=0.2560 z=0.0423 TDS=0.0039
+E=O-2 Wyckoff=d x=0.9892 y=0.0924 z=0.2102 TDS=0.0037
+E=F-1 Wyckoff=d x=0.2525 y=0.0561 z=0.5982 TDS=0.0052

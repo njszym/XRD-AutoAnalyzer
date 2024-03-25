@@ -1,0 +1,9 @@
+PHASE=Analcime_cubic //
+SpacegroupNo=230 HermannMauguin=I4_1/a-32/d //
+PARAM=A=1.3730_1.3593^1.3867 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:analcimc=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.6667),AL+3(0.3333)) Wyckoff=g y=0.6623 TDS=0.0055
+E=NA+1(0.6667) Wyckoff=c TDS=0.0286
+E=O-2 Wyckoff=h x=0.1041 y=0.1338 z=0.7220 TDS=0.0211
+E=O-2 Wyckoff=b TDS=0.065

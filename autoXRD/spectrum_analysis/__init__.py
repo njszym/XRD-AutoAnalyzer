@@ -1,11 +1,14 @@
 from scipy.signal import find_peaks, filtfilt, resample
 from tensorflow.keras.utils import custom_object_scope
+from autoXRD.dara import do_refinement_no_saving
 from pymatgen.analysis.diffraction import xrd
 from scipy.ndimage import gaussian_filter1d
 from multiprocessing import Pool, Manager
 from scipy import interpolate as ip
 from pymatgen.core import Structure
+import matplotlib.pyplot as plt
 from skimage import restoration
+from pathlib import Path
 import tensorflow as tf
 from scipy import signal
 from pyts import metrics
@@ -15,6 +18,7 @@ import pymatgen as mg
 import numpy as np
 import warnings
 import random
+import shutil
 import math
 import os
 
@@ -89,6 +93,7 @@ class SpectrumAnalyzer(object):
 
         with custom_object_scope({'CustomDropout': CustomDropout}):
             self.model = tf.keras.models.load_model(self.model_path, compile=False)
+
         self.kdp = KerasDropoutPrediction(self.model)
 
         prediction_list, confidence_list, backup_list, scale_list, spec_list = self.enumerate_routes(spectrum)
@@ -143,8 +148,8 @@ class SpectrumAnalyzer(object):
         # Allow some tolerance (0.2 degrees) in the two-theta range
         if (min(x) > self.min_angle) and np.isclose(min(x), self.min_angle, atol=0.2):
             x = np.concatenate([np.array([self.min_angle]), x])
-       	    y = np.concatenate([np.array([y[0]]), y])
-       	if (max(x) < self.max_angle) and np.isclose(max(x), self.max_angle, atol=0.2):
+            y = np.concatenate([np.array([y[0]]), y])
+        if (max(x) < self.max_angle) and np.isclose(max(x), self.max_angle, atol=0.2):
        	    x = np.concatenate([x, np.array([self.max_angle])])
             y = np.concatenate([y, np.array([y[-1]])])
 
@@ -391,40 +396,38 @@ class SpectrumAnalyzer(object):
                 the for new_normalization constant.
         """
 
-        # Simulate spectrum for predicted compounds
-        pred_y = self.generate_pattern(predicted_cmpd)
+        x_obs = xs = np.linspace(self.min_angle, self.max_angle, 4501)
+        y_obs = np.array(orig_y)
 
-        # Convert to numpy arrays
-        pred_y = np.array(pred_y)
-        orig_y = np.array(orig_y)
+        with open('temp/%s' % self.spectrum_fname, 'w+') as f:
+            for xv, yv in zip(x_obs, y_obs):
+                f.write('%s %s\n' % (xv, yv))
 
-        # Downsample spectra (helps reduce time for DTW)
-        downsampled_res = 0.1 # new resolution: 0.1 degrees
-        num_pts = int((self.max_angle - self.min_angle) / downsampled_res)
-        orig_y = resample(orig_y, num_pts)
-        pred_y = resample(pred_y, num_pts)
+        result = do_refinement_no_saving(
+            pattern_path=Path('temp/%s' % self.spectrum_fname),
+            phase_paths=[
+                Path('%s/%s' % (self.ref_dir, predicted_cmpd))
+            ],
+            instrument_name="Rigaku-Miniflex",
+            phase_params={
+                "gewicht": "SPHAR6",
+                "lattice_range": 0.03,  # 3% lattice strain allowed
+                "k1": "0_0^0.01",
+                "k2": "0_0^0.01",
+                "b1": "0_0^0.02",  # the particle size
+                "rp": 4,
+            }
+        )
 
-        # Calculate window size for DTW
-        allow_shifts = 0.75 # Allow shifts up to 0.75 degrees
-        window_size = int(allow_shifts * num_pts / (self.max_angle - self.min_angle))
+        cmpd_key = predicted_cmpd[:-4] # Remove .cif
+        scaled_spectrum =  result["plot_data"]["structs"][cmpd_key]
 
-        # Get warped spectrum (DTW)
-        distance, path = metrics.dtw(pred_y, orig_y, method='sakoechiba', options={'window_size': window_size}, return_path=True)
-        index_pairs = path.transpose()
-        warped_spectrum = orig_y.copy()
-        for ind1, ind2 in index_pairs:
-            distance = abs(ind1 - ind2)
-            if distance <= window_size:
-                warped_spectrum[ind2] = pred_y[ind1]
-            else:
-                warped_spectrum[ind2] = 0.0
+        scaling_constant = max(scaled_spectrum) / max(y_obs)
+        if scaling_constant > 1:
+            scaling_constant = 1.0
 
-        # Now, upsample spectra back to their original size (4501)
-        warped_spectrum = resample(warped_spectrum, 4501)
-        orig_y = resample(orig_y, 4501)
-
-        # Scale warped spectrum so y-values match measured spectrum
-        scaled_spectrum, scaling_constant = self.scale_spectrum(warped_spectrum, orig_y)
+        # Over-subtract peaks to avoid large residuals
+        scaled_spectrum = 1.25*np.array(scaled_spectrum)
 
         # Subtract scaled spectrum from measured spectrum
         stripped_y = self.strip_spectrum(scaled_spectrum, orig_y)
@@ -458,6 +461,7 @@ class SpectrumAnalyzer(object):
         Returns:
             standard deviation for gaussian kernel
         """
+
         ## Calculate FWHM based on the Scherrer equation
         K = 0.9 ## shape factor
         wavelength = self.calculator.wavelength * 0.1 ## angstrom to nm
@@ -559,7 +563,7 @@ class SpectrumAnalyzer(object):
         """
 
         # Subtract predicted spectrum from measured spectrum
-        stripped_y = orig_y - warped_spectrum
+        stripped_y = np.array(orig_y) - np.array(warped_spectrum)
 
         # Normalize all negative values to 0.0
         fixed_y = []

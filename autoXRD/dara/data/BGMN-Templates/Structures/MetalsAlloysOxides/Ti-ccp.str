@@ -1,0 +1,8 @@
+PHASE=Ti-ccp // 04-016-5468
+Reference=04-016-5468 //
+Formula=Ti //
+SpacegroupNo=229 Setting=1 HermannMauguin=I4/m-32/m Lattice=Cubic //
+PARAM=A=0.331490_0.328175^0.334805  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ticcp=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=TI Wyckoff=a TDS=0.00500000

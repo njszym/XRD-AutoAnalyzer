@@ -1,0 +1,29 @@
+PHASE=Heulandite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.7671_1.7494^1.7848 PARAM=B=1.7875_1.7696^1.8054 PARAM=C=0.7412_0.7338^0.7486 //
+PARAM=BETA=116.4_115.4^117.4 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:heulandite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.7528),AL+3(0.2472)) Wyckoff=j x=0.1794 y=0.1698 z=0.0967 TDS=0.0134
+E=(SI+4(0.7528),AL+3(0.2472)) Wyckoff=j x=0.2886 y=0.0899 z=0.5008 TDS=0.0142
+E=(SI+4(0.7528),AL+3(0.2472)) Wyckoff=j x=0.2917 y=0.3096 z=0.2831 TDS=0.0135
+E=(SI+4(0.7528),AL+3(0.2472)) Wyckoff=j x=0.0646 y=0.2984 z=0.4110 TDS=0.0134
+E=(SI+4(0.7528),AL+3(0.2472)) Wyckoff=g y=0.7869 TDS=0.0140
+E=O-2 Wyckoff=i x=0.6952 z=0.4534 TDS=0.0280
+E=O-2 Wyckoff=j x=0.2313 y=0.1194 z=0.6132 TDS=0.0305
+E=O-2 Wyckoff=j x=0.1833 y=0.1543 z=0.8842 TDS=0.0322
+E=O-2 Wyckoff=j x=0.2385 y=0.1065 z=0.2555 TDS=0.0245
+E=O-2 Wyckoff=h y=0.6741 TDS=0.0340
+E=O-2 Wyckoff=j x=0.0820 y=0.1587 z=0.0626 TDS=0.0222
+E=O-2 Wyckoff=j x=0.3729 y=0.2660 z=0.4508 TDS=0.0326
+E=O-2 Wyckoff=j x=0.0089 y=0.2662 z=0.1842 TDS=0.0278
+E=O-2 Wyckoff=j x=0.2103 y=0.2542 z=0.1783 TDS=0.0264
+E=O-2 Wyckoff=j x=0.1155 y=0.3723 z=0.3988 TDS=0.0264
+E=(NA+1(0.2280),CA+2(0.4400)) Wyckoff=i x=0.8451 z=0.3334 TDS=0.0630
+E=CA+2(0.4840) Wyckoff=i x=0.4598 z=0.7969 TDS=0.0274
+E=(K+1(0.0300),NA+1(0.0970),O(0.8300)) Wyckoff=i x=0.7237 z=0.9900 TDS=0.0990
+E=O-2 Wyckoff=d TDS=0.0790
+E=O-2 Wyckoff=j x=0.4228 y=0.0817 z=0.0307 TDS=0.0540
+E=O-2 Wyckoff=i x=0.9060 z=0.7150 TDS=0.1320
+E=O-2(0.4300) Wyckoff=j x=0.0820 y=0.0050 z=0.8670 TDS=0.1184
+E=O-2 Wyckoff=h y=0.9127 TDS=0.2050

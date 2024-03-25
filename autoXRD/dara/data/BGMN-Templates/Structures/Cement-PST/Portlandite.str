@@ -1,0 +1,11 @@
+PHASE=Portlandite // 04-010-3117
+MineralName=Portlandite //
+Formula=Ca_O2_H2 //
+SpacegroupNo=164 HermannMauguin=P-32/m1 //
+PARAM=A=0.3589_0.3553^0.3625 PARAM=C=0.4911_0.4862^0.4960  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Portlandite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.00247398
+E=O-2 Wyckoff=d x=0.3333 y=0.6667 z=0.7659 TDS=0.00297404
+E=H Wyckoff=d x=0.3333 y=0.6667 z=0.5715 TDS=0.02102884

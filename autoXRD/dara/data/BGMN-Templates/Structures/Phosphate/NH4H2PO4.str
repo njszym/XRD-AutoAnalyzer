@@ -1,0 +1,13 @@
+PHASE=NH4H2PO4 // 01-085-0815
+MineralName=Biphosphammite //
+Formula=(NH4)_H2_(PO4) //
+SpacegroupNo=122 HermannMauguin=I-42d //
+PARAM=A=0.7500_0.7425^0.7575 PARAM=C=0.7549_0.7474^0.7625  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NH4H2PO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=P Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.01463070
+E=N Wyckoff=b x=0.0000 y=0.0000 z=0.5000 TDS=0.02318436
+E=O Wyckoff=e x=0.0843 y=0.1466 z=0.1151 TDS=0.02081565
+E=H Wyckoff=e x=-0.0020 y=0.0890 z=0.5630 TDS=0.02799809
+E=H(0.5000) Wyckoff=e x=0.2500 y=0.1500 z=0.1250 TDS=0.05000336

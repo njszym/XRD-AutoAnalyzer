@@ -1,0 +1,12 @@
+PHASE=Aegirine  //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.9658_0.9561^0.9755 PARAM=B=0.8795_0.8707^0.8883 PARAM=C=0.5294_0.5241^0.5347 //
+PARAM=BETA=107.4_106.5^108.4 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:aegirine=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=e y=0.2999 TDS=0.0097
+E=FE+3 Wyckoff=e y=0.8989 TDS=0.0037
+E=SI+4 Wyckoff=f x=0.2905 y=0.0894 z=0.2351 TDS=0.0028
+E=O-2 Wyckoff=f x=0.1141 y=0.0784 z=0.1380 TDS=0.0038
+E=O-2 Wyckoff=f x=0.3582 y=0.2558 z=0.3001 TDS=0.0053
+E=O-2 Wyckoff=f x=0.3518 y=0.0079 z=0.0118 TDS=0.0052

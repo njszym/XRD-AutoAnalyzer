@@ -1,0 +1,11 @@
+PHASE=Barringerite // amcsd_0013329
+Reference=amcsd_0013329 //
+Formula=Fe2_P //
+SpacegroupNo=189 HermannMauguin=P-62m Setting=1 UniqueAxis=c Lattice=Hexagonal //
+PARAM=A=0.586750_0.580882^0.592618 PARAM=C=0.345810_0.342352^0.349268 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Barringerite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=f x=0.256830 y=0.000000 z=0.000000 TDS=0.004564
+E=FE Wyckoff=g x=0.594610 y=0.000000 z=0.500000 TDS=0.006275
+E=P Wyckoff=c x=0.333333 y=0.666667 z=0.000000 TDS=0.004638
+E=P Wyckoff=b x=0.000000 y=0.000000 z=0.500000 TDS=0.004924

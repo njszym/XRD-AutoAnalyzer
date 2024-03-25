@@ -1,0 +1,17 @@
+PHASE=SiC-5H // 01-072-9272
+Reference=01-072-9272 //
+Formula=Si_C //
+SpacegroupNo=156 Setting=1 HermannMauguin=P3m1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.303000_0.299970^0.306030 PARAM=C=1.237000_1.224630^1.249370  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC5H=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.000000 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.200000 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.400000 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.600000 TDS=0.00200000
+E=SI Wyckoff=c x=2/3 y=1/3 z=0.800000 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.150000 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.350000 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.550000 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.750000 TDS=0.00200000
+E=C Wyckoff=c x=2/3 y=1/3 z=0.950000 TDS=0.00200000

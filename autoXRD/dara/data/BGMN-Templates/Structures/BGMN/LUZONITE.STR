@@ -1,0 +1,9 @@
+PHASE=Luzonite_Sb //
+SpacegroupNo=121 HermannMauguin=I-42m //
+PARAM=A=0.5332_0.5305^0.5359 PARAM=C=1.0570_1.0517^1.0623 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:luzonite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=S Wyckoff=i x=0.2558 z=0.6248 TDS=0.0100
+E=CU+1 Wyckoff=d TDS=0.0157
+E=CU+1 Wyckoff=b TDS=0.0158
+E=(AS(0.6850),SB+5(0.3150)) Wyckoff=a TDS=0.0054

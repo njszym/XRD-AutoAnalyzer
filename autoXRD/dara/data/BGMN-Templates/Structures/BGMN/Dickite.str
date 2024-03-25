@@ -1,0 +1,19 @@
+PHASE=Dickite_Bailey //
+SpacegroupNo=9 //
+PARAM=A=0.5150_0.51^0.52 PARAM=B=0.8940_0.89^0.9 PARAM=C=1.4424_1.435^1.45 //
+PARAM=BETA=96.700_96.0^98.0 //
+RP=3 B1=ANISO^0.01 GEWICHT=SPHAR2 //
+GOAL:dickite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a x=0.0117 y=0.4001 z=0.0405 TDS=0.01000
+E=SI+4 Wyckoff=a x=0.5002 y=0.5732 z=0.0402 TDS=0.01000
+E=AL+3 Wyckoff=a x=0.9154 y=0.2534 z=0.2320 TDS=0.01000
+E=AL+3 Wyckoff=a x=0.4190 y=0.4170 z=0.2306 TDS=0.01000
+E=O-2 Wyckoff=a x=0.9554 y=0.2373 z=0.9939 TDS=0.012000
+E=O-2 Wyckoff=a x=0.2587 y=0.4724 z=0.9942 TDS=0.012000
+E=O-2 Wyckoff=a x=0.7646 y=0.5105 z=0.0058 TDS=0.012000
+E=O-2 Wyckoff=a x=0.0803 y=0.3876 z=0.1523 TDS=0.012000
+E=O-2 Wyckoff=a x=0.5110 y=0.5813 z=0.1526 TDS=0.012000
+E=O-2 Wyckoff=a x=0.5818 y=0.2758 z=0.1574 TDS=0.012000
+E=O-2 Wyckoff=a x=0.2439 y=0.2733 z=0.2948 TDS=0.012000
+E=O-2 Wyckoff=a x=0.7472 y=0.3949 z=0.2981 TDS=0.012000
+E=O-2 Wyckoff=a x=0.3328 y=0.5832 z=0.2963 TDS=0.012000

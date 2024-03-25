@@ -1,0 +1,15 @@
+PHASE=Mullite32 SpacegroupNo=55 //
+PARAM=A=0.75438_0.752^0.757 PARAM=B=0.76942_0.766^0.770 //
+PARAM=C=0.28869_0.286^0.290 //
+RP=4 B1=ANISO^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:mullite32=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,0,0) GOAL=k2(1,0,0) //
+GOAL=GrainSize(0,0,1) GOAL=GrainSize(0,1,0) //
+GOAL=GrainSize(1,0,1) 
+E=AL+3       Wyckoff=a TDS=0.0063
+E=(AL+3(0.54167),SI+4(0.33333)) Wyckoff=h TDS=0.0068 x=0.14901 y=0.34026
+E=(AL+3(0.08333),SI+4(0.04167)) Wyckoff=h TDS=0.0063 x=0.26247 y=0.20529
+E=O-2        Wyckoff=h x=0.3590  y=0.4218 TDS=0.0106
+E=O-2(0.125) Wyckoff=h x=0.4498  y=0.0505 TDS=0.0093
+E=O-2(0.625) Wyckoff=d TDS=0.0156
+E=O-2        Wyckoff=g x=0.1273  y=0.2186 TDS=0.011

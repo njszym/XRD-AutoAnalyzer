@@ -1,0 +1,10 @@
+PHASE=Stibnite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=1.1312_1.1266^1.1356 PARAM=B=0.3835_0.3821^0.3851 PARAM=C=1.1228_1.1184^1.1274 //
+RP=4 PARAM=B1=0_0^0.006 PARAM=k2=0_0^0.000001 GEWICHT=SPHAR4 //
+GOAL:stibnite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SB+3 Wyckoff=c x=0.5294 z=0.1738 TDS=0.0121
+E=SB+3 Wyckoff=c x=0.8505 z=0.9641 TDS=0.0152
+E=S Wyckoff=c x=0.5495 z=0.6230 TDS=0.0135
+E=S Wyckoff=c x=0.8748 z=0.5615 TDS=0.0135
+E=S Wyckoff=c x=0.7077 z=0.3085 TDS=0.0144

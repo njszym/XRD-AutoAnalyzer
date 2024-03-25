@@ -1,0 +1,10 @@
+PHASE=Hematite // amcsd_0014076
+Reference=amcsd_0014076
+Formula=Fe2_O3 //
+SpacegroupNo=167 HermannMauguin=R-32/c Setting=2 Lattice=Rhombohedral //
+PARAM=A=0.542000_0.536580^0.547420 //
+PARAM=GAMMA=55.280000_54.727200^55.832800 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Hematite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=c x=0.355000 y=0.355000 z=0.355000 TDS=0.010000
+E=O Wyckoff=e x=0.542000 y=0.958000 z=0.250000 TDS=0.010000

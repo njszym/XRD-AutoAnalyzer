@@ -1,0 +1,7 @@
+PHASE=Villiaumite //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4633_0.4587^0.4679 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:villiaumite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=a TDS=0.0060
+E=F-1 Wyckoff=b TDS=0.0080

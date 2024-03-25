@@ -1,0 +1,11 @@
+PHASE=Cristobalite // amcsd_0001629
+Reference=amcsd_0001629 //
+MineralName=Cristobalite //
+Formula=Si_O2 //
+SpacegroupNo=92 HermannMauguin=P4_12_12 Setting=1 //
+PARAM=A=0.4972_0.46^0.55 PARAM=C=0.6922_0.6850^0.7000 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Crystobalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a x=0.30028 TDS=0.006397
+E=O-2 Wyckoff=b x=0.2392 y=0.1044 z=0.1787 TDS=0.0129192

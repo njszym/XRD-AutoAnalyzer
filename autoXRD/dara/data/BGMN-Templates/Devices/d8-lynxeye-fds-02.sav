@@ -1,0 +1,172 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Bruker D8
+%    --------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    June 04, 2012
+%
+%    Device Configuration:
+%    - Detector: LynxEye
+%    - Radiation: CuKa, Ni-filtered
+%    - Soller Slits: 2.5°
+%    - Divergence Slit: fixed, 0.2°
+%    - Anti-Scatter Slit: fixed, 2.38°
+%    - Goniometer Radius: 280 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=d8-lynxeye-fds-02.ger
+GEQ=d8-lynxeye-fds-02.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% axial dimension (length, mm)
+FocusH=12
+
+% optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.04
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer radius (mm)
+%-----------------------------------------------------------------------------------------------
+
+R=280
+
+
+%-----------------------------------------------------------------------------------------------
+% Divergence slit
+%-----------------------------------------------------------------------------------------------
+
+% Note: Bruker specifies the divergence slit in °, but BGMN requires the width of the
+% slit in mm. Here we calculate the width from the divergence angle and the distance
+% from the tube. For HSlitR enter any value shorter than the goniometer radius R,
+% and HSlitW will calculate the slit width resulting in a divergence angle of "div" degrees.
+
+% beam divergence (°)
+div=0.2
+
+% distance from sample (mm)
+HSlitR=100
+
+% fixed slit width (mm)
+HSlitW=2*tan(div*pi/360)*(R-HSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% Note: The LynxEye detector has a DetW of 0.075 mm, but this results in wrong crystallite sizes.
+% The value for DetW used here was fitted to a LaB6 pattern to obtain realistic cryst sizes.
+
+% total detector height (mm)
+DetArrayW=14.4
+
+% height of one strip (mm)
+% DetW=0.075
+DetW=0.139
+
+% total detector width (mm)
+DetH=16
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample holder
+%-----------------------------------------------------------------------------------------------
+
+% Note: The diameter was guessed!
+
+% diameter of the sample holder (mm)
+SamplD=27
+
+
+%-----------------------------------------------------------------------------------------------
+% Collimators (Soller slits)
+%-----------------------------------------------------------------------------------------------
+
+% Note: For some manufacturers we have to use half the opening angle given on the soller
+% slits (Bruker), but for others (Panalytical) we have to use the full value. Here soller
+% slits of 2.5° were used, which is 0.0436 radians. We use 0.0436 / 2 = 0.0218 rad.
+
+% primary soller slit (radians)
+PColl=0.0218
+
+% secondary soller slit (radians)
+SColl=0.0218
+
+
+%-----------------------------------------------------------------------------------------------
+% Anti-Scatter slit
+%-----------------------------------------------------------------------------------------------
+
+% Note: An anti-scatter slit of 2.38 was used. I'm assuming it is given in °, and I'm 
+% calculating the opening in mm as a function of a randomly chosen distance.
+
+% opening in degrees
+adiv=2.38
+
+% distance from sample (mm)
+SSlitR=200
+
+% slit width (mm)
+SSlitW=2*tan(adiv*pi/360)*(R-SSlitR)
+
+
+%-----------------------------------------------------------------------------------------------
+% Monochromator and polarization
+%-----------------------------------------------------------------------------------------------
+
+% polarization: none
+POL=1
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=4
+zweiTheta[3]=8
+zweiTheta[4]=13
+zweiTheta[5]=20
+zweiTheta[6]=30
+zweiTheta[7]=42
+zweiTheta[8]=56
+zweiTheta[9]=76
+zweiTheta[10]=90
+zweiTheta[11]=105
+zweiTheta[12]=120
+zweiTheta[13]=135
+zweiTheta[14]=150
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=150
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=2
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

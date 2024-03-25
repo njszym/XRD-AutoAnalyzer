@@ -1,0 +1,9 @@
+PHASE=Graphite-3R // 04-007-2076
+MineralName=Graphite-3R //
+Formula=C //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.2461_0.2400^0.2500 PARAM=C=1.0060_0.9960^1.0160 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Graphite3r=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=c z=0.16667

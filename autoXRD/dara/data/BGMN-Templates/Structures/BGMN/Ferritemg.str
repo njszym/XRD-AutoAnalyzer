@@ -1,0 +1,9 @@
+PHASE=Ferritemg //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.8398_0.8314^0.8482 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:ferritemg=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2(0.2900),FE+3(0.7100)) Wyckoff=a TDS=0.0107
+E=(MG+2(0.5550),FE+3(0.4450)) Wyckoff=d TDS=0.0160
+E=MG+2(0.0750) Wyckoff=c TDS=0.0090
+E=O-2 Wyckoff=e x=0.8709 TDS=0.0129

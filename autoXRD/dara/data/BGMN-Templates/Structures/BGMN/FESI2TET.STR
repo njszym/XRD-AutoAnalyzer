@@ -1,0 +1,7 @@
+PHASE=Iron_Disilicide_tet //
+SpacegroupNo=123 HermannMauguin=P4/m2/m2/m //
+PARAM=A=0.2684_0.2657^0.2711 PARAM=C=0.5128_0.5077^0.5179 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.001 GEWICHT=SPHAR4 TDS=0.0040 //
+GOAL:fesi2tet=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE Wyckoff=a
+E=SI Wyckoff=h z=0.7300

@@ -1,0 +1,14 @@
+PHASE=Titanite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.7455_0.7381^0.7530 PARAM=B=0.8714_0.8627^0.8801 PARAM=C=0.7068_0.6997^0.7139 //
+PARAM=BETA=126.359_125.4^127.3 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:titanite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.7487 y=0.4184 z=0.9926 TDS=0.0126
+E=TI+4 Wyckoff=e x=0.2502 y=0.2557 z=0.7626 TDS=0.0060
+E=SI+4 Wyckoff=e x=0.7507 y=0.4327 z=0.5001 TDS=0.0040
+E=O-2 Wyckoff=e x=0.2502 y=0.3212 z=0.0000 TDS=0.0070
+E=O-2 Wyckoff=e x=0.5671 y=0.3175 z=0.4766 TDS=0.0075
+E=O-2 Wyckoff=e x=0.9374 y=0.1851 z=0.0244 TDS=0.0060
+E=O-2 Wyckoff=e x=0.3552 y=0.4586 z=0.7365 TDS=0.0052
+E=O-2 Wyckoff=e x=0.1480 y=0.0381 z=0.7658 TDS=0.0073

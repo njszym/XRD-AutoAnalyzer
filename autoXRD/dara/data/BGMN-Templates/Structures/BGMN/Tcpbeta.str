@@ -1,0 +1,23 @@
+PHASE=TCP_beta //
+SpacegroupNo=161 HermannMauguin=R3c //
+PARAM=A=1.0439_1.0335^1.0543 PARAM=C=3.7375_3.7001^3.7749 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:tcpbeta=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=b x=-0.2766 y=-0.1421 z=0.1658 TDS=0.0099
+E=CA+2 Wyckoff=b x=-0.3836 y=-0.1775 z=-0.0336 TDS=0.0106
+E=CA+2 Wyckoff=b x=-0.2721 y=-0.1482 z=0.0606 TDS=0.0213
+E=CA+2(0.4910) Wyckoff=a z=0.4150 TDS=0.0316
+E=CA+2(0.9990) Wyckoff=a z=0.2342 TDS=0.0133
+E=P Wyckoff=a z=1.0000 TDS=0.0121
+E=O-2 Wyckoff=b x=0.0070 y=-0.1366 z=-0.0136 TDS=0.0121
+E=O-2 Wyckoff=a z=0.5400 TDS=0.0027
+E=P Wyckoff=b x=-0.3109 y=-0.1365 z=-0.1320 TDS=0.0116
+E=O-2 Wyckoff=b x=-0.2736 y=-0.0900 z=-0.0926 TDS=0.0029
+E=O-2 Wyckoff=b x=-0.2302 y=-0.2171 z=-0.1446 TDS=0.0024
+E=O-2 Wyckoff=b x=-0.2735 y=0.0053 z=-0.1523 TDS=0.0011
+E=O-2 Wyckoff=b x=-0.4777 y=-0.2392 z=-0.1378 TDS=0.0020
+E=P Wyckoff=b x=-0.3465 y=-0.1537 z=-0.2333 TDS=0.0091
+E=O-2 Wyckoff=b x=-0.4031 y=-0.0489 z=-0.2211 TDS=0.0012
+E=O-2 Wyckoff=b x=-0.4246 y=-0.3056 z=-0.2152 TDS=0.0015
+E=O-2 Wyckoff=b x=-0.1814 y=-0.0805 z=-0.2233 TDS=0.0010
+E=O-2 Wyckoff=b x=-0.3696 y=-0.1748 z=-0.2735 TDS=0.0015

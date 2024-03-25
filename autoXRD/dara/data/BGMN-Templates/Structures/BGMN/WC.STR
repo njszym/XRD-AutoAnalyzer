@@ -1,0 +1,7 @@
+PHASE=Tungsten_Carbide  //
+SpacegroupNo=187 HermannMauguin=P-6m2 //
+PARAM=A=0.2907_0.2878^0.2936 PARAM=C=0.2837_0.2809^0.2865 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:wc=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=W Wyckoff=a TDS=0.0111
+E=C Wyckoff=f TDS=0.0111

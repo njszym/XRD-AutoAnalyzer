@@ -1,0 +1,8 @@
+PHASE=Scheelite //
+SpacegroupNo=88 OriginChoice=2 HermannMauguin=I4_1/a //
+PARAM=A=0.5243_0.5191^0.5295 PARAM=C=1.1374_1.1260^1.1488 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:scheelite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=b TDS=0.0056
+E=W Wyckoff=a TDS=0.0046
+E=O-2 Wyckoff=f x=0.1507 y=0.0086 z=0.2106 TDS=0.0077

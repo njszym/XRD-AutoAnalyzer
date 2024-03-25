@@ -1,0 +1,8 @@
+PHASE=PYROPE //
+SpacegroupNo=230 HermannMauguin=I4_1/a-32/d //
+PARAM=A=1.1456_1.1227^1.1685 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 GOAL:pyrope=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=c TDS=0.0070
+E=AL+3 Wyckoff=a TDS=0.0031
+E=SI+4 Wyckoff=d TDS=0.0032
+E=O-2 Wyckoff=h x=0.0328 y=0.0502 z=0.6534 TDS=0.0035

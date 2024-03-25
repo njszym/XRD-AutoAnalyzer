@@ -1,0 +1,8 @@
+PHASE=Groutite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=1.0760_1.0652^1.0868 PARAM=B=0.2890_0.2861^0.2919 PARAM=C=0.4580_0.4534^0.4626 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR2 //
+GOAL:groutite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+3 Wyckoff=c x=0.1400 z=0.9640 TDS=0.0080
+E=O-2 Wyckoff=c x=0.8000 z=0.2700 TDS=0.0090
+E=O-2 Wyckoff=c x=0.9500 z=0.7900 TDS=0.0100

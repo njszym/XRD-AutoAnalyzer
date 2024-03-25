@@ -1,0 +1,12 @@
+PHASE=Kieserite //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.6891_0.6822^0.6960 PARAM=B=0.7624_0.7548^0.7700 PARAM=C=0.7645_0.7569^0.7721 //
+PARAM=BETA=117.0_116^118 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:kieserite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=b TDS=0.0075
+E=S Wyckoff=e y=0.1549 TDS=0.0062
+E=O-2 Wyckoff=f x=0.1761 y=0.0447 z=0.3943 TDS=0.0115
+E=O-2 Wyckoff=f x=0.0916 y=0.2676 z=0.1491 TDS=0.0101
+E=O-2 Wyckoff=e y=0.6353 TDS=0.0100
+E=H Wyckoff=f x=0.1200 y=0.6930 z=0.2960 TDS=0.0079

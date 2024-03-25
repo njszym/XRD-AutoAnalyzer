@@ -1,0 +1,10 @@
+PHASE=MoNi3 //
+Reference=04-001-1604 //
+Formula=Mo_Ni3 //
+SpacegroupNo=59 Setting=1 HermannMauguin=P2_1/m2_1/m2/n Lattice=Orthorhombic OriginChoice=1 //
+PARAM=A=0.506400_0.501336^0.511464 PARAM=B=0.422400_0.418176^0.426624 PARAM=C=0.444800_0.440352^0.449248  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:MoNi3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=MO Wyckoff=a x=0.000000 y=0.000000 z=0.656000 TDS=0.00000000
+E=NI Wyckoff=b x=0.000000 y=0.500000 z=0.344000 TDS=0.00000000
+E=NI Wyckoff=f x=0.250000 y=0.000000 z=0.156000 TDS=0.00000000

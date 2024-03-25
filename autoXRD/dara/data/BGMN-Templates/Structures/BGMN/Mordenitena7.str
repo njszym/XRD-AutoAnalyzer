@@ -1,0 +1,25 @@
+PHASE=MordeniteNa7  //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m //
+PARAM=A=1.8121_1.7940^1.8302 PARAM=B=2.0517_2.0312^2.0722 PARAM=C=0.7544_0.7469^0.7619 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:mordeniteNa7=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.8360),AL+3(0.1640)) Wyckoff=h x=0.2011 y=0.4279 z=0.5380 TDS=0.0028
+E=(SI+4(0.8360),AL+3(0.1640)) Wyckoff=h x=0.1967 y=0.1920 z=0.5419 TDS=0.0033
+E=(SI+4(0.8360),AL+3(0.1640)) Wyckoff=g x=0.4123 y=0.8853 TDS=0.0027
+E=(SI+4(0.8360),AL+3(0.1640)) Wyckoff=g x=0.4144 y=0.7276 TDS=0.0028
+E=O-2 Wyckoff=h x=0.1234 y=0.4154 z=0.4326 TDS=0.0047
+E=O-2 Wyckoff=h x=0.1229 y=0.1943 z=0.4251 TDS=0.0043
+E=O-2 Wyckoff=h x=0.2648 y=0.3784 z=0.4894 TDS=0.0035
+E=O-2 Wyckoff=g x=0.4046 y=0.8061 TDS=0.0035
+E=O-2 Wyckoff=g x=0.6698 y=0.3052 TDS=0.0043
+E=O-2 Wyckoff=g x=0.6774 y=0.0817 TDS=0.0042
+E=O-2 Wyckoff=e x=0.7458 TDS=0.0036
+E=O-2 Wyckoff=d TDS=0.0045
+E=O-2 Wyckoff=c y=0.4089 TDS=0.0034
+E=O-2 Wyckoff=c y=0.2050 TDS=0.0020
+E=O-2(0.3600) Wyckoff=c y=0.5640 TDS=0.0100
+E=O-2(0.1300) Wyckoff=g x=0.0750 y=0.6790 TDS=0.0100
+E=(O(0.5200),NA+1(0.4300)) Wyckoff=c y=0.8190 TDS=0.0100
+E=(O(0.4400),NA+1(0.5600)) Wyckoff=f y=0.1080 z=0.5300 TDS=0.0100
+E=O-2(0.2600) Wyckoff=g x=0.0950 y=0.0190 TDS=0.0100
+E=NA+1(0.4000) Wyckoff=b TDS=0.0100

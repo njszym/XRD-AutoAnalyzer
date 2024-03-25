@@ -1,0 +1,17 @@
+PHASE=Hypersthene // amcsd_0018104
+Reference=amcsd_0018104 //
+Formula=(Mg.7_Fe.3)_Si_O3 //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a Setting=5 Lattice=Orthorhombic //
+PARAM=A=1.820000_1.801800^1.838200 PARAM=B=0.886000_0.877140^0.894860 PARAM=C=0.520000_0.514800^0.525200 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Hypersthene=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(FE(0.3000),MG(0.7000)) Wyckoff=c x=0.130000 y=0.330000 z=0.370000 TDS=0.010000
+E=(FE(0.3000),MG(0.7000)) Wyckoff=c x=0.130000 y=0.960000 z=0.370000 TDS=0.010000
+E=O Wyckoff=c x=0.060000 y=0.140000 z=0.200000 TDS=0.010000
+E=O Wyckoff=c x=0.060000 y=0.500000 z=0.200000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=c x=0.050000 y=0.750000 z=0.050000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=c x=0.190000 y=0.350000 z=0.060000 TDS=0.010000
+E=O Wyckoff=c x=0.190000 y=0.010000 z=0.050000 TDS=0.010000
+E=O Wyckoff=c x=0.200000 y=0.750000 z=0.300000 TDS=0.010000 // check Wyckoff
+E=SI Wyckoff=c x=0.030000 y=0.650000 z=0.290000 TDS=0.010000
+E=SI Wyckoff=c x=0.220000 y=0.850000 z=0.040000 TDS=0.010000

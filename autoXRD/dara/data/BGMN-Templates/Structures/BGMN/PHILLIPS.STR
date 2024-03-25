@@ -1,0 +1,26 @@
+PHASE=Phillipsite  //
+SpacegroupNo=11 HermannMauguin=P12_1/m1 //
+PARAM=A=0.9865_0.9816^0.9914 PARAM=B=1.4300_1.4229^1.4371 PARAM=C=0.8668_0.8625^0.8711 //
+PARAM=BETA=124.2_123.2^125.2 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:phillips=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.6660),AL+3(0.3330)) Wyckoff=f x=0.7362 y=0.0248 z=0.2805 TDS=0.0108
+E=(SI+4(0.6660),AL+3(0.3330)) Wyckoff=f x=0.4206 y=0.1409 z=0.0019 TDS=0.0106
+E=(SI+4(0.6660),AL+3(0.3330)) Wyckoff=f x=0.0604 y=0.0078 z=0.2844 TDS=0.0111
+E=(SI+4(0.6660),AL+3(0.3330)) Wyckoff=f x=0.1204 y=0.1396 z=0.0421 TDS=0.0114
+E=O-2 Wyckoff=f x=0.1335 y=0.0976 z=0.2289 TDS=0.0204
+E=O-2 Wyckoff=f x=0.6445 y=0.5766 z=0.1878 TDS=0.0194
+E=O-2 Wyckoff=f x=0.6100 y=0.1130 z=0.1728 TDS=0.0189
+E=O-2 Wyckoff=f x=0.0254 y=0.9154 z=0.1494 TDS=0.0185
+E=O-2 Wyckoff=f x=0.8957 y=0.0440 z=0.2713 TDS=0.0206
+E=O-2 Wyckoff=f x=0.3022 y=0.3738 z=0.0783 TDS=0.0232
+E=O-2 Wyckoff=f x=0.7872 y=0.4795 z=0.4982 TDS=0.0190
+E=O-2 Wyckoff=e x=0.4186 z=0.9384 TDS=0.0194
+E=O-2 Wyckoff=e x=0.0665 z=0.0196 TDS=0.0212
+E=K+1 Wyckoff=e x=0.8480 z=0.2076 TDS=0.0411
+E=CA+2(0.4100) Wyckoff=f x=0.6080 y=0.6262 z=0.4401 TDS=0.0267
+E=O-2 Wyckoff=e x=0.2449 z=0.5267 TDS=0.0690
+E=O-2 Wyckoff=e x=0.8448 z=0.5618 TDS=0.0753
+E=O-2 Wyckoff=f x=0.3208 y=0.8525 z=0.1740 TDS=0.0863
+E=O-2 Wyckoff=e x=0.5085 z=0.4384 TDS=0.2125
+E=O-2 Wyckoff=d TDS=0.1461

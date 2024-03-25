@@ -1,0 +1,11 @@
+PHASE=SiC6H //
+SpacegroupNo=186 HermannMauguin=P6_3mc //
+PARAM=A=0.3081_0.3050^0.3112 PARAM=C=1.5117_1.4966^1.5268 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:sic6h=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI Wyckoff=a z=1.0000 TDS=0.0018
+E=SI Wyckoff=b z=0.6667 TDS=0.0018
+E=SI Wyckoff=b z=0.3333 TDS=0.0018
+E=C Wyckoff=a z=0.6250 TDS=0.0030
+E=C Wyckoff=b z=0.7919 TDS=0.0030
+E=C Wyckoff=b z=0.4585 TDS=0.0030

@@ -1,0 +1,23 @@
+PHASE=SiC-16H // 01-089-2216
+Reference=01-089-2216 //
+Formula=Si_C //
+SpacegroupNo=186 Setting=1 HermannMauguin=P6_3mc Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.307300_0.304227^0.310373 PARAM=C=4.020800_3.980592^4.061008  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC16H=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.000000 TDS=0.00200000
+E=SI Wyckoff=b x=2/3 y=1/3 z=0.062500 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.125000 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.187500 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.250000 TDS=0.00200000
+E=SI Wyckoff=b x=2/3 y=1/3 z=0.312500 TDS=0.00200000
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.375000 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.437500 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.046870 TDS=0.00200000
+E=C Wyckoff=b x=2/3 y=1/3 z=0.109370 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.171870 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.234370 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.296870 TDS=0.00200000
+E=C Wyckoff=b x=2/3 y=1/3 z=0.359370 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.421870 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.484370 TDS=0.00200000

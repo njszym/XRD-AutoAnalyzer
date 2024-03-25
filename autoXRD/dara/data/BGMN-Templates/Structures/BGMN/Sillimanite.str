@@ -1,0 +1,12 @@
+PHASE=Sillimanite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.7672_0.7595^0.7749 PARAM=B=0.5771_0.5713^0.5829 PARAM=C=0.7484_0.7409^0.7559 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:sillimanite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=a TDS=0.0017
+E=(AL+3(0.9100),SI+4(0.0900)) Wyckoff=c x=0.8433 z=0.3572 TDS=0.0024
+E=(SI+4(0.9100),AL+3(0.0900)) Wyckoff=c x=0.6588 z=0.8476 TDS=0.0022
+E=O-2 Wyckoff=c x=0.5931 z=0.6393 TDS=0.0013
+E=O-2 Wyckoff=c x=0.9361 z=0.1446 TDS=0.0018
+E=O-2 Wyckoff=c x=0.9965 z=0.5217 TDS=0.0069
+E=O-2 Wyckoff=d x=0.2222 y=0.5131 z=0.1256 TDS=0.0026

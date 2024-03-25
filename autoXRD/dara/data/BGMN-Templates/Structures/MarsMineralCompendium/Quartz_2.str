@@ -1,0 +1,9 @@
+PHASE=Quartz // amcsd_0011008
+Reference=amcsd_0011008
+Formula=Si_O2 //
+SpacegroupNo=152 HermannMauguin=P3_121 Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.477500_0.472725^0.482275 PARAM=C=0.530460_0.525155^0.535765 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Quartz=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=c x=0.408000 y=0.288100 z=0.896700 TDS=0.008510
+E=SI Wyckoff=c x=0.457000 y=0.000000 z=0.000000 TDS=0.002588 // check Wyckoff

@@ -1,0 +1,14 @@
+PHASE=Alunite // amcsd_0018984
+Reference=amcsd_0018984 //
+Formula=K.876_Na.071_H6.159_O14.053_Al2.964_S2 //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.697490_0.690515^0.704465 PARAM=C=1.731500_1.714185^1.748815 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Alunite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AL(0.9880) Wyckoff=d x=0.500000 y=0.000000 z=0.500000 TDS=0.004737
+E=H Wyckoff=h x=0.187900 y=0.812100 z=0.116500 TDS=0.023687
+E=(H(0.1372),K(0.7558),NA(0.0613),O(0.0457)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010264
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.386660 TDS=0.008685
+E=O Wyckoff=h x=0.218230 y=0.781770 z=0.940030 TDS=0.007106
+E=O Wyckoff=h x=0.126040 y=0.873960 z=0.140240 TDS=0.006317
+E=S Wyckoff=c x=0.000000 y=0.000000 z=0.302820 TDS=0.004737

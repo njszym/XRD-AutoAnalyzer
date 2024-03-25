@@ -1,0 +1,43 @@
+PHASE=Dickite_disordered //
+SpacegroupNo=9 //
+PARAM=A=0.5150_0.51^0.52 PARAM=B=0.8940_0.89^0.9 PARAM=C=1.4424_1.435^1.45 //
+PARAM=BETA=96.700_96.0^97.4 //
+RefMult=2 GEWICHT=SPHAR2 RP=4 //
+PARAM=g1=0.5_0^1 // geordnete/ungeordnete Dom"anen
+GEWICHT[1]=g1*GEWICHT GEWICHT[2]=(1-g1)*GEWICHT
+GOAL:Dickitedis=GEWICHT //
+b10=ANISOLIN^0.03 //
+PARAM=cb1=0.1_0.01^0.5 //
+PARAM=b11=0.02^0.3_0.01 //
+c1[2]==1 c1[1]=cb1 //
+c12sqr==1 //
+c2==1 //
+PARAM=c3=0_-1^1 //
+PARAM=k2=0_0^0.0001 // Stress
+PARAM=theta=0 phi=0 PARAM=tau=0.2_-0.3^0.4 //
+// tau in Kristallkoordinaten
+taua==tau*cos(theta)*cos(phi) //
+taub==tau*cos(theta)*sin(phi) //
+tauc==tau*sin(theta) //
+pi==2*acos(0) //
+sinBETA==sin(BETA*pi/180) //
+cosBETA==cos(BETA*pi/180) //
+K13==-cosBETA/A //
+K33==1/C //
+B1=cat(hklK==h*K13+l*K33,hkltau==h*taua+k*taub+l*tauc,b1k==K33*sqr(hkltau),
+B2==k2*sqr(sk)+sqr(sqrt(sqr(sk)+sqrt(c12sqr)*sqr(c1[iref]*ifthenelse(mod(k,3),b11+b1k,b1k)))-sk),
+DELTAsk==sqrt(sqr(sk)+c2*sqr(c1[iref]*ifthenelse(mod(k,3),b11+b1k,b1k)))-sk+c3*c1[iref]*K33*hklK*hkltau/sk,b10+c1[iref]*ifthenelse(mod(k,3),b11+b1k,b1k)*abs(hklK)/sk)
+GOAL=taua GOAL=taub GOAL=tauc
+E=SI+4 Wyckoff=a x=0.0117 y=0.4001 z=0.0405 TDS=0.01000
+E=SI+4 Wyckoff=a x=0.5002 y=0.5732 z=0.0402 TDS=0.01000
+E=AL+3 Wyckoff=a x=0.9154 y=0.2534 z=0.2320 TDS=0.01000
+E=AL+3 Wyckoff=a x=0.4190 y=0.4170 z=0.2306 TDS=0.01000
+E=O-2 Wyckoff=a x=0.9554 y=0.2373 z=0.9939 TDS=0.012000
+E=O-2 Wyckoff=a x=0.2587 y=0.4724 z=0.9942 TDS=0.012000
+E=O-2 Wyckoff=a x=0.7646 y=0.5105 z=0.0058 TDS=0.012000
+E=O-2 Wyckoff=a x=0.0803 y=0.3876 z=0.1523 TDS=0.012000
+E=O-2 Wyckoff=a x=0.5110 y=0.5813 z=0.1526 TDS=0.012000
+E=O-2 Wyckoff=a x=0.5818 y=0.2758 z=0.1574 TDS=0.012000
+E=O-2 Wyckoff=a x=0.2439 y=0.2733 z=0.2948 TDS=0.012000
+E=O-2 Wyckoff=a x=0.7472 y=0.3949 z=0.2981 TDS=0.012000
+E=O-2 Wyckoff=a x=0.3328 y=0.5832 z=0.2963 TDS=0.012000

@@ -1,0 +1,27 @@
+PHASE=Whewellite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.6290_0.6227^0.6353 PARAM=B=1.4583_1.4437^1.4729 PARAM=C=1.0116_1.0015^1.0217 //
+PARAM=BETA=109.5_109^110 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR2 //
+GOAL:whewellite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.9676 y=0.1243 z=0.0546 TDS=0.0067
+E=CA+2 Wyckoff=e x=0.9968 y=0.1236 z=0.4357 TDS=0.0066
+E=C Wyckoff=e x=0.9832 y=0.3201 z=0.2452 TDS=0.0080
+E=C Wyckoff=e x=1.0009 y=0.4270 z=0.2492 TDS=0.0077
+E=C Wyckoff=e x=0.5189 y=0.1266 z=0.1812 TDS=0.0107
+E=C Wyckoff=e x=0.4505 y=0.1173 z=0.3131 TDS=0.0108
+E=O-2 Wyckoff=e x=0.9756 y=0.2826 z=0.1322 TDS=0.0116
+E=O-2 Wyckoff=e x=1.0066 y=0.4659 z=0.1395 TDS=0.0114
+E=O-2 Wyckoff=e x=0.9799 y=0.2819 z=0.3550 TDS=0.0117
+E=O-2 Wyckoff=e x=1.0073 y=0.4658 z=0.3614 TDS=0.0121
+E=O-2 Wyckoff=e x=0.3614 y=0.1418 z=0.0690 TDS=0.0220
+E=O-2 Wyckoff=e x=0.7245 y=0.1227 z=0.1974 TDS=0.0116
+E=O-2 Wyckoff=e x=0.2438 y=0.1229 z=0.2957 TDS=0.0131
+E=O-2 Wyckoff=e x=0.6073 y=0.1068 z=0.4264 TDS=0.0224
+E=O-2(0.8500) Wyckoff=e x=0.3932 y=0.3459 z=0.1022 TDS=0.0181
+E=O-2(0.8600) Wyckoff=e x=0.5913 y=0.3829 z=0.3908 TDS=0.0448
+E=O-2(0.1500) Wyckoff=e x=0.3880 y=0.3960 z=0.0990 TDS=0.018
+E=O-2(0.1400) Wyckoff=e x=0.5840 y=0.4090 z=0.3920 TDS=0.045
+E=H(0.8500) Wyckoff=e x=0.4870 y=0.3720 z=0.0510 TDS=0.0500
+E=H(0.8600) Wyckoff=e x=0.5100 y=0.3640 z=0.4260 TDS=0.0500
+E=H(0.8600) Wyckoff=e x=0.5300 y=0.3670 z=0.3200 TDS=0.0500

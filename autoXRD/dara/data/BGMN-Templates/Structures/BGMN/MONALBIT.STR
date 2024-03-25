@@ -1,0 +1,14 @@
+PHASE=Plagioclase_Monalbite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.8274_0.8191^0.8357 PARAM=B=1.2991_1.2861^1.3121 PARAM=C=0.7144_0.7073^0.7215 //
+PARAM=BETA=116.1_115.1^117.1 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:monalbit=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=i x=0.7211 z=0.8622 TDS=0.1260
+E=(SI+4(0.7200),AL+3(0.2800)) Wyckoff=j x=0.0081 y=0.1784 z=0.2233 TDS=0.0247
+E=(SI+4(0.7800),AL+3(0.2200)) Wyckoff=j x=0.6959 y=0.1163 z=0.3420 TDS=0.0249
+E=O-2 Wyckoff=g y=0.8607 TDS=0.0460
+E=O-2 Wyckoff=i x=0.3937 z=0.7165 TDS=0.0357
+E=O-2 Wyckoff=j x=0.8233 y=0.1350 z=0.2252 TDS=0.0534
+E=O-2 Wyckoff=j x=0.0257 y=0.3044 z=0.2535 TDS=0.0434
+E=O-2 Wyckoff=j x=0.1891 y=0.1229 z=0.4049 TDS=0.0478

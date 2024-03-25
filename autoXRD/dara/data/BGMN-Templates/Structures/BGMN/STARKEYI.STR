@@ -1,0 +1,24 @@
+PHASE=Starkeyite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.7905_0.7865^0.7945 PARAM=B=1.3604_1.3536^1.3672 PARAM=C=0.9811_0.9762^0.9860 //
+PARAM=BETA=142.88_142.3^143.3 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:starkeyi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=e x=0.1519 y=0.1028 z=0.9306 TDS=0.0110
+E=S Wyckoff=e x=0.6302 y=0.1068 z=0.8043 TDS=0.0080
+E=O Wyckoff=e x=0.7537 y=0.0461 z=0.9942 TDS=0.0130
+E=O Wyckoff=e x=0.7539 y=0.0772 z=0.7515 TDS=0.0130
+E=O Wyckoff=e x=0.3244 y=0.0911 z=0.6017 TDS=0.0130
+E=O Wyckoff=e x=0.6855 y=0.2112 z=0.8710 TDS=0.0130
+E=O Wyckoff=e x=0.0036 y=0.0748 z=0.6445 TDS=0.0180
+E=O Wyckoff=e x=0.3192 y=0.1394 z=0.2282 TDS=0.0180
+E=O Wyckoff=e x=0.5498 y=0.1273 z=0.1093 TDS=0.0180
+E=O Wyckoff=e x=0.0417 y=0.2491 z=0.8222 TDS=0.0180
+E=H Wyckoff=e x=0.1250 y=0.0700 z=0.6400 TDS=0.0240
+E=H Wyckoff=e x=0.8790 y=0.0170 z=0.5560 TDS=0.0240
+E=H Wyckoff=e x=0.4100 y=0.1980 z=0.3180 TDS=0.0240
+E=H Wyckoff=e x=0.3330 y=0.0980 z=0.3160 TDS=0.0240
+E=H Wyckoff=e x=0.6970 y=0.1710 z=0.2340 TDS=0.0240
+E=H Wyckoff=e x=0.6120 y=0.0960 z=0.0650 TDS=0.0240
+E=H Wyckoff=e x=0.9530 y=0.2420 z=0.6780 TDS=0.0240
+E=H Wyckoff=e x=0.1390 y=0.1900 z=0.3800 TDS=0.0240

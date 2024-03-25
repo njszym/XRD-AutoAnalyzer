@@ -1,0 +1,11 @@
+PHASE=Gehlenite //
+SpacegroupNo=113 HermannMauguin=P-42_1m //
+PARAM=A=0.7677_0.7600^0.7754 PARAM=C=0.5059_0.5008^0.5110 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:gehlenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.8387 z=0.4884 TDS=0.0120
+E=AL+3 Wyckoff=a TDS=0.0075
+E=(AL+3(0.5000),SI+4(0.5000)) Wyckoff=e x=0.6431 z=0.0437 TDS=0.0085
+E=O-2 Wyckoff=c z=0.8233 TDS=0.0077
+E=O-2 Wyckoff=e x=0.6430 z=0.7165 TDS=0.0046
+E=O-2 Wyckoff=f x=0.0877 y=0.1673 z=0.8072 TDS=0.0111

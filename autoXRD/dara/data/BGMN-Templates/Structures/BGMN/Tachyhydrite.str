@@ -1,0 +1,14 @@
+PHASE=Tachyhydrite  //
+SpacegroupNo=148 HermannMauguin=R-3 //
+PARAM=A=1.0136_1.0085^1.0187 PARAM=C=1.7318_1.7231^1.7405 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:tachyhydrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a TDS=0.0252
+E=MG+2 Wyckoff=c z=0.6757 TDS=0.0247
+E=CL-1 Wyckoff=f x=0.1780 y=-0.0688 z=0.0926 TDS=0.0337
+E=O-2 Wyckoff=f x=0.1882 y=0.0700 z=0.2548 TDS=0.02
+E=O-2 Wyckoff=f x=-0.1897 y=-0.0628 z=0.3920 TDS=0.02
+E=H Wyckoff=f x=0.1800 y=0.0400 z=0.2060 TDS=0.2369
+E=H Wyckoff=f x=0.2700 y=0.1800 z=0.2630 TDS=0.1579
+E=H Wyckoff=f x=-0.2000 y=0.0200 z=0.4160 TDS=0.0790
+E=H Wyckoff=f x=-0.2300 y=-0.1600 z=0.4170 TDS=0.2369

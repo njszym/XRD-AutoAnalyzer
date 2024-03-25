@@ -1,0 +1,10 @@
+PHASE=StrontiumOxide // 04-002-5646
+Reference=04-002-5646 //
+Formula=Sr_O //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m //
+PARAM=A=0.515900_0.510741^0.521059  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:SrO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=SR Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=O Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.00000000

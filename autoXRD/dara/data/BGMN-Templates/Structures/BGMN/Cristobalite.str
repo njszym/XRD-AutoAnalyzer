@@ -1,0 +1,7 @@
+PHASE=CRISTOBALITE //
+SpacegroupNo=92 HermannMauguin=P4_12_12 //
+PARAM=A=0.4971_0.4872^0.5070 PARAM=C=0.6928_0.6789^0.7067 //
+RP=4 PARAM=B1=0_0^0.02 PARAM=k2=0_0^0.001 //
+GEWICHT=SPHAR6 GOAL:cristobalite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a x=0.3005 TDS=0.0104
+E=O-2 Wyckoff=b x=0.2392 y=0.1037 z=0.1786 TDS=0.0186

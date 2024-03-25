@@ -1,0 +1,15 @@
+PHASE=Enstatite //
+SpacegroupNo=61 HermannMauguin=P2_1/b2_1/c2_1/a //
+PARAM=A=1.8223_1.8041^1.8405 PARAM=B=0.8819_0.8731^0.8907 PARAM=C=0.5181_0.5129^0.5233 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:enstatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=c x=0.3758 y=0.6539 z=0.8659 TDS=0.0043
+E=MG+2 Wyckoff=c x=0.3768 y=0.4870 z=0.3583 TDS=0.0058
+E=SI+4 Wyckoff=c x=0.2717 y=0.3416 z=0.0503 TDS=0.0058
+E=SI+4 Wyckoff=c x=0.4735 y=0.3373 z=0.7983 TDS=0.0033
+E=O-2 Wyckoff=c x=0.1834 y=0.3400 z=0.0347 TDS=0.0045
+E=O-2 Wyckoff=c x=0.5624 y=0.3403 z=0.8000 TDS=0.0047
+E=O-2 Wyckoff=c x=0.3110 y=0.5024 z=0.0433 TDS=0.0054
+E=O-2 Wyckoff=c x=0.4327 y=0.4830 z=0.6891 TDS=0.0054
+E=O-2 Wyckoff=c x=0.3031 y=0.2227 z=-0.1683 TDS=0.0053
+E=O-2 Wyckoff=c x=0.4476 y=0.1952 z=0.6039 TDS=0.0050

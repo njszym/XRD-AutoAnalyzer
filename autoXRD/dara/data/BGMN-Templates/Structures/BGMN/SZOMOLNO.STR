@@ -1,0 +1,12 @@
+PHASE=Szomolnokite //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.7078_0.7007^0.7149 PARAM=B=0.7549_0.7474^0.7624 PARAM=C=0.7773_0.7695^0.7851 //
+PARAM=BETA=118.7_117.7^119.7 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:szomolno=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=b TDS=0.0131
+E=S Wyckoff=e y=0.1531 TDS=0.0121
+E=O-2 Wyckoff=f x=0.1697 y=0.0429 z=0.3985 TDS=0.0178
+E=O-2 Wyckoff=f x=0.0956 y=0.2683 z=0.1560 TDS=0.0166
+E=O-2 Wyckoff=e y=0.6444 TDS=0.0180
+E=H Wyckoff=f x=0.1080 y=0.7090 z=0.3150 TDS=0.0696

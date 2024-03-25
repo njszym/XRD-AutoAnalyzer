@@ -1,0 +1,43 @@
+PHASE=TridymiteLow // amcsd_0000531
+Reference=amcsd_0000531
+SpacegroupNo=9 HermannMauguin=C1c1 //
+PARAM=A=1.8524_1.8431^1.8617 PARAM=B=0.50032_0.4978^0.5028 PARAM=C=2.3810_2.3691^2.3929 //
+PARAM=BETA=105.82_105.3^106.3 //
+RP=4 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:TridymiteLow=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a x=0.5507 y=0.5410 z=0.5642 TDS=0.0090
+E=SI+4 Wyckoff=a x=0.7036 y=0.9470 z=0.7374 TDS=0.0120
+E=SI+4 Wyckoff=a x=0.4198 y=0.5490 z=0.6225 TDS=0.0070
+E=SI+4 Wyckoff=a x=0.5751 y=0.0430 z=0.7955 TDS=0.0110
+E=SI+4 Wyckoff=a x=0.9247 y=0.5480 z=0.6971 TDS=0.0080
+E=SI+4 Wyckoff=a x=0.7643 y=0.9440 z=0.5386 TDS=0.0090
+E=SI+4 Wyckoff=a x=0.8023 y=0.4490 z=0.7661 TDS=0.0080
+E=SI+4 Wyckoff=a x=0.6453 y=0.0410 z=0.6027 TDS=0.0070
+E=SI+4 Wyckoff=a x=0.8531 y=0.4630 z=0.9016 TDS=0.0100
+E=SI+4 Wyckoff=a x=0.9493 y=0.9660 z=0.9358 TDS=0.0100
+E=SI+4 Wyckoff=a x=0.7244 y=0.5590 z=0.9605 TDS=0.0090
+E=SI+4 Wyckoff=a x=0.5697 y=0.5490 z=0.8702 TDS=0.0110
+E=O-2 Wyckoff=a x=0.5749 y=0.3510 z=0.8182 TDS=0.0120
+E=O-2 Wyckoff=a x=0.5706 y=0.8400 z=0.8476 TDS=0.0150
+E=O-2 Wyckoff=a x=0.7315 y=0.1380 z=0.4851 TDS=0.0180
+E=O-2 Wyckoff=a x=0.7509 y=0.6440 z=0.5152 TDS=0.0170
+E=O-2 Wyckoff=a x=0.4155 y=0.3520 z=0.6741 TDS=0.0290
+E=O-2 Wyckoff=a x=0.4127 y=0.8520 z=0.6434 TDS=0.0190
+E=O-2 Wyckoff=a x=0.8773 y=0.1640 z=0.9213 TDS=0.0180
+E=O-2 Wyckoff=a x=0.9160 y=0.6680 z=0.9361 TDS=0.0240
+E=O-2 Wyckoff=a x=0.7741 y=0.1450 z=0.7538 TDS=0.0180
+E=O-2 Wyckoff=a x=0.7336 y=0.6450 z=0.7402 TDS=0.0220
+E=O-2 Wyckoff=a x=0.6195 y=0.3410 z=0.5847 TDS=0.0120
+E=O-2 Wyckoff=a x=0.5811 y=0.8430 z=0.5661 TDS=0.0190
+E=O-2 Wyckoff=a x=0.4966 y=0.5110 z=0.6062 TDS=0.0270
+E=O-2 Wyckoff=a x=0.3533 y=0.4890 z=0.5665 TDS=0.0100
+E=O-2 Wyckoff=a x=0.6498 y=0.0050 z=0.6711 TDS=0.0180
+E=O-2 Wyckoff=a x=0.6524 y=0.9960 z=0.7805 TDS=0.0200
+E=O-2 Wyckoff=a x=0.8636 y=0.4990 z=0.7328 TDS=0.0180
+E=O-2 Wyckoff=a x=0.8361 y=0.5030 z=0.8333 TDS=0.0260
+E=O-2 Wyckoff=a x=0.5052 y=0.9930 z=0.7398 TDS=0.0180
+E=O-2 Wyckoff=a x=0.6369 y=0.5110 z=0.9268 TDS=0.0290
+E=O-2 Wyckoff=a x=0.9927 y=0.9920 z=0.8868 TDS=0.0140
+E=O-2 Wyckoff=a x=0.5000 y=0.4680 z=0.5000 TDS=0.0220
+E=O-2 Wyckoff=a x=0.7252 y=0.9910 z=0.5898 TDS=0.0230
+E=O-2 Wyckoff=a x=0.7744 y=0.5210 z=0.9155 TDS=0.0150

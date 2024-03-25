@@ -1,0 +1,13 @@
+PHASE=SiC-6H // 04-010-5698
+Reference=04-010-5698 //
+Formula=Si_C //
+SpacegroupNo=186 Setting=1 HermannMauguin=P6_3mc Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.308150_0.305069^0.311232 PARAM=C=1.509210_1.494118^1.524302  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SiC6H=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=SI Wyckoff=a x=0.0 y=0.0 z=0.125000 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.291660 TDS=0.00200000
+E=SI Wyckoff=b x=1/3 y=2/3 z=0.958330 TDS=0.00200000
+E=C Wyckoff=a x=0.0 y=0.0 z=0.000000 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.166660 TDS=0.00200000
+E=C Wyckoff=b x=1/3 y=2/3 z=0.833330 TDS=0.00200000

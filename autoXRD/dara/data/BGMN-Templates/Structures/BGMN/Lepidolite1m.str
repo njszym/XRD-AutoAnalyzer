@@ -1,0 +1,14 @@
+PHASE=Lepidolite1m //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.5209_0.5157^0.5261 PARAM=B=0.9011_0.8921^0.9101 PARAM=C=1.0149_1.0048^1.0250 //
+PARAM=BETA=100.8_100^102 //
+RP=3 B1=ANISO^0.008 GEWICHT=SPHAR2 //
+GOAL:lepidolite1m=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=K+1 Wyckoff=b TDS=0.0201
+E=LI+1 Wyckoff=c TDS=0.0186
+E=(AL+3(0.6500),LI+1(0.2800)) Wyckoff=h y=0.6711 TDS=0.0075
+E=(AL+3(0.1275),SI+4(0.8725)) Wyckoff=j x=0.0810 y=0.1686 z=0.2320 TDS=0.0075
+E=O-2 Wyckoff=i x=0.9782 z=0.8250 TDS=0.0146
+E=O-2 Wyckoff=j x=0.3252 y=0.2319 z=0.1680 TDS=0.015
+E=O-2 Wyckoff=j x=0.1418 y=0.1768 z=0.3945 TDS=0.0131
+E=F-1 Wyckoff=i x=0.3924 z=0.5983 TDS=0.0236

@@ -1,0 +1,8 @@
+PHASE=Chromite //
+SpacegroupNo=227 OriginChoice=2 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.836_0.83^0.840 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:chromite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2,FE+2(p)) PARAM=p=0.5_0.2^0.8 Wyckoff=a TDS=0.0045
+E=CR+3 Wyckoff=d TDS=0.0032
+E=O-1 Wyckoff=e x=0.7388 TDS=0.0042

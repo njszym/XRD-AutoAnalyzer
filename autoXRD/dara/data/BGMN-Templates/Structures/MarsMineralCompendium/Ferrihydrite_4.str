@@ -1,0 +1,14 @@
+PHASE=Ferrihydrite // amcsd_0015441
+Reference=amcsd_0015441 //
+Formula=Fe4.75_(O8_H) //
+SpacegroupNo=186 HermannMauguin=P6_3mc Setting=1 UniqueAxis=c Lattice=Hexagonal //
+PARAM=A=0.595800_0.589842^0.601758 PARAM=C=0.896500_0.887535^0.905465 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Ferrihydrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE(1.0100) Wyckoff=c x=0.168800 y=0.831200 z=0.635600 TDS=0.006317
+E=FE(0.9000) Wyckoff=b x=0.333333 y=0.666667 z=0.341400 TDS=0.006317
+E=FE(0.8500) Wyckoff=b x=0.333333 y=0.666667 z=0.953800 TDS=0.006317
+E=O Wyckoff=a x=0.000000 y=0.000000 z=0.014700 TDS=0.011054 // O-H1
+E=O Wyckoff=b x=0.333333 y=0.666667 z=0.735300 TDS=0.011054
+E=O Wyckoff=c x=0.167100 y=0.832900 z=0.254700 TDS=0.011054
+E=O Wyckoff=c x=0.523800 y=0.476200 z=0.005300 TDS=0.011054

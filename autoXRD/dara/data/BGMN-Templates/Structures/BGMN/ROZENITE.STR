@@ -1,0 +1,24 @@
+PHASE=Rozenite //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.7977_0.7897^0.8057 PARAM=B=1.3648_1.3512^1.3784 PARAM=C=0.9936_0.9836^1.0035 //
+PARAM=BETA=143.004_142^144 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:rozenite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=e x=0.1505 y=0.1026 z=0.9322 TDS=0.0085
+E=S Wyckoff=e x=0.6257 y=0.1096 z=0.8021 TDS=0.0070
+E=O-2 Wyckoff=e x=0.7483 y=0.0484 z=0.9929 TDS=0.0140
+E=O-2 Wyckoff=e x=0.7437 y=0.0768 z=0.7463 TDS=0.0140
+E=O-2 Wyckoff=e x=0.3185 y=0.0953 z=0.6050 TDS=0.0140
+E=O-2 Wyckoff=e x=0.6888 y=0.2133 z=0.8700 TDS=0.0140
+E=O-2 Wyckoff=e x=0.0000 y=0.0729 z=0.6415 TDS=0.0170
+E=O-2 Wyckoff=e x=0.3171 y=0.1391 z=0.2312 TDS=0.0170
+E=O-2 Wyckoff=e x=0.5584 y=0.1254 z=0.1163 TDS=0.0170
+E=O-2 Wyckoff=e x=0.0334 y=0.2500 z=0.8174 TDS=0.0170
+E=H Wyckoff=e x=0.1250 y=0.0700 z=0.6400 TDS=0.0240
+E=H Wyckoff=e x=0.8790 y=0.0170 z=0.5560 TDS=0.0240
+E=H Wyckoff=e x=0.4100 y=0.1980 z=0.3180 TDS=0.0240
+E=H Wyckoff=e x=0.3330 y=0.0980 z=0.3160 TDS=0.0240
+E=H Wyckoff=e x=0.6970 y=0.1710 z=0.2340 TDS=0.0240
+E=H Wyckoff=e x=0.6120 y=0.0960 z=0.0650 TDS=0.0240
+E=H Wyckoff=e x=0.9530 y=0.2420 z=0.6780 TDS=0.0240
+E=H Wyckoff=e x=0.1390 y=0.1900 z=0.3800 TDS=0.0240

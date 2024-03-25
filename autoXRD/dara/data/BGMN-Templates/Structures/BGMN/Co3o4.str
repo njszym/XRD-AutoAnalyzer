@@ -1,0 +1,8 @@
+PHASE=Co3O4 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=1 //
+PARAM=A=0.8084_0.799^0.8146 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:co3o4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CO+2 Wyckoff=a TDS=0.0040
+E=CO+3 Wyckoff=d TDS=0.0023
+E=O-2 Wyckoff=e x=0.3881 TDS=0.0055

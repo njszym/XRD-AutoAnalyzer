@@ -1,0 +1,13 @@
+PHASE=Vivianite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.0086_0.9985^1.0187 PARAM=B=1.3441_1.3307^1.3575 PARAM=C=0.4703_0.4656^0.4750 PARAM=BETA=104.300 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:vivianite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2 Wyckoff=a TDS=0.075
+E=FE+2 Wyckoff=g y=0.6102 TDS=0.0071 
+E=P Wyckoff=i x=0.6861 z=0.6249 TDS=0.0080
+E=O-2 Wyckoff=i x=0.8421 z=0.6368 TDS=0.0095 
+E=O-2 Wyckoff=i x=0.6094 z=0.3019 TDS=0.0085
+E=O-2 Wyckoff=j x=0.3449 y=0.0954 z=0.2224 TDS=0.0086
+E=O-2 Wyckoff=j x=0.1019 y=0.1172 z=0.7994 TDS=0.0118
+E=O-2 Wyckoff=j x=0.3962 y=0.2246 z=0.7114 TDS=0.0151

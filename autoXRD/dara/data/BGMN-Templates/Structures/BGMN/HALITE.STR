@@ -1,0 +1,6 @@
+PHASE=HALITE //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5640_0.5584^0.5696 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR6 GOAL:halite=GEWICHT TDS=0.008
+E=NA+1 Wyckoff=a
+E=CL-1 Wyckoff=b

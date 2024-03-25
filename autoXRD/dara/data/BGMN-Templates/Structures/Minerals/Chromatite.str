@@ -1,0 +1,10 @@
+PHASE=CaCrO4 // 01-087-1647
+Reference=01-087-1647 //
+Formula=Ca_(_Cr_O4_) //
+SpacegroupNo=141 Setting=2 HermannMauguin=I4_1/a2/m2/d  //
+PARAM=A=0.722200_0.714978^0.729422 PARAM=C=0.628500_0.622215^0.634785  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:CaCrO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=h x=0.000000 y=0.064600 z=0.196700 TDS=0.0020000
+E=CR Wyckoff=b x=0.000000 y=0.250000 z=0.375000 TDS=0.0020000
+E=CA Wyckoff=a x=0.000000 y=0.750000 z=0.125000 TDS=0.0020000

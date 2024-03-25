@@ -1,0 +1,21 @@
+PHASE=Wollastonite_2M //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=1.6351_1.6187^1.6514 PARAM=B=0.7324_0.7251^0.7397 PARAM=C=1.5424_1.5270^1.5578 //
+PARAM=BETA=154.506_154^155 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:wollastonite2m=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.2611 y=0.6248 z=0.6617 TDS=0.0061
+E=CA+2 Wyckoff=e x=0.2638 y=0.1191 z=0.6626 TDS=0.0056
+E=CA+2 Wyckoff=e x=0.0264 y=0.3744 z=0.2748 TDS=0.0060
+E=SI+4 Wyckoff=e x=0.7689 y=0.6584 z=0.1764 TDS=0.0047
+E=SI+4 Wyckoff=e x=0.7689 y=0.0927 z=0.1766 TDS=0.0054
+E=SI+4 Wyckoff=e x=0.5562 y=0.3761 z=0.8576 TDS=0.0049
+E=O-2 Wyckoff=e x=0.9634 y=0.6121 z=0.3119 TDS=0.0063
+E=O-2 Wyckoff=e x=0.9631 y=0.1329 z=0.3124 TDS=0.0075
+E=O-2 Wyckoff=e x=0.6989 y=0.3712 z=0.9136 TDS=0.0055
+E=O-2 Wyckoff=e x=0.7665 y=0.6157 z=0.2748 TDS=0.0070
+E=O-2 Wyckoff=e x=0.7633 y=0.1218 z=0.2723 TDS=0.0089
+E=O-2 Wyckoff=e x=0.3292 y=0.3703 z=0.6283 TDS=0.0070
+E=O-2 Wyckoff=e x=0.7247 y=0.8761 z=0.1161 TDS=0.0095
+E=O-2 Wyckoff=e x=0.5947 y=0.1970 z=0.9586 TDS=0.0086
+E=O-2 Wyckoff=e x=0.5944 y=0.5550 z=0.9581 TDS=0.0072

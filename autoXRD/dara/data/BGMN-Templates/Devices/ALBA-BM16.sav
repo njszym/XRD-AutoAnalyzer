@@ -1,0 +1,133 @@
+%***********************************************************************************************
+%
+%    BGMN Device Configuration File for Bruker D8
+%    --------------------------------------------
+%
+%    Created by Nicola Doebelin, RMS Foundation, Switzerland
+%    December 11, 2014
+%
+%    Device Configuration:
+%    - Detector: LynxEye XE
+%    - Radiation: CuKa
+%    - Soller Slits: 2.5°
+%    - Divergence Slit: Automatic 15mm
+%    - Anti-Scatter Slit: 9mm
+%    - Goniometer Radius: 350 mm
+%
+%***********************************************************************************************
+
+SAVE=N
+
+
+%-----------------------------------------------------------------------------------------------
+% Output files for Geomet and MakeGeq
+%-----------------------------------------------------------------------------------------------
+
+VERZERR=ALBA-BM16.ger
+GEQ=ALBA-BM16.geq
+
+
+%-----------------------------------------------------------------------------------------------
+% Goniometer
+%-----------------------------------------------------------------------------------------------
+
+% Instrument geometry
+GEOMETRY=CAPILLARY
+
+% Goniometer radius (mm)
+R=350.0
+
+
+%-----------------------------------------------------------------------------------------------
+% X-ray tube
+%-----------------------------------------------------------------------------------------------
+
+% Axial dimension (length, mm)
+FocusH=0.30
+
+% Optical breadth (1/10 of the nominal) of the line focus (mm)
+FocusW=0.3000
+
+
+
+%-----------------------------------------------------------------------------------------------
+% Primary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+PColl=0.0010
+
+
+%-----------------------------------------------------------------------------------------------
+% Pinhole aperture
+%-----------------------------------------------------------------------------------------------
+
+% Distance form sample (mm)
+RoundSlitR=10.00
+
+% Pinhole diameter (mm)
+RoundSlitD=0.3000
+
+
+%-----------------------------------------------------------------------------------------------
+% Sample
+%-----------------------------------------------------------------------------------------------
+
+% Length of capillary (mm)
+SamplH=20.00
+
+% Inner diameter of capillary (mm)
+T=0.1000
+
+% Inverse linear absorption coefficient (mm)
+D=0.2000
+
+
+%-----------------------------------------------------------------------------------------------
+% Secondary collimator (Soller slit)
+%-----------------------------------------------------------------------------------------------
+
+% Beam divergence (radians)
+SColl=0.0010
+
+
+%-----------------------------------------------------------------------------------------------
+% Detector
+%-----------------------------------------------------------------------------------------------
+
+% Receiving slit opening (mm)
+DetW=0.10
+
+% Total axial detector width (mm)
+DetH=0.1000
+
+
+%-----------------------------------------------------------------------------------------------
+% Parameters for the simulation of the profile function
+%-----------------------------------------------------------------------------------------------
+
+% angular positions for the MonteCarlo simulation (deg 2theta)
+zweiTheta[1]=2
+zweiTheta[2]=5
+zweiTheta[3]=12
+zweiTheta[4]=20
+
+% angular range (deg 2theta)
+WMIN=2
+WMAX=20
+
+% step width for the interpolation of the geometric profiles (deg 2theta)
+WSTEP=2*sin(pi*zweiTheta/180)
+
+% switch for applying the intensity correction for beam overflow resp. ADS function
+GSUM=Y
+
+% Use multithreaded calculation
+NTHREADS=8
+
+% Convenience function: Calculate PI for use in other angle-dependent calculations
+pi=2*acos(0)
+
+%-----------------------------------------------------------------------------------------------
+% End of file
+%-----------------------------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+PHASE=PbO_beta_Massicot //
+SpacegroupNo=57 HermannMauguin=P2/b2_1/c2_1/m //
+PARAM=A=0.5893_0.5834^0.5952 PARAM=B=0.5490_0.5435^0.5545 PARAM=C=0.4753_0.4705^0.4801 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:pbobeta=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=d x=0.7703 y=0.4884 TDS=0.0107
+E=O-2 Wyckoff=d x=0.1347 y=0.5917 TDS=0.0114

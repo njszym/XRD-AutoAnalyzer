@@ -1,0 +1,6 @@
+PHASE=SPHALERITE //
+SpacegroupNo=216 HermannMauguin=F-43m //
+PARAM=A=0.5406_0.54^0.541 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR6 GOAL:sphalerite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.003
+E=ZN Wyckoff=a
+E=S  Wyckoff=c

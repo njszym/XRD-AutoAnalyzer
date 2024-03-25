@@ -1,0 +1,11 @@
+PHASE=Arcanite_K2SO4 //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.7476_0.7401^0.7551 PARAM=B=0.5763_0.5705^0.5821 PARAM=C=1.0071_0.9970^1.0172 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:arcanite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=S Wyckoff=c x=0.7330 z=0.9197 TDS=0.0117
+E=K+1 Wyckoff=c x=0.1738 z=0.9106 TDS=0.0181
+E=K+1 Wyckoff=c x=0.4890 z=0.2041 TDS=0.0163
+E=O-2 Wyckoff=c x=0.5379 z=0.9166 TDS=0.0226
+E=O-2 Wyckoff=c x=0.7963 z=0.0582 TDS=0.0196
+E=O-2 Wyckoff=d x=0.3009 y=0.0412 z=0.6478 TDS=0.0223

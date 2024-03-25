@@ -1,0 +1,13 @@
+PHASE=betaLi3PO4 // 04-006-9491
+Reference=04-006-9491 //
+Formula=Li3_P_O4 //
+SpacegroupNo=31 Setting=1 HermannMauguin=Pmn2_1 Lattice=Orthorhombic //
+PARAM=A=0.611900_0.605781^0.618019 PARAM=B=0.523800_0.518562^0.529038 PARAM=C=0.488200_0.483318^0.493082  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:betaLi3PO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=LI Wyckoff=b x=0.252200 y=0.174200 z=0.491900 TDS=0.09
+E=LI Wyckoff=a x=0.000000 y=0.653300 z=0.500500 TDS=0.09
+E=P Wyckoff=a x=0.000000 y=0.327700 z=0.000000 TDS=0.04
+E=O Wyckoff=b x=0.243500 y=0.164600 z=0.119900 TDS=0.06
+E=O Wyckoff=a x=0.000000 y=0.322500 z=0.641100 TDS=0.06
+E=O Wyckoff=a x=0.000000 y=0.647400 z=0.125500 TDS=0.06

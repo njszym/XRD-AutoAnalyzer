@@ -1,0 +1,9 @@
+PHASE=Perowskite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.5442_0.5170^0.5714 PARAM=B=0.7640_0.7258^0.8022 PARAM=C=0.5380_0.5111^0.5649 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:perowski=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=c x=0.5360 z=0.5068 TDS=0.0061
+E=TI+4 Wyckoff=b TDS=0.0039
+E=O-2 Wyckoff=c x=0.9838 z=0.4286 TDS=0.0053
+E=O-2 Wyckoff=d x=0.2888 y=0.0371 z=0.7108 TDS=0.0050

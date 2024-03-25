@@ -1,0 +1,16 @@
+PHASE=Sodium_alum  //
+SpacegroupNo=205 HermannMauguin=P2_1/a-3 //
+PARAM=A=1.2213_1.2091^1.2335 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:sodialum=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=b TDS=0.0245
+E=AL+3 Wyckoff=a TDS=0.0167
+E=S Wyckoff=c x=0.7348 TDS=0.0239
+E=O Wyckoff=c x=0.6657 TDS=0.0412
+E=O Wyckoff=d x=0.2957 y=0.2783 z=0.1508 TDS=0.0533
+E=O Wyckoff=d x=0.0767 y=0.0403 z=0.3188 TDS=0.0324
+E=O Wyckoff=d x=0.1371 y=0.9596 z=0.0573 TDS=0.0255
+E=H Wyckoff=d x=0.5850 y=0.3190 z=0.3780 TDS=0.0340
+E=H Wyckoff=d x=0.4860 y=0.3080 z=0.3830 TDS=0.0400
+E=H Wyckoff=d x=0.5550 y=0.2020 z=0.5020 TDS=0.0320
+E=H Wyckoff=d x=0.5880 y=0.3390 z=0.1130 TDS=0.0240

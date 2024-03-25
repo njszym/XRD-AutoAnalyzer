@@ -1,0 +1,10 @@
+PHASE=Dolomite //
+SpacegroupNo=148 RP=3 //
+PARAM=A=0.4812_0.48^0.488 PARAM=C=1.602_1.590^1.642 //
+PARAM=B1=0_0^0.01 //
+GEWICHT=SPHAR4 GOAL:dolomite=GEWICHT //
+GOAL=GrainSize(1,0,4) 
+E=CA+2 Wyckoff=a TDS=0.007
+E=MG+2 Wyckoff=b TDS=0.005
+E=C    Wyckoff=c TDS=0.007 z=0.2429
+E=O-1  Wyckoff=f TDS=0.008 x=0.2485 y=-0.0343 z=0.2439

@@ -1,0 +1,24 @@
+PHASE=Tobermorite_11A_monoclinic //
+SpacegroupNo=8 HermannMauguin=C1m1 //
+PARAM=A=0.6735_0.6701^0.6769 PARAM=B=2.2487_2.2375^2.2600 PARAM=C=0.6729_0.6696^0.6763 //
+PARAM=BETA=113.474_113^114 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:Tob11mkl=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=b x=0.3719 y=0.1574 z=0.6138 TDS=0.0043
+E=SI+4 Wyckoff=b x=0.1556 y=0.0712 z=0.2469 TDS=0.0068
+E=SI+4 Wyckoff=b x=0.7895 y=0.1577 z=0.0303 TDS=0.0044
+E=O-1 Wyckoff=b x=0.2651 y=0.0942 z=0.4941 TDS=0.0111
+E=O-1 Wyckoff=b x=0.5810 y=0.1327 z=0.8220 TDS=0.0100
+E=O-1 Wyckoff=b x=0.4481 y=0.1982 z=0.4631 TDS=0.0071
+E=O-1 Wyckoff=b x=0.2127 y=0.1942 z=0.6937 TDS=0.0095
+E=O-1 Wyckoff=a x=0.1480 z=0.2540 TDS=0.0134
+E=O-1 Wyckoff=b x=0.2950 y=0.0940 z=0.1070 TDS=0.0142
+E=O-1 Wyckoff=b x=0.8360 y=0.0939 z=0.5660 TDS=0.0355
+E=O-1 Wyckoff=b x=0.9100 y=0.0951 z=0.1400 TDS=0.0118
+E=O-1 Wyckoff=b x=0.7120 y=0.1951 z=0.1890 TDS=0.0087
+E=O-1 Wyckoff=b x=0.9411 y=0.1985 z=0.9541 TDS=0.0079
+E=CA+2 Wyckoff=b x=0.8323 y=0.2056 z=0.5672 TDS=0.0067
+E=CA+2 Wyckoff=b x=0.8271 y=0.2935 z=0.0772 TDS=0.0058
+E=O-1 Wyckoff=a x=0.2080 z=0.7810 TDS=0.1105
+E=O-1 Wyckoff=a x=0.6420 z=0.7630 TDS=0.0482
+E=O-1 Wyckoff=a x=0.6220 z=0.2000 TDS=0.1026

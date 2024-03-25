@@ -1,0 +1,17 @@
+PHASE=Nepheline //
+SpacegroupNo=173 HermannMauguin=P6_3 //
+PARAM=A=1.0010_0.9910^1.0110 PARAM=C=0.8400_0.8316^0.8484 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:nepheline=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=c x=0.9972 y=0.4432 z=0.9913 TDS=0.0184
+E=K+1 Wyckoff=a z=0.4893 TDS=0.0296
+E=(AL+3(0.5000),SI+4(0.5000)) Wyckoff=b z=0.1877 TDS=0.0105
+E=(AL+3(0.5000),SI+4(0.5000)) Wyckoff=b z=0.7990 TDS=0.0158
+E=(AL+3(0.5000),SI+4(0.5000)) Wyckoff=c x=0.0933 y=0.3344 z=0.3090 TDS=0.0088
+E=(AL+3(0.5000),SI+4(0.5000)) Wyckoff=c x=0.0934 y=0.3318 z=0.6824 TDS=0.0084
+E=O(0.3333) Wyckoff=c x=0.3327 y=0.7024 z=0.9846 TDS=0.0247
+E=O-2 Wyckoff=c x=0.0269 y=0.3168 z=0.4921 TDS=0.0203
+E=O-2 Wyckoff=c x=0.1713 y=0.5235 z=0.7210 TDS=0.0289
+E=O-2 Wyckoff=c x=0.1647 y=0.5108 z=0.2393 TDS=0.0149
+E=O-2 Wyckoff=c x=0.2258 y=0.2873 z=0.3099 TDS=0.0118
+E=O-2 Wyckoff=c x=0.2229 y=0.2657 z=0.6892 TDS=0.0169

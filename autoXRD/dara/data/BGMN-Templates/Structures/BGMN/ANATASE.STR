@@ -1,0 +1,6 @@
+PHASE=ANATASE //
+SpacegroupNo=141 HermannMauguin=I4_1/a2/m2/d //
+PARAM=A=0.3784_0.3670^0.3898 PARAM=C=0.9515_0.9230^0.9800 //
+RP=3 PARAM=B1=0.0_0^0.008 GEWICHT=SPHAR4 GOAL:anatase=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=TI+4 Wyckoff=a TDS=0.0039
+E=O-2 Wyckoff=e z=0.7919 TDS=0.0061

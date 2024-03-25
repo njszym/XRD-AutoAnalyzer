@@ -1,0 +1,12 @@
+PHASE=Al // 04-012-7848
+MineralName=Aluminium //
+Formula=Al //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4051_0.3951^0.4151 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Al=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL Wyckoff=a
+
+
+

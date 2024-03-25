@@ -1,0 +1,7 @@
+PHASE=Y0.99Si1.667 //
+SpacegroupNo=191 HermannMauguin=P6/m2/m2/m //
+PARAM=A=0.3842_0.3823^0.3861 PARAM=C=0.4140_0.4119^0.4161 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:yttriumsilicide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=Y Wyckoff=a TDS=0.0050
+E=SI(0.8300) Wyckoff=d TDS=0.0060

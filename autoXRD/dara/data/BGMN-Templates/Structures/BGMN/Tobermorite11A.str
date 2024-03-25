@@ -1,0 +1,24 @@
+PHASE=Tobermorite_11A //
+SpacegroupNo=44 HermannMauguin=Imm2 //
+PARAM=A=0.5586_0.5530^0.5642 PARAM=B=0.3696_0.3659^0.3733 PARAM=C=2.2779_2.2551^2.3007 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR4 //
+GOAL:tobermorite11a=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a z=1.0000 TDS=0.0134
+E=CA+2 Wyckoff=a z=0.4135 TDS=0.0134
+E=CA+2(0.1250) Wyckoff=c x=0.2560 z=0.6980 TDS=0.0474
+E=SI+4(0.2500) Wyckoff=c x=0.6780 z=0.1410 TDS=0.0276
+E=SI+4(0.2500) Wyckoff=c x=0.6560 z=0.2820 TDS=0.0276
+E=SI+4(0.5000) Wyckoff=d y=0.0860 z=0.8730 TDS=0.0118
+E=SI+4(0.5000) Wyckoff=d y=0.0750 z=0.5570 TDS=0.0118
+E=O-2(0.5000) Wyckoff=e x=0.2650 y=0.4900 z=0.0190 TDS=0.0134
+E=O-2(0.5000) Wyckoff=e x=0.2650 y=0.4800 z=0.4110 TDS=0.0134
+E=O-2(0.2500) Wyckoff=c x=0.6800 z=0.2110 TDS=0.0632
+E=O-2(0.2500) Wyckoff=c x=0.9300 z=0.1130 TDS=0.0632
+E=O-2(0.5000) Wyckoff=b z=0.5770 TDS=0.0189
+E=O-2(0.5000) Wyckoff=b z=0.8480 TDS=0.0189
+E=O-2(0.5000) Wyckoff=d y=0.1700 z=0.8110 TDS=0.0418
+E=O-2(0.5000) Wyckoff=d y=0.1600 z=0.6190 TDS=0.0418
+E=O-2(0.2500) Wyckoff=c x=0.9240 z=0.3070 TDS=0.0632
+E=O-2(0.2500) Wyckoff=c x=0.6500 z=0.2130 TDS=0.0632
+E=O-2(0.5000) Wyckoff=a z=0.1120 TDS=0.0316
+E=O-2(0.5000) Wyckoff=a z=0.3030 TDS=0.0316

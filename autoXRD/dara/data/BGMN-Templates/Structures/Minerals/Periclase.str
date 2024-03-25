@@ -1,0 +1,10 @@
+PHASE=MgO // 04-010-4039
+MineralName=Periclase //
+Formula=Mg_O //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4214_0.400^0.425 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:MgO=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MG+2 Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.0031583
+E=O-2 Wyckoff=b x=0.5000 y=0.5000 z=0.5000 TDS=0.0033951

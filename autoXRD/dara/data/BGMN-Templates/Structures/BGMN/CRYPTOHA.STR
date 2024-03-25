@@ -1,0 +1,9 @@
+PHASE=Cryptohalite //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.8395_0.8311^0.8479 //
+RP=4 PARAM=B1=0_0^0.007  PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:cryptoha=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a TDS=0.0169
+E=N Wyckoff=c TDS=0.0220
+E=F-1 Wyckoff=e x=0.7989 TDS=0.0234
+E=H(0.3330) Wyckoff=k x=0.3320 z=0.7310 TDS=0.0643

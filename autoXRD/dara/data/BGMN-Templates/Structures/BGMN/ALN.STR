@@ -1,0 +1,7 @@
+PHASE=AlN_hex //
+SpacegroupNo=186 HermannMauguin=P6_3mc //
+PARAM=A=0.3110_0.3079^0.3141 PARAM=C=0.4980_0.4930^0.5030 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:aln=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3 Wyckoff=b z=0.5000 TDS=0.0030
+E=N Wyckoff=b z=0.8821 TDS=0.0035

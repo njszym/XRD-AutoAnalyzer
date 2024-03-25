@@ -1,0 +1,12 @@
+PHASE=SilverNitrate //
+Reference=04-014-6889 //
+Formula=Ag_(_N_O3_) //
+SpacegroupNo=61 Setting=1 HermannMauguin=P2_1/b2_1/c2_1/a Lattice=Orthorhombic //
+PARAM=A=0.699500_0.692505^0.706495 PARAM=B=0.733500_0.726165^0.740835 PARAM=C=1.012200_1.002078^1.022322  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:SilverNitrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AG Wyckoff=c x=0.135400 y=0.989700 z=0.129900 TDS=0.02636700
+E=N Wyckoff=c x=0.375000 y=0.362000 z=0.407800 TDS=0.01533350
+E=O Wyckoff=c x=0.386000 y=0.316000 z=0.525100 TDS=0.02700030
+E=O Wyckoff=c x=0.485000 y=0.294000 z=0.322800 TDS=0.02466690
+E=O Wyckoff=c x=0.260000 y=0.475000 z=0.370200 TDS=0.02566690

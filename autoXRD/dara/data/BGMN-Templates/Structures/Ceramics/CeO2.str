@@ -1,0 +1,8 @@
+PHASE=CeriumOxide // 
+Formula= //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m Setting=1 Lattice=Cubic //
+PARAM=A=0.541130_0.535719^0.546541 PARAM=B=0.541130_0.535719^0.546541 PARAM=C=0.541130_0.535719^0.546541 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CeriumOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CE Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.000000
+E=O Wyckoff=c x=0.250000 y=0.250000 z=0.250000 TDS=0.000000

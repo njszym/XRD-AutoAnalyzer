@@ -1,0 +1,8 @@
+PHASE=TRIDYMITE_ORTHORHOMBIC //
+SpacegroupNo=40 HermannMauguin=Ama2 //
+PARAM=A=0.8270_0.8187^0.8353 PARAM=B=0.8750_0.8663^0.8837 PARAM=C=0.5052_0.5001^0.5103 //
+RP=3 PARAM=B1=0_0^0.03 PARAM=GEWICHT=0_0 GOAL:tridyorth=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) TDS=0.02
+E=SI+4 Wyckoff=c x=0.9376 y=0.1667 z=0.5000
+E=O-2 Wyckoff=b y=0.3360 z=0.9230
+E=O-2 Wyckoff=a z=0.5920
+E=O-2 Wyckoff=c x=0.0400 y=0.2190 z=0.2560

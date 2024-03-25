@@ -1,0 +1,8 @@
+PHASE=Molybdenum // 04-014-7435
+Reference=04-014-7435 //
+Formula=Mo //
+SpacegroupNo=229 Setting=1 HermannMauguin=I4/m-32/m Lattice=Cubic //
+PARAM=A=0.314609_0.311463^0.317755  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Molybdenum=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=MO Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00789568

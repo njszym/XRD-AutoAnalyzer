@@ -1,0 +1,11 @@
+PHASE=FORSTERITE //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a  //
+PARAM=A=1.0209_1.0107^1.0337 PARAM=B=0.5986_0.5926^0.6046 PARAM=C=0.4754_0.4706^0.4802 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:forsterite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2,FE+2(p)) PARAM=p=0.1_0^0.5 Wyckoff=a TDS=0.0043
+E=(MG+2,FE+2(p)) PARAM=p=0.1_0^0.5 Wyckoff=c x=0.7779 z=0.5100 TDS=0.0041
+E=SI+4 Wyckoff=c x=0.5946 z=0.0732 TDS=0.0037
+E=O-2 Wyckoff=c x=0.5914 z=0.7343 TDS=0.0050
+E=O-2 Wyckoff=c x=0.9477 z=0.2801 TDS=0.0050
+E=O-2 Wyckoff=d x=0.1632 y=0.0345 z=0.2791 TDS=0.0040

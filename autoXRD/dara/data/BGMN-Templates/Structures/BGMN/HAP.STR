@@ -1,0 +1,13 @@
+PHASE=Hydroxylapatite //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=0.9424_0.9330^0.9518 PARAM=C=0.6879_0.6810^0.6948 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:hap=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=O-2 Wyckoff=h x=0.1564 y=0.6718 TDS=0.0103
+E=O-2 Wyckoff=h x=0.8776 y=0.4124 TDS=0.0157
+E=O-2 Wyckoff=i x=0.3433 y=0.2579 z=0.0704 TDS=0.0152
+E=P Wyckoff=h x=0.9700 y=0.6017 TDS=0.0068
+E=CA+2 Wyckoff=f z=0.4987 TDS=0.0089
+E=CA+2 Wyckoff=h x=0.7466 y=0.7535 TDS=0.0083
+E=O-2(0.5000) Wyckoff=e z=0.3022 TDS=0.0175 
+E=H(0.5000) Wyckoff=e z=0.4392 TDS=0.0364

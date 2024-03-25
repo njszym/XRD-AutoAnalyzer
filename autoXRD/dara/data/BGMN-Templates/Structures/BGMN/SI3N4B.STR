@@ -1,0 +1,8 @@
+PHASE=SI3N4_beta //
+SpacegroupNo=173 HermannMauguin=P6_3 //
+PARAM=A=0.7602_0.7526^0.7678 PARAM=C=0.2907_0.2878^0.2936 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:si3n4b=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI Wyckoff=c x=0.7686 y=0.1749 z=0.2500 TDS=0.0050
+E=N Wyckoff=c x=0.0313 y=0.3284 z=0.2860 TDS=0.0030
+E=N Wyckoff=b z=0.7500 TDS=0.0040

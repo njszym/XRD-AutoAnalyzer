@@ -1,0 +1,15 @@
+PHASE=Pyrrhotite_3T //
+SpacegroupNo=152 HermannMauguin=P3_121 //
+PARAM=A=0.6866_0.6797^0.6935 PARAM=C=1.7088_1.6917^1.7259 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:pyrrhotite3t=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE Wyckoff=c x=0.4718 y=0.4811 z=0.1583 TDS=0.0170
+E=FE Wyckoff=c x=0.4985 y=0.4884 z=0.3309 TDS=0.0161
+E=FE Wyckoff=b x=0.0289 TDS=0.0170
+E=FE Wyckoff=b x=0.4656 TDS=0.0158
+E=FE(0.8300) Wyckoff=a x=0.0205 TDS=0.0163
+E=FE(0.1870) Wyckoff=a x=0.4251 TDS=0.0163
+E=S Wyckoff=c x=0.1610 y=0.3287 z=0.0744 TDS=0.0133
+E=S Wyckoff=c x=0.3356 y=0.1639 z=0.2472 TDS=0.0125
+E=S Wyckoff=c x=0.6688 y=0.3271 z=0.0847 TDS=0.0126
+E=S Wyckoff=c x=0.1623 y=0.8284 z=0.0885 TDS=0.0117

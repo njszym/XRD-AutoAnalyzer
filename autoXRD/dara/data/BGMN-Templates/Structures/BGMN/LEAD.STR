@@ -1,0 +1,6 @@
+PHASE=Pb_Lead //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4910_0.4861^0.4959 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:lead=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=PB Wyckoff=a TDS=0.002

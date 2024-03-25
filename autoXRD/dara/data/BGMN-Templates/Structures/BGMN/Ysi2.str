@@ -1,0 +1,8 @@
+PHASE=YSi2 //
+SpacegroupNo=191 HermannMauguin=P6/m2/m2/m //
+PARAM=A=0.6655_0.6622^0.6688 PARAM=C=0.4140_0.4119^0.4161 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:ysi2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=Y(0.6670) Wyckoff=j x=0.3333 TDS=0.0050
+E=SI Wyckoff=d TDS=0.0060
+E=SI Wyckoff=k x=0.6660 TDS=0.0060

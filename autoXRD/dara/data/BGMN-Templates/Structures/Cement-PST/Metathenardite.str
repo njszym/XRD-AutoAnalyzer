@@ -1,0 +1,12 @@
+PHASE=Metathenardite //
+Formula=Na2_S_O4 //
+SpacegroupNo=194 Setting=1 HermannMauguin=P6_3/m2/m2/c Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.532600_0.527274^0.537926 PARAM=C=0.712600_0.705474^0.719726  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Metathenardite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NA+1 Wyckoff=d x=0.33333000 y=0.66667000 z=0.75000000 TDS=0.06199691
+E=NA+1 Wyckoff=a x=0.00000000 y=0.00000000 z=0.00000000 TDS=0.03300396
+E=S Wyckoff=c x=0.33333000 y=0.66667000 z=0.25000000 TDS=0.04499750
+E=O-2 Wyckoff=k x=0.24200000 y=0.48400000 z=0.41800000 TDS=0.09099775
+E=O-2 Wyckoff=j x=0.19900000 y=0.34600000 z=0.25000000 TDS=0.04799786

@@ -1,0 +1,16 @@
+PHASE=MgChlorateHydrate // icsd_425638
+Reference=icsd_425638
+Formula=Cl2_H4_Mg_O8 //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 Setting=14 CellChoice=3 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.637070_0.630699^0.643441 PARAM=B=0.540920_0.535511^0.546329 PARAM=C=0.982080_0.972259^0.991901 //
+PARAM=BETA=97.338000_96.364620^98.311380 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:MgChlorateHydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=e x=0.746400 y=0.174320 z=0.759620 TDS=0.007256
+E=H Wyckoff=e x=0.149000 y=0.232000 z=0.966000 TDS=0.021318
+E=H Wyckoff=e x=0.250000 y=0.329000 z=0.061000 TDS=0.030793 // check Wyckoff
+E=MG Wyckoff=d x=0.500000 y=0.000000 z=0.000000 TDS=0.007146
+E=O Wyckoff=e x=0.545350 y=0.202160 z=0.823090 TDS=0.009159
+E=O Wyckoff=e x=0.895000 y=0.359900 z=0.827570 TDS=0.013502
+E=O Wyckoff=e x=0.696100 y=0.248490 z=0.613500 TDS=0.010896
+E=O Wyckoff=e x=0.240420 y=0.211470 z=0.021070 TDS=0.010738

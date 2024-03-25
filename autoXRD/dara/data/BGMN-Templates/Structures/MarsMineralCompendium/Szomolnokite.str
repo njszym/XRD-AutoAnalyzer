@@ -1,0 +1,14 @@
+PHASE=Szomolnokite // amcsd_0014852
+Reference=amcsd_0014852 //
+Formula=Fe_S_O5_H2 //
+SpacegroupNo=15 HermannMauguin=C12/c1 Setting=1 CellChoice=1 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.707800_0.700722^0.714878 PARAM=B=0.754900_0.747351^0.762449 PARAM=C=0.777300_0.769527^0.785073 //
+PARAM=BETA=118.650000_117.463500^119.836500 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Szomolnokite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=b x=0.000000 y=0.500000 z=0.000000 TDS=0.010000
+E=H Wyckoff=f x=0.108000 y=0.709000 z=0.315000 TDS=0.069482
+E=O Wyckoff=f x=0.169700 y=0.042900 z=0.398500 TDS=0.010000
+E=O Wyckoff=f x=0.095600 y=0.268300 z=0.156000 TDS=0.010000
+E=O Wyckoff=e x=0.000000 y=0.644400 z=0.250000 TDS=0.010000
+E=S Wyckoff=e x=0.000000 y=0.153070 z=0.250000 TDS=0.010000

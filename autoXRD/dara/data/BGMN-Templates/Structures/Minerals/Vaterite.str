@@ -1,0 +1,12 @@
+PHASE=Vaterite // 04-011-5985
+MineralName=Vaterite //
+Formula=Ca_(CO3) //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.4130_0.4089^0.4171 PARAM=C=0.8490_0.8405^0.8575  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Vaterite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=a x=0.0000 y=0.0000 z=0.0000 TDS=0.06799763
+E=C(0.3333) Wyckoff=h x=0.2900 y=0.5800 z=0.2500 TDS=0.06799763
+E=O(0.3333) Wyckoff=h x=0.1200 y=0.2400 z=0.2500 TDS=0.06799763
+E=O(0.3333) Wyckoff=k x=0.3800 y=0.7600 z=0.1200 TDS=0.06799763

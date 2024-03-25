@@ -1,0 +1,9 @@
+PHASE=GROSSULAR_FE //
+SpacegroupNo=230 HermannMauguin=I4_1/a-32/d //
+PARAM=A=1.165_1.155^1.18 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 //
+GOAL:grossularfe=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(CA+2,FE+2(p)) PARAM=p=0.4_0.1^0.9 Wyckoff=c TDS=0.0064
+E=AL+3 Wyckoff=a TDS=0.0055
+E=SI+4 Wyckoff=d TDS=0.0050
+E=O-2 Wyckoff=h x=0.5381 y=0.5450 z=0.1516 TDS=0.0068

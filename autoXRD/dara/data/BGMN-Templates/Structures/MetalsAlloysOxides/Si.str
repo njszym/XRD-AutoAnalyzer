@@ -1,0 +1,12 @@
+PHASE=Si // 04-001-7247
+MineralName=Silicon //
+Formula=Si
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m //
+PARAM=A=0.5429_0.5329^0.5529 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Si=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI Wyckoff=a x=0.0000 y=0.0000 z=0.0000
+
+
+

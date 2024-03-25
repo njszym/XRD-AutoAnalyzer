@@ -1,0 +1,11 @@
+PHASE=FeCementite // 04-003-6492
+Mineral=Cohenite
+Reference=04-003-6492 //
+Formula=Fe3_C //
+SpacegroupNo=62 Setting=1 HermannMauguin=P2_1/n2_1/m2_1/a Lattice=Orthorhombic //
+PARAM=A=0.508900_0.503811^0.513989 PARAM=B=0.674400_0.667656^0.681144 PARAM=C=0.452600_0.448074^0.457126  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:FeCementite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=d x=0.169000 y=0.065000 z=0.338000 TDS=0.00500000
+E=FE Wyckoff=c x=0.030000 z=0.822000 TDS=0.00500000
+E=C Wyckoff=c x=0.880000 z=0.430000 TDS=0.00500000

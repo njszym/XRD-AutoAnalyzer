@@ -1,0 +1,8 @@
+PHASE=Boehmite //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m //
+PARAM=C=0.3701_0.36^0.38 PARAM=B=1.2234_1.21^1.23 PARAM=A=0.2874_0.28^0.29 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:boehmite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AL+3  Wyckoff=c y=-0.3165 z=1/4 TDS=0.0043
+E=O-2  Wyckoff=c  y=0.2891  z=1/4 TDS=0.0064
+E=O-2  Wyckoff=c  y=0.0775  z=1/4 TDS=0.0065

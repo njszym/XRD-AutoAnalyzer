@@ -1,0 +1,14 @@
+PHASE=K2SO4 // 04-006-8317
+MineralName=Arcanite //
+Formula=K2_(SO4) //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/a2_1/m //
+PARAM=A=0.7476_0.7401^0.7551 PARAM=B=1.0071_0.9970^1.0172 PARAM=C=0.5763_0.5705^0.5821  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:K2SO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K Wyckoff=c x=0.6738 y=0.4106 z=0.2500 TDS=0.01813112
+E=K Wyckoff=c x=-0.0110 y=0.7041 z=0.2500 TDS=0.01634670
+E=S Wyckoff=c x=0.2330 y=0.4197 z=0.2500 TDS=0.01176457
+E=O Wyckoff=c x=0.0379 y=0.4166 z=0.2500 TDS=0.02264219
+E=O Wyckoff=c x=0.2963 y=0.5582 z=0.2500 TDS=0.01963656
+E=O Wyckoff=d x=0.3009 y=0.3522 z=0.0412 TDS=0.02233952

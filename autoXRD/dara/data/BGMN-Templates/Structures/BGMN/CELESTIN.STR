@@ -1,0 +1,10 @@
+PHASE=Celestine //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.8377_0.8209^0.8545 PARAM=B=0.5350_0.5243^0.5457 PARAM=C=0.6873_0.6736^0.7010 //
+RP=3 PARAM=B1=0_0^0.005 GEWICHT=SPHAR4 //
+GOAL:celestin=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SR+2 Wyckoff=c x=0.6836 z=0.3417 TDS=0.0053
+E=S Wyckoff=c x=0.5620 z=0.8120 TDS=0.0015
+E=O Wyckoff=c x=0.3970 z=0.9070 TDS=0.0064
+E=O Wyckoff=c x=0.6950 z=0.9670 TDS=0.0152
+E=O Wyckoff=d x=0.4200 y=0.9790 z=0.3120 TDS=0.0021

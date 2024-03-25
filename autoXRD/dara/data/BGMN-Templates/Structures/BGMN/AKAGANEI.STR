@@ -1,0 +1,13 @@
+PHASE=Akaganeite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.4903_1.4754^1.5052 PARAM=B=0.3034_0.3004^0.3064 PARAM=C=1.0600_1.0494^1.0706 //
+PARAM=BETA=135.137_134.2^136.1 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:akagenei=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+3 Wyckoff=i x=0.3410 z=0.4830 TDS=0.0050
+E=FE+3 Wyckoff=i x=0.1410 z=0.8020 TDS=0.0050
+E=O-2 Wyckoff=i x=0.2900 z=0.6270 TDS=0.0080
+E=O-2 Wyckoff=i x=0.0300 z=0.3730 TDS=0.0080
+E=O-2 Wyckoff=i x=0.3570 z=0.0640 TDS=0.0080
+E=O-2 Wyckoff=i x=0.3320 z=0.2930 TDS=0.0080
+E=CL-1(0.6750) Wyckoff=a TDS=0.0200

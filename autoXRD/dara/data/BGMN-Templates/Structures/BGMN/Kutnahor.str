@@ -1,0 +1,9 @@
+PHASE=Kutnahorite //
+SpacegroupNo=148 HermannMauguin=R-3 //
+PARAM=A=0.4894_0.4855^0.4933 PARAM=C=1.6500_1.6368^1.6632 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:kutnahor=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(CA+2(0.8400),MN+2(0.1600)) Wyckoff=a TDS=0.0097
+E=(CA+2(0.2700),MN+2(0.7300)) Wyckoff=b TDS=0.0092
+E=C Wyckoff=c z=0.7539 TDS=0.0107
+E=O Wyckoff=f x=0.2568 y=0.9850 z=0.2472 TDS=0.0143

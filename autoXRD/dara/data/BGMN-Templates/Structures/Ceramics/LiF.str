@@ -1,0 +1,10 @@
+PHASE=LiF // 04-007-3587
+MineralName=Griceite //
+Formula=Li_F //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4014_0.39^0.41 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:LiF=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=LI+1 Wyckoff=a
+E=F-1  Wyckoff=b

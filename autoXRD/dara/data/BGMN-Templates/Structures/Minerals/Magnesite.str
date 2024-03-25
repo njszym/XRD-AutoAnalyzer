@@ -1,0 +1,10 @@
+PHASE=Magnesite // 04-014-4830
+Reference=04-014-4830 //
+Formula=Mg_(_C_O3_) //
+SpacegroupNo=167 Setting=1 HermannMauguin=R-32/c //
+PARAM=A=0.463380_0.458746^0.468014 PARAM=C=1.501920_1.486901^1.516939  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Magnesite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=MG Wyckoff=b x=0.000000 y=0.000000 z=0.000000 TDS=0.02052878
+E=C Wyckoff=a x=0.000000 y=0.000000 z=0.250000 TDS=0.01658094
+E=O Wyckoff=e x=0.279000 y=0.000000 z=0.250000 TDS=0.01658094

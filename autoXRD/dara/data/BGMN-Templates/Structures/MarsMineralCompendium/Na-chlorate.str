@@ -1,0 +1,10 @@
+PHASE=NaChlorate // 04-007-6835
+Reference=04-007-6835
+Formula=Cl_Na_O3 //
+SpacegroupNo=198 HermannMauguin=P2_13 Setting=1 Lattice=Cubic //
+PARAM=A=0.657584_0.651008^0.664160 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:NaChlorate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=a x=0.418220 y=0.418220 z=0.418220 TDS=0.011744
+E=NA Wyckoff=a x=0.068690 y=0.068690 z=0.068690 TDS=0.018023
+E=O Wyckoff=b x=0.303470 y=0.592390 z=0.504680 TDS=0.020445

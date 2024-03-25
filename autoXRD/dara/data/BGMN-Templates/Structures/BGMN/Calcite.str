@@ -1,0 +1,9 @@
+PHASE=Calcite //
+SpacegroupNo=167 //
+PARAM=A=0.499_0.495^0.5 PARAM=C=1.7061_1.69^1.71 //
+RP=3 PARAM=B1=0_0^0.05 GEWICHT=SPHAR6 //
+GOAL:calcite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,0,4)
+E=CA+2 Wyckoff=b TDS=0.0095
+E=C Wyckoff=a TDS=0.0090
+E=O-2  Wyckoff=e x=0.257 TDS=0.0094

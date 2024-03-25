@@ -1,0 +1,12 @@
+PHASE=C2S_beta_Mumme //
+SpacegroupNo=14 HermannMauguin=P12_1/c1 //
+PARAM=A=0.9314_0.9128^0.9500 PARAM=B=0.6758_0.6623^0.6893 PARAM=C=1.0435_1.0227^1.0644 PARAM=BETA=148.231 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR0 //
+GOAL:c2sbmu=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.2028 y=0.3435 z=0.7724 TDS=0.0052
+E=CA+2 Wyckoff=e x=0.4815 y=0.9979 z=0.7797 TDS=0.0045
+E=SI+4 Wyckoff=e x=0.1513 y=0.7806 z=0.7320 TDS=0.0067
+E=O-2 Wyckoff=e x=0.2229 y=0.0077 z=0.7805 TDS=0.0059
+E=O-2 Wyckoff=e x=0.8330 y=0.7496 z=0.5247 TDS=0.0049
+E=O-2 Wyckoff=e x=0.3461 y=0.6728 z=0.9842 TDS=0.0044
+E=O-2 Wyckoff=e x=0.2287 y=0.6757 z=0.6569 TDS=0.0070

@@ -1,0 +1,12 @@
+PHASE=c2samu // 
+Formula=Ca2SiO4 //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.5420_0.53^0.56 PARAM=C=0.7027_0.68^0.72 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.012 GEWICHT=SPHAR0 //
+GOAL:c2samu=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=CA+2(0.5000) Wyckoff=f z=0.7100 TDS=0.0160
+E=CA+2 Wyckoff=a TDS=0.0150
+E=SI+4 Wyckoff=c TDS=0.0140
+E=O-2(0.5000) Wyckoff=f z=0.0300 TDS=0.0150
+E=O-2(0.5000) Wyckoff=k x=0.1700 z=0.3400 TDS=0.0150

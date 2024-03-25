@@ -1,0 +1,11 @@
+PHASE=CalciumSulfateAnhydrate // 00-037-1496
+Reference=00-037-1496 //
+Formula=Ca_S_O4 //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m Setting=1 Lattice=Orthorhombic //
+PARAM=A=0.699330_0.692337^0.706323 PARAM=B=0.624110_0.617869^0.630351 PARAM=C=0.700170_0.693168^0.707172 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:CalciumSulfateAnhydrate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=g x=0.169540 y=0.015490 z=0.250000 TDS=0.010000
+E=O Wyckoff=f x=0.000000 y=0.297600 z=0.081710 TDS=0.010000
+E=S Wyckoff=c x=0.000000 y=0.155640 z=0.250000 TDS=0.010000
+E=CA Wyckoff=c x=0.000000 y=0.652390 z=0.250000 TDS=0.010000

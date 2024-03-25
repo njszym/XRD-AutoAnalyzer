@@ -1,0 +1,10 @@
+PHASE=Anhydrite //
+Reference=ICSD_159702 //
+Formula=Ca_(S_O4) //
+SpacegroupNo=180 Setting=1 HermannMauguin=P6_222 Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.696865_0.689896^0.703834 PARAM=C=0.630044_0.623744^0.636344  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Anhydrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CA+2 Wyckoff=c x=0.50000000 y=0.00000000 z=0.00000000 TDS=0.00660000
+E=S Wyckoff=d x=0.50000000 y=0.00000000 z=0.50000000 TDS=0.00460000
+E=O-2 Wyckoff=k x=0.44710000 y=0.13650000 z=0.35910000 TDS=0.00980000

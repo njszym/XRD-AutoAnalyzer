@@ -1,0 +1,12 @@
+PHASE=Huntite //
+SpacegroupNo=155 HermannMauguin=R32 //
+PARAM=A=0.9503_0.9408^0.9598 PARAM=C=0.7821_0.7743^0.7899 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:huntite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=a TDS=0.0094
+E=MG+2 Wyckoff=d x=0.5443 TDS=0.0094
+E=C Wyckoff=b TDS=0.0094
+E=C Wyckoff=e x=0.4535 TDS=0.0094
+E=O Wyckoff=e x=0.8663 TDS=0.0094
+E=O Wyckoff=e x=0.5895 TDS=0.0094
+E=O Wyckoff=f x=0.4569 y=0.1355 z=0.5161 TDS=0.0094

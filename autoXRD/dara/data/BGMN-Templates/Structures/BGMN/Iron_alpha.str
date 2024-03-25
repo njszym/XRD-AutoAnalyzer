@@ -1,0 +1,6 @@
+PHASE=Iron_alpha //
+SpacegroupNo=229 //
+PARAM=A=0.28665_0.2838^0.2895 //
+PARAM=B1=0_0^0.01 PARAM=k1=0_0^1 PARAM=k2=0_0^0.0001 //
+GEWICHT=SPHAR6 GOAL:ironalpha=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE Wyckoff=a

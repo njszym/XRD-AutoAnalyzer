@@ -1,0 +1,27 @@
+PHASE=HNaP // 04-013-7679
+Formula=Na3_H_(PO4)3 //
+SpacegroupNo=14 HermannMauguin=P12_1/n1 //
+PARAM=A=1.132_1.122^1.142 PARAM=B=0.995_0.985^1.005 PARAM=C=0.873_0.863^0.883 //
+PARAM=BETA=90.1_89.1^91.1 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:HNaP=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=P Wyckoff=e x=0.0206 y=0.2799 z=0.5634
+E=P Wyckoff=e x=0.2311 y=0.2785 z=0.7602
+E=P Wyckoff=e x=0.0910 y=0.7217 z=0.9701
+E=P Wyckoff=e x=0.1092 y=0.2837 z=0.2477
+E=NA Wyckoff=e x=0.2457 y=0.0310 z=0.0569
+E=NA Wyckoff=e x=0.1784 y=0.9863 z=0.4489
+E=NA Wyckoff=e x=0.0386 y=0.0162 z=0.8027
+E=O Wyckoff=e x=0.1380 y=0.3444 z=0.6405
+E=O Wyckoff=e x=0.0238 y=0.1319 z=0.5764
+E=O Wyckoff=e x=0.0837 y=0.6434 z=0.3735
+E=O Wyckoff=e x=0.1940 y=0.6874 z=0.8527
+E=O Wyckoff=e x=0.1941 y=0.8937 z=0.6845
+E=O Wyckoff=e x=0.1709 y=0.1859 z=0.8659
+E=O Wyckoff=e x=0.0216 y=0.3320 z=0.1119
+E=O Wyckoff=e x=0.1147 y=0.6233 z=0.0973
+E=O Wyckoff=e x=0.0852 y=0.8677 z=0.0045
+E=O Wyckoff=e x=0.0317 y=0.3297 z=0.3912
+E=O Wyckoff=e x=0.1188 y=0.1327 z=0.2393
+E=O Wyckoff=e x=0.2152 y=0.3683 z=0.2426

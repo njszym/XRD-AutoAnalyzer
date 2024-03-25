@@ -1,0 +1,9 @@
+PHASE=MoNi //
+Reference=04-002-1276 //
+Formula=Mo0.5_Ni0.5 //
+SpacegroupNo=194 Setting=1 HermannMauguin=P6_3/m2/m2/c Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.254000_0.251460^0.256540 PARAM=C=0.418000_0.413820^0.422180  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:MoNi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI(0.5000) Wyckoff=c x=0.333330 y=0.666660 z=0.250000 TDS=0.00000000
+E=MO(0.5000) Wyckoff=c x=0.333330 y=0.666660 z=0.250000 TDS=0.00000000

@@ -1,0 +1,11 @@
+PHASE=Katoitesyn // 04-008-4297
+Reference=04-008-4297 //
+Formula=Ca3_Al2_(_O_H_)12 //
+SpacegroupNo=230 Setting=1 HermannMauguin=I4_1/a-32/d Lattice=Cubic //
+PARAM=A=1.257000_1.244430^1.269570  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Katoitesyn=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AL Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00800000
+E=CA Wyckoff=c x=0.125000 y=0.000000 z=0.250000 TDS=0.00500000
+E=O Wyckoff=h x=0.030000 y=0.054000 z=0.637000 TDS=0.01000000
+E=H Wyckoff=h x=0.149000 y=0.088000 z=0.799000 TDS=0.01000000

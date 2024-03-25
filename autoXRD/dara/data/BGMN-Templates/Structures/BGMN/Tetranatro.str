@@ -1,0 +1,13 @@
+PHASE=Tetranatrolite //
+SpacegroupNo=122 HermannMauguin=I-42d //
+PARAM=A=1.3070_1.2939^1.3201 PARAM=C=0.6580_0.6514^0.6646 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:tetranatro=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a TDS=0.0070
+E=(SI+4(0.5000),AL+3(0.5000)) Wyckoff=e x=0.0576 y=0.1338 z=0.6209 TDS=0.0070
+E=NA+1 Wyckoff=d x=0.6895 TDS=0.0210
+E=O-2 Wyckoff=d x=0.3878 TDS=0.0120
+E=O-2 Wyckoff=e x=0.1381 y=0.0589 z=0.4870 TDS=0.0190
+E=O-2 Wyckoff=e x=0.0448 y=0.0910 z=0.8640 TDS=0.0160
+E=O-2 Wyckoff=d x=0.1320 TDS=0.0250
+E=H Wyckoff=e x=0.0700 y=0.2100 z=0.0300 TDS=0.0300

@@ -1,0 +1,14 @@
+PHASE=Natroalunite // amcsd_0014771
+Reference=amcsd_0014771 //
+Formula=(Na.58_K.42)_Al3_S2_O14_H6 //
+SpacegroupNo=166 HermannMauguin=R-32/m Setting=1 UniqueAxis=c Lattice=Trigonal //
+PARAM=A=0.699000_0.692010^0.705990 PARAM=C=1.690500_1.673595^1.707405 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Natroalunite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AL Wyckoff=d x=0.500000 y=0.000000 z=0.500000 TDS=0.005203
+E=H Wyckoff=h x=0.178000 y=0.822000 z=0.116000 TDS=0.030998
+E=(K(0.4200),NA(0.5800)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.018997
+E=O Wyckoff=h x=0.125340 y=0.874660 z=0.139020 TDS=0.007398 // O-h
+E=O Wyckoff=c x=0.000000 y=0.000000 z=0.392110 TDS=0.007604
+E=O Wyckoff=h x=0.218050 y=0.781950 z=0.942710 TDS=0.007501
+E=S Wyckoff=c x=0.000000 y=0.000000 z=0.305900 TDS=0.005101

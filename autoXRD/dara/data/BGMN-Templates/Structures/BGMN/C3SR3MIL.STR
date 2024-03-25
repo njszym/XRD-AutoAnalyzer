@@ -1,0 +1,20 @@
+PHASE=C3S_r3m_Illnetz //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.7057_0.6916^0.7198 PARAM=C=2.4974_2.4475^2.5473 //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.0002 GEWICHT=SPHAR0 //
+GOAL:c3sr3mil=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=b x=0.4903 z=1.0000 TDS=0.0057
+E=CA+2 Wyckoff=b x=0.1783 z=0.8841 TDS=0.0067
+E=CA+2 Wyckoff=b x=0.1659 z=0.1082 TDS=0.0073
+E=SI+4 Wyckoff=a z=0.9885 TDS=0.0052
+E=SI+4 Wyckoff=a z=0.5570 TDS=0.0096
+E=SI+4 Wyckoff=a z=0.7737 TDS=0.0060
+E=O-2 Wyckoff=a z=0.8373 TDS=0.0100
+E=O-2 Wyckoff=a z=0.3957 TDS=0.0090
+E=O-2 Wyckoff=a z=0.1511 TDS=0.0110
+E=O-2 Wyckoff=a z=0.9248 TDS=0.0080
+E=O-2 Wyckoff=a z=0.2717 TDS=0.0120
+E=O-2 Wyckoff=a z=0.6218 TDS=0.0210
+E=O-2 Wyckoff=b x=0.4483 z=0.4094 TDS=0.0360
+E=O-2 Wyckoff=b x=0.2153 z=0.1962 TDS=0.0220
+E=O-2 Wyckoff=b x=0.4592 z=0.6759 TDS=0.0090

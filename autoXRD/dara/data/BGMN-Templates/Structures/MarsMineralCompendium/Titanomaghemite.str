@@ -1,0 +1,12 @@
+PHASE=Titanomaghemite // amcsd_0001136
+Reference=amcsd_0001136 //
+Formula=Fe2.18_O4_Ti0.42 //
+SpacegroupNo=212 HermannMauguin=P4_332 Setting=1 Lattice=Cubic //
+PARAM=A=0.834100_0.825759^0.842441 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Titanomaghemite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(FE(0.7000),TI(0.2400)) Wyckoff=d x=0.125000 y=0.366230 z=0.883770 TDS=0.006819
+E=FE(0.9600) Wyckoff=c x=0.995560 y=0.995560 z=0.995560 TDS=0.005093
+E=(FE(0.3400),TI(0.1200)) Wyckoff=b x=0.625000 y=0.625000 z=0.625000 TDS=0.010604
+E=O Wyckoff=c x=0.386200 y=0.386200 z=0.386200 TDS=0.005645
+E=O Wyckoff=e x=0.117900 y=0.130400 z=0.383700 TDS=0.009185

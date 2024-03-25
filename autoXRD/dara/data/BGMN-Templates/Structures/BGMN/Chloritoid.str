@@ -1,0 +1,18 @@
+PHASE=Chloritoid //
+SpacegroupNo=15 HermannMauguin=C12/c1 //
+PARAM=A=0.9520_0.9425^0.9615 PARAM=B=0.5470_0.5415^0.5525 PARAM=C=1.8190_1.8008^1.8372 //
+PARAM=BETA=101.7_101^103 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR2 TDS=0.006 //
+GOAL:chloritoid=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AL+3(0.7500),FE+2(0.2500)) Wyckoff=c
+E=AL+3 Wyckoff=e y=0.4036
+E=(MG+2(0.1500),FE+2(0.7500)) Wyckoff=f x=0.0857 y=0.7500 z=0.0006
+E=O-2 Wyckoff=f x=0.0695 y=0.0853 z=-0.0659
+E=O-2(0.7500) Wyckoff=f x=0.1055 y=0.5853 z=-0.0500
+E=O-2(0.7500) Wyckoff=f x=0.2330 y=0.5853 z=-0.0520
+E=SI+4 Wyckoff=f x=0.0339 y=0.0903 z=-0.1560
+E=O-2 Wyckoff=f x=0.1050 y=0.3475 z=-0.1861
+E=O-2 Wyckoff=f x=0.1050 y=0.8475 z=-0.1861
+E=O-2 Wyckoff=f x=-0.1432 y=0.0981 z=-0.1966
+E=O-2 Wyckoff=f x=-0.1432 y=0.5981 z=-0.1966
+E=AL+3 Wyckoff=f x=0.2500 y=0.3421 z=-0.2500

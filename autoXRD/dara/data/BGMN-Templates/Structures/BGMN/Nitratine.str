@@ -1,0 +1,8 @@
+PHASE=Nitratine //
+SpacegroupNo=167 HermannMauguin=R-32/c //
+PARAM=A=0.5070_0.5019^0.5121 PARAM=C=1.6820_1.6652^1.6988 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:nitratine=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=b TDS=0.0182
+E=N Wyckoff=a TDS=0.0155
+E=O-2 Wyckoff=e x=0.2450 TDS=0.0258

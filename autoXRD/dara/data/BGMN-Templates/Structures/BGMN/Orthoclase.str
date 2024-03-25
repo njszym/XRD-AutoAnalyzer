@@ -1,0 +1,13 @@
+PHASE=ORTHOCLASE //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.8588_0.85^0.866 PARAM=B=1.3005_1.29^1.31 PARAM=C=0.7192_0.71^0.73 //
+PARAM=BETA=116.0_115^117 //
+RP=3 PARAM=B1=0.0_0^0.005 GEWICHT=SPHAR6 GOAL:orthoclase=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(SI+4(0.7500),AL+3(0.2500)) Wyckoff=j x=0.0090 y=0.1842 z=0.2226 TDS=0.0016
+E=(SI+4(0.7500),AL+3(0.2500)) Wyckoff=j x=0.7078 y=0.1185 z=0.3395 TDS=0.0016
+E=O-2 Wyckoff=g x=0.0000 y=0.8513 z=0.0000 TDS=0.0095
+E=O-2 Wyckoff=i x=0.3672 z=0.7218 TDS=0.0095
+E=O-2 Wyckoff=j x=0.8307 y=0.1466 z=0.2218 TDS=0.0095
+E=O-2 Wyckoff=j x=0.0364 y=0.3126 z=0.2546 TDS=0.0095
+E=O-2 Wyckoff=j x=0.1821 y=0.1254 z=0.4063 TDS=0.0095
+E=K+1 Wyckoff=i x=0.7168 z=0.8642 TDS=0.0047

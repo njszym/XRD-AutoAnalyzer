@@ -1,0 +1,15 @@
+PHASE=Weddellite //
+SpacegroupNo=87 HermannMauguin=I4/m //
+PARAM=A=1.2371_1.2247^1.2495 PARAM=C=0.7357_0.7283^0.7431 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:weddellite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=i x=0.4464 y=0.2415 z=0.1053 TDS=0.0123
+E=O-2 Wyckoff=i x=0.3564 y=0.2458 z=0.1829 TDS=0.0146
+E=O-2 Wyckoff=i x=0.2355 y=0.4634 z=0.1799 TDS=0.0279
+E=CA+2 Wyckoff=h x=0.3011 y=0.8007 TDS=0.0097
+E=O-2 Wyckoff=h x=0.1145 y=0.8510 TDS=0.0275
+E=O-2 Wyckoff=h x=0.3841 y=0.9808 TDS=0.0297
+E=O-2(0.5800) Wyckoff=e z=0.3170 TDS=0.072
+E=O-2(0.1700) Wyckoff=e z=0.7600 TDS=0.07
+E=H Wyckoff=i x=0.1660 y=0.0710 z=0.1050 TDS=0.0500
+E=H Wyckoff=i x=0.3500 y=0.0180 z=0.1150 TDS=0.0500

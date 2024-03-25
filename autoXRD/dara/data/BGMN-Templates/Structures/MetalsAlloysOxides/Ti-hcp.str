@@ -1,0 +1,12 @@
+PHASE=Ti-ccp // 04-001-8963
+MineralName=Titanium //
+Formula=Ti //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c Setting=1 Lattice=Hexagonal UniqueAxis=c //
+PARAM=A=0.2950_0.28^0.31 PARAM=C=0.4681_0.45^0.48 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:TiCcp=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=TI Wyckoff=c TDS=0.005000
+
+
+

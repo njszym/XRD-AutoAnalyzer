@@ -1,0 +1,16 @@
+PHASE=betaC2S // 04-007-2687
+MineralName=Larnite //
+Formula=Ca2_(SiO4) //
+SpacegroupNo=14 HermannMauguin=P12_1/n1 //
+PARAM=A=0.55121_0.54121^0.56121 PARAM=B=0.67575_0.66575^0.68575 PARAM=C=0.93138_0.92138^0.94138 //
+PARAM=BETA=94.581_93.0^96.0 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:betaC2S=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.2276 y=0.3435 z=0.4304
+E=CA+2 Wyckoff=e x=0.2203 y=0.9979 z=0.7018
+E=SI+4 Wyckoff=e x=0.2680 y=0.7806 z=0.4193
+E=O-2 Wyckoff=e x=0.2195 y=0.0077 z=0.4424
+E=O-2 Wyckoff=e x=0.4753 y=0.7496 z=0.3083
+E=O-2 Wyckoff=e x=0.0158 y=0.6728 z=0.3619
+E=O-2 Wyckoff=e x=0.3431 y=0.6757 z=0.5718

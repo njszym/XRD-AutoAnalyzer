@@ -1,0 +1,12 @@
+PHASE=FLUORAPATITE //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=0.9367_0.9273^0.9461 PARAM=C=0.6884_0.6815^0.6953 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 TDS=0.008 //
+GOAL:fluorapa=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2(0.9750) Wyckoff=f z=0.4989
+E=CA+2(0.9760) Wyckoff=h x=0.7655 y=0.7584
+E=P(0.9920) Wyckoff=h x=0.9707 y=0.6019
+E=O Wyckoff=h x=0.1581 y=0.6738
+E=O Wyckoff=h x=0.8788 y=0.4120
+E=O(0.9980) Wyckoff=i x=0.3416 y=0.2568 z=0.0704
+E=F-1(0.9420) Wyckoff=a

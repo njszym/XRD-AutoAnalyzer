@@ -1,0 +1,12 @@
+PHASE=Muscovite_1Mzwj //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=0.5208_0.5156^0.5260 PARAM=B=0.8995_0.8905^0.9085 PARAM=C=1.0275_1.0172^1.0378 PARAM=BETA=101.300 //
+RP=3 B1=ANISO^0.01 GEWICHT=SPHAR2 //
+GOAL:muscovite1mzwj=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1(p) PARAM=p=0.7_0.5^1 Wyckoff=d TDS=0.0424
+E=(SI+4(0.8500),AL+3(0.1500)) Wyckoff=j x=0.4250 y=0.3320 z=0.2760 TDS=0.0388
+E=AL+3 Wyckoff=g y=0.6680 TDS=0.0424
+E=O-2 Wyckoff=i x=0.6200 z=0.8870 TDS=0.0388
+E=O-2 Wyckoff=j x=0.3530 y=0.3170 z=0.1070 TDS=0.0425
+E=O-2 Wyckoff=i x=0.9980 z=0.6700 TDS=0.0395
+E=O-2 Wyckoff=j x=0.1820 y=0.2670 z=0.3290 TDS=0.0415

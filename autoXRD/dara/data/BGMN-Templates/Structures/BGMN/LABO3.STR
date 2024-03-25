@@ -1,0 +1,10 @@
+PHASE=LaBO3 //
+SpacegroupNo=11 HermannMauguin=P12_1/m1 //
+PARAM=A=0.6348_0.6285^0.6411 PARAM=B=0.5084_0.5033^0.5135 PARAM=C=0.4186_0.4144^0.4228 //
+PARAM=BETA=107.9_107^108.8 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR0 //
+GOAL:labo3=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=LA+3 Wyckoff=e x=0.7760 z=0.6200 TDS=0.0025
+E=B Wyckoff=e x=0.2570 z=0.0020 TDS=0.0018
+E=O-2 Wyckoff=e x=0.3800 z=0.3190 TDS=0.0027
+E=O-2 Wyckoff=f x=0.1740 y=0.0200 z=0.8390 TDS=0.0067

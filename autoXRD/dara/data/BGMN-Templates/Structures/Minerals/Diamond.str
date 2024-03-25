@@ -1,0 +1,7 @@
+PHASE=Diamondsyn // 04-005-7200
+Formula=C //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=1 OriginChoice=1 Lattice=Cubic //
+PARAM=A=0.357050_0.353480^0.360620 PARAM=B=0.357050_0.353480^0.360620 PARAM=C=0.357050_0.353480^0.360620 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:Diamondsyn=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=C Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.000000

@@ -1,0 +1,12 @@
+PHASE=NiFe2O4  // 04-014-8286
+MineralName=Trevorite //
+Formula=Ni_Fe2_O4 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=2 Lattice=Cubic OriginChoice=2 //
+PARAM=A=0.8334_0.77958^0.90958 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:NiFe2O4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE+3,NI+3(p)) p=0 Wyckoff=d // octahedral
+E=(NI+2,FE+2(p)) p=0 Wyckoff=a // tetrahedral
+E=O-2 Wyckoff=e x=0.2529 
+

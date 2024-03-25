@@ -1,0 +1,49 @@
+PHASE=Kogarkoite_Na3SO4F  //
+SpacegroupNo=11 HermannMauguin=P12_1/m1 //
+PARAM=A=1.8079_1.7898^1.8260 PARAM=B=0.6958_0.6888^0.7028 PARAM=C=1.1443_1.1329^1.1557 //
+PARAM=BETA=107.7_106.7^108.7 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0 GEWICHT=SPHAR4 //
+GOAL:kogarkoi=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=NA+1 Wyckoff=d TDS=0.0129
+E=NA+1 Wyckoff=e x=0.3494 z=0.3009 TDS=0.0166
+E=NA+1 Wyckoff=e x=0.1166 z=0.8732 TDS=0.0135
+E=NA+1 Wyckoff=e x=0.6149 z=0.3974 TDS=0.0123
+E=NA+1 Wyckoff=e x=0.8519 z=0.8160 TDS=0.0117
+E=NA+1 Wyckoff=e x=0.3934 z=0.9058 TDS=0.0151
+E=NA+1 Wyckoff=a TDS=0.0125
+E=NA+1 Wyckoff=e x=0.8932 z=0.4380 TDS=0.0126
+E=NA+1 Wyckoff=f x=0.2790 y=0.0274 z=0.0296 TDS=0.0107
+E=NA+1 Wyckoff=f x=0.4651 y=0.0180 z=0.1900 TDS=0.0000
+E=NA+1 Wyckoff=f x=0.2447 y=0.0008 z=0.7330 TDS=0.0000
+E=NA+1 Wyckoff=f x=0.7737 y=0.0222 z=0.5510 TDS=0.0000
+E=NA+1 Wyckoff=f x=0.9700 y=0.0233 z=0.7084 TDS=0.0000
+E=S Wyckoff=e x=0.1619 z=0.1931 TDS=0.0059
+E=S Wyckoff=e x=0.5970 z=0.0821 TDS=0.0067
+E=S Wyckoff=e x=0.6537 z=0.7022 TDS=0.0059
+E=S Wyckoff=e x=0.0849 z=0.5429 TDS=0.0067
+E=S Wyckoff=e x=0.3749 z=0.6120 TDS=0.0066
+E=S Wyckoff=e x=0.8697 z=0.1194 TDS=0.0059
+E=F-1 Wyckoff=e x=0.4788 z=0.3566 TDS=0.0108
+E=F-1 Wyckoff=e x=0.3776 z=0.0935 TDS=0.0105
+E=F-1 Wyckoff=e x=0.2376 z=0.8631 TDS=0.0111
+E=F-1 Wyckoff=e x=0.9901 z=0.8760 TDS=0.0098
+E=F-1 Wyckoff=e x=0.7427 z=0.3945 TDS=0.0114
+E=F-1 Wyckoff=e x=0.8755 z=0.6271 TDS=0.0099
+E=O Wyckoff=f x=0.1129 y=0.0773 z=0.1787 TDS=0.0136
+E=O Wyckoff=f x=0.6458 y=0.0768 z=0.0945 TDS=0.0139
+E=O Wyckoff=f x=0.6532 y=0.0764 z=0.7756 TDS=0.0128
+E=O Wyckoff=f x=0.1334 y=0.0768 z=0.5535 TDS=0.0126
+E=O Wyckoff=e x=0.2021 z=0.0991 TDS=0.0137
+E=O Wyckoff=e x=0.5598 z=0.1796 TDS=0.0134
+E=O Wyckoff=e x=0.7242 z=0.6632 TDS=0.0145
+E=O Wyckoff=e x=0.0475 z=0.6406 TDS=0.0150
+E=O Wyckoff=e x=0.2196 z=0.3164 TDS=0.0137
+E=O Wyckoff=e x=0.5369 z=0.9616 TDS=0.0166
+E=O Wyckoff=e x=0.5838 z=0.5949 TDS=0.0145
+E=O Wyckoff=e x=0.0244 z=0.4223 TDS=0.0159
+E=O Wyckoff=f x=0.9181 y=0.0771 z=0.1282 TDS=0.0148
+E=O Wyckoff=e x=0.8079 z=0.0003 TDS=0.0127
+E=O Wyckoff=e x=0.8344 z=0.2195 TDS=0.0149
+E=O Wyckoff=f x=0.3747 y=0.0782 z=0.5374 TDS=0.0183
+E=O Wyckoff=e x=0.4430 z=0.7203 TDS=0.0285
+E=O Wyckoff=e x=0.3044 z=0.6503 TDS=0.0291

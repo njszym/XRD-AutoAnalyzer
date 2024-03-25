@@ -1,0 +1,11 @@
+PHASE=alphaMgSO4 // 04-015-4049
+Reference=04-015-4049 //
+Formula=Mg_(_S_O4_) //
+SpacegroupNo=63 Setting=1 HermannMauguin=C2/m2/c2_1/m Lattice=Orthorhombic //
+PARAM=A=0.517471_0.512296^0.522646 PARAM=B=0.787563_0.779687^0.795439 PARAM=C=0.649517_0.643022^0.656012  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:alphaMgSO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=MG Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00989329
+E=S Wyckoff=c x=0.000000 y=0.350800 z=0.250000 TDS=0.00829047
+E=O Wyckoff=f x=0.000000 y=0.249390 z=0.063570 TDS=0.01008279
+E=O Wyckoff=g x=0.233210 y=0.461840 z=0.250000 TDS=0.00939586

@@ -1,0 +1,12 @@
+PHASE=NiobiumOxide // 00-068-0148
+Reference=00-068-0148 //
+Formula=Nb2_O5 //
+SpacegroupNo=15 HermannMauguin=C12/c1 Setting=1 CellChoice=1 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=1.274000_1.261260^1.286740 PARAM=B=0.488300_0.483417^0.493183 PARAM=C=0.556100_0.550539^0.561661 //
+PARAM=BETA=105.000000_103.950000^106.050000 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NiobiumOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NB Wyckoff=f x=0.359800 y=0.258740 z=0.251200 TDS=0.003885
+E=O Wyckoff=e x=0.000000 y=0.896500 z=0.250000 TDS=0.006443
+E=O Wyckoff=f x=0.891200 y=0.557900 z=0.529100 TDS=0.006577
+E=O Wyckoff=f x=0.205500 y=0.072300 z=0.125600 TDS=0.005361

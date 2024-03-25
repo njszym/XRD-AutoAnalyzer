@@ -1,0 +1,11 @@
+PHASE=Troilite // amcsd_0004159
+Reference=amcsd_0004159 //
+Formula=Fe_S //
+SpacegroupNo=190 HermannMauguin=P-62c Setting=1 UniqueAxis=c Lattice=Hexagonal //
+PARAM=A=0.596500_0.590535^0.602465 PARAM=C=1.175900_1.164141^1.187659 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Troilite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE Wyckoff=i x=0.378800 y=0.054800 z=0.123110 TDS=0.011449
+E=S Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.009870
+E=S Wyckoff=f x=0.333333 y=0.666667 z=0.020000 TDS=0.008843
+E=S Wyckoff=h x=0.665200 y=0.996700 z=0.250000 TDS=0.009317

@@ -1,0 +1,11 @@
+PHASE=Jarosite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.7304_0.72^0.74 PARAM=C=1.7268_1.71^1.734 //
+RP=3 PARAM=B1=0.002_0^0.02 GEWICHT=SPHAR4 //
+GOAL:jarosite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=a TDS=0.0104
+E=S Wyckoff=c z=0.6916 TDS=0.0057
+E=FE+3 Wyckoff=d TDS=0.0057
+E=O-2 Wyckoff=c z=0.6066 TDS=0.0100
+E=O-2 Wyckoff=h x=0.1153 y=0.2307 z=0.7210 TDS=0.0123
+E=O-2 Wyckoff=h x=0.2086 y=0.4173 z=0.5316 TDS=0.0100

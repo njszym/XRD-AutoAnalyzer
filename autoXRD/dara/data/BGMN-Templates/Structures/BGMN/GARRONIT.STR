@@ -1,0 +1,17 @@
+PHASE=Garronite //
+SpacegroupNo=119 HermannMauguin=I-4m2 //
+PARAM=A=0.9927_0.9877^0.9977 PARAM=C=1.0303_1.0251^1.0355 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.00001 GEWICHT=SPHAR4 //
+GOAL:garronit=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AL+3(0.3750),SI+4(0.6250)) Wyckoff=g x=0.3393 TDS=0.0308
+E=(AL+3(0.3750),SI+4(0.6250)) Wyckoff=h x=0.6579 TDS=0.0403
+E=O-2 Wyckoff=i x=0.8254 z=0.5351 TDS=0.0268
+E=O-2 Wyckoff=i x=0.6922 z=0.2192 TDS=0.0253
+E=O-2 Wyckoff=j x=0.2922 y=0.2488 z=0.1244 TDS=0.0671
+E=CA+2(0.1970) Wyckoff=i x=0.6480 z=0.9060 TDS=0.0869
+E=CA+2(0.1550) Wyckoff=i x=0.7620 z=0.8930 TDS=0.0869
+E=NA+1(0.1000) Wyckoff=i x=0.7190 z=0.7770 TDS=0.0632
+E=O-2 Wyckoff=e z=0.8410 TDS=0.0924
+E=O-2(0.1400) Wyckoff=h x=0.8950 TDS=0.0205
+E=O-2(0.2400) Wyckoff=j x=0.1610 y=0.4330 z=0.2340 TDS=0.0205
+E=O-2(0.3900) Wyckoff=i x=0.8270 z=0.0190 TDS=0.1658

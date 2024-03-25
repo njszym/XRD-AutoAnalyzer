@@ -1,0 +1,10 @@
+PHASE=Hydrotalcite //
+SpacegroupNo=166 HermannMauguin=R-32/m //
+PARAM=A=0.3054_0.3023^0.3085 PARAM=C=2.2810_2.2582^2.3038 //
+RP=4 B1=ANISO^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR2 //
+GOAL:hydrotalcite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(MG+2(0.6666),AL+3(0.3333)) Wyckoff=a TDS=0.0157
+E=O-2 Wyckoff=c z=0.6229 TDS=0.0201
+E=H Wyckoff=c z=0.5856 TDS=0.0271
+E=O-2(0.1670) Wyckoff=g x=0.0925 TDS=0.0743
+E=C(0.0830) Wyckoff=c z=0.8333 TDS=0.0472

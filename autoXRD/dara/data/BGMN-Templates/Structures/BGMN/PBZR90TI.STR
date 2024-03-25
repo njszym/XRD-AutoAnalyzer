@@ -1,0 +1,8 @@
+PHASE=PbZr0.90Ti0.1O3 //
+SpacegroupNo=161 HermannMauguin=R3c //
+PARAM=A=0.5841_0.5812^0.5870 PARAM=C=1.4412_1.4340^1.4484 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pbzr90ti=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=a z=0.7816 TDS=0.0235
+E=(ZR+4(0.9000),TI+4(0.1000)) Wyckoff=a z=0.5114 TDS=0.0079
+E=O-2 Wyckoff=b x=0.1451 y=0.3449 z=0.0833 TDS=0.0137

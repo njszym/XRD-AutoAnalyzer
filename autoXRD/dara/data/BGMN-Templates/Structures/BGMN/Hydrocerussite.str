@@ -1,0 +1,12 @@
+PHASE=Hydrocerussite //
+SpacegroupNo=160 HermannMauguin=R3m //
+PARAM=A=0.5230_0.5178^0.5282 PARAM=C=2.3820_2.3582^2.4058 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 TDS=0.005 //
+GOAL:hydrocerussite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=a z=0.2160
+E=PB Wyckoff=a z=0.7850
+E=O-2 Wyckoff=b x=0.4833 z=0.1007
+E=O-2 Wyckoff=a z=0.3070
+E=O-2 Wyckoff=a z=0.9280
+E=O-2 Wyckoff=a z=0.6000
+E=C Wyckoff=a z=0.4340

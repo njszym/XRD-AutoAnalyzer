@@ -1,0 +1,20 @@
+PHASE=Plagioclase_Albite //
+SpacegroupNo=2 HermannMauguin=C-1 //
+PARAM=A=0.8144_0.812^0.815 PARAM=B=1.2787_1.27^1.281 PARAM=C=0.716_0.713^0.720 //
+PARAM=ALPHA=94.26_94^95 PARAM=BETA=116.6_116.4^117 PARAM=GAMMA=87.67_87.0^88.2 //
+RP=3 PARAM=B1=0_0^0.005 //
+GEWICHT=SPHAR4 GOAL:albite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(NA+1(p)) p=0.45 TDS=0.06  Wyckoff=i x=0.2675 y=0.9802 z=0.151
+E=(NA+1(p)) p=0.55 TDS=0.06  Wyckoff=i x=0.2653 y=0      z=0.1385
+E=(SI+4(1-p),AL+3(p)) TDS=0.002 p=0.91 Wyckoff=i x=0.0095 y=0.1680 z=0.2075
+E=(SI+4(1-p),AL+3(p)) TDS=0.002 p=0.05 Wyckoff=i x=0.0053 y=0.8207 z=0.238
+E=(SI+4(1-p),AL+3(p)) TDS=0.002 p=0.09 Wyckoff=i x=0.691  y=0.110  z=0.3105
+E=(SI+4(1-p),AL+3(p)) TDS=0.002 p=0.04 Wyckoff=i x=0.6797 y=0.8818 z=0.3595
+E=O-2 TDS=0.0015 Wyckoff=i x=0.0065 y=0.1283 z=0.9678
+E=O-2 TDS=0.0015 Wyckoff=i x=0.5905 y=0.9962 z=0.2785
+E=O-2 TDS=0.0035 Wyckoff=i x=0.8169 y=0.1070 z=0.1943
+E=O-2 TDS=0.0035 Wyckoff=i x=0.8191 y=0.8525 z=0.2612
+E=O-2 TDS=0.0035 Wyckoff=i x=0.0095 y=0.3011 z=0.268
+E=O-2 TDS=0.0015 Wyckoff=i x=0.0247 y=0.6936 z=0.2295
+E=O-2 TDS=0.0015 Wyckoff=i x=0.2085 y=0.1087 z=0.3885
+E=O-2 TDS=0.0015 Wyckoff=i x=0.1844 y=0.8674 z=0.4345

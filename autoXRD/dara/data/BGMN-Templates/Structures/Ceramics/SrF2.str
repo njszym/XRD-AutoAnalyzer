@@ -1,0 +1,10 @@
+PHASE=SrF2 // 04-002-2192
+Reference=04-002-2192 //
+Formula=Sr_F2 //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.579900_0.574101^0.585699  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:SrF2=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=SR Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=F Wyckoff=c x=0.250000 y=0.250000 z=0.250000 TDS=0.00000000

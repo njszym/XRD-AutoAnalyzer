@@ -1,0 +1,7 @@
+PHASE=Wuestite //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4307_0.4264^0.4350 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 TDS=0.01 //
+GOAL:wuestite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=FE+2(0.9712) Wyckoff=a
+E=O-2 Wyckoff=b

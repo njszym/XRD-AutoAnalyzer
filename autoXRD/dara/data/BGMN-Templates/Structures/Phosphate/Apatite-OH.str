@@ -1,0 +1,17 @@
+PHASE=Hydroxyapatite // 01-074-0565
+MineralName=Hydroxylapatite //
+Formula=Ca5_(PO4)3_(OH) //
+SpacegroupNo=176 HermannMauguin=P6_3/m //
+PARAM=A=0.9424_0.9330^0.9518 PARAM=C=0.6879_0.6810^0.6948  // 
+RP=4 k1=0 k2=0 B1=ANISO^0.05 GEWICHT=SPHAR4 //
+GOAL=GrainSize(0,0,1) //
+GOAL=GrainSize(1,0,0) //
+GOAL:Hydroxyapatite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA Wyckoff=f x=0.3333 y=0.6667 z=0.0015 TDS=0.00664290
+E=CA Wyckoff=h x=0.2468 y=0.9934 z=0.2500 TDS=0.00567436
+E=P Wyckoff=h x=0.3987 y=0.3685 z=0.2500 TDS=0.00477426
+E=O Wyckoff=h x=0.3284 y=0.4848 z=0.2500 TDS=0.00953535
+E=O Wyckoff=h x=0.5873 y=0.4651 z=0.2500 TDS=0.01014069
+E=O Wyckoff=i x=0.3437 y=0.2579 z=0.0702 TDS=0.01499127
+E=O(0.5000) Wyckoff=e x=0.0000 y=0.0000 z=0.1950 TDS=0.00000000
+E=H(0.5000) Wyckoff=e x=0.0000 y=0.0000 z=0.0608 TDS=0.02947459

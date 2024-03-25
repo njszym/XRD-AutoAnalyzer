@@ -1,0 +1,13 @@
+PHASE=Graphite-2H // 04-014-0362
+MineralName=Graphite-2H //
+Formula=C //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.2465_0.240^0.252 PARAM=C=0.6753_0.6680^0.6800 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Graphite2h=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=C Wyckoff=b
+E=C Wyckoff=c
+
+
+

@@ -1,0 +1,11 @@
+PHASE=Enargite //
+SpacegroupNo=31 HermannMauguin=Pmn2_1 //
+PARAM=A=0.7426_0.7352^0.7500 PARAM=B=0.6452_0.6387^0.6517 PARAM=C=0.6163_0.6101^0.6225 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR2 //
+GOAL:enargite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CU+1 Wyckoff=a y=0.1546 z=0.4996 TDS=0.0175
+E=CU+1 Wyckoff=b x=0.2480 y=0.3259 z=0.0077 TDS=0.0171
+E=AS Wyckoff=a y=0.8279 z=1.0000 TDS=0.0087
+E=S Wyckoff=a y=0.8234 z=0.4592 TDS=0.0101
+E=S Wyckoff=a y=0.1496 z=0.8750 TDS=0.0112
+E=S Wyckoff=b x=0.2557 y=0.3348 z=0.3795 TDS=0.0112

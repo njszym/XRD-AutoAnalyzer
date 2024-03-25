@@ -1,0 +1,17 @@
+PHASE=Prehnite //
+SpacegroupNo=28 HermannMauguin=Pma2 //
+PARAM=A=1.8520_1.8335^1.8705 PARAM=B=0.5491_0.5436^0.5546 PARAM=C=0.4646_0.4600^0.4692 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:prehnite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=d x=0.1507 y=0.7601 z=0.0000 TDS=0.0188
+E=SI+4 Wyckoff=b z=0.2010 TDS=0.0158
+E=SI+4 Wyckoff=d x=0.1302 y=0.2509 z=0.5100 TDS=0.0162
+E=AL+3 Wyckoff=a z=0.8210 TDS=0.0168
+E=(AL+3(0.8300),FE+3(0.1700)) Wyckoff=c y=0.2628 z=0.0020 TDS=0.0176
+E=O-2 Wyckoff=d x=0.0196 y=0.7390 z=0.0180 TDS=0.0205
+E=O-2 Wyckoff=d x=0.0730 y=0.4590 z=0.3890 TDS=0.0258
+E=O-2 Wyckoff=d x=0.0825 y=0.0320 z=0.6500 TDS=0.0137
+E=O-2 Wyckoff=d x=0.1758 y=0.3920 z=0.7550 TDS=0.0129
+E=O-2 Wyckoff=d x=0.1766 y=0.1300 z=0.2550 TDS=0.0274
+E=O-2 Wyckoff=c y=0.9600 z=0.7940 TDS=0.0000
+E=O-2 Wyckoff=c y=0.5650 z=0.2100 TDS=0.0000

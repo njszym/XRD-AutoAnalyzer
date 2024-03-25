@@ -1,0 +1,10 @@
+PHASE=Hematite // 04-003-2900
+MineralName=Hematite //
+Formula=Fe2_O3 //
+SpacegroupNo=167 //
+PARAM=A=0.5034_0.501^0.507 PARAM=C=1.3748_1.37^1.383 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Hematite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=FE+3  Wyckoff=c z=0.3553 TDS=0.0061876
+E=O-2  Wyckoff=e x=0.3058 TDS=0.0068187

@@ -1,0 +1,14 @@
+PHASE=Nitrammite // 04-009-3765
+Reference=04-009-3765 //
+Formula=(_N_H4_)_(_N_O3_) //
+SpacegroupNo=59 Setting=2 HermannMauguin=P2_1/m2_1/m2/n Lattice=Orthorhombic OriginChoice=2 //
+PARAM=A=0.574500_0.568755^0.580245 PARAM=B=0.543800_0.538362^0.549238 PARAM=C=0.494200_0.489258^0.499142  //
+RP=4 k1=0 PARAM=k2=0_0^0.0001 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:Nitrammite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=N Wyckoff=a x=0.250000 y=0.250000 z=0.506700 TDS=0.02180130
+E=O Wyckoff=f x=0.434200 y=0.250000 z=0.383200 TDS=0.04310250
+E=H Wyckoff=e x=0.750000 y=0.101100 z=0.032400 TDS=0.07267100
+E=N Wyckoff=b x=0.750000 y=0.250000 z=0.916400 TDS=0.02616820
+E=O Wyckoff=a x=0.250000 y=0.250000 z=0.762900 TDS=0.02693490
+E=H Wyckoff=f x=0.604500 y=0.250000 z=0.810200 TDS=0.07173760

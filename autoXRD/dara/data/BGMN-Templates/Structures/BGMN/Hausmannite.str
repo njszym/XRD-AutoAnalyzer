@@ -1,0 +1,8 @@
+PHASE=Hausmannite //
+SpacegroupNo=141 HermannMauguin=I4_1/a2/m2/d OriginChoice=2 //
+PARAM=A=0.5765_0.5707^0.5823 PARAM=C=0.9442_0.9348^0.9536 //
+RP=3 PARAM=B1=0_0^0.008 //
+GEWICHT=SPHAR4 GOAL:hausmannite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=MN+2 Wyckoff=a TDS=0.0046
+E=MN+3 Wyckoff=d TDS=0.0034
+E=O-2 Wyckoff=h y=0.9722 z=0.7411 TDS=0.0044

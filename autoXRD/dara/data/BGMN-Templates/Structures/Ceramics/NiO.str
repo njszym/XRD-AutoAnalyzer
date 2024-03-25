@@ -1,0 +1,9 @@
+PHASE=NiO // 04-011-2340
+Reference=04-011-2340 //
+Formula=Ni_O //
+SpacegroupNo=166 Setting=1 HermannMauguin=R-32/m Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.295490_0.292535^0.298445 PARAM=C=0.723200_0.715968^0.730432  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NickelOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00220000
+E=O Wyckoff=b x=0.000000 y=0.000000 z=0.500000 TDS=0.00250000

@@ -1,0 +1,42 @@
+PHASE=Carnallite //
+SpacegroupNo=52 HermannMauguin=P2/n2_1/n2/a //
+PARAM=A=1.6119_1.5958^1.6280 PARAM=B=2.2472_2.2247^2.2697 PARAM=C=0.9551_0.9455^0.9647 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:carnallite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=c z=0.2486 TDS=0.0346
+E=K+1 Wyckoff=e x=0.0886 y=0.1567 z=0.7499 TDS=0.0329
+E=MG+2 Wyckoff=d x=0.2566 TDS=0.0187
+E=MG+2 Wyckoff=e x=0.4209 y=0.0898 z=0.7477 TDS=0.0189
+E=CL-1 Wyckoff=e x=0.1658 y=0.0752 z=0.9853 TDS=0.0282
+E=CL-1 Wyckoff=d x=0.7394 TDS=0.0286
+E=CL-1 Wyckoff=e x=0.1693 y=0.0811 z=0.4883 TDS=0.0289
+E=CL-1 Wyckoff=e x=0.4146 y=0.0818 z=0.2524 TDS=0.0304
+E=CL-1 Wyckoff=e x=0.0199 y=0.2496 z=0.9769 TDS=0.0295
+E=O-2 Wyckoff=d x=0.1308 TDS=0.0354
+E=O-2 Wyckoff=d x=0.3834 TDS=0.0313
+E=O-2 Wyckoff=e x=0.2554 y=0.2070 z=0.4384 TDS=0.0313
+E=O-2 Wyckoff=e x=0.2673 y=0.1694 z=0.1506 TDS=0.0357
+E=O-2 Wyckoff=e x=0.4466 y=0.0104 z=0.6500 TDS=0.0339
+E=O-2 Wyckoff=e x=0.2967 y=0.0712 z=0.7349 TDS=0.0342
+E=O-2 Wyckoff=e x=0.4259 y=0.0466 z=0.9354 TDS=0.0326
+E=O-2 Wyckoff=e x=0.3956 y=0.1691 z=0.8444 TDS=0.0362
+E=O-2 Wyckoff=e x=0.5448 y=0.1077 z=0.7631 TDS=0.0334
+E=O-2 Wyckoff=e x=0.4179 y=0.1315 z=0.5580 TDS=0.0348
+E=H Wyckoff=e x=0.6040 y=0.2500 z=0.6790 TDS=0.0410
+E=H Wyckoff=e x=0.4120 y=0.2510 z=0.3130 TDS=0.0460
+E=H Wyckoff=e x=0.7370 y=0.1730 z=0.5430 TDS=0.0460
+E=H Wyckoff=e x=0.2500 y=0.2220 z=0.5050 TDS=0.0430
+E=H Wyckoff=e x=0.7340 y=0.3480 z=0.5870 TDS=0.0440
+E=H Wyckoff=e x=0.3030 y=0.3450 z=0.3350 TDS=0.0390
+E=H Wyckoff=e x=0.5140 y=0.0090 z=0.3260 TDS=0.0510
+E=H Wyckoff=e x=0.4170 y=0.9940 z=0.6060 TDS=0.0320
+E=H Wyckoff=e x=0.7680 y=0.0720 z=0.3450 TDS=0.0550
+E=H Wyckoff=e x=0.2640 y=0.4340 z=0.6820 TDS=0.0900
+E=H Wyckoff=e x=0.3990 y=0.4900 z=0.5680 TDS=0.0720
+E=H Wyckoff=e x=0.4220 y=0.4420 z=0.5000 TDS=0.0290
+E=H Wyckoff=e x=0.3590 y=0.3170 z=0.6730 TDS=0.0350
+E=H Wyckoff=e x=0.4290 y=0.3110 z=0.6230 TDS=0.0430
+E=H Wyckoff=e x=0.5650 y=0.4010 z=0.6790 TDS=0.0290
+E=H Wyckoff=e x=0.5730 y=0.1040 z=0.6950 TDS=0.0530
+E=H Wyckoff=e x=0.4380 y=0.1600 z=0.5610 TDS=0.0470
+E=H Wyckoff=e x=0.4110 y=0.1150 z=0.4750 TDS=0.0800

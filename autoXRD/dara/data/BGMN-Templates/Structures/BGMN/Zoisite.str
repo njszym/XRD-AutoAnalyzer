@@ -1,0 +1,23 @@
+PHASE=Zoisite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=1.6212_1.6050^1.6374 PARAM=B=0.5559_0.5503^0.5615 PARAM=C=1.0036_0.9936^1.0136 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:zoisite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=c x=0.8667 z=0.0624 TDS=0.0072 
+E=CA+2 Wyckoff=c x=0.9518 z=0.3850 TDS=0.0085 
+E=AL+3 Wyckoff=d x=0.2496 y=0.9971 z=0.1899 TDS=0.0053 
+E=AL+3 Wyckoff=c x=0.8946 z=0.6994 TDS=0.0030 
+E=SI+4 Wyckoff=c x=0.5816 z=0.3936 TDS=0.0030 
+E=SI+4 Wyckoff=c x=0.5896 z=0.7179 TDS=0.0040 
+E=SI+4 Wyckoff=c x=0.6601 z=0.0644 TDS=0.0060 
+E=O-2 Wyckoff=d x=0.1317 y=0.0000 z=0.1451 TDS=0.0040 
+E=O-2 Wyckoff=d x=0.1012 y=0.0150 z=0.4300 TDS=0.0050 
+E=O-2 Wyckoff=d x=0.3584 y=0.9900 z=0.2452 TDS=0.0040 
+E=O-2 Wyckoff=c x=0.7822 z=0.6990 TDS=0.0040 
+E=O-2 Wyckoff=c x=0.7273 z=0.1880 TDS=0.0020 
+E=O-2 Wyckoff=c x=0.7287 z=0.9400 TDS=0.0030 
+E=O-2 Wyckoff=c x=0.4905 z=0.3360 TDS=0.0040 
+E=O-2 Wyckoff=c x=0.0046 z=0.7050 TDS=0.0060 
+E=O-2 Wyckoff=c x=0.5791 z=0.5570 TDS=0.0070 
+E=O-2 Wyckoff=c x=0.7680 z=0.4260 TDS=0.0070 
+E=H Wyckoff=c x=0.7600 z=0.5500 TDS=0.0050 

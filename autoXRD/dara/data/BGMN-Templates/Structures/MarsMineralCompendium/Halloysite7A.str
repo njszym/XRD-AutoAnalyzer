@@ -1,0 +1,16 @@
+PHASE=Halloysite7A // amcsd_0018093
+Reference=amcsd_0018093 //
+Formula=Al2_Si2_(O9_H4) //
+SpacegroupNo=8 HermannMauguin=C1m1 Setting=8 CellChoice=2 UniqueAxis=b Lattice=Monoclinic //
+PARAM=A=0.515000_0.509850^0.520150 PARAM=B=0.890000_0.881100^0.898900 PARAM=C=0.757000_0.749430^0.764570 //
+PARAM=BETA=100.000000_99.000000^101.000000 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Halloysite7A=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=AL Wyckoff=b x=0.250000 y=0.166667 z=0.000000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.454000 y=0.000000 z=0.159000 TDS=0.010000 // O-H1
+E=O Wyckoff=a x=0.046000 y=0.000000 z=0.841000 TDS=0.010000 // O-H2
+E=O Wyckoff=b x=0.046000 y=0.333000 z=0.841000 TDS=0.010000 // O-H3
+E=O Wyckoff=a x=0.008000 y=0.000000 z=0.542000 TDS=0.010000
+E=O Wyckoff=b x=0.283000 y=0.250000 z=0.542000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=b x=0.954000 y=0.833000 z=0.159000 TDS=0.010000
+E=SI Wyckoff=b x=0.008000 y=0.166667 z=0.433000 TDS=0.010000 // check Wyckoff

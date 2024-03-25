@@ -1,0 +1,18 @@
+PHASE=MUSCOVITE_2M1  SpacegroupNo=15 HermannMauguin=C12/c1 UniqueAxis=b //
+PARAM=A=0.5184_0.513^0.525 PARAM=B=0.8993_0.89^0.91 PARAM=C=2.0069_1.98^2.1 //
+PARAM=BETA=95.69_94.5^96.0 RP=3 //
+ANISOLIMIT=3*3 LIMIT2=10 //
+B1=ANISO^0.005 GEWICHT=SPHAR2  GOAL:musc2m1=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AL+3,FE+3(p)) p=0.04 Wyckoff=f x=0.251 y=0.0838 z=0.0004 TDS=0.0074
+E=K+1(p) PARAM=p=0.9_0.6^1 Wyckoff=e y=0.0986 TDS=0.01 
+E=(SI+4(p)) Wyckoff=f p=0.75 x=0.0345 y=0.4295 z=0.3646 TDS=0.0071
+E=(AL+3(p)) Wyckoff=f p=0.25 x=0.0345 y=0.4295 z=0.3646 TDS=0.0071
+E=(SI+4(p)) Wyckoff=f p=0.75 x=0.4514 y=0.2582 z=0.1355 TDS=0.0049
+E=(AL+3(p)) Wyckoff=f p=0.25 x=0.4514 y=0.2582 z=0.1355 TDS=0.0049 
+E=O-2 Wyckoff=f x=0.0429 y=0.0617 z=0.4501 TDS=0.01 
+E=O-2 Wyckoff=f x=0.3836 y=0.2511 z=0.0536 TDS=0.01 
+E=O-2 Wyckoff=f x=0.0380 y=0.4447 z=0.4463 TDS=0.0088 
+E=O-2 Wyckoff=f x=0.4128 y=0.0925 z=0.1682 TDS=0.008
+E=O-2 Wyckoff=f x=0.2516 y=0.3726 z=0.1688 TDS=0.0088
+E=O-2 Wyckoff=f x=0.2469 y=0.3083 z=0.3426 TDS=0.004
+

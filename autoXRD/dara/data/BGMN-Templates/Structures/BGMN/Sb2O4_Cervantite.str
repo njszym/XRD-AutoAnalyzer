@@ -1,0 +1,11 @@
+PHASE=Sb2O4_Cervantite //
+SpacegroupNo=33 HermannMauguin=Pna2_1 //
+PARAM=A=0.5456_0.5429^0.5483 PARAM=B=0.4814_0.4790^0.4838 PARAM=C=1.1787_1.1728^1.1846 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:cervantite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SB+3 Wyckoff=a x=-0.0320 y=0.0360 z=0.0090 TDS=0.0010
+E=SB+5 Wyckoff=a x=0.3660 y=0.0160 z=0.2530 TDS=0.0010
+E=O-2 Wyckoff=a x=0.3400 y=0.1770 z=0.0962 TDS=0.0031
+E=O-2 Wyckoff=a x=0.1590 y=0.7100 z=0.1950 TDS=0.0031
+E=O-2 Wyckoff=a x=0.0860 y=0.2080 z=0.3120 TDS=0.0031
+E=O-2 Wyckoff=a x=0.3300 y=0.8400 z=0.4100 TDS=0.0031

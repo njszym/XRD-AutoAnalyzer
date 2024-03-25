@@ -1,0 +1,9 @@
+PHASE=PbOHCl_Laurionite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.7111_0.7075^0.7147 PARAM=B=0.4020_0.4000^0.4040 PARAM=C=0.9699_0.9651^0.9747 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:laurioni=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=c x=0.2974 z=0.5877 TDS=0.0131
+E=O Wyckoff=c x=0.6223 z=0.5422 TDS=0.0114
+E=CL-1 Wyckoff=c x=0.0564 z=0.3202 TDS=0.0116
+E=H Wyckoff=c x=0.7230 z=0.6100 TDS=0.0300

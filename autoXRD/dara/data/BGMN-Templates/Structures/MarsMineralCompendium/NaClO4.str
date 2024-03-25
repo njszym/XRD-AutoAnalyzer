@@ -1,0 +1,32 @@
+PHASE=NaClO4 // mp_22968
+Reference=mp_22968
+Formula=Na4_Cl4_O16 //
+SpacegroupNo=1 HermannMauguin=P1 Setting=1 Lattice=Triclinic //
+PARAM=A=0.658905_0.652316^0.665494 PARAM=B=0.718455_0.711270^0.725639 PARAM=C=0.717920_0.710741^0.725100 //
+PARAM=ALPHA=90.000000_89.100000^90.900000 PARAM=BETA=90.000000_89.100000^90.900000 PARAM=GAMMA=90.000000_89.100000^90.900000 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:NaClO4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=a x=0.168131 y=0.000000 z=0.250000 TDS=0.010000 // check Wyckoff
+E=CL Wyckoff=a x=0.831869 y=0.000000 z=0.750000 TDS=0.010000 // check Wyckoff
+E=CL Wyckoff=a x=0.668131 y=0.500000 z=0.250000 TDS=0.010000 // check Wyckoff
+E=CL Wyckoff=a x=0.331869 y=0.500000 z=0.750000 TDS=0.010000 // check Wyckoff
+E=NA Wyckoff=a x=0.663653 y=0.000000 z=0.250000 TDS=0.010000 // check Wyckoff
+E=NA Wyckoff=a x=0.336347 y=0.000000 z=0.750000 TDS=0.010000 // check Wyckoff
+E=NA Wyckoff=a x=0.163653 y=0.500000 z=0.250000 TDS=0.010000 // check Wyckoff
+E=NA Wyckoff=a x=0.836347 y=0.500000 z=0.750000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.461871 y=0.335209 z=0.750000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.538129 y=0.664791 z=0.250000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.298994 y=0.000000 z=0.085988 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.701006 y=0.000000 z=0.585988 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.298994 y=0.000000 z=0.414012 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.701006 y=0.000000 z=0.914012 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.961871 y=0.164791 z=0.750000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.038129 y=0.835209 z=0.250000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.961871 y=0.835209 z=0.750000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.038129 y=0.164791 z=0.250000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.798994 y=0.500000 z=0.085988 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.201006 y=0.500000 z=0.585988 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.798994 y=0.500000 z=0.414012 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.201006 y=0.500000 z=0.914012 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.461871 y=0.664791 z=0.750000 TDS=0.010000 // check Wyckoff
+E=O Wyckoff=a x=0.538129 y=0.335209 z=0.250000 TDS=0.010000 // check Wyckoff

@@ -1,0 +1,18 @@
+PHASE=NiobiumPhosphorusOxide // 04-009-6674
+Reference=04-009-6674 //
+Formula=Nb9_P_O25 //
+SpacegroupNo=82 HermannMauguin=I-4 Setting=1 UniqueAxis=c Lattice=Tetragonal //
+PARAM=A=1.560000_1.544400^1.575600 PARAM=C=0.382800_0.378972^0.386628 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NiobiumPhosphorusOxide=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=O Wyckoff=g x=0.175500 y=0.221200 z=0.000000 TDS=0.010000
+E=NB Wyckoff=g x=0.218800 y=0.109400 z=0.000000 TDS=0.010000
+E=NB Wyckoff=g x=0.114200 y=0.331000 z=0.000000 TDS=0.010000
+E=O Wyckoff=g x=0.112100 y=0.052100 z=0.000000 TDS=0.010000
+E=P Wyckoff=c x=0.000000 y=0.500000 z=0.250000 TDS=0.010000
+E=O Wyckoff=g x=0.853900 y=0.353600 z=0.000000 TDS=0.010000
+E=O Wyckoff=g x=0.017500 y=0.272900 z=0.000000 TDS=0.010000
+E=O Wyckoff=g x=0.072200 y=0.453100 z=0.000000 TDS=0.010000
+E=O Wyckoff=g x=0.248800 y=0.391700 z=0.000000 TDS=0.010000
+E=NB Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000
+E=O Wyckoff=b x=0.000000 y=0.000000 z=0.500000 TDS=0.010000

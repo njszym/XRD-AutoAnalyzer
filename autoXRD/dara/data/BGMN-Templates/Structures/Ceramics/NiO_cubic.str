@@ -1,0 +1,9 @@
+PHASE=NiO_cubic // 04-001-9373
+Reference=04-001-9373 //
+Formula=Ni_O //
+SpacegroupNo=225 Setting=1 HermannMauguin=F4/m-32/m Lattice=Cubic //
+PARAM=A=0.418200_0.414018^0.422382  //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:NiOcubic=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=NI Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00000000
+E=O Wyckoff=b x=0.500000 y=0.500000 z=0.500000 TDS=0.00000000

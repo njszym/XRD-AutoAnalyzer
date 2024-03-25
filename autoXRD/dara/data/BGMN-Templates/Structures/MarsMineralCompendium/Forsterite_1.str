@@ -1,0 +1,13 @@
+PHASE=Forsterite // amcsd_0000171
+Reference=amcsd_0000171 //
+Formula=(Mg1.8_Fe.2)_Si_O4 //
+SpacegroupNo=62 HermannMauguin=P2_1/b2_1/n2_1/m Setting=3 Lattice=Orthorhombic //
+PARAM=A=0.476200_0.471438^0.480962 PARAM=B=1.022500_1.012275^1.032725 PARAM=C=0.599400_0.593406^0.605394 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:Forsterite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(FE(0.1000),MG(0.9000)) Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.003300
+E=(FE(0.1000),MG(0.9000)) Wyckoff=c x=0.989750 y=0.277430 z=0.250000 TDS=0.003600
+E=O Wyckoff=c x=0.765800 y=0.091860 z=0.250000 TDS=0.003498
+E=O Wyckoff=c x=0.220120 y=0.447790 z=0.250000 TDS=0.004201
+E=O Wyckoff=d x=0.278100 y=0.163460 z=0.034310 TDS=0.004098
+E=SI Wyckoff=c x=0.426930 y=0.094340 z=0.250000 TDS=0.001998

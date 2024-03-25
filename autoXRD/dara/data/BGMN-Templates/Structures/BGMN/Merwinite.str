@@ -1,0 +1,18 @@
+SpacegroupNo=14 HermannMauguin=P12_1/a1 //
+PARAM=A=1.3254_1.3121^1.3387 PARAM=B=0.5293_0.5240^0.5346 PARAM=C=0.9328_0.9235^0.9421 PARAM=BETA=91.900 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:Merwinite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=e x=0.2563 y=0.1789 z=0.2234 TDS=0.0070
+E=CA+2 Wyckoff=e x=0.0811 y=0.2271 z=-0.0753 TDS=0.0066
+E=CA+2 Wyckoff=e x=0.0978 y=0.7333 z=0.4254 TDS=0.0073
+E=MG+2 Wyckoff=e x=0.0043 y=0.2566 z=0.2535 TDS=0.0042
+E=SI+4 Wyckoff=e x=0.1326 y=0.2293 z=0.6008 TDS=0.0019
+E=SI+4 Wyckoff=e x=0.1412 y=0.7280 z=0.0931 TDS=0.0018
+E=O-2 Wyckoff=e x=0.0740 y=0.2123 z=0.4450 TDS=0.0104
+E=O-2 Wyckoff=e x=0.0632 y=0.4193 z=0.6937 TDS=0.0096
+E=O-2 Wyckoff=e x=0.1253 y=-0.0475 z=0.6773 TDS=0.0076
+E=O-2 Wyckoff=e x=0.2414 y=0.3618 z=0.5940 TDS=0.0091
+E=O-2 Wyckoff=e x=0.0768 y=0.7064 z=-0.0591 TDS=0.0087
+E=O-2 Wyckoff=e x=0.2548 y=0.8130 z=0.0683 TDS=0.0082
+E=O-2 Wyckoff=e x=0.1266 y=0.4726 z=0.1853 TDS=0.0074
+E=O-2 Wyckoff=e x=0.0832 y=-0.0424 z=0.1751 TDS=0.0084

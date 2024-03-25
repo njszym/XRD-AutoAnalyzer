@@ -1,0 +1,9 @@
+PHASE=BaTiO3_tet //
+SpacegroupNo=99 HermannMauguin=P4mm //
+PARAM=A=0.3994_0.3954^0.4034 PARAM=C=0.4034_0.3994^0.4074 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:batio3t=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=BA+2 Wyckoff=a z=1.0000 TDS=0.0045
+E=TI+4 Wyckoff=b z=0.5135 TDS=0.0031
+E=O Wyckoff=b z=0.9760 TDS=0.0048
+E=O Wyckoff=c z=0.4850 TDS=0.0055

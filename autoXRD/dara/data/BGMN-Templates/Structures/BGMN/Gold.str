@@ -1,0 +1,6 @@
+PHASE=Gold //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.4078_0.4037^0.4119 //
+PARAM=B1=0_0^0.01 PARAM=k1=0_0^1 PARAM=k2=0_0^0.0001 //
+GEWICHT=SPHAR6 GOAL:gold=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=AU Wyckoff=a TDS=0.001

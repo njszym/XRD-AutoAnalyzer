@@ -1,0 +1,10 @@
+PHASE=NaPerchlorate // cod_1010573
+Reference=cod_1010573
+Formula=Cl_Na_O4 //
+SpacegroupNo=216 HermannMauguin=F-43m Setting=1 Lattice=Cubic //
+PARAM=A=0.725000_0.717750^0.732250 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:NaPerchlorate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=a TDS=0.010000
+E=NA Wyckoff=b TDS=0.010000
+E=O Wyckoff=e x=0.127000 TDS=0.010000

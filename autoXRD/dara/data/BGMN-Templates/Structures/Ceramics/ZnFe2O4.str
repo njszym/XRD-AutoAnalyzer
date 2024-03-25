@@ -1,0 +1,11 @@
+PHASE=ZnFe2O4 // 04-006-8036
+MineralName=Franklinite //
+Formula=Zn_Fe2_O4 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m Setting=1 Lattice=Cubic OriginChoice=1 //
+PARAM=A=0.8460_0.8200^0.8700 // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:ZnFe2O4=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=ZN+2 Wyckoff=a TDS=0.002
+E=FE+3 Wyckoff=d TDS=0.003
+E=O-2 Wyckoff=e x=0.3845 TDS=0.004

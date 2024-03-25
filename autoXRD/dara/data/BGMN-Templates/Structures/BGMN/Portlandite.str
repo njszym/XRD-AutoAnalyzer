@@ -1,0 +1,8 @@
+PHASE=Portlandite //
+SpacegroupNo=164 HermannMauguin=P-32/m1 //
+PARAM=A=0.3585_0.3549^0.3621 PARAM=C=0.4895_0.4846^0.4944 //
+RP=3 PARAM=B1=0_0^0.01 GEWICHT=SPHAR2 //
+GOAL:portlandite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) 
+E=CA+2 Wyckoff=a TDS=0.01
+E=O-2 Wyckoff=d z=0.2330 TDS=0.01
+E=H Wyckoff=d z=0.3950

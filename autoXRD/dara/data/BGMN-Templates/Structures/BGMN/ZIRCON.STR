@@ -1,0 +1,8 @@
+PHASE=Zircon //
+SpacegroupNo=141 HermannMauguin=I4_1/a2/m2/d OriginChoice=2  //
+PARAM=A=0.6604_0.65^0.67 PARAM=C=0.59796_0.59^0.605 //
+GOAL:zircon=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+RP=4 PARAM=B1=0_0^0.01 PARAM=k2=0_0^0.01 GEWICHT=SPHAR4
+E=ZR+4 Wyckoff=a TDS=0.0028
+E=SI+4 Wyckoff=b TDS=0.0031
+E=O-2 Wyckoff=h y=0.5660 z=0.8059 TDS=0.005

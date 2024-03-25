@@ -1,0 +1,19 @@
+PHASE=Pseudorutile //
+SpacegroupNo=182 HermannMauguin=P6_322 //
+PARAM=A=1.4375_1.4088^1.4662 PARAM=C=0.4615_0.4523^0.4707 //
+RP=4 PARAM=B1=0_0^0.05 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:pseudorutile=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(FE+3(0.2400),MN+3(0.0200),TI+4(0.4900)) Wyckoff=a TDS=0.0110
+E=(FE+3(0.0600),MN+3(0.0040),TI+4(0.1200)) Wyckoff=g x=0.2060 TDS=0.0110
+E=(FE+3(0.0060),MN+3(0.0004),TI+4(0.0100)) Wyckoff=g x=0.4000 TDS=0.0110
+E=(FE+3(0.3100),MN+3(0.0200),TI+4(0.6400)) Wyckoff=g x=0.5910 TDS=0.0110
+E=(FE+3(0.2600),MN+3(0.0200),TI+4(0.5300)) Wyckoff=g x=0.8090 TDS=0.0110
+E=(FE+3(0.2100),MN+3(0.0100),TI+4(0.4400)) Wyckoff=i x=0.1840 y=0.3780 z=0.0180 TDS=0.0110
+E=(FE+3(0.2200),MN+3(0.0100),TI+4(0.4400)) Wyckoff=i x=0.2240 y=0.6050 z=0.0170 TDS=0.0110
+E=O-2 Wyckoff=d TDS=0.0140
+E=O-2 Wyckoff=h x=0.0660 TDS=0.0140
+E=O-2 Wyckoff=h x=0.2600 TDS=0.0140
+E=O-2 Wyckoff=h x=0.4665 TDS=0.0140
+E=O-2 Wyckoff=h x=0.8700 TDS=0.0140
+E=O-2 Wyckoff=i x=0.0670 y=0.3390 z=0.2720 TDS=0.0140
+E=O-2 Wyckoff=i x=0.4690 y=0.1290 z=0.2680 TDS=0.0140

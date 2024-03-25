@@ -1,0 +1,14 @@
+PHASE=Mullite21 SpacegroupNo=55 //
+PARAM=A=0.75785_0.750^0.766 PARAM=B=0.76817_0.764^0.775 //
+PARAM=C=0.28864_0.286^0.292 //
+RP=4 B1=ANISO^0.01 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:mullite21=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,0,0) GOAL=GrainSize(0,0,1) GOAL=GrainSize(0,1,0) //
+GOAL=GrainSize(1,0,1) GOAL=k2(1,0,0) 
+E=AL+3      Wyckoff=a TDS=0.0063
+E=(AL+3(0.56),SI+4(0.25)) Wyckoff=h TDS=0.0068 x=0.14901 y=0.34026
+E=(AL+3(0.13),SI+4(0.06)) Wyckoff=h TDS=0.0063 x=0.26247 y=0.20529
+E=O-2       Wyckoff=h TDS=0.0106 x=0.3590 y=0.4218
+E=O-2(0.19) Wyckoff=h TDS=0.0093 x=0.4498 y=0.0505
+E=O-2(0.39) Wyckoff=d TDS=0.0156
+E=O-2       Wyckoff=g TDS=0.011  x=0.1273 y=0.2186

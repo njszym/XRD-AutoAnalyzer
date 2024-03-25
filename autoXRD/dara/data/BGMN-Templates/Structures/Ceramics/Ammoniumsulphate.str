@@ -1,0 +1,20 @@
+PHASE=Ammoniumsulphate // 04-005-8533
+MineralName=Mascagnite //
+Formula=(NH4)2_(SO4) //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/a2_1/m //
+PARAM=A=0.7782_0.7704^0.7860 PARAM=B=1.0636_1.0530^1.0742 PARAM=C=0.5993_0.5933^0.6053  // 
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL=GrainSize(1,1,1) //
+GOAL:Ammoniumsulphate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=N Wyckoff=c x=0.6895 y=0.4025 z=0.2500 TDS=0.02247638
+E=N Wyckoff=c x=0.9677 y=0.7050 z=0.2500 TDS=0.02484508
+E=H Wyckoff=c x=0.8100 y=0.3720 z=0.2500 TDS=0.07461421
+E=H Wyckoff=c x=0.6000 y=0.3430 z=0.2500 TDS=0.07579856
+E=H Wyckoff=d x=0.6760 y=0.4570 z=0.1220 TDS=0.08982656
+E=H Wyckoff=c x=0.0690 y=0.6490 z=0.2500 TDS=0.06121787
+E=H Wyckoff=c x=0.9910 y=0.7920 z=0.2500 TDS=0.08814215
+E=H Wyckoff=d x=0.8930 y=0.6820 z=0.1240 TDS=0.07785144
+E=S Wyckoff=c x=0.2440 y=0.4192 z=0.2500 TDS=0.02016031
+E=O Wyckoff=c x=0.0612 y=0.3887 z=0.2500 TDS=0.04355785
+E=O Wyckoff=c x=0.2701 y=0.5559 z=0.2500 TDS=0.03334610
+E=O Wyckoff=d x=0.3239 y=0.3665 z=0.0488 TDS=0.03431990

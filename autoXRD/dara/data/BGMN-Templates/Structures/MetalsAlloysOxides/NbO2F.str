@@ -1,0 +1,9 @@
+PHASE=NiobiumOxideFluoride // 04-007-5087
+Reference=04-007-5087 //
+Formula=Nb_O2_F //
+SpacegroupNo=221 HermannMauguin=P4/m-32/m Setting=1 Lattice=Cubic //
+PARAM=A=0.390200_0.386298^0.394102 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR4 //
+GOAL:NiobiumOxideFluoride=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=(F(0.3330),O(0.6670)) Wyckoff=d x=0.500000 y=0.000000 z=0.000000 TDS=0.010000
+E=NB Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000

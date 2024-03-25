@@ -138,19 +138,13 @@ Which will yield a plot of the form:
 
 ![sample](./Example/sample-image.png)
 
-The spectrum shown has already been denoised and its background has been subtracted. To instead show the raw spectrum, the ```--raw_spec``` option may be added:
-
-```
-python run_CNN.py --plot --raw_spec
-```
-
 By default, all plots will be shown to the user and then discarded. However, they may instead be saved as png files with the following options:
 
 ```
 python run_CNN.py --plot --save
 ```
 
-Based on the heights of these line profiles, weight fractions can also be approximated by using the ```--weights``` argument:
+To obtain the weight fraction of each compound in a multi-phase sample using automated Rietveld refinement, the ```--weights``` argument can be used:
 
 ```
 python run_CNN.py --weights
@@ -162,10 +156,8 @@ Which will provide an additional line in the output:
 Filename: (name of the spectrum)
 Predicted phases: (phase_1 + phase_2 + ...)
 Confidence: (probabilities associated with the phases above)
-Weight fractions: (% associated with each phase above)
+Weight fractions: (weight fraction associated with each phase above)
 ```
-
-We caution that these weight fractions should be treated only as an estimation. They are calculated by fitting over peak heights, whereas weight fraction is instead related to peak areas. For a more reliable quantification of each phase, a separate technique such as Rietveld refinement is required. 
 
 If the user wishes to compare specific reference phases to the measured spectrum, the ```visualize.py``` script can be used as follows:
 
@@ -209,14 +201,5 @@ This will yield predictions that are derived from a confidence-weighted sum of t
 python run_CNN.py --inc_pdf --show_indiv
 ```
 
-All other runtime arguments described in the previous section hold for PDF analysis. The user can also choose to plot the virtual PDF by adding two arguments:
+All other runtime arguments described in the previous section hold for PDF analysis.
 
-```
-python run_CNN.py --inc_pdf --plot --both
-```
-
-In addition to the XRD pattern, this will generate a virtual PDF with all identified phases - for example:
-
-![pdf_sample](./PDF_Example/sample-image.png)
-
-This spectrum is available in the ```PDF_Example``` directory, which contains two pre-trained models for XRD and PDF analysis in the Li-La-Zr-O space.

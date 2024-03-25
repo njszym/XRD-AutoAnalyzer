@@ -1,0 +1,10 @@
+PHASE=Brucite //
+Reference=04-017-1465 //
+Formula=Mg_(_O_H_)2 //
+SpacegroupNo=164 Setting=1 HermannMauguin=P-32/m1 Lattice=Trigonal UniqueAxis=c //
+PARAM=A=0.310900_0.307791^0.314009 PARAM=C=0.465700_0.461043^0.470357  //
+RP=4 k1=0 k2=0 B1=ANISO^0.01 GEWICHT=SPHAR6 //
+GOAL:brucite_syn=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+GOAL=GrainSize(1,1,1) //
+E=MG Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.00480000
+E=O Wyckoff=d x=0.333330 y=0.666660 z=0.226000 TDS=0.00820000

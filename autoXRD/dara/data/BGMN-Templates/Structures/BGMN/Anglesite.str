@@ -1,0 +1,10 @@
+PHASE=Anglesite //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.8482_0.8397^0.8567 PARAM=B=0.5398_0.5344^0.5452 PARAM=C=0.6959_0.6889^0.7029 //
+RP=3 PARAM=B1=0_0^0.008 GEWICHT=SPHAR4 //
+GOAL:anglesite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=PB Wyckoff=c x=0.188 z=0.168 TDS=0.0148
+E=S Wyckoff=c x=0.063 z=0.684 TDS=0.0074
+E=O-2 Wyckoff=c x=0.910 z=0.595 TDS=0.0187
+E=O-2 Wyckoff=c x=0.185 z=0.540 TDS=0.0176
+E=O-2 Wyckoff=d x=0.077 y=0.025 z=0.813 TDS=0.0134

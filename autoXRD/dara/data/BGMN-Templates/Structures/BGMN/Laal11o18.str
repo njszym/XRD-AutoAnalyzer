@@ -1,0 +1,17 @@
+PHASE=LaAl11O18 //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.5550_0.5495^0.5605 PARAM=C=2.2021_2.1801^2.2241 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:laal11o18=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=LA+3(0.5600) Wyckoff=d TDS=0.0050
+E=LA+3(0.0900) Wyckoff=h x=0.7208 TDS=0.0030
+E=AL+3 Wyckoff=a TDS=0.0020
+E=AL+3 Wyckoff=f z=0.4730 TDS=0.0030
+E=AL+3 Wyckoff=f z=0.3101 TDS=0.0040
+E=AL+3(0.9500) Wyckoff=k x=0.8308 z=0.3923 TDS=0.0040
+E=AL+3(0.4200) Wyckoff=e z=0.2612 TDS=0.0050
+E=O-2(0.4200) Wyckoff=j x=0.2017 y=0.8386 TDS=0.0020
+E=O-2(0.5000) Wyckoff=l x=0.1621 y=0.3115 z=0.0519 TDS=0.0040
+E=O-2 Wyckoff=k x=0.5047 z=0.3498 TDS=0.0030
+E=O-2 Wyckoff=e z=0.3519 TDS=0.0040
+E=O-2 Wyckoff=f z=0.9448 TDS=0.0030

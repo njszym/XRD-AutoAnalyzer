@@ -1,0 +1,16 @@
+PHASE=CA6_Hibonite //
+SpacegroupNo=194 HermannMauguin=P6_3/m2/m2/c //
+PARAM=A=0.5565_0.5542^0.5586 PARAM=C=2.189_2.1804^2.1980 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR4 //
+GOAL:ca6=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=d TDS=0.013
+E=AL+3 Wyckoff=k x=0.169 z=0.609 TDS=0.004
+E=AL+3 Wyckoff=f z=0.472 TDS=0.004
+E=AL+3 Wyckoff=f z=0.31 TDS=0.004
+E=AL+3 Wyckoff=a TDS=0.004
+E=AL+3 Wyckoff=b TDS=0.0125
+E=O-2 Wyckoff=k x=0.155 z=0.448 TDS=0.008
+E=O-2 Wyckoff=k x=0.504 z=0.35 TDS=0.008
+E=O-2 Wyckoff=f z=0.5553 TDS=0.008
+E=O-2 Wyckoff=e z=0.3498 TDS=0.008
+E=O-2 Wyckoff=h x=0.1805 TDS=0.01

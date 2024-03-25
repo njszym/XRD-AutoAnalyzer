@@ -1,0 +1,18 @@
+PHASE=Zinnwaldite_1M //
+SpacegroupNo=5 HermannMauguin=C121 //
+PARAM=A=0.5296_0.5243^0.5349 PARAM=B=0.9140_0.9049^0.9231 PARAM=C=1.0096_0.9995^1.0197 //
+PARAM=BETA=100.8_100^102 //
+RP=3 B1=ANISO^0.007 GEWICHT=SPHAR2 //
+GOAL:zinnwaldite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(K+1(0.9000),NA+1(0.0500)) Wyckoff=a y=0.5028 TDS=0.0191
+E=AL+3 Wyckoff=b y=0.9931 TDS=0.0064
+E=(FE+3(0.2100),FE+2(0.7800)) Wyckoff=b y=0.3217 TDS=0.0056
+E=(LI+1(0.6700),MG+2(0.0100)) Wyckoff=b y=0.6631 TDS=0.0063
+E=(SI+4(0.7730),AL+3(0.2270)) Wyckoff=c x=0.0745 y=0.1688 z=0.2276 TDS=0.0052
+E=(SI+4(0.7730),AL+3(0.2270)) Wyckoff=c x=0.5844 y=0.3323 z=0.2275 TDS=0.0055
+E=O-2 Wyckoff=c x=0.0289 y=-0.0002 z=0.1720 TDS=0.0139
+E=O-2 Wyckoff=c x=0.3248 y=0.2350 z=0.1725 TDS=0.0140
+E=O-2 Wyckoff=c x=0.8177 y=0.2641 z=0.1597 TDS=0.0134
+E=O-2 Wyckoff=c x=0.1155 y=0.1748 z=0.3939 TDS=0.0070
+E=O-2 Wyckoff=c x=0.6639 y=0.3271 z=0.3928 TDS=0.0075
+E=F-1 Wyckoff=c x=0.1089 y=0.4715 z=0.3989 TDS=0.0109

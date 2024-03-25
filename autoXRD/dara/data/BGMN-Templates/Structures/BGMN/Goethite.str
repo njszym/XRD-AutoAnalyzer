@@ -1,0 +1,8 @@
+PHASE=GOETHITE //
+SpacegroupNo=62 HermannMauguin=P2_1/n2_1/m2_1/a //
+PARAM=A=0.9960_0.99^1.0 PARAM=B=0.3023_0.298^0.307 PARAM=C=0.4605_0.455^0.465 //
+GOAL:goethite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+RP=3 PARAM=B1=0_0^0.05 GEWICHT=SPHAR4
+E=FE+3 Wyckoff=c x=0.3539 y=0.2500 z=0.4523 TDS=0.004
+E=O-2 Wyckoff=c x=0.6996 y=0.2500 z=0.7920 TDS=0.01000
+E=O-2 Wyckoff=c x=0.5531 y=0.2500 z=0.2960 TDS=0.01000

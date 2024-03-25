@@ -1,0 +1,13 @@
+PHASE=Zeolite_NaHY10 //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=2.4283_2.4162^2.4404 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR0 //
+GOAL:zenahy10=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=(AL+3(0.0917),SI+4(0.9083)) Wyckoff=i x=0.1269 y=0.9442 z=0.0357 TDS=0.0270
+E=O Wyckoff=h y=0.3933 TDS=0.0460
+E=O Wyckoff=g x=0.2452 z=0.8578 TDS=0.0260
+E=O Wyckoff=g x=0.3246 z=0.0350 TDS=0.0300
+E=O Wyckoff=g x=0.3195 z=0.6818 TDS=0.0300
+E=NA+1(0.1700) Wyckoff=e x=0.7700 TDS=0.0500
+E=NA+1(0.0900) Wyckoff=e x=0.9290 TDS=0.0300
+E=NA+1(0.0100) Wyckoff=c TDS=0.0300

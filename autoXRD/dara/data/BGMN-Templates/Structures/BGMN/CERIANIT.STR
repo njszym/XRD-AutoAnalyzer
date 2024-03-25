@@ -1,0 +1,7 @@
+PHASE=Cerianite  //
+SpacegroupNo=225 HermannMauguin=F4/m-32/m //
+PARAM=A=0.5412_0.5358^0.5466 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:cerianit=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CE+4 Wyckoff=a TDS=0.0029
+E=O Wyckoff=c TDS=0.0182

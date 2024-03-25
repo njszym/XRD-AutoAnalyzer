@@ -1,0 +1,11 @@
+PHASE=Si3N4_alpha //
+SpacegroupNo=159 HermannMauguin=P31c //
+PARAM=A=0.7765_0.7687^0.7843 PARAM=C=0.5628_0.5572^0.5684 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR4 //
+GOAL:si3n4a=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI Wyckoff=c x=0.5106 y=0.0815 z=0.1904 TDS=0.0073
+E=SI Wyckoff=c x=0.1658 y=0.2520 z=-0.0168 TDS=0.0054
+E=N Wyckoff=a z=0.4710 TDS=0.0026
+E=N Wyckoff=b z=0.6340 TDS=0.0030
+E=N Wyckoff=c x=0.3488 y=-0.0383 z=-0.0220 TDS=0.0080
+E=N Wyckoff=c x=0.3159 y=0.3165 z=0.2410 TDS=0.0010

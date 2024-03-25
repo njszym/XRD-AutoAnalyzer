@@ -1,0 +1,8 @@
+PHASE=ANHYDRITE //
+SpacegroupNo=63 HermannMauguin=C2/m2/c2_1/m //
+PARAM=A=0.6996_0.6926^0.7066 PARAM=B=0.6238_0.6176^0.6300 PARAM=C=0.6991_0.6921^0.7061 //
+RP=3 PARAM=B1=0_0^0.007 GEWICHT=SPHAR6 GOAL:anhydrite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=CA+2 Wyckoff=c y=0.6540 TDS=0.0070
+E=S Wyckoff=c y=0.1550 TDS=0.0070
+E=O-2 Wyckoff=g x=0.3290 y=0.5150 TDS=0.0090
+E=O-2 Wyckoff=f y=0.7020 z=0.9200 TDS=0.0110

@@ -1,0 +1,33 @@
+PHASE=Kainite //
+SpacegroupNo=12 HermannMauguin=C12/m1 //
+PARAM=A=1.9720_1.9621^1.9819 PARAM=B=1.6230_1.6149^1.6311 PARAM=C=0.9530_0.9482^0.9578 //
+PARAM=BETA=94.9_94.5^95.3 //
+RP=4 PARAM=B1=0_0^0.007 PARAM=k2=0_0^0.000001 GEWICHT=SPHAR2 //
+GOAL:kainite=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=K+1 Wyckoff=i x=0.3084 z=0.5797 TDS=0.0180
+E=K+1 Wyckoff=i x=0.8068 z=0.0602 TDS=0.0156
+E=K+1 Wyckoff=j x=0.1949 y=0.3064 z=0.8483 TDS=0.0200
+E=S Wyckoff=j x=0.0970 y=0.3308 z=0.5175 TDS=0.0096
+E=S Wyckoff=j x=0.0980 y=0.1672 z=0.0136 TDS=0.0075
+E=MG+2 Wyckoff=d TDS=0.0087
+E=MG+2 Wyckoff=a TDS=0.0100
+E=MG+2 Wyckoff=f TDS=0.0114
+E=MG+2 Wyckoff=j x=0.0003 y=0.2484 z=0.2481 TDS=0.0100
+E=CL-1 Wyckoff=i x=0.7853 z=0.7270 TDS=0.0245
+E=CL-1 Wyckoff=i x=0.8601 z=0.3769 TDS=0.0227
+E=CL-1 Wyckoff=j x=0.1789 y=0.3892 z=0.1357 TDS=0.0235
+E=O-1 Wyckoff=j x=0.0710 y=0.2317 z=0.9152 TDS=0.0130
+E=O-1 Wyckoff=j x=0.0707 y=0.2694 z=0.4142 TDS=0.0137
+E=O-1 Wyckoff=j x=0.0749 y=0.3107 z=0.6569 TDS=0.0129
+E=O-1 Wyckoff=j x=0.0734 y=0.4133 z=0.4744 TDS=0.0152
+E=O-1 Wyckoff=j x=0.0715 y=0.0859 z=0.9646 TDS=0.0156
+E=O-1 Wyckoff=j x=0.0760 y=0.1844 z=0.1552 TDS=0.0114
+E=O-1 Wyckoff=j x=0.1721 y=0.3316 z=0.5261 TDS=0.0125
+E=O-1 Wyckoff=j x=0.1722 y=0.1668 z=0.0183 TDS=0.0134
+E=O-1 Wyckoff=i x=0.9601 z=0.7803 TDS=0.0165
+E=O-1 Wyckoff=i x=0.4807 z=0.2808 TDS=0.0142
+E=O-1 Wyckoff=j x=0.2133 y=0.1727 z=0.6510 TDS=0.0219
+E=O-1 Wyckoff=j x=0.0259 y=0.3588 z=0.1468 TDS=0.0148
+E=O-1 Wyckoff=j x=0.0200 y=0.1354 z=0.6489 TDS=0.0174
+E=O-1 Wyckoff=j x=0.1963 y=0.1849 z=0.3438 TDS=0.0180
+E=O-1 Wyckoff=i x=0.3546 z=0.1570 TDS=0.0449

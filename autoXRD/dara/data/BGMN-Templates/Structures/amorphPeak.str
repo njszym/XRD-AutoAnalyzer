@@ -1,0 +1,3 @@
+SpacegroupNo=195 GeneralCondition=eq(1,sqr(h)+sqr(k)+sqr(l))
+B1=0 PARAM=B2=0.15_0^0.3 PARAM=A=0.29_0.27^0.31
+LeBail=1

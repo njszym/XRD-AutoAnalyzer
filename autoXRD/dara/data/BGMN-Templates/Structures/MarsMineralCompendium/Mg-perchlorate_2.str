@@ -1,0 +1,12 @@
+PHASE=MgPerchlorate // cod_1010368
+Reference=cod_1010368 //
+Formula=Cl2_H12_Mg_O10 //
+SpacegroupNo=216 HermannMauguin=F-43m Setting=1 Lattice=Cubic //
+PARAM=A=1.029000_1.018710^1.039290 //
+RP=4 k1=0 k2=0 PARAM=B1=0_0^0.01 GEWICHT=SPHAR0 //
+GOAL:MgPerchlorate=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1) //
+E=CL Wyckoff=c x=0.250000 y=0.250000 z=0.250000 TDS=0.010000
+E=CL Wyckoff=d x=0.750000 y=0.750000 z=0.750000 TDS=0.010000
+E=MG Wyckoff=a x=0.000000 y=0.000000 z=0.000000 TDS=0.010000
+E=O Wyckoff=f x=0.210000 y=0.000000 z=0.000000 TDS=0.010000
+E=O(0.3300) Wyckoff=h x=0.091000 y=0.091000 z=0.074000 TDS=0.010000

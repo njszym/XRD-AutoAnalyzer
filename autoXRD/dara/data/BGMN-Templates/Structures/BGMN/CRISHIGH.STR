@@ -1,0 +1,7 @@
+PHASE=Cristobalite_high //
+SpacegroupNo=227 HermannMauguin=F4_1/d-32/m OriginChoice=2 //
+PARAM=A=0.7166_0.7094^0.7238 //
+RP=4 PARAM=B1=0_0^0.008 PARAM=k2=0_0^0.0001 GEWICHT=SPHAR6 //
+GOAL:crishigh=GEWICHT*ifthenelse(ifdef(d),exp(my*d*3/4),1)
+E=SI+4 Wyckoff=a TDS=0.0333
+E=O(0.1670) Wyckoff=h y=0.4556 TDS=0.0349
