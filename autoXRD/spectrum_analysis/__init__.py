@@ -401,7 +401,7 @@ class SpectrumAnalyzer(object):
 
         with open('temp/%s' % self.spectrum_fname, 'w+') as f:
             for xv, yv in zip(x_obs, y_obs):
-                f.write('%s %s\n' % (xv, yv))
+                f.write('%s %s\n' % (xv, yv + 1e-6))
 
         result = do_refinement_no_saving(
             pattern_path=Path('temp/%s' % self.spectrum_fname),
