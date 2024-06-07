@@ -4,6 +4,7 @@ from scipy.signal import find_peaks, filtfilt, resample
 from itertools import combinations_with_replacement
 from pymatgen.analysis import structure_matcher
 from scipy.ndimage import gaussian_filter1d
+from pymatgen.io.cif import CifParser
 from itertools import product
 from scipy import interpolate
 from functools import reduce
@@ -435,7 +436,9 @@ class StructureFilter(object):
 
         strucs, temps, dates = [], [], []
         for cmpd in os.listdir(self.cif_dir):
-            struc = Structure.from_file('%s/%s' % (self.cif_dir, cmpd))
+            # Allowing some tolerance in site occupancies
+            parser = CifParser('%s/%s' % (self.cif_dir, cmpd), occupancy_tolerance=1.25)
+            struc = parser.parse_structures()[0]
             if self.enforce_order:
                 if struc.is_ordered:
                     strucs.append(struc)
