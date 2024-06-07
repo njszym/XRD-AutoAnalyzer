@@ -4,7 +4,7 @@ A package designed to automate phase identification from XRD spectra using a pro
 
 The corresponding manuscript can be found at [Chemistry of Materials](https://pubs.acs.org/doi/full/10.1021/acs.chemmater.1c01071). Reproducing the published results can be accomplished using the data provided in [figshare](https://figshare.com/s/69030545b8020de35633).
 
-We have also recently integrated Pair Distribution Function (PDF) analysis into the package. Further details on the methodology behind this new approach, as well as instructions on how to implement it, are provided at the bottom of this page.
+We have also recently integrated Pair Distribution Function (PDF) analysis into the package. Further details on the methodology behind this new approach, as well as instructions on how to implement it, are provided at the bottom of this page and in the corresponding manuscript at [npj Computational Materials](https://www.nature.com/articles/s41524-024-01230-9).
 
 ## Installation
 
