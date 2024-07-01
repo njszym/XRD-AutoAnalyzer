@@ -135,6 +135,10 @@ class SpectrumAnalyzer(object):
         x = data[:, 0]
         y = data[:, 1]
 
+        if min(y) < 0:
+            print('WARNING: at least one of your patterns contains negative intensity values. These will be shifted to zero for further analysis, but please double-check the quality of your data.')
+            y -= min(y)
+
         ## Convert to Cu K-alpha radiation if needed
         if str(self.wavelen) != 'CuKa':
             Cu_x, Cu_y = [], []
