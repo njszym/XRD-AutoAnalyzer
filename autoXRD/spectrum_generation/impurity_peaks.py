@@ -174,7 +174,7 @@ class ImpurGen(object):
         return form_signal
 
 
-def main(struc, num_impure, imput_amt=70.0, min_angle=10.0, max_angle=80.0, ref_dir='References'):
+def main(struc, num_impure, impur_amt=70.0, min_angle=10.0, max_angle=80.0, ref_dir='References'):
 
     impurity_generator = ImpurGen(struc, impur_amt, ref_dir, min_angle, max_angle)
 
