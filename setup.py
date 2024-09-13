@@ -15,5 +15,5 @@ setup(
     license='MIT',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['numpy', 'pymatgen', 'scipy', 'scikit-image', 'tensorflow>=2.16', 'pyxtal', 'pyts', 'tqdm', 'asteval']
+    install_requires=['numpy', 'pymatgen', 'scipy', 'scikit-image', 'tensorflow>=2.16', 'pyxtal', 'pyts', 'tqdm', 'asteval', 'numexpr>=2.8.3']
 )
