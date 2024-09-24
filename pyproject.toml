@@ -1,0 +1,40 @@
+[
+build-system
+]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[
+project
+]
+name = "autoXRD"
+version = "0.0.1"
+description = "A package designed to automate the process of phase identification from XRD spectra using a probabilistic deep learning trained with physics-informed data augmentation."
+authors = [
+    {name = "Nathan J. Szymanski", email = "nszymans@umn.edu"},
+]
+license = {text = "MIT"}
+requires-python = ">=3.6.0"
+dependencies = [
+    "numpy",
+    "pymatgen",
+    "scipy",
+    "scikit-image",
+    "tensorflow>=2.16",
+    "pyxtal",
+    "pyts",
+    "tqdm",
+    "asteval",
+    "numexpr>=2.8.3",
+]
+
+[
+project.urls
+]
+Homepage = "https://github.com/njszym/XRD-AutoAnalyzer"
+
+[
+tool.setuptools
+]
+packages = ["autoXRD"]
+include-package-data = true
