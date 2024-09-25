@@ -22,8 +22,8 @@ dependencies = [
     "numexpr>=2.8.3",
 ]
 
+[tool.setuptools.packages.find]
+where = ["autoXRD"]
+
 [project.urls]
 Homepage = "https://github.com/njszym/XRD-AutoAnalyzer"
-
-[tool.setuptools]
-packages = ["autoXRD"]
