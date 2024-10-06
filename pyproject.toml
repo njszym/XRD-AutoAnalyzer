@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autoXRD"
-version = "0.0.1"
+version = "0.0.3"
 description = "A package for automated XRD analysis"
 authors = [
     {name = "Nathan J. Szymanski", email = "nathan_szymanski@berkeley.edu"},
