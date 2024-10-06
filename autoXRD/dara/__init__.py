@@ -345,7 +345,7 @@ def cif2str(
 
     structure, spg = load_symmetrized_structure(cif_path)
 
-    hall_number = str(spg.get_symmetry_dataset()["hall_number"])
+    hall_number = str(spg.get_symmetry_dataset().hall_number)
     with (Path(__file__).parent / "data" / "spglib_db" / "spg.json").open(
             "r", encoding="utf-8"
     ) as f:
