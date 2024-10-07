@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["autoXRD"]
+where = ["."]
 
 [project.urls]
 Homepage = "https://github.com/njszym/XRD-AutoAnalyzer"
