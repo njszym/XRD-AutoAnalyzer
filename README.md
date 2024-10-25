@@ -31,7 +31,7 @@ Once all spectra have been classified, each set of predicted phases will be prin
 To develop a model that can be used to perform phase identification in a new chemical space, place all relevant CIFs into ```Novel_Space/All_CIFs```. Then navigate to the ```Novel_Space/```directory and execute:
 
 ```
-python construct_model.py
+python construct_xrd_model.py
 ```
 
 This script will:
@@ -47,13 +47,13 @@ This script will:
 In cases where the user supplies many possible reference phases to may or may not be reasonably accessible under common experimental conditions, it is often useful to exclude any compounds that place elements in unusual oxidation states. This can be done by adding the option:
 
 ```
-python construct_model.py --oxi_filter
+python construct_xrd_model.py --oxi_filter
 ```
 
 By default, training spectra will be simulated over 2θ spanning 10-80 degrees (assuming Cu K-alpha radiation). However, this can be customized as follows:
 
 ```
-python construct_model.py --min_angle=10.0 --max_angle=80.0
+python construct_xrd_model.py --min_angle=10.0 --max_angle=80.0
 ```
 
 Different X-ray wavelengths may also be considered, but this should only be specified at inference. All patterns will be converted back to Cu K-alpha.
@@ -73,13 +73,13 @@ By default, the following bounds are used on artifacts included during data augm
 However, custom bounds can also be specified, e.g., as follows:
 
 ```
-python construct_model.py --max_strain=0.04 --max_shift=1.0 --min_domain_size=1.0 --max_domain_size=100.0 --max_texture=0.5 --impur_amt=70.0
+python construct_xrd_model.py --max_strain=0.04 --max_shift=1.0 --min_domain_size=1.0 --max_domain_size=100.0 --max_texture=0.5 --impur_amt=70.0
 ```
 
 Training is performed for 50 epochs, which is generally sufficient to achieve convergence without overfitting. However, this may also be tuned by the user:
 
 ```
-python construct_model.py --num_epochs=50
+python construct_xrd_model.py --num_epochs=50
 ```
 
 ## Characterizing multi-phase spectra
@@ -175,11 +175,13 @@ By default, the warning message will appear when unknown peaks remain with inten
 
 ## Pair distribution functions
 
-To achieve more accurate phase identification, the user can train two models: one on simulated XRD patterns and another on virtual PDFs computed through a Fourier transform of those XRD patterns. This can be accomplished using the following command:
+To achieve more accurate phase identification, the user can train two models: one on simulated XRD patterns and another on virtual PDFs computed through a Fourier transform of those XRD patterns. This can be accomplished by first training an XRD model using the procedure described above, and then training a second model on PDFs with the following command:
 
 ```
-python construct_model.py --inc_pdf
+python construct_pdf_model.py
 ```
+
+This assumes an XRD model has already been trained and exists in the current directory as ```Model.h5```. It also assumes that CIF filtering has already taken place, and therefore a ```References``` folder exists in the current directory. When training a PDF model, all the same arguments should be specified (radiation wavelength, scan range, and artifact magnitudes) as those given during XRD training, with the exception of any arguments related to CIF filtering.
 
 Once training is finished, two files named ```XRD_Model.h5``` and ```PDF_Model.h5``` will be placed in a ```Models``` folder. This folder should be present in any directory where the user wishes to analyze new patterns.
 

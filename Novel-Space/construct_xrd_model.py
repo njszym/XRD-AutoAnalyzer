@@ -20,7 +20,6 @@ if __name__ == '__main__':
     include_elems = True
     enforce_order = False
     oxi_filter = False
-    inc_pdf = False
     for arg in sys.argv:
         if '--max_texture' in arg:
             max_texture = float(arg.split('=')[1])
@@ -52,11 +51,6 @@ if __name__ == '__main__':
             oxi_filter = True
         if '--separate_artifacts' in arg:
             separate = True
-        if '--inc_pdf' in arg:
-            inc_pdf = True
-
-    if inc_pdf:
-        assert 'Models' not in os.listdir('.'), 'Models folder already exists. Please remove it or use existing models.'
 
     if not skip_filter:
         # Filter CIF files to create unique reference phases
@@ -83,22 +77,3 @@ if __name__ == '__main__':
     # Train, test, and save the CNN
     test_fraction = 0.2
     cnn.main(xrd_specs, num_epochs, test_fraction, is_pdf=False)
-
-    # If specified, train another model on PDFs
-    if inc_pdf:
-        pdf_obj = spectrum_generation.SpectraGenerator('References', num_spectra, max_texture, min_domain_size,
-            max_domain_size, max_strain, max_shift, impur_amt, min_angle, max_angle, separate, is_pdf=True)
-        pdf_specs = pdf_obj.augmented_spectra
-
-        # Save PDFs if flag is specified
-        if '--save' in sys.argv:
-            np.save('PDF', np.array(pdf_specs))
-
-        # Move trained XRD model to new directory
-        os.mkdir('Models')
-        os.rename('Model.h5', 'Models/XRD_Model.h5')
-
-        # Train, test, and save the CNN
-        test_fraction = 0.2
-        cnn.main(pdf_specs, num_epochs, test_fraction, is_pdf=True)
-        os.rename('Model.h5', 'Models/PDF_Model.h5')
