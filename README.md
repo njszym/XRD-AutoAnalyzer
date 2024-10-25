@@ -36,7 +36,7 @@ python construct_xrd_model.py
 
 This script will:
 
-1) Filter all unique phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, place all CIFs into a folder labeled ```References``` and run ```python construct_model.py --skip_filter```. Note that once a model is trained, you should **not** modify the References folder by adding or removing any files.
+1) Filter all unique phases from the provided CIFs. Alternatively, to provide a customized set of reference phases without filtering, place all CIFs into a folder labeled ```References``` and run ```python construct_xrd_model.py --skip_filter```. Note that once a model is trained, you should **not** modify the References folder by adding or removing any files.
 
 2) If ```--include_ns``` is specified: generate hypothetical solid solutions between the stoichiometric phases.
 
