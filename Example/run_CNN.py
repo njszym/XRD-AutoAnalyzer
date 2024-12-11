@@ -22,6 +22,7 @@ if __name__ == '__main__':
     parallel = True # Run phase analysis in parallel across available CPUs
     raw = True # Whether to show the raw spectrum or its denoised product
     show_indiv = False # Whether to show individual predictions from XRD and PDF
+    refined_phases_dir = None
     min_angle, max_angle = 10.0, 80.0
     for arg in sys.argv:
         if '--max_phases' in arg:
@@ -44,6 +45,8 @@ if __name__ == '__main__':
             inc_pdf = True
         if '--show_indiv' in arg:
             show_indiv = True
+        if '--refined_phases_dir' in arg:
+            refined_phases_dir = str(arg.split('=')[1])
 
     # Make sure at least one spectrum is provided
     assert len(os.listdir('Spectra')) > 0, 'Please provide at least one pattern in the Spectra directory.'
@@ -137,7 +140,8 @@ if __name__ == '__main__':
 
             # Plot measured spectrum with line profiles of predicted phases
             visualizer.main('Spectra', spectrum_fname, phasenames, heights, final_spectrum,
-                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf, plot_both, raw)
+                min_angle, max_angle, wavelength, save, show_reduced, inc_pdf, plot_both, raw,
+                    refined_phases_dir=refined_phases_dir)
 
         if ('--weights' in sys.argv) and ('None' not in phase_set):
 
@@ -145,7 +149,8 @@ if __name__ == '__main__':
             phasenames = ['%s.cif' % phase for phase in phase_set]
 
             # Get weight fractions
-            weights = quantifier.main('Spectra', spectrum_fname, phasenames, heights, min_angle, max_angle, wavelength)
+            weights = quantifier.main('Spectra', spectrum_fname, phasenames, heights, min_angle, max_angle,
+                wavelength, refined_phases_dirrefined_phases_dir)
             weights = [round(val, 2) for val in weights]
             print('Weight fractions: %s' % weights)
 

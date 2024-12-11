@@ -1,7 +1,7 @@
 from pymatgen.core.periodic_table import Element
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt, resample
-from autoXRD.dara import do_refinement_no_saving, get_phase_weights
+from autoXRD.dara import do_refinement_no_saving, get_phase_weights, get_structure
 from pathlib import Path
 import random
 import pymatgen as mg
@@ -284,9 +284,9 @@ class QuantAnalysis(object):
         # Allow some tolerance (0.2 degrees) in the two-theta range
         if (min(x) > self.min_angle) and np.isclose(min(x), self.min_angle, atol=0.2):
             x = np.concatenate([np.array([self.min_angle]), x])
-       	    y = np.concatenate([np.array([y[0]]), y])
-       	if (max(x) < self.max_angle) and np.isclose(max(x), self.max_angle, atol=0.2):
-       	    x = np.concatenate([x, np.array([self.max_angle])])
+            y = np.concatenate([np.array([y[0]]), y])
+        if (max(x) < self.max_angle) and np.isclose(max(x), self.max_angle, atol=0.2):
+            x = np.concatenate([x, np.array([self.max_angle])])
             y = np.concatenate([y, np.array([y[-1]])])
 
         # Otherwise, raise an assertion error
@@ -514,7 +514,7 @@ def get_density(ref_phase, ref_dir='References'):
 
     return mass/struct.volume
 
-def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle=10.0, max_angle=80.0, wavelength='CuKa', rietveld=True):
+def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min_angle=10.0, max_angle=80.0, wavelength='CuKa', rietveld=True, refined_phases_dir=None):
 
         if rietveld:
 
@@ -540,6 +540,11 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min
             for ph in predicted_phases:
                 ph_name = ph[:-4]
                 weights.append(weight_dict[ph_name])
+                
+                if refined_phases_dir:
+                    os.makedirs(f"{refined_phases_dir}/{spectrum_fname}", exist_ok=True)
+                    structure = get_structure(result["lst_data"]["phases_results"][ph_name])
+                    structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
 
             return weights
 

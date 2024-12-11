@@ -17,9 +17,10 @@ from typing import Optional, Literal, Any, Union
 import numpy as np
 import requests
 from asteval import Interpreter
-from pymatgen.core import Element, DummySpecie, Lattice, Structure
+from pymatgen.core import Element, DummySpecie, Lattice, Structure, get_el_sp, Composition
 from pymatgen.core.periodic_table import Specie
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+from pymatgen.symmetry.groups import SpaceGroup
 from pymatgen.symmetry.structure import SymmetrizedStructure
 from tqdm import tqdm
 
@@ -563,7 +564,108 @@ def parse_lst(lst_path: Path, phase_names: list[str]):
         phase_name: parse_section(phase_result)
         for phase_name, phase_result in zip(phase_names, phases_results)
     }
+
+    # add atomic positions
+    for phase_name, phase_result in zip(phase_names, phases_results):
+        atom_section = re.search(
+            rf"Atomic positions for phase .+?\n(-+)\n(.*?)$",
+            phase_result,
+            re.DOTALL,
+        ).group(2)
+        result["phases_results"][phase_name]["atom_positions_string"] = atom_section
+
     return result
+
+
+def get_structure(phase_result: dict) -> Structure:
+    """
+    Get the refined structure from the phase result.
+
+    Returns
+    -------
+        the refined structure as ``pymatgen.Structure`` object
+    """
+    # First get the basic lattice data
+    lattice_data = {
+        "a": phase_result["A"][0],
+        "b": phase_result.get("B", [phase_result["A"][0]])[0],
+        "c": phase_result.get("C", [phase_result["A"][0]])[0],
+        "alpha": phase_result.get("alpha", 90),
+        "beta": phase_result.get("beta", 90),
+        "gamma": phase_result.get("gamma", 90)
+    }
+
+    # Convert to numbers and filter None values
+    lattice_data = {
+        k: get_number(v) for k, v in lattice_data.items() if v is not None
+    }
+
+    # Convert to Angstroms
+    for k in ["a", "b", "c"]:
+        if k in lattice_data:
+            lattice_data[k] = lattice_data[k] * 10
+
+    spacegroup = SpaceGroup.from_int_number(phase_result["SpacegroupNo"])
+    crystal_system = spacegroup.crystal_system
+    if crystal_system == "trigonal":
+        crystal_system = "hexagonal"
+
+    # Adjust parameters based on crystal system
+    if crystal_system == "cubic":
+        lattice_params = {"a": lattice_data["a"]}
+    elif crystal_system == "tetragonal":
+        lattice_params = {"a": lattice_data["a"], "c": lattice_data["c"]}
+    elif crystal_system in ["hexagonal", "trigonal"]:
+        lattice_params = {"a": lattice_data["a"], "c": lattice_data["c"]}
+    elif crystal_system == "monoclinic":
+        lattice_params = {
+            "a": lattice_data["a"],
+            "b": lattice_data["b"],
+            "c": lattice_data["c"],
+            "beta": lattice_data.get("beta", 90)
+        }
+    elif crystal_system == "orthorhombic":
+        lattice_params = {
+            "a": lattice_data["a"],
+            "b": lattice_data["b"],
+            "c": lattice_data["c"]
+        }
+    else:
+        # For triclinic only, use all parameters
+        lattice_params = lattice_data
+
+    lattice = getattr(Lattice, crystal_system, Lattice.from_parameters)(**lattice_params)
+
+    # get species and coords
+    all_coords = []
+    all_species = []
+    for line in phase_result["atom_positions_string"].split("\n"):
+        if not line:
+            continue
+        line = line.strip().split()
+        coords = [float(i) for i in line[1:4]]
+        all_coords.append(coords)
+
+        species = {}
+        specie_stirng = re.search(r"E=\((.+)\)", line[-1]).group(
+            1
+        )  # Sp(Occ), Sp(Occ), ...
+        for specie in specie_stirng.split(","):
+            specie_string = specie.split("(")[0].capitalize()
+            # parse the specie into pymatgen Species
+            specie_string = re.sub(r"([+-])(\d+)", r"\2\1", specie_string)
+            sp = get_el_sp(specie_string)
+            occupancy = float(re.search(r"\((\d+\.\d+)\)", specie).group(1))
+            species[sp] = occupancy
+        species = Composition(species)
+        all_species.append(species)
+
+    return Structure.from_spacegroup(
+        sg=phase_result["SpacegroupNo"],
+        lattice=lattice,
+        species=all_species,
+        coords=all_coords,
+    )
 
 
 def parse_dia(dia_path: Path, phase_names: list[str]):

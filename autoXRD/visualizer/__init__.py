@@ -5,7 +5,7 @@ import random
 import pymatgen as mg
 from scipy import signal
 from pymatgen.analysis.diffraction import xrd
-from autoXRD.dara import do_refinement_no_saving
+from autoXRD.dara import do_refinement_no_saving, get_phase_weights, get_structure
 from skimage import restoration
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
@@ -497,7 +497,7 @@ def scale_values(values, new_min, new_max):
 
 
 def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, reduced_spectrum, min_angle=10.0, max_angle=80.0,
-    wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False, plot_both=False, raw=False, rietveld=True):
+    wavelength='CuKa', save=False, show_reduced=False, inc_pdf=False, plot_both=False, raw=False, rietveld=True, refined_phases_dir=None):
 
         if rietveld:
 
@@ -516,6 +516,17 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
                     "rp": 4,
                 }
             )
+
+            # Save refined CIFs if directory is provided
+            if refined_phases_dir:
+                weight_dict = get_phase_weights(result)
+                weights = []
+                for ph in predicted_phases:
+                    ph_name = ph[:-4]
+                    os.makedirs(f"{refined_phases_dir}/{spectrum_fname}", exist_ok=True)
+                    weights.append(weight_dict[ph_name])
+                    structure = get_structure(result["lst_data"]["phases_results"][ph_name])
+                    structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
 
             x_obs, y_obs = result["plot_data"]["x"], result["plot_data"]["y_obs"]
 
