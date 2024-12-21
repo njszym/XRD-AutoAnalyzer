@@ -585,15 +585,23 @@ def get_structure(phase_result: dict) -> Structure:
     -------
         the refined structure as ``pymatgen.Structure`` object
     """
-    # First get the basic lattice data
-    lattice_data = {
-        "a": phase_result["A"][0],
-        "b": phase_result.get("B", [phase_result["A"][0]])[0],
-        "c": phase_result.get("C", [phase_result["A"][0]])[0],
-        "alpha": phase_result.get("alpha", 90),
-        "beta": phase_result.get("beta", 90),
-        "gamma": phase_result.get("gamma", 90)
-    }
+
+    try:
+
+        # First get the basic lattice data
+        lattice_data = {
+            "a": phase_result["A"][0],
+            "b": phase_result.get("B", [phase_result["A"][0]])[0],
+            "c": phase_result.get("C", [phase_result["A"][0]])[0],
+            "alpha": phase_result.get("alpha", 90),
+            "beta": phase_result.get("beta", 90),
+            "gamma": phase_result.get("gamma", 90)
+        }
+
+    # If refined data is not available, return None
+    # This can happen if the refinement failed
+    except TypeError:
+        return None
 
     # Convert to numbers and filter None values
     lattice_data = {

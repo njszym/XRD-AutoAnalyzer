@@ -544,7 +544,8 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min
                 if refined_phases_dir:
                     os.makedirs(f"{refined_phases_dir}/{spectrum_fname}", exist_ok=True)
                     structure = get_structure(result["lst_data"]["phases_results"][ph_name])
-                    structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
+                    if structure is not None:
+                        structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
 
             return weights
 

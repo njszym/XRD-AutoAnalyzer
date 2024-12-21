@@ -526,7 +526,8 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
                     os.makedirs(f"{refined_phases_dir}/{spectrum_fname}", exist_ok=True)
                     weights.append(weight_dict[ph_name])
                     structure = get_structure(result["lst_data"]["phases_results"][ph_name])
-                    structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
+                    if structure is not None:
+                        structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
 
             x_obs, y_obs = result["plot_data"]["x"], result["plot_data"]["y_obs"]
 
