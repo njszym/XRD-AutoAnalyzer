@@ -601,6 +601,7 @@ def get_structure(phase_result: dict) -> Structure:
     # If refined data is not available, return None
     # This can happen if the refinement failed
     except TypeError:
+        print('WARNING: phase cannot be refined successfully.')
         return None
 
     # Convert to numbers and filter None values
