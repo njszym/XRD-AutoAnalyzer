@@ -2,6 +2,7 @@ from pymatgen.core.periodic_table import Element
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks, filtfilt, resample
 from autoXRD.dara import do_refinement_no_saving, get_phase_weights, get_structure
+from pymatgen.io.cif import CifWriter
 from pathlib import Path
 import random
 import pymatgen as mg
@@ -545,7 +546,8 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, min
                     os.makedirs(f"{refined_phases_dir}/{spectrum_fname}", exist_ok=True)
                     structure = get_structure(result["lst_data"]["phases_results"][ph_name])
                     if structure is not None:
-                        structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
+                        cif_writer = CifWriter(structure)
+                        cif_writer.write_file(f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
 
             return weights
 

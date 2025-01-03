@@ -2,9 +2,9 @@ from pymatgen.core import Structure, Composition, PeriodicSite
 from pymatgen.analysis.diffraction.xrd import XRDCalculator
 from scipy.signal import find_peaks, filtfilt, resample
 from itertools import combinations_with_replacement
+from pymatgen.io.cif import CifParser, CifWriter
 from pymatgen.analysis import structure_matcher
 from scipy.ndimage import gaussian_filter1d
-from pymatgen.io.cif import CifParser
 from itertools import product
 from scipy import interpolate
 from functools import reduce
@@ -672,13 +672,15 @@ def write_cifs(unique_strucs, dir, include_elems):
         try:
             sg = struc.get_space_group_info()[1]
             filepath = '%s/%s_%s.cif' % (dir, f, sg)
-            struc.to(filename=filepath, fmt='cif')
+            cif_writer = CifWriter(structure)
+            cif_writer.write_file(filename)
         except:
             try:
                 print('%s Space group cannot be determined, lowering tolerance' % str(f))
                 sg = struc.get_space_group_info(symprec=0.1, angle_tolerance=5.0)[1]
                 filepath = '%s/%s_%s.cif' % (dir, f, sg)
-                struc.to(filename=filepath, fmt='cif')
+                cif_writer = CifWriter(structure)
+                cif_writer.write_file(filename)
             except:
                 print('%s Space group cannot be determined even after lowering tolerance, Setting to None' % str(f))
 

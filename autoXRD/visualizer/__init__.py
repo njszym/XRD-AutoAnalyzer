@@ -6,6 +6,7 @@ import pymatgen as mg
 from scipy import signal
 from pymatgen.analysis.diffraction import xrd
 from autoXRD.dara import do_refinement_no_saving, get_phase_weights, get_structure
+from pymatgen.io.cif import CifWriter
 from skimage import restoration
 from scipy.ndimage import gaussian_filter1d
 from scipy import interpolate as ip
@@ -527,7 +528,8 @@ def main(spectra_directory, spectrum_fname, predicted_phases, scale_factors, red
                     weights.append(weight_dict[ph_name])
                     structure = get_structure(result["lst_data"]["phases_results"][ph_name])
                     if structure is not None:
-                        structure.to(fmt="cif", filename=f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
+                        cif_writer = CifWriter(structure)
+                        cif_writer.write_file(f"{refined_phases_dir}/{spectrum_fname}/{ph_name}.cif")
 
             x_obs, y_obs = result["plot_data"]["x"], result["plot_data"]["y_obs"]
 
