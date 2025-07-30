@@ -8,10 +8,12 @@ We have also recently integrated Pair Distribution Function (PDF) analysis into 
 
 ## Installation
 
-The package is available on PyPI and can be installed as follows:
+For the most recent version of the package, clone this repo and install it using pip:
 
 ```
-pip install --user autoXRD
+git clone https://github.com/njszym/XRD-AutoAnalyzer.git
+cd XRD-AutoAnalyzer/
+pip install --user .
 ```
 
 ## Usage example
