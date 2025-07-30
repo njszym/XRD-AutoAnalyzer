@@ -699,4 +699,3 @@ def main(cif_directory, ref_directory, filter_oxi=False, include_elems=True, enf
 
     # Write unique structures (as CIFs) to reference directory
     write_cifs(final_refs, ref_directory, include_elems)
-
