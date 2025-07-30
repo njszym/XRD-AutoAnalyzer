@@ -436,6 +436,9 @@ class StructureFilter(object):
 
         strucs, temps, dates = [], [], []
         for cmpd in os.listdir(self.cif_dir):
+            # Skip hidden files and non-CIF files
+            if cmpd.startswith('.') or not cmpd.lower().endswith('.cif'):
+                continue
             # Allowing some tolerance in site occupancies
             parser = CifParser('%s/%s' % (self.cif_dir, cmpd), occupancy_tolerance=1.25)
             struc = parser.parse_structures()[0]
@@ -620,6 +623,9 @@ def oxi_filter(cif_dir):
     """
 
     for filename in os.listdir(cif_dir):
+        # Skip hidden files and non-CIF files
+        if filename.startswith('.') or not filename.lower().endswith('.cif'):
+            continue
 
         oxi_okay = False
 
@@ -672,17 +678,21 @@ def write_cifs(unique_strucs, dir, include_elems):
         try:
             sg = struc.get_space_group_info()[1]
             filepath = '%s/%s_%s.cif' % (dir, f, sg)
-            cif_writer = CifWriter(structure)
-            cif_writer.write_file(filename)
+            cif_writer = CifWriter(struc)
+            cif_writer.write_file(filepath)
         except:
             try:
                 print('%s Space group cannot be determined, lowering tolerance' % str(f))
                 sg = struc.get_space_group_info(symprec=0.1, angle_tolerance=5.0)[1]
                 filepath = '%s/%s_%s.cif' % (dir, f, sg)
-                cif_writer = CifWriter(structure)
-                cif_writer.write_file(filename)
+                cif_writer = CifWriter(struc)
+                cif_writer.write_file(filepath)
             except:
                 print('%s Space group cannot be determined even after lowering tolerance, Setting to None' % str(f))
+                # Still write the CIF file with "None" as space group identifier
+                filepath = '%s/%s_None.cif' % (dir, f)
+                cif_writer = CifWriter(struc)
+                cif_writer.write_file(filepath)
 
     assert len(os.listdir(dir)) > 0, 'Something went wrong. No reference phases were found.'
 
