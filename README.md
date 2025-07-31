@@ -22,7 +22,7 @@ cd XRD-AutoAnalyzer/
 pip install --user .
 ```
 
-Note the ```--user``` argument is important to ensure proper installation of the Rietveld refinement capabilities. 
+Note that in both cases, the ```--user``` argument is important to ensure proper installation of the Rietveld refinement capabilities. 
 
 ## Usage example
 
