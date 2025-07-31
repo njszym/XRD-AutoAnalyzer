@@ -8,13 +8,21 @@ We have also recently integrated Pair Distribution Function (PDF) analysis into 
 
 ## Installation
 
-For the most recent version of the package, clone this repo and install it using pip:
+The package is available on PyPI and can be installed as follows:
+
+```
+pip install --user autoXRD
+```
+
+Or you can install the latest version from this repo directly:
 
 ```
 git clone https://github.com/njszym/XRD-AutoAnalyzer.git
 cd XRD-AutoAnalyzer/
 pip install --user .
 ```
+
+Note the ```--user``` argument is important to ensure proper installation of the Rietveld refinement capabilities. 
 
 ## Usage example
 
