@@ -118,6 +118,8 @@ The model assumes that patterns are measured using Cu K-alpha radiation. However
 python run_CNN.py --wavelength=lambda
 ```
 
+Keep in mind that if you specify ```min_angle``` and ```max_angle``` for some wavelength other than Cu K-alpha, the angle range is interpreted *after* conversion to 2θ values corresponding to Cu K-alpha.
+
 For each spectrum, the phase identification algorithm runs until either (i) a maximum of three unique compounds have been identified, or (ii) all peaks with intensities greater than or equal to 5% of the spectrum's maximum intensity have been identified. To change these parameters (denoted ```N``` and ```I```), the following arguments can be specified:
 
 ```
