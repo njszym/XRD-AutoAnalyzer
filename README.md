@@ -1,6 +1,6 @@
 # An automatic analysis tool for XRD
 
-A package designed to automate phase identification from XRD spectra using a probabilistic deep learning model trained with physics-informed data augmentation.
+A package designed to automate phase identification from XRD patterns using a probabilistic deep learning model trained with physics-informed data augmentation.
 
 The corresponding manuscript can be found at [Chemistry of Materials](https://pubs.acs.org/doi/full/10.1021/acs.chemmater.1c01071). Reproducing the published results can be accomplished using the data provided in [figshare](https://figshare.com/s/69030545b8020de35633).
 
@@ -26,7 +26,7 @@ python run_CNN.py
 
 The process should take about 1-2 minutes. Runtime is typically ~10 seconds per spectrum on a single CPU, but may vary from system to system. Parallelization is also possible, and all available CPU will be utilized by default. GPU can also be used for the training and inference steps.
 
-Once all spectra have been classified, each set of predicted phases will be printed along with their associated probabilities (%). These represent the confidence associated with each predicted phase. Generally, higher values of confidence are associated with more reliable predictions.
+Once all patterns have been classified, each set of predicted phases will be printed along with their associated probabilities (%). These represent the confidence associated with each predicted phase. Generally, higher values of confidence are associated with more reliable predictions.
 
 ## Training the model for new compositions
 
@@ -42,9 +42,9 @@ This script will:
 
 2) If ```--include_ns``` is specified: generate hypothetical solid solutions between the stoichiometric phases.
 
-3) Simulate augmented XRD spectra from the phases produced by (1) and (2).
+3) Simulate augmented XRD patterns from the phases produced by (1) and (2).
 
-4) Train a convolutional neural network on the augmented spectra.
+4) Train a convolutional neural network on the augmented patterns.
 
 In cases where the user supplies many possible reference phases to may or may not be reasonably accessible under common experimental conditions, it is often useful to exclude any compounds that place elements in unusual oxidation states. This can be done by adding the option:
 
@@ -52,7 +52,7 @@ In cases where the user supplies many possible reference phases to may or may no
 python construct_xrd_model.py --oxi_filter
 ```
 
-By default, training spectra will be simulated over 2θ spanning 10-80 degrees (assuming Cu K-alpha radiation). However, this can be customized as follows:
+By default, training patterns will be simulated over 2θ spanning 10-80 degrees (assuming Cu K-alpha radiation). However, this can be customized as follows:
 
 ```
 python construct_xrd_model.py --min_angle=10.0 --max_angle=80.0
@@ -84,9 +84,9 @@ Training is performed for 50 epochs, which is generally sufficient to achieve co
 python construct_xrd_model.py --num_epochs=50
 ```
 
-## Characterizing multi-phase spectra
+## Characterizing multi-phase patterns
 
-In the directory containing ```Model.h5```, place all spectra to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format (two-column data).
+In the directory containing ```Model.h5```, place all patterns to be classified in the ```Spectra/``` folder. These files should be in ```xy``` format (two-column data).
 
 Once all files are placed in the ```Spectra/``` folder, they can be classified by executing:
 
@@ -106,13 +106,13 @@ Phase labels are denoted as ```formula_spacegroup```.
 
 By default, only phases with a confidence above 40% will be shown. To raise or lower the minimum confidence, one may specify a new bound using the ```--min_conf``` argument at runtime. Use this option with caution, as low-confidence phases are generally not reliable.
 
-If spectra with a range of 2θ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles (in Cu K-alpha) should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
+If patterns with a range of 2θ other than 10-80 degrees are considered, then the minimum and maximum diffraction angles (in Cu K-alpha) should be specified manually as shown below. Note: this range must match the range used during model creation (see section above).
 
 ```
 python run_CNN.py --min_angle=10.0 --max_angle=80.0
 ```
 
-The model assumes that spectra are measured using Cu K-alpha radiation. However, the user can specify any arbitary wavelength (```lambda```, in angstroms) as follows:
+The model assumes that patterns are measured using Cu K-alpha radiation. However, the user can specify any arbitary wavelength (```lambda```, in angstroms) as follows:
 
 ```
 python run_CNN.py --wavelength=lambda
