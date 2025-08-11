@@ -13,7 +13,7 @@ dependencies = [
     "numpy",
     "pymatgen",
     "scipy",
-    "scikit-image",
+    "scikit-image>=0.23.1",
     "tensorflow>=2.16",
     "pyxtal",
     "pyts",
